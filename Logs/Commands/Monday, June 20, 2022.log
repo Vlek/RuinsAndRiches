@@ -1,0 +1,43 @@
+##############################
+Log started on 6/20/2022 7:16:36 AM
+
+6/20/2022 7:17:00 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add boat'
+6/20/2022 7:17:11 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3029, 911, 0) in Sosaria: "SmallDragonBoatDeed"
+6/20/2022 7:17:11 AM: 127.0.0.1: Serials: 0x4000FBDC; 
+6/20/2022 7:17:27 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+6/20/2022 7:21:32 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill seafaring 125'
+6/20/2022 7:21:33 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Seafaring.Base' of 0x1 "Dungeon Master" ('Admin') to '125'
+6/20/2022 7:21:37 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+6/20/2022 7:21:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'NpcGuild' of 0x1 "Dungeon Master" ('Admin') to 'FishermensGuild'
+6/20/2022 7:22:12 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+6/20/2022 7:22:24 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'hide '
+6/20/2022 7:22:26 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') hiding 0x1 "Dungeon Master" ('Admin')
+6/20/2022 7:22:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+6/20/2022 7:22:56 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unhide '
+6/20/2022 7:22:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') unhiding 0x1 "Dungeon Master" ('Admin')
+6/20/2022 7:23:11 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+6/20/2022 7:23:22 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 6/20/2022 7:23:35 AM
+
+##############################
+Log started on 6/20/2022 2:42:48 PM
+
+6/20/2022 2:43:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+6/20/2022 2:45:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 6/20/2022 2:46:12 PM
+
+6/20/2022 2:46:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+6/20/2022 2:46:39 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+6/20/2022 2:47:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+6/20/2022 2:47:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+6/20/2022 2:48:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 6/20/2022 5:04:59 PM
+
+6/20/2022 5:05:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+6/20/2022 5:05:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/20/2022 5:09:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/20/2022 5:35:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/20/2022 5:38:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '

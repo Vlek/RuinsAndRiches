@@ -1,0 +1,14 @@
+##############################
+Log started on 5/22/2022 9:23:18 AM
+
+5/22/2022 9:23:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+5/22/2022 9:24:04 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 5/22/2022 6:32:52 PM
+
+5/22/2022 6:39:51 PM: 127.0.0.1: Player 0x1BCA7 "Zork" ('Zork') used command 'quickbar '
+5/22/2022 6:40:14 PM: 127.0.0.1: Player 0x1BCA7 "Zork" ('Zork') used command 'skilllist '
+5/22/2022 6:40:24 PM: 127.0.0.1: Player 0x1BCA7 "Zork" ('Zork') used command 'elementtool1 '
+5/22/2022 6:40:26 PM: 127.0.0.1: Player 0x1BCA7 "Zork" ('Zork') used command 'elementtool2 '
+5/22/2022 6:40:29 PM: 127.0.0.1: Player 0x1BCA7 "Zork" ('Zork') used command 'elementclose2 '
+5/22/2022 6:48:00 PM: 127.0.0.1: Player 0x1BCA7 "Zork" ('Zork') used command 'elementclose1 '

@@ -1,0 +1,22 @@
+##############################
+Log started on 6/17/2022 5:28:26 PM
+
+##############################
+Log started on 6/17/2022 5:33:46 PM
+
+##############################
+Log started on 6/17/2022 5:43:34 PM
+
+##############################
+Log started on 6/17/2022 6:14:31 PM
+
+6/17/2022 6:17:01 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unhide '
+6/17/2022 6:17:03 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') unhiding 0x1 "Dungeon Master" ('Admin')
+6/17/2022 6:17:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+6/17/2022 6:17:35 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'NpcGuild' of 0x1 "Dungeon Master" ('Admin') to 'WarriorsGuild'
+6/17/2022 6:32:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unhide '
+6/17/2022 6:32:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') unhiding 0x1 "Dungeon Master" ('Admin')
+6/17/2022 6:33:53 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/17/2022 6:49:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/17/2022 6:53:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/17/2022 6:55:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '

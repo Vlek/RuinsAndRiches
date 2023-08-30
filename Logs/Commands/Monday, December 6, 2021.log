@@ -1,0 +1,80 @@
+##############################
+Log started on 12/6/2021 3:21:48 AM
+
+12/6/2021 3:22:18 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+12/6/2021 3:22:36 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'hide '
+12/6/2021 3:22:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') hiding 0x1 "Dungeon Master" ('Admin')
+12/6/2021 3:22:51 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+12/6/2021 3:22:57 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'kill '
+12/6/2021 3:22:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') killing 0x1E0BC "a spectre" (no account)
+12/6/2021 3:23:14 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+12/6/2021 3:23:22 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'kill '
+12/6/2021 3:23:24 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') killing 0x1D94F "a gray dragon" (no account)
+12/6/2021 3:23:37 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+12/6/2021 3:23:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+12/6/2021 3:23:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+12/6/2021 3:24:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+12/6/2021 3:24:50 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+12/6/2021 3:25:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'kill '
+12/6/2021 3:25:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') killing 0x10532 "Tarjan" (no account)
+##############################
+Log started on 12/6/2021 12:28:30 PM
+
+##############################
+Log started on 12/6/2021 12:31:26 PM
+
+##############################
+Log started on 12/6/2021 12:38:21 PM
+
+##############################
+Log started on 12/6/2021 12:40:43 PM
+
+##############################
+Log started on 12/6/2021 12:44:22 PM
+
+12/6/2021 12:47:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get my_chat'
+##############################
+Log started on 12/6/2021 12:53:37 PM
+
+##############################
+Log started on 12/6/2021 12:57:18 PM
+
+##############################
+Log started on 12/6/2021 1:04:17 PM
+
+##############################
+Log started on 12/6/2021 1:07:26 PM
+
+##############################
+Log started on 12/6/2021 1:57:23 PM
+
+12/6/2021 1:57:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set profession 1'
+12/6/2021 1:57:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'profession' of 0x1CC3F "Conan" ('Tim') to '1'
+12/6/2021 1:58:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'who '
+12/6/2021 1:58:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') bringing 0x1CC3F "Conan" ('Tim') to Location (3012, 1170, 0), Map Sosaria
+12/6/2021 1:59:09 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set rawint 100'
+12/6/2021 1:59:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'rawint' of 0x1CC3F "Conan" ('Tim') to '100'
+12/6/2021 1:59:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add polym'
+12/6/2021 1:59:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3012, 1169, 0) in Sosaria: "PolymorphMagicStaff"
+12/6/2021 1:59:19 PM: 127.0.0.1: Serials: 0x4002015B; 
+12/6/2021 1:59:39 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add gold 500'
+12/6/2021 1:59:41 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3013, 1169, 0) in Sosaria: "gold" "500"
+12/6/2021 1:59:41 PM: 127.0.0.1: Serials: 0x40020549; 
+12/6/2021 1:59:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set mana 1111'
+12/6/2021 1:59:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'mana' of 0x1CC3F "Conan" ('Tim') to '1111'
+12/6/2021 2:01:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'who '
+12/6/2021 2:01:21 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') going to 0x1CC3F "Conan" ('Tim'), Location (2974, 1038, 5), Map Sosaria
+12/6/2021 2:01:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add gold 2000'
+12/6/2021 2:01:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2975, 1038, 5) in Sosaria: "gold" "2000"
+12/6/2021 2:01:32 PM: 127.0.0.1: Serials: 0x400213BE; 
+12/6/2021 2:05:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 12/6/2021 2:06:02 PM
+
+12/6/2021 2:06:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+12/6/2021 2:06:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Charges' of 0x4002015B (PolymorphMagicStaff) to '11'
+##############################
+Log started on 12/6/2021 2:08:59 PM
+
+12/6/2021 2:09:31 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+12/6/2021 2:09:39 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Charges' of 0x4002015B (PolymorphMagicStaff) to '11'

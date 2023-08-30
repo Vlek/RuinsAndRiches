@@ -1,0 +1,73 @@
+##############################
+Log started on 2/13/2022 3:00:06 PM
+
+2/13/2022 3:01:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+2/13/2022 3:03:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'who '
+2/13/2022 3:03:21 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') bringing 0x272DF "Gorn" ('Tim') to Location (2991, 985, 5), Map Sosaria
+2/13/2022 3:03:29 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill swords 100'
+2/13/2022 3:03:31 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Swords.Base' of 0x272DF "Gorn" ('Tim') to '100'
+2/13/2022 3:03:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill tactics 100'
+2/13/2022 3:03:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Tactics.Base' of 0x272DF "Gorn" ('Tim') to '100'
+2/13/2022 3:03:46 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill anatomy 100'
+2/13/2022 3:03:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Anatomy.Base' of 0x272DF "Gorn" ('Tim') to '100'
+2/13/2022 3:03:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill healing 100'
+2/13/2022 3:03:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Healing.Base' of 0x272DF "Gorn" ('Tim') to '100'
+2/13/2022 3:03:56 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill parry 100'
+2/13/2022 3:03:56 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Parry.Base' of 0x272DF "Gorn" ('Tim') to '100'
+2/13/2022 3:04:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill focus 100'
+2/13/2022 3:04:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Focus.Base' of 0x272DF "Gorn" ('Tim') to '100'
+2/13/2022 3:04:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill fencing 100'
+2/13/2022 3:04:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Fencing.Base' of 0x272DF "Gorn" ('Tim') to '100'
+2/13/2022 3:04:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set fame 15000'
+2/13/2022 3:04:21 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'fame' of 0x272DF "Gorn" ('Tim') to '15000'
+2/13/2022 3:04:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set karma 15000'
+2/13/2022 3:04:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'karma' of 0x272DF "Gorn" ('Tim') to '15000'
+2/13/2022 3:04:53 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get rawdex'
+2/13/2022 3:05:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+2/13/2022 3:10:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get dex'
+2/13/2022 3:10:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+2/13/2022 3:10:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get dex'
+2/13/2022 3:10:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+2/13/2022 3:10:31 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40067B2C (BaseRace)
+2/13/2022 3:10:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get dex'
+2/13/2022 3:10:41 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+2/13/2022 3:10:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40067B42 (BaseRace)
+2/13/2022 3:10:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get dex'
+2/13/2022 3:10:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get rawdex'
+2/13/2022 3:11:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+2/13/2022 3:11:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+2/13/2022 3:11:48 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'BonusDex' of ... to '0'
+2/13/2022 3:11:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get rawdex'
+2/13/2022 3:12:00 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get dex'
+2/13/2022 3:12:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get dex'
+2/13/2022 3:12:48 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get rawdex'
+2/13/2022 3:12:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get dex'
+2/13/2022 3:16:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+2/13/2022 3:16:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+2/13/2022 3:16:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+2/13/2022 3:16:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40067B44 (BaseRace)
+2/13/2022 3:16:42 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+2/13/2022 3:16:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'BonusStr' of ... to '10'
+2/13/2022 3:29:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 2/13/2022 3:32:45 PM
+
+2/13/2022 3:33:27 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get rawdex'
+2/13/2022 3:33:41 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set karma 0 fame 0'
+2/13/2022 3:33:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'karma' of 0x272DF "Gorn" ('Tim') to '0'
+2/13/2022 3:33:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'fame' of 0x272DF "Gorn" ('Tim') to '0'
+2/13/2022 3:34:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+2/13/2022 3:34:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+2/13/2022 3:34:08 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40067B46 (BaseRace)
+##############################
+Log started on 2/13/2022 3:39:17 PM
+
+2/13/2022 3:39:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set fame 0 karma 0'
+2/13/2022 3:40:00 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'fame' of 0x272DF "Gorn" ('Tim') to '0'
+2/13/2022 3:40:00 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'karma' of 0x272DF "Gorn" ('Tim') to '0'
+2/13/2022 3:40:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+2/13/2022 3:40:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40067B46 (BaseRace)
+2/13/2022 3:40:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 2/13/2022 3:41:11 PM
+

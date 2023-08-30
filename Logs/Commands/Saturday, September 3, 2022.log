@@ -1,0 +1,654 @@
+##############################
+Log started on 9/3/2022 3:57:18 AM
+
+9/3/2022 4:20:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+9/3/2022 4:20:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 4:21:07 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unfreeze '
+9/3/2022 4:21:22 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking unfreeze from (2346, 990) to (2409, 1041) in Sosaria
+9/3/2022 4:21:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'staex 1'
+9/3/2022 4:21:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 1'
+9/3/2022 4:21:53 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 1'
+9/3/2022 4:22:22 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 1'
+9/3/2022 4:22:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 1'
+9/3/2022 4:22:57 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 2'
+9/3/2022 4:23:06 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 3'
+9/3/2022 4:23:15 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 4'
+9/3/2022 4:23:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 5'
+9/3/2022 4:23:44 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen 6'
+##############################
+Log started on 9/3/2022 4:27:00 AM
+
+9/3/2022 4:27:15 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 4:27:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add trees'
+9/3/2022 4:27:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2335, 1005, 2) in Sosaria: "Trees1"
+9/3/2022 4:27:38 AM: 127.0.0.1: Serials: 0x400180A8; 
+9/3/2022 4:27:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add trees'
+9/3/2022 4:28:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2346, 989, 2) in Sosaria: "Trees2"
+9/3/2022 4:28:01 AM: 127.0.0.1: Serials: 0x40018E24; 
+9/3/2022 4:28:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2360, 975, 2) in Sosaria: "Trees3"
+9/3/2022 4:28:08 AM: 127.0.0.1: Serials: 0x40018FD3; 
+9/3/2022 4:28:17 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2377, 971, 2) in Sosaria: "Trees4"
+9/3/2022 4:28:17 AM: 127.0.0.1: Serials: 0x400196D1; 
+9/3/2022 4:28:25 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2390, 981, 2) in Sosaria: "Trees5"
+9/3/2022 4:28:25 AM: 127.0.0.1: Serials: 0x40019867; 
+9/3/2022 4:28:35 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2413, 986, 2) in Sosaria: "Trees6"
+9/3/2022 4:28:35 AM: 127.0.0.1: Serials: 0x40019B1A; 
+##############################
+Log started on 9/3/2022 5:24:45 AM
+
+9/3/2022 5:25:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 5:25:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen a'
+9/3/2022 5:25:41 AM: 127.0.0.1: Awaiting confirmation...
+9/3/2022 5:25:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global delete where premiumspawner'
+9/3/2022 5:25:45 AM: 127.0.0.1: Delete command confirmed.
+9/3/2022 5:25:45 AM: 127.0.0.1: The item has been deleted. (17585)
+9/3/2022 5:25:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unfreeze '
+9/3/2022 5:25:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking unfreeze from (2341, 976) to (2424, 1056) in Sosaria
+9/3/2022 5:26:22 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees11'
+9/3/2022 5:26:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees12'
+9/3/2022 5:26:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees13'
+9/3/2022 5:26:53 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees14'
+9/3/2022 5:27:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees15'
+9/3/2022 5:27:14 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees16'
+9/3/2022 5:27:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees17'
+9/3/2022 5:27:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees18'
+9/3/2022 5:27:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees19'
+##############################
+Log started on 9/3/2022 5:30:16 AM
+
+9/3/2022 5:30:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 5:30:40 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40010BBF (Warhorse)
+9/3/2022 5:30:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 5:30:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40011157 (BookOfNinjitsu)
+9/3/2022 5:30:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'save '
+9/3/2022 5:30:52 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 5:31:02 AM: 127.0.0.1: Awaiting confirmation...
+9/3/2022 5:31:02 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global delete where premiumspawner'
+9/3/2022 5:31:06 AM: 127.0.0.1: Delete command confirmed.
+9/3/2022 5:31:06 AM: 127.0.0.1: The item has been deleted. (17585)
+9/3/2022 5:31:14 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add trees'
+9/3/2022 5:31:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2404, 1046, 2) in Sosaria: "trees11Addon"
+9/3/2022 5:31:20 AM: 127.0.0.1: Serials: 0x400190BA; 
+9/3/2022 5:31:27 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2428, 1035, 2) in Sosaria: "trees12Addon"
+9/3/2022 5:31:27 AM: 127.0.0.1: Serials: 0x400190DC; 
+9/3/2022 5:31:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2418, 1059, 2) in Sosaria: "trees13Addon"
+9/3/2022 5:31:31 AM: 127.0.0.1: Serials: 0x400190FF; 
+9/3/2022 5:32:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees13'
+9/3/2022 5:32:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unfreeze '
+9/3/2022 5:32:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking unfreeze from (2378, 990) to (2403, 1008) in Sosaria
+9/3/2022 5:33:09 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unfreeze '
+9/3/2022 5:33:14 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking unfreeze from (2377, 987) to (2409, 1010) in Sosaria
+9/3/2022 5:33:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unfreeze '
+9/3/2022 5:33:48 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking unfreeze from (2377, 988) to (2412, 1013) in Sosaria
+9/3/2022 5:34:44 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2423, 1014, 2) in Sosaria: "trees14Addon"
+9/3/2022 5:34:44 AM: 127.0.0.1: Serials: 0x4001911B; 
+9/3/2022 5:35:13 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2419, 991, 2) in Sosaria: "trees15Addon"
+9/3/2022 5:35:13 AM: 127.0.0.1: Serials: 0x4001913B; 
+9/3/2022 5:35:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2448, 1013, 2) in Sosaria: "trees16Addon"
+9/3/2022 5:35:20 AM: 127.0.0.1: Serials: 0x40019160; 
+9/3/2022 5:35:26 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2458, 1026, 2) in Sosaria: "trees17Addon"
+9/3/2022 5:35:26 AM: 127.0.0.1: Serials: 0x40019180; 
+9/3/2022 5:35:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2448, 1039, 2) in Sosaria: "trees18Addon"
+9/3/2022 5:35:30 AM: 127.0.0.1: Serials: 0x40019194; 
+9/3/2022 5:35:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2462, 1049, 2) in Sosaria: "trees19Addon"
+9/3/2022 5:35:41 AM: 127.0.0.1: Serials: 0x400191AC; 
+9/3/2022 5:36:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2434, 1074, 2) in Sosaria: "trees14Addon"
+9/3/2022 5:36:01 AM: 127.0.0.1: Serials: 0x400191C8; 
+9/3/2022 5:36:04 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2445, 1060, 2) in Sosaria: "trees13Addon"
+9/3/2022 5:36:04 AM: 127.0.0.1: Serials: 0x400191E4; 
+##############################
+Log started on 9/3/2022 5:36:54 AM
+
+9/3/2022 5:37:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 5:37:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unfreeze '
+9/3/2022 5:37:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking unfreeze from (2356, 986) to (2417, 1034) in Sosaria
+9/3/2022 5:37:41 AM: 127.0.0.1: Awaiting confirmation...
+9/3/2022 5:37:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global delete where premiumspawner'
+9/3/2022 5:37:45 AM: 127.0.0.1: Delete command confirmed.
+9/3/2022 5:37:45 AM: 127.0.0.1: The item has been deleted. (17585)
+9/3/2022 5:37:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees13'
+9/3/2022 5:38:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addongen trees14'
+##############################
+Log started on 9/3/2022 5:44:20 AM
+
+9/3/2022 5:44:39 AM: 127.0.0.1: Awaiting confirmation...
+9/3/2022 5:44:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global delete where premiumspawner'
+9/3/2022 5:44:43 AM: 127.0.0.1: Delete command confirmed.
+9/3/2022 5:44:43 AM: 127.0.0.1: The item has been deleted. (17585)
+9/3/2022 5:44:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (11788 objects)
+9/3/2022 5:44:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 5:44:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 11788 objects
+9/3/2022 5:44:53 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 5:46:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees1 set homerange 0'
+9/3/2022 5:46:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2369, 685, 2) in Sosaria: "spawner" "trees1" "set" "homerange" "0"
+9/3/2022 5:46:49 AM: 127.0.0.1: Serials: 0x400100F1; 
+9/3/2022 5:46:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees1 set homerange 0'
+9/3/2022 5:47:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2377, 685, 2) in Sosaria: "spawner" "trees1" "set" "homerange" "0"
+9/3/2022 5:47:01 AM: 127.0.0.1: Serials: 0x40010114; 
+9/3/2022 5:47:18 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+9/3/2022 5:47:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (2375, 678, 2) to (2384, 695, 2) in Sosaria (Items, Mobiles)
+9/3/2022 5:47:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees1 set homerange 0'
+9/3/2022 5:47:33 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2378, 686, 2) in Sosaria: "spawner" "trees1" "set" "homerange" "0"
+9/3/2022 5:47:33 AM: 127.0.0.1: Serials: 0x40010137; 
+##############################
+Log started on 9/3/2022 6:48:04 AM
+
+9/3/2022 6:48:22 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 6:48:41 AM: 127.0.0.1: Awaiting confirmation...
+9/3/2022 6:48:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global delete where premiumspawner'
+9/3/2022 6:48:44 AM: 127.0.0.1: Delete command confirmed.
+9/3/2022 6:48:44 AM: 127.0.0.1: The item has been deleted. (17585)
+9/3/2022 6:48:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (11903 objects)
+9/3/2022 6:48:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 6:48:48 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 11903 objects
+9/3/2022 6:49:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'save '
+9/3/2022 6:49:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 6:49:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 6:50:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add tree'
+9/3/2022 6:50:57 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2210, 1066, 10) in Sosaria: "Trees1"
+9/3/2022 6:50:57 AM: 127.0.0.1: Serials: 0x4001ADA2; 
+9/3/2022 6:51:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2223, 1062, 2) in Sosaria: "trees16Addon"
+9/3/2022 6:51:05 AM: 127.0.0.1: Serials: 0x4001ADC6; 
+9/3/2022 6:51:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2214, 1052, 5) in Sosaria: "trees19Addon"
+9/3/2022 6:51:08 AM: 127.0.0.1: Serials: 0x4001ADE7; 
+9/3/2022 6:51:28 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2209, 1082, 0) in Sosaria: "Trees6"
+9/3/2022 6:51:28 AM: 127.0.0.1: Serials: 0x4001AE02; 
+9/3/2022 6:51:35 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2199, 1081, 0) in Sosaria: "Trees5"
+9/3/2022 6:51:35 AM: 127.0.0.1: Serials: 0x4001AE1E; 
+9/3/2022 6:51:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2223, 1086, 0) in Sosaria: "Trees4"
+9/3/2022 6:51:39 AM: 127.0.0.1: Serials: 0x4001AE43; 
+9/3/2022 6:51:50 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2175, 1064, 2) in Sosaria: "Trees3"
+9/3/2022 6:51:50 AM: 127.0.0.1: Serials: 0x4001AE5F; 
+##############################
+Log started on 9/3/2022 6:54:05 AM
+
+9/3/2022 6:54:17 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 6:54:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+##############################
+Log started on 9/3/2022 7:20:07 AM
+
+9/3/2022 7:20:17 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 7:20:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+##############################
+Log started on 9/3/2022 7:24:24 AM
+
+9/3/2022 7:24:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+##############################
+Log started on 9/3/2022 7:25:40 AM
+
+9/3/2022 7:25:51 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 7:26:18 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+##############################
+Log started on 9/3/2022 12:06:45 PM
+
+9/3/2022 12:07:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:08:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 12:10:01 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:10:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:10:27 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:10:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+9/3/2022 12:10:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 12:11:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+9/3/2022 12:12:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:12:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:12:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:12:15 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+##############################
+Log started on 9/3/2022 12:15:24 PM
+
+9/3/2022 12:15:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (1816 objects)
+9/3/2022 12:15:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 12:15:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 1816 objects
+9/3/2022 12:15:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:15:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:15:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:15:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:16:03 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:16:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+##############################
+Log started on 9/3/2022 12:16:34 PM
+
+9/3/2022 12:16:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:16:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+##############################
+Log started on 9/3/2022 12:20:02 PM
+
+9/3/2022 12:20:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:20:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'save '
+9/3/2022 12:20:35 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:20:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:20:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:20:48 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+##############################
+Log started on 9/3/2022 12:24:46 PM
+
+9/3/2022 12:24:56 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (28609 objects)
+9/3/2022 12:24:56 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 12:24:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 28609 objects
+9/3/2022 12:25:01 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:25:08 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:25:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'addon2static '
+##############################
+Log started on 9/3/2022 12:29:05 PM
+
+9/3/2022 12:29:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (28609 objects)
+9/3/2022 12:29:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 12:29:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 28609 objects
+9/3/2022 12:29:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:29:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:29:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:29:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:29:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+##############################
+Log started on 9/3/2022 12:31:09 PM
+
+9/3/2022 12:31:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (28609 objects)
+9/3/2022 12:31:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 12:31:23 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 28609 objects
+9/3/2022 12:31:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:31:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:31:31 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:31:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:31:42 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+9/3/2022 12:31:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 12:31:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+9/3/2022 12:32:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'area set movable true'
+9/3/2022 12:32:09 PM: 127.0.0.1: Property has been set. (553)
+9/3/2022 12:32:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+##############################
+Log started on 9/3/2022 12:34:54 PM
+
+9/3/2022 12:35:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (28609 objects)
+9/3/2022 12:35:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 12:35:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 28609 objects
+9/3/2022 12:35:08 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:35:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:35:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:35:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:35:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+##############################
+Log started on 9/3/2022 12:44:15 PM
+
+##############################
+Log started on 9/3/2022 12:44:42 PM
+
+9/3/2022 12:44:48 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (28609 objects)
+9/3/2022 12:44:48 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 12:44:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 28609 objects
+9/3/2022 12:44:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+##############################
+Log started on 9/3/2022 12:45:01 PM
+
+##############################
+Log started on 9/3/2022 12:46:46 PM
+
+9/3/2022 12:46:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (28609 objects)
+9/3/2022 12:46:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 12:46:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 28609 objects
+9/3/2022 12:46:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'forest '
+9/3/2022 12:47:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2086 655'
+9/3/2022 12:47:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 12:47:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2748 1129'
+9/3/2022 12:47:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2086, 655) to (2748, 1129) in Sosaria
+##############################
+Log started on 9/3/2022 1:48:40 PM
+
+9/3/2022 1:48:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (28609 objects)
+9/3/2022 1:48:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 1:48:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 28609 objects
+9/3/2022 1:49:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+##############################
+Log started on 9/3/2022 3:38:19 PM
+
+9/3/2022 3:39:03 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 3:46:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:46:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2363, 872, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:46:52 PM: 127.0.0.1: Serials: 0x40001666; 
+9/3/2022 3:47:00 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:05 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2366, 893, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:05 PM: 127.0.0.1: Serials: 0x400016B0; 
+9/3/2022 3:47:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2375, 885, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:13 PM: 127.0.0.1: Serials: 0x40001728; 
+9/3/2022 3:47:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2376, 899, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:19 PM: 127.0.0.1: Serials: 0x40001775; 
+9/3/2022 3:47:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:27 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2388, 905, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:27 PM: 127.0.0.1: Serials: 0x40001808; 
+9/3/2022 3:47:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2405, 903, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:34 PM: 127.0.0.1: Serials: 0x40001880; 
+9/3/2022 3:47:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:46 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2387, 883, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:46 PM: 127.0.0.1: Serials: 0x400018E5; 
+9/3/2022 3:47:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2399, 883, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:51 PM: 127.0.0.1: Serials: 0x40001965; 
+9/3/2022 3:47:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:47:56 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2412, 883, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:47:56 PM: 127.0.0.1: Serials: 0x400019E2; 
+9/3/2022 3:48:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2414, 894, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:04 PM: 127.0.0.1: Serials: 0x40001A4B; 
+9/3/2022 3:48:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2418, 902, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:13 PM: 127.0.0.1: Serials: 0x40001AB3; 
+9/3/2022 3:48:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2432, 902, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:19 PM: 127.0.0.1: Serials: 0x40001B08; 
+9/3/2022 3:48:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2432, 891, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:26 PM: 127.0.0.1: Serials: 0x40001B46; 
+9/3/2022 3:48:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2442, 882, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:34 PM: 127.0.0.1: Serials: 0x40001BC8; 
+9/3/2022 3:48:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2446, 871, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:38 PM: 127.0.0.1: Serials: 0x40001C47; 
+9/3/2022 3:48:41 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:42 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2442, 864, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:42 PM: 127.0.0.1: Serials: 0x40001CC0; 
+9/3/2022 3:48:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:48:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2428, 866, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:48:49 PM: 127.0.0.1: Serials: 0x40001D13; 
+##############################
+Log started on 9/3/2022 3:49:12 PM
+
+9/3/2022 3:49:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:49:27 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2369, 892, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:49:27 PM: 127.0.0.1: Serials: 0x40001605; 
+9/3/2022 3:49:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:49:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2363, 872, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:49:37 PM: 127.0.0.1: Serials: 0x40001662; 
+9/3/2022 3:49:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:49:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2378, 866, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:49:45 PM: 127.0.0.1: Serials: 0x400016AA; 
+9/3/2022 3:49:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:49:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2389, 859, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:49:51 PM: 127.0.0.1: Serials: 0x40001718; 
+9/3/2022 3:49:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:49:56 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2389, 867, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:49:56 PM: 127.0.0.1: Serials: 0x40001760; 
+9/3/2022 3:50:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2378, 884, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:07 PM: 127.0.0.1: Serials: 0x40001803; 
+9/3/2022 3:50:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2391, 883, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:14 PM: 127.0.0.1: Serials: 0x4000187B; 
+9/3/2022 3:50:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2403, 883, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:19 PM: 127.0.0.1: Serials: 0x400018DD; 
+9/3/2022 3:50:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2414, 883, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:25 PM: 127.0.0.1: Serials: 0x40001961; 
+9/3/2022 3:50:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:29 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2414, 893, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:29 PM: 127.0.0.1: Serials: 0x400019C9; 
+9/3/2022 3:50:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:35 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2411, 902, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:35 PM: 127.0.0.1: Serials: 0x40001A46; 
+9/3/2022 3:50:42 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2393, 906, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:43 PM: 127.0.0.1: Serials: 0x40001AA7; 
+9/3/2022 3:50:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:50:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2376, 899, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:50:51 PM: 127.0.0.1: Serials: 0x40001B04; 
+9/3/2022 3:50:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:00 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2343, 900, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:00 PM: 127.0.0.1: Serials: 0x40001B3B; 
+9/3/2022 3:51:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2398, 850, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:14 PM: 127.0.0.1: Serials: 0x40001BC1; 
+9/3/2022 3:51:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2410, 845, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:20 PM: 127.0.0.1: Serials: 0x40001C23; 
+9/3/2022 3:51:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2423, 844, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:26 PM: 127.0.0.1: Serials: 0x40001CBC; 
+9/3/2022 3:51:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2426, 854, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:32 PM: 127.0.0.1: Serials: 0x40001D0F; 
+9/3/2022 3:51:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:46 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2432, 836, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:46 PM: 127.0.0.1: Serials: 0x40001D5A; 
+9/3/2022 3:51:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2444, 832, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:51 PM: 127.0.0.1: Serials: 0x40001D9C; 
+9/3/2022 3:51:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:51:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2474, 834, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:51:59 PM: 127.0.0.1: Serials: 0x40001E4D; 
+9/3/2022 3:52:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:03 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2485, 839, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:03 PM: 127.0.0.1: Serials: 0x40001EB0; 
+9/3/2022 3:52:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2497, 845, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:07 PM: 127.0.0.1: Serials: 0x40001F44; 
+9/3/2022 3:52:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2509, 848, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:12 PM: 127.0.0.1: Serials: 0x40001F6B; 
+9/3/2022 3:52:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2502, 857, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:17 PM: 127.0.0.1: Serials: 0x40001F94; 
+9/3/2022 3:52:23 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2502, 866, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:24 PM: 127.0.0.1: Serials: 0x40001FBF; 
+9/3/2022 3:52:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:29 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2490, 868, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:29 PM: 127.0.0.1: Serials: 0x40001FE4; 
+9/3/2022 3:52:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2478, 868, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:34 PM: 127.0.0.1: Serials: 0x40002008; 
+9/3/2022 3:52:39 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:40 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2470, 868, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:40 PM: 127.0.0.1: Serials: 0x40002030; 
+9/3/2022 3:52:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:48 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2460, 854, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:48 PM: 127.0.0.1: Serials: 0x40002054; 
+9/3/2022 3:52:53 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2443, 866, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:54 PM: 127.0.0.1: Serials: 0x40002078; 
+9/3/2022 3:52:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:52:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2446, 876, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:52:59 PM: 127.0.0.1: Serials: 0x4000209E; 
+9/3/2022 3:53:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2439, 885, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:04 PM: 127.0.0.1: Serials: 0x400020C3; 
+9/3/2022 3:53:08 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:09 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2432, 892, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:09 PM: 127.0.0.1: Serials: 0x400020EA; 
+9/3/2022 3:53:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:15 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2434, 902, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:15 PM: 127.0.0.1: Serials: 0x4000210F; 
+9/3/2022 3:53:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2446, 904, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:20 PM: 127.0.0.1: Serials: 0x40002136; 
+9/3/2022 3:53:23 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2458, 907, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:24 PM: 127.0.0.1: Serials: 0x4000215D; 
+9/3/2022 3:53:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:29 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2474, 903, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:29 PM: 127.0.0.1: Serials: 0x40002182; 
+9/3/2022 3:53:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2492, 894, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:37 PM: 127.0.0.1: Serials: 0x400021A7; 
+9/3/2022 3:53:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2484, 881, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:44 PM: 127.0.0.1: Serials: 0x400021CD; 
+9/3/2022 3:53:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2473, 879, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:50 PM: 127.0.0.1: Serials: 0x400021F3; 
+9/3/2022 3:53:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:53:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2458, 879, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:53:54 PM: 127.0.0.1: Serials: 0x40002217; 
+9/3/2022 3:54:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:54:05 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2499, 874, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:54:05 PM: 127.0.0.1: Serials: 0x4000223B; 
+9/3/2022 3:54:09 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:54:10 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2512, 874, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:54:10 PM: 127.0.0.1: Serials: 0x4000225F; 
+9/3/2022 3:54:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:54:15 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2511, 885, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:54:15 PM: 127.0.0.1: Serials: 0x40002284; 
+9/3/2022 3:54:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:54:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2524, 873, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:54:20 PM: 127.0.0.1: Serials: 0x400022A8; 
+9/3/2022 3:54:29 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:54:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2519, 853, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:54:30 PM: 127.0.0.1: Serials: 0x400022CC; 
+9/3/2022 3:54:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 3:55:02 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:55:03 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2426, 869, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:55:03 PM: 127.0.0.1: Serials: 0x40002309; 
+9/3/2022 3:55:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner trees5 set homerange 0'
+9/3/2022 3:55:46 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2454, 827, 2) in Sosaria: "spawner" "trees5" "set" "homerange" "0"
+9/3/2022 3:55:46 PM: 127.0.0.1: Serials: 0x4000232E; 
+9/3/2022 3:56:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2294 805'
+9/3/2022 3:56:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'staex xxx'
+9/3/2022 3:56:53 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2558 977'
+##############################
+Log started on 9/3/2022 4:00:32 PM
+
+9/3/2022 4:00:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner skeleton'
+9/3/2022 4:00:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2406, 883, 2) in Sosaria: "spawner" "skeleton"
+9/3/2022 4:00:44 PM: 127.0.0.1: Serials: 0x40001605; 
+9/3/2022 4:01:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'staex ffff'
+9/3/2022 4:01:09 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+9/3/2022 4:01:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (2402, 882, 2) to (2406, 886, 2) in Sosaria (Items, Mobiles)
+9/3/2022 4:04:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'decorate '
+9/3/2022 4:05:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (5470 objects)
+9/3/2022 4:05:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 4:05:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 5470 objects
+9/3/2022 4:05:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'decorate '
+9/3/2022 4:06:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 4:07:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') starting facet clear of Sosaria (5052 objects)
+9/3/2022 4:07:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'clearfacet '
+9/3/2022 4:07:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 5052 objects
+9/3/2022 4:07:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'decorate '
+9/3/2022 4:07:31 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 4:08:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2257 794'
+9/3/2022 4:08:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'freeze '
+9/3/2022 4:08:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2559 986'
+9/3/2022 4:08:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') invoking freeze from (2257, 794) to (2559, 986) in Sosaria
+##############################
+Log started on 9/3/2022 4:30:29 PM
+
+9/3/2022 4:31:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/3/2022 4:32:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:32:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+9/3/2022 4:32:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (2516, 862, 2) to (2524, 869, 2) in Sosaria (Items, Mobiles)
+9/3/2022 4:33:01 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:33:05 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+9/3/2022 4:33:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (2483, 833, 4) to (2501, 842, 40) in Sosaria (Items, Mobiles)
+9/3/2022 4:33:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:33:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 4:33:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x4000263A (MeetingSpots)
+9/3/2022 4:38:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:38:10 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 4:38:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x4000263F (MeetingSpots)
+9/3/2022 4:38:23 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:38:27 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 4:38:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x4000263C (MeetingSpots)
+9/3/2022 4:38:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:38:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+9/3/2022 4:38:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (2456, 879, 2) to (2463, 884, 2) in Sosaria (Items, Mobiles)
+9/3/2022 4:38:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+9/3/2022 4:38:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (2471, 897, 2) to (2473, 899, 2) in Sosaria (Items, Mobiles)
+9/3/2022 4:39:46 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:39:51 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 4:39:53 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40002631 (MeetingSpots)
+9/3/2022 4:40:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:40:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 4:40:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40002633 (MeetingSpots)
+9/3/2022 4:40:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:41:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:41:35 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:41:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:42:01 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:42:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:43:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:47:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/3/2022 4:48:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+9/3/2022 4:48:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:48:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:49:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:50:15 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/3/2022 4:53:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 4:53:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 4:53:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+##############################
+Log started on 9/3/2022 4:56:28 PM
+
+9/3/2022 5:00:01 PM: 127.0.0.1: Property has been set. (17585)
+9/3/2022 5:00:01 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global set weight 2 where premiumspawner'
+9/3/2022 5:00:08 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+9/3/2022 5:00:20 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2089 659'
+9/3/2022 5:00:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'staex sdfslkdj'
+9/3/2022 5:00:40 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 2749 1128'
+9/3/2022 5:15:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/3/2022 5:15:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+##############################
+Log started on 9/3/2022 6:25:06 PM
+
+9/3/2022 6:25:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/3/2022 6:25:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 6:30:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 6:31:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+##############################
+Log started on 9/3/2022 6:52:19 PM
+
+9/3/2022 6:54:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+9/3/2022 6:54:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+9/3/2022 6:55:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add adventur'
+9/3/2022 6:55:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add citize'
+9/3/2022 6:56:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner adventurereast set homerange 0'
+9/3/2022 6:56:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2997, 995, 0) in Sosaria: "spawner" "adventurereast" "set" "homerange" "0"
+9/3/2022 6:56:36 PM: 127.0.0.1: Serials: 0x40012F3B; 
+9/3/2022 6:56:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add spawner adventurersouth set homerange 0'
+9/3/2022 6:56:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3000, 991, 0) in Sosaria: "spawner" "adventurersouth" "set" "homerange" "0"
+9/3/2022 6:56:54 PM: 127.0.0.1: Serials: 0x40013132; 
+9/3/2022 6:57:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 6:57:31 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'dupe '
+9/3/2022 6:57:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') duping 0x40052165 (MeetingPets) (inBag=False; amount=1)
+9/3/2022 6:57:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') duped 0x40052165 (MeetingPets) creating 0x40013475 (MeetingPets)
+9/3/2022 6:57:35 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 6:57:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set name west'
+9/3/2022 6:57:53 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'name' of 0x40013475 (MeetingPets) to 'west'
+9/3/2022 6:57:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set weight 2'
+9/3/2022 6:57:56 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'weight' of 0x40013475 (MeetingPets) to '2'
+9/3/2022 6:57:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set movable true'
+9/3/2022 6:57:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'movable' of 0x40013475 (MeetingPets) to 'True'
+9/3/2022 6:58:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+9/3/2022 6:58:21 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'runuospawnerexporter '
+9/3/2022 6:58:27 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 6:58:29 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40051EBF (MeetingSpots)
+9/3/2022 6:58:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 6:58:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'dupe '
+9/3/2022 6:58:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') duping 0x40050F77 (WorkingSpots) (inBag=False; amount=1)
+9/3/2022 6:58:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') duped 0x40050F77 (WorkingSpots) creating 0x40013A90 (WorkingSpots)
+9/3/2022 6:58:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'dupe '
+9/3/2022 6:58:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') duping 0x40050F78 (WorkingSpots) (inBag=False; amount=1)
+9/3/2022 6:58:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') duped 0x40050F78 (WorkingSpots) creating 0x40013AF5 (WorkingSpots)
+9/3/2022 6:58:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 6:59:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set weight 2'
+9/3/2022 6:59:15 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'weight' of 0x40013A90 (WorkingSpots) to '2'
+9/3/2022 6:59:16 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set weight 2'
+9/3/2022 6:59:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'weight' of 0x40013AF5 (WorkingSpots) to '2'
+9/3/2022 6:59:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set movable true'
+9/3/2022 6:59:23 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'movable' of 0x40013AF5 (WorkingSpots) to 'True'
+9/3/2022 6:59:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set movable true'
+9/3/2022 6:59:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'movable' of 0x40013A90 (WorkingSpots) to 'True'
+9/3/2022 6:59:46 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+9/3/2022 6:59:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+9/3/2022 7:00:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'staex dsfsdf'
+9/3/2022 7:02:07 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+9/3/2022 7:02:09 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (2994, 988, -5) to (3006, 1000, 0) in Sosaria (Items, Mobiles)
+9/3/2022 7:02:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/3/2022 7:03:11 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/3/2022 7:09:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add horse'
+9/3/2022 7:09:25 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3031, 910, 0) in Sosaria: "horse"
+9/3/2022 7:09:25 PM: 127.0.0.1: Serials: 0x1EF55; 
+9/3/2022 7:09:44 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/3/2022 7:09:46 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x1EF55 "a horse" (no account)
+9/3/2022 7:10:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+9/3/2022 7:13:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '

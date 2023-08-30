@@ -1,0 +1,40 @@
+##############################
+Log started on 7/24/2022 2:29:10 AM
+
+7/24/2022 2:30:04 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill elementalism'
+7/24/2022 2:30:07 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill elementalism 100'
+7/24/2022 2:30:10 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Elementalism.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+7/24/2022 2:30:11 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/24/2022 2:30:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'allspells '
+7/24/2022 2:30:50 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') filling spellbook 0x4002F24D (ElementalSpellbook)
+7/24/2022 2:31:35 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/24/2022 2:31:37 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0xCA06 "a lightning elemental" (no account)
+7/24/2022 2:31:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/24/2022 2:31:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 7/24/2022 2:35:43 AM
+
+7/24/2022 2:36:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add tome'
+7/24/2022 2:36:14 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3041, 1067, 0) in Sosaria: "Artifact_LithosTome"
+7/24/2022 2:36:14 AM: 127.0.0.1: Serials: 0x4002CF5F; 
+7/24/2022 2:36:25 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill elementalism 100'
+7/24/2022 2:36:28 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Elementalism.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+7/24/2022 2:36:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/24/2022 2:36:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'allspells '
+7/24/2022 2:36:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') filling spellbook 0x4002CF5F (Artifact_LithosTome)
+7/24/2022 2:37:00 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/24/2022 2:37:09 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 7/24/2022 2:57:58 AM
+
+7/24/2022 2:58:19 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/24/2022 2:58:27 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Controlled' of 0xF4EB "a dog" (no account) to 'True'
+7/24/2022 2:58:33 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'ControlMaster' of 0xF4EB "a dog" (no account) to '0x1 "Dungeon Master"'
+7/24/2022 2:59:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+7/24/2022 2:59:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+7/24/2022 3:05:12 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 7/24/2022 3:05:38 AM
+
+7/24/2022 3:06:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/24/2022 3:06:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0xF4EB "a dog" (no account)

@@ -1,0 +1,13 @@
+# This file contains a list of all tiles to be ignored when the "NoDraw"
+# option is not active.
+# Lines starting with T are terrain tiles, S indicated static tiles.
+# A - between numbers indicates a range of tiles.
+
+#Terrain
+T$2
+
+#Statics
+S$1
+S$2198-$21A4
+S$21BC
+S$5690

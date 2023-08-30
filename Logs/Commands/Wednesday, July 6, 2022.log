@@ -1,0 +1,73 @@
+##############################
+Log started on 7/6/2022 4:20:59 AM
+
+7/6/2022 4:21:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/6/2022 4:21:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+7/6/2022 4:21:56 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+7/6/2022 4:21:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+7/6/2022 4:22:06 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add gold 60000'
+7/6/2022 4:22:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (4694, 964, 3) in Sosaria: "gold" "60000"
+7/6/2022 4:22:08 AM: 127.0.0.1: Serials: 0x4001E577; 
+7/6/2022 4:22:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add housep'
+7/6/2022 4:22:26 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (4692, 964, 3) in Sosaria: "HousePlacementTool"
+7/6/2022 4:22:26 AM: 127.0.0.1: Serials: 0x40020153; 
+7/6/2022 4:22:51 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add bankcheck 900000'
+7/6/2022 4:22:52 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (4693, 965, 3) in Sosaria: "bankcheck" "900000"
+7/6/2022 4:22:52 AM: 127.0.0.1: Serials: 0x40021239; 
+7/6/2022 4:23:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/6/2022 4:23:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 7/6/2022 4:24:32 AM
+
+7/6/2022 4:25:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 3038 662'
+7/6/2022 4:25:44 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add bankcheck 900000'
+7/6/2022 4:25:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3042, 682, 0) in Sosaria: "bankcheck" "900000"
+7/6/2022 4:25:45 AM: 127.0.0.1: Serials: 0x40029E99; 
+7/6/2022 4:25:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+7/6/2022 4:25:50 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+7/6/2022 4:25:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add housep'
+7/6/2022 4:25:56 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3042, 681, 0) in Sosaria: "HousePlacementTool"
+7/6/2022 4:25:56 AM: 127.0.0.1: Serials: 0x4002B32D; 
+7/6/2022 4:26:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/6/2022 4:26:09 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 7/6/2022 4:36:11 AM
+
+7/6/2022 4:36:37 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 3038 662'
+7/6/2022 4:36:40 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add bankcheck 900000'
+7/6/2022 4:36:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3037, 663, 0) in Sosaria: "bankcheck" "900000"
+7/6/2022 4:36:41 AM: 127.0.0.1: Serials: 0x4002710E; 
+7/6/2022 4:36:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+7/6/2022 4:36:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+7/6/2022 4:36:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add housep'
+7/6/2022 4:36:51 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3038, 661, 0) in Sosaria: "HousePlacementTool"
+7/6/2022 4:36:51 AM: 127.0.0.1: Serials: 0x400294A6; 
+7/6/2022 4:36:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/6/2022 4:36:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x4001026F (FishSteak)
+7/6/2022 4:36:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/6/2022 4:37:00 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x4000C954 (Skillet)
+7/6/2022 4:37:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/6/2022 4:37:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x4001183B (CherryLog)
+7/6/2022 4:37:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/6/2022 4:37:04 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x400113B8 (CherryLog)
+7/6/2022 4:37:06 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'save '
+7/6/2022 4:37:24 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/6/2022 4:37:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 7/6/2022 4:40:40 AM
+
+##############################
+Log started on 7/6/2022 4:41:29 AM
+
+7/6/2022 4:42:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/6/2022 4:42:12 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 7/6/2022 4:48:48 AM
+
+7/6/2022 4:49:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/6/2022 4:49:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'
+##############################
+Log started on 7/6/2022 4:55:58 AM
+
+7/6/2022 4:56:07 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/6/2022 4:56:18 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'

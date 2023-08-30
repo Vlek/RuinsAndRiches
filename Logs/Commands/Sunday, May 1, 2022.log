@@ -1,0 +1,44 @@
+##############################
+Log started on 5/1/2022 3:42:12 AM
+
+##############################
+Log started on 5/1/2022 3:48:58 AM
+
+##############################
+Log started on 5/1/2022 3:59:48 AM
+
+##############################
+Log started on 5/1/2022 4:15:05 AM
+
+##############################
+Log started on 5/1/2022 8:05:44 AM
+
+##############################
+Log started on 5/1/2022 8:07:42 AM
+
+##############################
+Log started on 5/1/2022 8:08:36 AM
+
+##############################
+Log started on 5/1/2022 4:36:10 PM
+
+##############################
+Log started on 5/1/2022 4:39:01 PM
+
+5/1/2022 4:39:14 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set movable true'
+5/1/2022 4:39:21 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'movable' of 0x4001EAC0 (RulesBoard) to 'True'
+5/1/2022 4:40:18 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add bulletinboard'
+5/1/2022 4:40:19 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3703, 3464, 30) in Sosaria: "bulletinboard"
+5/1/2022 4:40:19 PM: 127.0.0.1: Serials: 0x4001B31D; 
+5/1/2022 4:40:24 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'flip '
+5/1/2022 4:40:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get z'
+5/1/2022 4:40:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set z 35'
+5/1/2022 4:40:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'z' of 0x4001EAC0 (RulesBoard) to '35'
+5/1/2022 4:40:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set z 33'
+5/1/2022 4:40:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'z' of 0x4001EAC0 (RulesBoard) to '33'
+##############################
+Log started on 5/1/2022 4:47:11 PM
+
+5/1/2022 4:47:26 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set movable true'
+5/1/2022 4:47:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'movable' of 0x4001EAC0 (RulesBoard) to 'True'
+5/1/2022 4:47:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '

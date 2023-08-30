@@ -1,0 +1,54 @@
+##############################
+Log started on 4/13/2022 4:15:54 AM
+
+4/13/2022 4:17:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+4/13/2022 4:18:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get map where flamebase'
+4/13/2022 4:18:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get map where flamebaseempty'
+4/13/2022 4:18:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get map where flamebase'
+4/13/2022 4:19:33 AM: 127.0.0.1: Map = SerpentIsland (15)
+4/13/2022 4:19:33 AM: 127.0.0.1: Map = Underworld (2)
+4/13/2022 4:19:33 AM: 127.0.0.1: Map = SavagedEmpire (19)
+4/13/2022 4:19:33 AM: 127.0.0.1: Map = Lodor (28)
+4/13/2022 4:19:33 AM: 127.0.0.1: Map = Sosaria (23)
+4/13/2022 4:19:33 AM: 127.0.0.1: Map = IslesDread
+4/13/2022 4:19:33 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get map where searchbase'
+4/13/2022 4:19:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get map where banebase'
+4/13/2022 4:19:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get map where flamesbase'
+4/13/2022 4:20:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set map lodor'
+4/13/2022 4:20:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'map' of 0x1 "Dungeon Master" ('Admin') to 'Lodor'
+4/13/2022 4:20:15 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:20:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 6085 69'
+4/13/2022 4:21:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+4/13/2022 4:21:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:21:50 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:22:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:22:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:23:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:23:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:23:57 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:24:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:24:18 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbaseempty'
+4/13/2022 4:24:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:25:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:27:24 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:27:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 6216 1343'
+4/13/2022 4:27:35 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+4/13/2022 4:27:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+##############################
+Log started on 4/13/2022 4:36:44 AM
+
+4/13/2022 4:37:50 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+4/13/2022 4:38:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:38:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get map location where flamesbase'
+4/13/2022 4:39:00 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go 6966 3848'
+4/13/2022 4:39:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:39:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'where '
+4/13/2022 4:48:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+4/13/2022 4:49:09 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbaseempty'
+4/13/2022 4:49:11 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'global get location where flamesbase'
+##############################
+Log started on 4/13/2022 5:02:30 AM
+
+##############################
+Log started on 4/13/2022 5:14:08 AM
+

@@ -1,0 +1,25 @@
+##############################
+Log started on 7/10/2022 4:04:44 AM
+
+7/10/2022 4:05:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill elementalism 100'
+7/10/2022 4:05:18 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Elementalism.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+7/10/2022 4:05:24 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add elementa'
+7/10/2022 4:05:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3037, 663, 0) in Sosaria: "Elemental_Gate_Scroll"
+7/10/2022 4:05:30 AM: 127.0.0.1: Serials: 0x4001096F; 
+7/10/2022 4:05:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set amount 10'
+7/10/2022 4:05:40 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'amount' of 0x4001096F (Elemental_Gate_Scroll) to '10'
+7/10/2022 4:05:50 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add recallrune'
+7/10/2022 4:05:51 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3038, 662, 0) in Sosaria: "recallrune"
+7/10/2022 4:05:51 AM: 127.0.0.1: Serials: 0x4001109B; 
+7/10/2022 4:05:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add elemental_m'
+7/10/2022 4:06:18 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3037, 662, 0) in Sosaria: "Elemental_Rune_Scroll"
+7/10/2022 4:06:18 AM: 127.0.0.1: Serials: 0x400116D6; 
+##############################
+Log started on 7/10/2022 6:28:03 PM
+
+7/10/2022 6:28:13 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/10/2022 6:28:27 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill magery 100'
+7/10/2022 6:28:29 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Magery.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+7/10/2022 6:28:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/10/2022 6:29:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/10/2022 6:29:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '

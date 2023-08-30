@@ -1,0 +1,25 @@
+##############################
+Log started on 6/10/2022 3:45:55 PM
+
+##############################
+Log started on 6/10/2022 4:21:59 PM
+
+6/10/2022 4:22:28 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/10/2022 4:51:00 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/10/2022 4:51:42 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+6/10/2022 4:51:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x18705 "Terentia" (no account)
+6/10/2022 4:51:48 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+6/10/2022 4:53:58 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+##############################
+Log started on 6/10/2022 5:02:46 PM
+
+6/10/2022 5:03:22 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/10/2022 5:03:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+6/10/2022 5:05:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/10/2022 5:06:23 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+##############################
+Log started on 6/10/2022 5:10:55 PM
+
+6/10/2022 5:11:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+6/10/2022 5:11:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x559B "Sugigoth" (no account)
+6/10/2022 5:11:43 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '

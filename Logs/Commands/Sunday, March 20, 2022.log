@@ -1,0 +1,43 @@
+##############################
+Log started on 3/20/2022 10:14:55 AM
+
+3/20/2022 10:15:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+3/20/2022 10:58:37 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 3/20/2022 11:03:43 AM
+
+3/20/2022 11:04:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+3/20/2022 11:04:48 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+3/20/2022 11:04:53 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add bankcheck 100000'
+3/20/2022 11:04:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (1773, 2213, 55) in Lodor: "bankcheck" "100000"
+3/20/2022 11:04:55 AM: 127.0.0.1: Serials: 0x4001A677; 
+3/20/2022 11:05:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+3/20/2022 11:05:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+##############################
+Log started on 3/20/2022 11:11:12 AM
+
+3/20/2022 11:11:36 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+3/20/2022 11:11:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+3/20/2022 11:11:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add gold 60000'
+3/20/2022 11:11:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (1773, 2211, 55) in Lodor: "gold" "60000"
+3/20/2022 11:11:43 AM: 127.0.0.1: Serials: 0x40018BE4; 
+##############################
+Log started on 3/20/2022 11:14:35 AM
+
+3/20/2022 11:15:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+##############################
+Log started on 3/20/2022 11:17:02 AM
+
+3/20/2022 11:18:40 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+##############################
+Log started on 3/20/2022 11:23:33 AM
+
+3/20/2022 11:25:17 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+3/20/2022 11:25:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'bank '
+3/20/2022 11:25:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') opening bank box of 0x1 "Dungeon Master" ('Admin')
+3/20/2022 11:25:25 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add gold 60000'
+3/20/2022 11:25:26 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (1775, 2218, 55) in Lodor: "gold" "60000"
+3/20/2022 11:25:26 AM: 127.0.0.1: Serials: 0x4001986A; 
+3/20/2022 11:25:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add gold 60000'
+3/20/2022 11:25:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (1775, 2218, 55) in Lodor: "gold" "60000"
+3/20/2022 11:25:30 AM: 127.0.0.1: Serials: 0x4001997B; 

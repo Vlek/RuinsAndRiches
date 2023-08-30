@@ -1,0 +1,16 @@
+##############################
+Log started on 9/16/2022 3:29:28 AM
+
+9/16/2022 3:29:52 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/16/2022 3:29:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x4000E8E7 (Artifact_WrathOfTheDryad)
+9/16/2022 3:29:55 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/16/2022 3:29:56 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40013337 (FrankenPorterItem)
+9/16/2022 3:29:57 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/16/2022 3:29:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x40015378 (BookOfNinjitsu)
+9/16/2022 3:29:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/16/2022 3:30:00 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x400153B2 (ShinobiScroll)
+9/16/2022 3:30:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+9/16/2022 3:30:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x400131B1 (GnarledStaff)
+9/16/2022 3:30:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'save '
+9/16/2022 3:30:32 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+9/16/2022 3:30:36 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'

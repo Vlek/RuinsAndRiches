@@ -1,0 +1,57 @@
+##############################
+Log started on 5/26/2022 6:48:16 AM
+
+5/26/2022 6:48:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unhide '
+5/26/2022 6:48:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') unhiding 0x1 "Dungeon Master" ('Admin')
+5/26/2022 6:48:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill camping 100'
+5/26/2022 6:48:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Camping.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+5/26/2022 6:48:56 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add campfire'
+5/26/2022 6:48:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3718, 3493, 0) in Sosaria: "campfire"
+5/26/2022 6:49:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add kindling'
+5/26/2022 6:49:04 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3718, 3493, 0) in Sosaria: "kindling"
+5/26/2022 6:49:04 AM: 127.0.0.1: Serials: 0x40010650; 
+5/26/2022 6:50:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set hits 0 stam 0'
+5/26/2022 6:50:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'hits' of 0x1 "Dungeon Master" ('Admin') to '0'
+5/26/2022 6:50:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'stam' of 0x1 "Dungeon Master" ('Admin') to '0'
+5/26/2022 6:50:15 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+5/26/2022 6:50:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+5/26/2022 6:50:44 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+##############################
+Log started on 5/26/2022 6:53:17 AM
+
+5/26/2022 6:53:33 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unhide '
+5/26/2022 6:53:33 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') unhiding 0x1 "Dungeon Master" ('Admin')
+5/26/2022 6:53:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill camping 100'
+5/26/2022 6:53:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Camping.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+5/26/2022 6:53:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add kindling'
+5/26/2022 6:53:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3704, 3484, 0) in Sosaria: "kindling"
+5/26/2022 6:53:43 AM: 127.0.0.1: Serials: 0x4000F7E0; 
+5/26/2022 6:53:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add bedroll'
+5/26/2022 6:53:48 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3704, 3484, 0) in Sosaria: "bedroll"
+5/26/2022 6:53:48 AM: 127.0.0.1: Serials: 0x4000FCB9; 
+5/26/2022 6:54:03 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set hits 1 stam 1'
+5/26/2022 6:54:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'hits' of 0x1 "Dungeon Master" ('Admin') to '1'
+5/26/2022 6:54:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'stam' of 0x1 "Dungeon Master" ('Admin') to '1'
+##############################
+Log started on 5/26/2022 7:07:25 AM
+
+5/26/2022 7:07:38 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'unhide '
+5/26/2022 7:07:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') unhiding 0x1 "Dungeon Master" ('Admin')
+5/26/2022 7:07:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill camping 100'
+5/26/2022 7:07:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Camping.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+5/26/2022 7:07:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add kindling'
+5/26/2022 7:07:48 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3704, 3484, 0) in Sosaria: "kindling"
+5/26/2022 7:07:48 AM: 127.0.0.1: Serials: 0x4000F34F; 
+5/26/2022 7:07:53 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add bedroll'
+5/26/2022 7:07:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3704, 3484, 0) in Sosaria: "bedroll"
+5/26/2022 7:07:54 AM: 127.0.0.1: Serials: 0x4000F94C; 
+5/26/2022 7:11:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 5/26/2022 7:12:24 AM
+
+##############################
+Log started on 5/26/2022 7:15:33 AM
+
+5/26/2022 8:10:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set hits 1 stam 1'
+5/26/2022 8:10:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'hits' of 0x1 "Dungeon Master" ('Admin') to '1'
+5/26/2022 8:10:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'stam' of 0x1 "Dungeon Master" ('Admin') to '1'

@@ -1,0 +1,60 @@
+##############################
+Log started on 12/1/2021 8:44:06 AM
+
+12/1/2021 8:46:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+12/1/2021 8:46:34 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add brownbear set cantwalk true'
+12/1/2021 8:46:36 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2947, 1327, 0) in Lodor: "brownbear" "set" "cantwalk" "true"
+12/1/2021 8:46:36 AM: 127.0.0.1: Serials: 0x100B3; 
+12/1/2021 8:46:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill taming 100'
+12/1/2021 8:46:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Taming.Base' of 0x1 "Dungeon Master" ('Admin') to '100'
+12/1/2021 8:47:14 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+12/1/2021 8:47:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x100B3 "a brown bear" (no account)
+##############################
+Log started on 12/1/2021 9:25:32 AM
+
+12/1/2021 9:27:48 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'who '
+12/1/2021 9:27:51 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') going to 0x1CC3F "Conan" ('Tim'), Location (3045, 1092, 0), Map Sosaria
+12/1/2021 9:27:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+12/1/2021 9:28:01 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x1A5BA "a hippogriff" (no account)
+12/1/2021 9:28:08 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'setskill fencing 100'
+12/1/2021 9:28:10 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'Fencing.Base' of 0x1CC3F "Conan" ('Tim') to '100'
+12/1/2021 9:29:47 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+12/1/2021 9:30:13 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add mongbat'
+12/1/2021 9:30:14 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3011, 1156, 0) in Sosaria: "mongbat"
+12/1/2021 9:30:14 AM: 127.0.0.1: Serials: 0x11AF8; 
+12/1/2021 9:31:02 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'NoAutoAttack' of 0x1CC3F "Conan" ('Tim') to 'True'
+12/1/2021 9:31:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add mongbat'
+12/1/2021 9:31:06 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3009, 1157, 0) in Sosaria: "mongbat"
+12/1/2021 9:31:06 AM: 127.0.0.1: Serials: 0x11C36; 
+12/1/2021 9:31:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'NoAutoAttack' of 0x1CC3F "Conan" ('Tim') to 'False'
+12/1/2021 9:31:53 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add mongbat'
+12/1/2021 9:31:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3009, 1159, 0) in Sosaria: "mongbat"
+12/1/2021 9:31:54 AM: 127.0.0.1: Serials: 0x11D6C; 
+12/1/2021 9:39:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 12/1/2021 9:40:22 AM
+
+12/1/2021 9:41:04 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add mongbat'
+12/1/2021 9:41:05 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3009, 1156, 0) in Sosaria: "mongbat"
+12/1/2021 9:41:05 AM: 127.0.0.1: Serials: 0xFB4A; 
+##############################
+Log started on 12/1/2021 9:42:42 AM
+
+12/1/2021 9:43:24 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add mongbat'
+12/1/2021 9:43:25 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3009, 1159, 0) in Sosaria: "mongbat"
+12/1/2021 9:43:25 AM: 127.0.0.1: Serials: 0xFAED; 
+12/1/2021 9:50:25 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 12/1/2021 9:52:58 AM
+
+12/1/2021 9:53:57 AM: 127.0.0.1: Player 0x1CC3F "Conan" ('Tim') used command 'autoattack '
+12/1/2021 9:54:06 AM: 127.0.0.1: Player 0x1CC3F "Conan" ('Tim') used command 'autoattack '
+12/1/2021 9:54:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add mongbat'
+12/1/2021 9:54:20 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3015, 1153, 0) in Sosaria: "mongbat"
+12/1/2021 9:54:20 AM: 127.0.0.1: Serials: 0x1139B; 
+12/1/2021 9:54:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+12/1/2021 9:54:41 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x1139B "a mongbat" (no account)
+12/1/2021 9:54:44 AM: 127.0.0.1: Player 0x1CC3F "Conan" ('Tim') used command 'autoattack '
+12/1/2021 9:54:48 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add mongbat'
+12/1/2021 9:54:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (3013, 1152, 0) in Sosaria: "mongbat"
+12/1/2021 9:54:49 AM: 127.0.0.1: Serials: 0x1150E; 

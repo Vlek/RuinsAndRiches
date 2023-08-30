@@ -1,0 +1,17 @@
+##############################
+Log started on 6/24/2022 5:22:57 PM
+
+6/24/2022 5:26:10 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+6/24/2022 5:26:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/24/2022 5:29:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/24/2022 5:33:31 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'dismount '
+6/24/2022 5:33:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') dismounting 0x101BC "Virginia" (no account)
+6/24/2022 5:33:52 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'get bodyvalue'
+6/24/2022 5:35:37 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'set bodyvalue 23'
+6/24/2022 5:35:38 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'bodyvalue' of 0x101BE "a sabreclaw bear" (no account) to '23'
+6/24/2022 5:35:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'wipe '
+6/24/2022 5:35:47 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') wiping from (3004, 1030, 0) to (3004, 1030, 0) in Sosaria (Items, Mobiles)
+6/24/2022 5:37:50 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/24/2022 5:41:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/24/2022 5:42:10 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+6/24/2022 5:45:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '

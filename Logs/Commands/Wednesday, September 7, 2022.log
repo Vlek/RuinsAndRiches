@@ -1,0 +1,16 @@
+##############################
+Log started on 9/7/2022 4:55:48 AM
+
+9/7/2022 4:56:12 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'add quiver'
+9/7/2022 4:56:15 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') building at (2990, 985, 5) in Sosaria: "ArcherQuiver"
+9/7/2022 4:56:15 AM: 127.0.0.1: Serials: 0x4000F423; 
+##############################
+Log started on 9/7/2022 5:01:47 AM
+
+9/7/2022 5:03:45 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'townhouses '
+9/7/2022 5:13:23 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+9/7/2022 5:13:32 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+9/7/2022 5:13:44 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'CastRecovery' of ... to '10'
+##############################
+Log started on 9/7/2022 5:20:00 AM
+

@@ -1,0 +1,28 @@
+##############################
+Log started on 5/24/2022 11:38:08 AM
+
+##############################
+Log started on 5/24/2022 11:39:11 AM
+
+##############################
+Log started on 5/24/2022 11:44:13 AM
+
+##############################
+Log started on 5/24/2022 6:52:31 PM
+
+##############################
+Log started on 5/24/2022 6:55:15 PM
+
+##############################
+Log started on 5/24/2022 7:01:22 PM
+
+5/24/2022 7:02:04 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/24/2022 7:02:45 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'area get z'
+5/24/2022 7:02:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'area set z 1'
+5/24/2022 7:02:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'z' of 0x40056F35 (WorkingSpots) to '1'
+5/24/2022 7:02:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'z' of 0x40004561 (AnvilHit) to '1'
+5/24/2022 7:03:09 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+5/24/2022 7:03:17 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+5/24/2022 7:04:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+5/24/2022 7:05:39 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'decorate '
+5/24/2022 7:06:23 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '

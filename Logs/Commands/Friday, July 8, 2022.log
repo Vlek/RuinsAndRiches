@@ -1,0 +1,19 @@
+##############################
+Log started on 7/8/2022 4:25:40 PM
+
+7/8/2022 4:25:54 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/8/2022 4:26:57 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/8/2022 4:27:10 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/8/2022 4:27:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+7/8/2022 4:27:55 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'tele '
+7/8/2022 4:28:12 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+7/8/2022 4:28:30 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/8/2022 4:28:32 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x6C62 "a mind flayer" (no account)
+7/8/2022 4:28:33 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/8/2022 4:28:34 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x6C5A "a mind flayer" (no account)
+7/8/2022 4:28:35 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'remove '
+7/8/2022 4:28:36 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') deleting 0x6C65 "Sindriira" (no account)
+7/8/2022 4:28:49 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'props '
+7/8/2022 4:28:59 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'kill '
+7/8/2022 4:29:00 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') killing 0x5818 "Sondipri" (no account)
+7/8/2022 4:29:06 PM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') set property 'AccessLevel' of 0x1 "Dungeon Master" ('Admin') to 'Player'

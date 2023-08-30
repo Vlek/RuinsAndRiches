@@ -1,0 +1,48 @@
+##############################
+Log started on 5/8/2022 10:43:27 AM
+
+5/8/2022 10:45:54 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'pointlog '
+5/8/2022 10:46:04 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+5/8/2022 10:48:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+5/8/2022 10:49:51 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:50:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:53:53 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:54:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:54:59 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:56:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:56:56 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:57:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:58:00 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'targetlog '
+5/8/2022 10:58:30 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'decorate '
+5/8/2022 10:58:37 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:58:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:59:17 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:59:25 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 10:59:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:01:56 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'restart '
+##############################
+Log started on 5/8/2022 11:03:04 AM
+
+5/8/2022 11:03:27 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'decorate '
+##############################
+Log started on 5/8/2022 11:08:43 AM
+
+5/8/2022 11:09:31 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'buildworld '
+5/8/2022 11:13:43 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:14:12 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:15:02 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:18:39 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:19:46 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:20:36 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+5/8/2022 11:21:21 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:23:09 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:23:29 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'm tele'
+5/8/2022 11:23:33 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:24:07 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:24:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:24:42 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:24:49 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:24:58 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:26:16 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:26:27 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
+5/8/2022 11:26:37 AM: 127.0.0.1: Owner 0x1 "Dungeon Master" ('Admin') used command 'go '
