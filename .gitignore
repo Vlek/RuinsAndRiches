@@ -1,0 +1,6 @@
+# Ignoring game save data:
+Data.bin
+Data.hash
+
+# Ignoring all logs:
+Logs/**
