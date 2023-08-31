@@ -4,3 +4,6 @@ Data.hash
 
 # Ignoring all logs:
 Logs/**
+
+# Ignoring the Bin folder where we output World.exe
+Bin/**
