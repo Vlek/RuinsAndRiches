@@ -698,7 +698,7 @@ namespace Server.Items
 		{
 			if ( from.Skills[SkillName.Musicianship].Base < 30 )
 			{
-				from.SendMessage("Your need to at least a natural neophyte skill in musicianship to equip that!");
+				from.SendMessage("You need to have achieved neophyte in musicianship to equip that!");
 				return false;
 			}
 

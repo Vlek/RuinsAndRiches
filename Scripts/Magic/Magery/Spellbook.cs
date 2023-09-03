@@ -549,19 +549,19 @@ namespace Server.Items
 		{
 			if ( this is SongBook ){ if ( from.Skills[SkillName.Musicianship].Base < 30 )
 			{
-				from.SendMessage("Your need at least a natural neophyte skill in musicianship to equip that!");
+				from.SendMessage("You need to have achieved neophyte in musicianship to equip that!");
 				return false;
 			}}
 			else if ( this is NecromancerSpellbook ){ if ( from.Skills[SkillName.Necromancy].Base < 30 )
 			{
-				from.SendMessage("Your need at least a natural neophyte skill in necromancy to equip that!");
+				from.SendMessage("You need to have achieved neophyte in necromancy to equip that!");
 				return false;
 			}}
 			else if ( this is ElementalSpellbook )
 			{
 				if ( from.Skills[SkillName.Elementalism].Base < 30 )
 				{
-					from.SendMessage("Your need at least a natural neophyte skill in elementalism to equip that!");
+					from.SendMessage("You need to have achieved neophyte in elementalism to equip that!");
 					return false;
 				}
 				if ( !ElementalSpell.CanUseBook( this, from, true ) )
@@ -570,22 +570,22 @@ namespace Server.Items
 
 			else if ( this is BookOfNinjitsu ){ if ( from.Skills[SkillName.Ninjitsu].Base < 30 )
 			{
-				from.SendMessage("Your need at least a natural neophyte skill in ninjitsu to equip that!");
+				from.SendMessage("You need to have achieved neophyte in ninjitsu to equip that!");
 				return false;
 			}}
 			else if ( this is BookOfBushido ){ if ( from.Skills[SkillName.Bushido].Base < 30 )
 			{
-				from.SendMessage("Your need at least a natural neophyte skill in bushido to equip that!");
+				from.SendMessage("You need to have achieved neophyte in bushido to equip that!");
 				return false;
 			}}
 			else if ( this is BookOfChivalry ){ if ( from.Skills[SkillName.Knightship].Base < 30 && from.Karma < 0 )
 			{
-				from.SendMessage("Your need at least a natural neophyte skill in knightship to equip that!");
+				from.SendMessage("You need to have achieved neophyte in knightship to equip that!");
 				return false;
 			}}
 			else if ( this is DeathKnightSpellbook ){ if ( from.Skills[SkillName.Knightship].Base < 30 && from.Karma > 0 )
 			{
-				from.SendMessage("Your need at least a natural neophyte skill in knightship to equip that!");
+				from.SendMessage("You need to have achieved neophyte in knightship to equip that!");
 				return false;
 			}}
 			else if ( this is HolyManSpellbook )
