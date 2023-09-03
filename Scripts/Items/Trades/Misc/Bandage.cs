@@ -475,7 +475,7 @@ namespace Server.Items
 
 					if ( toHeal < 1 )
 					{
-						toHeal = 1;
+						toHeal = Utility.RandomMinMax(1, 3);
 						healerNumber = 500968; // You apply the bandages, but they barely help.
 					}
 
