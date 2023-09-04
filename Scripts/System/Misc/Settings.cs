@@ -85,9 +85,9 @@ namespace Server.Misc
 		private static int S_SellCommonChance = 80;
 		private static int S_SellRareChance = 25;
 		private static int S_SellVeryRareChance = 5;
-		private static int S_BuyChance = 50;
-		private static int S_BuyCommonChance = 80;
-		private static int S_BuyRareChance = 70;
+		private static int S_BuyChance = 100;
+		private static int S_BuyCommonChance = 100;
+		private static int S_BuyRareChance = 100;
 		private static bool S_ShinyArmor = true;
 		private static bool S_NewLeather = true;
 		private static bool S_Leopards = true;
