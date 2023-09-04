@@ -1480,49 +1480,6 @@ namespace Server.Mobiles
 			return true;
 		}
 
-		public static void SkillVerification( Mobile m )
-		{
-			if ( m is PlayerMobile )
-			{
-				bool adjust = true;
-
-				if ( m.Skills.Cap == 13000 || m.Skills.Cap == 18000 )
-				{
-					if ( ((PlayerMobile)m).Profession == 1 ){ adjust = false; }
-					else if ( Server.Misc.PlayerSettings.GetKeys( m, "Virtue" ) ){ adjust = false; }
-				}
-				else if ( ( m.Skills.Cap == 40000 || m.Skills.Cap == 45000 ) && m.SkillsTotal <= m.Skills.Cap ){ ((PlayerMobile)m).Profession = 0; adjust = false; }
-				else if ( ( m.Skills.Cap == 10000 || m.Skills.Cap == 15000 ) && m.SkillsTotal <= m.Skills.Cap ){ ((PlayerMobile)m).Profession = 0; adjust = false; }
-				else if ( ( m.Skills.Cap == 11000 || m.Skills.Cap == 16000 ) && m.SkillsTotal <= m.Skills.Cap ){ ((PlayerMobile)m).Profession = 0; adjust = false; }
-
-				if ( adjust )
-				{
-					m.Skills.Cap = 10000;
-					((PlayerMobile)m).Profession = 0;
-					for( int i = 0; i < m.Skills.Length; i++ )
-					{
-						Skill skill = (Skill)m.Skills[i];
-						skill.Base = 0;
-					}
-				}
-
-				if ( ( m.Skills.Cap == 10000 || m.Skills.Cap == 11000 || m.Skills.Cap == 13000 || m.Skills.Cap == 40000 ) && m.StatCap != 250 )
-				{
-					m.StatCap = 250;
-					m.RawStr = 20;
-					m.RawInt = 20;
-					m.RawDex = 20;
-				}
-				else if ( ( m.Skills.Cap == 15000 || m.Skills.Cap == 16000 || m.Skills.Cap == 18000 || m.Skills.Cap == 45000 ) && m.StatCap != 300 )
-				{
-					m.StatCap = 300;
-					m.RawStr = 20;
-					m.RawInt = 20;
-					m.RawDex = 20;
-				}
-			}
-		}
-
 		public override bool CheckMovement( Direction d, out int newZ )
 		{
 			DesignContext context = m_DesignContext;
