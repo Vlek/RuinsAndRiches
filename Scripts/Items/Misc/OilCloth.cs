@@ -15,8 +15,15 @@ namespace Server.Items
 		}
 
 		[Constructable]
-		public OilCloth() : base( 0x175D )
+		public OilCloth() : this( 1 )
 		{
+		}
+
+		[Constructable]
+		public OilCloth( int amount ) : base( 0x175D )
+		{
+			Stackable = true;
+			Amount = amount;
 			Hue = 2001;
 		}
 
@@ -35,7 +42,7 @@ namespace Server.Items
 			if ( Deleted || !from.CanSee( this ) )
 				return false;
 
-			base.ScissorHelper( from, new Bandage(), 1 );
+			base.ScissorHelper( from, new Bandage(), Amount );
 
 			return true;
 		}
