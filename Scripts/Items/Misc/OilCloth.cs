@@ -42,7 +42,7 @@ namespace Server.Items
 			if ( Deleted || !from.CanSee( this ) )
 				return false;
 
-			base.ScissorHelper( from, new Bandage(), Amount );
+			base.ScissorHelper( from, new Bandage(), 1 );
 
 			return true;
 		}
