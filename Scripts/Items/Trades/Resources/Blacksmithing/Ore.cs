@@ -73,12 +73,7 @@ namespace Server.Items
 			if ( !Movable )
 				return;
 			
-			if ( RootParent is BaseCreature )
-			{
-				from.SendLocalizedMessage( 500447 ); // That is not accessible
-				return;
-			}
-			else if ( from.InRange( this.GetWorldLocation(), 2 ) )
+			if ( from.InRange( this.GetWorldLocation(), 2 ) )
 			{
 				from.SendLocalizedMessage( 501971 ); // Select the forge on which to smelt the ore, or another pile of ore with which to combine it.
 				from.Target = new InternalTarget( this );
