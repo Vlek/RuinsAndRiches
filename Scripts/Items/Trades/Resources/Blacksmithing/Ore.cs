@@ -292,6 +292,11 @@ namespace Server.Items
 					}
 				}
 			}
+
+      protected override void OnNonlocalTarget( Mobile from, Object targeted ) 
+      {
+        OnTarget(from, targeted);
+      }
 		}
 	}
 
