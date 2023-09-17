@@ -4,7 +4,7 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public abstract class BaseHides : Item, ICommodity
+	public abstract class BaseHides : Item, ICommodity, IScissorable
 	{
 		private CraftResource m_Resource;
 
@@ -17,6 +17,8 @@ namespace Server.Items
 		
 		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
 		bool ICommodity.IsDeedable { get { return true; } }
+
+    public abstract BaseLeather GetLeather();
 
 		public override void Serialize( GenericWriter writer )
 		{
@@ -65,10 +67,27 @@ namespace Server.Items
 				return 1047023;
 			}
 		}
+
+		public bool Scissor( Mobile from, Scissors scissors )
+		{
+			if ( Deleted || !from.CanSee( this ) )
+      {
+        return false;
+      }
+
+			if ( !from.InRange( this.GetWorldLocation(), 2 ) )
+			{
+        from.SendLocalizedMessage( 500447 ); // That is not accessible.
+				return false;
+			}
+
+			base.ScissorHelper( from, GetLeather(), 1 );
+			return true;
+		}
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class Hides : BaseHides, IScissorable
+	public class Hides : BaseHides
 	{
 		[Constructable]
 		public Hides() : this( 1 )
@@ -98,23 +117,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-			base.ScissorHelper( from, new Leather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new Leather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class SpinedHides : BaseHides, IScissorable
+	public class SpinedHides : BaseHides
 	{
 		[Constructable]
 		public SpinedHides() : this( 1 )
@@ -144,24 +154,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new SpinedLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new SpinedLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class HornedHides : BaseHides, IScissorable
+	public class HornedHides : BaseHides
 	{
 		[Constructable]
 		public HornedHides() : this( 1 )
@@ -191,24 +191,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-			
-			base.ScissorHelper( from, new HornedLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new HornedLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class BarbedHides : BaseHides, IScissorable
+	public class BarbedHides : BaseHides
 	{
 		[Constructable]
 		public BarbedHides() : this( 1 )
@@ -238,24 +228,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new BarbedLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new BarbedLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class NecroticHides : BaseHides, IScissorable
+	public class NecroticHides : BaseHides
 	{
 		[Constructable]
 		public NecroticHides() : this( 1 )
@@ -285,24 +265,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new NecroticLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new NecroticLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class VolcanicHides : BaseHides, IScissorable
+	public class VolcanicHides : BaseHides
 	{
 		[Constructable]
 		public VolcanicHides() : this( 1 )
@@ -332,24 +302,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new VolcanicLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new VolcanicLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class FrozenHides : BaseHides, IScissorable
+	public class FrozenHides : BaseHides
 	{
 		[Constructable]
 		public FrozenHides() : this( 1 )
@@ -379,24 +339,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new FrozenLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new FrozenLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class GoliathHides : BaseHides, IScissorable
+	public class GoliathHides : BaseHides
 	{
 		[Constructable]
 		public GoliathHides() : this( 1 )
@@ -426,24 +376,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new GoliathLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new GoliathLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class DraconicHides : BaseHides, IScissorable
+	public class DraconicHides : BaseHides
 	{
 		[Constructable]
 		public DraconicHides() : this( 1 )
@@ -473,24 +413,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new DraconicLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new DraconicLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class HellishHides : BaseHides, IScissorable
+	public class HellishHides : BaseHides
 	{
 		[Constructable]
 		public HellishHides() : this( 1 )
@@ -520,24 +450,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new HellishLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new HellishLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class DinosaurHides : BaseHides, IScissorable
+	public class DinosaurHides : BaseHides
 	{
 		[Constructable]
 		public DinosaurHides() : this( 1 )
@@ -567,24 +487,14 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new DinosaurLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new DinosaurLeather();
+    }
 	}
 
 	[FlipableAttribute( 0x1079, 0x1078 )]
-	public class AlienHides : BaseHides, IScissorable
+	public class AlienHides : BaseHides
 	{
 		[Constructable]
 		public AlienHides() : this( 1 )
@@ -614,19 +524,9 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( Deleted || !from.CanSee( this ) ) return false;
-
-			if ( !IsChildOf ( from.Backpack ) )
-			{
-				from.SendLocalizedMessage ( 502437 ); // Items you wish to cut must be in your backpack
-				return false;
-			}
-
-			base.ScissorHelper( from, new AlienLeather(), 1 );
-
-			return true;
-		}
+    public override BaseLeather GetLeather()
+    {
+      return new AlienLeather();
+    }
 	}
 }
