@@ -50,6 +50,9 @@ namespace Server.Mobiles
 		}
 
 		public override int Meat{ get{ return 2; } }
+		public override int Hides{ get{ return 18; } }
+		public override HideType HideType{ get{ if ( Utility.RandomBool() ){ return HideType.Frozen; } else { return HideType.Goliath; } } }
+
 		public override int TreasureMapLevel{ get{ return 1; } }
 
 		public FrostTroll( Serial serial ) : base( serial )
