@@ -6,7 +6,7 @@ using Server.Prompts;
 
 namespace Server.Items
 {
-	public class MasterSkeletonsKey : Item
+	public class SkeletonsKey : Item
 	{
 		public override double DefaultWeight
 		{
@@ -14,9 +14,9 @@ namespace Server.Items
 		}
 
 		[Constructable]
-		public MasterSkeletonsKey() : base( 0x410B )
+		public SkeletonsKey() : base( 0x410A )
 		{
-			Name = "master skeleton key";
+			Name = "skeleton key";
 		}
 
 		public override void OnDoubleClick( Mobile from )
@@ -38,14 +38,14 @@ namespace Server.Items
 		public override void AddNameProperties( ObjectPropertyList list )
 		{
 			base.AddNameProperties( list );
-			list.Add( 1049644, "Open any locked container or door" );
+			list.Add( 1049644, "Open most locked containers or doors" );
 		}
 
 		private class UnlockTarget : Target
 		{
-			private MasterSkeletonsKey m_Key;
+			private SkeletonsKey m_Key;
 
-			public UnlockTarget( MasterSkeletonsKey key ) : base( 1, false, TargetFlags.None )
+			public UnlockTarget( SkeletonsKey key ) : base( 1, false, TargetFlags.None )
 			{
 				m_Key = key;
 				CheckLOS = true;
@@ -59,11 +59,11 @@ namespace Server.Items
 				}
 				else if ( targeted == m_Key )
 				{
-					from.SendMessage( "This key is to unlock almost any container." );
+					from.SendMessage( "This key is to unlock certain containers." );
 				}
 				else if ( targeted is BaseHouseDoor )  // house door check
 				{
-					from.SendMessage( "This key is to unlock almost any container." );
+					from.SendMessage( "This key is to unlock certain containers." );
 				}
 				else if ( targeted is BookBox )  // cursed box of books
 				{
@@ -71,7 +71,7 @@ namespace Server.Items
 				}
 				else if ( targeted is UnidentifiedArtifact || targeted is UnidentifiedItem || targeted is CurseItem )
 				{
-					from.SendMessage( "This key is to unlock almost any container." );
+					from.SendMessage( "This key is to unlock any container." );
 				}
 				else if ( targeted is BaseDoor )
 				{
@@ -87,7 +87,6 @@ namespace Server.Items
 					{
 						if ( ((BaseDoor)targeted).Locked == false )
 							from.SendMessage( "That does not need to be unlocked." );
-
 						else
 						{
 							((BaseDoor)targeted).Locked = false;
@@ -101,7 +100,6 @@ namespace Server.Items
 					{
 						if ( ((BaseDoor)targeted).Locked == false )
 							from.SendMessage( "That does not need to be unlocked." );
-
 						else
 						{
 							((BaseDoor)targeted).Locked = false;
@@ -119,27 +117,25 @@ namespace Server.Items
 					ILockable o = (ILockable)targeted;
 					LockableContainer cont2 = (LockableContainer)o;
 
-					if ( Multis.BaseHouse.CheckSecured( cont2 ) ) 
-						from.SendLocalizedMessage( 503098 ); // You cannot cast this on a secure item.
-					else if ( !cont2.Locked )
+					if ( !cont2.Locked )
 						from.LocalOverheadMessage( MessageType.Regular, 0x3B2, 503101 ); // That did not need to be unlocked.
 					else if ( cont2.LockLevel == 0 )
 						from.SendLocalizedMessage( 501666 ); // You can't unlock that!
-					else if ( o.Locked )
+					else if ( Server.Misc.ContainerFunctions.IsSpaceCrate( cont2.ItemID ) && o.Locked && m_Key.ItemID != 0x3A75 )
 					{
-						if ( o is BaseDoor && !((BaseDoor)o).UseLocks() )  // this seems to check house doors also
-						{
-							from.SendMessage( "This key is to unlock any container." );
-						}
-						else if ( Server.Misc.ContainerFunctions.IsSpaceCrate( ((Item)o).ItemID ) && ((ILockpickable)targeted).Locked && m_Key.ItemID != 0x3A75 )
-						{
-							from.SendMessage( "This doesn't have a key hole, but it does have a card slot." );
-						}
-						else if ( !(Server.Misc.ContainerFunctions.IsSpaceCrate( ((Item)o).ItemID )) && ((ILockpickable)targeted).Locked && m_Key.ItemID == 0x3A75 )
-						{
-							from.SendMessage( "This doesn't have a card slot, but it does have a key hole." );
-						}
-						else if ( Server.Misc.ContainerFunctions.IsSpaceCrate( ((Item)o).ItemID ) && o.Locked && m_Key.ItemID == 0x3A75 )
+						from.SendMessage( "This doesn't have a key hole, but it does have a card slot." );
+					}
+					else if ( !(Server.Misc.ContainerFunctions.IsSpaceCrate( cont2.ItemID )) && o.Locked && m_Key.ItemID == 0x3A75 )
+					{
+						from.SendMessage( "This doesn't have a card slot, but it does have a key hole." );
+					}
+					else if ( Server.Misc.ContainerFunctions.IsSpaceCrate( cont2.ItemID ) && o.Locked && m_Key.ItemID == 0x3A75 )
+					{
+						int neededMod = Server.Misc.Worlds.GetDifficultyLevel( from.Location, from.Map ) * 5;
+							if ( neededMod < 1 ){ neededMod = 0; }
+						int neededSkill = 51 + neededMod;
+
+						if ( cont2.RequiredSkill < neededSkill )
 						{
 							o.Locked = false;
 
@@ -166,7 +162,18 @@ namespace Server.Items
 							from.PlaySound( 0x54B );
 							m_Key.Consume();
 						}
-						else if ( o.Locked && m_Key.ItemID != 0x3A75 )
+						else 
+						{
+							from.SendMessage( "The lock seems too secure for this key card." );
+						}
+					}
+					else if ( o.Locked && m_Key.ItemID != 0x3A75 )
+					{
+						if ( o is BaseDoor && !((BaseDoor)o).UseLocks() )  // this seems to check house doors also
+						{
+							from.SendMessage( "This key is to unlock certain containers." );
+						}
+						else if ( ( cont2.RequiredSkill < 51 ) && !( targeted is TreasureMapChest ) && !( targeted is PirateChest ) && !( targeted is ParagonChest ) )
 						{
 							o.Locked = false;
 
@@ -193,6 +200,10 @@ namespace Server.Items
 							from.PlaySound( 0x241 );
 							m_Key.Consume();
 						}
+						else 
+						{
+							from.SendMessage( "The lock seems too complicated for this key." );
+						}
 					}
 					else
 					{
@@ -201,12 +212,12 @@ namespace Server.Items
 				}
 				else
 				{
-					from.SendMessage( "This key is to unlock any container." );
+					from.SendMessage( "This key is to unlock certain containers." );
 				}
 			}
 		}
 
-		public MasterSkeletonsKey( Serial serial ) : base( serial )
+		public SkeletonsKey( Serial serial ) : base( serial )
 		{
 		}
 

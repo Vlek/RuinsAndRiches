@@ -6,7 +6,7 @@ using Server.Prompts;
 
 namespace Server.Items
 {
-	public class MagicSkeltonsKey : Item
+	public class MasterSkeletonsKey : Item
 	{
 		public override double DefaultWeight
 		{
@@ -14,9 +14,9 @@ namespace Server.Items
 		}
 
 		[Constructable]
-		public MagicSkeltonsKey() : base( 0x5751 )
+		public MasterSkeletonsKey() : base( 0x410B )
 		{
-			Name = "magic skeleton key";
+			Name = "master skeleton key";
 		}
 
 		public override void OnDoubleClick( Mobile from )
@@ -43,9 +43,9 @@ namespace Server.Items
 
 		private class UnlockTarget : Target
 		{
-			private MagicSkeltonsKey m_Key;
+			private MasterSkeletonsKey m_Key;
 
-			public UnlockTarget( MagicSkeltonsKey key ) : base( 1, false, TargetFlags.None )
+			public UnlockTarget( MasterSkeletonsKey key ) : base( 1, false, TargetFlags.None )
 			{
 				m_Key = key;
 				CheckLOS = true;
@@ -53,9 +53,6 @@ namespace Server.Items
 
 			protected override void OnTarget( Mobile from, object targeted )
 			{
-				bool trash = false;
-					if ( Utility.RandomMinMax(1,10) == 1 ){ trash = false; }
-
 				if ( !m_Key.IsChildOf( from.Backpack ) )
 				{
 					from.SendLocalizedMessage( 1060640 ); // The item must be in your backpack to use it.
@@ -97,7 +94,7 @@ namespace Server.Items
 							Server.Items.DoorType.UnlockDoors( (BaseDoor)targeted );
 							from.RevealingAction();
 							from.PlaySound( 0x54B );
-							if ( trash ){ m_Key.Consume(); }
+							m_Key.Consume();
 						}
 					}
 					else if ( Server.Items.DoorType.IsDungeonDoor( (BaseDoor)targeted ) && m_Key.ItemID != 0x3A75 )
@@ -111,7 +108,7 @@ namespace Server.Items
 							Server.Items.DoorType.UnlockDoors( (BaseDoor)targeted );
 							from.RevealingAction();
 							from.PlaySound( 0x241 );
-							if ( trash ){ m_Key.Consume(); }
+							m_Key.Consume();
 						}
 					}
 					else
@@ -122,9 +119,7 @@ namespace Server.Items
 					ILockable o = (ILockable)targeted;
 					LockableContainer cont2 = (LockableContainer)o;
 
-					if ( Multis.BaseHouse.CheckSecured( cont2 ) ) 
-						from.SendLocalizedMessage( 503098 ); // You cannot cast this on a secure item.
-					else if ( !cont2.Locked )
+					if ( !cont2.Locked )
 						from.LocalOverheadMessage( MessageType.Regular, 0x3B2, 503101 ); // That did not need to be unlocked.
 					else if ( cont2.LockLevel == 0 )
 						from.SendLocalizedMessage( 501666 ); // You can't unlock that!
@@ -162,13 +157,12 @@ namespace Server.Items
 							if ( targeted is Item )
 							{
 								Item item = (Item)targeted;
-								if ( trash ){ from.SendMessage( "You swipe the key card to open the lock, but also wearing it out from further use." ); }
-								else { from.SendMessage( "You swipe the key card to open the lock." ); }
+								from.SendMessage( "You swipe the key card to open the lock, but also wearing it out from further use." );
 							}
 
 							from.RevealingAction();
 							from.PlaySound( 0x54B );
-							if ( trash ){ m_Key.Consume(); }
+							m_Key.Consume();
 						}
 						else if ( o.Locked && m_Key.ItemID != 0x3A75 )
 						{
@@ -190,13 +184,12 @@ namespace Server.Items
 							if ( targeted is Item )
 							{
 								Item item = (Item)targeted;
-								if ( trash ){ from.SendMessage( "The key opens the lock, wearing the key out from further use." ); }
-								else { from.SendMessage( "The key opens the lock." ); }
+								from.SendMessage( "The key opens the lock, wearing the key out from further use." );
 							}
 
 							from.RevealingAction();
 							from.PlaySound( 0x241 );
-							if ( trash ){ m_Key.Consume(); }
+							m_Key.Consume();
 						}
 					}
 					else
@@ -211,7 +204,7 @@ namespace Server.Items
 			}
 		}
 
-		public MagicSkeltonsKey( Serial serial ) : base( serial )
+		public MasterSkeletonsKey( Serial serial ) : base( serial )
 		{
 		}
 
