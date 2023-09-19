@@ -118,6 +118,9 @@ namespace Server.Mobiles
 		public override bool AutoDispel{ get{ return true; } }
 		public override Poison PoisonImmune{ get{ return Poison.Regular; } }
 		public override int TreasureMapLevel{ get{ return 6; } }
+		public override int Meat{ get{ return 2; } }
+		public override int Hides{ get{ return 18; } }
+		public override HideType HideType{ get{ return HideType.Goliath; } }
 
 		public OrkDemigod( Serial serial ) : base( serial )
 		{

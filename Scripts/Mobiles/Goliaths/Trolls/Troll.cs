@@ -85,6 +85,8 @@ namespace Server.Mobiles
 		public override bool CanRummageCorpses{ get{ return true; } }
 		public override int TreasureMapLevel{ get{ return 1; } }
 		public override int Meat{ get{ return 2; } }
+		public override int Hides{ get{ return 18; } }
+		public override HideType HideType{ get{ return HideType.Goliath; } }
 
 		public Troll( Serial serial ) : base( serial )
 		{

@@ -54,6 +54,8 @@ namespace Server.Mobiles
 		public override Poison PoisonImmune{ get{ return Poison.Regular; } }
 		public override int TreasureMapLevel{ get{ return 3; } }
 		public override int Meat{ get{ return 2; } }
+		public override int Hides{ get{ return 18; } }
+		public override HideType HideType{ get{ if ( Utility.RandomBool() ){ return HideType.Frozen; } else { return HideType.Goliath; } } }
 
 		public FrostTrollShaman( Serial serial ) : base( serial )
 		{
