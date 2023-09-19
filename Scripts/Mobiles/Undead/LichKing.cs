@@ -154,26 +154,28 @@ namespace Server.Mobiles
 		public override bool BleedImmune{ get{ return true; } }
 		public override Poison PoisonImmune{ get{ return Poison.Deadly; } }
 		public override int TreasureMapLevel{ get{ return 5; } }
+		public override int Hides{ get{ return 3; } }
+		public override HideType HideType{ get{ return HideType.Necrotic; } }
 
-        public override int GetAngerSound()
-        {
-            return 0x61E;
-        }
+    public override int GetAngerSound()
+    {
+      return 0x61E;
+    }
 
-        public override int GetDeathSound()
-        {
-            return 0x61F;
-        }
+    public override int GetDeathSound()
+    {
+      return 0x61F;
+    }
 
-        public override int GetHurtSound()
-        {
-            return 0x620;
-        }
+    public override int GetHurtSound()
+    {
+      return 0x620;
+    }
 
-        public override int GetIdleSound()
-        {
-            return 0x621;
-        }
+    public override int GetIdleSound()
+    {
+      return 0x621;
+    }
 
 		public LichKing( Serial serial ) : base( serial )
 		{
