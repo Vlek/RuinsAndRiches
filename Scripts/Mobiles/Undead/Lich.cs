@@ -133,6 +133,8 @@ namespace Server.Mobiles
 		public override bool BleedImmune{ get{ return true; } }
 		public override Poison PoisonImmune{ get{ return Poison.Deadly; } }
 		public override int TreasureMapLevel{ get{ return 3; } }
+		public override int Hides{ get{ return 3; } }
+		public override HideType HideType{ get{ return HideType.Necrotic; } }
 
 		public Lich( Serial serial ) : base( serial )
 		{
