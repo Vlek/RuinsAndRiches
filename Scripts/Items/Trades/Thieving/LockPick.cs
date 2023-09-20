@@ -188,7 +188,7 @@ namespace Server.Items
 						}
 					}
 
-					if ( !m_From.InRange( item.GetWorldLocation(), 1 ) )
+					if ( !m_From.InRange( item.GetWorldLocation(), 2 ) )
 						return;
 
 					if ( m_Item.LockLevel == 0 || m_Item.LockLevel == -255 )
