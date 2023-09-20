@@ -1,10 +1,7 @@
 {
   "FormattingOptions": {
-    "EnableEditorConfigSupport": false,
-    "OrganizeImports": false,
-    "NewLine": "\n",
-    "UseTabs": false,
-    "TabSize": 4,
+    "EnableEditorConfigSupport": true,
+    "OrganizeImports": true,
     "IndentationSize": 4,
     "SpacingAfterMethodDeclarationName": false,
     "SpaceWithinMethodDeclarationParenthesis": false,
