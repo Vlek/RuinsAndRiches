@@ -289,7 +289,7 @@ namespace Server.Items
 
 		public override bool DisplaysContent{ get{ return !m_Locked; } }
 
-		public virtual bool CheckLocked( Mobile from )
+		public virtual bool CheckLocked( Mobile from, bool canUnlock )
 		{
 			bool inaccessible = false;
 
@@ -310,15 +310,29 @@ namespace Server.Items
 
 				if ( from.AccessLevel >= AccessLevel.GameMaster )
 				{
-					number = 502502; // That is locked, but you open it with your godly powers.
+					// That is locked, but you open it with your godly powers.
+          from.Send( new MessageLocalized( Serial, ItemID, MessageType.Regular, 0x3B2, 3, 502502, "", "" ) );
 				}
 				else
 				{
-					number = 501747; // It appears to be locked.
-					inaccessible = true;
+          // Check whether the player has lockpicks
+          bool playerHasLockpicks;
+
+
+          // If they can unlock AND have lockpicks, we will do a pick attempt
+          if ( canUnlock && playerHasLockpicks)
+          {
+
+          }
+          else
+          {
+            // It appears to be locked.
+            from.Send( new MessageLocalized( Serial, ItemID, MessageType.Regular, 0x3B2, 3, 501747, "", "" ) );
+
+            inaccessible = true;
+          }
 				}
 
-				from.Send( new MessageLocalized( Serial, ItemID, MessageType.Regular, 0x3B2, 3, number, "", "" ) );
 			}
 
 			return inaccessible;
