@@ -289,7 +289,7 @@ namespace Server.Items
 
 		public override bool DisplaysContent{ get{ return !m_Locked; } }
 
-		public virtual bool CheckLocked( Mobile from )
+		public virtual bool CheckLocked( Mobile from, bool canUnlock )
 		{
 			bool inaccessible = false;
 
@@ -306,19 +306,31 @@ namespace Server.Items
 
 			if ( m_Locked && !inaccessible )
 			{
-				int number;
-
 				if ( from.AccessLevel >= AccessLevel.GameMaster )
 				{
-					number = 502502; // That is locked, but you open it with your godly powers.
+					// That is locked, but you open it with your godly powers.
+                    from.Send( new MessageLocalized( Serial, ItemID, MessageType.Regular, 0x3B2, 3, 502502, "", "" ) );
 				}
 				else
 				{
-					number = 501747; // It appears to be locked.
-					inaccessible = true;
+                    // Check whether the player has lockpicks
+                    Lockpick lockpicks = (Lockpick)from.Backpack.FindItemByType(typeof( Lockpick ));
+
+                    // If they can unlock AND have lockpicks, we will do a pick attempt
+                    if ( canUnlock && lockpicks != null )
+                    {
+                        lockpicks.AttemptPick( from, this );
+                    }
+                    else
+                    {
+                        // It appears to be locked.
+                        from.Send( new MessageLocalized( Serial, ItemID, MessageType.Regular, 0x3B2, 3, 501747, "", "" ) );
+                    }
+
+                    // Regardless of the attempt, the state is currently locked and inaccessible
+                    inaccessible = true;
 				}
 
-				from.Send( new MessageLocalized( Serial, ItemID, MessageType.Regular, 0x3B2, 3, number, "", "" ) );
 			}
 
 			return inaccessible;
@@ -326,7 +338,7 @@ namespace Server.Items
 
 		public override void OnTelekinesis( Mobile from )
 		{
-			if ( CheckLocked( from ) )
+			if ( CheckLocked( from, false ) )
 			{
 				Effects.SendLocationParticles( EffectItem.Create( Location, Map, EffectItem.DefaultDuration ), 0x376A, 9, 32, 5022 );
 				Effects.PlaySound( Location, Map, 0x1F5 );
@@ -338,7 +350,7 @@ namespace Server.Items
 
 		public override void OnDoubleClickSecureTrade( Mobile from )
 		{
-			if ( CheckLocked( from ) )
+			if ( CheckLocked( from, false ) )
 				return;
 
 			base.OnDoubleClickSecureTrade( from );
@@ -346,7 +358,7 @@ namespace Server.Items
 
 		public override void Open( Mobile from )
 		{
-			if ( CheckLocked( from ) )
+			if ( CheckLocked( from, true ) )
 				return;
 
 			base.Open( from );
@@ -354,7 +366,7 @@ namespace Server.Items
 
 		public override void OnSnoop( Mobile from )
 		{
-			if ( CheckLocked( from ) )
+			if ( CheckLocked( from, true ) )
 				return;
 
 			base.OnSnoop( from );
