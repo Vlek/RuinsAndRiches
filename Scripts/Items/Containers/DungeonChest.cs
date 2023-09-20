@@ -97,10 +97,10 @@ namespace Server.Items
 			else if ( reg.IsPartOf( "the Mines of Morinia" ) )
 			{
 				if (
-				( box.X >= 5859 && box.Y >= 1384 && box.X <= 5959 && box.Y <= 1477 ) || 
-				( box.X >= 5589 && box.Y >= 1445 && box.X <= 5711 && box.Y <= 1473 ) || 
-				( box.X >= 5611 && box.Y >= 1473 && box.X <= 5715 && box.Y <= 1530 ) || 
-				( box.X >= 5652 && box.Y >= 1525 && box.X <= 5717 && box.Y <= 1552 ) 
+				( box.X >= 5859 && box.Y >= 1384 && box.X <= 5959 && box.Y <= 1477 ) ||
+				( box.X >= 5589 && box.Y >= 1445 && box.X <= 5711 && box.Y <= 1473 ) ||
+				( box.X >= 5611 && box.Y >= 1473 && box.X <= 5715 && box.Y <= 1530 ) ||
+				( box.X >= 5652 && box.Y >= 1525 && box.X <= 5717 && box.Y <= 1552 )
 				){ design = 0; }
 				else
 				{
@@ -202,7 +202,7 @@ namespace Server.Items
 		public void RemoveDungeonChest()
 		{
 			LoggingFunctions.LogServer( "Start - Remove Dungeon Chest Spawner" );
-				
+
 			if ( ContainerNoSpawn != 1 )
 			{
 				Item spawnBox = new DungeonChestSpawner( ContainerLevel, (double)(Utility.RandomMinMax( 45, 105 )) );
@@ -210,7 +210,7 @@ namespace Server.Items
 			}
 
 			LoggingFunctions.LogServer( "Done - Remove Dungeon Chest Spawner" );
-			
+
 			this.Delete();
 		}
 
@@ -234,7 +234,7 @@ namespace Server.Items
 				from.RevealingAction();
 			}
 
-			if ( CheckLocked( from ) )
+			if ( CheckLocked( from, true ) )
 				return;
 
 			if ( /* from.AccessLevel == AccessLevel.Player && */ ContainerTouched != 1 && !from.Blessed )
@@ -289,7 +289,7 @@ namespace Server.Items
 							case 5: spawned = new Wraith(); break;
 							case 6: spawned = new Phantom(); break;
 							case 7: spawned = new SkeletalWizard(); break;
-							case 8: spawned = new BoneKnight(); break; 
+							case 8: spawned = new BoneKnight(); break;
 							case 9: spawned = new BoneMagi(); break;
 							case 10: spawned = new SkeletalKnight(); break;
 							case 11: spawned = new SkeletalMage(); break;
@@ -394,13 +394,13 @@ namespace Server.Items
 		public void RemoveDungeonChest()
 		{
 			LoggingFunctions.LogServer( "Start - Remove Dungeon Chest" );
-				
+
 			Item spawnBox = new DungeonChest( SpawnerLevel );
 			spawnBox.MoveToWorld (new Point3D(this.X, this.Y, this.Z), this.Map);
 			Server.Items.DungeonChest.SetupChest( spawnBox );
 
 			LoggingFunctions.LogServer( "Done - Remove Dungeon Chest" );
-				
+
 			this.Delete();
 		}
 

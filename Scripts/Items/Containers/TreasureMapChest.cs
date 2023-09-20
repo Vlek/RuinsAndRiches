@@ -86,7 +86,7 @@ namespace Server.Items
             // = SCROLL OF TRANCENDENCE
             if ( level >= 4 && Utility.RandomDouble() > 0.9 )
                 DropItem(ScrollofTranscendence.CreateRandom(level, level * 5));
-            
+
 			// = ARTIFACTS
 			int artychance = GetPlayerInfo.LuckyPlayerArtifacts( owner.Luck );
 			if ( Utility.RandomMinMax( 0, 100 ) < ( ( level * 17 ) + artychance ) )
@@ -120,8 +120,8 @@ namespace Server.Items
 				giveRelics--;
 			}
 		}
-	
-		public override bool CheckLocked( Mobile from )
+
+		public override bool CheckLocked( Mobile from, bool canUnlock )
 		{
 			if ( !this.Locked )
 				return false;
@@ -142,7 +142,7 @@ namespace Server.Items
 			}
 			else
 			{
-				return base.CheckLocked( from );
+				return base.CheckLocked( from, canUnlock );
 			}
 		}
 
