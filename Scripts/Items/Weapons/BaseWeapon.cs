@@ -23,7 +23,7 @@ namespace Server.Items
 	public abstract class BaseWeapon : Item, IWeapon, IFactionItem, ICraftable, ISlayer, IDurability
 	{
 		private string m_EngravedText;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public string EngravedText
 		{
@@ -112,34 +112,34 @@ namespace Server.Items
 			{
 				if ( Layer == Layer.Gloves )
 					return 0x647D;
-				else if (	this is PugilistGloves || 
-							this is PugilistGlove || 
-							this is ThrowingGloves || 
-							this is LevelPugilistGloves || 
-							this is LevelThrowingGloves || 
-							this is GiftPugilistGloves || 
-							this is GiftThrowingGloves || 
-							this is Artifact_GlovesOfThePugilist || 
+				else if (	this is PugilistGloves ||
+							this is PugilistGlove ||
+							this is ThrowingGloves ||
+							this is LevelPugilistGloves ||
+							this is LevelThrowingGloves ||
+							this is GiftPugilistGloves ||
+							this is GiftThrowingGloves ||
+							this is Artifact_GlovesOfThePugilist ||
 							this is GlovesOfThePugilist )
 					return 0x647D;
 
 				else if ( this is BaseWhip )
 					return 0x6498;
 
-				else if ( 	GraphicID == 0x0DF0 || 
-						GraphicID == 0x0DF1 || 
-						GraphicID == 0x2AAC || 
-						GraphicID == 0x6522 || 
+				else if ( 	GraphicID == 0x0DF0 ||
+						GraphicID == 0x0DF1 ||
+						GraphicID == 0x2AAC ||
+						GraphicID == 0x6522 ||
 						GraphicID == 0x63B1 )
 					return 0x6499;
 
-				else if ( 	GraphicID == 0xDF2 || 
-						GraphicID == 0xDF3 || 
-						GraphicID == 0xDF4 || 
-						GraphicID == 0xDF5 || 
-						GraphicID == 0x639D || 
-						GraphicID == 0x639E || 
-						GraphicID == 0x639F || 
+				else if ( 	GraphicID == 0xDF2 ||
+						GraphicID == 0xDF3 ||
+						GraphicID == 0xDF4 ||
+						GraphicID == 0xDF5 ||
+						GraphicID == 0x639D ||
+						GraphicID == 0x639E ||
+						GraphicID == 0x639F ||
 						GraphicID == 0x63A0 )
 					return 25734;
 
@@ -209,14 +209,14 @@ namespace Server.Items
 
 		public static void CheckMetalColor( BaseWeapon weapon )
 		{
-			if ( 	weapon is GiftPitchfork || 
-					weapon is Pitchfork || 
-					weapon is BaseGiftStave || 
-					weapon is BaseLevelStave || 
-					weapon is BaseWizardStaff || 
-					weapon is BaseWhip || 
-					weapon is BaseLevelWhip || 
-					weapon is BaseGiftWhip || 
+			if ( 	weapon is GiftPitchfork ||
+					weapon is Pitchfork ||
+					weapon is BaseGiftStave ||
+					weapon is BaseLevelStave ||
+					weapon is BaseWizardStaff ||
+					weapon is BaseWhip ||
+					weapon is BaseLevelWhip ||
+					weapon is BaseGiftWhip ||
 					weapon is LevelPitchfork )
 			{
 				if ( weapon.Resource == CraftResource.None && weapon.Hue == 0 )
@@ -250,7 +250,7 @@ namespace Server.Items
 		}
 
 		/* Weapon internals work differently now (Mar 13 2003)
-		 * 
+		 *
 		 * The attributes defined below default to -1.
 		 * If the value is -1, the corresponding virtual 'Aos/Old' property is used.
 		 * If not, the attribute value itself is used. Here's the list:
@@ -330,19 +330,6 @@ namespace Server.Items
 		public virtual SkillName AosSkill{ get{ return DefSkill; } }
 		public virtual WeaponType AosType{ get{ return DefType; } }
 		public virtual WeaponAnimation AosAnimation{ get{ return DefAnimation; } }
-
-		public virtual int OldStrengthReq{ get{ return 0; } }
-		public virtual int OldDexterityReq{ get{ return 0; } }
-		public virtual int OldIntelligenceReq{ get{ return 0; } }
-		public virtual int OldMinDamage{ get{ return 0; } }
-		public virtual int OldMaxDamage{ get{ return 0; } }
-		public virtual int OldSpeed{ get{ return 0; } }
-		public virtual int OldMaxRange{ get{ return DefMaxRange; } }
-		public virtual int OldHitSound{ get{ return DefHitSound; } }
-		public virtual int OldMissSound{ get{ return DefMissSound; } }
-		public virtual SkillName OldSkill{ get{ return DefSkill; } }
-		public virtual WeaponType OldType{ get{ return DefType; } }
-		public virtual WeaponAnimation OldAnimation{ get{ return DefAnimation; } }
 
 		public virtual int InitMinHits{ get{ return 0; } }
 		public virtual int InitMaxHits{ get{ return 0; } }
@@ -506,56 +493,56 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int MaxRange
 		{
-			get{ return ( m_MaxRange == -1 ? Core.AOS ? AosMaxRange : OldMaxRange : m_MaxRange ); }
+			get{ return ( m_MaxRange == -1 ? AosMaxRange : m_MaxRange ); }
 			set{ m_MaxRange = value; InvalidateProperties(); }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public WeaponAnimation Animation
 		{
-			get{ return ( m_Animation == (WeaponAnimation)(-1) ? Core.AOS ? AosAnimation : OldAnimation : m_Animation ); } 
+			get{ return ( m_Animation == (WeaponAnimation)(-1) ? AosAnimation : m_Animation ); }
 			set{ m_Animation = value; }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public WeaponType Type
 		{
-			get{ return ( m_Type == (WeaponType)(-1) ? Core.AOS ? AosType : OldType : m_Type ); }
+			get{ return ( m_Type == (WeaponType)(-1) ? AosType : m_Type ); }
 			set{ m_Type = value; }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public SkillName Skill
 		{
-			get{ return ( m_Skill == (SkillName)(-1) ? Core.AOS ? AosSkill : OldSkill : m_Skill ); }
+			get{ return ( m_Skill == (SkillName)(-1) ? AosSkill : m_Skill ); }
 			set{ m_Skill = value; InvalidateProperties(); }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int HitSound
 		{
-			get{ return ( m_HitSound == -1 ? Core.AOS ? AosHitSound : OldHitSound : m_HitSound ); }
+			get{ return ( m_HitSound == -1 ? AosHitSound : m_HitSound ); }
 			set{ m_HitSound = value; }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int MissSound
 		{
-			get{ return ( m_MissSound == -1 ? Core.AOS ? AosMissSound : OldMissSound : m_MissSound ); }
+			get{ return ( m_MissSound == -1 ? AosMissSound : m_MissSound ); }
 			set{ m_MissSound = value; }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int MinDamage
 		{
-			get{ return ( m_MinDamage == -1 ? Core.AOS ? ( AosMinDamage + WeaponMaterialDamage( m_Resource ) ) : OldMinDamage : m_MinDamage ); }
+			get{ return ( m_MinDamage == -1 ? ( AosMinDamage + WeaponMaterialDamage( m_Resource ) ) : m_MinDamage ); }
 			set{ m_MinDamage = value; InvalidateProperties(); }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int MaxDamage
 		{
-			get{ return ( m_MaxDamage == -1 ? Core.AOS ? ( AosMaxDamage + WeaponMaterialDamage( m_Resource ) ) : OldMaxDamage : m_MaxDamage ); }
+			get{ return ( m_MaxDamage == -1 ? ( AosMaxDamage + WeaponMaterialDamage( m_Resource ) ) : m_MaxDamage ); }
 			set{ m_MaxDamage = value; InvalidateProperties(); }
 		}
 
@@ -580,21 +567,21 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int StrRequirement
 		{
-			get{ return ( m_StrReq == -1 ? Core.AOS ? AosStrengthReq : OldStrengthReq : m_StrReq ); }
+			get{ return ( m_StrReq == -1 ? AosStrengthReq : m_StrReq ); }
 			set{ m_StrReq = value; InvalidateProperties(); }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int DexRequirement
 		{
-			get{ return ( m_DexReq == -1 ? Core.AOS ? AosDexterityReq : OldDexterityReq : m_DexReq ); }
+			get{ return ( m_DexReq == -1 ? AosDexterityReq : m_DexReq ); }
 			set{ m_DexReq = value; }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int IntRequirement
 		{
-			get{ return ( m_IntReq == -1 ? Core.AOS ? AosIntelligenceReq : OldIntelligenceReq : m_IntReq ); }
+			get{ return ( m_IntReq == -1 ? AosIntelligenceReq : m_IntReq ); }
 			set{ m_IntReq = value; }
 		}
 
@@ -793,7 +780,7 @@ namespace Server.Items
 			{
 				from.SendMessage( "You are not nimble enough to equip that." );
 				return false;
-			} 
+			}
 			else if ( from.Str < AOS.Scale( StrRequirement, 100 - GetLowerStatReq() ) )
 			{
 				from.SendLocalizedMessage( 500213 ); // You are not strong enough to equip that.
@@ -1029,7 +1016,7 @@ namespace Server.Items
 
 				if ( HitLower.IsUnderDefenseEffect( defender ) )
 					bonus -= 25; // Under Hit Lower Defense effect -> 25% malus
-					
+
 				int blockBonus = 0;
 
 				if ( Block.GetBonus( defender, ref blockBonus ) )
@@ -1117,7 +1104,7 @@ namespace Server.Items
 
 				if ( bonus > 60 )
 					bonus = 60;
-				
+
 				double ticks;
 
 				if ( Core.ML )
@@ -1136,7 +1123,7 @@ namespace Server.Items
 
 					ticks = Math.Floor( ( 80000.0 / ( ( m.Stam + 100 ) * speed ) ) - 2 );
 				}
-				
+
 				// Swing speed currently capped at one swing every 1.25 seconds (5 ticks).
 				if ( ticks < 5 )
 					ticks = 5;
@@ -1165,7 +1152,7 @@ namespace Server.Items
 
 				delayInSeconds = Math.Floor( 40000.0 / v ) * 0.5;
 
-				// Maximum swing rate capped at one swing per second 
+				// Maximum swing rate capped at one swing per second
 				// OSI dev said that it has and is supposed to be 1.25
 				if ( delayInSeconds < 1.25 )
 					delayInSeconds = 1.25;
@@ -1307,7 +1294,7 @@ namespace Server.Items
 				double chance = (parry - bushidoNonRacial) / 400.0;	// As per OSI, no negitive effect from the Racial stuffs, ie, 120 parry and '0' bushido with humans
 
 				if ( chance < 0 ) // chance shouldn't go below 0
-					chance = 0;				
+					chance = 0;
 
 				// Parry/Bushido over 100 grants a 5% bonus.
 				if ( parry >= 100.0 || bushido >= 100.0)
@@ -1532,13 +1519,13 @@ namespace Server.Items
                     {
                         sneakAttack = sneakAttack + attacker.Skills[SkillName.Stealth].Value;
                     }
-                    
+
                     double bonusrange = Utility.RandomDouble();
                     if (bonusrange < 0.50)
                         bonusrange += 0.40;
                     if (bonusrange > 0.90)
                         bonusrange -= 0.10;
-                    
+
                     sneakBonus = ( (0.015 * sneakAttack) / 1.50) * bonusrange;
 						if ( sneakBonus > 1.25 ){ sneakBonus = 1.25; }
 						if ( this is BaseRanged ){ sneakBonus = (double)(sneakBonus/2); }
@@ -1708,7 +1695,7 @@ namespace Server.Items
 
 			if ( Core.AOS && damage == 0 ) // parried
 			{
-				if ( a != null && a.Validate( attacker ) /*&& a.CheckMana( attacker, true )*/ ) // Parried special moves have no mana cost 
+				if ( a != null && a.Validate( attacker ) /*&& a.CheckMana( attacker, true )*/ ) // Parried special moves have no mana cost
 				{
 					a = null;
 					WeaponAbility.ClearCurrentAbility( attacker );
@@ -1969,7 +1956,7 @@ namespace Server.Items
 
 				if ( p != null )
 				{
-					// Use poisoning skill to help determine potency 
+					// Use poisoning skill to help determine potency
 					int maxLevel = attacker.Skills[SkillName.Poisoning].Fixed / 200;
 					if ( maxLevel < 0 ) maxLevel = 0;
 					if ( p.Level > maxLevel ) p = Poison.GetPoison( maxLevel );
@@ -2015,7 +2002,7 @@ namespace Server.Items
 						defender.PlaySound( 0x62D );
 						defender.FixedParticles( 0x3728, 244, 25, 9941, 1266, 0, EffectLayer.Waist );
 
-						attacker.SendLocalizedMessage( 1008096, true, defender.Name ); // You have poisoned your target : 
+						attacker.SendLocalizedMessage( 1008096, true, defender.Name ); // You have poisoned your target :
 						defender.SendLocalizedMessage( 1008097, false, attacker.Name ); //  : poisoned you!
 					}
 				}
@@ -3113,42 +3100,6 @@ namespace Server.Items
 					m_Poison = Poison.Deserialize( reader );
 					m_PoisonCharges = reader.ReadInt();
 
-					if ( m_StrReq == OldStrengthReq )
-						m_StrReq = -1;
-
-					if ( m_DexReq == OldDexterityReq )
-						m_DexReq = -1;
-
-					if ( m_IntReq == OldIntelligenceReq )
-						m_IntReq = -1;
-
-					if ( m_MinDamage == OldMinDamage )
-						m_MinDamage = -1;
-
-					if ( m_MaxDamage == OldMaxDamage )
-						m_MaxDamage = -1;
-
-					if ( m_HitSound == OldHitSound )
-						m_HitSound = -1;
-
-					if ( m_MissSound == OldMissSound )
-						m_MissSound = -1;
-
-					if ( m_Speed == OldSpeed )
-						m_Speed = -1;
-
-					if ( m_MaxRange == OldMaxRange )
-						m_MaxRange = -1;
-
-					if ( m_Skill == OldSkill )
-						m_Skill = (SkillName)(-1);
-
-					if ( m_Type == OldType )
-						m_Type = (WeaponType)(-1);
-
-					if ( m_Animation == OldAnimation )
-						m_Animation = (WeaponAnimation)(-1);
-
 					if ( UseSkillMod && m_AccuracyLevel != WeaponAccuracyLevel.Regular && Parent is Mobile )
 					{
 						m_SkillMod = new DefaultSkillMod( AccuracySkill, true, (int)m_AccuracyLevel * 5);
@@ -3341,16 +3292,16 @@ namespace Server.Items
 				list.Add( LabelNumber );
 			else
 				list.Add( Name );
-				
+
 			/*
-			 * Want to move this to the engraving tool, let the non-harmful 
+			 * Want to move this to the engraving tool, let the non-harmful
 			 * formatting show, and remove CLILOCs embedded: more like OSI
 			 * did with the books that had markup, etc.
-			 * 
-			 * This will have a negative effect on a few event things imgame 
+			 *
+			 * This will have a negative effect on a few event things imgame
 			 * as is.
-			 * 
-			 * If we cant find a more OSI-ish way to clean it up, we can 
+			 *
+			 * If we cant find a more OSI-ish way to clean it up, we can
 			 * easily put this back, and use it in the deserialize
 			 * method and engraving tool, to make it perm cleaned up.
 			 */
