@@ -15,13 +15,7 @@ namespace Server.Items
 		public override int AosStrengthReq{ get{ return 20; } }
 		public override int AosMinDamage{ get{ return 10; } }
 		public override int AosMaxDamage{ get{ return 12; } }
-		public override int AosSpeed{ get{ return 44; } }
 		public override float MlSpeed{ get{ return 2.50f; } }
-
-		public override int OldStrengthReq{ get{ return 10; } }
-		public override int OldMinDamage{ get{ return 8; } }
-		public override int OldMaxDamage{ get{ return 24; } }
-		public override int OldSpeed{ get{ return 40; } }
 
 		public override int InitMinHits{ get{ return 31; } }
 		public override int InitMaxHits{ get{ return 40; } }
@@ -45,7 +39,7 @@ namespace Server.Items
 					ItemID = Utility.RandomList( 0x26BC, 0x26C6 );
 				}
 
-				switch ( Utility.RandomMinMax( 0, 14 ) ) 
+				switch ( Utility.RandomMinMax( 0, 14 ) )
 				{
 					case 0: Name = make + " of Wizardry";			break;
 					case 1: Name = make + " of Sorcery";			break;
