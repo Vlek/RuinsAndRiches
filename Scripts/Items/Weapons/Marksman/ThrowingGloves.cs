@@ -8,7 +8,7 @@ namespace Server.Items
 	public class ThrowingGloves : BaseRanged
 	{
 		public string GloveType;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Glove_Type { get { return GloveType; } set { GloveType = value; InvalidateProperties(); } }
 
@@ -102,13 +102,7 @@ namespace Server.Items
 		public override int AosStrengthReq{ get{ return 20; } }
 		public override int AosMinDamage{ get{ return 10; } }
 		public override int AosMaxDamage{ get{ return 14; } }
-		public override int AosSpeed{ get{ return 23; } }
 		public override float MlSpeed{ get{ return 4.00f; } }
-
-		public override int OldStrengthReq{ get{ return 20; } }
-		public override int OldMinDamage{ get{ return 6; } }
-		public override int OldMaxDamage{ get{ return 22; } }
-		public override int OldSpeed{ get{ return 20; } }
 
 		public override int DefMaxRange{ get{ return 8; } }
 
@@ -135,7 +129,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to change the weapon type." );
 				return;
