@@ -322,7 +322,6 @@ namespace Server.Items
 		public virtual int AosIntelligenceReq{ get{ return 0; } }
 		public virtual int AosMinDamage{ get{ return 0; } }
 		public virtual int AosMaxDamage{ get{ return 0; } }
-		public virtual int AosSpeed{ get{ return 0; } }
 		public virtual float MlSpeed{ get{ return 0.0f; } }
 		public virtual int AosMaxRange{ get{ return DefMaxRange; } }
 		public virtual int AosHitSound{ get{ return DefHitSound; } }
@@ -554,12 +553,7 @@ namespace Server.Items
 				if ( m_Speed != -1 )
 					return m_Speed;
 
-				if ( Core.ML )
-					return MlSpeed;
-				else if ( Core.AOS )
-					return AosSpeed;
-
-				return OldSpeed;
+                return MlSpeed;
 			}
 			set{ m_Speed = value; InvalidateProperties(); }
 		}
