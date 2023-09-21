@@ -83,7 +83,7 @@ namespace Server.Items
 			if ( HarvestSystem == null || Deleted )
 				return;
 
-			Point3D loc = this.GetWorldLocation();			
+			Point3D loc = this.GetWorldLocation();
 
 			if ( !from.InLOS( loc ) || !from.InRange( loc, 2 ) )
 			{
@@ -95,10 +95,10 @@ namespace Server.Items
 				this.PublicOverheadMessage( Server.Network.MessageType.Regular, 0x3E9, 1061637 ); // You are not allowed to access this.
 				return;
 			}
-			
+
 			if ( !(this.HarvestSystem is Mining) )
 				from.SendLocalizedMessage( 1010018 ); // What do you want to use this item on?
-			
+
 			HarvestSystem.BeginHarvesting( from, this );
 		}
 
@@ -145,25 +145,6 @@ namespace Server.Items
 						m_UsesRemaining = 150;
 
 					break;
-				}
-			}
-		}
-
-		public override void OnHit( Mobile attacker, Mobile defender, double damageBonus )
-		{
-			base.OnHit( attacker, defender, damageBonus );
-
-			if ( !Core.AOS && (attacker.Player || attacker.Body.IsHuman) && Layer == Layer.TwoHanded && (attacker.Skills[SkillName.Anatomy].Value / 400.0) >= Utility.RandomDouble() )
-			{
-				StatMod mod = defender.GetStatMod( "Concussion" );
-
-				if ( mod == null )
-				{
-					defender.SendMessage( "You receive a concussion blow!" );
-					defender.AddStatMod( new StatMod( StatType.Int, "Concussion", -(defender.RawInt / 2), TimeSpan.FromSeconds( 30.0 ) ) );
-
-					attacker.SendMessage( "You deliver a concussion blow!" );
-					attacker.PlaySound( 0x308 );
 				}
 			}
 		}

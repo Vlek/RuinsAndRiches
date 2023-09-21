@@ -9,9 +9,6 @@ namespace Server.Items
 		public override int AosStrengthReq{ get{ return 80; } }
 		public override int AosDexterityReq{ get{ return 80; } }
 
-		public override int OldStrengthReq{ get{ return 80; } }
-		public override int OldDexterityReq{ get{ return 80; } }
-
 		[CommandProperty( AccessLevel.GameMaster )]
 		public bool IsModified
 		{
