@@ -15,13 +15,7 @@ namespace Server.Items
 		public override int AosStrengthReq{ get{ return 20; } }
 		public override int AosMinDamage{ get{ return 13; } }
 		public override int AosMaxDamage{ get{ return 15; } }
-		public override int AosSpeed{ get{ return 41; } }
 		public override float MlSpeed{ get{ return 2.75f; } }
-
-		public override int OldStrengthReq{ get{ return 20; } }
-		public override int OldMinDamage{ get{ return 13; } }
-		public override int OldMaxDamage{ get{ return 15; } }
-		public override int OldSpeed{ get{ return 41; } }
 
 		public override int DefHitSound{ get{ return 0x23B; } }
 		public override int DefMissSound{ get{ return 0x239; } }
