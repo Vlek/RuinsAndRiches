@@ -98,6 +98,7 @@ public class WonderousDealer : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
     public class BuyGumpEntry : ContextMenuEntry
     {

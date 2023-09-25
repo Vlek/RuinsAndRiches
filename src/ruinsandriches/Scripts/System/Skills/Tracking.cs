@@ -297,7 +297,8 @@ public class TrackWhoGump : Gump
     {
         if (!success)
         {
-            from.SendLocalizedMessage(1018092);                       // You see no evidence of those in the area.
+            from.SendLocalizedMessage(1018092);
+            // You see no evidence of those in the area.
             return;
         }
 

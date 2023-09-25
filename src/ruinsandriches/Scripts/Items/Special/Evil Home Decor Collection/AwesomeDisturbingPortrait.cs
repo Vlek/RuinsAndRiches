@@ -170,7 +170,8 @@ public class AwesomeDisturbingPortraitComponent : AddonComponent
 public class AwesomeDisturbingPortraitAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new AwesomeDisturbingPortraitDeed(); }
+        get { return new AwesomeDisturbingPortraitDeed();
+        }
     }
 
     [Constructable]
@@ -201,7 +202,8 @@ public class AwesomeDisturbingPortraitAddon : BaseAddon
 public class AwesomeDisturbingPortraitDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new AwesomeDisturbingPortraitAddon(); }
+        get { return new AwesomeDisturbingPortraitAddon();
+        }
     }
 
     [Constructable]

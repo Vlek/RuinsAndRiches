@@ -91,6 +91,7 @@ public class NecroMage : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public NecroMage(Serial serial) : base(serial)

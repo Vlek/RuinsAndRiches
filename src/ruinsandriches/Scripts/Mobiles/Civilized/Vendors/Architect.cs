@@ -72,6 +72,7 @@ public class Architect : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public Architect(Serial serial) : base(serial)

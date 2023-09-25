@@ -107,7 +107,10 @@ public class TenFootPole : Item
 
         int boards = Utility.RandomMinMax(1, 65536);
 
-        if (boards >= 32768) /* REGULAR */ } {
+        if (boards >= 32768)
+        {
+            /* REGULAR */
+        }
         else if (boards >= 16384)
         {
             cHue = MaterialInfo.GetMaterialColor("ash", "", 0);                       cWeight = cWeight - 1;    wood = "ashen";
@@ -168,44 +171,44 @@ public class TenFootPole : Item
         pole.Name   = "ten foot " + wood + " pole";
         pole.Weight = cWeight;
         pole.Hue    = cHue;
-}
+    }
 
-public override void AddNameProperties(ObjectPropertyList list)
-{
-    base.AddNameProperties(list);
-    list.Add(1070722, "" + TapChance(Weight) + "% Avoiding Traps");
-    list.Add(1049644, "For Wall, Floor & Container Traps");                      // PARENTHESIS
-}
-
-public override void GetProperties(ObjectPropertyList list)
-{
-    base.GetProperties(list);
-    list.Add(1060584, m_Charges.ToString());
-}
-
-public TenFootPole(Serial serial) : base(serial)
-{
-}
-
-public override void Serialize(GenericWriter writer)
-{
-    base.Serialize(writer);
-    writer.Write((int)0);
-    writer.Write((int)m_Charges);
-}
-
-public override void Deserialize(GenericReader reader)
-{
-    base.Deserialize(reader);
-    int version = reader.ReadInt();
-    switch (version)
+    public override void AddNameProperties(ObjectPropertyList list)
     {
-        case 0:
+        base.AddNameProperties(list);
+        list.Add(1070722, "" + TapChance(Weight) + "% Avoiding Traps");
+        list.Add(1049644, "For Wall, Floor & Container Traps");                  // PARENTHESIS
+    }
+
+    public override void GetProperties(ObjectPropertyList list)
+    {
+        base.GetProperties(list);
+        list.Add(1060584, m_Charges.ToString());
+    }
+
+    public TenFootPole(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+        writer.Write((int)m_Charges);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        switch (version)
         {
-            m_Charges = (int)reader.ReadInt();
-            break;
+            case 0:
+            {
+                m_Charges = (int)reader.ReadInt();
+                break;
+            }
         }
     }
-}
 }
 }
