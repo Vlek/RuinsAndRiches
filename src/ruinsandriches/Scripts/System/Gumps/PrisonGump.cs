@@ -4,13 +4,13 @@ using Server.Misc;
 using Server.Gumps;
 using Server.Network;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class PrisonGump : Gump
     {
         public PrisonGump ( Mobile from ) : base ( 50, 50 )
         {
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#e98650";
 
 			this.Closable=true;
@@ -29,7 +29,7 @@ namespace Server.Gumps
         public override void OnResponse(NetState state, RelayInfo info)
         {
 			Mobile from = state.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
         }
     }
 }

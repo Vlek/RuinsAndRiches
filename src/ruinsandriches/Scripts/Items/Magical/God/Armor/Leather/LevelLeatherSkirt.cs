@@ -36,7 +36,7 @@ namespace Server.Items
 		public LevelLeatherSkirt( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -45,7 +45,7 @@ namespace Server.Items
 			if ( Weight == 3.0 )
 				Weight = 1.0;
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

@@ -1013,7 +1013,7 @@ namespace Server.Items
 								}
 								if ( from.Skills[SkillName.Forensics].Value < Utility.RandomMinMax( 1, 110 ) ) { m_Knife.HitPoints = m_Knife.HitPoints - 1; }
 
-							
+
 								if ( qtyVal > 1 ){ quantity = " (" + qtyVal + "ea)"; }
 								from.SendMessage("You get a " + guts.Name + " from the corpse" + quantity + ".");
 							}

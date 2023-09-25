@@ -13,7 +13,7 @@ using Server.Regions;
 using System.IO;
 using Server.Targeting;
 
-namespace Server.Scripts.Commands 
+namespace Server.Scripts.Commands
 {
     public class BodyValues
     {

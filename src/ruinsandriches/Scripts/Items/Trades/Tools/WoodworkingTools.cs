@@ -28,7 +28,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Carpentry Tools");
             list.Add( 1049644, "Crates, Chests, Shelves, Dressers, and Cabinets");
-        } 
+        }
 
 		public WoodworkingTools( Serial serial ) : base( serial )
 		{

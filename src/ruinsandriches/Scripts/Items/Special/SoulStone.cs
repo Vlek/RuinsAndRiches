@@ -29,7 +29,7 @@ namespace Server.Items
 		public virtual int ActiveItemID
 		{
 			get { return m_ActiveItemID; }
-			set 
+			set
 			{
 				m_ActiveItemID = value;
 
@@ -42,8 +42,8 @@ namespace Server.Items
 		public virtual int InactiveItemID
 		{
 			get { return m_InactiveItemID; }
-			set 
-			{ 
+			set
+			{
 				m_InactiveItemID = value;
 
 				if( IsEmpty )
@@ -135,7 +135,7 @@ namespace Server.Items
 			{
 				list.Add( 1070721, "#{0}\t{1:0.0}", 1044060 + (int)this.Skill, this.SkillValue ); // Skill stored: ~1_skillname~ ~2_skillamount~
 			}
-			
+
 			string name = this.LastUserName;
 
 			if ( name == null )
@@ -359,12 +359,12 @@ namespace Server.Items
 				 * the stone, you must make sure your Skill Lock for the indicated skill is pointed downward.
 				 * Click the "Skills" button on your Paperdoll to access the Skill List, and double-check
 				 * your skill lock.<BR><BR>
-				 * 
+				 *
 				 * Once you activate the stone, all skill points in the indicated skill will be removed from
 				 * your character.  These skill points can later be retrieved.  IMPORTANT: When retrieving
 				 * skill points from a Soulstone, the Soulstone WILL REPLACE any existing skill points
 				 * already on your character!<BR><BR>
-				 * 
+				 *
 				 * This is an Account Bound Soulstone.  Skill pointsstored inside can be retrieved by any
 				 * character on the same account as the character who placed them into the stone.
 				 */
@@ -468,12 +468,12 @@ namespace Server.Items
 				 * the stone, you must make sure your Skill Lock for the indicated skill is pointed downward.
 				 * Click the "Skills" button on your Paperdoll to access the Skill List, and double-check
 				 * your skill lock.<BR><BR>
-				 * 
+				 *
 				 * Once you activate the stone, all skill points in the indicated skill will be removed from
 				 * your character.  These skill points can later be retrieved.  IMPORTANT: When retrieving
 				 * skill points from a Soulstone, the Soulstone WILL REPLACE any existing skill points
 				 * already on your character!<BR><BR>
-				 * 
+				 *
 				 * This is an Account Bound Soulstone.  Skill pointsstored inside can be retrieved by any
 				 * character on the same account as the character who placed them into the stone.
 				 */
@@ -673,10 +673,10 @@ namespace Server.Items
 				AddHtmlLocalized( 10, 12, 500, 20, 1070725, 0x7FFF, false, false ); // <CENTER>Confirm Soulstone Skill Removal</CENTER>
 
 				/* WARNING!<BR><BR>
-				 * 
+				 *
 				 * You are about to permanently remove all skill points stored in this Soulstone.
 				 * You WILL NOT absorb these skill points.  They will be DELETED.<BR><BR>
-				 * 
+				 *
 				 * Are you sure you wish to do this?  If not, press the Cancel button.
 				 */
 				AddHtmlLocalized( 10, 42, 500, 110, 1070724, 0x7FFF, false, true );
@@ -935,7 +935,7 @@ namespace Server.Items
 		public BlueSoulstone( string account )
 			: base( account, 0x2ADC, 0x2ADD )
 		{
-					
+
 		}
 
 		public BlueSoulstone( Serial serial )
@@ -1020,7 +1020,7 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			
+
 			switch ( version )
 			{
 				case 1:

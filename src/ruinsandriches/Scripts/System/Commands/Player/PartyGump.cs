@@ -18,7 +18,7 @@ namespace Server.Gumps
 
         public PartyGump(Mobile leader, Mobile target) : base(50, 50)
         {
-			target.SendSound( 0x4A ); 
+			target.SendSound( 0x4A );
 			string color = "#b0b7ce";
 
             m_Leader = leader;
@@ -45,7 +45,7 @@ namespace Server.Gumps
 
         public override void OnResponse(NetState state, RelayInfo info)
         {
-			m_Target.SendSound( 0x4A ); 
+			m_Target.SendSound( 0x4A );
 
             if (m_Leader == null || m_Target == null)
                 return;

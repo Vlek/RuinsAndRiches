@@ -15,10 +15,10 @@ namespace Server.Items
 		{
 			Hue = 0x489;
 			Name = "Wildfire Bow";
-			
+
 			SkillBonuses.SetValues( 0, SkillName.Marksmanship, 10 );
 			WeaponAttributes.ResistFireBonus = 25;
-			
+
 			Velocity = 15;
 		}
 

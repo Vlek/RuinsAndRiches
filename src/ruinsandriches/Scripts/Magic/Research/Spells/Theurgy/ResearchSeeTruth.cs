@@ -59,7 +59,7 @@ namespace Server.Spells.Research
 					{
 						string WillSay = "";
 
-						switch ( Utility.RandomMinMax( 0, 3 ) ) 
+						switch ( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 0: WillSay = "The spirits tell you that this parchment is"; break;
 							case 1: WillSay = "Your mind is showing you that this parchment is"; break;
@@ -86,7 +86,7 @@ namespace Server.Spells.Research
 
 					string WillSay = "";
 
-					switch ( Utility.RandomMinMax( 0, 3 ) ) 
+					switch ( Utility.RandomMinMax( 0, 3 ) )
 					{
 						case 0: WillSay = "The spirits tell you that this legend "; break;
 						case 1: WillSay = "Your mind is showing you that this legend "; break;
@@ -112,7 +112,7 @@ namespace Server.Spells.Research
 
 					string WillSay = "";
 
-					switch ( Utility.RandomMinMax( 0, 3 ) ) 
+					switch ( Utility.RandomMinMax( 0, 3 ) )
 					{
 						case 0: WillSay = "The spirits tell you that this book "; break;
 						case 1: WillSay = "Your mind is showing you that this book "; break;
@@ -138,7 +138,7 @@ namespace Server.Spells.Research
 
 					string WillSay = "";
 
-					switch ( Utility.RandomMinMax( 0, 3 ) ) 
+					switch ( Utility.RandomMinMax( 0, 3 ) )
 					{
 						case 0: WillSay = "The spirits tell you that this parchment is"; break;
 						case 1: WillSay = "Your mind is showing you that this parchment is"; break;
@@ -162,7 +162,7 @@ namespace Server.Spells.Research
 					from.PlaySound( 0xF9 );
 					string WillSay = "";
 
-					switch ( Utility.RandomMinMax( 0, 3 ) ) 
+					switch ( Utility.RandomMinMax( 0, 3 ) )
 					{
 						case 0: WillSay = "The spirits tell you that this glowing book is"; break;
 						case 1: WillSay = "Your mind is showing you that this glowing book is"; break;

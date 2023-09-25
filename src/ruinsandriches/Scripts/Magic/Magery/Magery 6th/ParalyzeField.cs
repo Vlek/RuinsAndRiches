@@ -195,7 +195,7 @@ namespace Server.Spells.Sixth
 
 					m.PlaySound( 0x204 );
 					m.FixedEffect( 0x376A, 10, 16, Server.Misc.PlayerSettings.GetMySpellHue( true, m_Caster, 0 ), 0 );
-					
+
 					if ( m is BaseCreature )
 						((BaseCreature) m).OnHarmfulSpell( m_Caster );
 				}

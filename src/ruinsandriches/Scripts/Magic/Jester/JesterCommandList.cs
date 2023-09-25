@@ -53,7 +53,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new CanOfSnakes( e.Mobile, null ).Cast(); 
+				new CanOfSnakes( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -72,7 +72,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new Clowns( e.Mobile, null ).Cast(); 
+				new Clowns( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -91,7 +91,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new FlowerPower( e.Mobile, null ).Cast(); 
+				new FlowerPower( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -110,7 +110,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new Hilarity( e.Mobile, null ).Cast(); 
+				new Hilarity( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -129,7 +129,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new Insult( e.Mobile, null ).Cast(); 
+				new Insult( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -148,7 +148,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new JumpAround( e.Mobile, null ).Cast(); 
+				new JumpAround( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -167,7 +167,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new PoppingBalloon( e.Mobile, null ).Cast(); 
+				new PoppingBalloon( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -186,7 +186,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new RabbitInAHat( e.Mobile, null ).Cast(); 
+				new RabbitInAHat( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -205,7 +205,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new SeltzerBottle( e.Mobile, null ).Cast(); 
+				new SeltzerBottle( e.Mobile, null ).Cast();
 			}
 			else
 			{
@@ -224,7 +224,7 @@ namespace Server.Scripts.Commands
 
 			if ( Server.Misc.GetPlayerInfo.isJester( from ) )
 			{
-				new SurpriseGift( e.Mobile, null ).Cast(); 
+				new SurpriseGift( e.Mobile, null ).Cast();
 			}
 			else
 			{

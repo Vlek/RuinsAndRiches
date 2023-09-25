@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using Server.Network;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "Dracula's corpse" )] 
-	public class Dracula : BaseCreature 
-	{ 
+namespace Server.Mobiles
+{
+	[CorpseName( "Dracula's corpse" )]
+	public class Dracula : BaseCreature
+	{
 		private bool m_TrueForm;
 
 		public override WeaponAbility GetWeaponAbility()
@@ -19,9 +19,9 @@ namespace Server.Mobiles
 			return WeaponAbility.BleedAttack;
 		}
 
-		[Constructable] 
-		public Dracula() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public Dracula() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			Name = "Dracula";
 			Title = "the master vampire";
 			Body = 311;
@@ -181,7 +181,7 @@ namespace Server.Mobiles
 
 			SetHits( 350, 400 );
 
-			Say("Arrrrrgh!"); 
+			Say("Arrrrrgh!");
 		}
 
 		public override void OnDeath( Container c )
@@ -235,21 +235,21 @@ namespace Server.Mobiles
 			}
 		}
 
-		public Dracula( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public Dracula( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-			writer.Write( m_TrueForm );	
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+			writer.Write( m_TrueForm );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
 			switch ( version )
 			{
 				case 0:
@@ -258,6 +258,6 @@ namespace Server.Mobiles
 					break;
 				}
 			}
-		} 
-	} 
+		}
+	}
 }

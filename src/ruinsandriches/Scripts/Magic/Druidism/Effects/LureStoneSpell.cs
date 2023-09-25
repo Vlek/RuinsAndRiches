@@ -8,7 +8,7 @@ using Server;
 using Server.Gumps;
 using Server.Menus;
 using Server.Menus.Questions;
-using System.Collections; 
+using System.Collections;
 
 namespace Server.Spells.Herbalist
 {
@@ -37,7 +37,7 @@ namespace Server.Spells.Herbalist
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-		
+
 		public void Target( IPoint3D p )
 		{
 			if ( !Caster.CanSee( p ) )
@@ -69,7 +69,7 @@ namespace Server.Spells.Herbalist
 			private Timer m_Timer;
 			private DateTime m_End;
 			private Mobile m_Owner;
-      	
+
 			public override bool BlocksFit{ get{ return true; } }
 
 			public InternalItema( Point3D loc, Map map, Mobile caster, double enhance ) : base( 0x1355 )
@@ -132,11 +132,11 @@ namespace Server.Spells.Herbalist
 				}
 			}
 
-			public override void OnMovement(Mobile m, Point3D oldLocation ) 
-			{ 
+			public override void OnMovement(Mobile m, Point3D oldLocation )
+			{
 				if(m_Owner!=null)
 				{
-					if ( m.InRange( this, 600 ) && m.Map == this.Map ) 
+					if ( m.InRange( this, 600 ) && m.Map == this.Map )
 					{
 						double tamer = m_Owner.Skills[SkillName.Druidism].Value;
 						double bonus = m_Owner.Skills[SkillName.Veterinary].Value/100;
@@ -295,42 +295,42 @@ namespace Server.Spells.Herbalist
 	}
 }
 
-namespace Server.Items 
-{ 
+namespace Server.Items
+{
 	public class LureStone : Item
-	{ 
+	{
 		private Mobile m_Owner;
 
-		[Constructable] 
-		public LureStone(Mobile owner): base (0x1355)  
-		{ 
+		[Constructable]
+		public LureStone(Mobile owner): base (0x1355)
+		{
 			m_Owner=owner;
 			Movable = false;
 			Name="lure stone";
 		}
 
-		public LureStone( Serial serial ) : base( serial ) 
+		public LureStone( Serial serial ) : base( serial )
 		{
 		}
 
 		public override bool HandlesOnMovement{ get{ return true;} }
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			Delete();
 		}
 
-		public override void OnMovement(Mobile m, Point3D oldLocation ) 
-		{ 
+		public override void OnMovement(Mobile m, Point3D oldLocation )
+		{
 			if(m_Owner!=null)
 			{
-				if ( m.InRange( this, 600 ) && m.Map == this.Map ) 
+				if ( m.InRange( this, 600 ) && m.Map == this.Map )
 				{
 					BaseCreature cret = m as BaseCreature;
 					if(cret!=null)
@@ -346,5 +346,5 @@ namespace Server.Items
 				}
 			}
 		}
-	} 
+	}
 }

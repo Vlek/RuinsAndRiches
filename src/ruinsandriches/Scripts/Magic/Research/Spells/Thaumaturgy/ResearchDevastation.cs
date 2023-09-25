@@ -43,7 +43,7 @@ namespace Server.Spells.Research
 			}
 			else if ( Server.Misc.Worlds.NoApocalypse( Caster.Location, Caster.Map ) )
 			{
-				Caster.SendMessage( "You don't think it is wise to cast this here." ); 
+				Caster.SendMessage( "You don't think it is wise to cast this here." );
 				return;
 			}
 			else if ( SpellHelper.CheckTown( p, Caster ) && CheckSequence() )

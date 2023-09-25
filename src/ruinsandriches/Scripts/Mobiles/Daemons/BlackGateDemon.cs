@@ -15,21 +15,21 @@ namespace Server.Mobiles
 		private int m_MoonTime;
 		private InternalTimer m_MoonTimer;
 		private int m_MoonHue;
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int MoonHue
 		{
 			get {return m_MoonHue;}
 			set {m_MoonHue = value;}
 		}
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Point3D MoonDest
 		{
 			get {return m_MoonDest;}
 			set {m_MoonDest = value;}
 		}
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int MoonTime
 		{
@@ -146,7 +146,7 @@ namespace Server.Mobiles
 			m_MoonTimer.Start ();
 			return base.OnBeforeDeath();
 		}
-		
+
 		public override void OnAfterDelete()
 		{
 			m_MoonTimer = null;
@@ -173,13 +173,13 @@ namespace Server.Mobiles
 			int new_Y = reader.ReadInt();
 			int new_Z = reader.ReadInt();
 			m_MoonDest = new Point3D(5963, 3967, 10);
-			/*--------------------*/			
+			/*--------------------*/
 		}
-		
+
 		private class InternalTimer : Timer
 		{
 			private Moongate m_MoonGate;
-			
+
 			public InternalTimer (BlackGateDemon owner) : base (TimeSpan.FromSeconds(0))
 			{
 				Delay = TimeSpan.FromSeconds(1800);
@@ -190,7 +190,7 @@ namespace Server.Mobiles
 				m_MoonGate.TargetMap = owner.Map;
 				m_MoonGate.ItemID = 0x1FD4;
 			}
-			
+
 			protected override void OnTick ()
 			{
 				((Item)m_MoonGate).Delete ();

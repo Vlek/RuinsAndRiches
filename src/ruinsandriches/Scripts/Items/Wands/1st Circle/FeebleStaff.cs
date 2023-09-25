@@ -10,14 +10,16 @@ namespace Server.Items
 		[Constructable]
 		public FeebleMagicStaff() : base( MagicStaffEffect.Charges, 1, 25 )
 		{
-			IntRequirement = 10;			Name = "wand of feeble minds";
+			IntRequirement = 10;
+			Name = "wand of feeble minds";
 			SkillBonuses.SetValues( 1, SkillName.Magery, 10 );
 		}
 
 		public override void AddNameProperties( ObjectPropertyList list )
 		{
 			base.AddNameProperties( list );
-			list.Add( 1070722, "1st Circle of Power" );			list.Add( 1049644, "Requires 10 Intelligence" );
+			list.Add( 1070722, "1st Circle of Power" );
+			list.Add( 1049644, "Requires 10 Intelligence" );
 		}
 
 		public FeebleMagicStaff( Serial serial ) : base( serial )
@@ -36,7 +38,8 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			if ( IntRequirement != 10 ) { IntRequirement = 10; }
+
+			if ( IntRequirement != 10 ) { IntRequirement = 10; }
 		}
 
 		public override void OnMagicStaffUse( Mobile from )

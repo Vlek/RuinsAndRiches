@@ -99,7 +99,7 @@ namespace Server.Items
 		{
 			LootType = LootType.Blessed;
 
-			
+
 		}
 
 		public OrigamiSwan( Serial serial ) : base( serial )
@@ -130,7 +130,7 @@ namespace Server.Items
 		{
 			LootType = LootType.Blessed;
 
-			
+
 		}
 
 		public OrigamiFrog( Serial serial ) : base( serial )
@@ -161,7 +161,7 @@ namespace Server.Items
 		{
 			LootType = LootType.Blessed;
 
-			
+
 		}
 
 		public OrigamiShape( Serial serial ) : base( serial )
@@ -192,7 +192,7 @@ namespace Server.Items
 		{
 			LootType = LootType.Blessed;
 
-			
+
 		}
 
 		public OrigamiSongbird( Serial serial ) : base( serial )
@@ -223,7 +223,7 @@ namespace Server.Items
 		{
 			LootType = LootType.Blessed;
 
-			
+
 		}
 
 		public OrigamiFish( Serial serial ) : base( serial )

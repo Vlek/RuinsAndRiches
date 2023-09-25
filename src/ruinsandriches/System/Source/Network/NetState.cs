@@ -732,7 +732,7 @@ namespace Server.Network {
 
 					if ( result )
 						Send_Process( m_SendEventArgs );
-				} while ( result ); 
+				} while ( result );
 			} catch ( Exception ex ) {
 				TraceException( ex );
 				Dispose( false );

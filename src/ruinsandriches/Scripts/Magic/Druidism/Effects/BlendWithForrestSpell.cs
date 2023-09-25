@@ -5,15 +5,15 @@ using Server.Targeting;
 using Server.Items;
 using Server.Mobiles;
 
-namespace Server.Spells.Herbalist 
-{ 
-	public class BlendWithForestSpell : HerbalistSpell 
-	{ 
+namespace Server.Spells.Herbalist
+{
+	public class BlendWithForestSpell : HerbalistSpell
+	{
 		private static SpellInfo m_Info = new SpellInfo( "", "", 239, 9021 );
 		public override int HerbalistSpellCircle{ get{ return 4; } }
-		public override double CastDelay{ get{ return 1.0; } } 
-		public override double RequiredSkill{ get{ return 50.0; } } 
-		public override int RequiredMana{ get{ return 0; } } 
+		public override double CastDelay{ get{ return 1.0; } }
+		public override double RequiredSkill{ get{ return 50.0; } }
+		public override int RequiredMana{ get{ return 0; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 1.0 ); } }
 		private bool speak;
 

@@ -70,7 +70,7 @@ namespace Knives.TownHouses
                 sign.House.Region.Unregister();
                 sign.House.Region.Register();
                 sign.House.Region.GoLocation = sign.BanLoc;
- 
+
             #endif
         }
 
@@ -114,9 +114,9 @@ namespace Knives.TownHouses
         public override Rectangle2D[] Area { get { return new Rectangle2D[5]; } }
 
         #if(RunUO_2_RC1)
-        
+
         public override Point3D BaseBanLocation { get { return Point3D.Zero; } }
-        
+
         #endif
 
         public VersionHouse(Serial serial)

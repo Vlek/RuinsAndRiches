@@ -10,7 +10,7 @@ namespace Server.Items
 	public class DDRelicDrink : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -76,7 +76,7 @@ namespace Server.Items
 			}
 
 			string sLiquid = "ale";
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: sLiquid = "ale"; break;
 				case 1: sLiquid = "wine"; break;

@@ -94,7 +94,7 @@ namespace Server.SkillHandlers
 
 				return TimeSpan.FromSeconds( 1.0 );
 			}
-			else 
+			else
 			{
 				if ( ok )
 				{

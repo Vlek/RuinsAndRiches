@@ -79,7 +79,7 @@ namespace Server.Spells.Research
 				{
 					if ( targets.Count > 2 )
 						damage = (damage * 2) / targets.Count;
-						
+
 					double toDeal;
 					for ( int i = 0; i < targets.Count; ++i )
 					{

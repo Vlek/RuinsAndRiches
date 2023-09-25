@@ -54,7 +54,7 @@ namespace Server.Items
             writer.Write( DragonFrom );
             writer.Write( DragonKiller );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -113,7 +113,7 @@ namespace Server.Items
             writer.Write( DragonFrom );
             writer.Write( DragonKiller );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -172,7 +172,7 @@ namespace Server.Items
             writer.Write( DragonFrom );
             writer.Write( DragonKiller );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -231,7 +231,7 @@ namespace Server.Items
             writer.Write( DragonFrom );
             writer.Write( DragonKiller );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -290,7 +290,7 @@ namespace Server.Items
             writer.Write( DragonFrom );
             writer.Write( DragonKiller );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

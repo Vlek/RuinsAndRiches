@@ -184,7 +184,7 @@ namespace Server.Spells.Herbalist
 
 			FinishSequence();
 		}
-		
+
 		[DispellableField]
 		private class InternalItem : Moongate
 		{

@@ -1,19 +1,19 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
+using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a pirate corpse" )] 
+	[CorpseName( "a pirate corpse" )]
 
-	public class ElfPirateCaptain : BaseCreature 
+	public class ElfPirateCaptain : BaseCreature
 	{
-		[Constructable] 
-		public ElfPirateCaptain() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public ElfPirateCaptain() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = 1316;
 			Race = Race.Elf;
@@ -43,7 +43,7 @@ namespace Server.Mobiles
 
             AddItem( new ElvenBoots( 0x6F8 ) );
             Item armor = new LeatherChest(); armor.Hue = 0x6F8; AddItem( armor );
-			AddItem( new FancyShirt( 0 ) );	
+			AddItem( new FancyShirt( 0 ) );
 			AddItem( new TricorneHat ( 0 ) );
 
             switch ( Utility.Random( 2 ))
@@ -95,20 +95,20 @@ namespace Server.Mobiles
 		public override bool AlwaysAttackable{ get{ return true; } }
 		public override int TreasureMapLevel{ get{ return Utility.RandomMinMax( 1, 6 ); } }
 
-		public ElfPirateCaptain( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public ElfPirateCaptain( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

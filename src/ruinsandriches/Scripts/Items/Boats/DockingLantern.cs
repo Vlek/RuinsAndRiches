@@ -41,11 +41,11 @@ namespace Server.Items
         {
             base.GetContextMenuEntries(from, list);
             SetSecureLevelEntry.AddTo(from, this, list);
-        }      
+        }
 
 		public override void GetProperties( ObjectPropertyList list )
 		{
-			base.GetProperties( list );		
+			base.GetProperties( list );
 		}
 
 		public override void OnSingleClick( Mobile from )

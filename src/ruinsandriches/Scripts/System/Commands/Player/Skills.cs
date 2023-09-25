@@ -26,7 +26,7 @@ namespace Server.Gumps
         {
 			m_Origin = origin;
 			string color = "#ddbc4b";
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			this.Closable=true;
 			this.Disposable=true;
@@ -101,7 +101,7 @@ text = text + "Veterinary - If one decides to become a Tamer, this skill will al
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			if ( m_Origin > 0 ){ from.SendGump( new Server.Engines.Help.HelpGump( from, 1 ) ); }
 		}
     }

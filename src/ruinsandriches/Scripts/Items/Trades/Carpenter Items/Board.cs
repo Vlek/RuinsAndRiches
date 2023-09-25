@@ -13,8 +13,8 @@ namespace Server.Items
 			set { m_Resource = value; InvalidateProperties(); }
 		}
 
-		int ICommodity.DescriptionNumber 
-		{ 
+		int ICommodity.DescriptionNumber
+		{
 			get
 			{
 				switch ( m_Resource )
@@ -37,7 +37,7 @@ namespace Server.Items
 				}
 
 				return LabelNumber;
-			} 
+			}
 		}
 
 		bool ICommodity.IsDeedable { get { return true; } }

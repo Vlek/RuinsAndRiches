@@ -47,8 +47,8 @@ namespace Server.Items
 				case 3:	sChain = "a manacled";		break;
 			}
 
-			ItemID = 0xED4; RelicFlipID1 = 0xED5; RelicFlipID2 = 0xED4; 
-			switch ( Utility.RandomMinMax( 0, 30 ) ) 
+			ItemID = 0xED4; RelicFlipID1 = 0xED5; RelicFlipID2 = 0xED4;
+			switch ( Utility.RandomMinMax( 0, 30 ) )
 			{
 				case 0: ItemID = 0xED4; RelicFlipID1 = 0xED5; RelicFlipID2 = 0xED4; break;
 				case 1: ItemID = 0xED7; RelicFlipID1 = 0xED8; RelicFlipID2 = 0xED7; break;

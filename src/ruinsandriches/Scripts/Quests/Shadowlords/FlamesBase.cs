@@ -97,7 +97,7 @@ namespace Server.Items
 			{
 				from.SendMessage( "You will have to get closer to take that." );
 			}
-			else 
+			else
 			{
 				string flameType = "";
 

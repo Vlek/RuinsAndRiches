@@ -27,7 +27,7 @@ namespace Server.Misc
 		public static void CreateFile(string sPath)
 		{
 			/// CREATE THE FILE IF IT DOES NOT EXIST ///
-			StreamWriter w = null; 
+			StreamWriter w = null;
 			try
 			{
 				using (w = File.AppendText( sPath ) ){}
@@ -96,7 +96,7 @@ namespace Server.Misc
 				{
 					LoggingFunctions.LogServer( "Start - " + sLog );
 				}
-				
+
 				if ( !Directory.Exists( "Info" ) )
 					Directory.CreateDirectory( "Info" );
 
@@ -109,7 +109,7 @@ namespace Server.Misc
 				else if ( sLog == "Logging Murderers" ){ sPath = "Info/murderers.txt"; }
 				else if ( sLog == "Logging Journies" ){ sPath = "Info/journies.txt"; }
 				else if ( sLog == "Logging Server" ){ sPath = "Info/server.txt"; }
-				
+
 				CreateFile( sPath );
 
 				/// PREPEND THE FILE WITH THE EVENT ///
@@ -120,7 +120,7 @@ namespace Server.Misc
 				catch(Exception)
 				{
 				}
-				
+
 				if ( sLog != "Logging Server" )
 				{
 					LoggingFunctions.LogServer( "Done - " + sLog );
@@ -372,7 +372,7 @@ namespace Server.Misc
 			if ( myShout.Contains(" had left ") ){ myShout = myShout.Replace(" left ", " " + sVerb2 + " "); }
 
 			LoggingFunctions.LogServer( "Done - Town Crier" );
-						
+
 			return myShout;
 		}
 
@@ -470,7 +470,7 @@ namespace Server.Misc
 			if ( mySpeaking.Contains(" left ") ){ mySpeaking = mySpeaking.Replace(" left ", " " + sVerb2 + " "); }
 
 			LoggingFunctions.LogServer( "Done - Tavern Chatter" );
-						
+
 			return mySpeaking;
 		}
 
@@ -530,7 +530,7 @@ namespace Server.Misc
 				if (reader != null)
 					reader.Dispose();
 			}
-						
+
 			return mySpeaking;
 		}
 
@@ -1064,7 +1064,7 @@ namespace Server.Misc
 
 			string sLoot = "";
 			string sWho = "";
-			
+
 			if ( sBox == "bounty" )
 			{
 				sWho = "";
@@ -1098,7 +1098,7 @@ namespace Server.Misc
 					case 3: sLoot = "has eliminated";		break;
 				}
 			}
-			
+
 			sLoot = sLoot + " " + t.Name + " " + t.Title;
 
 			PlayerMobile pm = (PlayerMobile)m;
@@ -1163,7 +1163,7 @@ namespace Server.Misc
 
 			return null;
 		}
-		
+
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		public static string LogAccess( Mobile m, string sAccess )
@@ -1301,7 +1301,7 @@ namespace Server.Misc
 		public static string LogClear( string sLog )
 		{
 			string sPath = "Info/adventures.txt";
- 
+
 			if ( sLog == "Logging Adventures" ){ sPath = "Info/adventures.txt"; }
 			else if ( sLog == "Logging Battles" ){ sPath = "Info/battles.txt"; }
 			else if ( sLog == "Logging Deaths" ){ sPath = "Info/deaths.txt"; }
@@ -1401,7 +1401,7 @@ namespace Server.Gumps
 	{
         public LoggingGumpCrier( Mobile from, int page ) : base( 50, 50 )
         {
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#aecdf6";
 			string sEvents = "";
 			bool scroll = false;
@@ -1476,7 +1476,7 @@ namespace Server.Gumps
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			switch ( info.ButtonID )
 			{

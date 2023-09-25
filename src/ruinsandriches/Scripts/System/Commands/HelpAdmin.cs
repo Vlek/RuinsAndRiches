@@ -8,7 +8,7 @@ using Server.Gumps;
 using Server.Commands;
 using Server.Commands.Generic;
 
-namespace Server.Items 
+namespace Server.Items
 {
     class HelpAdmin
     {

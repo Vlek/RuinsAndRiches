@@ -471,7 +471,7 @@ namespace Server.Items
 
 					if ( bag.BagMessage > 0 )
 					{
-						msg = bag.BagMsgString;	
+						msg = bag.BagMsgString;
 					}
 					else if ( nextSpell != "" )
 					{
@@ -597,7 +597,7 @@ namespace Server.Items
 
 					if ( bag.BagMessage > 0 )
 					{
-						msg = bag.BagMsgString;	
+						msg = bag.BagMsgString;
 					}
 					else if ( nextSpell != "" )
 					{
@@ -720,7 +720,7 @@ namespace Server.Items
 
 					if ( bag.BagMessage > 0 )
 					{
-						msg = bag.BagMsgString;	
+						msg = bag.BagMsgString;
 					}
 					else if ( nextSpell != "" )
 					{
@@ -777,7 +777,7 @@ namespace Server.Items
 					AddHtml( 784+r, 190, 85, 20, @"<BODY><BASEFONT Color=" + color + ">Wizardry</BASEFONT></BODY>", (bool)false, (bool)false);
 					AddImage(743+r, 183, Int32.Parse( Research.SpellInformation( 8, 10 ) ) );
 
-					string msg = bag.BagMsgString;	
+					string msg = bag.BagMsgString;
 					AddHtml( 103+r, 236, 760, 45, @"<BODY><BASEFONT Color=" + color + ">" + msg + "</BASEFONT></BODY>", (bool)false, (bool)false);
 
 					int spellName = 1;
@@ -925,7 +925,7 @@ namespace Server.Items
 				// 1 - 9 : TOP SELECTION MENU
 				// 11 - 19 : HELP BUTTONS
 				// 21 - 29 : MAGERY CIRCLE CHOICES
-				
+
 				if ( m_Bag.BagPage > 10 && m_Bag.BagPage < 20 )
 				{
 					m_Bag.BagPage = m_Bag.BagPage-10;

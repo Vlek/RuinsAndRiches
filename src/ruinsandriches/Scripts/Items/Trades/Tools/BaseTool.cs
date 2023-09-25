@@ -126,7 +126,7 @@ namespace Server.Items
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( !Server.Misc.MyServerSettings.AllowMacroResources() )
-			{ 
+			{
 				CaptchaGump.sendCaptcha(from, BaseTool.OnDoubleClickRedirected, this);
 			}
 			else if ( IsChildOf( from.Backpack ) || Parent == from )

@@ -229,10 +229,10 @@ namespace Knives.TownHouses
 		}
 
         public bool ForcePrivate
-        { 
+        {
             get { return c_ForcePrivate; }
             set
-            { 
+            {
                 c_ForcePrivate = value;
 
                 if (value)
@@ -242,14 +242,14 @@ namespace Knives.TownHouses
                     if (c_House != null)
                         c_House.Public = false;
                 }
-            } 
+            }
         }
-        
+
         public bool ForcePublic
-        { 
+        {
             get { return c_ForcePublic; }
             set
-            { 
+            {
                 c_ForcePublic = value;
 
                 if (value)
@@ -263,7 +263,7 @@ namespace Knives.TownHouses
         }
 
         public bool NoBanning
-        { 
+        {
             get { return c_NoBanning; }
             set
             {
@@ -683,7 +683,7 @@ namespace Knives.TownHouses
 				return;
 
 			BaseDoor newdoor = null;
-            
+
             foreach (BaseDoor door in new ArrayList(c_House.Doors))
 			{
                 door.Open = false;
@@ -868,7 +868,7 @@ namespace Knives.TownHouses
             }
 
 		}
-		
+
 		/* Added for fixing Rental Loop Crash bug */
 		protected void DeleteTest()
 		{
@@ -1130,7 +1130,7 @@ namespace Knives.TownHouses
 			string cost_items = String.Format("{0:n0}", c_ItemsPrice);
 			string locks = String.Format("{0:n0}", c_Locks);
 			string secures = String.Format("{0:n0}", c_Secures);
-            
+
 			if ( c_Free )
 				list.Add( 1060658, "Price\tFree" );
 			else if ( c_RentByTime == TimeSpan.Zero )
@@ -1246,7 +1246,7 @@ namespace Knives.TownHouses
                 c_ForcePublic = reader.ReadBool();
                 c_NoTrade = reader.ReadBool();
             }
-            
+
             if (version >= 12)
 				c_Free = reader.ReadBool();
 

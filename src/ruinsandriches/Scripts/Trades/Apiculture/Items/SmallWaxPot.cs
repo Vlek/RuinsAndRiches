@@ -41,7 +41,7 @@ namespace Server.Items
 		public apiSmallWaxPot() : this( 50 )
 		{
 		}
-		
+
 		[Constructable]
 		public apiSmallWaxPot( int uses ) : base( 2532 )
 		{
@@ -119,14 +119,14 @@ namespace Server.Items
 						RawBeeswax += wax.Amount;
 						wax.Delete();
 					}
-					
+
 					from.PrivateOverheadMessage( 0, 1154, false,  "You put raw beeswax in the pot.", from.NetState );
-					
+
 					if( from.HasGump( typeof(apiBeeHiveSmallPotGump)) )
 						from.CloseGump( typeof(apiBeeHiveSmallPotGump) );
-					
+
 					from.SendGump( new apiBeeHiveSmallPotGump( from, this ) ); //resend the gump
-					
+
 					if ( m_RawBeeswax < MaxWax )
 						BeginAdd( from );
 				}
@@ -212,7 +212,7 @@ namespace Server.Items
 			AddItem(11, 49, 3311);
 			AddItem(328, 50, 3307);
 			AddItem(327, 3, 3307);
-			
+
 			//pot image
 			if( m_pot.PureBeeswax > 0 )
 				AddItem(231, 105, 0x142B);
@@ -235,7 +235,7 @@ namespace Server.Items
 			AddLabel(207, 40, 1153, "Raw Beeswax: " + m_pot.RawBeeswax );
 			AddLabel(207, 71, 1153, "Pure Beeswax: " + m_pot.PureBeeswax );
 		}
-		
+
 		public enum Buttons
 		{
 			cmdAddRaw = 1,
@@ -259,7 +259,7 @@ namespace Server.Items
 
 			switch ( info.ButtonID )
 			{
-				case (int)Buttons.cmdHelp: 
+				case (int)Buttons.cmdHelp:
 				{
 					from.SendGump( new apiBeeHiveSmallPotGump(from,m_pot) );
 					from.SendGump( new apiBeeHiveHelpGump(from, 1) );
@@ -277,7 +277,7 @@ namespace Server.Items
 
 					from.PrivateOverheadMessage( 0, 1154, false,  "Choose the raw beeswax you wish to add to the pot.", from.NetState );
 					m_pot.BeginAdd( from );
-					
+
 					break;
 				}
 				case (int)Buttons.cmdEmptyPot: //Empty the pot
@@ -310,12 +310,12 @@ namespace Server.Items
 
 					m_pot.RawBeeswax = 0;
 					m_pot.PureBeeswax = 0;
-					
+
 					m_pot.ItemID = 2532; //empty pot
 
 					from.SendGump( new apiBeeHiveSmallPotGump(from, m_pot) );
 					from.PrivateOverheadMessage( 0, 1154, false,  "You place the beeswax in your pack.", from.NetState );
-						
+
 					break;
 				}
 				case (int)Buttons.cmdRenderWax: //render the wax
@@ -352,7 +352,7 @@ namespace Server.Items
 						m_pot.UsesRemaining = 0;
 
 					int waste = Utility.RandomMinMax( 1, m_pot.RawBeeswax / 5 );
-					
+
 					if( GiveSlumgum )
 					{//give slumgum
 						Item gum = new Slumgum( Math.Max( 1, waste ) );
@@ -363,7 +363,7 @@ namespace Server.Items
 
 					from.PlaySound( 0x21 );
 					from.PrivateOverheadMessage( 0, 1154, false,  "You slowly melt the raw beeswax and remove the impurities.", from.NetState );
-					
+
 					m_pot.PureBeeswax = m_pot.RawBeeswax - waste;
 					m_pot.RawBeeswax = 0;
 

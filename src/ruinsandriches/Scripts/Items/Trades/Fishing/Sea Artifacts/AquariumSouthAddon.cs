@@ -7,7 +7,7 @@ namespace Server.Items
 	public class AquariumSouthAddon : BaseAddon
 	{
         private static int[,] m_AddOnSimpleComponents = new int[,] {
-			  {15694, -1, 0, 0}, {15698, 0, 0, 0}, {15683, 1, 0, 0}// 1	2	3	
+			  {15694, -1, 0, 0}, {15698, 0, 0, 0}, {15683, 1, 0, 0}// 1	2	3
 					};
 
 		public override BaseAddonDeed Deed

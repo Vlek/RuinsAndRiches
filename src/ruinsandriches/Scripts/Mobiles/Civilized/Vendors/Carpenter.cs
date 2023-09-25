@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Server;
 using Server.Engines.BulkOrders;
 using System.Collections;
-using Server.Targeting; 
-using Server.Items; 
+using Server.Targeting;
+using Server.Items;
 using Server.Network;
 using Server.ContextMenus;
 using Server.Gumps;
@@ -31,7 +31,7 @@ namespace Server.Mobiles
 		{
 			m_SBInfos.Add( new SBStavesWeapon() );
 			m_SBInfos.Add( new SBCarpenter() );
-			m_SBInfos.Add( new SBWoodenShields() ); 
+			m_SBInfos.Add( new SBWoodenShields() );
 
 			m_SBInfos.Add( new RSBoardsMain() );
 			if ( Worlds.IsCrypt( this.Location, this.Map ) )
@@ -49,7 +49,7 @@ namespace Server.Mobiles
 			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
 				m_SBInfos.Add( new RSLogsSea() );
 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		///////////////////////////////////////////////////////////////////////////

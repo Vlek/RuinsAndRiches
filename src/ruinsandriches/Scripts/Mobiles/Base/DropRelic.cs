@@ -82,11 +82,11 @@ namespace Server.Misc
 						}
 						else if ( from is TigerRiding || from is SabretoothTigerRiding || from is Tiger || from is SabretoothTiger )
 						{
-							if ( Utility.RandomBool() ){ c.DropItem( new TigerRugEastDeed() ); } else { c.DropItem( new TigerRugSouthDeed() ); } 
+							if ( Utility.RandomBool() ){ c.DropItem( new TigerRugEastDeed() ); } else { c.DropItem( new TigerRugSouthDeed() ); }
 						}
 						else if ( from is WhiteTigerRiding || from is WhiteTiger )
 						{
-							if ( Utility.RandomBool() ){ c.DropItem( new WhiteTigerRugEastDeed() ); } else { c.DropItem( new WhiteTigerRugSouthDeed() ); } 
+							if ( Utility.RandomBool() ){ c.DropItem( new WhiteTigerRugEastDeed() ); } else { c.DropItem( new WhiteTigerRugSouthDeed() ); }
 						}
 					}
 
@@ -121,7 +121,7 @@ namespace Server.Misc
 						{
 							if ( from.Backpack.FindItemByType( typeof ( EvilSkull ) ) == null )
 							{
-																	item = 0x2C95;		name = "skull of " + from.Name + " " + from.Title; 
+																	item = 0x2C95;		name = "skull of " + from.Name + " " + from.Title;
 							}
 						}
 
@@ -357,19 +357,19 @@ namespace Server.Misc
 
 					/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-					if ( 	( from is DemonOfTheSea ) || 
-							( from is BloodDemon ) || 
-							( from is Devil ) || 
-							( from is TitanPyros ) || 
-							( from is Balron ) || 
-							( from is Fiend ) || 
-							( from is Archfiend ) || 
-							( from is LesserDemon ) || 
-							( from is Xurtzar ) || 
-							( from is FireDemon ) || 
-							( from is DeepSeaDevil ) || 
-							( from is Daemon ) || 
-							( from is DaemonTemplate ) || 
+					if ( 	( from is DemonOfTheSea ) ||
+							( from is BloodDemon ) ||
+							( from is Devil ) ||
+							( from is TitanPyros ) ||
+							( from is Balron ) ||
+							( from is Fiend ) ||
+							( from is Archfiend ) ||
+							( from is LesserDemon ) ||
+							( from is Xurtzar ) ||
+							( from is FireDemon ) ||
+							( from is DeepSeaDevil ) ||
+							( from is Daemon ) ||
+							( from is DaemonTemplate ) ||
 							( from is BlackGateDemon ) )
 					{
 						if ( 90 < Utility.Random( 100 ) ){ c.DropItem( new DemonClaw() ); }
@@ -389,93 +389,93 @@ namespace Server.Misc
 					{
 						if ( 1 == Utility.Random( 1000 ) ){ c.DropItem(new ObsidianStone()); }
 					}
-					if ( 	( from is AncientWyrm ) || 
-							( from is LavaDragon ) || 
-							( from is BottleDragon ) || 
-							( from is SeaDragon ) || 
-							( from is DeepSeaDragon ) || 
-							( from is Dragon ) || 
-							( from is Dragons ) || 
-							( from is Dragoon ) || 
-							( from is RidingDragon ) || 
-							( from is DeepSeaDragon ) || 
-							( from is SeaDragon ) || 
-							( from is BlackDragon ) || 
-							( from is AsianDragon ) || 
-							( from is PrimevalFireDragon ) || 
-							( from is PrimevalGreenDragon ) || 
-							( from is PrimevalNightDragon ) || 
-							( from is PrimevalRedDragon ) || 
-							( from is PrimevalRoyalDragon ) || 
-							( from is PrimevalRunicDragon ) || 
-							( from is PrimevalSeaDragon ) || 
-							( from is ReanimatedDragon ) || 
-							( from is VampiricDragon ) || 
-							( from is PrimevalAbysmalDragon ) || 
-							( from is PrimevalAmberDragon ) || 
-							( from is PrimevalBlackDragon ) || 
-							( from is PrimevalDragon ) || 
-							( from is PrimevalSilverDragon ) || 
-							( from is PrimevalVolcanicDragon ) || 
-							( from is PrimevalStygianDragon ) || 
-							( from is GemDragon ) || 
-							( from is DragonKing ) || 
-							( from is VolcanicDragon ) || 
-							( from is RadiationDragon ) || 
-							( from is CrystalDragon ) || 
-							( from is VoidDragon ) || 
-							( from is ElderDragon ) || 
-							( from is BlueDragon ) || 
-							( from is SlasherOfVoid ) || 
-							( from is GreenDragon ) || 
-							( from is WhiteDragon ) || 
-							( from is ZombieDragon ) || 
-							( from is NightWyrm ) || 
-							( from is JungleWyrm ) || 
-							( from is DesertWyrm ) || 
-							( from is MountainWyrm ) || 
-							( from is OnyxWyrm ) || 
-							( from is EmeraldWyrm ) || 
-							( from is AmethystWyrm ) || 
-							( from is SapphireWyrm ) || 
-							( from is GarnetWyrm ) || 
-							( from is TopazWyrm ) || 
-							( from is RubyWyrm ) || 
-							( from is SpinelWyrm ) || 
-							( from is Wyrms ) || 
-							( from is QuartzWyrm ) || 
+					if ( 	( from is AncientWyrm ) ||
+							( from is LavaDragon ) ||
+							( from is BottleDragon ) ||
+							( from is SeaDragon ) ||
+							( from is DeepSeaDragon ) ||
+							( from is Dragon ) ||
+							( from is Dragons ) ||
+							( from is Dragoon ) ||
+							( from is RidingDragon ) ||
+							( from is DeepSeaDragon ) ||
+							( from is SeaDragon ) ||
+							( from is BlackDragon ) ||
+							( from is AsianDragon ) ||
+							( from is PrimevalFireDragon ) ||
+							( from is PrimevalGreenDragon ) ||
+							( from is PrimevalNightDragon ) ||
+							( from is PrimevalRedDragon ) ||
+							( from is PrimevalRoyalDragon ) ||
+							( from is PrimevalRunicDragon ) ||
+							( from is PrimevalSeaDragon ) ||
+							( from is ReanimatedDragon ) ||
+							( from is VampiricDragon ) ||
+							( from is PrimevalAbysmalDragon ) ||
+							( from is PrimevalAmberDragon ) ||
+							( from is PrimevalBlackDragon ) ||
+							( from is PrimevalDragon ) ||
+							( from is PrimevalSilverDragon ) ||
+							( from is PrimevalVolcanicDragon ) ||
+							( from is PrimevalStygianDragon ) ||
+							( from is GemDragon ) ||
+							( from is DragonKing ) ||
+							( from is VolcanicDragon ) ||
+							( from is RadiationDragon ) ||
+							( from is CrystalDragon ) ||
+							( from is VoidDragon ) ||
+							( from is ElderDragon ) ||
+							( from is BlueDragon ) ||
+							( from is SlasherOfVoid ) ||
+							( from is GreenDragon ) ||
+							( from is WhiteDragon ) ||
+							( from is ZombieDragon ) ||
+							( from is NightWyrm ) ||
+							( from is JungleWyrm ) ||
+							( from is DesertWyrm ) ||
+							( from is MountainWyrm ) ||
+							( from is OnyxWyrm ) ||
+							( from is EmeraldWyrm ) ||
+							( from is AmethystWyrm ) ||
+							( from is SapphireWyrm ) ||
+							( from is GarnetWyrm ) ||
+							( from is TopazWyrm ) ||
+							( from is RubyWyrm ) ||
+							( from is SpinelWyrm ) ||
+							( from is Wyrms ) ||
+							( from is QuartzWyrm ) ||
 							( from is WhiteWyrm ) )
 					{
 						if ( Utility.Random( 100 ) < 3 )
 						{
 							if ( from.Body == 105 && from.Hue == 0 ){ c.DropItem( new DrakkhenEggRed() ); }
 							else if ( from.Body == 106 && from.Hue == 0 ){ c.DropItem( new DrakkhenEggBlack() ); }
-							else if ( 	( from is PrimevalGreenDragon ) || 
-										( from is PrimevalSeaDragon ) || 
-										( from is ReanimatedDragon ) || 
-										( from is PrimevalSilverDragon ) || 
-										( from is RadiationDragon ) || 
-										( from is CrystalDragon ) || 
+							else if ( 	( from is PrimevalGreenDragon ) ||
+										( from is PrimevalSeaDragon ) ||
+										( from is ReanimatedDragon ) ||
+										( from is PrimevalSilverDragon ) ||
+										( from is RadiationDragon ) ||
+										( from is CrystalDragon ) ||
 										( from is ZombieDragon ) ){ if ( Utility.RandomBool() ){ c.DropItem( new DrakkhenEggBlack() ); } else { c.DropItem( new DrakkhenEggRed() ); } }
-							else if ( 	( from is PrimevalNightDragon ) || 
-										( from is VoidDragon ) || 
-										( from is PrimevalVolcanicDragon ) || 
-										( from is PrimevalStygianDragon ) || 
-										( from is VolcanicDragon ) || 
-										( from is PrimevalBlackDragon ) || 
-										( from is VampiricDragon ) || 
+							else if ( 	( from is PrimevalNightDragon ) ||
+										( from is VoidDragon ) ||
+										( from is PrimevalVolcanicDragon ) ||
+										( from is PrimevalStygianDragon ) ||
+										( from is VolcanicDragon ) ||
+										( from is PrimevalBlackDragon ) ||
+										( from is VampiricDragon ) ||
 										( from is PrimevalAbysmalDragon ) ){ c.DropItem( new DrakkhenEggBlack() ); }
-							else if ( 	( from is AncientWyrm ) || 
-										( from is ElderDragon ) || 
-										( from is SlasherOfVoid ) || 
-										( from is DragonKing ) || 
-										( from is PrimevalDragon ) || 
-										( from is LavaDragon ) || 
-										( from is BottleDragon ) || 
-										( from is PrimevalFireDragon ) || 
-										( from is PrimevalRedDragon ) || 
-										( from is PrimevalRoyalDragon ) || 
-										( from is PrimevalRunicDragon ) || 
+							else if ( 	( from is AncientWyrm ) ||
+										( from is ElderDragon ) ||
+										( from is SlasherOfVoid ) ||
+										( from is DragonKing ) ||
+										( from is PrimevalDragon ) ||
+										( from is LavaDragon ) ||
+										( from is BottleDragon ) ||
+										( from is PrimevalFireDragon ) ||
+										( from is PrimevalRedDragon ) ||
+										( from is PrimevalRoyalDragon ) ||
+										( from is PrimevalRunicDragon ) ||
 										( from is PrimevalAmberDragon ) ){ c.DropItem( new DrakkhenEggRed() ); }
 						}
 						if ( 95 < Utility.Random( 100 ) ){ DragonBlood goods = new DragonBlood(); goods.Amount = Utility.RandomMinMax( 1, 3 ); c.DropItem(goods); }
@@ -483,98 +483,98 @@ namespace Server.Misc
 						{
 							DragonTooth goods = new DragonTooth(); c.DropItem(goods);
 						}
-						if ( ( 50 < Utility.Random( 100 ) ) && ( 
-							from is PrimevalAbysmalDragon || 
-							from is PrimevalAmberDragon || 
-							from is PrimevalBlackDragon || 
-							from is PrimevalDragon || 
-							from is PrimevalFireDragon || 
-							from is PrimevalGreenDragon || 
-							from is PrimevalNightDragon || 
-							from is PrimevalRedDragon || 
-							from is PrimevalRoyalDragon || 
-							from is PrimevalRunicDragon || 
-							from is PrimevalSeaDragon || 
-							from is PrimevalSilverDragon || 
-							from is PrimevalStygianDragon || 
-							from is PrimevalVolcanicDragon || 
-							from is ReanimatedDragon || 
+						if ( ( 50 < Utility.Random( 100 ) ) && (
+							from is PrimevalAbysmalDragon ||
+							from is PrimevalAmberDragon ||
+							from is PrimevalBlackDragon ||
+							from is PrimevalDragon ||
+							from is PrimevalFireDragon ||
+							from is PrimevalGreenDragon ||
+							from is PrimevalNightDragon ||
+							from is PrimevalRedDragon ||
+							from is PrimevalRoyalDragon ||
+							from is PrimevalRunicDragon ||
+							from is PrimevalSeaDragon ||
+							from is PrimevalSilverDragon ||
+							from is PrimevalStygianDragon ||
+							from is PrimevalVolcanicDragon ||
+							from is ReanimatedDragon ||
 							from is VampiricDragon  ) )
 						{
 							DragonTooth goods = new DragonTooth(); goods.Amount = Utility.RandomMinMax( 1, 2 ); c.DropItem(goods);
 						}
 						if ( from is DragonKing ){ DragonTooth goods = new DragonTooth(); goods.Amount = Utility.RandomMinMax( 1, 4 ); c.DropItem(goods); }
 					}
-					if ( 	( from is Lich ) || 
-							( from is LichLord ) || 
-							( from is Nazghoul ) || 
-							( from is AncientLich ) || 
-							( from is UndeadDruid ) || 
-							( from is TitanLich ) || 
-							( from is DemiLich ) || 
+					if ( 	( from is Lich ) ||
+							( from is LichLord ) ||
+							( from is Nazghoul ) ||
+							( from is AncientLich ) ||
+							( from is UndeadDruid ) ||
+							( from is TitanLich ) ||
+							( from is DemiLich ) ||
 							( from is Surtaz ) )
 					{
 						if ( from is AncientLich ){ LichDust goods = new LichDust(); goods.Amount = Utility.RandomMinMax( 1, 3 ); c.DropItem(goods); }
 						else if ( 80 < Utility.Random( 100 ) ){ LichDust goods = new LichDust(); goods.Amount = Utility.RandomMinMax( 1, 3 ); c.DropItem(goods); }
 					}
-					if ( 	( from is MonstrousSpider ) || 
-							( from is WhiteDragon ) || 
-							( from is BlackDragon ) || 
-							( from is PrimevalFireDragon ) || 
-							( from is PrimevalGreenDragon ) || 
-							( from is PrimevalNightDragon ) || 
-							( from is PrimevalRedDragon ) || 
-							( from is PrimevalRoyalDragon ) || 
-							( from is PrimevalRunicDragon ) || 
-							( from is PrimevalSeaDragon ) || 
-							( from is ReanimatedDragon ) || 
-							( from is VampiricDragon ) || 
-							( from is PrimevalAbysmalDragon ) || 
-							( from is PrimevalAmberDragon ) || 
-							( from is PrimevalBlackDragon ) || 
-							( from is PrimevalDragon ) || 
-							( from is PrimevalSilverDragon ) || 
-							( from is PrimevalVolcanicDragon ) || 
-							( from is PrimevalStygianDragon ) || 
-							( from is BlueDragon ) || 
-							( from is SlasherOfVoid ) || 
-							( from is Dragon ) || 
-							( from is Dragons && from.Body == 59 ) || 
-							( from is RidingDragon && from.Body == 59 ) || 
-							( from is Wyrms && from.Body == 12 ) || 
-							( from is Dragoon ) || 
-							( from is GreenDragon ) || 
-							( from is MetalDragon ) || 
-							( from is LavaDragon ) || 
-							( from is BottleDragon ) || 
-							( from is IceDragon ) || 
-							( from is CaddelliteDragon ) || 
-							( from is WhiteWyrm ) || 
-							( from is GemDragon ) || 
-							( from is NightWyrm ) || 
-							( from is RadiationDragon ) || 
-							( from is CrystalDragon ) || 
-							( from is VoidDragon ) || 
-							( from is ElderDragon ) || 
-							( from is Hydra ) || 
-							( from is EnergyHydra ) || 
-							( from is JungleWyrm ) || 
-							( from is DesertWyrm ) || 
-							( from is MountainWyrm ) || 
-							( from is AntLion ) || 
-							( from is MetalBeetle ) || 
-							( from is OnyxWyrm ) || 
-							( from is EmeraldWyrm ) || 
-							( from is AmethystWyrm ) || 
-							( from is SapphireWyrm ) || 
-							( from is GarnetWyrm ) || 
-							( from is TopazWyrm ) || 
-							( from is RubyWyrm ) || 
-							( from is SpinelWyrm ) || 
-							( from is QuartzWyrm ) || 
-							( from is ShadowWyrm ) || 
-							( from is AncientWyrm ) || 
-							( from is DragonKing ) || 
+					if ( 	( from is MonstrousSpider ) ||
+							( from is WhiteDragon ) ||
+							( from is BlackDragon ) ||
+							( from is PrimevalFireDragon ) ||
+							( from is PrimevalGreenDragon ) ||
+							( from is PrimevalNightDragon ) ||
+							( from is PrimevalRedDragon ) ||
+							( from is PrimevalRoyalDragon ) ||
+							( from is PrimevalRunicDragon ) ||
+							( from is PrimevalSeaDragon ) ||
+							( from is ReanimatedDragon ) ||
+							( from is VampiricDragon ) ||
+							( from is PrimevalAbysmalDragon ) ||
+							( from is PrimevalAmberDragon ) ||
+							( from is PrimevalBlackDragon ) ||
+							( from is PrimevalDragon ) ||
+							( from is PrimevalSilverDragon ) ||
+							( from is PrimevalVolcanicDragon ) ||
+							( from is PrimevalStygianDragon ) ||
+							( from is BlueDragon ) ||
+							( from is SlasherOfVoid ) ||
+							( from is Dragon ) ||
+							( from is Dragons && from.Body == 59 ) ||
+							( from is RidingDragon && from.Body == 59 ) ||
+							( from is Wyrms && from.Body == 12 ) ||
+							( from is Dragoon ) ||
+							( from is GreenDragon ) ||
+							( from is MetalDragon ) ||
+							( from is LavaDragon ) ||
+							( from is BottleDragon ) ||
+							( from is IceDragon ) ||
+							( from is CaddelliteDragon ) ||
+							( from is WhiteWyrm ) ||
+							( from is GemDragon ) ||
+							( from is NightWyrm ) ||
+							( from is RadiationDragon ) ||
+							( from is CrystalDragon ) ||
+							( from is VoidDragon ) ||
+							( from is ElderDragon ) ||
+							( from is Hydra ) ||
+							( from is EnergyHydra ) ||
+							( from is JungleWyrm ) ||
+							( from is DesertWyrm ) ||
+							( from is MountainWyrm ) ||
+							( from is AntLion ) ||
+							( from is MetalBeetle ) ||
+							( from is OnyxWyrm ) ||
+							( from is EmeraldWyrm ) ||
+							( from is AmethystWyrm ) ||
+							( from is SapphireWyrm ) ||
+							( from is GarnetWyrm ) ||
+							( from is TopazWyrm ) ||
+							( from is RubyWyrm ) ||
+							( from is SpinelWyrm ) ||
+							( from is QuartzWyrm ) ||
+							( from is ShadowWyrm ) ||
+							( from is AncientWyrm ) ||
+							( from is DragonKing ) ||
 							( from is VolcanicDragon ) )
 					{
 						int nBodyChance = (int)(from.Fame * 0.002)+2;
@@ -609,7 +609,7 @@ namespace Server.Misc
 					}
 
 					// HIGH SEAS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-					if (	( from is DeepSeaSerpent ) || ( from is SeaDragon ) || ( from is GiantSquid ) || ( from is DeepSeaDragon ) || ( from is Megalodon ) || 
+					if (	( from is DeepSeaSerpent ) || ( from is SeaDragon ) || ( from is GiantSquid ) || ( from is DeepSeaDragon ) || ( from is Megalodon ) ||
 							( from is Jormungandr ) || ( from is Shark ) || ( from is GreatWhite ) || ( from is SeaSerpent ) || ( from is Kraken ) || ( from is Leviathan ) )
 					{
 						int nBodyChance = (int)(from.Fame * 0.002)+2;
@@ -644,7 +644,7 @@ namespace Server.Misc
 					//-------------------------------------------------------------------------
 
 					if ( 	( neptune.Slays(from) && from.WhisperHue == 999 ) || ( from is Jormungandr ) ||
-							Server.Misc.Worlds.IsSeaDungeon( from.Location, from.Map ) ) 
+							Server.Misc.Worlds.IsSeaDungeon( from.Location, from.Map ) )
 							// ONLY SEA CREATURES ON THE HIGH SEAS DROP from STUFF
 					{
 						int nWreckChance = (int)(from.Fame * 0.002)+2;

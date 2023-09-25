@@ -37,7 +37,7 @@ namespace Server {
 		public DualSaveStrategy() {
 		}
 
-		public override void Save( SaveMetrics metrics, bool permitBackgroundWrite ) 
+		public override void Save( SaveMetrics metrics, bool permitBackgroundWrite )
 		{
 			this.PermitBackgroundWrite = permitBackgroundWrite;
 

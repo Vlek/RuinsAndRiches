@@ -140,7 +140,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to open." );
 				return;
@@ -238,7 +238,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to open." );
 				return;

@@ -1,28 +1,28 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using System.Globalization;
-using Server.Items; 
-using Server.Misc; 
-using Server.Network; 
-using Server.Spells; 
-using Server.Spells.Jedi; 
+using Server.Items;
+using Server.Misc;
+using Server.Network;
+using Server.Spells;
+using Server.Spells.Jedi;
 using Server.Prompts;
 
-namespace Server.Gumps 
-{ 
-	public class JediSpellbookGump : Gump 
+namespace Server.Gumps
+{
+	public class JediSpellbookGump : Gump
 	{
-		private JediSpellbook m_Book; 
+		private JediSpellbook m_Book;
 
 		public bool HasSpell( int spellID )
 		{
 			return (m_Book.HasSpell(spellID));
 		}
 
-		public JediSpellbookGump( Mobile from, JediSpellbook book, int page ) : base( 25, 25 ) 
+		public JediSpellbookGump( Mobile from, JediSpellbook book, int page ) : base( 25, 25 )
 		{
-			m_Book = book; 
+			m_Book = book;
 
             this.Closable=true;
 			this.Disposable=true;
@@ -82,63 +82,63 @@ namespace Server.Gumps
 				AddHtml( 145, 380, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 280, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 380, 4011, 4011, 280, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 281 ) ){ wordColor = "#00FF06"; AddButton(100, 430, 4005, 4005, 381, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 430, 4005 ); }
 				AddItem(60, 427, 21564, 0xB3E);
 				AddHtml( 145, 430, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 281, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 430, 4011, 4011, 281, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 282 ) ){ wordColor = "#00FF06"; AddButton(100, 480, 4005, 4005, 382, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 480, 4005 ); }
 				AddItem(60, 477, 21564, 0xB3E);
 				AddHtml( 145, 480, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 282, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 480, 4011, 4011, 282, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 283 ) ){ wordColor = "#00FF06"; AddButton(100, 530, 4005, 4005, 383, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 530, 4005 ); }
 				AddItem(60, 527, 21564, 0xB3E);
 				AddHtml( 145, 530, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 283, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 530, 4011, 4011, 283, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 284 ) ){ wordColor = "#00FF06"; AddButton(100, 580, 4005, 4005, 384, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 580, 4005 ); }
 				AddItem(60, 577, 21564, 0xB3E);
 				AddHtml( 145, 580, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 284, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 580, 4011, 4011, 284, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 285 ) ){ wordColor = "#00FF06"; AddButton(470, 380, 4005, 4005, 385, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 380, 4005 ); }
 				AddItem(430, 377, 21564, 0xB3E);
 				AddHtml( 515, 380, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 285, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 380, 4011, 4011, 285, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 286 ) ){ wordColor = "#00FF06"; AddButton(470, 430, 4005, 4005, 386, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 430, 4005 ); }
 				AddItem(430, 427, 21564, 0xB3E);
 				AddHtml( 515, 430, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 286, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 430, 4011, 4011, 286, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 287 ) ){ wordColor = "#00FF06"; AddButton(470, 480, 4005, 4005, 387, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 480, 4005 ); }
 				AddItem(430, 477, 21564, 0xB3E);
 				AddHtml( 515, 480, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 287, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 480, 4011, 4011, 287, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 288 ) ){ wordColor = "#00FF06"; AddButton(470, 530, 4005, 4005, 388, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 530, 4005 ); }
 				AddItem(430, 527, 21564, 0xB3E);
 				AddHtml( 515, 530, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Jedi.JediSpell.SpellInfo( 288, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 530, 4011, 4011, 288, GumpButtonType.Reply, 0);
 
-				wordColor = "#308EB3"; 
+				wordColor = "#308EB3";
 				if ( HasSpell( from, 289 ) ){ wordColor = "#00FF06"; AddButton(470, 580, 4005, 4005, 389, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 580, 4005 ); }
 				AddItem(430, 577, 21564, 0xB3E);
@@ -176,23 +176,23 @@ namespace Server.Gumps
 				Region reg = Region.Find( from.Location, from.Map );
 
 				if ( !Server.Misc.GetPlayerInfo.isJedi ( from, false ) || from.Skills[SkillName.Psychology].Value < 100 || from.Skills[SkillName.Tactics].Value < 100 || from.Skills[SkillName.Swords].Value < 100 || from.Fame < 15000 || from.Karma < 15000 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#308EB3>You lack the attributes as a Jedi to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( !( reg.IsPartOf( "the Tomb of Zoda the Jedi Master" ) ) )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#308EB3>You need to be at Zoda's tomb to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( m_Book.steel < 1 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#308EB3>You need a piece of durasteel to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( m_Book.gem < 1 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#308EB3>You need an ordinary gem to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( GetWealth( from ) < 10000 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#308EB3>You need 10,000 gold to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else
@@ -312,9 +312,9 @@ namespace Server.Gumps
 			return ( book != null && book.HasSpell( spellID ) );
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 
 			if ( info.ButtonID >= 280 && info.ButtonID < 290 )
 			{

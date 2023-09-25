@@ -26,7 +26,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Level: " + BrainLevel + "" );
             list.Add( 1049644, "From " + BrainSource + "" );
-        } 
+        }
 
 		public FrankenBrain( Serial serial ) : base( serial )
 		{

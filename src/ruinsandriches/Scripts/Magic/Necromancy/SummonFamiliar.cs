@@ -156,7 +156,7 @@ namespace Server.Spells.Necromancy
 				double spirit = m_From.Skills[SkillName.Spiritualism].Value;
 
 				BaseCreature check = (BaseCreature)SummonFamiliarSpell.Table[m_From];
-				
+
 				if ( check != null && !check.Deleted )
 				{
 					m_From.SendLocalizedMessage( 1061605 ); // You already have a familiar.

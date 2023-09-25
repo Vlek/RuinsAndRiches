@@ -42,7 +42,7 @@ namespace Server.Mobiles
 			Karma = -4000;
 
 			VirtualArmor = 40;
-			
+
 			Item Venom = new VenomSack();
 				Venom.Name = "deadly venom sack";
 				AddItem( Venom );

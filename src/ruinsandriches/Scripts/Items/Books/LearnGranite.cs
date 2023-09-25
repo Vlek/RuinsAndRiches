@@ -75,7 +75,7 @@ namespace Server.Items
 				AddHtml( 209, 67, 679, 702, @"<BODY><BASEFONT Color=" + color + ">Mining is the skill one needs to find granite within caves and mountains. With this granite, stone crafters can make stone furniture and statues. You simply need to get a pick axe or a shovel, double-click it, and then target a mountain side or caven floor. Although you will normally get regular granite, you will eventually get skilled enough to dig up other types of granite.<br><br>The many types of granite are listed here, but only their color makes them unique. So making a statue from shadow iron granite will make a blackened statue.<br><br>In order to make things from the granite, you need to first learn how to dig for it. Legends tell of the gargoyles, and how they can teach the likes of men these secrets. Then if you carpentry skill is good enough, you can begin crafting with a mallet and chisel.<br><br>Mining is also the skill one needs to find sand on beaches and desert sands. With this sand, glass blowers can make items such as bottles and jars. You simply need to get a pick axe or a shovel, double-click it, and then target a the sand at your feet. Sand comes in piles and an alchemist can use a blow pipe to create bottles, for example. This artful crafting is said to also be taught by the gargoyles.</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				from.SendSound( 0x249 );
@@ -84,7 +84,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 ) 
+			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

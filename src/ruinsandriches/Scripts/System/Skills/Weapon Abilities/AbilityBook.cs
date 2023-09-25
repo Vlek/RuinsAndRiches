@@ -30,7 +30,7 @@ namespace Server.Items
 				Dragable=true;
 				Resizable=false;
 
-				AddPage( 0 ); 
+				AddPage( 0 );
 				AddImage( 80, 79, 11010, 0 );
 
 				AddPage(1);
@@ -144,10 +144,10 @@ namespace Server.Items
 						case 54: myIcon = 0x402;	myAttack = "Toxic Strike";				myMana = 20; myDescribe1 = "Causes the weapon to do an extra amount of poison damage."; break;
 						case 55: myIcon = 0x403;	myAttack = "Whirlwind Attack";			myMana = 15; myDescribe1 = "Attacks all valid Targets within a one tile radius of the attacker."; break;
 					}
-					AddPage( nPage ); 
+					AddPage( nPage );
 
 					AddButton( 401, 87, 0x89E, 0x89E, 18, GumpButtonType.Page, (nPage+1) );
-					AddButton( 129, 87, 0x89D, 0x89D, 19, GumpButtonType.Page, (nPage-1) ); 
+					AddButton( 129, 87, 0x89D, 0x89D, 19, GumpButtonType.Page, (nPage-1) );
 
 					int mana = CalculateMana( from, myMana );
 

@@ -77,7 +77,7 @@ namespace Server.Items
 				AddHtml( 209, 67, 679, 702, @"<BODY><BASEFONT Color=" + color + ">Lumberjacking is a task carried out long before the mining of ore. You simply need to get an axe, double-click it, and then target a tree to begin chopping. Although you will normally get regular wood, you will eventually get skilled enough to chop other types of wood. With wood you can make arrows, bows, and crossbows with the bowcrafting skill. You can also make furniture, weapons, and armor with the carpentry skill.<br><br>The many types of wood are listed here, starting up and then going down to higher quality wood. Making a shield out of walnut will be a much better shield than one made of ash, for example. The same goes for bows, crossbows, and other weapons made of wood. Whatever the color of wood you use, the weapon, armor, or instrument will retain the color of the wood. The same goes for many of the furniture and containers you can make from wood. A wooden chest made from cherry wood will be red in color.<br><br>In order to make things from the wood, you need to turn the logs into boards. To do this, double-click the logs and target a saw mill. These mills are commonly found in carpenter shops. Then you can begin crafting with a carpentry tool, or bowcrafting with bowyer tools.</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				from.SendSound( 0x249 );
@@ -86,7 +86,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 ) 
+			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

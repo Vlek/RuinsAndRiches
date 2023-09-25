@@ -53,7 +53,7 @@ namespace Server.Mobiles
 			Karma = -2000;
 
 			VirtualArmor = 24;
-			
+
 			PackItem( new SpidersSilk( 2 ) );
 		}
 

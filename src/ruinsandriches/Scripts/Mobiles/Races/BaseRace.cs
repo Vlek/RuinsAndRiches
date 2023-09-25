@@ -1114,14 +1114,14 @@ namespace Server.Items
 
 				if ( 	skin.SpeciesID == 433 || // EARTH GIANT
 						skin.SpeciesID == 485 || // STONE GIANT
-						skin.SpeciesFamily == "mushroom" || 
-						skin.SpeciesFamily == "plant" || 
-						skin.SpeciesFamily == "reaper" || 
-						skin.SpeciesFamily == "ent" || 
-						skin.SpeciesFamily == "skeleton" || 
-						skin.SpeciesFamily == "mummy" || 
+						skin.SpeciesFamily == "mushroom" ||
+						skin.SpeciesFamily == "plant" ||
+						skin.SpeciesFamily == "reaper" ||
+						skin.SpeciesFamily == "ent" ||
+						skin.SpeciesFamily == "skeleton" ||
+						skin.SpeciesFamily == "mummy" ||
 						skin.SpeciesFamily == "revenant" )
-					return false; 
+					return false;
 			}
 
 			return true;
@@ -1133,7 +1133,7 @@ namespace Server.Items
 			{
 				BaseRace skin = (BaseRace)(m.FindItemOnLayer( Layer.Special ));
 				if ( skin.SpeciesAlignment == "evil" )
-					return true; 
+					return true;
 			}
 
 			return false;
@@ -1145,7 +1145,7 @@ namespace Server.Items
 			{
 				BaseRace skin = (BaseRace)(m.FindItemOnLayer( Layer.Special ));
 				if ( skin.SpeciesAlignment == "good" )
-					return true; 
+					return true;
 			}
 
 			return false;
@@ -1156,23 +1156,23 @@ namespace Server.Items
 			if ( m is PlayerMobile && m.FindItemOnLayer( Layer.Special ) != null && m.FindItemOnLayer( Layer.Special ) is BaseRace )
 			{
 				BaseRace skin = (BaseRace)(m.FindItemOnLayer( Layer.Special ));
-				if ( skin.SpeciesStart != "sea" && 
+				if ( skin.SpeciesStart != "sea" &&
 						(
-							skin.SpeciesFamily == "daemon" || 
-							skin.SpeciesFamily == "demon" || 
-							skin.SpeciesFamily == "devil" || 
-							skin.SpeciesFamily == "succubus" || 
-							skin.SpeciesFamily == "imp" || 
-							skin.SpeciesFamily == "mummy" || 
-							skin.SpeciesFamily == "skeleton" || 
-							skin.SpeciesFamily == "illithid" || 
-							skin.SpeciesFamily == "revenant" || 
-							skin.SpeciesFamily == "golem" || 
-							skin.SpeciesFamily == "vampyre" || 
+							skin.SpeciesFamily == "daemon" ||
+							skin.SpeciesFamily == "demon" ||
+							skin.SpeciesFamily == "devil" ||
+							skin.SpeciesFamily == "succubus" ||
+							skin.SpeciesFamily == "imp" ||
+							skin.SpeciesFamily == "mummy" ||
+							skin.SpeciesFamily == "skeleton" ||
+							skin.SpeciesFamily == "illithid" ||
+							skin.SpeciesFamily == "revenant" ||
+							skin.SpeciesFamily == "golem" ||
+							skin.SpeciesFamily == "vampyre" ||
 							skin.SpeciesFamily == "zombi"
 						)
 					)
-					return true; 
+					return true;
 			}
 
 			return false;
@@ -1183,19 +1183,19 @@ namespace Server.Items
 			if ( m is PlayerMobile && m.FindItemOnLayer( Layer.Special ) != null && m.FindItemOnLayer( Layer.Special ) is BaseRace )
 			{
 				BaseRace skin = (BaseRace)(m.FindItemOnLayer( Layer.Special ));
-				if ( skin.SpeciesAlignment == "evil" && ((PlayerMobile)m).Profession == 0 && 
+				if ( skin.SpeciesAlignment == "evil" && ((PlayerMobile)m).Profession == 0 &&
 						(
-							skin.Name == "Shadow Demon" || 
-							skin.SpeciesFamily == "mummy" || 
-							skin.SpeciesFamily == "skeleton" || 
-							skin.SpeciesFamily == "illithid" || 
-							skin.SpeciesFamily == "revenant" || 
-							skin.SpeciesFamily == "golem" || 
-							skin.SpeciesFamily == "vampyre" || 
+							skin.Name == "Shadow Demon" ||
+							skin.SpeciesFamily == "mummy" ||
+							skin.SpeciesFamily == "skeleton" ||
+							skin.SpeciesFamily == "illithid" ||
+							skin.SpeciesFamily == "revenant" ||
+							skin.SpeciesFamily == "golem" ||
+							skin.SpeciesFamily == "vampyre" ||
 							skin.SpeciesFamily == "zombi"
 						)
 					)
-					return true; 
+					return true;
 			}
 
 			return false;
@@ -1206,14 +1206,14 @@ namespace Server.Items
 			if ( m is PlayerMobile && m.FindItemOnLayer( Layer.Special ) != null && m.FindItemOnLayer( Layer.Special ) is BaseRace )
 			{
 				BaseRace skin = (BaseRace)(m.FindItemOnLayer( Layer.Special ));
-				if ( skin.SpeciesAlignment == "evil" && ((PlayerMobile)m).Profession == 0 && 
+				if ( skin.SpeciesAlignment == "evil" && ((PlayerMobile)m).Profession == 0 &&
 						(
-							( skin.SpeciesStart == "sea" && skin.SpeciesFamily != "zombi" ) || 
-							skin.SpeciesFamily == "dagon" || 
-							skin.SpeciesFamily == "plant" 
+							( skin.SpeciesStart == "sea" && skin.SpeciesFamily != "zombi" ) ||
+							skin.SpeciesFamily == "dagon" ||
+							skin.SpeciesFamily == "plant"
 						)
 					)
-					return true; 
+					return true;
 			}
 
 			return false;
@@ -1224,16 +1224,16 @@ namespace Server.Items
 			if ( m is PlayerMobile && m.FindItemOnLayer( Layer.Special ) != null && m.FindItemOnLayer( Layer.Special ) is BaseRace )
 			{
 				BaseRace skin = (BaseRace)(m.FindItemOnLayer( Layer.Special ));
-				if ( skin.SpeciesAlignment == "evil" && skin.SpeciesStart != "sea" && skin.Name != "Shadow Demon" && ((PlayerMobile)m).Profession == 0 && 
+				if ( skin.SpeciesAlignment == "evil" && skin.SpeciesStart != "sea" && skin.Name != "Shadow Demon" && ((PlayerMobile)m).Profession == 0 &&
 						(
-							skin.SpeciesFamily == "daemon" || 
-							skin.SpeciesFamily == "demon" || 
-							skin.SpeciesFamily == "devil" || 
-							skin.SpeciesFamily == "giant" || 
-							skin.SpeciesFamily == "succubus" 
+							skin.SpeciesFamily == "daemon" ||
+							skin.SpeciesFamily == "demon" ||
+							skin.SpeciesFamily == "devil" ||
+							skin.SpeciesFamily == "giant" ||
+							skin.SpeciesFamily == "succubus"
 						)
 					)
-					return true; 
+					return true;
 			}
 
 			return false;

@@ -11,7 +11,7 @@ namespace Server.Items
 	public class SpaceDyes : Item
 	{
 		public int vialHue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int vial_Hue { get { return vialHue; } set { vialHue = value; InvalidateProperties(); } }
 
@@ -26,7 +26,7 @@ namespace Server.Items
 			Weight = 0.01;
 			Stackable = true;
 			Amount = amount;
-			Name = "space-age dye"; 
+			Name = "space-age dye";
 		}
 
 		public override void AddNameProperties( ObjectPropertyList list )

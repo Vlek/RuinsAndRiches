@@ -33,14 +33,14 @@ namespace Server.Items
 
 			CreatePiece( new PieceWhiteKnight( this ), 216, 30 );
 			CreatePiece( new PieceWhiteKnight( this ), 216, 155 );
-					
+
 			// Bishop
 			CreatePiece( new PieceBlackBishop( this ), 42, 55 );
 			CreatePiece( new PieceBlackBishop( this ), 42, 130 );
 
 			CreatePiece( new PieceWhiteBishop( this ), 216, 55 );
 			CreatePiece( new PieceWhiteBishop( this ), 216, 130 );
-			
+
 			// Queen
 			CreatePiece( new PieceBlackQueen( this ), 42, 105 );
 			CreatePiece( new PieceWhiteQueen( this ), 216, 105 );

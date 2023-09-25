@@ -23,12 +23,12 @@ namespace Server.Items
 			Hue = 0x8AB;
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from ) );
 			list.Add( new FishingQuestEntry( from ) );
-			list.Add( new FishingQuestComplete( from ) ); 
+			list.Add( new FishingQuestComplete( from ) );
 		}
 
 		public override void OnDoubleClick( Mobile e )
@@ -47,7 +47,7 @@ namespace Server.Items
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public SpeechGumpEntry( Mobile from ) : base( 1024, 3 )
 			{
 				m_Mobile = from;
@@ -57,7 +57,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				m_Mobile.CloseGump( typeof( BoardGump ) );
 				m_Mobile.SendGump( new BoardGump( m_Mobile, "SEEKING BRAVE SAILORS", "The townsfolk are looking for brave sailors of the high seas, " + m_Mobile.Name +". Sailors are given bounties on pirates or sea creatures, or items they are to search for and retrieve. Each quest must be completed to get another. If you fail at one quest, the townsfolk will not grant another unless reparations are given. The more famous a sailor, the better chance to get a high priced bounty or valuable item to find.<br><br><br><br>To get a quest, one must simply ask this bulletin board if any townsfolk wish to 'hire' them. These quests do not send you to seas you have never been. Any details of the quest can be read in the quest log (typing '[quests'). When such a quest is completed, return to any of these bulletin boards and select that you are 'done'. You will be rewarded with some gold and fame. You will gain some karma unless your karma is locked. In that case, you will lose karma instead.", "#9dc2e8", false ) );
             }
@@ -66,7 +66,7 @@ namespace Server.Items
 		public class FishingQuestEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public FishingQuestEntry( Mobile from ) : base( 6120, 12 )
 			{
 				m_Mobile = from;
@@ -108,7 +108,7 @@ namespace Server.Items
 		public class FishingQuestComplete : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public FishingQuestComplete( Mobile from ) : base( 548, 12 )
 			{
 				m_Mobile = from;

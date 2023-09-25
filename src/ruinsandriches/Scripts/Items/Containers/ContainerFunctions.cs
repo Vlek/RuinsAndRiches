@@ -182,7 +182,7 @@ namespace Server.Misc
 			int CorpseNoFiller = 0;
 			if ( box is CorpseChest ){ CorpseNoFiller = 1; }
 			else if ( box is CorpseSailor ){ CorpseNoFiller = 1; }
-			
+
 			filled = Utility.RandomMinMax( filler,fillup );
 			for ( int i = 0; i < ( filled ); ++i )
 			{
@@ -252,7 +252,7 @@ namespace Server.Misc
 					if ( (idropped is MetalBox) && (iRich+300 > Utility.Random(300)) )
 					{
 						idropped.ItemID = Utility.RandomList( 0xE80, 0x9A8 );
-						switch ( Utility.RandomMinMax( 0, 18 ) ) 
+						switch ( Utility.RandomMinMax( 0, 18 ) )
 						{
 							case 0: idropped.Hue = MaterialInfo.GetMaterialColor( "dull copper", "classic", 0 ); idropped.Name = "Dull Copper Box";	break;
 							case 1: idropped.Hue = MaterialInfo.GetMaterialColor( "shadow iron", "classic", 0 ); idropped.Name = "Shadow Iron Box";	break;
@@ -281,7 +281,7 @@ namespace Server.Misc
 						{
 							idropped.ItemID = Utility.RandomList( 0xE75, 0x53D5 );
 							Backpack ipack = (Backpack)idropped;
-							switch ( Utility.RandomMinMax( 0, 23 ) ) 
+							switch ( Utility.RandomMinMax( 0, 23 ) )
 							{
 								case 0: ipack.GumpID = 0x415;	idropped.Name = "Deep Sea Leather Backpack";	idropped.Hue = MaterialInfo.GetMaterialColor( "deep sea", "", 0 );			break;
 								case 1: ipack.GumpID = 0x415;	idropped.Name = "Lizard Leather Backpack";		idropped.Hue = MaterialInfo.GetMaterialColor( "lizard", "", 0 );			break;
@@ -308,7 +308,7 @@ namespace Server.Misc
 						}
 						else
 						{
-							switch ( Utility.RandomMinMax( 0, 13 ) ) 
+							switch ( Utility.RandomMinMax( 0, 13 ) )
 							{
 								case 0: 	idropped.Hue = MaterialInfo.GetMaterialColor( "deep sea", "", 0 );			idropped.Name = "Deep Sea Leather Bag";	break;
 								case 1:		idropped.Hue = MaterialInfo.GetMaterialColor( "lizard", "", 0 );			idropped.Name = "Lizard Leather Bag";	break;
@@ -437,7 +437,7 @@ namespace Server.Misc
 								}
 								else
 								{
-									Item item = Loot.RandomGem(); 
+									Item item = Loot.RandomGem();
 									if ( IgnoreThisFiller == 2 ){ Server.Misc.MorphingTime.MakeSpaceAceItem( item, opener ); }
 									iBook.DropItem( item );
 								}
@@ -448,7 +448,7 @@ namespace Server.Misc
 					{
 						string baggy = "Giant";
 							if ( idropped is EnormousBag ){ baggy = "Enormous"; }
-						switch ( Utility.RandomMinMax( 0, 13 ) ) 
+						switch ( Utility.RandomMinMax( 0, 13 ) )
 						{
 							case 0: 	idropped.Hue = MaterialInfo.GetMaterialColor( "deep sea", "", 0 );			idropped.Name = "Deep Sea Leather " + baggy + " Bag";	break;
 							case 1:		idropped.Hue = MaterialInfo.GetMaterialColor( "lizard", "", 0 );			idropped.Name = "Lizard Leather " + baggy + " Bag";		break;
@@ -478,7 +478,7 @@ namespace Server.Misc
 
 				if ( sandy == "the Serpent Island" )
 				{
-					switch ( Utility.RandomMinMax( 0, 2 ) ) 
+					switch ( Utility.RandomMinMax( 0, 2 ) )
 					{
 						case 0: Item s1 = new SandMiningBook();		box.DropItem( s1 ); break;
 						case 1: Item s2 = new GlassblowingBook();	box.DropItem( s2 ); break;
@@ -572,7 +572,7 @@ namespace Server.Misc
 
 				if ( iRich > Utility.Random( 100 ) )
 				{
-					switch ( Utility.RandomMinMax( 0, 4 ) ) 
+					switch ( Utility.RandomMinMax( 0, 4 ) )
 					{
 						case 0: idropped.DamageLevel = WeaponDamageLevel.Ruin; break;
 						case 1: idropped.DamageLevel = WeaponDamageLevel.Might; break;
@@ -583,7 +583,7 @@ namespace Server.Misc
 				}
 				if ( iRich > Utility.Random( 100 ) )
 				{
-					switch ( Utility.RandomMinMax( 0, 4 ) ) 
+					switch ( Utility.RandomMinMax( 0, 4 ) )
 					{
 						case 0: idropped.DurabilityLevel = WeaponDurabilityLevel.Durable; break;
 						case 1: idropped.DurabilityLevel = WeaponDurabilityLevel.Substantial; break;
@@ -643,7 +643,7 @@ namespace Server.Misc
 
 				if ( iRich > Utility.Random( 100 ) )
 				{
-					switch ( Utility.RandomMinMax( 0, 4 ) ) 
+					switch ( Utility.RandomMinMax( 0, 4 ) )
 					{
 						case 0: idropped.ProtectionLevel = ArmorProtectionLevel.Defense; break;
 						case 1: idropped.ProtectionLevel = ArmorProtectionLevel.Guarding; break;
@@ -654,7 +654,7 @@ namespace Server.Misc
 				}
 				if ( iRich > Utility.Random( 100 ) )
 				{
-					switch ( Utility.RandomMinMax( 0, 4 ) ) 
+					switch ( Utility.RandomMinMax( 0, 4 ) )
 					{
 						case 0: idropped.Durability = ArmorDurabilityLevel.Durable; break;
 						case 1: idropped.Durability = ArmorDurabilityLevel.Substantial; break;
@@ -735,7 +735,7 @@ namespace Server.Misc
 					if ( IgnoreThisFiller == 2 ){ Server.Misc.MorphingTime.MakeSpaceAceItem( item, opener ); }
 
 					box.DropItem( item );
-				}	
+				}
 			}
 
 			if ( iRich > Utility.Random( 100 ) && IgnoreThisFiller != 2 )
@@ -777,7 +777,7 @@ namespace Server.Misc
 			{
 				if ( iRich > Utility.Random( 100 ) )
 				{
-					Item item = Loot.RandomGem(); 
+					Item item = Loot.RandomGem();
 					if ( IgnoreThisFiller == 2 ){ Server.Misc.MorphingTime.MakeSpaceAceItem( item, opener ); }
 					box.DropItem( item );
 				}
@@ -1360,7 +1360,7 @@ namespace Server.Misc
 				}
 
 				if ( box.ItemID == 0x3564 || box.ItemID == 0x3565 )
-				{ 
+				{
 					box.GumpID = 0x976;
 					string broke = "broken";
 					switch( Utility.Random( 10 ) )
@@ -1487,105 +1487,105 @@ namespace Server.Misc
 				}
 				else
 				{
-					string[] vName3 = new string[] {"Aaby", "Arkwright", "Blasco", "Dagmar", "Elsdon", "Gladstone", "Hultz", "March", "Prichard", "Theodric", 
-					"Aage", "Arlo", "Bledsoe", "Damian", "Elswyth", "Glassford", "Humbert", "Markahm", "Proctor", "Thorburn", 
-					"Aanon", "Armand", "Blount", "Damon", "Elton", "Glendower", "Hunter", "Marques", "Pue", "Thordarson", 
-					"Aarlen", "Armar", "Bo", "Dana", "Elvin", "Glover", "Hurd", "Marsden", "Pulteney", "Thorkild", 
-					"Aart", "Armin", "Bodil", "Danforth", "Elwell", "Glyn", "Hyder", "Marshman", "Purdon", "Thormodr", 
-					"Achim", "Armistead", "Boner", "Darrell", "Emory", "Godfrey", "Hynman", "Maxfield", "Pyke", "Thorndike", 
-					"Adair", "Armitage", "Booker", "Damn", "Endicott", "Godwin", "Ilo", "Mayhew", "Quan", "Thomwell", 
-					"Adalbert", "Acmo", "Booth", "Darvin", "Endrede", "Golding", "Ingholm", "Medart", "Quarles", "Thorold", 
-					"Adelsteen", "Arndt", "Boott", "Dashiell", "Endsor", "Goldwin", "Ingram", "Megan", "Quixano", "Thorsager", 
-					"Adger", "Arnesen", "Borlace", "Dashwood", "Engelhard", "Goodhue", "Inigo", "Meghnad", "Raban", "Thorvald", 
-					"Adin", "Amfinn", "Botho", "Dayyan", "Erard", "Gotthard", "Irial", "Meredith", "Rabindranath", "Thorvaldur", 
-					"Adolf", "Arni", "Bourke", "Delevan", "Ercan", "Govier", "Irvin", "Mervyn", "Ragnal", "Throck", 
-					"Adoniram", "Arno", "Bowie", "Demarest", "Erdmann", "Govind", "Lsak", "Methuen", "Ragnar", "Tilford", 
-					"Adriaan", "Arnold", "Boyd", "Denham", "Eric", "Gowen", "Lsambard", "Midhat", "Raikes", "Tillinghast", 
-					"Agathon", "Arnot", "Brace", "Denton", "Erland", "Graham", "Ivor", "Milo", "Ralls", "Tilloch", 
-					"Agenor", "Arnulf", "Bracken", "Denzil", "Erie", "Greenleaf", "Izard", "Miner", "Ranald", "Todhunter", 
-					"Agidius", "Arnvid", "Branwell", "Derval", "Emald", "Gridley", "Jacoby", "Moffett", "Ranfurly", "Tolbert", 
-					"Aidan", "Aron", "Brent", "Dextar", "Eman", "Griffith", "Jagadis", "Monarch", "Ranjan", "Topham", 
-					"Aiker", "Apad", "Brion", "Diderik", "Elvin", "Griggs", "Jahverbhai", "Montfort", "Rankin", "Trafford", 
-					"Aikman", "Arthol", "Brockden", "Diehl", "Esmond", "Grinling", "Janvel", "Morgan", "Rannulf", "Trelawyn", 
-					"Aimo", "Arthur", "Brodhead", "Dighton", "Ethelbert", "Griswold", "Jawaharial", "Morley", "Rattray", "Trick", 
-					"Aino", "Artur", "Brodribb", "Dillon", "Ethelred", "Grover", "Jayaprakash", "Mungo", "Redcliffe", "Trigg", 
-					"Aitken", "Arvid", "Bronwyn", "Dinham", "Eudo", "Gudmundur", "Jenkin", "Murdo", "Rendel", "Trost", 
-					"Aksel", "Arving", "Bror", "Dirk", "Evald", "Guibert", "Jephson", "Murdoch", "Rhys", "Trotwood", 
-					"Aladar", "Arvo", "Broun", "Doak", "Evan", "Guido", "Jevan", "Murrough", "Rickard", "Trowbridge", 
-					"Alain", "Asaf", "Bruno", "Domhnall", "Evarts", "Gulian", "Jolan", "Mustafa", "Ringgold", "Truesdell", 
-					"Alan", "Asgard", "Burkard", "Donagh", "Everard", "Gunnar", "Jotham", "Myrick", "Roach", "Tufnell", 
-					"Alanson", "Asget", "Byam", "Donal", "Evert", "Gunning", "Karel", "Nagel", "Roark", "Tunstall", 
-					"Alaric", "Ashburton", "Byrne", "Dongal", "Evind", "Gunther", "Kuker", "Natty", "Rockhill", "Turhan", 
-					"Alastair", "Ashdown", "Byre", "Doniol", "Ewald", "Gumey", "Kaspar", "Negley", "Rodefer", "Turpin", 
-					"Alberich", "Ashur", "Bysshe", "Doral", "Ewen", "Gustav", "Kavalam", "Nesbit", "Roderic", "Tuttle", 
-					"Albert", "Askew", "Cabell", "Dom", "Eyulf", "Guthrie", "Kegan", "Nevile", "Roland", "Tylden", 
-					"Albin", "Astolphe", "Cadmar", "Dorr", "Eyvind", "Gutzon", "Kelvin", "Newall", "Romer", "Tyrwhitt", 
-					"Albion", "Athol", "Cadwallader", "Doud", "Faber", "Gwyn", "Kemble", "Newbold", "Romney", "Uhler", 
-					"Albrecht", "Atul", "Cairn", "Dougal", "Fahs", "Gylian", "Kendall", "Newman", "Ronan", "Ulric", 
-					"Akan", "Aubrey", "Calbraith", "Doust", "Fairfax", "Haakon", "Kendrick", "Nibbidard", "Root", "Ulrich", 
-					"Aldegond", "Aulius", "Calder", "Dragan", "Fairman", "Hablot", "Kenesaw", "Nichol", "Roscoe", "Unwin", 
-					"Alden", "August", "Cale", "Dragutin", "Falcon", "Hack", "Kenrick", "Ninian", "Rosskeen", "Upton", 
-					"Aldert", "Axel", "Callcott", "Dred", "Falkiner", "Haddon", "Kermit", "Norval", "Roundell", "Usher", 
-					"Aldis", "Aylmer", "Calvert", "Drexel", "Fanshaw", "Hagar", "Kevan", "Norvin", "Rucker", "Valdemar", 
-					"Aldhelm", "Baget", "Carey", "Duald", "Faraday", "Haigh", "Kian", "Norwood", "Rudyard", "Valerand", 
-					"Aldred", "Baird", "Carless", "Duer", "Farquhar", "Halbert", "Kieran", "Oakes", "Rufus", "Vannevar", 
-					"Aldrich", "Bal", "Carlyle", "Dugal", "Farwell", "Halcyon", "Kilian", "Obed", "Ruggles", "Vardis", 
-					"Aldridge", "Baldor", "Caron", "Dugald", "Feargus", "Haldane", "Kinloch", "Odd", "Rutland", "Varnum", 
-					"Aldro", "Balduin", "Carsten", "Dugdale", "Fedor", "Hale", "Kirk", "Odo", "Sacheverall", "Venable", 
-					"Aldwerth", "Baldur", "Carvell", "Dunbar", "Feike", "Halfdan", "Kirsopp", "Ogden", "Sackville", "Vicat", 
-					"Aldwin", "Balfour", "Caryl", "Dundas", "Felam", "Hallock", "Knud", "Oldham", "Sadler", "Vidkun", 
-					"Alec", "Baldwin", "Cashin", "Dunglas", "Fellow", "Hallowell", "Knut", "Olof", "Salmon", "Vilhelm", 
-					"Alers", "Dalial", "Cathal", "Dunstan", "Fenwick", "Halvord", "Konrad", "Onslow", "Salter", "Vincas", 
-					"Ales", "Ballard", "Chalfant", "Dunwody", "Ferdinand", "Hamlin", "Krishnalai", "Onufrio", "Salwyn", "Vlasta", 
-					"Alf", "Balthasard", "Chard", "Dunward", "Fergus", "Hamnel", "Kroh", "Ordway", "Sanfrid", "Vokos", 
-					"Alfons", "Bardach", "Chauncey", "Dwarkanath", "Femand", "Hanford", "Krom", "Ormsby", "Sardul", "Volrath", 
-					"Alford", "Bardwell", "Chichester", "Dwyer", "Feustmann", "Harald", "Kuno", "Orren", "Sawdon", "Vyner", 
-					"Alfred", "Barend", "Chittenden", "Dyce", "Fielding", "Harbaugh", "Kurd", "Orridge", "Scudamore", "Wadleigh", 
-					"Algernon", "Barent", "Chlodwig", "Dyer", "Finbar", "Harcourt", "Kurt", "Oswin", "Sechler", "Wager", 
-					"Alister", "Baring", "Chrowder", "Dyke", "Findley", "Hardeman", "Kyle", "Otho", "Selig", "Wakeman", 
-					"Allard", "Barlow", "Clafin", "Dylan", "Finegan", "Hardwicke", "Lachlan", "Overton", "Selwyn", "Waldegrave", 
-					"Allart", "Barnas", "Cleghorn", "Dyneley", "Fingal", "Harkness", "Lamar", "Owain", "Shackerley", "Waldemar", 
-					"Alisbone", "Barret", "Clerihew", "Eadweard", "Firozhan", "Harlan", "Langhorne", "Owen", "Shadrach", "Waleran", 
-					"Alliston", "Barron", "Clinch", "Eager", "Fitzedward", "Hartpole", "Langston", "Padraic", "Shadworth", "Walford", 
-					"Alison", "Barry", "Clipster", "Eamon", "Fitzroy", "Hartwig", "Lanthom", "Paget", "Sibert", "Walsham", 
-					"Allvar", "Barstow", "Clopton", "Eanger", "Flinders", "Harwood", "Lardner", "Parr", "Siegfried", "Waring", 
-					"Allyn", "Barthel", "Clovis", "Eardley", "Florimund", "Hasket", "Larkin", "Paschal", "Sigfrid", "Wark", 
-					"Almer", "Bartle", "Cnud", "Earle", "Flygare", "Hatcher", "Law", "Passmore", "Silvan", "Warrender", 
-					"Almeric", "Barton", "Cnul", "Earnest", "Forester", "Havelock", "Ledyard", "Pattabhai", "Slater", "Warwick", 
-					"Almroth", "Bayard", "Coolter", "Eastman", "Fothergill", "Hazard", "Legnnd", "Pearsall", "Sligh", "Watt", 
-					"Almu", "Beams", "Cael", "Eberhard", "Frederic", "Healdon", "Lenox", "Peffer", "Slingsby", "Wedlake", 
-					"Aloysius", "Beck", "Colden", "Eckert", "Fredrik", "Heaslip", "Leofric", "Pejeg", "Smedley", "Wellborn", 
-					"Alpheus", "Bede", "Colgan", "Eckhard", "Freeborn", "Hedwig", "Lewellyn", "Pelham", "Southall", "Westcott", 
-					"Alphons", "&Om", "Colin", "Ector", "Freeman", "Helm", "Lightfoot", "Penfield", "Sprigg", "Whitwell", 
-					"Alsop", "Bengl", "Colon", "Edgar", "Frey", "Helmer", "Lippard", "Penhallow", "Stanwood", "Wideman", 
-					"Alton", "Benoist", "Cotton", "Edmond", "Fryniwyd", "Heman", "Liptrot", "Penniman", "Starke", "Wightman", 
-					"Alured", "Berean", "Colwyn", "Edmondstone", "Fumifold", "Hendrick", "Littleton", "Penrhyn", "Stedman", "Wildhair", 
-					"Alvan", "Bergen", "Conall", "Edric", "Gadsby", "Henrick", "Livermore", "Pepperell", "Stehman", "Wilfrid", 
-					"Alvey", "Bern", "Conan", "Edson", "Gaillard", "Hereward", "Llangewellen", "Peregrine", "Stenger", "Wilibald", 
-					"Alvord", "Bernhart", "Congal", "Eduard", "Gairdner", "Heron", "Lewellyn", "Perrin", "Steponas", "Willock", 
-					"Alvred", "Bernt", "Conlan", "Edwyn", "Galdar", "Heward", "Lockwood", "Persifor", "Sterndale", "Windham", 
-					"Alwyn", "Bertil", "Connop", "Efrem", "Gale", "Hickling", "Lorin", "Phanuel", "Stetson", "Winton", 
-					"Amadis", "Bertram", "Conor", "Egan", "Garet", "Hildebrand", "Lothrop", "Pharamond", "Stetter", "Woart", 
-					"Ames", "Bertran", "Conrad", "Egbert", "Gareth", "Hildreth", "Loudon", "Phallius", "Stilingfleet", "Wolmar", 
-					"Amschel", "Bevil", "Conwy", "Egerton", "Garrick", "Hildric", "Lovegood", "Phelim", "Stillman", "Woodfin", 
-					"Anatol", "Beylard", "Cormac", "Egon", "Garrott", "Hislop", "Lufkin", "Philo", "Siopford", "Woodruff", 
-					"Andrus", "Bhimrao", "Corrowr", "Eglon", "Garth", "Hjalmar", "Lyndon", "Philpot", "Strachan", "Woollgar", 
-					"Aneurin", "Bhoskar", "Corry", "Ehrman", "Garvin", "Hjorth", "Lysander", "Phimister", "Stroud", "Worley", 
-					"Angus", "Bhupindar", "Corwin", "Eilhard", "Garwood", "Hoadley", "Lytler", "Pickman", "Strudwick", "Wortley", 
-					"Ansel", "Bidwell", "Cowan", "Eilif", "Gassaway", "Hobart", "Macallan", "Pigot", "Surridge", "Wycliffe", 
-					"Anselm", "Bindon", "Cowden", "Einar", "Gaston", "Hodgdon", "Macaulay", "Pike", "Sulan", "Wyly", 
-					"Anson", "Bion", "Cowper", "Eivind", "Gavin", "Hogg", "Macer", "Pinkham", "Svante", "Wynkyn", 
-					"Antal", "Bipin", "Craigh", "Elbert", "Gebhard", "Holbrook", "Macklin", "Pinkney", "Svatopluk", "Xanthus", 
-					"Anthelme", "Birath", "Cronyn", "Eldon", "Geoffrey", "Holger", "Macvey", "Pinkstone", "Sveinbjom", "Xaver", 
-					"Anton", "Birbeck", "Croyble", "Eldred", "Gerard", "Hollister", "Maddem", "Plaisted", "Swain", "Xystus", 
-					"Antony", "Birchard", "Crundall", "Eldric", "Cerd", "Hookham", "Maddock", "Plummer", "Swartwout", "Yandell", 
-					"Antrim", "Birger", "Culkin", "Eleazar", "Gerhard", "Horton", "Madhao", "Plunkett", "Sydnor", "Yardley", 
-					"Anthorp", "Birket", "Cullen", "Elford", "Gerhart", "Howarth", "Magill", "Pollard", "Radeus", "York", 
-					"Archibald", "Bjami", "Cullross", "Elhanan", "Gerrard", "Howland", "Mahlon", "Pollock", "Taggart", "Zabdiel", 
-					"Ardal", "Bjorn", "Cuthbert", "Eliakim", "Gerrish", "Hrothgar", "Makdougall", "Polycarp", "Tasker", "Zachris", 
-					"Arder", "Bjornstem", "Cylarus", "Elinor", "Ghislain", "Hrodnovar", "Malhar", "Pomeroy", "Taurus", "Zadock", 
-					"Aretas", "Blackwood", "Eyriel", "Ellingwood", "Gholson", "Hudleston", "Malvin", "Prafulla", "Tell", "Zebulon", 
-					"Ariad", "Blaine", "Cyrillus", "Ellwood", "Gibbon", "Huffam", "Manfred", "Pendergast", "Tench", "Zenon", 
+					string[] vName3 = new string[] {"Aaby", "Arkwright", "Blasco", "Dagmar", "Elsdon", "Gladstone", "Hultz", "March", "Prichard", "Theodric",
+					"Aage", "Arlo", "Bledsoe", "Damian", "Elswyth", "Glassford", "Humbert", "Markahm", "Proctor", "Thorburn",
+					"Aanon", "Armand", "Blount", "Damon", "Elton", "Glendower", "Hunter", "Marques", "Pue", "Thordarson",
+					"Aarlen", "Armar", "Bo", "Dana", "Elvin", "Glover", "Hurd", "Marsden", "Pulteney", "Thorkild",
+					"Aart", "Armin", "Bodil", "Danforth", "Elwell", "Glyn", "Hyder", "Marshman", "Purdon", "Thormodr",
+					"Achim", "Armistead", "Boner", "Darrell", "Emory", "Godfrey", "Hynman", "Maxfield", "Pyke", "Thorndike",
+					"Adair", "Armitage", "Booker", "Damn", "Endicott", "Godwin", "Ilo", "Mayhew", "Quan", "Thomwell",
+					"Adalbert", "Acmo", "Booth", "Darvin", "Endrede", "Golding", "Ingholm", "Medart", "Quarles", "Thorold",
+					"Adelsteen", "Arndt", "Boott", "Dashiell", "Endsor", "Goldwin", "Ingram", "Megan", "Quixano", "Thorsager",
+					"Adger", "Arnesen", "Borlace", "Dashwood", "Engelhard", "Goodhue", "Inigo", "Meghnad", "Raban", "Thorvald",
+					"Adin", "Amfinn", "Botho", "Dayyan", "Erard", "Gotthard", "Irial", "Meredith", "Rabindranath", "Thorvaldur",
+					"Adolf", "Arni", "Bourke", "Delevan", "Ercan", "Govier", "Irvin", "Mervyn", "Ragnal", "Throck",
+					"Adoniram", "Arno", "Bowie", "Demarest", "Erdmann", "Govind", "Lsak", "Methuen", "Ragnar", "Tilford",
+					"Adriaan", "Arnold", "Boyd", "Denham", "Eric", "Gowen", "Lsambard", "Midhat", "Raikes", "Tillinghast",
+					"Agathon", "Arnot", "Brace", "Denton", "Erland", "Graham", "Ivor", "Milo", "Ralls", "Tilloch",
+					"Agenor", "Arnulf", "Bracken", "Denzil", "Erie", "Greenleaf", "Izard", "Miner", "Ranald", "Todhunter",
+					"Agidius", "Arnvid", "Branwell", "Derval", "Emald", "Gridley", "Jacoby", "Moffett", "Ranfurly", "Tolbert",
+					"Aidan", "Aron", "Brent", "Dextar", "Eman", "Griffith", "Jagadis", "Monarch", "Ranjan", "Topham",
+					"Aiker", "Apad", "Brion", "Diderik", "Elvin", "Griggs", "Jahverbhai", "Montfort", "Rankin", "Trafford",
+					"Aikman", "Arthol", "Brockden", "Diehl", "Esmond", "Grinling", "Janvel", "Morgan", "Rannulf", "Trelawyn",
+					"Aimo", "Arthur", "Brodhead", "Dighton", "Ethelbert", "Griswold", "Jawaharial", "Morley", "Rattray", "Trick",
+					"Aino", "Artur", "Brodribb", "Dillon", "Ethelred", "Grover", "Jayaprakash", "Mungo", "Redcliffe", "Trigg",
+					"Aitken", "Arvid", "Bronwyn", "Dinham", "Eudo", "Gudmundur", "Jenkin", "Murdo", "Rendel", "Trost",
+					"Aksel", "Arving", "Bror", "Dirk", "Evald", "Guibert", "Jephson", "Murdoch", "Rhys", "Trotwood",
+					"Aladar", "Arvo", "Broun", "Doak", "Evan", "Guido", "Jevan", "Murrough", "Rickard", "Trowbridge",
+					"Alain", "Asaf", "Bruno", "Domhnall", "Evarts", "Gulian", "Jolan", "Mustafa", "Ringgold", "Truesdell",
+					"Alan", "Asgard", "Burkard", "Donagh", "Everard", "Gunnar", "Jotham", "Myrick", "Roach", "Tufnell",
+					"Alanson", "Asget", "Byam", "Donal", "Evert", "Gunning", "Karel", "Nagel", "Roark", "Tunstall",
+					"Alaric", "Ashburton", "Byrne", "Dongal", "Evind", "Gunther", "Kuker", "Natty", "Rockhill", "Turhan",
+					"Alastair", "Ashdown", "Byre", "Doniol", "Ewald", "Gumey", "Kaspar", "Negley", "Rodefer", "Turpin",
+					"Alberich", "Ashur", "Bysshe", "Doral", "Ewen", "Gustav", "Kavalam", "Nesbit", "Roderic", "Tuttle",
+					"Albert", "Askew", "Cabell", "Dom", "Eyulf", "Guthrie", "Kegan", "Nevile", "Roland", "Tylden",
+					"Albin", "Astolphe", "Cadmar", "Dorr", "Eyvind", "Gutzon", "Kelvin", "Newall", "Romer", "Tyrwhitt",
+					"Albion", "Athol", "Cadwallader", "Doud", "Faber", "Gwyn", "Kemble", "Newbold", "Romney", "Uhler",
+					"Albrecht", "Atul", "Cairn", "Dougal", "Fahs", "Gylian", "Kendall", "Newman", "Ronan", "Ulric",
+					"Akan", "Aubrey", "Calbraith", "Doust", "Fairfax", "Haakon", "Kendrick", "Nibbidard", "Root", "Ulrich",
+					"Aldegond", "Aulius", "Calder", "Dragan", "Fairman", "Hablot", "Kenesaw", "Nichol", "Roscoe", "Unwin",
+					"Alden", "August", "Cale", "Dragutin", "Falcon", "Hack", "Kenrick", "Ninian", "Rosskeen", "Upton",
+					"Aldert", "Axel", "Callcott", "Dred", "Falkiner", "Haddon", "Kermit", "Norval", "Roundell", "Usher",
+					"Aldis", "Aylmer", "Calvert", "Drexel", "Fanshaw", "Hagar", "Kevan", "Norvin", "Rucker", "Valdemar",
+					"Aldhelm", "Baget", "Carey", "Duald", "Faraday", "Haigh", "Kian", "Norwood", "Rudyard", "Valerand",
+					"Aldred", "Baird", "Carless", "Duer", "Farquhar", "Halbert", "Kieran", "Oakes", "Rufus", "Vannevar",
+					"Aldrich", "Bal", "Carlyle", "Dugal", "Farwell", "Halcyon", "Kilian", "Obed", "Ruggles", "Vardis",
+					"Aldridge", "Baldor", "Caron", "Dugald", "Feargus", "Haldane", "Kinloch", "Odd", "Rutland", "Varnum",
+					"Aldro", "Balduin", "Carsten", "Dugdale", "Fedor", "Hale", "Kirk", "Odo", "Sacheverall", "Venable",
+					"Aldwerth", "Baldur", "Carvell", "Dunbar", "Feike", "Halfdan", "Kirsopp", "Ogden", "Sackville", "Vicat",
+					"Aldwin", "Balfour", "Caryl", "Dundas", "Felam", "Hallock", "Knud", "Oldham", "Sadler", "Vidkun",
+					"Alec", "Baldwin", "Cashin", "Dunglas", "Fellow", "Hallowell", "Knut", "Olof", "Salmon", "Vilhelm",
+					"Alers", "Dalial", "Cathal", "Dunstan", "Fenwick", "Halvord", "Konrad", "Onslow", "Salter", "Vincas",
+					"Ales", "Ballard", "Chalfant", "Dunwody", "Ferdinand", "Hamlin", "Krishnalai", "Onufrio", "Salwyn", "Vlasta",
+					"Alf", "Balthasard", "Chard", "Dunward", "Fergus", "Hamnel", "Kroh", "Ordway", "Sanfrid", "Vokos",
+					"Alfons", "Bardach", "Chauncey", "Dwarkanath", "Femand", "Hanford", "Krom", "Ormsby", "Sardul", "Volrath",
+					"Alford", "Bardwell", "Chichester", "Dwyer", "Feustmann", "Harald", "Kuno", "Orren", "Sawdon", "Vyner",
+					"Alfred", "Barend", "Chittenden", "Dyce", "Fielding", "Harbaugh", "Kurd", "Orridge", "Scudamore", "Wadleigh",
+					"Algernon", "Barent", "Chlodwig", "Dyer", "Finbar", "Harcourt", "Kurt", "Oswin", "Sechler", "Wager",
+					"Alister", "Baring", "Chrowder", "Dyke", "Findley", "Hardeman", "Kyle", "Otho", "Selig", "Wakeman",
+					"Allard", "Barlow", "Clafin", "Dylan", "Finegan", "Hardwicke", "Lachlan", "Overton", "Selwyn", "Waldegrave",
+					"Allart", "Barnas", "Cleghorn", "Dyneley", "Fingal", "Harkness", "Lamar", "Owain", "Shackerley", "Waldemar",
+					"Alisbone", "Barret", "Clerihew", "Eadweard", "Firozhan", "Harlan", "Langhorne", "Owen", "Shadrach", "Waleran",
+					"Alliston", "Barron", "Clinch", "Eager", "Fitzedward", "Hartpole", "Langston", "Padraic", "Shadworth", "Walford",
+					"Alison", "Barry", "Clipster", "Eamon", "Fitzroy", "Hartwig", "Lanthom", "Paget", "Sibert", "Walsham",
+					"Allvar", "Barstow", "Clopton", "Eanger", "Flinders", "Harwood", "Lardner", "Parr", "Siegfried", "Waring",
+					"Allyn", "Barthel", "Clovis", "Eardley", "Florimund", "Hasket", "Larkin", "Paschal", "Sigfrid", "Wark",
+					"Almer", "Bartle", "Cnud", "Earle", "Flygare", "Hatcher", "Law", "Passmore", "Silvan", "Warrender",
+					"Almeric", "Barton", "Cnul", "Earnest", "Forester", "Havelock", "Ledyard", "Pattabhai", "Slater", "Warwick",
+					"Almroth", "Bayard", "Coolter", "Eastman", "Fothergill", "Hazard", "Legnnd", "Pearsall", "Sligh", "Watt",
+					"Almu", "Beams", "Cael", "Eberhard", "Frederic", "Healdon", "Lenox", "Peffer", "Slingsby", "Wedlake",
+					"Aloysius", "Beck", "Colden", "Eckert", "Fredrik", "Heaslip", "Leofric", "Pejeg", "Smedley", "Wellborn",
+					"Alpheus", "Bede", "Colgan", "Eckhard", "Freeborn", "Hedwig", "Lewellyn", "Pelham", "Southall", "Westcott",
+					"Alphons", "&Om", "Colin", "Ector", "Freeman", "Helm", "Lightfoot", "Penfield", "Sprigg", "Whitwell",
+					"Alsop", "Bengl", "Colon", "Edgar", "Frey", "Helmer", "Lippard", "Penhallow", "Stanwood", "Wideman",
+					"Alton", "Benoist", "Cotton", "Edmond", "Fryniwyd", "Heman", "Liptrot", "Penniman", "Starke", "Wightman",
+					"Alured", "Berean", "Colwyn", "Edmondstone", "Fumifold", "Hendrick", "Littleton", "Penrhyn", "Stedman", "Wildhair",
+					"Alvan", "Bergen", "Conall", "Edric", "Gadsby", "Henrick", "Livermore", "Pepperell", "Stehman", "Wilfrid",
+					"Alvey", "Bern", "Conan", "Edson", "Gaillard", "Hereward", "Llangewellen", "Peregrine", "Stenger", "Wilibald",
+					"Alvord", "Bernhart", "Congal", "Eduard", "Gairdner", "Heron", "Lewellyn", "Perrin", "Steponas", "Willock",
+					"Alvred", "Bernt", "Conlan", "Edwyn", "Galdar", "Heward", "Lockwood", "Persifor", "Sterndale", "Windham",
+					"Alwyn", "Bertil", "Connop", "Efrem", "Gale", "Hickling", "Lorin", "Phanuel", "Stetson", "Winton",
+					"Amadis", "Bertram", "Conor", "Egan", "Garet", "Hildebrand", "Lothrop", "Pharamond", "Stetter", "Woart",
+					"Ames", "Bertran", "Conrad", "Egbert", "Gareth", "Hildreth", "Loudon", "Phallius", "Stilingfleet", "Wolmar",
+					"Amschel", "Bevil", "Conwy", "Egerton", "Garrick", "Hildric", "Lovegood", "Phelim", "Stillman", "Woodfin",
+					"Anatol", "Beylard", "Cormac", "Egon", "Garrott", "Hislop", "Lufkin", "Philo", "Siopford", "Woodruff",
+					"Andrus", "Bhimrao", "Corrowr", "Eglon", "Garth", "Hjalmar", "Lyndon", "Philpot", "Strachan", "Woollgar",
+					"Aneurin", "Bhoskar", "Corry", "Ehrman", "Garvin", "Hjorth", "Lysander", "Phimister", "Stroud", "Worley",
+					"Angus", "Bhupindar", "Corwin", "Eilhard", "Garwood", "Hoadley", "Lytler", "Pickman", "Strudwick", "Wortley",
+					"Ansel", "Bidwell", "Cowan", "Eilif", "Gassaway", "Hobart", "Macallan", "Pigot", "Surridge", "Wycliffe",
+					"Anselm", "Bindon", "Cowden", "Einar", "Gaston", "Hodgdon", "Macaulay", "Pike", "Sulan", "Wyly",
+					"Anson", "Bion", "Cowper", "Eivind", "Gavin", "Hogg", "Macer", "Pinkham", "Svante", "Wynkyn",
+					"Antal", "Bipin", "Craigh", "Elbert", "Gebhard", "Holbrook", "Macklin", "Pinkney", "Svatopluk", "Xanthus",
+					"Anthelme", "Birath", "Cronyn", "Eldon", "Geoffrey", "Holger", "Macvey", "Pinkstone", "Sveinbjom", "Xaver",
+					"Anton", "Birbeck", "Croyble", "Eldred", "Gerard", "Hollister", "Maddem", "Plaisted", "Swain", "Xystus",
+					"Antony", "Birchard", "Crundall", "Eldric", "Cerd", "Hookham", "Maddock", "Plummer", "Swartwout", "Yandell",
+					"Antrim", "Birger", "Culkin", "Eleazar", "Gerhard", "Horton", "Madhao", "Plunkett", "Sydnor", "Yardley",
+					"Anthorp", "Birket", "Cullen", "Elford", "Gerhart", "Howarth", "Magill", "Pollard", "Radeus", "York",
+					"Archibald", "Bjami", "Cullross", "Elhanan", "Gerrard", "Howland", "Mahlon", "Pollock", "Taggart", "Zabdiel",
+					"Ardal", "Bjorn", "Cuthbert", "Eliakim", "Gerrish", "Hrothgar", "Makdougall", "Polycarp", "Tasker", "Zachris",
+					"Arder", "Bjornstem", "Cylarus", "Elinor", "Ghislain", "Hrodnovar", "Malhar", "Pomeroy", "Taurus", "Zadock",
+					"Aretas", "Blackwood", "Eyriel", "Ellingwood", "Gholson", "Hudleston", "Malvin", "Prafulla", "Tell", "Zebulon",
+					"Ariad", "Blaine", "Cyrillus", "Ellwood", "Gibbon", "Huffam", "Manfred", "Pendergast", "Tench", "Zenon",
 					"Arian", "Blair", "Cyryl", "Elrad", "Gildersleeve", "Hulbeart", "Mankey", "Preston", "Thacker", "Zoltan"};
 						sName3 = vName3[Utility.RandomMinMax( 0, (vName3.Length-1) )];
 						pName3 = sName3;
@@ -1613,55 +1613,55 @@ namespace Server.Misc
 				}
 				else
 				{
-					string[] vName3 = new string[] {"Aasta", "Almira", "Ellin", "Fenella", "Grazia", "Hrefna", "Nada", "Olga", "Sceanb", "Ulrica", 
-					"Acadia", "Alvina", "Elmira", "Fial", "Grian", "Hulda", "Nadia", "Oona", "Scena", "Una", 
-					"Ada", "Amalina", "Eloisa", "Findbec", "Grima", "Lana", "Natalia", "Orah", "Seang", "Undine", 
-					"Adelaide", "Amelia", "Elsa", "Fingalla", "Guida", "Ida", "Nathalia", "Oriana", "Selema", "Unelma", 
-					"Adelat", "Amina", "Elsbeth", "Fingel", "Gunila", "Iduna", "Nathalie", "Orlata", "Selena", "Vote", 
-					"Adeva", "Anatolia", "Elspeth", "Fiona", "Gwen", "Igraine", "Nedda", "Orsola", "Selene", "Urania", 
-					"Adina", "Andri", "Elva", "Francisco", "Gwenda", "Ingeborg", "Nemain", "Osa", "Selina", "Uta", 
-					"Afra", "Anika", "Elvina", "Freda", "Gwendolyn", "Ingrid", "Nerbha", "Osk", "Shamira", "Valborg", 
-					"Aibell", "Annora", "Emer", "Frederica", "Gwyneth", "Ingunn", "Nessa", "Othilia", "Sharada", "Valda", 
-					"Aidin", "Anu", "Emma", "Freya", "Gwynfryd", "Lola", "Nesta", "Ottilia", "Sharman", "Valentia", 
-					"Aige", "Ebhla", "Endrede", "Bruna", "Halima", "Milada", "Neva", "Loren", "Sibyl", "Valeria", 
-					"Ailbe", "Ebliu", "Eri", "Brunhild", "Halina", "Mina", "Neysa", "Lotta", "Sieglind", "Valeska", 
-					"Aileen", "Edda", "Erika", "Byma", "Halla", "Minella", "Neza", "Louisa", "Sigfrid", "Yalisa", 
-					"Aille", "Edeva", "Ema", "Carelia", "Halley", "Minna", "Niamh", "Lucia", "Signe", "Varda", 
-					"Aimee", "Edina", "Emata", "Carina", "Haninah", "Mira", "Nila", "Lucinda", "Sigrid", "Varina", 
-					"Aina", "Edla", "Eslin", "Cathlin", "Hansine", "Miryam", "Nita", "Ludmila", "Silma", "Veda", 
-					"Aine", "Edrie", "Estrella", "Cebha", "Heather", "Moina", "Noela", "Luella", "Silvia", "Vema", 
-					"Aithne", "Edwina", "Etelka", "Celestine", "Hedda", "Moira", "Nona", "Luna", "Sianan", "Vesta", 
-					"Alaine", "Eevin", "Ethelburga", "Cerband", "Hedwig", "Mona", "Nordri", "Lydia", "Siranush", "Veva", 
-					"Alastrina", "Eibhir", "Ethelreda", "Cesair", "Helche", "Mora", "Noreen", "Lynn", "Slania", "Vevina", 
-					"Creidne", "Eirinn", "Banba", "Charlene", "Maira", "Morgana", "Katrina", "Lyones", "Smirgat", "Vicentia", 
-					"Cyrilla", "Eithne", "Beara", "Chloe", "Malvina", "Moriath", "Keavy", "Lyris", "Solevig", "Vida", 
-					"Dagmar", "Elaine", "Bebhiolul", "Clarinda", "Mana", "Morna", "Keirn", "Macha", "Stasha", "Vieno", 
-					"Dagni", "Electa", "Becuma", "Cliodhna", "Manon", "Morrigan", "Kenin", "Madelon", "Svea", "Viera", 
-					"Dagny", "Elfrida", "Belila", "Clothra", "Margery", "Murna", "Keven", "Maeve", "Tacey", "Vigdis", 
-					"Daireann", "Elfride", "Belle", "Coela", "Marta", "Myna", "Kristen", "Mafka", "Tadia", "Vilma", 
-					"Davnet", "Elfrieda", "Belva", "Cora", "Mathilda", "Myra", "Kristina", "Maga", "Tailtu", "Vinatta", 
-					"Dawn", "Elinor", "Serita", "Coral", "Mathilde", "Myrna", "Leila", "Magda", "Tamara", "Viveka", 
-					"Dectera", "Elizabetta", "Bema", "Corra", "Maura", "Myrrha", "Leonarda", "Magna", "Latina", "Walda", 
-					"Deirdre", "Ella", "Berta", "Credhe", "Mavis", "Naas", "Leta", "Maia", "Tea", "Wertha", 
-					"Dervilia", "Arabella", "Beryl", "Frida", "Maya", "Lana", "Liadin", "Palma", "Tekla", "Wilhelmina", 
-					"Devra", "Arax", "Birgit", "Gabriela", "Melba", "Lone", "Liana", "Pasca", "Teruah", "Willa", 
-					"Dindrane", "Arbha", "Blenda", "Gael", "Melkorka", "Irina", "Liena", "Petra", "Tessa", "Winfrey", 
-					"Dionetla", "Areta", "Boann", "Gale", "Melva", "Iman", "Lilly", "Petrea", "Thalia", "Wynne", 
-					"Domnu", "Anna", "Breg", "Garmuin", "Mennefer", "Isidora", "Lina", "Petronella", "Thalna", "Xenia", 
-					"Dorea", "Anta", "Bri", "Genevieve", "Meredith", "Isolde", "Linnea", "Provida", "Thecla", "Yana", 
-					"Drusilla", "Aria", "Bridget", "Gertrude", "Meri", "Isolt", "Livia", "Rae", "Theda", "Yerusha", 
-					"Duana", "Arlean", "Brinna", "Gilberta", "Meta", "Ivy", "Llyn", "Ragna", "Theodosia", "Ysolde", 
-					"Durfulla", "Ambella", "Brita", "Gilda", "Mignon", "Janna", "Loella", "Ramona", "Thora", "Yvette", 
-					"Ebba", "Amthora", "Britannia", "Gilian", "Mila", "Jennifer", "Lola", "Reina", "Thorfinna", "Yvonne", 
-					"Alberta", "Arvida", "Eulala", "Ginerva", "Helga", "Jensine", "Norine", "Renata", "Thorunn", "Zahra", 
-					"Aida", "Astra", "Evadne", "Giolla", "Helma", "Jillian", "Noma", "Reva", "Thylda", "Zandra", 
-					"Alena", "Astrid", "Evaine", "Gladiola", "Helmi", "Jocelyn", "Nova", "Rhona", "Thyra", "Zara", 
-					"Alfdis", "Astrild", "Evelina", "Gladys", "Herdis", "Jorunn", "Novita", "Rhonda", "Thyrza", "Zarifa", 
-					"Alfreda", "Aud", "Evelyn", "Gleda", "Herma", "Jovena", "Novomira", "Roshena", "Titania", "Zenda", 
-					"Alfrida", "Audrey", "Evolyn", "Glida", "Herrat", "Juno", "Nuala", "Rowena", "Trio", "Ziona", 
-					"Aline", "Aurora", "Fanchon", "Gotelind", "Hertha", "Karelia", "Nunila", "Rufina", "Triana", "Zita", 
-					"Alison", "Avon", "Fand", "Graine", "Hilda", "Karine", "Oda", "Runa", "Tuage", "Zoe", 
-					"Allene", "Avril", "Fawn", "Grainne", "Hildegarde", "Karitsa", "Odile", "Sadb", "Uathach", "Zona", 
+					string[] vName3 = new string[] {"Aasta", "Almira", "Ellin", "Fenella", "Grazia", "Hrefna", "Nada", "Olga", "Sceanb", "Ulrica",
+					"Acadia", "Alvina", "Elmira", "Fial", "Grian", "Hulda", "Nadia", "Oona", "Scena", "Una",
+					"Ada", "Amalina", "Eloisa", "Findbec", "Grima", "Lana", "Natalia", "Orah", "Seang", "Undine",
+					"Adelaide", "Amelia", "Elsa", "Fingalla", "Guida", "Ida", "Nathalia", "Oriana", "Selema", "Unelma",
+					"Adelat", "Amina", "Elsbeth", "Fingel", "Gunila", "Iduna", "Nathalie", "Orlata", "Selena", "Vote",
+					"Adeva", "Anatolia", "Elspeth", "Fiona", "Gwen", "Igraine", "Nedda", "Orsola", "Selene", "Urania",
+					"Adina", "Andri", "Elva", "Francisco", "Gwenda", "Ingeborg", "Nemain", "Osa", "Selina", "Uta",
+					"Afra", "Anika", "Elvina", "Freda", "Gwendolyn", "Ingrid", "Nerbha", "Osk", "Shamira", "Valborg",
+					"Aibell", "Annora", "Emer", "Frederica", "Gwyneth", "Ingunn", "Nessa", "Othilia", "Sharada", "Valda",
+					"Aidin", "Anu", "Emma", "Freya", "Gwynfryd", "Lola", "Nesta", "Ottilia", "Sharman", "Valentia",
+					"Aige", "Ebhla", "Endrede", "Bruna", "Halima", "Milada", "Neva", "Loren", "Sibyl", "Valeria",
+					"Ailbe", "Ebliu", "Eri", "Brunhild", "Halina", "Mina", "Neysa", "Lotta", "Sieglind", "Valeska",
+					"Aileen", "Edda", "Erika", "Byma", "Halla", "Minella", "Neza", "Louisa", "Sigfrid", "Yalisa",
+					"Aille", "Edeva", "Ema", "Carelia", "Halley", "Minna", "Niamh", "Lucia", "Signe", "Varda",
+					"Aimee", "Edina", "Emata", "Carina", "Haninah", "Mira", "Nila", "Lucinda", "Sigrid", "Varina",
+					"Aina", "Edla", "Eslin", "Cathlin", "Hansine", "Miryam", "Nita", "Ludmila", "Silma", "Veda",
+					"Aine", "Edrie", "Estrella", "Cebha", "Heather", "Moina", "Noela", "Luella", "Silvia", "Vema",
+					"Aithne", "Edwina", "Etelka", "Celestine", "Hedda", "Moira", "Nona", "Luna", "Sianan", "Vesta",
+					"Alaine", "Eevin", "Ethelburga", "Cerband", "Hedwig", "Mona", "Nordri", "Lydia", "Siranush", "Veva",
+					"Alastrina", "Eibhir", "Ethelreda", "Cesair", "Helche", "Mora", "Noreen", "Lynn", "Slania", "Vevina",
+					"Creidne", "Eirinn", "Banba", "Charlene", "Maira", "Morgana", "Katrina", "Lyones", "Smirgat", "Vicentia",
+					"Cyrilla", "Eithne", "Beara", "Chloe", "Malvina", "Moriath", "Keavy", "Lyris", "Solevig", "Vida",
+					"Dagmar", "Elaine", "Bebhiolul", "Clarinda", "Mana", "Morna", "Keirn", "Macha", "Stasha", "Vieno",
+					"Dagni", "Electa", "Becuma", "Cliodhna", "Manon", "Morrigan", "Kenin", "Madelon", "Svea", "Viera",
+					"Dagny", "Elfrida", "Belila", "Clothra", "Margery", "Murna", "Keven", "Maeve", "Tacey", "Vigdis",
+					"Daireann", "Elfride", "Belle", "Coela", "Marta", "Myna", "Kristen", "Mafka", "Tadia", "Vilma",
+					"Davnet", "Elfrieda", "Belva", "Cora", "Mathilda", "Myra", "Kristina", "Maga", "Tailtu", "Vinatta",
+					"Dawn", "Elinor", "Serita", "Coral", "Mathilde", "Myrna", "Leila", "Magda", "Tamara", "Viveka",
+					"Dectera", "Elizabetta", "Bema", "Corra", "Maura", "Myrrha", "Leonarda", "Magna", "Latina", "Walda",
+					"Deirdre", "Ella", "Berta", "Credhe", "Mavis", "Naas", "Leta", "Maia", "Tea", "Wertha",
+					"Dervilia", "Arabella", "Beryl", "Frida", "Maya", "Lana", "Liadin", "Palma", "Tekla", "Wilhelmina",
+					"Devra", "Arax", "Birgit", "Gabriela", "Melba", "Lone", "Liana", "Pasca", "Teruah", "Willa",
+					"Dindrane", "Arbha", "Blenda", "Gael", "Melkorka", "Irina", "Liena", "Petra", "Tessa", "Winfrey",
+					"Dionetla", "Areta", "Boann", "Gale", "Melva", "Iman", "Lilly", "Petrea", "Thalia", "Wynne",
+					"Domnu", "Anna", "Breg", "Garmuin", "Mennefer", "Isidora", "Lina", "Petronella", "Thalna", "Xenia",
+					"Dorea", "Anta", "Bri", "Genevieve", "Meredith", "Isolde", "Linnea", "Provida", "Thecla", "Yana",
+					"Drusilla", "Aria", "Bridget", "Gertrude", "Meri", "Isolt", "Livia", "Rae", "Theda", "Yerusha",
+					"Duana", "Arlean", "Brinna", "Gilberta", "Meta", "Ivy", "Llyn", "Ragna", "Theodosia", "Ysolde",
+					"Durfulla", "Ambella", "Brita", "Gilda", "Mignon", "Janna", "Loella", "Ramona", "Thora", "Yvette",
+					"Ebba", "Amthora", "Britannia", "Gilian", "Mila", "Jennifer", "Lola", "Reina", "Thorfinna", "Yvonne",
+					"Alberta", "Arvida", "Eulala", "Ginerva", "Helga", "Jensine", "Norine", "Renata", "Thorunn", "Zahra",
+					"Aida", "Astra", "Evadne", "Giolla", "Helma", "Jillian", "Noma", "Reva", "Thylda", "Zandra",
+					"Alena", "Astrid", "Evaine", "Gladiola", "Helmi", "Jocelyn", "Nova", "Rhona", "Thyra", "Zara",
+					"Alfdis", "Astrild", "Evelina", "Gladys", "Herdis", "Jorunn", "Novita", "Rhonda", "Thyrza", "Zarifa",
+					"Alfreda", "Aud", "Evelyn", "Gleda", "Herma", "Jovena", "Novomira", "Roshena", "Titania", "Zenda",
+					"Alfrida", "Audrey", "Evolyn", "Glida", "Herrat", "Juno", "Nuala", "Rowena", "Trio", "Ziona",
+					"Aline", "Aurora", "Fanchon", "Gotelind", "Hertha", "Karelia", "Nunila", "Rufina", "Triana", "Zita",
+					"Alison", "Avon", "Fand", "Graine", "Hilda", "Karine", "Oda", "Runa", "Tuage", "Zoe",
+					"Allene", "Avril", "Fawn", "Grainne", "Hildegarde", "Karitsa", "Odile", "Sadb", "Uathach", "Zona",
 					"Almas", "Ayame", "Fea", "Crania", "Hortensia", "Katerina", "Odilia", "Samhair", "Ula", "Zora"};
 						sName3 = vName3[Utility.RandomMinMax( 0, (vName3.Length-1) )];
 						pName3 = sName3;
@@ -1703,22 +1703,22 @@ namespace Server.Misc
 			{
 				string[] sPirate = new string[] {"Captain", "First Mate", "Quartermaster", "Boatswain", "Sailing Master", "Sea Artist", "Navigator", "Master Gunner", "Gunner", "Sail Maker", "Cabin Boy", "Sailor", "Powder Monkey", "Buccaneer", "Privateer", "Rigger", "Swab"};
 				string xPirate = sPirate[Utility.RandomMinMax( 0, (sPirate.Length-1) )];
-				
-				if ( Utility.RandomMinMax( 1, 3 ) == 3 ) 
+
+				if ( Utility.RandomMinMax( 1, 3 ) == 3 )
 				{
 					pName3 = NameList.RandomName( "female" );
 				}
-				else 
-				{ 
-					pName3 = NameList.RandomName( "male" ); 
+				else
+				{
+					pName3 = NameList.RandomName( "male" );
 				}
 
-				if ( Utility.RandomMinMax( 1, 3 ) == 3 ) 
+				if ( Utility.RandomMinMax( 1, 3 ) == 3 )
 				{
 					sName3 = pName3 + " the " + sName0;
 				}
-				else 
-				{ 
+				else
+				{
 					sName3 = pName3 + " the " + xPirate;
 				}
 
@@ -1728,7 +1728,7 @@ namespace Server.Misc
 			{
 				sAdj = "";
 				string sCorpse = "bones";
-				switch ( Utility.RandomMinMax( 0, 3 ) ) 
+				switch ( Utility.RandomMinMax( 0, 3 ) )
 				{
 					case 0: sCorpse = "bones"; break;
 					case 1: sCorpse = "body"; break;
@@ -1741,32 +1741,32 @@ namespace Server.Misc
 			{
 				sAdj = "";
 				string sCorpse = "bones";
-				switch ( Utility.RandomMinMax( 0, 3 ) ) 
+				switch ( Utility.RandomMinMax( 0, 3 ) )
 				{
 					case 0: sCorpse = "bones"; break;
 					case 1: sCorpse = "body"; break;
 					case 2: sCorpse = "skeletal remains"; break;
 					case 3: sCorpse = "skeletal bones"; break;
 				}
-				
+
 				string[] sPirate = new string[] {"Captain", "First Mate", "Quartermaster", "Boatswain", "Sailing Master", "Sea Artist", "Navigator", "Master Gunner", "Gunner", "Sail Maker", "Cabin Boy", "Sailor", "Powder Monkey", "Buccaneer", "Privateer", "Rigger", "Swab"};
 				string xPirate = sPirate[Utility.RandomMinMax( 0, (sPirate.Length-1) )];
-				
-				if ( Utility.RandomMinMax( 1, 3 ) == 3 ) 
+
+				if ( Utility.RandomMinMax( 1, 3 ) == 3 )
 				{
 					pName3 = NameList.RandomName( "female" );
 				}
-				else 
-				{ 
-					pName3 = NameList.RandomName( "male" ); 
+				else
+				{
+					pName3 = NameList.RandomName( "male" );
 				}
 
-				if ( Utility.RandomMinMax( 1, 3 ) == 3 ) 
+				if ( Utility.RandomMinMax( 1, 3 ) == 3 )
 				{
 					sName3 = pName3 + " the " + sName0;
 				}
-				else 
-				{ 
+				else
+				{
 					sName3 = pName3 + " the " + xPirate;
 				}
 
@@ -2132,7 +2132,7 @@ namespace Server.Misc
 					itemID.Name = RandomThings.GetOddityAdjective() + " item";
 					if ( item is BaseJewel )
 					{
-						itemID.SkillRequired = "ItemID"; 
+						itemID.SkillRequired = "ItemID";
 						itemID.VendorCanID = "Jeweler";
 						if ( item is MagicBelt || item is MagicRobe || item is MagicHat || item is MagicCloak || item is MagicBoots || item is MagicSash ){ itemID.VendorCanID = "Tailor"; }
 						else if ( item is MagicTalisman || item is MagicTorch || item is MagicCandle || item is MagicLantern ){ itemID.VendorCanID = "Sage"; }
@@ -2174,7 +2174,7 @@ namespace Server.Misc
 					if ( box != null && ( itemID.VendorCanID == "" || itemID.VendorCanID == null ) )
 					{
 						box.DropItem( item );
-						itemID.Delete(); 
+						itemID.Delete();
 					}
 					else if ( box != null )
 					{
@@ -2301,7 +2301,7 @@ namespace Server.Misc
 				if ( (loot is MetalBox) )
 				{
 					loot.ItemID = Utility.RandomList( 0xE80, 0x9A8 );
-					switch ( Utility.RandomMinMax( 0, 18 ) ) 
+					switch ( Utility.RandomMinMax( 0, 18 ) )
 					{
 						case 0: loot.Hue = MaterialInfo.GetMaterialColor( "dull copper", "classic", 0 ); loot.Name = "Dull Copper Box";	break;
 						case 1: loot.Hue = MaterialInfo.GetMaterialColor( "shadow iron", "classic", 0 ); loot.Name = "Shadow Iron Box";	break;
@@ -2330,7 +2330,7 @@ namespace Server.Misc
 					{
 						loot.ItemID = Utility.RandomList( 0xE75, 0x53D5 );
 						Backpack ipack = (Backpack)loot;
-						switch ( Utility.RandomMinMax( 0, 23 ) ) 
+						switch ( Utility.RandomMinMax( 0, 23 ) )
 						{
 							case 0: ipack.GumpID = 0x415;	loot.Name = "Deep Sea Leather Backpack";	loot.Hue = MaterialInfo.GetMaterialColor( "deep sea", "", 0 );			break;
 							case 1: ipack.GumpID = 0x415;	loot.Name = "Lizard Leather Backpack";		loot.Hue = MaterialInfo.GetMaterialColor( "lizard", "", 0 );			break;
@@ -2357,7 +2357,7 @@ namespace Server.Misc
 					}
 					else
 					{
-						switch ( Utility.RandomMinMax( 0, 13 ) ) 
+						switch ( Utility.RandomMinMax( 0, 13 ) )
 						{
 							case 0: 	loot.Hue = MaterialInfo.GetMaterialColor( "deep sea", "", 0 );			loot.Name = "Deep Sea Leather Bag";	break;
 							case 1:		loot.Hue = MaterialInfo.GetMaterialColor( "lizard", "", 0 );			loot.Name = "Lizard Leather Bag";	break;

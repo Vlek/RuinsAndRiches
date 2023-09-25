@@ -71,7 +71,7 @@ namespace Server.Mobiles
 			Fame = 1200;
 			Karma = -1200;
 			VirtualArmor = 10;
-			
+
 			PackReg( 10, 15 );
 			PackItem( new Bandage( Utility.RandomMinMax( 1, 15 ) ) );
 

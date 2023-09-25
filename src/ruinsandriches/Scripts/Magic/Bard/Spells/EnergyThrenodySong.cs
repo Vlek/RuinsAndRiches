@@ -9,7 +9,7 @@ namespace Server.Spells.Song
 {
 	public class EnergyThrenodySong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Energy Threnody", "*plays an energy threnody*",
 				//SpellCircle.First,
@@ -21,9 +21,9 @@ namespace Server.Spells.Song
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
 		public override double RequiredSkill{ get{ return 70.0; } }
 		public override int RequiredMana{ get{ return 25; } }
-		
+
 		public EnergyThrenodySong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
-		{	
+		{
 		}
 
 		public virtual bool CheckSlayer( BaseInstrument instrument, Mobile defender )
@@ -70,7 +70,7 @@ namespace Server.Spells.Song
 				Mobile source = Caster;
 
 				SpellHelper.Turn( source, m );
-				
+
 				m.FixedParticles( 0x374A, 10, 30, 5013, 0x14, 2, EffectLayer.Waist );
 
 				bool IsSlayer = false;
@@ -87,7 +87,7 @@ namespace Server.Spells.Song
 
 				m.SendMessage( "Your resistance to energy has decreased." );
 				ResistanceMod mod1 = new ResistanceMod( ResistanceType.Energy, - amount );
-				
+
 				m.AddResistanceMod( mod1 );
 
 				ExpireTimer timer1 = new ExpireTimer( m, mod1, duration );
@@ -113,7 +113,7 @@ namespace Server.Spells.Song
 			{
 				PlayerMobile p = m_Mobile as PlayerMobile;
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

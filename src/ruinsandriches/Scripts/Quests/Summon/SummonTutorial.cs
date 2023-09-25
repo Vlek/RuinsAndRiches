@@ -18,7 +18,7 @@ namespace Server.Gumps
         {
 			string color = "#90c5d0";
 			string regs = "#b8d090";
-			from.SendSound( 0x5C9 ); 
+			from.SendSound( 0x5C9 );
 
 			string sEnding = "If one were to touch more than one such magical prisons, All but one would vanish into the void.";
 				if ( item.owner != null ){ sEnding = "If " + item.owner.Name + " happens to touch another such magical prison, this sealed prison would vanish into the void."; }
@@ -57,7 +57,7 @@ namespace Server.Gumps
         public override void OnResponse(NetState state, RelayInfo info)
         {
 			Mobile from = state.Mobile;
-			from.SendSound( 0x5C9 ); 
+			from.SendSound( 0x5C9 );
         }
     }
 }

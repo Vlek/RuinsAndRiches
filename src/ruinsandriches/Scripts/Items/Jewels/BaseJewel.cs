@@ -39,11 +39,11 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int HitPoints
 		{
-			get 
+			get
 			{
 				return m_HitPoints;
 			}
-			set 
+			set
 			{
 				if ( value != m_HitPoints && MaxHitPoints > 0 )
 				{

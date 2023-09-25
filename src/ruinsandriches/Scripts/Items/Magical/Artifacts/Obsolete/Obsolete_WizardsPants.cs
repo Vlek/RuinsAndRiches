@@ -10,12 +10,12 @@ namespace Server.Items
 		public override int InitMinHits{ get{ return 80; } }
 		public override int InitMaxHits{ get{ return 160; } }
 
-		public override int BaseColdResistance{ get{ return 14; } } 
-		public override int BaseEnergyResistance{ get{ return 8; } } 
-		public override int BasePhysicalResistance{ get{ return 6; } } 
-		public override int BasePoisonResistance{ get{ return 6; } } 
-		public override int BaseFireResistance{ get{ return 7; } } 
-      
+		public override int BaseColdResistance{ get{ return 14; } }
+		public override int BaseEnergyResistance{ get{ return 8; } }
+		public override int BasePhysicalResistance{ get{ return 6; } }
+		public override int BasePoisonResistance{ get{ return 6; } }
+		public override int BaseFireResistance{ get{ return 7; } }
+
       [Constructable]
 		public WizardsPants()
 		{

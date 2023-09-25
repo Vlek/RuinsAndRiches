@@ -49,17 +49,17 @@ namespace Server.Spells.Research
 				{
 					Mobile m = (Mobile)targets[i];
 
-					TimeSpan duration = TimeSpan.FromSeconds( (double)(DamagingSkill( Caster ) * 4) ); 
+					TimeSpan duration = TimeSpan.FromSeconds( (double)(DamagingSkill( Caster ) * 4) );
                     int amount = (int)(DamagingSkill( Caster ) / 8);
 
 					m.SendMessage( "Your resistance to cold has increased." );
 					ResistanceMod mod1 = new ResistanceMod( ResistanceType.Cold, + amount );
-						
+
 					m.AddResistanceMod( mod1 );
-						
+
 					m.PlaySound( 0x1E9 );
 					m.FixedParticles( 0x375A, 9, 20, 5016, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 0 ), 0, EffectLayer.Waist );
-						
+
 					new ExpireTimer( m, mod1, duration ).Start();
 					success = true;
 				}
@@ -84,7 +84,7 @@ namespace Server.Spells.Research
 			{
 				PlayerMobile dpm = m_Mobile as PlayerMobile;
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

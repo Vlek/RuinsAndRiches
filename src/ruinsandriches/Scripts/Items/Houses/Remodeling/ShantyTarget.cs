@@ -43,7 +43,7 @@ namespace Server.Misc
             IPoint3D t = targeted as IPoint3D;
             if (t == null)
                 return;
-            
+
             Point3D loc = new Point3D(t);
             if ( t is StaticTarget )
 			{

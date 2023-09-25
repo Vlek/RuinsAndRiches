@@ -12,7 +12,7 @@ namespace Server.Items
 		public int RelicFound;
 		public int RelicColor;
 		public string RelicQuality;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -362,7 +362,7 @@ namespace Server.Items
 		public int RelicFound;
 		public int RelicColor;
 		public string RelicQuality;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 

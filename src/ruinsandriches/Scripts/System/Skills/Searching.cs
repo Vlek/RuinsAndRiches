@@ -23,7 +23,7 @@ namespace Server.SkillHandlers
 			{
 				src.SendMessage( "You cannot search while in this state." );
 			}
-			else 
+			else
 			{
 				src.SendLocalizedMessage( 500819 );//Where will you search?
 				src.Target = new InternalTarget();
@@ -49,7 +49,7 @@ namespace Server.SkillHandlers
 					p = ((Item)targ).Location;
 				else if ( targ is IPoint3D )
 					p = new Point3D( (IPoint3D)targ );
-				else 
+				else
 					p = src.Location;
 
 				double srcSkill = src.Skills[SkillName.Searching].Value;
@@ -164,29 +164,29 @@ namespace Server.SkillHandlers
 					m.SendMessage( "There is a trap nearby! " + sTrap + "" );
 					foundAnyone = true;
 				}
-				else if ( item is BaseDoor && (	item.ItemID == 0x35E || 
-												item.ItemID == 0xF0 || 
-												item.ItemID == 0xF2 || 
-												item.ItemID == 0x326 || 
-												item.ItemID == 0x324 || 
-												item.ItemID == 0x32E || 
-												item.ItemID == 0x32C || 
-												item.ItemID == 0x314 || 
-												item.ItemID == 0x316 || 
-												item.ItemID == 0x31C || 
-												item.ItemID == 0x31E || 
-												item.ItemID == 0xE8 || 
-												item.ItemID == 0xEA || 
-												item.ItemID == 0x34C || 
-												item.ItemID == 0x356 || 
-												item.ItemID == 0x35C || 
-												item.ItemID == 0x354 || 
-												item.ItemID == 0x344 || 
-												item.ItemID == 0x346 || 
-												item.ItemID == 0x34E || 
-												item.ItemID == 0x334 || 
-												item.ItemID == 0x336 || 
-												item.ItemID == 0x33C || 
+				else if ( item is BaseDoor && (	item.ItemID == 0x35E ||
+												item.ItemID == 0xF0 ||
+												item.ItemID == 0xF2 ||
+												item.ItemID == 0x326 ||
+												item.ItemID == 0x324 ||
+												item.ItemID == 0x32E ||
+												item.ItemID == 0x32C ||
+												item.ItemID == 0x314 ||
+												item.ItemID == 0x316 ||
+												item.ItemID == 0x31C ||
+												item.ItemID == 0x31E ||
+												item.ItemID == 0xE8 ||
+												item.ItemID == 0xEA ||
+												item.ItemID == 0x34C ||
+												item.ItemID == 0x356 ||
+												item.ItemID == 0x35C ||
+												item.ItemID == 0x354 ||
+												item.ItemID == 0x344 ||
+												item.ItemID == 0x346 ||
+												item.ItemID == 0x34E ||
+												item.ItemID == 0x334 ||
+												item.ItemID == 0x336 ||
+												item.ItemID == 0x33C ||
 												item.ItemID == 0x33E ) )
 				{
 					Effects.SendLocationParticles( EffectItem.Create( item.Location, item.Map, EffectItem.DefaultDuration ), 0x376A, 9, 32, 5024 );

@@ -10,14 +10,16 @@ namespace Server.Items
 		[Constructable]
 		public ArchCureMagicStaff() : base( MagicStaffEffect.Charges, 1, 11 )
 		{
-			IntRequirement = 25;			Name = "wand of arch curing";
+			IntRequirement = 25;
+			Name = "wand of arch curing";
 			SkillBonuses.SetValues( 1, SkillName.Magery, 40 );
 		}
 
 		public override void AddNameProperties( ObjectPropertyList list )
 		{
 			base.AddNameProperties( list );
-			list.Add( 1070722, "4th Circle of Power" );			list.Add( 1049644, "Requires 25 Intelligence" );
+			list.Add( 1070722, "4th Circle of Power" );
+			list.Add( 1049644, "Requires 25 Intelligence" );
 		}
 
 		public ArchCureMagicStaff( Serial serial ) : base( serial )
@@ -36,7 +38,8 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			if ( IntRequirement != 25 ) { IntRequirement = 25; }
+
+			if ( IntRequirement != 25 ) { IntRequirement = 25; }
 		}
 
 		public override void OnMagicStaffUse( Mobile from )

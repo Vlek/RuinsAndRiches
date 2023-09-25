@@ -7,7 +7,7 @@ namespace Server.Items
 	{
 		public int HomePlantID;
 		public string HomePlantName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int HomePlant_ID { get { return HomePlantID; } set { HomePlantID = value; InvalidateProperties(); } }
 
@@ -74,7 +74,7 @@ namespace Server.Items
 	{
 		public int HomePlantID;
 		public string HomePlantName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int HomePlant_ID { get { return HomePlantID; } set { HomePlantID = value; InvalidateProperties(); } }
 
@@ -142,7 +142,7 @@ namespace Server.Items
 	{
 		public int HomePlantID;
 		public string HomePlantName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int HomePlant_ID { get { return HomePlantID; } set { HomePlantID = value; InvalidateProperties(); } }
 
@@ -200,7 +200,7 @@ namespace Server.Items
 	{
 		public int HomePlantID;
 		public string HomePlantName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int HomePlant_ID { get { return HomePlantID; } set { HomePlantID = value; InvalidateProperties(); } }
 
@@ -266,7 +266,7 @@ namespace Server.Items
 	{
 		public int HomePlantID;
 		public string HomePlantName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int HomePlant_ID { get { return HomePlantID; } set { HomePlantID = value; InvalidateProperties(); } }
 
@@ -328,7 +328,7 @@ namespace Server.Items
 	{
 		public int HomePlantID;
 		public string HomePlantName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int HomePlant_ID { get { return HomePlantID; } set { HomePlantID = value; InvalidateProperties(); } }
 

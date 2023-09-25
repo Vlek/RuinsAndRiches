@@ -101,7 +101,7 @@ namespace Server.Engines.BulkOrders
 			if ( IsChildOf( from.Backpack ) )
 			{
 				if ( Server.Misc.MyServerSettings.AllowMacroResources() )
-				{ 
+				{
 					from.SendGump( new SmallBODGump( from, this ) );
 				}
 				else

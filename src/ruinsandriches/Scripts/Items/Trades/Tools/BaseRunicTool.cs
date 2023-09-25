@@ -298,11 +298,11 @@ namespace Server.Items
 				for ( int i = 0; !found && i < 5; ++i )
 				{
 					if ( attrs.GetValues( i, out check, out bonus ) && (
-						( check == sk ) || 
-						( check == SkillName.Necromancy && check == SkillName.Elementalism ) || 
-						( check == SkillName.Magery && check == SkillName.Elementalism ) || 
-						( check == SkillName.Elementalism && check == SkillName.Magery ) || 
-						( check == SkillName.Elementalism && check == SkillName.Necromancy ) 
+						( check == sk ) ||
+						( check == SkillName.Necromancy && check == SkillName.Elementalism ) ||
+						( check == SkillName.Magery && check == SkillName.Elementalism ) ||
+						( check == SkillName.Elementalism && check == SkillName.Magery ) ||
+						( check == SkillName.Elementalism && check == SkillName.Necromancy )
 						))
 							found = true;
 				}

@@ -63,7 +63,7 @@ namespace Server.Mobiles
 
 			AddItem( new Boots( Utility.RandomNeutralHue() ) );
 			AddItem( new FancyShirt( Utility.RandomColor(0) ));
-			
+
 			switch ( Utility.Random( 4 ))
 			{
 				case 0: AddItem( new FeatheredHat( Utility.RandomColor(0) ) ); break;

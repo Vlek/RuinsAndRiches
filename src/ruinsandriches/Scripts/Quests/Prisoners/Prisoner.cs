@@ -132,28 +132,28 @@ namespace Server.Items
 				case 47: PrisonerTitle = "the ophidian"; PrisonerName = NameList.RandomName( "drakkul" ); PrisonerBody = 87; PrisonerSound = 644; PrisonerType = 3; break;
 				case 48:
 							HenchmanItem fighter = new HenchmanFighterItem();
-							PrisonerName = fighter.HenchName; 
-							PrisonerTitle = fighter.HenchTitle; 
-							PrisonerBody = fighter.HenchBody; 
-							PrisonerSound = 0; 
+							PrisonerName = fighter.HenchName;
+							PrisonerTitle = fighter.HenchTitle;
+							PrisonerBody = fighter.HenchBody;
+							PrisonerSound = 0;
 							PrisonerType = 97;
 							fighter.Delete();
 					break;
 				case 49:
 							HenchmanItem archer = new HenchmanArcherItem();
-							PrisonerName = archer.HenchName; 
-							PrisonerTitle = archer.HenchTitle; 
-							PrisonerBody = archer.HenchBody; 
-							PrisonerSound = 0; 
+							PrisonerName = archer.HenchName;
+							PrisonerTitle = archer.HenchTitle;
+							PrisonerBody = archer.HenchBody;
+							PrisonerSound = 0;
 							PrisonerType = 98;
 							archer.Delete();
 					break;
 				case 50:
 							HenchmanItem wizard = new HenchmanWizardItem();
-							PrisonerName = wizard.HenchName; 
-							PrisonerTitle = wizard.HenchTitle; 
-							PrisonerBody = wizard.HenchBody; 
-							PrisonerSound = 0; 
+							PrisonerName = wizard.HenchName;
+							PrisonerTitle = wizard.HenchTitle;
+							PrisonerBody = wizard.HenchBody;
+							PrisonerSound = 0;
 							PrisonerType = 97;
 							wizard.Delete();
 					break;
@@ -337,25 +337,25 @@ namespace Server.Items
 						if ( m_Jail.PrisonerType == 97 )
 						{
 							HenchmanFighterItem fighter = new HenchmanFighterItem();
-							fighter.HenchName = m_Jail.PrisonerName; 
-							fighter.HenchTitle = m_Jail.PrisonerTitle; 
-							fighter.HenchBody = m_Jail.PrisonerBody; 
+							fighter.HenchName = m_Jail.PrisonerName;
+							fighter.HenchTitle = m_Jail.PrisonerTitle;
+							fighter.HenchBody = m_Jail.PrisonerBody;
 							from.AddToBackpack( fighter );
 						}
 						else if ( m_Jail.PrisonerType == 98 )
 						{
 							HenchmanArcherItem archer = new HenchmanArcherItem();
-							archer.HenchName = m_Jail.PrisonerName; 
-							archer.HenchTitle = m_Jail.PrisonerTitle; 
-							archer.HenchBody = m_Jail.PrisonerBody; 
+							archer.HenchName = m_Jail.PrisonerName;
+							archer.HenchTitle = m_Jail.PrisonerTitle;
+							archer.HenchBody = m_Jail.PrisonerBody;
 							from.AddToBackpack( archer );
 						}
 						else if ( m_Jail.PrisonerType == 99 )
 						{
 							HenchmanWizardItem wizard = new HenchmanWizardItem();
-							wizard.HenchName = m_Jail.PrisonerName; 
-							wizard.HenchTitle = m_Jail.PrisonerTitle; 
-							wizard.HenchBody = m_Jail.PrisonerBody; 
+							wizard.HenchName = m_Jail.PrisonerName;
+							wizard.HenchTitle = m_Jail.PrisonerTitle;
+							wizard.HenchBody = m_Jail.PrisonerBody;
 							from.AddToBackpack( wizard );
 						}
 						else

@@ -37,7 +37,7 @@ namespace Server.Spells.DeathKnight
 			{
 				t.Stop();
 				m_Table.Remove( m );
-			} 
+			}
 		}
 
 		public override void OnCast()

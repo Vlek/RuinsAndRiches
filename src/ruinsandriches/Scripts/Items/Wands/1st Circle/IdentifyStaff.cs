@@ -10,7 +10,8 @@ namespace Server.Items
 		[Constructable]
 		public IdentifyStaff() : base( MagicStaffEffect.Charges, 5, 10 )
 		{
-			IntRequirement = 0;			Name = "wand of identification";
+			IntRequirement = 0;
+			Name = "wand of identification";
 		}
 
 		public IdentifyStaff( Serial serial ) : base( serial )

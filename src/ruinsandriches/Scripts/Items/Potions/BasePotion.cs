@@ -158,7 +158,7 @@ namespace Server.Items
 
 			if ( handTwo is BaseWeapon )
 				handOne = handTwo;
-			
+
 			if ( handOne is BaseRanged )
 			{
 				BaseRanged ranged = (BaseRanged) handOne;
@@ -167,12 +167,12 @@ namespace Server.Items
 					return true;
 			}
 
-			if (	( handOne is PugilistGlove ) || 
-					( handOne is PugilistGloves ) || 
-					( handOne is LevelPugilistGloves ) || 
-					( handOne is LevelThrowingGloves ) || 
-					( handOne is GiftPugilistGloves ) || 
-					( handOne is GiftThrowingGloves ) || 
+			if (	( handOne is PugilistGlove ) ||
+					( handOne is PugilistGloves ) ||
+					( handOne is LevelPugilistGloves ) ||
+					( handOne is LevelThrowingGloves ) ||
+					( handOne is GiftPugilistGloves ) ||
+					( handOne is GiftThrowingGloves ) ||
 					( handOne is ThrowingGloves ) )
 			{
 				return true;

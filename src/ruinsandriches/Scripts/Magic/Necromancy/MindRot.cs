@@ -48,7 +48,7 @@ namespace Server.Spells.Necromancy
 
 				 if ( m.Spell != null )
 					m.Spell.OnCasterHurt();
-				
+
 				m.PlaySound( 0x1FB );
 				m.PlaySound( 0x258 );
 				m.FixedParticles( 0x373A, 1, 17, 9903, 15, 4, EffectLayer.Head );
@@ -147,7 +147,7 @@ namespace Server.Spells.Necromancy
 			m_End = DateTime.Now + delay;
 			Priority = TimerPriority.TwoFiftyMS;
 		}
-		
+
 		public void RenewDelay(TimeSpan delay)
 		{
 			m_End = DateTime.Now + delay;

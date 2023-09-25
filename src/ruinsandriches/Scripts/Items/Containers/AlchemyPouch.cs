@@ -22,13 +22,13 @@ namespace Server.Items
                 from.SendMessage("You can only use another alchemy rucksack within this sack.");
                 return false;
 			}
-            else if ( Server.Misc.MaterialInfo.IsReagent( dropped ) || 
-						dropped is GodBrewing || 
-						dropped is Bottle || 
-						dropped is Jar || 
-						dropped is MortarPestle || 
-						dropped is DruidCauldron || 
-						dropped is WitchCauldron || 
+            else if ( Server.Misc.MaterialInfo.IsReagent( dropped ) ||
+						dropped is GodBrewing ||
+						dropped is Bottle ||
+						dropped is Jar ||
+						dropped is MortarPestle ||
+						dropped is DruidCauldron ||
+						dropped is WitchCauldron ||
 						dropped is AlchemyPouch )
 			{
 				return base.OnDragDropInto(from, dropped, p);
@@ -45,13 +45,13 @@ namespace Server.Items
                 from.SendMessage("You can only use another alchemy rucksack within this sack.");
                 return false;
 			}
-            else if ( Server.Misc.MaterialInfo.IsReagent( dropped ) || 
-						dropped is GodBrewing || 
-						dropped is Bottle || 
-						dropped is Jar || 
-						dropped is MortarPestle || 
-						dropped is WitchCauldron || 
-						dropped is DruidCauldron || 
+            else if ( Server.Misc.MaterialInfo.IsReagent( dropped ) ||
+						dropped is GodBrewing ||
+						dropped is Bottle ||
+						dropped is Jar ||
+						dropped is MortarPestle ||
+						dropped is WitchCauldron ||
+						dropped is DruidCauldron ||
 						dropped is AlchemyPouch )
 			{
 				return base.OnDragDrop(from, dropped);

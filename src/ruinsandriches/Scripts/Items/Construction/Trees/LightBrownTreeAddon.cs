@@ -37,7 +37,7 @@ namespace Server.Items
 		public override BaseAddon Addon{ get{ return new LightBrownTreeAddon(); } }
 
 		[Constructable]
-		public LightBrownTreeDeed() 
+		public LightBrownTreeDeed()
 		{
 			Name = "Light Brown Tree";
 		}

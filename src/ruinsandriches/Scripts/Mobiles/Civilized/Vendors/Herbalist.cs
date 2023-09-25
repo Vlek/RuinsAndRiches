@@ -9,42 +9,42 @@ using Server.Gumps;
 using Server.Misc;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
-{ 
-	public class Herbalist : BaseVendor 
-	{ 
-		private List<SBInfo> m_SBInfos = new List<SBInfo>(); 
+namespace Server.Mobiles
+{
+	public class Herbalist : BaseVendor
+	{
+		private List<SBInfo> m_SBInfos = new List<SBInfo>();
 		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
 
 		public override NpcGuild NpcGuild{ get{ return NpcGuild.AlchemistsGuild; } }
 
 		[Constructable]
-		public Herbalist() : base( "the herbalist" ) 
-		{ 
+		public Herbalist() : base( "the herbalist" )
+		{
 			SetSkill( SkillName.Alchemy, 80.0, 100.0 );
 			SetSkill( SkillName.Cooking, 80.0, 100.0 );
 			SetSkill( SkillName.Tasting, 80.0, 100.0 );
-		} 
+		}
 
-		public override void InitSBInfo() 
-		{ 
-			m_SBInfos.Add( new SBHerbalist() ); 
-			m_SBInfos.Add( new SBMixologist() ); 
+		public override void InitSBInfo()
+		{
+			m_SBInfos.Add( new SBHerbalist() );
+			m_SBInfos.Add( new SBMixologist() );
 			m_SBInfos.Add( new SBPaganReagents() );
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -55,7 +55,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -193,22 +193,22 @@ namespace Server.Mobiles
             }
         }
 
-		public Herbalist( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public Herbalist( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 
-			writer.Write( (int) 0 ); // version 
-		} 
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+			int version = reader.ReadInt();
+		}
+	}
 }

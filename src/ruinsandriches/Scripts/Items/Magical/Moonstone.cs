@@ -59,7 +59,7 @@ namespace Server.Items
 		{
 			private GateMoon m_MoonGate;
 			private Item m_MoonEffect;
-			
+
 			public InternalTimer ( Mobile from ) : base (TimeSpan.FromSeconds(0))
 			{
 				Delay = TimeSpan.FromSeconds(120);
@@ -75,7 +75,7 @@ namespace Server.Items
 				m_MoonEffect.Light = LightType.Circle300;
 				m_MoonEffect.MoveToWorld (new Point3D(from.X, from.Y, from.Z+5), from.Map);
 			}
-			
+
 			protected override void OnTick ()
 			{
 				((Item)m_MoonGate).Delete ();

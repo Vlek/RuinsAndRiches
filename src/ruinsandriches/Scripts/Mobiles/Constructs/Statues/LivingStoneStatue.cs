@@ -55,7 +55,7 @@ namespace Server.Mobiles
 		public override void OnDeath( Container c )
 		{
 			base.OnDeath( c );
-			
+
 			Granite granite = new Granite();
    			granite.Amount = 1;
    			c.DropItem(granite);

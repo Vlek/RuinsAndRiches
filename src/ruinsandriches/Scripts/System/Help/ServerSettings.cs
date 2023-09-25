@@ -24,7 +24,7 @@ namespace Server.Engines.Help
 			string color = "#33788a";
 			int button = 4005;
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
             Closable=true;
 			Disposable=true;
@@ -72,7 +72,7 @@ namespace Server.Engines.Help
 		{
 			Mobile from = state.Mobile;
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			from.CloseGump( typeof(Server.Engines.Help.ServerSettingsGump) );
 

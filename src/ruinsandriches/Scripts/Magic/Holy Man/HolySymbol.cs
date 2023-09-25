@@ -30,7 +30,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			string sPower = string.Format("{0:n0}", BanishedEvil);
             if ( owner != null ){ list.Add( 1070722, "Piety for " + owner.Name + ": " + sPower + ""); }
-        } 
+        }
 
 		public override bool OnEquip( Mobile from )
 		{

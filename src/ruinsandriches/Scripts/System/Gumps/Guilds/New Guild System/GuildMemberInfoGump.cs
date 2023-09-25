@@ -28,13 +28,13 @@ namespace Server.Guilds
 			AddBackground( 0, 0, 350, 255, 0x242C );
 			AddHtmlLocalized( 20, 15, 310, 26, 1063018, 0x0, false, false ); // <div align=center><i>Guild Member Information</i></div>
 			AddImageTiled( 20, 40, 310, 2, 0x2711 );
-			
+
 			AddHtmlLocalized( 20, 50, 150, 26, 1062955, 0x0, true, false ); // <i>Name</i>
 			AddHtml( 180, 53, 150, 26, m_Member.Name, false, false );
-			
+
 			AddHtmlLocalized( 20, 80, 150, 26, 1062956, 0x0, true, false ); // <i>Rank</i>
 			AddHtmlLocalized( 180, 83, 150, 26, m_Member.GuildRank.Name, 0x0, false, false );
-			
+
 			AddHtmlLocalized( 20, 110, 150, 26, 1062953, 0x0, true, false ); // <i>Guild Title</i>
 			AddHtml( 180, 113, 150, 26, m_Member.GuildTitle, false, false );
 			AddImageTiled( 20, 142, 310, 2, 0x2711 );
@@ -42,19 +42,19 @@ namespace Server.Guilds
 			AddBackground( 20, 150, 310, 26, 0x2486 );
 			AddButton( 25, 155, 0x845, 0x846, 4, GumpButtonType.Reply, 0 );
 			AddHtmlLocalized( 50, 153, 270, 26, (m_Member == player.GuildFealty && guild.Leader != m_Member) ? 1063082 : 1062996, 0x0, false, false ); // Clear/Cast Vote For This Member
-			
+
 			AddBackground( 20, 180, 150, 26, 0x2486 );
 			AddButton( 25, 185, 0x845, 0x846, 1, GumpButtonType.Reply, 0 );
 			AddHtmlLocalized( 50, 183, 110, 26, 1062993, (m_ToLeader)? 0x990000 : 0, false, false ); // Promote
-			
+
 			AddBackground( 180, 180, 150, 26, 0x2486 );
 			AddButton( 185, 185, 0x845, 0x846, 3, GumpButtonType.Reply, 0 );
 			AddHtmlLocalized( 210, 183, 110, 26, 1062995, 0x0, false, false ); // Set Guild Title
-			
+
 			AddBackground( 20, 210, 150, 26, 0x2486 );
 			AddButton( 25, 215, 0x845, 0x846, 2, GumpButtonType.Reply, 0 );
 			AddHtmlLocalized( 50, 213, 110, 26, 1062994, 0x0, false, false ); // Demote
-			
+
 			AddBackground( 180, 210, 150, 26, 0x2486 );
 			AddButton( 185, 215, 0x845, 0x846, 5, GumpButtonType.Reply, 0 );
 			AddHtmlLocalized( 210, 213, 110, 26, 1062997, (m_toKick)? 0x5000 : 0, false, false ); // Kick
@@ -123,7 +123,7 @@ namespace Server.Guilds
 					}
 					else
 						pm.SendLocalizedMessage( 1063146 ); // You don't have permission to demote this member.
-						
+
 
 					break;
 				}

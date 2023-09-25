@@ -133,18 +133,18 @@ namespace Server.Items
         {
             base.GetContextMenuEntries(from, list);
             SetSecureLevelEntry.AddTo(from, this, list);
-        }      
+        }
 
 		public override void GetProperties( ObjectPropertyList list )
 		{
-			base.GetProperties( list );		
+			base.GetProperties( list );
 		}
 
 		public override void OnSingleClick( Mobile from )
 		{
 			base.OnSingleClick( from );
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
             if ( Worlds.RegionAllowedTeleport( from.Map, from.Location, from.X, from.Y ) == false )
@@ -173,7 +173,7 @@ namespace Server.Items
 				{
 					from.SendMessage( "This teleporter has been marked already." );
 					return;
-				}	
+				}
 				else
 				{
 					m_Owner = from;
@@ -245,7 +245,7 @@ namespace Server.Items
 		}
 
 		public override bool OnMoveOver( Mobile m )
-		{            
+		{
             if (this.Movable)
                 m.SendMessage("This must be locked down in a house to use!");
             else if ( m_Active )
@@ -259,7 +259,7 @@ namespace Server.Items
 				{
 					m.SendMessage( "This teleporter does not lead anywhere." );
 					return true;
-				}	
+				}
 				else if ( m_CombatCheck && SpellHelper.CheckCombat( m ) )
 				{
 					m.SendLocalizedMessage( 1005564, "", 0x22 ); // Wouldst thou flee during the heat of battle??
@@ -362,5 +362,5 @@ namespace Server.Items
 				}
 			}
 		}
-	}	
+	}
 }

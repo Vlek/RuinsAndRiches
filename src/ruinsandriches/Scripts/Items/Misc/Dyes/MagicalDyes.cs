@@ -22,7 +22,7 @@ namespace Server.Items
 			Stackable = true;
 			Amount = amount;
 
-			switch ( Utility.RandomMinMax( 0, 80 ) ) 
+			switch ( Utility.RandomMinMax( 0, 80 ) )
 			{
 				case 0: Hue = 0x483; Name = "magical dye ( dark green )"; break;
 				case 1: Hue = 0x484; Name = "magical dye ( dark blue )"; break;

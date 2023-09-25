@@ -18,7 +18,7 @@ namespace Server.Items
 			int myHat = Utility.RandomMinMax( 0, 24 );
 				if ( Utility.RandomMinMax( 1, 20 ) == 1 ){ myHat = Utility.RandomMinMax( 0, 33 ); }
 
-			switch ( myHat ) 
+			switch ( myHat )
 			{
 				case 0: ItemID = 5914; Name = "feathered hat"; break;
 				case 1: ItemID = 5916; Name = "jester hat"; break;

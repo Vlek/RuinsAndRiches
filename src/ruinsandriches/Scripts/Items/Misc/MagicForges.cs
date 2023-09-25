@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Mobiles;
@@ -542,7 +542,7 @@ namespace Server.Items
 											Effects.SendLocationParticles( EffectItem.Create( enchant.Location, enchant.Map, EffectItem.DefaultDuration ), 0x376A, 9, 32, 5008 );
 											Effects.PlaySound( enchant.Location, enchant.Map, 0x1ED );
 
-											string checkItem = enchant.GetType().ToString();  
+											string checkItem = enchant.GetType().ToString();
 											int index = checkItem.LastIndexOf(".");
 											string[] getItem = new string[] {checkItem.Substring(0, index), checkItem.Substring(index + 1)};
 
@@ -796,8 +796,8 @@ namespace Server.Items
 										if ( enchant is BaseWeapon )
 										{
 											BaseWeapon weapon = (BaseWeapon)enchant;
-											if (	Server.Misc.MaterialInfo.IsAnyKindOfMetalItem( enchant ) || 
-													Server.Misc.MaterialInfo.IsAnyKindOfClothItem( enchant ) || 
+											if (	Server.Misc.MaterialInfo.IsAnyKindOfMetalItem( enchant ) ||
+													Server.Misc.MaterialInfo.IsAnyKindOfClothItem( enchant ) ||
 													Server.Misc.MaterialInfo.IsAnyKindOfWoodItem( enchant ) )
 											{
 												MorphingItem.MorphMyItem( weapon, "Blessed by the Rangers", "Golden Ranger", "IGNORED", MorphingTemplates.TemplateRanger("weapons") );
@@ -810,8 +810,8 @@ namespace Server.Items
 										else if ( enchant is BaseArmor )
 										{
 											BaseArmor armor = (BaseArmor)enchant;
-											if (	Server.Misc.MaterialInfo.IsAnyKindOfMetalItem( enchant ) || 
-													Server.Misc.MaterialInfo.IsAnyKindOfClothItem( enchant ) || 
+											if (	Server.Misc.MaterialInfo.IsAnyKindOfMetalItem( enchant ) ||
+													Server.Misc.MaterialInfo.IsAnyKindOfClothItem( enchant ) ||
 													Server.Misc.MaterialInfo.IsAnyKindOfWoodItem( enchant ) )
 											{
 												MorphingItem.MorphMyItem( armor, "IGNORED", "Golden Ranger", "IGNORED", MorphingTemplates.TemplateRanger("armors") );
@@ -845,11 +845,11 @@ namespace Server.Items
 				{
 					if ( m.Skills[SkillName.Elementalism].Base >= 80 || m.Skills[SkillName.Magery].Base >= 80 || m.Skills[SkillName.Necromancy].Base >= 80 )
 					{
-						if ( 	m.Backpack.FindItemByType( typeof ( StaffPartVenom ) ) != null && 
-								m.Backpack.FindItemByType( typeof ( StaffPartCaddellite ) ) != null && 
-								m.Backpack.FindItemByType( typeof ( StaffPartFire ) ) != null && 
-								m.Backpack.FindItemByType( typeof ( StaffPartLight ) ) != null && 
-								m.Backpack.FindItemByType( typeof ( StaffPartEnergy ) ) != null 
+						if ( 	m.Backpack.FindItemByType( typeof ( StaffPartVenom ) ) != null &&
+								m.Backpack.FindItemByType( typeof ( StaffPartCaddellite ) ) != null &&
+								m.Backpack.FindItemByType( typeof ( StaffPartFire ) ) != null &&
+								m.Backpack.FindItemByType( typeof ( StaffPartLight ) ) != null &&
+								m.Backpack.FindItemByType( typeof ( StaffPartEnergy ) ) != null
 						)
 						{
 							Item piece1 = m.Backpack.FindItemByType( typeof ( StaffPartVenom ) );
@@ -867,7 +867,7 @@ namespace Server.Items
 								if ( m.Skills[SkillName.Elementalism].Base > m.Skills[SkillName.Magery].Base ){ magic = 2; }
 								if ( m.Skills[SkillName.Elementalism].Base > m.Skills[SkillName.Necromancy].Base ){ magic = 2; }
 
-							StaffFiveParts staff = new StaffFiveParts( m, magic ); 
+							StaffFiveParts staff = new StaffFiveParts( m, magic );
 							staff.MoveToWorld (new Point3D(5693, 1913, 2), Map.Sosaria);
 							Effects.SendLocationParticles( EffectItem.Create( staff.Location, staff.Map, EffectItem.DefaultDuration ), 0x376A, 9, 32, 5008 );
 							Effects.PlaySound( staff.Location, staff.Map, 0x1ED );

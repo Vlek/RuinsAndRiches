@@ -17,13 +17,13 @@ namespace Server.Items
 		public LevelShinobiRobe( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -45,13 +45,13 @@ namespace Server.Items
 		public LevelShinobiHood( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -73,13 +73,13 @@ namespace Server.Items
 		public LevelShinobiMask( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -101,13 +101,13 @@ namespace Server.Items
 		public LevelShinobiCowl( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

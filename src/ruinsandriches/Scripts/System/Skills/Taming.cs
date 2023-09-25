@@ -195,7 +195,7 @@ namespace Server.SkillHandlers
 								{
 									creature.BardEndTime = DateTime.Now;
 								}
-		
+
 								creature.BardPacified = false;
 
 								creature.Move( creature.Direction );

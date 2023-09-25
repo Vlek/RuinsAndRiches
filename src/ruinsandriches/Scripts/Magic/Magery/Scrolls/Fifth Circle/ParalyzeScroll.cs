@@ -15,7 +15,7 @@ namespace Server.Items
 		public ParalyzeScroll( int amount ) : base( 37, 0x1F52, amount )
 		{
 		}
-		
+
 		public ParalyzeScroll( Serial serial ) : base( serial )
 		{
 		}
@@ -34,6 +34,6 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		
+
 	}
 }

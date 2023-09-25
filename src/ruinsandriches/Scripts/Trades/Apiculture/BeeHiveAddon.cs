@@ -9,11 +9,11 @@ using Server.ContextMenus;
 using System.Collections;
 
 namespace Server.Engines.Apiculture
-{	
+{
 	public class apiBeeHive : BaseAddon
 	{
 		public static readonly int MaxHoney = 255;  //maximum amount of honey
- 
+
 		public static readonly int MaxWax = 255;    //maximum amount of wax
 
 		public static readonly bool LessWax = true; //wax production is slower then honey (realistic)
@@ -37,7 +37,7 @@ namespace Server.Engines.Apiculture
 
 		int m_Flowers = 0;		//amount of water tiles in range (during last check)
 		int m_Water = 0;		//number of flowers in range (during last check)
-		
+
 		int m_Wax = 0;			//amount of Wax
 		int m_Honey = 0;		//amount of Honey
 
@@ -57,11 +57,11 @@ namespace Server.Engines.Apiculture
 
 		public HiveGrowthIndicator LastGrowth { get { return m_LastGrowth; } set { m_LastGrowth = value; } }
 
-		public int Wax 
-		{ 
-			get { return m_Wax; } 
-			set 
-			{ 
+		public int Wax
+		{
+			get { return m_Wax; }
+			set
+			{
 				if( value < 0 )
 					m_Wax = 0;
 				else if( value > MaxWax )
@@ -71,11 +71,11 @@ namespace Server.Engines.Apiculture
 			}
 		}
 
-		public int Honey 
-		{ 
-			get { return m_Honey; } 
-			set 
-			{ 
+		public int Honey
+		{
+			get { return m_Honey; }
+			set
+			{
 				if( value < 0 )
 					m_Honey = 0;
 				else if( value > MaxHoney )
@@ -85,23 +85,23 @@ namespace Server.Engines.Apiculture
 			}
 		}
 
-		public int Health 
-		{ 
-			get{ return m_Health; } 
+		public int Health
+		{
+			get{ return m_Health; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_Health = 0;
 				else if ( value > MaxHealth )
 					m_Health = MaxHealth;
 				else
 					m_Health = value;
-				
+
 				if( m_Health == 0 )
 					Die();
-				
+
 				m_Comp.InvalidateProperties();
-			} 
+			}
 		}
 
 		public int MaxHealth
@@ -126,121 +126,121 @@ namespace Server.Engines.Apiculture
 			}
 		}
 
-		public int Population 
-		{ 
-			get{ return m_Population; } 
+		public int Population
+		{
+			get{ return m_Population; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_Population = 0;
 				else if ( value > 10 )
 					m_Population = 10;
 				else
 					m_Population = value;
-			} 
+			}
 		}
-        
-		public int ParasiteLevel 
-		{ 
-			get{ return m_Parasite; } 
+
+		public int ParasiteLevel
+		{
+			get{ return m_Parasite; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_Parasite = 0;
 				else if ( value > 2 )
 					m_Parasite = 2;
 				else
 					m_Parasite = value;
-			} 
+			}
 		}
 
-		public int DiseaseLevel 
-		{ 
-			get{ return m_Disease; } 
+		public int DiseaseLevel
+		{
+			get{ return m_Disease; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_Disease = 0;
 				else if ( value > 2 )
 					m_Disease = 2;
 				else
 					m_Disease = value;
-			} 
+			}
 		}
 
 		public bool IsFullAgilityPotion { get { return m_PotAgility >= 2; } }
-		public int potAgility 
-		{ 
-			get{ return m_PotAgility; } 
+		public int potAgility
+		{
+			get{ return m_PotAgility; }
 			set
-			{ 
+			{
                 if ( value < 0 )
 					m_PotAgility = 0;
 				else if ( value > 2 )
 					m_PotAgility = 2;
 				else
 					m_PotAgility = value;
-			} 
+			}
 		}
 
 		public bool IsFullHealPotion { get { return m_PotHeal >= 2; } }
-		public int potHeal 
-		{ 
-			get{ return m_PotHeal; } 
+		public int potHeal
+		{
+			get{ return m_PotHeal; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_PotHeal = 0;
 				else if ( value > 2 )
 					m_PotHeal = 2;
 				else
 					m_PotHeal = value;
-			} 
+			}
 		}
 
 		public bool IsFullCurePotion { get { return m_PotCure >= 2; } }
-		public int potCure 
-		{ 
-			get{ return m_PotCure; } 
+		public int potCure
+		{
+			get{ return m_PotCure; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_PotCure = 0;
 				else if ( value > 2 )
 					m_PotCure = 2;
 				else
 					m_PotCure = value;
-			} 
+			}
 		}
 
 		public bool IsFullStrengthPotion { get { return m_PotStr >= 2; } }
-		public int potStrength 
-		{ 
-			get{ return m_PotStr; } 
+		public int potStrength
+		{
+			get{ return m_PotStr; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_PotStr = 0;
 				else if ( value > 2 )
 					m_PotStr = 2;
 				else
 					m_PotStr = value;
-			} 
+			}
 		}
 
 		public bool IsFullPoisonPotion { get { return m_PotPoison >= 2; } }
-		public int potPoison 
-		{ 
-			get{ return m_PotPoison; } 
+		public int potPoison
+		{
+			get{ return m_PotPoison; }
 			set
-			{ 
+			{
 				if ( value < 0 )
 					m_PotPoison = 0;
 				else if ( value > 2 )
 					m_PotPoison = 2;
 				else
 					m_PotPoison = value;
-			} 
+			}
 		}
 
 		public int FlowersInRange
@@ -276,7 +276,7 @@ namespace Server.Engines.Apiculture
 		}
 
 		public apiBeeHiveComponent BeeHiveComponent { get{ return m_Comp; } }
-		
+
 		[Constructable]
 		public apiBeeHive()
 		{
@@ -407,7 +407,7 @@ namespace Server.Engines.Apiculture
 
 		public void Pour( Mobile from, Item item )
 		{
-			
+
 			if( !IsAccessibleTo( from ) )
 			{
 				LabelTo( from,"You cannot pour potions on that.");
@@ -524,7 +524,7 @@ namespace Server.Engines.Apiculture
 			//check area around hive for water (WATER)
 
 			WaterInRange = 0;
- 
+
 			Map map = Map;
 
 			if( map == null )
@@ -535,9 +535,9 @@ namespace Server.Engines.Apiculture
 			foreach ( Item item in eable )
 			{
 				string iName = item.ItemData.Name.ToUpper();
-				
-				if( iName.IndexOf("WATER") != -1 ) 
-					WaterInRange++;																									 
+
+				if( iName.IndexOf("WATER") != -1 )
+					WaterInRange++;
 			}
 
 			eable.Free();
@@ -548,7 +548,7 @@ namespace Server.Engines.Apiculture
 			//check area around hive for flowers (flower, snowdrop, poppie)
 
 			FlowersInRange = 0;
- 
+
 			Map map = Map;
 
 			if( map == null )
@@ -559,9 +559,9 @@ namespace Server.Engines.Apiculture
 			foreach ( Item item in eable )
 			{
 				string iName = item.ItemData.Name.ToUpper();
-				
-				if( iName.IndexOf("FLOWER") != -1 || iName.IndexOf("SNOWDROP") != -1 || iName.IndexOf("POPPIE") != -1 ) 
-					FlowersInRange++;				 
+
+				if( iName.IndexOf("FLOWER") != -1 || iName.IndexOf("SNOWDROP") != -1 || iName.IndexOf("POPPIE") != -1 )
+					FlowersInRange++;
 			}
 
 			eable.Free();
@@ -583,7 +583,7 @@ namespace Server.Engines.Apiculture
 			{//not producing yet, so just grow
 				int curStage = (int)HiveStage;
 				HiveStage = (HiveStatus)( curStage + 1 );
-				
+
 				m_LastGrowth = HiveGrowthIndicator.Grown;
 			}
 			else
@@ -592,7 +592,7 @@ namespace Server.Engines.Apiculture
 				if( Wax < MaxWax )
 				{
 					int baseWax = 1;
-					
+
 					if( this.OverallHealth == HiveHealth.Thriving )
 						baseWax++;
 
@@ -602,7 +602,7 @@ namespace Server.Engines.Apiculture
 
 					if( LessWax )
 						baseWax = Math.Max( 1,( baseWax/3 ) );  //wax production is slower then honey
-					
+
 					Wax += baseWax;
 					m_LastGrowth = HiveGrowthIndicator.Grown;
 				}
@@ -610,21 +610,21 @@ namespace Server.Engines.Apiculture
 				if( Honey < MaxHoney )
 				{
 					int baseHoney = 1;
-					
+
 					if( this.OverallHealth == HiveHealth.Thriving )
 						baseHoney++;
 
 					baseHoney += potAgility; //bees work harder
 
 					baseHoney *= Population;
-					
+
 					Honey += baseHoney;
 					m_LastGrowth = HiveGrowthIndicator.Grown;
 				}
 
 				potAgility = 0;
 
-				if( Population < 10 && !( ScaleFlower()<ResourceStatus.Normal) && !(ScaleWater()<ResourceStatus.Normal) ) 
+				if( Population < 10 && !( ScaleFlower()<ResourceStatus.Normal) && !(ScaleWater()<ResourceStatus.Normal) )
 				{
 					m_LastGrowth = HiveGrowthIndicator.PopulationUp;
 					Population++;
@@ -685,7 +685,7 @@ namespace Server.Engines.Apiculture
 
 			if( ScaleFlower() < ResourceStatus.Low )
 				damage += ( 2 - (int)ScaleFlower() ) * Utility.RandomMinMax( 3, 6 );
-			
+
 			Health -= damage;
 
 			return IsGrowable;
@@ -694,13 +694,13 @@ namespace Server.Engines.Apiculture
 		public void UpdateMaladies()
 		{
 			//more water = more chance to come into contact with parasites?
-			double parasiteChance = 0.30 - (potStrength * 0.075) + (((int)ScaleWater() - 3 ) * 0.10) + (HiveAge * 0.01);  //Older hives are more susceptible to infestation 
+			double parasiteChance = 0.30 - (potStrength * 0.075) + (((int)ScaleWater() - 3 ) * 0.10) + (HiveAge * 0.01);  //Older hives are more susceptible to infestation
 
 			if ( Utility.RandomDouble() < parasiteChance )
 				ParasiteLevel++;
 
 			//more flowers = more chance to come into conctact with disease carriers
-			double diseaseChance = 0.30 - (potStrength * 0.075) + (((int)ScaleFlower() - 3 ) * 0.10) + (HiveAge * 0.01);  //Older hives are more susceptible to disease 
+			double diseaseChance = 0.30 - (potStrength * 0.075) + (((int)ScaleFlower() - 3 ) * 0.10) + (HiveAge * 0.01);  //Older hives are more susceptible to disease
 
 			if ( Utility.RandomDouble() < diseaseChance )
 				DiseaseLevel++;
@@ -753,11 +753,11 @@ namespace Server.Engines.Apiculture
 			m_Hive = hive;
 			Movable = false;
 		}
-		
+
 		public apiBeesComponent( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -778,9 +778,9 @@ namespace Server.Engines.Apiculture
 		apiBeeHive m_Hive;
 
 		public override bool ForceShowProperties{ get{ return true;} }
-		
+
 		public apiBeeHiveComponent(apiBeeHive hive) : base (2330)
-		{	
+		{
 			m_Hive = hive;
 		}
 
@@ -816,8 +816,8 @@ namespace Server.Engines.Apiculture
 
 		public override void GetProperties(ObjectPropertyList list)
 		{
-			base.GetProperties( list ); 	
-			
+			base.GetProperties( list );
+
 			if( m_Hive == null )  //just in case
 				return;
 
@@ -858,7 +858,7 @@ namespace Server.Engines.Apiculture
 	public class apiBeeHiveDeed : BaseAddonDeed
 	{
 		public override BaseAddon Addon{ get{ return new apiBeeHive(); } }
-	
+
 		[Constructable]
 		public apiBeeHiveDeed()
 		{

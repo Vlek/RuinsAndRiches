@@ -227,7 +227,7 @@ namespace Server.Gumps
 
 			if ( shouldSet ) {
 				string comment = null;
-				
+
 				if ( c != null ) {
 					comment = c.Text.Trim();
 

@@ -50,7 +50,7 @@ namespace Server.Spells.First
 				{
 					nBenefit = (int)(Caster.Skills[SkillName.Magery].Value / 5);
 				}
-				
+
 				if ( Core.AOS )
 				{
 					damage = GetNewAosDamage( 10, 1, 4, m ) + nBenefit;

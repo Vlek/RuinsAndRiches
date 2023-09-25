@@ -21,7 +21,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public EternalFlame( Serial serial ) : base( serial )
 		{

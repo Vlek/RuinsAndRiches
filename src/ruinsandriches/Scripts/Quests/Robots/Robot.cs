@@ -1,15 +1,15 @@
-using System; 
-using System.Collections; 
-using Server.Misc; 
-using Server.Items; 
-using Server.Mobiles; 
+using System;
+using System.Collections;
+using Server.Misc;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 using System.Collections.Generic;
 using Server.ContextMenus;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a broken machine" )] 
+	[CorpseName( "a broken machine" )]
 	public class Robot : BaseCreature
 	{
 		private DateTime m_NextTalking;
@@ -23,7 +23,7 @@ namespace Server.Mobiles
 			}
 		}
 
-		[Constructable] 
+		[Constructable]
 		public Robot( ) : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.4, 0.8 )
 		{
 			m_NextTalking = (DateTime.Now + TimeSpan.FromSeconds( 60 ));
@@ -103,7 +103,7 @@ namespace Server.Mobiles
 
 				double minSkill = difficulty - 25.0;
 				double maxSkill = difficulty + 25.0;
-				
+
 				if ( difficulty > 50.0 && difficulty > from.Skills[SkillName.Lumberjacking].Value )
 				{
 					from.SendMessage( "You have no idea how to have the robot cut this type of wood!" );
@@ -158,9 +158,9 @@ namespace Server.Mobiles
 			return 0x21C;
 		}
 
-		public Robot( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public Robot( Serial serial ) : base( serial )
+		{
+		}
 
 		public override bool OnBeforeDeath()
 		{
@@ -170,19 +170,19 @@ namespace Server.Mobiles
 			return false;
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 			Loyalty = 100;
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			LeaveNowTimer thisTimer = new LeaveNowTimer( this ); 
-			thisTimer.Start(); 
-		} 
+			LeaveNowTimer thisTimer = new LeaveNowTimer( this );
+			thisTimer.Start();
+		}
 	}
 }

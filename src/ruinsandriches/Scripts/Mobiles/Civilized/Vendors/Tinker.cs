@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Server;
 using Server.Engines.BulkOrders;
 using System.Collections;
-using Server.Targeting; 
-using Server.Items; 
+using Server.Targeting;
+using Server.Items;
 using Server.Network;
 using Server.ContextMenus;
 using Server.Gumps;
@@ -30,8 +30,8 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBTinker() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBTinker() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		///////////////////////////////////////////////////////////////////////////

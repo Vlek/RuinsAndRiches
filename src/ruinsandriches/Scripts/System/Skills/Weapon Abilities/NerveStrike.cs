@@ -57,14 +57,14 @@ namespace Server.Items
 				if ( ( ( 150.0 / 7.0 + ( 4.0 * attacker.Skills[SkillName.Tactics].Value ) / 7.0) / 100.0 ) > Utility.RandomDouble() )
 				{
 					defender.Paralyze( TimeSpan.FromSeconds( 2.0 ) );
-					Server.Items.ParalyzingBlow.BeginImmunity( defender, Server.Items.ParalyzingBlow.FreezeDelayDuration );				
+					Server.Items.ParalyzingBlow.BeginImmunity( defender, Server.Items.ParalyzingBlow.FreezeDelayDuration );
 				}
 			}
 			else
 			{
 				AOS.Damage( defender, attacker, (int)(15.0 * (attacker.Skills[SkillName.Tactics].Value - 50.0) / 70.0 + 10), true, 100, 0, 0, 0, 0 ); //10-25
 				defender.Freeze( TimeSpan.FromSeconds( 2.0 ) );
-				Server.Items.ParalyzingBlow.BeginImmunity( defender, Server.Items.ParalyzingBlow.FreezeDelayDuration );				
+				Server.Items.ParalyzingBlow.BeginImmunity( defender, Server.Items.ParalyzingBlow.FreezeDelayDuration );
 			}
 		}
 	}

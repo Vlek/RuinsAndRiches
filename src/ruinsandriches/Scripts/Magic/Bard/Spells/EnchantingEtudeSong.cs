@@ -13,7 +13,7 @@ namespace Server.Spells.Song
 {
 	public class EnchantingEtudeSong : Song
 	{
-	
+
 		private static SpellInfo m_Info = new SpellInfo(
 			"Enchanting Etude", "*plays an enchanting etude*",
 			//SpellCircle.First,
@@ -21,7 +21,7 @@ namespace Server.Spells.Song
 			//9041
 			-1
 			);
-		
+
 		private SongBook m_Book;
 		//public override double CastDelay{ get{ return 3; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2 ); } }
@@ -48,11 +48,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
 			if( CheckSequence() )
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
@@ -64,18 +64,18 @@ namespace Server.Spells.Song
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
+
                     int amount = Server.Misc.MyServerSettings.PlayerLevelMod( (int)(MusicSkill( Caster ) / 16), Caster );
 					string intt = "int";
-						
+
 					double duration = (double)(MusicSkill( Caster ) * 2);
-						
+
 					StatMod mod = new StatMod( StatType.Int, intt, + amount, TimeSpan.FromSeconds( duration ) );
-						
+
 					m.AddStatMod( mod );
-						
+
 					m.FixedParticles( 0x375A, 10, 15, 5017, 0x1F8, 3, EffectLayer.Waist );
-					
+
 				}
 			}
 

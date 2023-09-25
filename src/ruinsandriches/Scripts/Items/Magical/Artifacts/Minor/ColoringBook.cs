@@ -1,7 +1,7 @@
 using System;
-using Server; 
+using Server;
 using Server.Network;
-using System.Collections; 
+using System.Collections;
 using Server.Items;
 using Server.Misc;
 using Server.Gumps;
@@ -34,12 +34,12 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to read." );
 				return;
 			}
-			else 
+			else
 			{
 				from.CloseGump( typeof( ColoringBookGump ) );
 				from.SendGump( new ColoringBookGump( from, this ) );
@@ -146,7 +146,7 @@ namespace Server.Items
 
 				AddHtml( 116, 46, 162, 20, @"<BODY><BASEFONT Color=" + color + "><CENTER>PRISMATIC MAGIC</CENTER></BASEFONT></BODY>", (bool)false, (bool)false);
 				AddHtml( 413, 48, 162, 20, @"<BODY><BASEFONT Color=" + color + "><CENTER>PRISMATIC MAGIC</CENTER></BASEFONT></BODY>", (bool)false, (bool)false);
-			
+
 				int x = 80;
 				int z = x+35;
 				int i = x+190;
@@ -202,7 +202,7 @@ namespace Server.Items
 
 			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				if ( info.ButtonID >= 100000 )
 				{

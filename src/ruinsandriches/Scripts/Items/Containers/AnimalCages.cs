@@ -2,16 +2,16 @@ using System;
 using Server;
 using Server.Mobiles;
 
-namespace Server.Items 
-{ 
-	public class BaseCaged : Item 
+namespace Server.Items
+{
+	public class BaseCaged : Item
 	{
 		public string AnimalType;
 		[CommandProperty(AccessLevel.Owner)]
 		public string Animal_Type { get { return AnimalType; } set { AnimalType = value; InvalidateProperties(); } }
 
-		[Constructable] 
-		public BaseCaged() : base( 0x570B ) 
+		[Constructable]
+		public BaseCaged() : base( 0x570B )
 		{
 			AnimalType = "Rabbit";
 			Name = "cage rabbit";
@@ -49,7 +49,7 @@ namespace Server.Items
 
 				if ( pet.MinTameSkill > 29.0 ){ pet.MinTameSkill = 29.1; }
 				else if ( pet.MinTameSkill <= 0.0 ){ pet.MinTameSkill = 29.1; }
-				
+
 				pet.ControlOrder = OrderType.Follow;
 
 				this.Delete();
@@ -156,28 +156,28 @@ namespace Server.Items
 			return (int)(Price( animal )*.40);
 		}
 
-		public BaseCaged( Serial serial ) : base( serial ) 
-		{ 
+		public BaseCaged( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
 			writer.Write( AnimalType );
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
 			AnimalType = reader.ReadString();
-		} 
+		}
 	}
 
-	public class CagedRabbit : BaseCaged 
+	public class CagedRabbit : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedRabbit()
 		{
 			AnimalType = "Rabbit";
@@ -185,26 +185,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedRabbit( Serial serial ) : base( serial ) 
-		{ 
+		public CagedRabbit( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
-	public class CagedHorse : BaseCaged 
+	public class CagedHorse : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedHorse()
 		{
 			AnimalType = "Horse";
@@ -212,26 +212,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedHorse( Serial serial ) : base( serial ) 
-		{ 
+		public CagedHorse( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedAlligator : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedAlligator()
 		{
 			AnimalType = "Alligator";
@@ -239,26 +239,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedAlligator( Serial serial ) : base( serial ) 
-		{ 
+		public CagedAlligator( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedApe : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedApe()
 		{
 			AnimalType = "Ape";
@@ -266,26 +266,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedApe( Serial serial ) : base( serial ) 
-		{ 
+		public CagedApe( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedBlackBear : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedBlackBear()
 		{
 			AnimalType = "BlackBear";
@@ -293,26 +293,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedBlackBear( Serial serial ) : base( serial ) 
-		{ 
+		public CagedBlackBear( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedBlackWolf : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedBlackWolf()
 		{
 			AnimalType = "BlackWolf";
@@ -320,26 +320,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedBlackWolf( Serial serial ) : base( serial ) 
-		{ 
+		public CagedBlackWolf( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedBoar : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedBoar()
 		{
 			AnimalType = "Boar";
@@ -347,26 +347,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedBoar( Serial serial ) : base( serial ) 
-		{ 
+		public CagedBoar( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedBobcat : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedBobcat()
 		{
 			AnimalType = "Bobcat";
@@ -374,26 +374,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedBobcat( Serial serial ) : base( serial ) 
-		{ 
+		public CagedBobcat( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedBrownBear : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedBrownBear()
 		{
 			AnimalType = "BrownBear";
@@ -401,26 +401,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedBrownBear( Serial serial ) : base( serial ) 
-		{ 
+		public CagedBrownBear( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedBull : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedBull()
 		{
 			AnimalType = "Bull";
@@ -428,26 +428,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedBull( Serial serial ) : base( serial ) 
-		{ 
+		public CagedBull( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedCat : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedCat()
 		{
 			AnimalType = "Cat";
@@ -455,26 +455,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedCat( Serial serial ) : base( serial ) 
-		{ 
+		public CagedCat( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedCaveBearRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedCaveBearRiding()
 		{
 			AnimalType = "CaveBearRiding";
@@ -482,26 +482,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedCaveBearRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedCaveBearRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedChicken : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedChicken()
 		{
 			AnimalType = "Chicken";
@@ -509,26 +509,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedChicken( Serial serial ) : base( serial ) 
-		{ 
+		public CagedChicken( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedTurkey : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedTurkey()
 		{
 			AnimalType = "Turkey";
@@ -536,26 +536,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedTurkey( Serial serial ) : base( serial ) 
-		{ 
+		public CagedTurkey( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedCougar : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedCougar()
 		{
 			AnimalType = "Cougar";
@@ -563,26 +563,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedCougar( Serial serial ) : base( serial ) 
-		{ 
+		public CagedCougar( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedCow : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedCow()
 		{
 			AnimalType = "Cow";
@@ -590,26 +590,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedCow( Serial serial ) : base( serial ) 
-		{ 
+		public CagedCow( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedDesertOstard : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedDesertOstard()
 		{
 			AnimalType = "DesertOstard";
@@ -617,26 +617,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedDesertOstard( Serial serial ) : base( serial ) 
-		{ 
+		public CagedDesertOstard( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedDireBear : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedDireBear()
 		{
 			AnimalType = "DireBear";
@@ -644,26 +644,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedDireBear( Serial serial ) : base( serial ) 
-		{ 
+		public CagedDireBear( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedDireBoar : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedDireBoar()
 		{
 			AnimalType = "DireBoar";
@@ -671,26 +671,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedDireBoar( Serial serial ) : base( serial ) 
-		{ 
+		public CagedDireBoar( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedDog : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedDog()
 		{
 			AnimalType = "Dog";
@@ -698,26 +698,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedDog( Serial serial ) : base( serial ) 
-		{ 
+		public CagedDog( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedEagle : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedEagle()
 		{
 			AnimalType = "Eagle";
@@ -725,26 +725,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedEagle( Serial serial ) : base( serial ) 
-		{ 
+		public CagedEagle( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedElderBlackBearRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedElderBlackBearRiding()
 		{
 			AnimalType = "ElderBlackBearRiding";
@@ -752,26 +752,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedElderBlackBearRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedElderBlackBearRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedElderBrownBearRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedElderBrownBearRiding()
 		{
 			AnimalType = "ElderBrownBearRiding";
@@ -779,26 +779,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedElderBrownBearRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedElderBrownBearRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedElderPolarBearRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedElderPolarBearRiding()
 		{
 			AnimalType = "ElderPolarBearRiding";
@@ -806,26 +806,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedElderPolarBearRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedElderPolarBearRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedElephant : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedElephant()
 		{
 			AnimalType = "Elephant";
@@ -833,26 +833,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedElephant( Serial serial ) : base( serial ) 
-		{ 
+		public CagedElephant( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedFerret : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedFerret()
 		{
 			AnimalType = "Ferret";
@@ -860,26 +860,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedFerret( Serial serial ) : base( serial ) 
-		{ 
+		public CagedFerret( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedForestOstard : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedForestOstard()
 		{
 			AnimalType = "ForestOstard";
@@ -887,26 +887,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedForestOstard( Serial serial ) : base( serial ) 
-		{ 
+		public CagedForestOstard( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedFox : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedFox()
 		{
 			AnimalType = "Fox";
@@ -914,26 +914,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedFox( Serial serial ) : base( serial ) 
-		{ 
+		public CagedFox( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedFrog : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedFrog()
 		{
 			AnimalType = "Frog";
@@ -941,26 +941,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedFrog( Serial serial ) : base( serial ) 
-		{ 
+		public CagedFrog( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGiantHawk : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGiantHawk()
 		{
 			AnimalType = "GiantHawk";
@@ -968,26 +968,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedGiantHawk( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGiantHawk( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGiantLizard : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGiantLizard()
 		{
 			AnimalType = "GiantLizard";
@@ -995,26 +995,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGiantLizard( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGiantLizard( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGiantRat : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGiantRat()
 		{
 			AnimalType = "GiantRat";
@@ -1022,26 +1022,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedGiantRat( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGiantRat( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGiantRaven : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGiantRaven()
 		{
 			AnimalType = "GiantRaven";
@@ -1049,26 +1049,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedGiantRaven( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGiantRaven( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGiantSerpent : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGiantSerpent()
 		{
 			AnimalType = "GiantSerpent";
@@ -1076,26 +1076,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGiantSerpent( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGiantSerpent( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGiantSnake : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGiantSnake()
 		{
 			AnimalType = "GiantSnake";
@@ -1103,26 +1103,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGiantSnake( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGiantSnake( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGiantToad : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGiantToad()
 		{
 			AnimalType = "GiantToad";
@@ -1130,26 +1130,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGiantToad( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGiantToad( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGoat : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGoat()
 		{
 			AnimalType = "Goat";
@@ -1157,26 +1157,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGoat( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGoat( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGorilla : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGorilla()
 		{
 			AnimalType = "Gorilla";
@@ -1184,26 +1184,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGorilla( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGorilla( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGreatBear : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGreatBear()
 		{
 			AnimalType = "GreatBear";
@@ -1211,26 +1211,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGreatBear( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGreatBear( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGreyWolf : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGreyWolf()
 		{
 			AnimalType = "GreyWolf";
@@ -1238,26 +1238,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedGreyWolf( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGreyWolf( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGrizzlyBearRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGrizzlyBearRiding()
 		{
 			AnimalType = "GrizzlyBearRiding";
@@ -1265,26 +1265,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedGrizzlyBearRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGrizzlyBearRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedHawk : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedHawk()
 		{
 			AnimalType = "Hawk";
@@ -1292,26 +1292,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedHawk( Serial serial ) : base( serial ) 
-		{ 
+		public CagedHawk( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedHugeLizard : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedHugeLizard()
 		{
 			AnimalType = "HugeLizard";
@@ -1319,26 +1319,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedHugeLizard( Serial serial ) : base( serial ) 
-		{ 
+		public CagedHugeLizard( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedJackal : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedJackal()
 		{
 			AnimalType = "Jackal";
@@ -1346,26 +1346,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedJackal( Serial serial ) : base( serial ) 
-		{ 
+		public CagedJackal( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedJaguar : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedJaguar()
 		{
 			AnimalType = "Jaguar";
@@ -1373,26 +1373,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedJaguar( Serial serial ) : base( serial ) 
-		{ 
+		public CagedJaguar( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedKodiakBear : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedKodiakBear()
 		{
 			AnimalType = "KodiakBear";
@@ -1400,26 +1400,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedKodiakBear( Serial serial ) : base( serial ) 
-		{ 
+		public CagedKodiakBear( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedLionRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedLionRiding()
 		{
 			AnimalType = "LionRiding";
@@ -1427,26 +1427,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedLionRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedLionRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedManticoreRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedManticoreRiding()
 		{
 			AnimalType = "ManticoreRiding";
@@ -1454,26 +1454,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedManticoreRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedManticoreRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedMouse : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedMouse()
 		{
 			AnimalType = "Mouse";
@@ -1481,26 +1481,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedMouse( Serial serial ) : base( serial ) 
-		{ 
+		public CagedMouse( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackBear : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackBear()
 		{
 			AnimalType = "PackBear";
@@ -1508,26 +1508,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedPackBear( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackBear( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackHorse : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackHorse()
 		{
 			AnimalType = "PackHorse";
@@ -1535,26 +1535,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedPackHorse( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackHorse( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackLlama : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackLlama()
 		{
 			AnimalType = "PackLlama";
@@ -1562,26 +1562,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedPackLlama( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackLlama( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackMule : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackMule()
 		{
 			AnimalType = "PackMule";
@@ -1589,26 +1589,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedPackMule( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackMule( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackStegosaurus : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackStegosaurus()
 		{
 			AnimalType = "PackStegosaurus";
@@ -1616,26 +1616,26 @@ namespace Server.Items
 			ItemID = Cage( "giant" );
 		}
 
-		public CagedPackStegosaurus( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackStegosaurus( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackTurtle : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackTurtle()
 		{
 			AnimalType = "PackTurtle";
@@ -1643,26 +1643,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedPackTurtle( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackTurtle( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPandaRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPandaRiding()
 		{
 			AnimalType = "PandaRiding";
@@ -1670,26 +1670,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedPandaRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPandaRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPanther : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPanther()
 		{
 			AnimalType = "Panther";
@@ -1697,26 +1697,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedPanther( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPanther( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPig : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPig()
 		{
 			AnimalType = "Pig";
@@ -1724,26 +1724,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedPig( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPig( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPolarBear : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPolarBear()
 		{
 			AnimalType = "PolarBear";
@@ -1751,26 +1751,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedPolarBear( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPolarBear( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedRaptorRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedRaptorRiding()
 		{
 			AnimalType = "RaptorRiding";
@@ -1778,26 +1778,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedRaptorRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedRaptorRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedRat : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedRat()
 		{
 			AnimalType = "Rat";
@@ -1805,26 +1805,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedRat( Serial serial ) : base( serial ) 
-		{ 
+		public CagedRat( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedRidableLlama : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedRidableLlama()
 		{
 			AnimalType = "RidableLlama";
@@ -1832,26 +1832,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedRidableLlama( Serial serial ) : base( serial ) 
-		{ 
+		public CagedRidableLlama( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedRidgeback : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedRidgeback()
 		{
 			AnimalType = "Ridgeback";
@@ -1859,26 +1859,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedRidgeback( Serial serial ) : base( serial ) 
-		{ 
+		public CagedRidgeback( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedSheep : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedSheep()
 		{
 			AnimalType = "Sheep";
@@ -1886,26 +1886,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedSheep( Serial serial ) : base( serial ) 
-		{ 
+		public CagedSheep( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedSnowOstard : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedSnowOstard()
 		{
 			AnimalType = "SnowOstard";
@@ -1913,26 +1913,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedSnowOstard( Serial serial ) : base( serial ) 
-		{ 
+		public CagedSnowOstard( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedSwampDragon : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedSwampDragon()
 		{
 			AnimalType = "SwampDragon";
@@ -1940,26 +1940,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedSwampDragon( Serial serial ) : base( serial ) 
-		{ 
+		public CagedSwampDragon( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedTigerRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedTigerRiding()
 		{
 			AnimalType = "TigerRiding";
@@ -1967,26 +1967,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedTigerRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedTigerRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedTimberWolf : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedTimberWolf()
 		{
 			AnimalType = "TimberWolf";
@@ -1994,26 +1994,26 @@ namespace Server.Items
 			ItemID = Cage( "small" );
 		}
 
-		public CagedTimberWolf( Serial serial ) : base( serial ) 
-		{ 
+		public CagedTimberWolf( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedWhiteWolf : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedWhiteWolf()
 		{
 			AnimalType = "WhiteWolf";
@@ -2021,26 +2021,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedWhiteWolf( Serial serial ) : base( serial ) 
-		{ 
+		public CagedWhiteWolf( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedWolfDire : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedWolfDire()
 		{
 			AnimalType = "WolfDire";
@@ -2048,26 +2048,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedWolfDire( Serial serial ) : base( serial ) 
-		{ 
+		public CagedWolfDire( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedZebraRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedZebraRiding()
 		{
 			AnimalType = "ZebraRiding";
@@ -2075,26 +2075,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedZebraRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedZebraRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedGriffonRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedGriffonRiding()
 		{
 			AnimalType = "GriffonRiding";
@@ -2102,26 +2102,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedGriffonRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedGriffonRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedHippogriffRiding : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedHippogriffRiding()
 		{
 			AnimalType = "HippogriffRiding";
@@ -2129,26 +2129,26 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedHippogriffRiding( Serial serial ) : base( serial ) 
-		{ 
+		public CagedHippogriffRiding( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackNecroSpider : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackNecroSpider()
 		{
 			AnimalType = "PackNecroSpider";
@@ -2156,26 +2156,26 @@ namespace Server.Items
 			ItemID = Cage( "medium" );
 		}
 
-		public CagedPackNecroSpider( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackNecroSpider( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 
 	public class CagedPackNecroHound : BaseCaged
 	{
-		[Constructable] 
+		[Constructable]
 		public CagedPackNecroHound()
 		{
 			AnimalType = "PackNecroHound";
@@ -2183,20 +2183,20 @@ namespace Server.Items
 			ItemID = Cage( "large" );
 		}
 
-		public CagedPackNecroHound( Serial serial ) : base( serial ) 
-		{ 
+		public CagedPackNecroHound( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }

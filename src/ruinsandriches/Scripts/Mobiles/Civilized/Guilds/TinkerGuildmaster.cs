@@ -25,8 +25,8 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			SBInfos.Add( new SBTinkerGuild() ); 
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBTinkerGuild() );
+			SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public override void Serialize( GenericWriter writer )
@@ -42,20 +42,20 @@ namespace Server.Mobiles
 		}
 
 		public override void AddCustomContextEntries( Mobile from, List<ContextMenuEntry> list )
-		{	
+		{
 			if ( Core.ML && from.Alive )
 			{
 				RechargeEntry entry = new RechargeEntry( from, this );
-				
+
 				if ( WeaponEngravingTool.Find( from ) == null )
 					entry.Enabled = false;
-					
+
 				list.Add( entry );
 			}
-			
+
 			base.AddCustomContextEntries( from, list );
 		}
-		
+
 		private class RechargeEntry : ContextMenuEntry
 		{
 			private Mobile m_From;
@@ -71,9 +71,9 @@ namespace Server.Mobiles
 			{
 				if ( !Core.ML || m_Vendor == null || m_Vendor.Deleted )
 					return;
-					
+
 				WeaponEngravingTool tool = WeaponEngravingTool.Find( m_From );
-				
+
 				if ( tool != null && tool.UsesRemaining <= 0 )
 				{
 					if ( Banker.GetBalance( m_From ) >= 100000 )

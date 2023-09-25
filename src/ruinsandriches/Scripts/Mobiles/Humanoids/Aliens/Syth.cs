@@ -1,10 +1,10 @@
-using System; 
+using System;
 using Server;
 using Server.Items;
 
-namespace Server.Mobiles 
-{ 
-	public class Syth : BaseCreature 
+namespace Server.Mobiles
+{
+	public class Syth : BaseCreature
 	{
 		public int actionCount;
 		[CommandProperty(AccessLevel.Owner)]
@@ -23,8 +23,8 @@ namespace Server.Mobiles
 		public override double BreathEffectDelay{ get{ return 0.1; } }
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 21 ); }
 
-		[Constructable] 
-		public Syth() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public Syth() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Title = "the Syth";
@@ -228,22 +228,22 @@ namespace Server.Mobiles
 		public override bool AlwaysAttackable{ get{ return true; } }
 		public override int Meat{ get{ return 1; } }
 
-		public Syth( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public Syth( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
 			writer.Write( actionCount );
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
 			actionCount = reader.ReadInt();
-		} 
-	} 
+		}
+	}
 }

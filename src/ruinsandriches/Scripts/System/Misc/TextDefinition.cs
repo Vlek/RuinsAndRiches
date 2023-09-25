@@ -106,7 +106,7 @@ namespace Server
 			else if( text != null && text.String != null )
 				if( stringColor >= 0 )
 					g.AddHtml( x, y, width, height, String.Format( "<BASEFONT COLOR=#{0:X6}>{1}</BASEFONT>", stringColor, text.String ), back, scroll );
-				else			
+				else
 					g.AddHtml( x, y, width, height, text.String, back, scroll );
 		}
 		public static void AddHtmlText( Server.Gumps.Gump g, int x, int y, int width, int height, TextDefinition text, bool back, bool scroll )

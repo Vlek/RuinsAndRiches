@@ -145,7 +145,7 @@ namespace Server.Items
 							from.PlaySound( 0x227 );
 							m_Key.Consume();
 						}
-						else if ( ( cont3.TrapType != TrapType.None ) && ( cont3.TrapLevel > 0 ) ) 
+						else if ( ( cont3.TrapType != TrapType.None ) && ( cont3.TrapLevel > 0 ) )
 						{
 							if ( o is TrapableContainer )
 							{
@@ -165,7 +165,7 @@ namespace Server.Items
 							from.PlaySound( 0x227 );
 							m_Key.Consume();
 						}
-						else 
+						else
 						{
 							from.SendMessage( "The torch seems to have done nothing to the mechanism inside." );
 							m_Key.Consume();

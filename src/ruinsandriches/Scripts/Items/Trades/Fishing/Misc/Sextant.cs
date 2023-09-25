@@ -39,7 +39,7 @@ namespace Server.Items
 			int xMins = 0, yMins = 0;
 			bool xEast = false, ySouth = false;
 
-			if ( world == "the Underworld" && !(this is MagicSextant) ){ from.SendMessage( "You will need a magical sextant to see the stars through the cavern ceiling!" ); } 
+			if ( world == "the Underworld" && !(this is MagicSextant) ){ from.SendMessage( "You will need a magical sextant to see the stars through the cavern ceiling!" ); }
 			else if ( Sextant.Format( from.Location, from.Map, ref xLong, ref yLat, ref xMins, ref yMins, ref xEast, ref ySouth ) )
 			{
 				string location = String.Format( "{0}° {1}'{2}, {3}° {4}'{5}", yLat, yMins, ySouth ? "S" : "N", xLong, xMins, xEast ? "E" : "W" );
@@ -47,9 +47,9 @@ namespace Server.Items
 			}
 			else if ( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) == "Ravendark Woods" ) { from.SendMessage( "You can't use a sextant as the sun and stars are blocked by the evil darkness here!" ); }
 			else if ( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) == "the Village of Ravendark" ) { from.SendMessage( "You can't use a sextant as the sun and stars are blocked by the evil darkness here!" ); }
-			else if ( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) == "the Ranger Outpost" ) { from.SendMessage( "You can't use a sextant as the mountain clouds block the sky!" ); } 
-			else if ( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) == "the Valley of Dark Druids" ) { from.SendMessage( "The druids mask this valley with thick clouds!" ); } 
-			else { from.SendMessage( "The sextant does not seem to work here!" ); } 
+			else if ( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) == "the Ranger Outpost" ) { from.SendMessage( "You can't use a sextant as the mountain clouds block the sky!" ); }
+			else if ( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) == "the Valley of Dark Druids" ) { from.SendMessage( "The druids mask this valley with thick clouds!" ); }
+			else { from.SendMessage( "The sextant does not seem to work here!" ); }
 		}
 
 		public static bool ComputeMapDetails( Map map, int x, int y, out int xCenter, out int yCenter, out int xWidth, out int yHeight )

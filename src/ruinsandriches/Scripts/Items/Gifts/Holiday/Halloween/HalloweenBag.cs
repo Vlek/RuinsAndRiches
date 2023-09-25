@@ -47,21 +47,21 @@ namespace Server.Items
 				case 24: Name="Black Knight Costume"; Hue = 1; break;
 			}}
 		}
-		
+
 		public override void OnRemoved( object parent )
-		{      	
+		{
 			Mobile owner = parent as Mobile;
-	
+
 			if (owner != null)
 			{
 				owner.HueMod = -1;
             	owner.BodyMod = 0;
 				owner.RaceBody();
 				owner.NameMod = null;
-			}						
-      		
-		}		
-	
+			}
+
+		}
+
 		public override bool OnEquip( Mobile mob )
 		{
       			if( base.OnEquip( mob ) )
@@ -312,7 +312,7 @@ namespace Server.Items
 			else if (Gift == 8){Hue=0; Name="Hard Candy"; ItemID=3967;}
 			else {Hue=1195; Name="Gum Ball"; ItemID=3699;}
 		}
-		
+
 		public override void OnDoubleClick( Mobile m )
 		{
 			m.PlaySound( Utility.Random( 0x3A, 3 ) );
@@ -321,7 +321,7 @@ namespace Server.Items
 				m.Animate( 34, 5, 1, true, false, 0 );
 
 			String phrase = "";
-			switch ( Utility.RandomMinMax( 0, 6 ) ) 
+			switch ( Utility.RandomMinMax( 0, 6 ) )
 			{
 				case 0: phrase = "Mmmmmmmmm"; break;
 				case 1: phrase = "Tastes pretty good"; break;
@@ -392,7 +392,7 @@ namespace Server.Items
 		public override void Serialize(GenericWriter writer)
 		{
 			base.Serialize(writer);
-			writer.Write((int)0); // version 
+			writer.Write((int)0); // version
 		}
 
 		public override void Deserialize(GenericReader reader)

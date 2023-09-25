@@ -16,7 +16,7 @@ namespace Server.Items
 		{
 			Name = "Boomstick";
 			Hue = 0x25;
-			
+
 			Attributes.SpellChanneling = 1;
 			Attributes.RegenMana = 3;
 			Attributes.CastSpeed = 1;

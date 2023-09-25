@@ -376,7 +376,7 @@ namespace Server.Gumps
     {
         public CensusGump(Mobile from, bool legal) : base(50, 50)
         {
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#b7765d";
 
             this.Closable=true;
@@ -386,7 +386,7 @@ namespace Server.Gumps
 
 			string text = "These are the census records for the many lands, and the sages have compiled a list of names of its citizens. Your name is on this list as well. If you want to change your name, you can do it within this book.";
 
-			if ( !legal ){ text = "These are the forged census records for the many lands, and the thieves guild has compiled a list of names of its citizens. Your name is on this list as well. If you want to change your name, you can do it within this book."; } 
+			if ( !legal ){ text = "These are the forged census records for the many lands, and the thieves guild has compiled a list of names of its citizens. Your name is on this list as well. If you want to change your name, you can do it within this book."; }
 
 			AddPage(0);
 
@@ -406,7 +406,7 @@ namespace Server.Gumps
         public override void OnResponse( NetState sender, RelayInfo info )
         {
             Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
             if (from == null)
             {
@@ -470,7 +470,7 @@ namespace Server.Gumps
 
 			AddPage(0);
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#b7765d";
 
             this.Closable=true;
@@ -498,7 +498,7 @@ namespace Server.Gumps
         public override void OnResponse( NetState sender, RelayInfo info )
         {
             Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
             if ( from == null )
             {
                 return;
@@ -551,7 +551,7 @@ namespace Server.Gumps
     {
         public NameAlterGump(Mobile from) : base(50, 50)
         {
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
             this.Closable=true;
 			this.Disposable=true;
 			this.Dragable=true;
@@ -559,7 +559,7 @@ namespace Server.Gumps
 
 			AddPage(0);
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#b7765d";
 
             this.Closable=true;
@@ -585,7 +585,7 @@ namespace Server.Gumps
         public override void OnResponse( NetState sender, RelayInfo info )
         {
             Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
             if (from == null)
             {
                 return;
@@ -646,7 +646,7 @@ namespace Server.Gumps
 
             AddPage(0);
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#b7765d";
 
             this.Closable=true;

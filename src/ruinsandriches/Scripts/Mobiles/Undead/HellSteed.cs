@@ -20,7 +20,7 @@ namespace Server.Mobiles
 		public override double BreathEffectDelay{ get{ return 0.1; } }
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 26 ); }
 
-		[Constructable] 
+		[Constructable]
 		public HellSteed() : this( "a hellsteed" )
 		{
 		}

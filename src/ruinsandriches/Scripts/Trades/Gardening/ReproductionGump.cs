@@ -124,7 +124,7 @@ namespace Server.Engines.Plants
 				from.LocalOverheadMessage( MessageType.Regular, 0x3E9, 500446 ); // That is too far away.
 				return;
 			}
-			
+
 			if ( !m_Plant.IsUsableBy( from ) )
 			{
 				m_Plant.LabelTo( from, 1061856 ); // You must have the item in your backpack or locked down in order to use it.

@@ -8,7 +8,7 @@ namespace Server.Misc
 		public static void Configure()
 		{
 			/* Here we configure all races. Some notes:
-			 * 
+			 *
 			 * 1) The first 32 races are reserved for core use.
 			 * 2) Race 0x7F is reserved for core use.
 			 * 3) Race 0xFF is reserved for core use.

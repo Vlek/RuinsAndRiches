@@ -18,7 +18,7 @@ namespace Server.Guilds
 
 		public override void PopulateGump()
 		{
-			player.SendSound( 0x4A ); 
+			player.SendSound( 0x4A );
 			string color = "#c3c3c3";
 
 			AddPage( 0 );
@@ -62,7 +62,7 @@ namespace Server.Guilds
 
 					break;
 				}
-				case 2: 
+				case 2:
 				{
 					player.AcceptGuildInvites = false;
 					player.SendLocalizedMessage( 1070698 ); // You are now ignoring guild invitations.
@@ -70,7 +70,7 @@ namespace Server.Guilds
 					break;
 				}
 			}
-			player.SendSound( 0x4A ); 
+			player.SendSound( 0x4A );
 		}
 	}
 }

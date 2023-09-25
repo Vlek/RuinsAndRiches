@@ -1,28 +1,28 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
+using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class Monks : BaseCreature 
+	public class Monks : BaseCreature
 	{
-		[Constructable] 
-		public Monks() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public Monks() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() ) 
+			if ( this.Female = Utility.RandomBool() )
 			{
-				this.Body = 0x191; 
-				this.Name = NameList.RandomName( "female" ); 
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
+				this.Body = 0x191;
+				this.Name = NameList.RandomName( "female" );
+			}
+			else
+			{
+				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 				FacialHairItemID = Utility.RandomList( 0, 0, 0, 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
 				FacialHairHue = Utility.RandomHairHue();
@@ -95,20 +95,20 @@ namespace Server.Mobiles
 			base.OnAfterSpawn();
 		}
 
-		public Monks( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public Monks( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }

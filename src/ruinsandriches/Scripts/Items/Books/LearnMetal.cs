@@ -80,7 +80,7 @@ namespace Server.Items
 				AddHtml( 209, 67, 679, 702, @"<BODY><BASEFONT Color=" + color + ">Mining is the skill one needs to find ore within caves and mountains. With this ore, ingot can be crafted and then blacksmiths and tinkers can then create weapons, armor, and tools. You simply need to get a pick axe or a shovel, double-click it, and then target a mountain side or caven floor. Although you will normally get regular ore, you will eventually get skilled enough to dig up other types of ore.<br><br>The many types of metal are listed here, starting up and then going down to higher quality metal. Making a shield out of valorite will be a much better shield than one made of copper, for example. The same goes for weapons forged from metal. Whatever the color of metal you use, the weapon or armor will retain the color of the metal. The same goes for many of the containers you can make from metal. A metal chest made from shadow iron will be black in color.<br><br>In order to make things from the ore, you need to turn the ore into ingots. To do this, double-click the ingots and target a forge. These forges are commonly found in blacksmith shops. Then you can begin crafting with a blacksmith hammer, or tinker with tinker tools. Keep in mind that in order to smith items, you will need to be near a forge and anvil.</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				from.SendSound( 0x249 );
@@ -89,7 +89,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 ) 
+			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

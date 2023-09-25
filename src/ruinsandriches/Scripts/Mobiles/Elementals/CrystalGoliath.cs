@@ -50,7 +50,7 @@ namespace Server.Mobiles
 			AddLoot( LootPack.Rich, 2 );
 			AddLoot( LootPack.Gems, 4 );
 		}
-		
+
 		public override void OnDeath( Container c )
 		{
 			base.OnDeath( c );
@@ -139,7 +139,7 @@ namespace Server.Mobiles
 					armor = (BaseArmor)(to.FindItemOnLayer( Layer.Cloak ));
 				else if( positionChance < 0.70 && to.FindItemOnLayer( Layer.OuterTorso ) is BaseArmor )
 					armor = (BaseArmor)(to.FindItemOnLayer( Layer.OuterTorso ));
-				else 
+				else
 					armor = to.ChestArmor as BaseArmor;
 
 				if ( armor != null )

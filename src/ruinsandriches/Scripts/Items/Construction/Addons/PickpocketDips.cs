@@ -28,7 +28,7 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public bool Swinging
 		{
-			get{ return ( m_Timer != null ); } 
+			get{ return ( m_Timer != null ); }
 		}
 
 		public PickpocketDip( int itemID ) : base( itemID )

@@ -16,7 +16,7 @@ namespace Server.Items
 					return 0x24C7;
 			}
 		}
-		
+
 		public override int UnlitItemID
 		{
 			get
@@ -27,7 +27,7 @@ namespace Server.Items
 					return 0x24C8;
 			}
 		}
-		
+
 		[Constructable]
 		public WhiteHangingLantern() : base( 0x24C6 )
 		{

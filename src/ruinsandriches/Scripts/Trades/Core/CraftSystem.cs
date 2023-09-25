@@ -34,7 +34,7 @@ namespace Server.Engines.Craft
 		public CraftGroupCol CraftGroups{ get { return m_CraftGroups; } }
 		public CraftSubResCol CraftSubRes{ get { return m_CraftSubRes; } }
 		public CraftSubResCol CraftSubRes2{ get { return m_CraftSubRes2; } }
-		
+
 		public abstract SkillName MainSkill{ get; }
 
 		public virtual int GumpTitleNumber{ get{ return 0; } }
@@ -123,7 +123,7 @@ namespace Server.Engines.Craft
 		}
 
 		public void CreateItem( Mobile from, Type type, Type typeRes, BaseTool tool, CraftItem realCraftItem )
-		{	
+		{
 			// Verify if the type is in the list of the craftable item
 			CraftItem craftItem = m_CraftItems.SearchFor( type );
 			if ( craftItem != null )
@@ -193,7 +193,7 @@ namespace Server.Engines.Craft
 			CraftItem craftItem = m_CraftItems.GetAt( index );
 			craftItem.Hits = hits;
 		}
-		
+
 		public void SetUseAllRes( int index, bool useAll )
 		{
 			CraftItem craftItem = m_CraftItems.GetAt( index );

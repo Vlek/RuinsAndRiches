@@ -15,7 +15,7 @@ namespace Server.Items
 	public class MushroomTrap : BaseTrap
 	{
 		public int ShroomType;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Shroom_Type { get { return ShroomType; } set { ShroomType = value; InvalidateProperties(); } }
 

@@ -82,7 +82,7 @@ namespace Server.Items
                                         1,
                                         1,
 					1,
-					1,	
+					1,
                                 } );
 
                         switch ( res )
@@ -151,4 +151,4 @@ namespace Server.Items
                         int version = reader.ReadInt();
                 }
         }
-} 
+}

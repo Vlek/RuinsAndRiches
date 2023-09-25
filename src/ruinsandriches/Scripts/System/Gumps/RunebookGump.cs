@@ -334,7 +334,7 @@ namespace Server.Gumps
 				else
 				{
 					m_Book.Openers.Remove( from );
-					
+
 					from.SendLocalizedMessage( 502416 ); // That cannot be done while the book is locked down.
 				}
 			}
@@ -374,7 +374,7 @@ namespace Server.Gumps
 				else
 				{
 					m_Book.Openers.Remove( from );
-					
+
 					from.SendLocalizedMessage( 502413, null, 0x35 ); // That cannot be done while the book is locked down.
 				}
 			}
@@ -516,7 +516,7 @@ namespace Server.Gumps
 							{
 								from.SendMessage( "You do not have that skill!" );
 							}
-							
+
 							m_Book.Openers.Remove( from );
 
 							break;
@@ -551,7 +551,7 @@ namespace Server.Gumps
 
 							m_Book.OnTravel();
 							new ResearchEtherealTravel( from, null, e, null ).Cast();
-							
+
 							m_Book.Openers.Remove( from );
 
 							break;
@@ -591,7 +591,7 @@ namespace Server.Gumps
 					{
 						from.SendLocalizedMessage( 500015 ); // You do not have that spell!
 					}
-					
+
 					m_Book.Openers.Remove( from );
 				}
 				else
@@ -627,7 +627,7 @@ namespace Server.Gumps
 					{
 						from.SendLocalizedMessage( 500015 ); // You do not have that spell!
 					}
-					
+
 					m_Book.Openers.Remove( from );
 				}
 				else
@@ -669,7 +669,7 @@ namespace Server.Gumps
 
 								m_Book.OnTravel();
 								new TravelSpell( from, m_Book, e, m_Book ).Cast();
-								
+
 								m_Book.Openers.Remove( from );
 							}
 
@@ -688,7 +688,7 @@ namespace Server.Gumps
 							else
 							{
 								m_Book.Openers.Remove( from );
-								
+
 								from.SendLocalizedMessage( 502413, null, 0x35 ); // That cannot be done while the book is locked down.
 							}
 
@@ -729,7 +729,7 @@ namespace Server.Gumps
 							{
 								from.SendLocalizedMessage( 500015 ); // You do not have that spell!
 							}
-							
+
 							m_Book.Openers.Remove( from );
 
 							break;
@@ -755,7 +755,7 @@ namespace Server.Gumps
 							{
 								from.SendLocalizedMessage( 500015 ); // You do not have that spell!
 							}
-							
+
 							m_Book.Openers.Remove( from );
 
 							break;
@@ -784,7 +784,7 @@ namespace Server.Gumps
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
 								}
 							}
-							
+
 							m_Book.Openers.Remove( from );
 
 							break;

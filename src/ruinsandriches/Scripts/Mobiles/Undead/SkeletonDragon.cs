@@ -27,7 +27,7 @@ namespace Server.Mobiles
 			Name = "a skeletal dragon";
 			BaseSoundID = 0x488;
 			Body = 272;
-			Hue = 0xB4D; 
+			Hue = 0xB4D;
 
 			SetStr( 721, 760 );
 			SetDex( 101, 130 );

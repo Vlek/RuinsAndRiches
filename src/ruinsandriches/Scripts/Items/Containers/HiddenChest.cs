@@ -129,7 +129,7 @@ namespace Server.Items
 
 		public override bool HandlesOnMovement{ get{ return MyServerSettings.EnableDungeonSoundEffects(); } }
 
-		private DateTime m_NextSound;	
+		private DateTime m_NextSound;
 		public DateTime NextSound{ get{ return m_NextSound; } set{ m_NextSound = value; } }
 
 		public override void OnMovement( Mobile m, Point3D oldLocation )
@@ -140,19 +140,19 @@ namespace Server.Items
 				{
 					if ( Utility.RandomBool() )
 					{
-						int sound = HiddenChest.DungeonSounds( this );	
-						m.PlaySound( sound );	
+						int sound = HiddenChest.DungeonSounds( this );
+						m.PlaySound( sound );
 					}
-					m_NextSound = (DateTime.Now + TimeSpan.FromSeconds( 60 ));	
+					m_NextSound = (DateTime.Now + TimeSpan.FromSeconds( 60 ));
 				}
 			}
 		}
 
 		public static int DungeonSounds( Item item )
 		{
-			Region reg = Region.Find( item.Location, item.Map );	
+			Region reg = Region.Find( item.Location, item.Map );
 
-			string sound = "dungeon";	
+			string sound = "dungeon";
 
 			if ( reg.IsPartOf( "the Ancient Sky Ship" ) ){ sound = "scifi"; }
 			else if ( reg.IsPartOf( "the Blood Temple" ) ){ sound = "dungeon"; }
@@ -252,7 +252,7 @@ namespace Server.Items
 			else if ( reg.IsPartOf( "the Scurvy Reef" ) ){ sound = "water"; }
 			else if ( reg.IsPartOf( "the Undersea Castle" ) ){ sound = "water"; }
 
-			int value = 1;	
+			int value = 1;
 
 			if ( sound == "scifi" ){ 			value = Utility.RandomList( 0x55E, 0x549, 0x54A, 0x2F5, 0x457 ); }
 			else if ( sound == "cave" ){ 		value = Utility.RandomList( 0x668, 0x669, 0x64D, 0x568, 0x567, 0x566, 0x4D0, 0x4CF, 0x382, 0x2DA, 0x290, 0x222, 0x223, 0x221, 0x220, 0x0CD, 0x102, 0x103 ); }
@@ -271,7 +271,7 @@ namespace Server.Items
 			else if ( sound == "thunder" ){ 	value = Utility.RandomList( 0x5CF, 0x56A, 0x029, 0x02A, 0x104 ); }
 			else if ( sound == "water" ){ 		value = Utility.RandomList( 0x5B0, 0x4D2, 0x365, 0x2D9, 0x240, 0x013, 0x021, 0x023, 0x025, 0x025, 0x027, 0x028 ); }
 
-			return (value-1);	
+			return (value-1);
 		}
 	}
 }

@@ -28,13 +28,13 @@ namespace Server.Items
 		public ShieldOfEarthPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -49,7 +49,7 @@ namespace Server.Items
 		public WoodlandProtectionPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public WoodlandProtectionPotion( int amount ) : base( 148, 0x282F, amount )
 		{
@@ -64,13 +64,13 @@ namespace Server.Items
 		public WoodlandProtectionPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -85,7 +85,7 @@ namespace Server.Items
 		public ProtectiveFairyPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public ProtectiveFairyPotion( int amount ) : base( 149, 0x282F, amount )
 		{
@@ -100,13 +100,13 @@ namespace Server.Items
 		public ProtectiveFairyPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -122,7 +122,7 @@ namespace Server.Items
 		public HerbalHealingPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public HerbalHealingPotion( int amount ) : base( 150, 0x282F, amount )
 		{
@@ -137,13 +137,13 @@ namespace Server.Items
 		public HerbalHealingPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -158,7 +158,7 @@ namespace Server.Items
 		public GraspingRootsPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public GraspingRootsPotion( int amount ) : base( 151, 0x282F, amount )
 		{
@@ -173,13 +173,13 @@ namespace Server.Items
 		public GraspingRootsPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -194,7 +194,7 @@ namespace Server.Items
 		public BlendWithForestPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public BlendWithForestPotion( int amount ) : base( 152, 0x282F, amount )
 		{
@@ -209,13 +209,13 @@ namespace Server.Items
 		public BlendWithForestPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -230,7 +230,7 @@ namespace Server.Items
 		public SwarmOfInsectsPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public SwarmOfInsectsPotion( int amount ) : base( 153, 0x282F, amount )
 		{
@@ -245,13 +245,13 @@ namespace Server.Items
 		public SwarmOfInsectsPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -267,7 +267,7 @@ namespace Server.Items
 		public VolcanicEruptionPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public VolcanicEruptionPotion( int amount ) : base( 154, 0x282F, amount )
 		{
@@ -282,13 +282,13 @@ namespace Server.Items
 		public VolcanicEruptionPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -303,7 +303,7 @@ namespace Server.Items
 		public TreefellowPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public TreefellowPotion( int amount ) : base( 155, 0x282F, amount )
 		{
@@ -318,13 +318,13 @@ namespace Server.Items
 		public TreefellowPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -339,7 +339,7 @@ namespace Server.Items
 		public StoneCirclePotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public StoneCirclePotion( int amount ) : base( 156, 0x282F, amount )
 		{
@@ -354,13 +354,13 @@ namespace Server.Items
 		public StoneCirclePotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -375,7 +375,7 @@ namespace Server.Items
 		public DruidicRunePotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public DruidicRunePotion( int amount ) : base( 157, 0x282F, amount )
 		{
@@ -390,13 +390,13 @@ namespace Server.Items
 		public DruidicRunePotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -411,7 +411,7 @@ namespace Server.Items
 		public LureStonePotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public LureStonePotion( int amount ) : base( 158, 0x282F, amount )
 		{
@@ -426,13 +426,13 @@ namespace Server.Items
 		public LureStonePotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -448,7 +448,7 @@ namespace Server.Items
 		public NaturesPassagePotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public NaturesPassagePotion( int amount ) : base( 159, 0x282F, amount )
 		{
@@ -463,13 +463,13 @@ namespace Server.Items
 		public NaturesPassagePotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -484,7 +484,7 @@ namespace Server.Items
 		public MushroomGatewayPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public MushroomGatewayPotion( int amount ) : base( 160, 0x282F, amount )
 		{
@@ -499,13 +499,13 @@ namespace Server.Items
 		public MushroomGatewayPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -520,7 +520,7 @@ namespace Server.Items
 		public RestorativeSoilPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public RestorativeSoilPotion( int amount ) : base( 161, 0x282F, amount )
 		{
@@ -535,13 +535,13 @@ namespace Server.Items
 		public RestorativeSoilPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -557,7 +557,7 @@ namespace Server.Items
 		public FireflyPotion() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public FireflyPotion( int amount ) : base( 162, 0x282F, amount )
 		{
@@ -572,13 +572,13 @@ namespace Server.Items
 		public FireflyPotion( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );

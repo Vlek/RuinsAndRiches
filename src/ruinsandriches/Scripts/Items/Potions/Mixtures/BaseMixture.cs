@@ -26,7 +26,7 @@ namespace Server.Items
 		public int SlimeEngy;
 		public int SlimeGlow;
 		public int SlimeHate;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Slime_Name { get { return SlimeName; } set { SlimeName = value; InvalidateProperties(); } }
 		[CommandProperty(AccessLevel.Owner)]
@@ -63,7 +63,7 @@ namespace Server.Items
 			}
 			else if ( !from.Region.AllowHarmful( from, from ) )
 			{
-				from.SendMessage( "That doesn't feel like a good idea." ); 
+				from.SendMessage( "That doesn't feel like a good idea." );
 				return;
 			}
 			else if ( ( from.FollowersMax - from.Followers ) < 1 )
@@ -102,7 +102,7 @@ namespace Server.Items
 			{
 				if ( m_Potion.Deleted || m_Potion.Map == Map.Internal )
 					return;
-					
+
 				IPoint3D p = targeted as IPoint3D;
 				Point3D d = new Point3D( p );
 

@@ -38,7 +38,7 @@ namespace Server.Spells.Research
 			Map map = Caster.Map;
 
 			SpellHelper.GetSurfaceTop( ref p );
-			
+
 			PlayerMobile pm = Caster as PlayerMobile; // IsStealthing should be moved to Server.Mobiles
 
 			if ( Server.Misc.WeightOverloading.IsOverloaded( Caster ) )

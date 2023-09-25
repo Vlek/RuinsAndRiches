@@ -63,7 +63,7 @@ namespace Server.Items
 				case 1: iThing = 0xE7D; sThing = "metal chest"; break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 18 ) ) 
+			switch ( Utility.RandomMinMax( 0, 18 ) )
 			{
 				case 0: iColor = MaterialInfo.GetMaterialColor( "silver", "classic", 0 ); sThing = "silver chest";		break;
 				case 1: iColor = MaterialInfo.GetMaterialColor( "emerald", "classic", 0 ); sThing = "emerald chest";		break;
@@ -214,16 +214,16 @@ namespace Server.Items
 			{
 				from.SendMessage( "You cannot open this with too many creatures around." );
 			}
-			else if (	from.Backpack.FindItemByType( typeof ( SearchPage ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( DDRelicTablet ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( VortexCube ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( AlienEgg ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( ResearchBag ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( DragonEgg ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( DracolichSkull ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( MuseumBook ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( QuestTome ) ) != null || 
-						from.Backpack.FindItemByType( typeof ( DemonPrison ) ) != null || 
+			else if (	from.Backpack.FindItemByType( typeof ( SearchPage ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( DDRelicTablet ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( VortexCube ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( AlienEgg ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( ResearchBag ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( DragonEgg ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( DracolichSkull ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( MuseumBook ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( QuestTome ) ) != null ||
+						from.Backpack.FindItemByType( typeof ( DemonPrison ) ) != null ||
 						from.Backpack.FindItemByType( typeof ( CourierMail ) ) != null )
 			{
 				int EmptyBox = 1;

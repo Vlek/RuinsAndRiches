@@ -1,29 +1,29 @@
-using System; 
-using System.Collections; 
-using Server; 
-using Server.Items; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server;
+using Server.Items;
+using Server.Network;
 using Server.Spells;
-using Server.Misc; 
-using Server.Spells.Song; 
+using Server.Misc;
+using Server.Spells.Song;
 using Server.Prompts;
-using Server.Targeting; 
- 
+using Server.Targeting;
 
-namespace Server.Gumps 
-{ 
-	public class SongBookGump : Gump 
-	{ 
-		private SongBook m_Book; 
 
-		public static bool HasSpell( Mobile from, int spellID ) 
-		{ 
-			Spellbook book = Spellbook.Find( from, spellID ); 
-			return ( book != null && book.HasSpell( spellID ) ); 
-		} 
-       
-		public SongBookGump( Mobile from, SongBook book, int page ) : base( 100, 100 ) 
-		{ 
+namespace Server.Gumps
+{
+	public class SongBookGump : Gump
+	{
+		private SongBook m_Book;
+
+		public static bool HasSpell( Mobile from, int spellID )
+		{
+			Spellbook book = Spellbook.Find( from, spellID );
+			return ( book != null && book.HasSpell( spellID ) );
+		}
+
+		public SongBookGump( Mobile from, SongBook book, int page ) : base( 100, 100 )
+		{
 			m_Book = book;
 			string color = "#d6c382";
 			from.PlaySound( 0x55 );
@@ -58,82 +58,82 @@ namespace Server.Gumps
 				int y = 100;
 				int c = 0;
 
-				if (HasSpell( from, 351) ) 
+				if (HasSpell( from, 351) )
 				{
 					AddButton(x, y, 7048, 7048, 351, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Army's Paeon</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 352) ) 
+				if (HasSpell( from, 352) )
 				{
 					AddButton(x, y, 7048, 7048, 352, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Enchanting Etude</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 353) ) 
+				if (HasSpell( from, 353) )
 				{
 					AddButton(x, y, 7048, 7048, 353, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Energy Carol</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 354) ) 
+				if (HasSpell( from, 354) )
 				{
 					AddButton(x, y, 7048, 7048, 354, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Energy Threnody</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 355) ) 
+				if (HasSpell( from, 355) )
 				{
 					AddButton(x, y, 7048, 7048, 355, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Fire Carol</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 356) ) 
+				if (HasSpell( from, 356) )
 				{
 					AddButton(x, y, 7048, 7048, 356, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Fire Threnody</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 357) ) 
+				if (HasSpell( from, 357) )
 				{
 					AddButton(x, y, 7048, 7048, 357, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Foe Requiem</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 358) ) 
+				if (HasSpell( from, 358) )
 				{
 					AddButton(x, y, 7048, 7048, 358, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Ice Carol</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 359) ) 
+				if (HasSpell( from, 359) )
 				{
 					AddButton(x, y, 7048, 7048, 359, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Ice Threnody</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 360) ) 
+				if (HasSpell( from, 360) )
 				{
 					AddButton(x, y, 7048, 7048, 360, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Knight's Minne</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 361) ) 
+				if (HasSpell( from, 361) )
 				{
 					AddButton(x, y, 7048, 7048, 361, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Mage's Ballad</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 362) ) 
+				if (HasSpell( from, 362) )
 				{
 					AddButton(x, y, 7048, 7048, 362, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Magic Finale</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 363) ) 
+				if (HasSpell( from, 363) )
 				{
 					AddButton(x, y, 7048, 7048, 363, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Poison Carol</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 364) ) 
+				if (HasSpell( from, 364) )
 				{
 					AddButton(x, y, 7048, 7048, 364, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Poison Threnody</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 365) ) 
+				if (HasSpell( from, 365) )
 				{
 					AddButton(x, y, 7048, 7048, 365, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Shepherd's Dance</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
 				} if (c == 8){ x = 415; y = 100; }
-				if (HasSpell( from, 366) ) 
+				if (HasSpell( from, 366) )
 				{
 					AddButton(x, y, 7048, 7048, 366, GumpButtonType.Reply, 0);
 					AddHtml( x+25, y, 148, 20, @"<BODY><BASEFONT Color=" + color + ">Sinewy Etude</BASEFONT></BODY>", (bool)false, (bool)false); c++; y = y + 38;
@@ -308,10 +308,10 @@ namespace Server.Gumps
 				AddHtml( 372, 190, 189, 20, @"<BODY><BASEFONT Color=" + color + ">Keyboard Command:</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 		}
-       
+
 		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 
 			if ( info.ButtonID == 99 )
 			{
@@ -357,13 +357,13 @@ namespace Server.Gumps
 			}
 			else
 				from.PlaySound( 0x55 );
-		} 
+		}
 
 		private class InternalTarget : Target
 		{
 			private SongBook Book;
 
-			public InternalTarget( SongBook book ) : base( 1, false, TargetFlags.None ) 
+			public InternalTarget( SongBook book ) : base( 1, false, TargetFlags.None )
 			{
 				Book = book;
 			}
@@ -381,5 +381,5 @@ namespace Server.Gumps
 				}
 			}
 		}
-	} 
+	}
 }

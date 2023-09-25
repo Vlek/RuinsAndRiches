@@ -13,7 +13,7 @@ namespace Server.Multis
 
 		public ConfirmDryDockGump( Mobile from, BaseBoat boat, int hue ) : base( 50, 50 )
 		{
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#dbc082";
 			int img = 7002;
 			string msg = "Do you want to dry dock your ship now?";
@@ -52,7 +52,7 @@ namespace Server.Multis
 
 		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			m_From.SendSound( 0x4A ); 
+			m_From.SendSound( 0x4A );
 			if ( info.ButtonID == 2 )
 				m_Boat.EndDryDock( m_From, m_Hue );
 		}

@@ -7,7 +7,7 @@ namespace Server.Items
 	public class HalloweenDeco6 : BaseAddon
 	{
         private static int[,] m_AddOnSimpleComponents = new int[,] {
-			  {3178, 0, 0, 0}// 1	
+			  {3178, 0, 0, 0}// 1
 		};
 
 		[ Constructable ]

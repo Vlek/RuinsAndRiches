@@ -6,7 +6,7 @@ namespace Server.Items
 	public class SpecialSeaweed : Item
 	{
 		public int SkillNeeded;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Skill_Needed { get { return SkillNeeded; } set { SkillNeeded = value; InvalidateProperties(); } }
 

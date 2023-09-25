@@ -7,15 +7,15 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateMen : BasePirate 
+	public class PirateMen : BasePirate
 	{
-		[Constructable] 
+		[Constructable]
 		public PirateMen()
 		{
 			Title = "the sea pirate";
-			Hue = Utility.RandomSkinColor(); 
+			Hue = Utility.RandomSkinColor();
 
             if (this.Female = Utility.RandomBool())
             {
@@ -38,7 +38,7 @@ namespace Server.Mobiles
 			AddItem( new Scimitar() );
             AddItem( new ElvenBoots( 0x83A ) );
             Item armor = new LeatherChest(); armor.Hue = 0x83A; AddItem( armor );
-			AddItem( new FancyShirt( 0 ) );	
+			AddItem( new FancyShirt( 0 ) );
             AddItem( new PirateHat( 0 ) );
 
             switch ( Utility.Random( 2 ))

@@ -4,7 +4,7 @@ using Server.Items;
 using Server.Network;
 
 namespace Server.Items
-{    
+{
     public class ESpikePostEastComponent : AddonComponent
     {
         [Constructable]
@@ -43,7 +43,7 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
     }
-        
+
     public class ESpikePostEastAddon : BaseAddon
     {
         public override BaseAddonDeed Deed { get { return new ESpikePostEastDeed(); } }

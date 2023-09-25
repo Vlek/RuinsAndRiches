@@ -31,18 +31,18 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-	  
+
 	  	public override void Drink( Mobile m )
 		{
-         	if ( m.InRange( this.GetWorldLocation(), 1 ) ) 
-         	{ 
+         	if ( m.InRange( this.GetWorldLocation(), 1 ) )
+         	{
 				m.SendMessage( "What would you like to pour this on!" );
 				m.Target = new RepairTarget( this, m );
-         	} 
-         	else 
-         	{ 
-            	m.LocalOverheadMessage( MessageType.Regular, 906, 1019045 ); // I can't reach that. 
-         	} 
+         	}
+         	else
+         	{
+            	m.LocalOverheadMessage( MessageType.Regular, 906, 1019045 ); // I can't reach that.
+         	}
 		}
 
 		public static void ConsumeCharge( RepairPotion potion, Mobile from )

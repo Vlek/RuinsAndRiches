@@ -51,11 +51,11 @@ namespace Server.Spells.Fifth
 				{
 					nBenefit = (int)(Caster.Skills[SkillName.Magery].Value / 2);
 				}
-				
+
 				if ( Core.AOS )
 				{
 					int secs = (int)((GetDamageSkill( Caster ) / 10) - (GetResistSkill( m ) / 10)) + nBenefit;
-					
+
 					if( !Core.SE )
 						secs += 2;
 

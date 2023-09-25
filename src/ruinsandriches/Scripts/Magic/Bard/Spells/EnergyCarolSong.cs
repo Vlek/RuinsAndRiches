@@ -19,7 +19,7 @@ namespace Server.Spells.Song
 				//212,9041
 				-1
 			);
-		
+
 		private SongBook m_Book;
 		//public override double CastDelay{ get{ return 3; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
@@ -46,11 +46,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
 			if( CheckSequence() )
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
@@ -58,24 +58,24 @@ namespace Server.Spells.Song
 					if ( Caster.CanBeBeneficial( m, false, true ) && !(m is Golem) )
 						targets.Add( m );
 				}
-				
-				
+
+
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
+
 					TimeSpan duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster ) * 2) );
                     int amount = Server.Misc.MyServerSettings.PlayerLevelMod( (int)(MusicSkill( Caster ) / 16), Caster );
-						
+
 					m.SendMessage( "Your resistance to energy has increased." );
 					ResistanceMod mod1 = new ResistanceMod( ResistanceType.Energy, + amount );
-						
+
 					m.FixedParticles( 0x373A, 10, 15, 5012, 0x14, 3, EffectLayer.Waist );
-						
+
 					m.AddResistanceMod( mod1 );
-						
+
 					new ExpireTimer( m, mod1, duration ).Start();
-					
+
 				}
 			}
 
@@ -97,7 +97,7 @@ namespace Server.Spells.Song
 			public void DoExpire()
 			{
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

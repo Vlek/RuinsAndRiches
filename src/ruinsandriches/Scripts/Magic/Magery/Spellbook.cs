@@ -123,7 +123,7 @@ namespace Server.Items
 				else
 				{
 					Spell spell = SpellRegistry.NewSpell( spellID, from, null );
-	
+
 					if ( spell != null )
 						spell.Cast();
 					else
@@ -297,7 +297,7 @@ namespace Server.Items
 			{
 				list.Add( (Spellbook)item );
 			}
-		
+
 			Container pack = from.Backpack;
 
 			if ( pack == null )
@@ -690,7 +690,7 @@ namespace Server.Items
 
 			if ( m_Crafter != null )
 				list.Add( 1050043, m_Crafter.Name ); // crafted by ~1_NAME~
-				
+
 			m_AosSkillBonuses.GetProperties( list );
 
 			if( m_Slayer != SlayerName.None )

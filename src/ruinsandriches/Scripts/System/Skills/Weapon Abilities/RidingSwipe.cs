@@ -47,16 +47,16 @@ namespace Server.Items
 				if( mount != null )	//Ethy mounts don't take damage
 				{
 					int amount = 10 + (int)(10.0 * (attacker.Skills[SkillName.Tactics].Value - 50.0) / 70.0 + 5);
-										
+
 					AOS.Damage( mount, null, amount, 100, 0, 0, 0, 0 );	//The mount just takes damage, there's no flagging as if it was attacking the mount directly
-					
+
 					//TODO: Mount prevention until mount healed
 				}
 			}
 			else
 			{
 				int amount = 10 + (int)(10.0 * (attacker.Skills[SkillName.Tactics].Value - 50.0) / 70.0 + 5);
-				
+
 				AOS.Damage( defender, attacker, amount, 100, 0, 0, 0, 0 );
 
 				if( Server.Items.ParalyzingBlow.IsImmune( defender ) )	//Does it still do damage?

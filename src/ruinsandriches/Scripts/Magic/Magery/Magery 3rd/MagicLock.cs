@@ -109,7 +109,7 @@ namespace Server.Spells.Third
 				{
 					Caster.SendMessage( "This spell has no effect on that!" );
 				}
-				
+
 			}
 			else if ( o is PlayerMobile )
 			{
@@ -353,7 +353,7 @@ namespace Server.Items
 
 				prisoner = TrappedName;
 					if ( TrappedTitle != "" && TrappedTitle != null ){ prisoner = TrappedName + " " + TrappedTitle; }
-			
+
 				list.Add( 1049644, prisoner );
 			}
         }

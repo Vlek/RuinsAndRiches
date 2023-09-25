@@ -30,13 +30,13 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBProvisioner() ); 
+			m_SBInfos.Add( new SBProvisioner() );
 
 			Region reg = Region.Find( this.Location, this.Map );
 			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
 			{
 				m_SBInfos.Add( new SBSailor() );
-				m_SBInfos.Add( new SBHighSeas() ); 
+				m_SBInfos.Add( new SBHighSeas() );
 			}
 
 			string CurrentMonth = DateTime.Now.ToString("MM");
@@ -44,7 +44,7 @@ namespace Server.Mobiles
 			if ( CurrentMonth == "12" ){ m_SBInfos.Add( new SBHolidayXmas() ); }
 			if ( CurrentMonth == "10" ){ m_SBInfos.Add( new SBHolidayHalloween() ); }
 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBBuyArtifacts() );
 
 			if ( Server.Misc.Worlds.GetMyWorld( this.Map, this.Location, this.X, this.Y ) == "the Land of Lodoria" )
 			{
@@ -53,17 +53,17 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -74,7 +74,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -174,7 +174,7 @@ namespace Server.Mobiles
 							{
 								m_Provisioner.SayTo(from, "I cannot put a value on that.");
 							}
-	
+
 						}
 						else
 						{

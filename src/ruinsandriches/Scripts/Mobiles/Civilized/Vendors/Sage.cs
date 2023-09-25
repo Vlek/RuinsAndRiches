@@ -30,7 +30,7 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBSage() ); 
+			m_SBInfos.Add( new SBSage() );
 			m_SBInfos.Add( new RSScrolls() );
 			m_SBInfos.Add( new SBBuyArtifacts() );
 			m_SBInfos.Add( new SBArtyReview() );
@@ -49,7 +49,7 @@ namespace Server.Mobiles
 					{
 						if ( Server.Misc.Research.AlreadyHasBag( from ) )
 						{
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your research." ) ); 
+							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your research." ) );
 						}
 						else
 						{
@@ -57,7 +57,7 @@ namespace Server.Mobiles
 							from.PlaySound( 0x2E6 );
 							Server.Misc.Research.SetupBag( from, bag );
 							from.AddToBackpack( bag );
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your research." ) ); 
+							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your research." ) );
 						}
 						dropped.Delete();
 					}
@@ -67,12 +67,12 @@ namespace Server.Mobiles
 						from.AddToBackpack ( dropped );
 					}
 				}
-				else if ( 	Coins == 10000 || 
-							Coins == 9000 || 
-							Coins == 8000 || 
-							Coins == 7000 || 
-							Coins == 6000 || 
-							Coins == 5000 
+				else if ( 	Coins == 10000 ||
+							Coins == 9000 ||
+							Coins == 8000 ||
+							Coins == 7000 ||
+							Coins == 6000 ||
+							Coins == 5000
 					)
 				{
 					int nAllowedForAnotherQuest = SearchPage.ArtifactQuestTimeNew( from );
@@ -83,9 +83,9 @@ namespace Server.Mobiles
 					{
 						TimeSpan t = TimeSpan.FromMinutes( nWhenForAnotherQuest );
 
-						string wait = string.Format("{0:D2} days {1:D2} hours and {2:D2} minutes", 
-										t.Days, 
-										t.Hours, 
+						string wait = string.Format("{0:D2} days {1:D2} hours and {2:D2} minutes",
+										t.Days,
+										t.Hours,
 										t.Minutes);
 
 						sMessage = "I have no artifact encyclopedias at the moment. Check back in " + wait + ".";
@@ -138,17 +138,17 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -159,7 +159,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )

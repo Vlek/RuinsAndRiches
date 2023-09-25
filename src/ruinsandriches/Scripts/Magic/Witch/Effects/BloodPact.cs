@@ -13,16 +13,16 @@ namespace Server.Spells.Undead
 		public override int RequiredMana{ get{ return 0; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
 
-		
+
 		public UndeadBloodPactSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-		
+
 		public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-		
+
 		public void Target( Mobile m )
 		{
 			if ( Caster ==  m )
@@ -48,33 +48,33 @@ namespace Server.Spells.Undead
 			else if ( CheckBSequence( m ) )
 			{
 				SpellHelper.Turn( Caster, m );
-				
+
 				int toHeal = (int)(Caster.Skills[DamageSkill].Value * 0.4) + Server.Items.BasePotion.EnhancePotions( Caster );
 				toHeal += Utility.Random( 8, 15 );
-				
+
 				int toBleed = (int)(Caster.Skills[DamageSkill].Value * 0.2);
 				toBleed += Utility.Random( 5, 10 );
-				
+
 				m.Heal( toHeal );
-				
+
 				m.PlaySound( 0x19C );
 				m.FixedParticles( 0x377A, 244, 25, 9950, 31, 0, EffectLayer.Waist );
 				Caster.FixedParticles( 0x377A, 244, 25, 9950, 31, 0, EffectLayer.Waist );
 				Caster.Damage( toBleed );
 			}
-			
+
 			FinishSequence();
 		}
-		
+
 		public class InternalTarget : Target
 		{
 			private UndeadBloodPactSpell m_Owner;
-			
+
 			public InternalTarget( UndeadBloodPactSpell owner ) : base( 12, false, TargetFlags.Beneficial )
 			{
 				m_Owner = owner;
 			}
-			
+
 			protected override void OnTarget( Mobile from, object o )
 			{
 				if ( o is Mobile )
@@ -82,7 +82,7 @@ namespace Server.Spells.Undead
 					m_Owner.Target( (Mobile)o );
 				}
 			}
-			
+
 			protected override void OnTargetFinish( Mobile from )
 			{
 				m_Owner.FinishSequence();

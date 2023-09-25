@@ -19,7 +19,7 @@ namespace Server.Items
 		{
 			get { return 0.1; }
 		}
-		
+
 		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
 		bool ICommodity.IsDeedable { get { return true; } }
 
@@ -121,7 +121,7 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		
+
 	}
 
 	[FlipableAttribute( 0x1BF2, 0x1BEF )]

@@ -300,10 +300,10 @@ namespace Server.Regions
 
 			if ( !isFriend )
 				return;
-			
+
 			if ( !from.Alive )
 				return;
-			
+
 			if ( Core.ML && Insensitive.Equals( e.Speech, "I wish to resize my house" ) )
 			{
 				if ( from.Map != sign.Map || !from.InRange( sign, 0 ) )
@@ -318,14 +318,14 @@ namespace Server.Regions
 				{
 					from.CloseGump( typeof( ConfirmHouseResize ) );
 					from.CloseGump( typeof( HouseGumpAOS ) );
-					from.SendGump( new ConfirmHouseResize( from, m_House ) );	
+					from.SendGump( new ConfirmHouseResize( from, m_House ) );
 				}
 				else
 				{
 					from.SendLocalizedMessage( 501320 ); // Only the house owner may do this.
 				}
 			}
-			
+
 			if ( !m_House.IsInside( from ) || !m_House.IsActive )
 				return;
 

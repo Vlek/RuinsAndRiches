@@ -8,7 +8,7 @@ namespace Server.Items
 	{
 		public override int LitItemID{ get { return 0x24BB; } }
 		public override int UnlitItemID{ get { return 0x24BC; } }
-		
+
 		[Constructable]
 		public ShojiLantern() : base( 0x24BC )
 		{

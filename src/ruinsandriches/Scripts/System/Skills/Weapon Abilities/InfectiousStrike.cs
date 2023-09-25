@@ -59,7 +59,7 @@ namespace Server.Items
 
 			--weapon.PoisonCharges;
 
-			// Infectious strike special move now uses poisoning skill to help determine potency 
+			// Infectious strike special move now uses poisoning skill to help determine potency
 			int maxLevel = attacker.Skills[SkillName.Poisoning].Fixed / 200;
 			if ( maxLevel < 0 ) maxLevel = 0;
 			if ( p.Level > maxLevel ) p = Poison.GetPoison( maxLevel );
@@ -84,7 +84,7 @@ namespace Server.Items
 			if ( defender.ApplyPoison( attacker, p ) != ApplyPoisonResult.Immune )
 			{
 				Misc.Titles.AwardKarma( attacker, -20, true );
-				attacker.SendLocalizedMessage( 1008096, true, defender.Name ); // You have poisoned your target : 
+				attacker.SendLocalizedMessage( 1008096, true, defender.Name ); // You have poisoned your target :
 				defender.SendLocalizedMessage( 1008097, false, attacker.Name ); //  : poisoned you!
 			}
 		}

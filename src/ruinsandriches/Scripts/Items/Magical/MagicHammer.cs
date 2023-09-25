@@ -24,7 +24,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Changes the Name and Appearance of Metal Items");
             list.Add( 1049644, "Helms, Shields, Armor, Staves, and Sceptres");
-        } 
+        }
 
 		public override void OnDoubleClick( Mobile from )
 		{

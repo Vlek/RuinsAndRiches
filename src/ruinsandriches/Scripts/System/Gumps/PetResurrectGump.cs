@@ -17,7 +17,7 @@ namespace Server.Gumps
 
 		public PetResurrectGump( Mobile from, BaseCreature pet, double hitsScalar ) : base( 50, 50 )
 		{
-			from.SendSound( 0x0F8 ); 
+			from.SendSound( 0x0F8 );
 			string color = "#b7cbda";
 			from.CloseGump( typeof( PetResurrectGump ) );
 

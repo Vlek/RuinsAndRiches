@@ -16,12 +16,12 @@ namespace Server.Items
 		public CorpseSailor() : this( 0 )
 		{
 		}
-		
+
 		[Constructable]
 		public CorpseSailor( int level ) : base( 0xe40 )
 		{
 			if ( level < 1 ){ level = Utility.RandomMinMax( 1, 4 ); }
-			
+
 			string sCorpse = ContainerFunctions.GetOwner( "BodySailor" );
 			Name = sCorpse;
 			Movable = true;
@@ -37,7 +37,7 @@ namespace Server.Items
             LockLevel = 0;
 			MaxLockLevel = 0;
 			RequiredSkill = 0;
-			
+
 			Hue = Utility.RandomList( 0xB97, 0xB98, 0xB99, 0xB9A, 0xB88 );
 		}
 

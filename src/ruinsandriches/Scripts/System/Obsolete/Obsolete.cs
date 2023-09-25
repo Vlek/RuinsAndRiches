@@ -1008,7 +1008,7 @@ namespace Server.Mobiles
 				return null;
 
 			int random = Utility.Random( list.Length );
-			
+
 			Type type = list[random];
 
 			Item artifact = Loot.Construct( type );
@@ -1237,7 +1237,7 @@ namespace Server.Mobiles
 					return;
 
 				Gold g = new Gold( 500, 1000 );
-				
+
 				g.MoveToWorld( new Point3D( m_X, m_Y, z ), m_Map );
 
 				if ( 0.5 >= Utility.RandomDouble() )
@@ -1321,7 +1321,7 @@ namespace Server.Factions
 		}
 
 		public override TimeSpan ReacquireDelay{ get{ return TimeSpan.FromSeconds( 2.0 ); } }
- 
+
 		public override bool IsEnemy( Mobile m )
 		{
 			Faction ourFaction = m_Faction;
@@ -1358,7 +1358,7 @@ namespace Server.Factions
 
 			return false;
 		}
- 
+
 		public override void OnMovement( Mobile m, Point3D oldLocation )
 		{
 			if ( m.Player && m.Alive && InRange( m, 10 ) && !InRange( oldLocation, 10 ) && InLOS( m ) && m_Orders.GetReaction( Faction.Find( m ) ).Type == ReactionType.Warn )
@@ -1432,7 +1432,7 @@ namespace Server.Factions
 
 			return ( name != null && Insensitive.StartsWith( speech, name ) );
 		}
- 
+
 		public override void OnSpeech( SpeechEventArgs e )
 		{
 			base.OnSpeech( e );
@@ -1886,7 +1886,7 @@ namespace Server.Factions
 
 		public abstract void DoVisibleEffect();
 		public abstract void DoAttackEffect( Mobile m );
-        
+
 		public virtual int IsValidLocation()
 		{
 			return IsValidLocation( GetWorldLocation(), Map );
@@ -2121,7 +2121,7 @@ namespace Server.Factions
 				from.SendLocalizedMessage( 1010354, "", 0x23 ); // You may only place faction traps created by your faction
 			else if( faction.Traps.Count >= faction.MaximumTraps )
 				from.SendLocalizedMessage( 1010358, "", 0x23 ); // Your faction already has the maximum number of traps placed
-			else 
+			else
 			{
 				BaseFactionTrap trap = Construct( from );
 
@@ -2464,23 +2464,23 @@ namespace Server.Items
 	public abstract class BasePigmentsOfIslesDread : Item, IUsesRemaining
 	{
 		public override int LabelNumber { get { return 1070933; } } // Pigments of IslesDread
-		
+
 		private int m_UsesRemaining;
 		private TextDefinition m_Label;
-		
-		protected TextDefinition Label 
-		{ 
+
+		protected TextDefinition Label
+		{
 			get { return m_Label; }
 			set { m_Label = value; InvalidateProperties(); }
 		}
-		
+
 		#region Old Item Serialization Vars
 		/* DO NOT USE! Only used in serialization of pigments that originally derived from Item */
 		private bool m_InheritsItem;
-		
+
 		protected bool InheritsItem
-		{ 
-			get{ return m_InheritsItem; } 
+		{
+			get{ return m_InheritsItem; }
 		}
 		#endregion
 
@@ -2489,13 +2489,13 @@ namespace Server.Items
 			Weight = 1.0;
 			m_UsesRemaining = 1;
 		}
-		
+
 		public BasePigmentsOfIslesDread(  int uses ) : base( 0xEFF )
 		{
 			Weight = 1.0;
 			m_UsesRemaining = uses;
 		}
-		
+
 		public BasePigmentsOfIslesDread( Serial serial ) : base( serial )
 		{
 		}
@@ -2520,7 +2520,7 @@ namespace Server.Items
 			else
 				from.SendLocalizedMessage( 502436 ); // That is not accessible.
 		}
-		
+
 		private void InternalCallback( Mobile from, object targeted, object state )
 		{
 			BasePigmentsOfIslesDread pigment = (BasePigmentsOfIslesDread)state;
@@ -2557,7 +2557,7 @@ namespace Server.Items
 				from.PlaySound(0x23E); // As per OSI TC1
 			}
 		}
-		
+
 		public static bool IsValidItem( Item i )
 		{
 			if( i is BasePigmentsOfIslesDread )
@@ -2580,12 +2580,12 @@ namespace Server.Items
 			if ( i is IIslesDreadDyable )
 				return true;
 
-			return( 
+			return(
 				IsInTypeList( t, TreasuresOfTokuno.LesserArtifactsTotal )
-				|| IsInTypeList( t, TreasuresOfTokuno.GreaterArtifacts ) 
+				|| IsInTypeList( t, TreasuresOfTokuno.GreaterArtifacts )
 				|| IsInTypeList( t, StealableArtifactsSpawner.TypesOfEntires )
 				);
-		}  
+		}
 
 		private static bool IsInTypeList( Type t, Type[] list )
 		{
@@ -2596,7 +2596,7 @@ namespace Server.Items
 
 			return false;
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -2611,10 +2611,10 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			
+
 			switch ( version )
 			{
-				case 1: 
+				case 1:
 				{
 					m_UsesRemaining = reader.ReadEncodedInt();
 					break;
@@ -2622,23 +2622,23 @@ namespace Server.Items
 				case 0: // Old pigments that inherited from item
 				{
 					m_InheritsItem = true;
-					
+
 					if ( this is LesserPigmentsOfIslesDread )
 						((LesserPigmentsOfIslesDread)this).Type = (LesserPigmentType)reader.ReadEncodedInt();
 					else if ( this is PigmentsOfIslesDread )
 						((PigmentsOfIslesDread)this).Type = (PigmentType)reader.ReadEncodedInt();
 					else if ( this is MetalPigmentsOfIslesDread )
 						reader.ReadEncodedInt();
-					
+
 					m_UsesRemaining = reader.ReadEncodedInt();
-					
+
 					break;
 				}
 			}
 
-			
+
 		}
-		
+
 		#region IUsesRemaining Members
 
 		[CommandProperty( AccessLevel.GameMaster )]
@@ -2653,7 +2653,7 @@ namespace Server.Items
 			get { return true; }
 			set {}
 		}
-		
+
 		#endregion
 	}
 }// using System;// using System.Collections;// using System.Collections.Generic;// using Server;// using Server.Items;// using Server.Mobiles;// using Server.ContextMenus;
@@ -3640,12 +3640,12 @@ namespace Server.Items
 					break;
 				}
 			}
-			
+
 			if( version == 0 )
 			{
 				if ( LootType != LootType.Cursed )
 					LootType = LootType.Cursed;
-	
+
 				if ( Insured )
 					Insured = false;
 			}
@@ -4329,7 +4329,7 @@ namespace Server.Engines.CannedEvil
 					case 4: Type = ChampionSpawnType.Arachnid; break;
 				}
 			}
-			
+
 			m_HasBeenAdvanced = false;
 
 			Start();
@@ -4339,7 +4339,7 @@ namespace Server.Engines.CannedEvil
 		private ScrollofTranscendence CreateRandomSoT( bool felucca )
 		{
 			int level = Utility.RandomMinMax( 1, 5 );
-			
+
 			if ( felucca )
 				level += 5;
 
@@ -4356,7 +4356,7 @@ namespace Server.Engines.CannedEvil
 				killer.SendLocalizedMessage( 1094936 ); // You have received a Scroll of Transcendence!
 			else
 				killer.SendLocalizedMessage( 1049524 ); // You have received a scroll of power!
-			
+
 			if ( killer.Alive )
 				killer.AddToBackpack( scroll );
 			else
@@ -4366,13 +4366,13 @@ namespace Server.Engines.CannedEvil
 				else
 					killer.AddToBackpack( scroll );
 			}
-			
+
 			// Justice reward
 			PlayerMobile pm = (PlayerMobile)killer;
 			for (int j = 0; j < pm.JusticeProtectors.Count; ++j)
 			{
 				Mobile prot = (Mobile)pm.JusticeProtectors[j];
-				
+
 				if ( prot.Map != killer.Map || prot.Kills >= 5 || prot.Criminal || !JusticeVirtue.CheckMapRegion( killer, prot ) )
 					continue;
 
@@ -4392,7 +4392,7 @@ namespace Server.Engines.CannedEvil
 						prot.SendLocalizedMessage( 1049368 ); // You have been rewarded for your dedication to Justice!
 
 						SpecialScroll scrollDupe = Activator.CreateInstance( scroll.GetType() ) as SpecialScroll;
-					
+
 						if ( scrollDupe != null )
 						{
 							scrollDupe.Skill = scroll.Skill;
@@ -4476,7 +4476,7 @@ namespace Server.Engines.CannedEvil
 									{
 										PlayerMobile pm = (PlayerMobile)killer;
 										double random = Utility.Random ( 49 );
-										
+
 										if ( random <= 24 )
 										{
 											ScrollofTranscendence SoTF = CreateRandomSoT( true );
@@ -5507,7 +5507,7 @@ namespace Server.Engines.Chat
 			{
 				user.SendMessage( 34 ); // That is not the correct password.
 				return false;
-			} 
+			}
 			else
 			{
 				if ( user.CurrentChannel != null )
@@ -5519,7 +5519,7 @@ namespace Server.Engines.Chat
 
 				m_Users.Add( user );
 				user.CurrentChannel = this;
-				
+
 				if ( user.Mobile.AccessLevel >= AccessLevel.GameMaster || (!m_AlwaysAvailable && m_Users.Count == 1) )
 					AddModerator( user );
 
@@ -5529,8 +5529,8 @@ namespace Server.Engines.Chat
 			}
 		}
 
-		public void RemoveUser( ChatUser user ) 
-		{ 
+		public void RemoveUser( ChatUser user )
+		{
 			if ( Contains( user ) )
 			{
 				m_Users.Remove( user );
@@ -5575,7 +5575,7 @@ namespace Server.Engines.Chat
 		public void Kick( ChatUser user )
 		{
 			Kick( user, null );
-		} 
+		}
 
 		public void Kick( ChatUser user, ChatUser moderator )
 		{
@@ -5655,7 +5655,7 @@ namespace Server.Engines.Chat
 
 				SendMessage( 52, user, user.Username ); // %1 now has speaking privileges in this conference.
 				SendCommand( ChatCommand.AddUserToChannel, user, user.GetColorCharacter() + user.Username );
-			} 
+			}
 		}
 
 		public void RemoveVoiced( ChatUser user, ChatUser moderator )
@@ -5827,7 +5827,7 @@ namespace Server.Engines.Chat
 				ChatUser user = m_Users[i];
 
 				ChatSystem.SendCommandTo( to.Mobile, ChatCommand.AddUserToChannel, user.GetColorCharacter() + user.Username );
-			} 
+			}
 		}
 
 		private static List<Channel> m_Channels = new List<Channel>();
@@ -5866,7 +5866,7 @@ namespace Server.Engines.Chat
 				m_Channels.Add( channel );
 			}
 
-			ChatUser.GlobalSendCommand( ChatCommand.AddChannel, name, "0" ) ; 
+			ChatUser.GlobalSendCommand( ChatCommand.AddChannel, name, "0" ) ;
 
 			return channel;
 		}
@@ -5940,7 +5940,7 @@ namespace Server.Mobiles
 	{
 		Antique,
 		Dark,
-		Medium, 
+		Medium,
 		Light
 	}
 
@@ -6090,7 +6090,7 @@ namespace Server.Mobiles
 		}
 
 		public void OnRequestedAnimation( Mobile from )
-		{				
+		{
 			from.Send( new UpdateStatueAnimation( this, 1, m_Animation, m_Frames ) );
 		}
 
@@ -6140,7 +6140,7 @@ namespace Server.Mobiles
 				Timer.DelayCall( TimeSpan.Zero, new TimerCallback( Delete ) );
 			}
 		}
-		
+
 		public void Sculpt( Mobile by )
 		{
 			m_SculptedBy = by;
@@ -6214,7 +6214,7 @@ namespace Server.Mobiles
 			cloned.Hue = item.Hue;
 			cloned.Weight = item.Weight;
 			cloned.Movable = false;
-			
+
 			return cloned;
 		}
 
@@ -6241,7 +6241,7 @@ namespace Server.Mobiles
 		{
 			switch ( m_Pose )
 			{
-				case StatuePose.Ready: 
+				case StatuePose.Ready:
 						m_Animation = 4;
 						m_Frames = 0;
 						break;
@@ -6313,9 +6313,9 @@ namespace Server.Mobiles
 	public class CharacterStatueDeed : Item, IRewardItem
 	{
 		public override int LabelNumber
-		{ 
+		{
 			get
-			{ 
+			{
 				if ( m_Statue != null )
 				{
 					switch ( m_Statue.StatueType )
@@ -6326,8 +6326,8 @@ namespace Server.Mobiles
 					}
 				}
 
-				return 1076173; 
-			} 
+				return 1076173;
+			}
 		}
 
 		private CharacterStatue m_Statue;
@@ -6344,9 +6344,9 @@ namespace Server.Mobiles
 		public StatueType StatueType
 		{
 			get
-			{ 
+			{
 				if ( m_Statue != null )
-					return m_Statue.StatueType; 
+					return m_Statue.StatueType;
 
 				return StatueType.Marble;
 			}
@@ -6362,7 +6362,7 @@ namespace Server.Mobiles
 		public CharacterStatueDeed( CharacterStatue statue ) : base( 0x14F0 )
 		{
 			m_Statue = statue;
-		
+
 			LootType = LootType.Blessed;
 			Weight = 1.0;
 		}
@@ -6392,7 +6392,7 @@ namespace Server.Mobiles
 
 				if ( time > TimeSpan.Zero )
 				{
-					from.SendLocalizedMessage( 1008126, true, Math.Ceiling( time.TotalDays / RewardSystem.RewardInterval.TotalDays ).ToString() ); // Your account is not old enough to use this item. Months until you can use this item : 
+					from.SendLocalizedMessage( 1008126, true, Math.Ceiling( time.TotalDays / RewardSystem.RewardInterval.TotalDays ).ToString() ); // Your account is not old enough to use this item. Months until you can use this item :
 					return;
 				}
 			}
@@ -6439,7 +6439,7 @@ namespace Server.Mobiles
 			m_IsRewardItem = reader.ReadBool();
 		}
 	}
-	
+
 	public class CharacterStatueTarget : Target
 	{
 		private Item m_Maker;
@@ -6461,7 +6461,7 @@ namespace Server.Mobiles
 
 			if ( m_Maker.IsChildOf( from.Backpack ) )
 			{
-				SpellHelper.GetSurfaceTop( ref p );			
+				SpellHelper.GetSurfaceTop( ref p );
 				BaseHouse house = null;
 				Point3D loc = new Point3D( p );
 
@@ -6479,7 +6479,7 @@ namespace Server.Mobiles
 				AddonFitResult result = CouldFit( loc, map, from, ref house );
 
 				if ( result == AddonFitResult.Valid )
-				{				
+				{
 					CharacterStatue statue = new CharacterStatue( from, m_Type );
 					CharacterStatuePlinth plinth = new CharacterStatuePlinth( statue );
 
@@ -6507,7 +6507,7 @@ namespace Server.Mobiles
 		}
 
 		public static AddonFitResult CouldFit( Point3D p, Map map, Mobile from, ref BaseHouse house )
-		{			
+		{
 			if ( !map.CanFit( p.X, p.Y, p.Z, 20, true, true, true ) )
 				return AddonFitResult.Blocked;
 			else if ( !BaseAddon.CheckHouse( from, p, map, 20, ref house ) )
@@ -6544,11 +6544,11 @@ namespace Server.Gumps
 		private CharacterStatue m_Statue;
 		private Timer m_Timer;
 		private Mobile m_Owner;
-	
+
 		private enum Buttons
 		{
 			Close,
-			Sculpt,			
+			Sculpt,
 			PosePrev,
 			PoseNext,
 			DirPrev,
@@ -6557,21 +6557,21 @@ namespace Server.Gumps
 			MatNext,
 			Restore
 		}
-	
+
 		public CharacterStatueGump( Item maker, CharacterStatue statue, Mobile owner ) : base( 60, 36 )
 		{
 			m_Maker = maker;
 			m_Statue = statue;
 			m_Owner = owner;
-			
+
 			if ( m_Statue == null )
 				return;
-			
+
 			Closable = true;
 			Disposable = true;
 			Dragable = true;
 			Resizable = false;
-		
+
 			AddPage( 0 );
 
 			AddImage(30, 22, 1140);
@@ -6592,7 +6592,7 @@ namespace Server.Gumps
 			AddButton(66, 232, 241, 243, (int)Buttons.Close, GumpButtonType.Reply, 0);
 			AddButton(319, 232, 247, 248, (int)Buttons.Sculpt, GumpButtonType.Reply, 0);
 
-			// restore			
+			// restore
 			if ( m_Maker is CharacterStatueDeed )
 			{
 				AddButton(197, 219, 2322, 2324, (int)Buttons.Restore, GumpButtonType.Reply, 0);
@@ -6612,13 +6612,13 @@ namespace Server.Gumps
 					m_Statue.Delete();
 			}
 		}
-		
+
 		private string GetMaterialNumber( StatueType type, StatueMaterial material )
 		{
 			switch ( material )
 			{
 				case StatueMaterial.Antique:
-					
+
 					switch ( type )
 					{
 						case StatueType.Bronze: return "Bronze";
@@ -6627,18 +6627,18 @@ namespace Server.Gumps
 					}
 
 					return "Bronze";
-				case StatueMaterial.Dark: 
-					
+				case StatueMaterial.Dark:
+
 					if ( type == StatueType.Marble )
 						return "Dark";
 
 					return "Dark";
 				case StatueMaterial.Medium: return "Medium";
-				case StatueMaterial.Light: return "Light";	
+				case StatueMaterial.Light: return "Light";
 				default: return "Bronze";
 			}
 		}
-		
+
 		private string GetDirectionNumber( Direction direction )
 		{
 			switch ( direction )
@@ -6646,7 +6646,7 @@ namespace Server.Gumps
 				case Direction.North: return "North";
 				case Direction.Right: return "Right";
 				case Direction.East: return "East";
-				case Direction.Down: return "Down";	
+				case Direction.Down: return "Down";
 				case Direction.South: return "South";
 				case Direction.Left: return "Left";
 				case Direction.West: return "West";
@@ -6654,27 +6654,27 @@ namespace Server.Gumps
 				default: return "South";
 			}
 		}
-		
+
 		public override void OnResponse( NetState state, RelayInfo info )
-		{		
+		{
 			if ( m_Statue == null || m_Statue.Deleted )
 				return;
-				
+
 			bool sendGump = false;
-				
+
 			if ( info.ButtonID == (int) Buttons.Sculpt )
-			{					
+			{
 				if ( m_Maker is CharacterStatueDeed )
 				{
 					CharacterStatue backup = ( (CharacterStatueDeed) m_Maker ).Statue;
-					
+
 					if ( backup != null )
 						backup.Delete();
 				}
-					
+
 				if ( m_Maker != null )
 					m_Maker.Delete();
-					
+
 				m_Statue.Sculpt( state.Mobile );
 			}
 			else if ( info.ButtonID == (int) Buttons.PosePrev )
@@ -6714,11 +6714,11 @@ namespace Server.Gumps
 				if ( m_Maker is CharacterStatueDeed )
 				{
 					CharacterStatue backup = ( (CharacterStatueDeed) m_Maker ).Statue;
-					
+
 					if ( backup != null )
 						m_Statue.Restore( backup );
 				}
-				
+
 				sendGump = true;
 			}
 			else
@@ -6728,7 +6728,7 @@ namespace Server.Gumps
 
 			if ( sendGump )
 				state.Mobile.SendGump( new CharacterStatueGump( m_Maker, m_Statue, m_Owner ) );
-			
+
 			if ( m_Timer != null )
 				m_Timer.Stop();
 		}
@@ -6745,11 +6745,11 @@ namespace Server.Gumps
 }// using System;// using Server;// using Server.Mobiles;// using Server.Targets;// using Server.Engines.VeteranRewards;
 
 namespace Server.Items
-{    
+{
 	public class CharacterStatueMaker : Item, IRewardItem
 	{
 		public override int LabelNumber{ get{ return 1076173; } } // Character Statue Maker
-	
+
 		private bool m_IsRewardItem;
 		private StatueType m_Type;
 
@@ -6766,7 +6766,7 @@ namespace Server.Items
 			get{ return m_Type; }
 			set{ m_Type = value; InvalidateHue(); }
 		}
-		
+
 		public CharacterStatueMaker( StatueType type ) : base( 0x32F0 )
 		{
 			m_Type = type;
@@ -6776,13 +6776,13 @@ namespace Server.Items
 
 		public CharacterStatueMaker( Serial serial ) : base( serial )
 		{
-		}    	
-		
+		}
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_IsRewardItem && !RewardSystem.CheckIsUsableBy( from, this, new object[] { m_Type } ) )
 				return;
-				
+
 			if ( IsChildOf( from.Backpack ) )
 			{
 				if ( !from.IsBodyMod )
@@ -6796,13 +6796,13 @@ namespace Server.Items
 			else
 				from.SendLocalizedMessage( 1042001 ); // That must be in your pack for you to use it.
 		}
-		
+
 		public override void GetProperties( ObjectPropertyList list )
 		{
 			base.GetProperties( list );
-			
+
 			if ( m_IsRewardItem )
-				list.Add( 1076222 ); // 6th Year Veteran Reward					
+				list.Add( 1076222 ); // 6th Year Veteran Reward
 		}
 
 		public override void Serialize( GenericWriter writer )
@@ -6810,7 +6810,7 @@ namespace Server.Items
 			base.Serialize( writer );
 
 			writer.WriteEncodedInt( (int) 0 ); // version
-			
+
 			writer.Write( (bool) m_IsRewardItem );
 			writer.Write( (int) m_Type );
 		}
@@ -6824,23 +6824,23 @@ namespace Server.Items
 			m_IsRewardItem = reader.ReadBool();
 			m_Type = (StatueType) reader.ReadInt();
 		}
-		
+
 		public void InvalidateHue()
 		{
 			Hue = 0xB8F + (int) m_Type * 4;
 		}
 	}
-	
+
 	public class MarbleStatueMaker : CharacterStatueMaker
 	{
 		[Constructable]
 		public MarbleStatueMaker() : base( StatueType.Marble )
 		{
 		}
-		
+
 		public MarbleStatueMaker( Serial serial ) : base( serial )
 		{
-		}    	
+		}
 
 		public override void Serialize( GenericWriter writer )
 		{
@@ -6856,17 +6856,17 @@ namespace Server.Items
 			int version = reader.ReadEncodedInt();
 		}
 	}
-	
+
 	public class JadeStatueMaker : CharacterStatueMaker
 	{
 		[Constructable]
 		public JadeStatueMaker() : base( StatueType.Jade )
 		{
 		}
-		
+
 		public JadeStatueMaker( Serial serial ) : base( serial )
 		{
-		}    	
+		}
 
 		public override void Serialize( GenericWriter writer )
 		{
@@ -6882,17 +6882,17 @@ namespace Server.Items
 			int version = reader.ReadEncodedInt();
 		}
 	}
-	
+
 	public class BronzeStatueMaker : CharacterStatueMaker
 	{
 		[Constructable]
 		public BronzeStatueMaker() : base( StatueType.Bronze )
 		{
 		}
-		
+
 		public BronzeStatueMaker( Serial serial ) : base( serial )
 		{
-		}    	
+		}
 
 		public override void Serialize( GenericWriter writer )
 		{
@@ -6918,7 +6918,7 @@ namespace Server.Items
 		public override int LabelNumber{ get{ return 1076201; } } // Character Statue
 
 		private CharacterStatue m_Statue;
-		
+
 		public CharacterStatuePlinth( CharacterStatue statue ) : base( 0x32F2 )
 		{
 			m_Statue = statue;
@@ -6953,7 +6953,7 @@ namespace Server.Items
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_Statue != null )
-				from.SendGump( new CharacterPlinthGump( m_Statue ) );			
+				from.SendGump( new CharacterPlinthGump( m_Statue ) );
 		}
 
 		public override void Serialize( GenericWriter writer )
@@ -6988,12 +6988,12 @@ namespace Server.Items
 		public virtual bool CouldFit( IPoint3D p, Map map )
 		{
 			Point3D point = new Point3D( p.X, p.Y, p.Z );
-			
+
 			if ( map == null || !map.CanFit( point, 20 ) )
 				return false;
 
 			BaseHouse house = BaseHouse.FindHouseAt( point, map, 20 );
-			
+
 			if ( house == null )
 				return false;
 
@@ -7013,7 +7013,7 @@ namespace Server.Items
 				Disposable = true;
 				Dragable = true;
 				Resizable = false;
-			
+
 				AddPage( 0 );
 				AddImage( 0, 0, 0x24F4 );
 				AddHtml( 55, 50, 150, 20, statue.Name, false, false );
@@ -7141,7 +7141,7 @@ namespace Server.Engines.Chat
 
 			SendCommandTo( from, ChatCommand.OpenChatWindow, accountChatName );
 			ChatUser.AddChatUser( from );
-		} 
+		}
 
 		public static ChatUser SearchForUser( ChatUser from, string name )
 		{
@@ -7753,7 +7753,7 @@ namespace Server.Engines.Chat
 				m_IgnorePrivateMessage = value;
 			}
 		}
- 
+
 		public const char NormalColorCharacter = '0';
 		public const char ModeratorColorCharacter = '1';
 		public const char VoicedColorCharacter = '2';
@@ -7895,7 +7895,7 @@ namespace Server.Engines.Chat
 
 				m_Users.Remove( user );
 				m_Table.Remove( user.m_Mobile );
-			} 
+			}
 		}
 
 		public static void RemoveChatUser( Mobile from )
@@ -11676,7 +11676,7 @@ namespace Server.Factions
 			{
 				if ( victimState.KillPoints <= -6 )
 				{
-					killer.SendLocalizedMessage( 501693 ); // This victim is not worth enough to get kill points from. 
+					killer.SendLocalizedMessage( 501693 ); // This victim is not worth enough to get kill points from.
 
 					#region Ethics
 					Ethics.Player killerEPL = Ethics.Player.Find( killer );
@@ -11716,7 +11716,7 @@ namespace Server.Factions
 
 							if ( 1 > Utility.Random( 3 ) )
 								killerState.IsActive = true;
-							
+
 							int silver = 0;
 
 							silver = killerState.Faction.AwardSilver( killer, award * 40 );
@@ -12520,7 +12520,7 @@ namespace Server.Factions
 		public FactionExplosionTrapDeed() : base( 0x36D2 )
 		{
 		}
-		
+
 		public FactionExplosionTrapDeed( Serial serial ) : base( serial )
 		{
 		}
@@ -12604,7 +12604,7 @@ namespace Server.Factions
 		public FactionGasTrapDeed() : base( 0x11AB )
 		{
 		}
-		
+
 		public FactionGasTrapDeed( Serial serial ) : base( serial )
 		{
 		}
@@ -12746,7 +12746,7 @@ namespace Server.Factions
 		{
 			SetSkill( SkillName.Druidism, 64.0, 100.0 );
 			SetSkill( SkillName.Taming, 90.0, 100.0 );
-			SetSkill( SkillName.Veterinary, 65.0, 88.0 );	
+			SetSkill( SkillName.Veterinary, 65.0, 88.0 );
 		}
 
 		public override void InitSBInfo()
@@ -12829,8 +12829,8 @@ namespace Server.Factions
 
 		private FactionItemDefinition m_Definition;
 
-		public FactionImbueGump( int quality, Item item, Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, int availableSilver, Faction faction, FactionItemDefinition def ) : base( 100, 200 )			
-		{	
+		public FactionImbueGump( int quality, Item item, Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, int availableSilver, Faction faction, FactionItemDefinition def ) : base( 100, 200 )
+		{
 			m_Item = item;
 			m_Mobile = from;
 			m_Faction = faction;
@@ -12847,13 +12847,13 @@ namespace Server.Factions
 
 			AddHtmlLocalized( 20, 20, 210, 25, 1011569, false, false ); // Imbue with Faction properties?
 
-			AddHtmlLocalized( 20, 60, 170, 25, 1018302, false, false ); // Item quality: 
+			AddHtmlLocalized( 20, 60, 170, 25, 1018302, false, false ); // Item quality:
 			AddHtmlLocalized( 175, 60, 100, 25, 1018305 - m_Quality, false, false ); //	Exceptional, Average, Low
 
-			AddHtmlLocalized( 20, 80, 170, 25, 1011572, false, false ); // Item Cost : 
+			AddHtmlLocalized( 20, 80, 170, 25, 1011572, false, false ); // Item Cost :
 			AddLabel( 175, 80, 0x34, def.SilverCost.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-			AddHtmlLocalized( 20, 100, 170, 25, 1011573, false, false ); // Your Silver : 
+			AddHtmlLocalized( 20, 100, 170, 25, 1011573, false, false ); // Your Silver :
 			AddLabel( 175, 100, 0x34, availableSilver.ToString( "N0" ) ); // NOTE: Added 'N0'
 
 			AddRadio( 20, 140, 210, 211, true, 1 );
@@ -13606,7 +13606,7 @@ namespace Server.Factions
 		public FactionSawTrapDeed() : base( 0x1107 )
 		{
 		}
-		
+
 		public FactionSawTrapDeed( Serial serial ) : base( serial )
 		{
 		}
@@ -13760,7 +13760,7 @@ namespace Server.Factions
 		public FactionSpikeTrapDeed() : base( 0x11A5 )
 		{
 		}
-		
+
 		public FactionSpikeTrapDeed( Serial serial ) : base( serial )
 		{
 		}
@@ -13831,7 +13831,7 @@ namespace Server.Factions
 			for ( int i = 0; i < members.Count; ++i )
 			{
 				PlayerState ps = members[i];
-					
+
 				if ( ps.IsActive )
 				{
 					ps.IsActive = false;
@@ -13999,7 +13999,7 @@ namespace Server.Factions
 					}
 
 					m_Faction.State = this;
-					
+
 					m_Faction.ZeroRankOffset = m_Members.Count;
 					m_Members.Sort();
 
@@ -14218,16 +14218,16 @@ namespace Server.Factions
 
 			AddHtmlText( 20, 30, 510, 20, faction.Definition.Header, false, false );
 
-			AddHtmlLocalized( 20, 60, 100, 20, 1011429, false, false ); // Led By : 
+			AddHtmlLocalized( 20, 60, 100, 20, 1011429, false, false ); // Led By :
 			AddHtml( 125, 60, 200, 20, faction.Commander != null ? faction.Commander.Name : "Nobody", false, false );
 
-			AddHtmlLocalized( 20, 80, 100, 20, 1011457, false, false ); // Tithe rate : 
+			AddHtmlLocalized( 20, 80, 100, 20, 1011457, false, false ); // Tithe rate :
 			if ( faction.Tithe >= 0 && faction.Tithe <= 100 && (faction.Tithe % 10) == 0 )
 				AddHtmlLocalized( 125, 80, 350, 20, 1011480 + (faction.Tithe / 10), false, false );
 			else
 				AddHtml( 125, 80, 350, 20, faction.Tithe + "%", false, false );
 
-			AddHtmlLocalized( 20, 100, 100, 20, 1011458, false, false ); // Traps placed : 
+			AddHtmlLocalized( 20, 100, 100, 20, 1011458, false, false ); // Traps placed :
 			AddHtml( 125, 100, 50, 20, faction.Traps.Count.ToString(), false, false );
 
 			AddHtmlLocalized( 55, 225, 200, 20, 1011428, false, false ); // VOTE FOR LEADERSHIP
@@ -14314,13 +14314,13 @@ namespace Server.Factions
 
 			AddHtmlLocalized( 20, 30, 150, 20, 1011444, false, false ); // STATISTICS
 
-			AddHtmlLocalized( 20, 100, 100, 20, 1011445, false, false ); // Name : 
+			AddHtmlLocalized( 20, 100, 100, 20, 1011445, false, false ); // Name :
 			AddHtml( 120, 100, 150, 20, from.Name, false, false );
 
-			AddHtmlLocalized( 20, 130, 100, 20, 1018064, false, false ); // score : 
+			AddHtmlLocalized( 20, 130, 100, 20, 1018064, false, false ); // score :
 			AddHtml( 120, 130, 100, 20, (pl != null ? pl.KillPoints : 0).ToString(), false, false );
 
-			AddHtmlLocalized( 20, 160, 100, 20, 1011446, false, false ); // Rank : 
+			AddHtmlLocalized( 20, 160, 100, 20, 1011446, false, false ); // Rank :
 			AddHtml( 120, 160, 100, 20, (pl != null ? pl.Rank.Rank : 0).ToString(), false, false );
 
 			AddHtmlLocalized( 55, 250, 100, 20, 1011447, false, false ); // BACK
@@ -14363,13 +14363,13 @@ namespace Server.Factions
 
 				AddHtmlLocalized( 20, 30, 200, 20, 1011461, false, false ); // COMMANDER OPTIONS
 
-				AddHtmlLocalized( 20, 70, 120, 20, 1011457, false, false ); // Tithe rate : 
+				AddHtmlLocalized( 20, 70, 120, 20, 1011457, false, false ); // Tithe rate :
 				if ( faction.Tithe >= 0 && faction.Tithe <= 100 && (faction.Tithe % 10) == 0 )
 					AddHtmlLocalized( 140, 70, 250, 20, 1011480 + (faction.Tithe / 10), false, false );
 				else
 					AddHtml( 140, 70, 250, 20, faction.Tithe + "%", false, false );
 
-				AddHtmlLocalized( 20, 100, 120, 20, 1011474, false, false ); // Silver available : 
+				AddHtmlLocalized( 20, 100, 120, 20, 1011474, false, false ); // Silver available :
 				AddHtml( 140, 100, 50, 20, faction.Silver.ToString( "N0" ), false, false ); // NOTE: Added 'N0' formatting
 
 				AddHtmlLocalized( 55, 130, 200, 20, 1011478, false, false ); // CHANGE TITHE RATE
@@ -14827,7 +14827,7 @@ namespace Server.Factions
 			AddHtmlLocalized( 55, 90, 200, 25, 1011539, false, false ); // CHANGE PRICES
 			AddButton( 20, 90, 4005, 4007, 0, GumpButtonType.Page, 2 );
 
-			AddHtmlLocalized( 55, 120, 200, 25, 1011540, false, false ); // BUY SHOPKEEPERS	
+			AddHtmlLocalized( 55, 120, 200, 25, 1011540, false, false ); // BUY SHOPKEEPERS
 			AddButton( 20, 120, 4005, 4007, 0, GumpButtonType.Page, 3 );
 
 			AddHtmlLocalized( 55, 150, 200, 25, 1011495, false, false ); // VIEW FINANCES
@@ -14896,20 +14896,20 @@ namespace Server.Factions
 			int netCashFlow = town.NetCashFlow;
 
 			AddHtmlLocalized( 20, 30, 300, 25, 1011524, false, false ); // FINANCE STATEMENT
-	
-			AddHtmlLocalized( 20, 80, 300, 25, 1011538, false, false ); // Current total money for town : 
+
+			AddHtmlLocalized( 20, 80, 300, 25, 1011538, false, false ); // Current total money for town :
 			AddLabel( 20, 100, 0x44, town.Silver.ToString() );
 
-			AddHtmlLocalized( 20, 130, 300, 25, 1011520, false, false ); // Finance Minister Upkeep : 
+			AddHtmlLocalized( 20, 130, 300, 25, 1011520, false, false ); // Finance Minister Upkeep :
 			AddLabel( 20, 150, 0x44, financeUpkeep.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-			AddHtmlLocalized( 20, 180, 300, 25, 1011521, false, false ); // Sheriff Upkeep : 
+			AddHtmlLocalized( 20, 180, 300, 25, 1011521, false, false ); // Sheriff Upkeep :
 			AddLabel( 20, 200, 0x44, sheriffUpkeep.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-			AddHtmlLocalized( 20, 230, 300, 25, 1011522, false, false ); // Town Income : 
+			AddHtmlLocalized( 20, 230, 300, 25, 1011522, false, false ); // Town Income :
 			AddLabel( 20, 250, 0x44, dailyIncome.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-			AddHtmlLocalized( 20, 280, 300, 25, 1011523, false, false ); // Net Cash flow per day : 
+			AddHtmlLocalized( 20, 280, 300, 25, 1011523, false, false ); // Net Cash flow per day :
 			AddLabel( 20, 300, 0x44, netCashFlow.ToString( "N0" ) ); // NOTE: Added 'N0'
 
 			AddHtmlLocalized( 55, 360, 200, 25, 1011067, false, false ); // Previous page
@@ -14926,10 +14926,10 @@ namespace Server.Factions
 				AddHtmlText( 60, 30, 300, 25, vendorList.Definition.Header, false, false );
 				AddItem( 20, 30, vendorList.Definition.ItemID );
 
-				AddHtmlLocalized( 20, 90, 200, 25, 1011514, false, false ); // You have : 
+				AddHtmlLocalized( 20, 90, 200, 25, 1011514, false, false ); // You have :
 				AddLabel( 230, 90, 0x26, vendorList.Vendors.Count.ToString() );
 
-				AddHtmlLocalized( 20, 120, 200, 25, 1011515, false, false ); // Maximum : 
+				AddHtmlLocalized( 20, 120, 200, 25, 1011515, false, false ); // Maximum :
 				AddLabel( 230, 120, 0x256, vendorList.Definition.Maximum.ToString() );
 
 				AddHtmlLocalized( 20, 150, 200, 25, 1011516, false, false ); // Cost :
@@ -15003,7 +15003,7 @@ namespace Server.Factions
 									m_From.SendLocalizedMessage( 1042167 ); // You must wait up to an hour before changing prices again.
 								else if ( remaining.TotalHours < 4 )
 									m_From.SendLocalizedMessage( 1042168 ); // You must wait a few hours before changing prices again.
-								else 
+								else
 									m_From.SendLocalizedMessage( 1042169 ); // You must wait several hours before changing prices again.
 							}
 							else
@@ -15963,14 +15963,14 @@ namespace Server.Items
 			new int[]{ /*PigmentType.FadedRose,*/ 0x97B, 1079586 },
 			new int[]{ /*PigmentType.DeepRose,*/ 0x97E, 1079587 }
 		};
-		
+
 		public static int[] GetInfo( PigmentType type )
 		{
 			int v = (int)type;
 
 			if( v < 0 || v >= m_Table.Length )
 				v = 0;
-			
+
 			return m_Table[v];
 		}
 
@@ -15983,7 +15983,7 @@ namespace Server.Items
 			set
 			{
 				m_Type = value;
-				
+
 				int v = (int)m_Type;
 
 				if ( v >= 0 && v < m_Table.Length )
@@ -15998,7 +15998,7 @@ namespace Server.Items
 				}
 			}
 		}
-		
+
 		public override int LabelNumber { get { return 1070933; } } // Pigments of IslesDread
 
 		[Constructable]
@@ -16036,7 +16036,7 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = ( InheritsItem ? 0 : reader.ReadInt() ); // Required for BasePigmentsOfIslesDread insertion
-			
+
 			switch ( version )
 			{
 				case 1: Type = (PigmentType)reader.ReadEncodedInt(); break;
@@ -17700,8 +17700,8 @@ namespace Server
 {
 	public class HonorVirtue
 	{
-		
-		private static readonly TimeSpan UseDelay = TimeSpan.FromMinutes( 5.0 ); 
+
+		private static readonly TimeSpan UseDelay = TimeSpan.FromMinutes( 5.0 );
 
 		public static void Initialize()
 		{
@@ -17779,9 +17779,9 @@ namespace Server
 				pm.SendLocalizedMessage( 1063240, remainingMinutes.ToString() ); // You must wait ~1_HONOR_WAIT~ minutes before embracing honor again
 				return;
 			}
-			
+
 			pm.SendGump( new HonorSelf( pm ) );
-			
+
 		}
 
 		public static void ActivateEmbrace( PlayerMobile pm )
@@ -18421,10 +18421,10 @@ namespace Server.Factions
 			AddHtmlText( 20, 30, 510, 20, faction.Definition.Header, false, false );
 			AddHtmlText( 20, 130, 510, 100, faction.Definition.About, true, true );
 
-			AddHtmlLocalized( 20, 60, 100, 20, 1011429, false, false ); // Led By : 
+			AddHtmlLocalized( 20, 60, 100, 20, 1011429, false, false ); // Led By :
 			AddHtml( 125, 60, 200, 20, faction.Commander != null ? faction.Commander.Name : "Nobody", false, false );
 
-			AddHtmlLocalized( 20, 80, 100, 20, 1011457, false, false ); // Tithe rate : 
+			AddHtmlLocalized( 20, 80, 100, 20, 1011457, false, false ); // Tithe rate :
 			if ( faction.Tithe >= 0 && faction.Tithe <= 100 && (faction.Tithe % 10) == 0 )
 				AddHtmlLocalized( 125, 80, 350, 20, 1011480 + (faction.Tithe / 10), false, false );
 			else
@@ -18746,7 +18746,7 @@ namespace Server
 			AddImageTiled( 15, 15, 365, 190, 2624 );
 			AddAlphaRegion( 15, 15, 365, 190 );
 
-			AddHtmlLocalized( 30, 20, 360, 25, 1049365, 0x7FFF, false, false ); // Another player is offering you their <a href="?ForceTopic88">protection</a>: 
+			AddHtmlLocalized( 30, 20, 360, 25, 1049365, 0x7FFF, false, false ); // Another player is offering you their <a href="?ForceTopic88">protection</a>:
 			AddLabel( 90, 55, 1153, protector.Name );
 
 			AddImage( 50, 45, 9005 );
@@ -19259,7 +19259,7 @@ namespace Server.Items
 
 			writer.Write( (int) 2 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -19277,7 +19277,7 @@ namespace Server.Items
 		}
 	}
 
-	public class AncientSamuraiDo : PlateDo 
+	public class AncientSamuraiDo : PlateDo
 	{
 		public override int LabelNumber { get { return 1070926; } } // Ancient Samurai Do
 
@@ -19809,7 +19809,7 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 	}
-	
+
 	public class LeurociansMempoOfFortune : LeatherMempo
 	{
 		public override int LabelNumber { get { return 1071460; } } // Leurocian's mempo of fortune
@@ -19819,7 +19819,7 @@ namespace Server.Items
 		public override int BaseColdResistance{ get{ return 10; } }
 		public override int BasePoisonResistance{ get{ return 10; } }
 		public override int BaseEnergyResistance{ get{ return 15; } }
-		
+
 		[Constructable]
 		public LeurociansMempoOfFortune() : base()
 		{
@@ -19864,7 +19864,7 @@ namespace Server.Items
 				"Emiko",
 				"Fumiyo",
 				"Gennai",
-				"Gennosuke", 
+				"Gennosuke",
 				"Genjo",
 				"Hamato",
 				"Harumi",
@@ -20017,7 +20017,7 @@ namespace Server.Items
 	public class ChestOfHeirlooms : LockableContainer
 	{
 		public override int LabelNumber{ get{ return 1070937; } } // Chest of heirlooms
-		
+
 		[Constructable]
 		public ChestOfHeirlooms() : base( 0x2811 )
 		{
@@ -20025,21 +20025,21 @@ namespace Server.Items
 			LockLevel = 95;
 			MaxLockLevel = 140;
 			RequiredSkill = 95;
-			
+
 			TrapType = TrapType.ExplosionTrap;
 			TrapLevel = 10;
 			TrapPower = 100;
-			
+
 			GumpID = 0x10C;
-			
+
 			for ( int i = 0; i < 10; ++i )
 			{
 				Item item = Loot.ChestOfHeirloomsContains();
-				
+
 				int attributeCount = Utility.RandomMinMax( 1, 5 );
 				int min = 20;
 				int max = 80;
-				
+
 				if ( item is BaseWeapon )
 				{
 					BaseWeapon weapon = (BaseWeapon)item;
@@ -20069,7 +20069,7 @@ namespace Server.Items
 					BaseRunicTool.ApplyAttributesTo( (BaseHat)item, attributeCount, min, max );
 				else if( item is BaseJewel && Core.AOS )
 					BaseRunicTool.ApplyAttributesTo( (BaseJewel)item, attributeCount, min, max );
-				
+
 				DropItem( item );
 			}
 		}
@@ -20129,7 +20129,7 @@ namespace Server.Items
 				Slayer = SlayerGroup.Groups[Utility.Random( SlayerGroup.Groups.Length )].Super.Name;
 		}
 	}
-	
+
 	public enum LesserPigmentType
 	{
 		None,
@@ -20147,7 +20147,7 @@ namespace Server.Items
 
 	public class LesserPigmentsOfIslesDread : BasePigmentsOfIslesDread
 	{
-		
+
 		private static int[][] m_Table = new int[][]
 		{
 			// Hue, Label
@@ -20163,14 +20163,14 @@ namespace Server.Items
 			new int[]{ /*PigmentType.DeepBrown,*/ 0x3F0, 1071452 },
 			new int[]{ /*PigmentType.BurntBrown,*/ 0x41A, 1071453 }
 		};
-		
+
 		public static int[] GetInfo( LesserPigmentType type )
 		{
 			int v = (int)type;
 
 			if( v < 0 || v >= m_Table.Length )
 				v = 0;
-			
+
 			return m_Table[v];
 		}
 
@@ -20183,7 +20183,7 @@ namespace Server.Items
 			set
 			{
 				m_Type = value;
-				
+
 				int v = (int)m_Type;
 
 				if ( v >= 0 && v < m_Table.Length )
@@ -20203,7 +20203,7 @@ namespace Server.Items
 		public LesserPigmentsOfIslesDread() : this( (LesserPigmentType)Utility.Random(0,11) )
 		{
 		}
-		
+
 		[Constructable]
 		public LesserPigmentsOfIslesDread( LesserPigmentType type ) : base( 1 )
 		{
@@ -20229,7 +20229,7 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = ( InheritsItem ? 0 : reader.ReadInt() ); // Required for BasePigmentsOfIslesDread insertion
-			
+
 			switch ( version )
 			{
 				case 1: Type = (LesserPigmentType)reader.ReadEncodedInt(); break;
@@ -20246,11 +20246,11 @@ namespace Server.Items
 			RandomHue();
 			Label = -1;
 		}
-		
+
 		public MetalPigmentsOfIslesDread( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public void RandomHue()
 		{
 			int a = Utility.Random(0,30);
@@ -21278,7 +21278,7 @@ namespace Server.Engines.MyRunUO
 
 			sb.Append( ent );
 		}
- 
+
 		private string SafeString( string input )
 		{
 			if ( input == null )
@@ -21338,7 +21338,7 @@ namespace Server.Engines.MyRunUO
 
 			string notoTitle = SafeString( Titles.ComputeTitle( null, mob ) );
 			string female = ( mob.Female ? "1" : "0" );
-			
+
 			bool pubBool = ( mob is PlayerMobile ) && ( ((PlayerMobile)mob).PublicMyRunUO );
 
 			string pubString = ( pubBool ? "1" : "0" );
@@ -22445,9 +22445,9 @@ namespace Server.Factions
 		public Town Finance{ get{ return m_Finance; } set{ m_Finance = value; Invalidate(); } }
 		public List<SilverGivenEntry> SilverGiven { get { return m_SilverGiven; } }
 
-		public int KillPoints { 
-			get { return m_KillPoints; } 
-			set { 
+		public int KillPoints {
+			get { return m_KillPoints; }
+			set {
 				if ( m_KillPoints != value ) {
 					if ( value > m_KillPoints ) {
 						if ( m_KillPoints <= 0 ) {
@@ -22456,7 +22456,7 @@ namespace Server.Factions
 								Invalidate();
 								return;
 							}
-							
+
 							m_Owner.Remove( this );
 							m_Owner.Insert( m_Faction.ZeroRankOffset, this );
 
@@ -22519,9 +22519,9 @@ namespace Server.Factions
 		private int  m_RankIndex = -1;
 
 		public int RankIndex { get { return m_RankIndex; } set { if ( m_RankIndex != value ) { m_RankIndex = value; m_InvalidateRank = true; } } }
-		
-		public RankDefinition Rank { 
-			get { 
+
+		public RankDefinition Rank {
+			get {
 				if ( m_InvalidateRank ) {
 					RankDefinition[] ranks = m_Faction.Definition.Ranks;
 					int percent;
@@ -25024,7 +25024,7 @@ namespace Server.Engines.VeteranRewards
 				if ( RewardSystem.HasAccess( m_From, entries[ j ] ) )
 					i++;
 			}
-			
+
 			return (int) Math.Ceiling( i / 24.0 );
 		}
 
@@ -25040,7 +25040,7 @@ namespace Server.Engines.VeteranRewards
 			List<RewardEntry> entries = category.Entries;
 
 			int i = 0;
-			
+
 			for ( int j = 0; j < entries.Count; ++j )
 			{
 				RewardEntry entry = entries[j];
@@ -25174,8 +25174,8 @@ namespace Server.Engines.VeteranRewards
 				if ( item != null )
 				{
 					if ( item is Server.Items.RedSoulstone )
-						((Server.Items.RedSoulstone) item).Account = m_From.Account.Username;	
-					
+						((Server.Items.RedSoulstone) item).Account = m_From.Account.Username;
+
 					if ( RewardSystem.ConsumeRewardPoint( m_From ) )
 						m_From.AddToBackpack( item );
 					else
@@ -25195,11 +25195,11 @@ namespace Server.Engines.VeteranRewards
 // using System;// using Server;// using Server.Items;// using Server.Multis;// using Server.Network;
 
 namespace Server.Gumps
-{		
+{
 	public class RewardDemolitionGump : Gump
 	{
 		private IAddon m_Addon;
-		
+
 		private enum Buttons
 		{
 			Cancel,
@@ -25217,9 +25217,9 @@ namespace Server.Gumps
 
 			AddBackground( 0, 0, 220, 170, 0x13BE );
 			AddBackground( 10, 10, 200, 150, 0xBB8 );
-			
+
 			AddHtmlLocalized( 20, 30, 180, 60, question, false, false ); // Do you wish to re-deed this decoration?
-			
+
 			AddHtmlLocalized( 55, 100, 150, 25, 1011011, false, false ); // CONTINUE
 			AddButton( 20, 100, 0xFA5, 0xFA7, (int) Buttons.Confirm, GumpButtonType.Reply, 0 );
 
@@ -25230,26 +25230,26 @@ namespace Server.Gumps
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Item item = m_Addon as Item;
-			
+
 			if ( item == null || item.Deleted )
-				return;                
+				return;
 
 			if ( info.ButtonID == (int) Buttons.Confirm )
 			{
 				Mobile m = sender.Mobile;
-				BaseHouse house = BaseHouse.FindHouseAt( m );  
-				
+				BaseHouse house = BaseHouse.FindHouseAt( m );
+
 				if ( house != null && house.IsOwner( m ) )
 				{
 					if ( m.InRange( item.Location, 2 ) )
 					{
 						Item deed = m_Addon.Deed;
-						
+
 						if ( deed != null )
 						{
-							m.AddToBackpack( deed );           	
+							m.AddToBackpack( deed );
 							house.Addons.Remove( item );
-							item.Delete();      
+							item.Delete();
 						}
 					}
 					else
@@ -25437,7 +25437,7 @@ namespace Server.Gumps
 
 			AddButton( 10, 294, 0xFB1, 0xFB2, 0, GumpButtonType.Reply, 0 );
 			AddHtmlLocalized( 45, 296, 450, 20, 1060051, 0x7FFF, false, false ); // CANCEL
-			
+
 			if ( title > 0 )
 				AddHtmlLocalized( 14, 12, 273, 20, title, 0x7FFF, false, false );
 			else
@@ -25448,14 +25448,14 @@ namespace Server.Gumps
 			for ( int i = 0; i < m_Options.Count; i++ )
 			{
 				AddButton( 19, 49 + i * 24, 0x845, 0x846, m_Options[ i ].ID, GumpButtonType.Reply, 0 );
-				AddHtmlLocalized( 44, 47 + i * 24, 213, 20, m_Options[ i ].Cliloc, 0x7FFF, false, false ); 
+				AddHtmlLocalized( 44, 47 + i * 24, 213, 20, m_Options[ i ].Cliloc, 0x7FFF, false, false );
 			}
 		}
 
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			if ( m_Option != null && Contains( info.ButtonID ) )
-				m_Option.OnOptionSelected( sender.Mobile, info.ButtonID );			
+				m_Option.OnOptionSelected( sender.Mobile, info.ButtonID );
 		}
 
 		private bool Contains( int chosen )
@@ -25708,7 +25708,7 @@ namespace Server.Engines.VeteranRewards
 						{
 							if ( (!isRelaxedRules || i > 0) && !HasAccess( from, list, out ts ) )
 							{
-								from.SendLocalizedMessage( 1008126, true, Math.Ceiling( ts.TotalDays / 30.0 ).ToString() ); // Your account is not old enough to use this item. Months until you can use this item : 
+								from.SendLocalizedMessage( 1008126, true, Math.Ceiling( ts.TotalDays / 30.0 ).ToString() ); // Your account is not old enough to use this item. Months until you can use this item :
 								return false;
 							}
 
@@ -25726,7 +25726,7 @@ namespace Server.Engines.VeteranRewards
 							{
 								if ( (!isRelaxedRules || i > 0) && !HasAccess( from, list, out ts ) )
 								{
-									from.SendLocalizedMessage( 1008126, true, Math.Ceiling( ts.TotalDays / 30.0 ).ToString() ); // Your account is not old enough to use this item. Months until you can use this item : 
+									from.SendLocalizedMessage( 1008126, true, Math.Ceiling( ts.TotalDays / 30.0 ).ToString() ); // Your account is not old enough to use this item. Months until you can use this item :
 									return false;
 								}
 
@@ -25923,14 +25923,14 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( etherealSteeds, 1049748, typeof( EtherealBeetle ) ),
 						new RewardEntry( houseAddOns,    1049739, typeof( StoneAnkhDeed ) ),
 						new RewardEntry( houseAddOns,    1080384, typeof( BloodyPentagramDeed ), Expansion.ML )
-					} ),					
+					} ),
 					new RewardList( RewardInterval, 6, new RewardEntry[]
 					{
 						new RewardEntry( houseAddOns,	1076188, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Jade ),
 						new RewardEntry( houseAddOns,	1076189, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Marble ),
-						new RewardEntry( houseAddOns,	1076190, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Bronze ),						
+						new RewardEntry( houseAddOns,	1076190, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Bronze ),
 						new RewardEntry( houseAddOns,	1080527, typeof( RewardBrazierDeed ), Expansion.ML )
-					} ),		
+					} ),
 					new RewardList( RewardInterval, 7, new RewardEntry[]
 					{
 						new RewardEntry( houseAddOns,	1080550, typeof( TreeStumpDeed ), Expansion.ML )
@@ -25945,17 +25945,17 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( houseAddOns,		1080549, typeof( WallBannerDeed ), Expansion.ML )
 					} ),
 					new RewardList( RewardInterval, 10, new RewardEntry[]
-					{												
+					{
 						new RewardEntry( monsterStatues,	1080520, typeof( MonsterStatuette ), Expansion.ML, MonsterStatuetteType.Harrower ),
 						new RewardEntry( monsterStatues,	1080521, typeof( MonsterStatuette ), Expansion.ML, MonsterStatuetteType.Efreet ),
 
 						new RewardEntry( cloaksAndRobes,	1080382, typeof( RewardCloak ), Expansion.ML, Pink, 1080382 ),
-						new RewardEntry( cloaksAndRobes,	1080380, typeof( RewardRobe ), Expansion.ML, Pink, 1080380 ),						
+						new RewardEntry( cloaksAndRobes,	1080380, typeof( RewardRobe ), Expansion.ML, Pink, 1080380 ),
 						new RewardEntry( cloaksAndRobes,	1080378, typeof( RewardDress ), Expansion.ML, Pink, 1080378 ),
 						new RewardEntry( cloaksAndRobes,	1080383, typeof( RewardCloak ), Expansion.ML, Crimson, 1080383 ),
-						new RewardEntry( cloaksAndRobes,	1080381, typeof( RewardRobe ), Expansion.ML, Crimson, 1080381 ),						
+						new RewardEntry( cloaksAndRobes,	1080381, typeof( RewardRobe ), Expansion.ML, Crimson, 1080381 ),
 						new RewardEntry( cloaksAndRobes,	1080379, typeof( RewardDress ), Expansion.ML, Crimson, 1080379 ),
-						
+
 						new RewardEntry( etherealSteeds,	1080386, typeof( EtherealCuSidhe ), Expansion.ML ),
 
 						new RewardEntry( houseAddOns,		1080548, typeof( MiningCartDeed ), Expansion.ML ),
@@ -26227,7 +26227,7 @@ namespace Server
 				else
 					Resurrect( from );
 			}
-			else 
+			else
 				from.SendLocalizedMessage( 1052015 ); // You cannot do that while hidden.
 		}
 
@@ -26517,7 +26517,7 @@ namespace Server.Factions
 					1109, // join stone : shadow
 					2211, // broadcast : green
 					0x79, 0x3EB0, // war horse
-					"Shadowlords", "shadow", "SL", 
+					"Shadowlords", "shadow", "SL",
 					new TextDefinition( 1011537, "SHADOWLORDS" ),
 					new TextDefinition( 1060772, "Shadowlords faction" ),
 					new TextDefinition( 1011424, "<center>SHADES OF DARKNESS</center>" ),
@@ -26628,20 +26628,20 @@ namespace Server.Factions
 			int netCashFlow = town.NetCashFlow;
 
 			AddHtmlLocalized( 20, 30, 300, 25, 1011524, false, false ); // FINANCE STATEMENT
-			
-			AddHtmlLocalized( 20, 80, 300, 25, 1011538, false, false ); // Current total money for town : 
+
+			AddHtmlLocalized( 20, 80, 300, 25, 1011538, false, false ); // Current total money for town :
 			AddLabel( 20, 100, 0x44, town.Silver.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-			AddHtmlLocalized( 20, 130, 300, 25, 1011520, false, false ); // Finance Minister Upkeep : 
+			AddHtmlLocalized( 20, 130, 300, 25, 1011520, false, false ); // Finance Minister Upkeep :
 			AddLabel( 20, 150, 0x44, financeUpkeep.ToString( "N0" ) ); // NOTE: Added 'N0'
-	
-			AddHtmlLocalized( 20, 180, 300, 25, 1011521, false, false ); // Sheriff Upkeep : 
+
+			AddHtmlLocalized( 20, 180, 300, 25, 1011521, false, false ); // Sheriff Upkeep :
 			AddLabel( 20, 200, 0x44, sheriffUpkeep.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-			AddHtmlLocalized( 20, 230, 300, 25, 1011522, false, false ); // Town Income : 
+			AddHtmlLocalized( 20, 230, 300, 25, 1011522, false, false ); // Town Income :
 			AddLabel( 20, 250, 0x44, dailyIncome.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-			AddHtmlLocalized( 20, 280, 300, 25, 1011523, false, false ); // Net Cash flow per day : 
+			AddHtmlLocalized( 20, 280, 300, 25, 1011523, false, false ); // Net Cash flow per day :
 			AddLabel( 20, 300, 0x44, netCashFlow.ToString( "N0" ) ); // NOTE: Added 'N0'
 
 			AddHtmlLocalized( 55, 360, 200, 25, 1011067, false, false ); // Previous page
@@ -26679,22 +26679,22 @@ namespace Server.Factions
 				AddHtmlText( 90, 30, 300, 25, guardList.Definition.Header, false, false );
 				CenterItem( guardList.Definition.ItemID, 10, 10, 80, 80 );
 
-				AddHtmlLocalized( 20, 90, 200, 25, 1011514, false, false ); // You have : 
+				AddHtmlLocalized( 20, 90, 200, 25, 1011514, false, false ); // You have :
 				AddLabel( 230, 90, 0x26, guardList.Guards.Count.ToString() );
 
-				AddHtmlLocalized( 20, 120, 200, 25, 1011515, false, false ); // Maximum : 
+				AddHtmlLocalized( 20, 120, 200, 25, 1011515, false, false ); // Maximum :
 				AddLabel( 230, 120, 0x12A, guardList.Definition.Maximum.ToString() );
 
-				AddHtmlLocalized( 20, 150, 200, 25, 1011516, false, false ); // Cost : 
+				AddHtmlLocalized( 20, 150, 200, 25, 1011516, false, false ); // Cost :
 				AddLabel( 230, 150, 0x44, guardList.Definition.Price.ToString( "N0" ) ); // NOTE: Added 'N0'
 
 				AddHtmlLocalized( 20, 180, 200, 25, 1011517, false, false ); // Daily Pay :
 				AddLabel( 230, 180, 0x37, guardList.Definition.Upkeep.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-				AddHtmlLocalized( 20, 210, 200, 25, 1011518, false, false ); // Current Silver : 
+				AddHtmlLocalized( 20, 210, 200, 25, 1011518, false, false ); // Current Silver :
 				AddLabel( 230, 210, 0x44, town.Silver.ToString( "N0" ) ); // NOTE: Added 'N0'
 
-				AddHtmlLocalized( 20, 240, 200, 25, 1011519, false, false ); // Current Payroll : 
+				AddHtmlLocalized( 20, 240, 200, 25, 1011519, false, false ); // Current Payroll :
 				AddLabel( 230, 240, 0x44, sheriffUpkeep.ToString( "N0" ) ); // NOTE: Added 'N0'
 
 				AddHtmlText( 55, 300, 200, 25, guardList.Definition.Label, false, false );
@@ -26760,7 +26760,7 @@ namespace Server.Factions
 		public static readonly TimeSpan CorruptionGrace = TimeSpan.FromMinutes( (Core.SE) ? 30.0 : 15.0 );
 
 		// Sigil must be held at a stronghold for this amount of time in order to become corrupted
-		public static readonly TimeSpan CorruptionPeriod = ( (Core.SE) ? TimeSpan.FromHours( 10.0 ) : TimeSpan.FromHours( 24.0 ) ); 
+		public static readonly TimeSpan CorruptionPeriod = ( (Core.SE) ? TimeSpan.FromHours( 10.0 ) : TimeSpan.FromHours( 24.0 ) );
 
 		// After a sigil has been corrupted it must be returned to the town within this period of time
 		public static readonly TimeSpan ReturnPeriod = TimeSpan.FromHours( 1.0 );
@@ -27112,7 +27112,7 @@ namespace Server.Factions
 			}
 			else
 			{
-				from.SendLocalizedMessage( 1005224 );	//	You can't use the sigil on that 
+				from.SendLocalizedMessage( 1005224 );	//	You can't use the sigil on that
 			}
 
 			Update();
@@ -29270,11 +29270,11 @@ namespace Server.Misc
 		ToTTwo,
 		ToTThree
 	}
-	
+
 	public class TreasuresOfTokuno
 	{
 		public const int ItemsPerReward = 10;
-		
+
 		private static Type[] m_LesserArtifactsTotal = new Type[]
 			{
 				typeof( AncientFarmersKasa ), typeof( AncientSamuraiDo ), typeof( ArmsOfTacticalExcellence ), typeof( BlackLotusHood ),
@@ -29283,18 +29283,18 @@ namespace Server.Misc
 				typeof( TomeOfEnlightenment ), typeof( AncientUrn ), typeof( HonorableSwords ), typeof( PigmentsOfIslesDread ), typeof( FluteOfRenewal ),
 				typeof( LeurociansMempoOfFortune ), typeof( LesserPigmentsOfIslesDread ), typeof( MetalPigmentsOfIslesDread ), typeof( ChestOfHeirlooms )
  			};
-		
+
 		public static Type[] LesserArtifactsTotal { get { return m_LesserArtifactsTotal; } }
-		
+
 		private static TreasuresOfTokunoEra _DropEra = TreasuresOfTokunoEra.None;
 		private static TreasuresOfTokunoEra _RewardEra = TreasuresOfTokunoEra.ToTOne;
-		
+
 		public static TreasuresOfTokunoEra DropEra
 		{
 			get { return _DropEra; }
 			set { _DropEra = value; }
 		}
-		
+
 		public static TreasuresOfTokunoEra RewardEra
 		{
 			get { return _RewardEra; }
@@ -29315,7 +29315,7 @@ namespace Server.Misc
 			new Type[] {
 				typeof( MetalPigmentsOfIslesDread ), typeof( AncientFarmersKasa ), typeof( AncientSamuraiDo ), typeof( ArmsOfTacticalExcellence ),
 				typeof( MetalPigmentsOfIslesDread ), typeof( BlackLotusHood ), typeof( DaimyosHelm ), typeof( DemonForks ),
-				typeof( MetalPigmentsOfIslesDread ), typeof( DragonNunchaku ), typeof( Exiler ), typeof( GlovesOfTheSun ), typeof( HanzosBow ), 
+				typeof( MetalPigmentsOfIslesDread ), typeof( DragonNunchaku ), typeof( Exiler ), typeof( GlovesOfTheSun ), typeof( HanzosBow ),
 				typeof( MetalPigmentsOfIslesDread ), typeof( LegsOfStability ), typeof( PeasantsBokuto ), typeof( PilferedDancerFans ), typeof( TheDestroyer ),
 				typeof( MetalPigmentsOfIslesDread ), typeof( TomeOfEnlightenment ), typeof( AncientUrn ), typeof( HonorableSwords ),
 				typeof( MetalPigmentsOfIslesDread ), typeof( FluteOfRenewal ), typeof( ChestOfHeirlooms )
@@ -29331,13 +29331,13 @@ namespace Server.Misc
 			}
 		};
 
-		public static Type[] LesserArtifacts 
-		{ 
+		public static Type[] LesserArtifacts
+		{
 			get { return m_LesserArtifacts[(int)RewardEra-1]; }
 		}
 
 		private static Type[][] m_GreaterArtifacts = null;
-		
+
 		public static Type[] GreaterArtifacts
 		{
 			get
@@ -29345,11 +29345,11 @@ namespace Server.Misc
 				if( m_GreaterArtifacts == null )
 				{
 					m_GreaterArtifacts = new Type[ToTRedeemGump.NormalRewards.Length][];
-					
+
 					for( int i = 0; i < m_GreaterArtifacts.Length; i++ )
 					{
 						m_GreaterArtifacts[i] = new Type[ToTRedeemGump.NormalRewards[i].Length];
-						
+
 						for( int j = 0; j < m_GreaterArtifacts[i].Length; j++ )
 						{
 							m_GreaterArtifacts[i][j] = ToTRedeemGump.NormalRewards[i][j].Type;
@@ -29406,7 +29406,7 @@ namespace Server.Misc
 			if( chance > Utility.RandomDouble() )
 			{
 				Item i = null;
-				
+
 				try
 				{
 					i = Activator.CreateInstance( m_LesserArtifacts[(int)DropEra-1][Utility.Random( m_LesserArtifacts[(int)DropEra-1].Length )] ) as Item;
@@ -29417,7 +29417,7 @@ namespace Server.Misc
 				if( i != null )
 				{
 					pm.SendLocalizedMessage( 1062317 ); // For your valor in combating the fallen beast, a special artifact has been bestowed on you.
-					
+
 					if( !pm.PlaceInBackpack( i ) )
 					{
 						if( pm.BankBox != null && pm.BankBox.TryDropItem( killer, i, false ) )
@@ -29428,7 +29428,7 @@ namespace Server.Misc
 							i.MoveToWorld( pm.Location, pm.Map );
 						}
 					}
-					
+
 					pm.ToTTotalMonsterFame = 0;
 				}
 			}
@@ -29448,7 +29448,7 @@ namespace Server.Mobiles
 
         protected List<SBInfo> m_SBInfos = new List<SBInfo>();
         protected override List<SBInfo> SBInfos { get { return m_SBInfos; } }
-		
+
 		public override void InitSBInfo()
 		{
 		}
@@ -29484,7 +29484,7 @@ namespace Server.Mobiles
 
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );
@@ -29512,7 +29512,7 @@ namespace Server.Mobiles
 						SayTo( pm, 1070980 ); // Congratulations! You have turned in enough minor treasures to earn a greater reward.
 
 						pm.CloseGump( typeof( ToTTurnInGump ) );	//Sanity
-						
+
 						if( !pm.HasGump( typeof( ToTRedeemGump ) ) )
 							pm.SendGump( new ToTRedeemGump( this, false ) );
 					}
@@ -29578,10 +29578,10 @@ namespace Server.Gumps
 				Item item = (Item)items[i];
 				if( item is ChestOfHeirlooms && !((ChestOfHeirlooms)item).Locked )
 					continue;
-				
+
 				if( item is ChestOfHeirlooms && ((ChestOfHeirlooms)item).TrapLevel != 10 )
 					continue;
-				
+
 				if( item is PigmentsOfIslesDread && ((PigmentsOfIslesDread)item).Type != PigmentType.None )
 					continue;
 
@@ -29642,7 +29642,7 @@ namespace Server.Gumps
 
 			if( pm == null || !pm.InRange( m_Collector.Location, 7 ) )
 				return;
-			
+
 			if( pm.ToTItemsTurnedIn == 0 )
 				m_Collector.SayTo( pm, 1071013 ); // Bring me 10 of the lost treasures of IslesDread and I will reward you with a valuable item.
 			else if( pm.ToTItemsTurnedIn < TreasuresOfTokuno.ItemsPerReward )	//This case should ALWAYS be true with this gump, jsut a sanity check
@@ -29746,7 +29746,7 @@ namespace Server.Gumps
 		#endregion
 
 		public static TypeTileButtonInfo[][] NormalRewards
-		{ 
+		{
 			get { return m_NormalRewards; }
 		}
 
@@ -29795,7 +29795,7 @@ namespace Server.Gumps
 		#endregion
 
 		public static PigmentsTileButtonInfo[][] PigmentRewards
-		{ 
+		{
 			get { return m_PigmentRewards; }
 		}
 
@@ -29945,7 +29945,7 @@ namespace Server.Misc
 				{
 					TreasuresOfTokuno.RewardEra = (TreasuresOfTokunoEra)reader.ReadEncodedInt();
 					TreasuresOfTokuno.DropEra = (TreasuresOfTokunoEra)reader.ReadEncodedInt();
-					
+
 					break;
 				}
 			}
@@ -30003,7 +30003,7 @@ namespace Server.Factions
 					2214, // join stone : gold
 					2125, // broadcast : gold
 					0x76, 0x3EB2, // war horse
-					"True Britannians", "true", "TB", 
+					"True Britannians", "true", "TB",
 					new TextDefinition( 1011536, "LORD BRITISH" ),
 					new TextDefinition( 1060771, "True Britannians faction" ),
 					new TextDefinition( 1011423, "<center>TRUE BRITANNIANS</center>" ),
@@ -30900,10 +30900,10 @@ namespace Server
 
 			if( value >= 30000 )
 				value = 20000;	//Sanity
-				
-			
+
+
 			int vl;
-			
+
 			if( value < 10000 )
 				vl = 0;
 			else if( value >= 20000 && index == 5)
@@ -30914,7 +30914,7 @@ namespace Server
 				vl = 2;
 			else
 				vl = 1;
-			
+
 
 			return m_Table[(index * 3) + (int) vl];
 		}
@@ -31663,7 +31663,7 @@ namespace Server.Mobiles
 			Karma = -4000;
 
 			VirtualArmor = 40;
-			
+
 			Item Venom = new VenomSack();
 				Venom.Name = "deadly venom sack";
 				AddItem( Venom );
@@ -32673,7 +32673,7 @@ namespace Server.Items
 
 			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				Container pack = from.Backpack;
 				from.SendSound( 0x55 );
 				int NumItemsPlusOne = 121;
@@ -32752,7 +32752,7 @@ namespace Server.Items
 								if ( ( who is IronWorker || who is Weaponsmith || who is Armorer  || who is Blacksmith ) && OneSay == 0 && m_Book.Name == "Steel Crafted Items" )
 								{
 									who.PlaySound( 0x2A );
-									
+
 									switch( Utility.Random( 2 ) )
 									{
 										case 0: who.Say( "I have spent years learning the art of steel." ); 	break;
@@ -32768,7 +32768,7 @@ namespace Server.Items
 								else if ( ( who is IronWorker || who is Weaponsmith || who is Armorer  || who is Blacksmith ) && OneSay == 0 && m_Book.Name == "Mithril Crafted Items" )
 								{
 									who.PlaySound( 0x2A );
-									
+
 									switch( Utility.Random( 2 ) )
 									{
 										case 0: who.Say( "I have spent years learning the art of mithril." ); 	break;
@@ -32784,7 +32784,7 @@ namespace Server.Items
 								else if ( ( who is IronWorker || who is Weaponsmith || who is Armorer  || who is Blacksmith ) && OneSay == 0 && m_Book.Name == "Brass Crafted Items" )
 								{
 									who.PlaySound( 0x2A );
-									
+
 									switch( Utility.Random( 2 ) )
 									{
 										case 0: who.Say( "I have spent years learning the art of brass." ); 	break;

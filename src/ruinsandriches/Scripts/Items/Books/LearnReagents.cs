@@ -132,7 +132,7 @@ namespace Server.Items
 				AddHtml( 237, 62, 434, 707, @"<BODY><BASEFONT Color=" + color + ">Mages, necromancers, witches, alchemists, and druids all use reagents of some type. This is a listing of the kinds of reagents you may find while traveling the world. This is not a complete list, as legends and rumors tell of other types that may exist. Reagents can be purchased from merchants, picked from some gardens, found on some creatures, or discovered with other treasure. One will commonly find reagents that may be used in their current trade, but if they have no such trade, then they may find any type that they can leave behind or sell.<br><br>Mages use the common reagents in the casting of spells, where necromancers use the necromancy reagents for their magic. Witches and druids use some of these reagents listed here as well.<br><br>You may find many reagents you need to identify. If you have practiced your tasting, you will able to discover what these are. Mages and necromancers simply carry the reagents with them to use as the cast spells. Alchemists use a mortar and pestle to create potions, while witches and druids use cauldrons.</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				from.SendSound( 0x249 );
@@ -141,7 +141,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 ) 
+			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

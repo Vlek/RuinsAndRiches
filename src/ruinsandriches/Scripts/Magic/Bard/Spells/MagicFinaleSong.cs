@@ -13,7 +13,7 @@ namespace Server.Spells.Song
 {
 	public class MagicFinaleSong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Magic Finale", "*plays a magic finale*",
 				-1
@@ -23,7 +23,7 @@ namespace Server.Spells.Song
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
 		public override double RequiredSkill{ get{ return 90.0; } }
 		public override int RequiredMana{ get{ return 35; } }
-		
+
 		public MagicFinaleSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
@@ -44,11 +44,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
 			if( CheckSequence() )
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 4 ) )
@@ -63,13 +63,13 @@ namespace Server.Spells.Song
 					if ( m is BaseCreature && ((BaseCreature)m).Summoned )
 						targets.Add( m );
 				}
-				
+
 				Caster.FixedParticles( 0x3709, 1, 30, 9965, 5, 7, EffectLayer.Waist );
-				
+
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
+
 					Effects.SendLocationParticles( EffectItem.Create( m.Location, m.Map, EffectItem.DefaultDuration ), 0x3728, 8, 20, 5042 );
 
 					m.Delete();
@@ -81,4 +81,3 @@ namespace Server.Spells.Song
 		}
 	}
 }
-

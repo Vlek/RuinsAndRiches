@@ -151,7 +151,7 @@ namespace Server.Mobiles
 		public AncientLich( Serial serial ) : base( serial )
 		{
 		}
-    
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

@@ -10,7 +10,8 @@ namespace Server.Items
 		[Constructable]
 		public SummonDaemonMagicStaff() : base( MagicStaffEffect.Charges, 1, 3 )
 		{
-			IntRequirement = 45;			Name = "wand of daemon summoning";
+			IntRequirement = 45;
+			Name = "wand of daemon summoning";
 			SkillBonuses.SetValues( 1, SkillName.Magery, 80 );
 		}
 
@@ -37,7 +38,8 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			if ( IntRequirement != 45 ) { IntRequirement = 45; }
+
+			if ( IntRequirement != 45 ) { IntRequirement = 45; }
 		}
 
 		public override void OnMagicStaffUse( Mobile from )

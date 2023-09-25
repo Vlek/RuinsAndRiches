@@ -7,7 +7,7 @@ using Server.Multis;
 using Server.Targeting;
 
 namespace Server.Engines.Apiculture
-{	
+{
 	public class apiBeeHiveHelpGump : Gump
 	{
 		public apiBeeHiveHelpGump( Mobile from, int type ) : base( 20, 20 )
@@ -42,7 +42,7 @@ namespace Server.Engines.Apiculture
 			{
 				case 0:
 				{
-			
+
 					text += "<p><b>Apiculture</b> is the science (and some say art) of raising honey bees, also know as <b>beekeeping</b>.  Bees live together in groups called <b>colonies</b> and make their homes in <b>beehives</b>.  Tending a hive is not as easy as it may sound, although it can be a very rewarding experience.  To start on the path of the <b>apiculturist</b>, all one needs is a <b>beehive deed</b> and an area with plenty of <b>flowers</b> and <b>water</b>.</p>";
 					text += "<p>There are 3 distinct stages in a beehive's development:</p>";
 					text += "<p><b>Colonizing</b> - the hive sends out scouts to survey the area and find sources of flowers and water. You need to be flowers near the hive. These can be grown, or herbalists will sell them to you. You also need something like a water trough or barrel placed next to the hive.</p>";

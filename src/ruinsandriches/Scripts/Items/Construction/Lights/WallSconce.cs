@@ -16,7 +16,7 @@ namespace Server.Items
 					return 0xA02;
 			}
 		}
-		
+
 		public override int UnlitItemID
 		{
 			get
@@ -27,7 +27,7 @@ namespace Server.Items
 					return 0xA00;
 			}
 		}
-		
+
 		[Constructable]
 		public WallSconce() : base( 0x9FB )
 		{

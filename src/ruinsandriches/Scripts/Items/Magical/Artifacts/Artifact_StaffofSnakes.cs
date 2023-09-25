@@ -43,8 +43,8 @@ namespace Server.Items
 			else if ( CanUseMagic > 0 )
 			{
 				TimeSpan t = TimeSpan.FromMinutes( CanUseMagic );
-				string wait = string.Format("{0:D1} hours and {1:D2} minutes", 
-								t.Hours, 
+				string wait = string.Format("{0:D1} hours and {1:D2} minutes",
+								t.Hours,
 								t.Minutes);
 				from.SendMessage( "You can use the magic in " + wait + "." );
 			}
@@ -58,14 +58,14 @@ namespace Server.Items
 		public Artifact_StaffofSnakes( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 1 );
             writer.Write( TimeUsed );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

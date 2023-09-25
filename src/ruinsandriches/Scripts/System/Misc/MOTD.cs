@@ -68,11 +68,11 @@ namespace Joeku.MOTD
 
 				MOTD_Utility.SendGump( from, false, this.Index, m_Origin );
 
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 			else if ( m_Origin > 0 )
 			{
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 				from.SendGump( new Server.Engines.Help.HelpGump( from, 1 ) );
 			}
 		}
@@ -216,12 +216,12 @@ namespace Joeku.MOTD
 			string path = MOTD_Main.FilePath;
 			if( !Directory.Exists( path ) )
 				Directory.CreateDirectory( path );
-			
+
 			for( int i = 0; i < MOTD_Main.Info.Length; i++ )
 			{
 				path = Path.Combine( MOTD_Main.FilePath, String.Format("{0}.txt", MOTD_Main.Info[i].Name) );
 				if ( !File.Exists( path ) )
-					using (StreamWriter writer = new StreamWriter(path)) 
+					using (StreamWriter writer = new StreamWriter(path))
 						GenerateExampleCode( writer );
 			}
 		}

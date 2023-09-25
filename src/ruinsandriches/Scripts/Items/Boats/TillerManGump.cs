@@ -2,21 +2,21 @@ using Server.Mobiles;
 using Server.Multis;
 using Server.Network;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class TillerManGump : Gump
     {
 		private Mobile m_From;
 		private BaseBoat m_Boat;
 		private bool ToggleOneStep;
-		
+
         public TillerManGump ( Mobile from, BaseBoat boat, bool onestep ) : base ( 0, 0 )
         {
 			m_From = from;
 			m_Boat = boat;
 
 			ToggleOneStep = onestep;
-			
+
 			Closable=true;
 			Disposable=false;
 			Dragable=true;
@@ -52,7 +52,7 @@ namespace Server.Gumps
 		{
 			if( m_Boat == null || m_From == null )
 				return;
-				
+
 			if( !m_Boat.Contains( m_From ) )
 			{
 				if ( BaseBoat.isCarpet( m_Boat ) ){ m_From.SendMessage( "You have to be on your carpet to do that!" ); }
@@ -142,13 +142,13 @@ namespace Server.Gumps
 				{
 					if( m_Boat.Anchored )
 						m_Boat.RaiseAnchor( true );
-					else 
+					else
 						m_Boat.LowerAnchor( true );
 					break;
 				}
 				case 11:	// TURN LEFT/RIGHT/AROUND
 				{
-					m_Boat.StartTurn(  -2, true );	// LEFT		
+					m_Boat.StartTurn(  -2, true );	// LEFT
 					break;
 				}
 				case 12:
@@ -165,6 +165,6 @@ namespace Server.Gumps
 
 			m_From.CloseGump( typeof( TillerManGump ) );
 			m_From.SendGump( new TillerManGump( m_From, m_Boat, ToggleOneStep ) );
-		}	
+		}
     }
 }

@@ -26,7 +26,7 @@ namespace Server.Items
 
             int chance = 0;
             double chancetest = Utility.RandomDouble();
-            
+
             if (chancetest < 0.50 )
                 chance = 3;
             else if (chancetest < 0.70)
@@ -37,7 +37,7 @@ namespace Server.Items
                 chance = 11;
             else if (chancetest >= 0.95)
                 chance = 14;
-            
+
             switch ( Utility.Random( chance ) )
             {
                 case 1: ArmorMaterial = "Dull Copper"; break;
@@ -52,7 +52,7 @@ namespace Server.Items
                 case 10: ArmorMaterial = "Obsidian"; break;
                 case 11: ArmorMaterial = "Steel"; break;
                 case 12: ArmorMaterial = "Brass"; break;
-                case 13: ArmorMaterial = "Mithril"; break;   
+                case 13: ArmorMaterial = "Mithril"; break;
             }
 
 			if ( ArmorMaterial == "Dull Copper" ){ 		Hue = MaterialInfo.GetMaterialColor( "dull copper", "monster", 0 ); }

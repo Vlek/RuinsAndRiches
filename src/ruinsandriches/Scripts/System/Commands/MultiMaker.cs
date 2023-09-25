@@ -151,7 +151,7 @@ namespace Arya.Misc
                         foreach (StaticTile t in stlist)
                         {
                             list.Add(t);
-                            
+
                             int id = t.ID - 36653;
                             if (id < 2 || id > 36653)
                                 remove.Add(t);
@@ -691,7 +691,7 @@ namespace Server.Items
         [Constructable]
         public MultiIdentifyAddon(string init)
         {
-            // Nothing really here, just prevents adding a null contruct via [add command 
+            // Nothing really here, just prevents adding a null contruct via [add command
         }
 
         [Constructable]
@@ -716,7 +716,7 @@ namespace Server.Items
             base.Deserialize(reader);
             int version = reader.ReadInt();
             if (this.Map == null || this.Map == Map.Internal)
-                this.Delete(); // Remove it because it's most 
+                this.Delete(); // Remove it because it's most
         }
 
         public void ReDeed(Mobile m)

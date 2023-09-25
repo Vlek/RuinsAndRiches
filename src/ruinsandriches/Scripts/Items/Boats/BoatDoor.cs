@@ -184,10 +184,10 @@ namespace Server.Items
 						{
 							BoatDoor hatch = (BoatDoor)item;
 
-							if ( 	item != null && 
-									hatch.BoatCode == sCode && 
-									item.Serial.ToString() == sSerial && 
-									Worlds.GetMyWorld( item.Map, item.Location, item.X, item.Y ) == sWorld 
+							if ( 	item != null &&
+									hatch.BoatCode == sCode &&
+									item.Serial.ToString() == sSerial &&
+									Worlds.GetMyWorld( item.Map, item.Location, item.X, item.Y ) == sWorld
 							)
 							{
 								loc = item.Location;

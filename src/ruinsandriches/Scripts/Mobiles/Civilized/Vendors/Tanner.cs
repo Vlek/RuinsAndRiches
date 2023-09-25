@@ -1,7 +1,7 @@
-using System; 
-using System.Collections.Generic; 
-using Server; 
-using System.Collections; 
+using System;
+using System.Collections.Generic;
+using Server;
+using System.Collections;
 using Server.Targeting;
 using Server.Items;
 using Server.Network;
@@ -47,7 +47,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -58,7 +58,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -70,11 +70,11 @@ namespace Server.Mobiles
             }
         }
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		private class FixEntry : ContextMenuEntry
 		{
@@ -303,7 +303,7 @@ namespace Server.Mobiles
                         from.SendMessage("You do not have enough gold.");
                     }
                 }
-                else if ( (targeted is BaseWeapon && from.Backpack != null) && ( targeted is BaseWhip || targeted is GiftThrowingGloves || targeted is GiftPugilistGloves || targeted is LevelThrowingGloves || targeted is LevelPugilistGloves || targeted is ThrowingGloves || targeted is PugilistGlove || targeted is PugilistGloves || targeted is PugilistMits ) ) 
+                else if ( (targeted is BaseWeapon && from.Backpack != null) && ( targeted is BaseWhip || targeted is GiftThrowingGloves || targeted is GiftPugilistGloves || targeted is LevelThrowingGloves || targeted is LevelPugilistGloves || targeted is ThrowingGloves || targeted is PugilistGlove || targeted is PugilistGloves || targeted is PugilistMits ) )
                 {
                     BaseWeapon ba = targeted as BaseWeapon;
                     Container pack = from.Backpack;

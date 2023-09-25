@@ -9,14 +9,14 @@ namespace Server.Spells.Song
 {
 	public class FireThrenodySong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Fire Threnody", "*plays a fire threnody*",
 				//SpellCircle.First,
 				//212,9041
 				-1
 			);
-		
+
 		public FireThrenodySong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
@@ -85,9 +85,9 @@ namespace Server.Spells.Song
 
 				m.SendMessage( "Your resistance to fire has decreased." );
 				ResistanceMod mod1 = new ResistanceMod( ResistanceType.Fire, - amount );
-				
+
 				m.FixedParticles( 0x374A, 10, 30, 5013, 0x489, 2, EffectLayer.Waist );
-				
+
 				m.AddResistanceMod( mod1 );
 
 				ExpireTimer timer1 = new ExpireTimer( m, mod1, duration );
@@ -113,7 +113,7 @@ namespace Server.Spells.Song
 			{
 				PlayerMobile p = m_Mobile as PlayerMobile;
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

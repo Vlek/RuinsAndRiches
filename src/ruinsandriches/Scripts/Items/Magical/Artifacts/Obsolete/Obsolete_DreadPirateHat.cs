@@ -32,14 +32,14 @@ namespace Server.Items
 		public DreadPirateHat( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 
 			writer.Write( (int) 3 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

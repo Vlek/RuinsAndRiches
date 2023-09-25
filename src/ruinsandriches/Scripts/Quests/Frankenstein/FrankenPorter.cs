@@ -1,15 +1,15 @@
-using System; 
-using System.Collections; 
-using Server.Misc; 
-using Server.Items; 
-using Server.Mobiles; 
+using System;
+using System.Collections;
+using Server.Misc;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 using System.Collections.Generic;
 using Server.ContextMenus;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a huge corpse" )] 
+	[CorpseName( "a huge corpse" )]
 	public class FrankenPorter : BaseCreature
 	{
 		public int PorterLevel;
@@ -27,7 +27,7 @@ namespace Server.Mobiles
 			}
 		}
 
-		[Constructable] 
+		[Constructable]
 		public FrankenPorter( ) : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			m_NextTalking = (DateTime.Now + TimeSpan.FromSeconds( 60 ));
@@ -63,9 +63,9 @@ namespace Server.Mobiles
 		public override bool IsBondable{ get{ return false; } }
 		public override bool CanBeRenamedBy( Mobile from ){ return true; }
 
-		public FrankenPorter( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public FrankenPorter( Serial serial ) : base( serial )
+		{
+		}
 
 		public override void OnAfterSpawn()
 		{
@@ -92,23 +92,23 @@ namespace Server.Mobiles
 			if ( PorterLevel >= 65 ){ Body = 999; }
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
             writer.Write( PorterLevel );
 			Loyalty = 100;
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			PorterLevel = reader.ReadInt();
 
-			LeaveNowTimer thisTimer = new LeaveNowTimer( this ); 
-			thisTimer.Start(); 
-		} 
+			LeaveNowTimer thisTimer = new LeaveNowTimer( this );
+			thisTimer.Start();
+		}
 
 		public override bool IsSnoop( Mobile from )
 		{

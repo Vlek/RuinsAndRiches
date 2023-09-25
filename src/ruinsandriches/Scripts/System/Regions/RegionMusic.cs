@@ -96,7 +96,7 @@ namespace Server.Misc
 						toPlay = InnList[Utility.Random(InnList.Length)]; switchSongs = true;
 						if ( reg.Name == "the Kraken Eye Cave" || reg.Name == "the Anchored Cave" || reg.Name == "the Ravendark Tomb" || reg.Name == "the Furnace Eye Cave" )
 						{
-							toPlay = CaveMusic[Utility.Random(CaveMusic.Length)]; 
+							toPlay = CaveMusic[Utility.Random(CaveMusic.Length)];
 						}
 						if ( Server.Misc.Worlds.IsSeaTown( from.Location, from.Map ) ){ toPlay = PirateMusic[Utility.Random(PirateMusic.Length)]; }
 					}
@@ -104,11 +104,11 @@ namespace Server.Misc
 					{
 						toPlay = InnList[Utility.Random(InnList.Length)]; switchSongs = true;
 					}
-					else if ( Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) ) 
+					else if ( Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) )
 					{
 						toPlay = LandMusic[Utility.Random(LandMusic.Length)]; switchSongs = true;
 					}
-					else if ( reg is PirateRegion ) 
+					else if ( reg is PirateRegion )
 					{
 						toPlay = PirateMusic[Utility.Random(PirateMusic.Length)]; switchSongs = true;
 					}
@@ -147,7 +147,7 @@ namespace Server.Misc
 					else if ( reg is StartRegion )
 					{
 						if ( reg.Name == "the Forest" )
-							toPlay = MusicName.City; 
+							toPlay = MusicName.City;
 						else if ( reg.Name == "the Swamp" )
 							toPlay = LandMusic[Utility.Random(LandMusic.Length)];
 						else if ( reg.Name == "the Tomb" )

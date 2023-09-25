@@ -123,7 +123,7 @@ namespace Server.Menus.Questions
 			{
 				if ( m_Mobile == m_Sender )
 				{
-					m_Mobile.SendSound( 0x4A ); 
+					m_Mobile.SendSound( 0x4A );
 					m_Mobile.SendMessage( "You choose to remain where you are." );
 					m_Mobile.CloseGump( typeof(Server.Engines.Help.HelpGump) );
 					m_Mobile.SendGump( new Server.Engines.Help.HelpGump( m_Mobile, 1 ) );
@@ -156,7 +156,7 @@ namespace Server.Menus.Questions
 
 		private void Teleport( StuckMenuEntry entry )
 		{
-			if ( m_MarkUse ) 
+			if ( m_MarkUse )
 			{
 				m_Mobile.SendLocalizedMessage( 1010589 ); // You will be teleported within the next two minutes.
 
@@ -194,8 +194,8 @@ namespace Server.Menus.Questions
 				{
 					m_Mobile.Frozen = true;
 				}
-			} 
-		} 
+			}
+		}
 
 		private class TeleportTimer : Timer
 		{

@@ -87,7 +87,7 @@ namespace Server.Mobiles
 								sword.Slayer = SlayerName.DragonSlaying;
 								sword.Name = "sword of Baron Almric";
 								sword.Hue = 0x9C4;
-								c.DropItem( sword );	
+								c.DropItem( sword );
 								break;
 							case 1: MagicDragonLegs legs = new MagicDragonLegs(); legs.DragonKiller = "Slain by Baron Almric"; c.DropItem( legs ); break;
 							case 2: MagicDragonGloves gloves = new MagicDragonGloves(); gloves.DragonKiller = "Slain by Baron Almric"; c.DropItem( gloves ); break;

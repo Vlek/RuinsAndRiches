@@ -109,7 +109,7 @@ namespace Server.Mobiles
 		{
 			this.BaseSoundID = 278;
 			this.PlaySound( 0x580 );
-			
+
 			Effects.SendLocationEffect( this.Location, this.Map, 0x23B2, 16, 10, 1166, 0 );
 
 			int goo = 0;

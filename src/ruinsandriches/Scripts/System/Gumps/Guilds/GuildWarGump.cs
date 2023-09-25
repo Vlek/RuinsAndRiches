@@ -59,7 +59,7 @@ namespace Server.Gumps
 			AddButton( 30, 375, 5223, 5223, 0, GumpButtonType.Page, 1 );
 			AddHtmlLocalized( 65, 373, 150, 25, 1011067, false, false ); // Previous page
 
-			AddHtmlLocalized( 20, 45, 400, 20, 1011136, false, false ); // Guilds that we have declared war on: 
+			AddHtmlLocalized( 20, 45, 400, 20, 1011136, false, false ); // Guilds that we have declared war on:
 
 			List<Guild> declared = guild.WarDeclarations;
 
@@ -82,7 +82,7 @@ namespace Server.Gumps
 			AddButton( 30, 375, 5223, 5223, 0, GumpButtonType.Page, 2 );
 			AddHtmlLocalized( 65, 373, 150, 25, 1011067, false, false ); // Previous page
 
-			AddHtmlLocalized( 20, 45, 400, 20, 1011135, false, false ); // Guilds that have declared war on us: 
+			AddHtmlLocalized( 20, 45, 400, 20, 1011135, false, false ); // Guilds that have declared war on us:
 
 			List<Guild> invites = guild.WarInvitations;
 

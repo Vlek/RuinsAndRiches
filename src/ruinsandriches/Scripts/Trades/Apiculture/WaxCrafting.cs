@@ -28,7 +28,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "For Those Skilled In Cooking");
-        } 
+        }
 
 		public WaxingPot( Serial serial ) : base( serial )
 		{

@@ -104,6 +104,6 @@ namespace Server.Mobiles
 
 			if ( Hue == 0 )
 				Hue = Utility.RandomBirdHue();
-		} 
+		}
 	}
 }

@@ -32,7 +32,7 @@ namespace Server.Items
 	public class GoldBracelet : BaseBracelet
 	{
 		[Constructable]
-		public GoldBracelet() : base( 0x4CF1 ) 
+		public GoldBracelet() : base( 0x4CF1 )
 		{
 			Name = "bracelet";
 			Weight = 0.1;
@@ -60,7 +60,7 @@ namespace Server.Items
 	public class SilverBracelet : BaseBracelet
 	{
 		[Constructable]
-		public SilverBracelet() : base( 0x4CF2 ) 
+		public SilverBracelet() : base( 0x4CF2 )
 		{
 			Name = "bracelet";
 			Weight = 0.1;

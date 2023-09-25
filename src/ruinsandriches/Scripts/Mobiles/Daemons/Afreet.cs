@@ -89,7 +89,7 @@ namespace Server.Mobiles
 							robe.Attributes.BonusMana = 5;
 							robe.Attributes.BonusInt = 4;
 							robe.Attributes.RegenMana = 1;
-							robe.Attributes.LowerRegCost = 10;   
+							robe.Attributes.LowerRegCost = 10;
 							robe.SkillBonuses.SetValues( 0, SkillName.MagicResist, 8 );
 							robe.SkillBonuses.SetValues( 1, SkillName.Magery, 8 );
 							robe.Hue = color;
@@ -102,7 +102,7 @@ namespace Server.Mobiles
 							hat.Attributes.BonusMana = 5;
 							hat.Attributes.BonusInt = 2;
 							hat.Attributes.RegenMana = 1;
-							hat.Attributes.LowerRegCost = 5;   
+							hat.Attributes.LowerRegCost = 5;
 							hat.SkillBonuses.SetValues( 0, SkillName.MagicResist, 8 );
 							hat.SkillBonuses.SetValues( 1, SkillName.Magery, 8 );
 							hat.Hue = color;
@@ -115,7 +115,7 @@ namespace Server.Mobiles
 							boots.Attributes.BonusMana = 5;
 							boots.Attributes.BonusInt = 2;
 							boots.Attributes.RegenMana = 1;
-							boots.Attributes.LowerRegCost = 5;   
+							boots.Attributes.LowerRegCost = 5;
 							boots.SkillBonuses.SetValues( 0, SkillName.MagicResist, 8 );
 							boots.SkillBonuses.SetValues( 1, SkillName.Magery, 8 );
 							boots.Hue = color;
@@ -128,7 +128,7 @@ namespace Server.Mobiles
 							cloak.Attributes.BonusMana = 5;
 							cloak.Attributes.BonusInt = 4;
 							cloak.Attributes.RegenMana = 1;
-							cloak.Attributes.LowerRegCost = 10;   
+							cloak.Attributes.LowerRegCost = 10;
 							cloak.SkillBonuses.SetValues( 0, SkillName.MagicResist, 8 );
 							cloak.SkillBonuses.SetValues( 1, SkillName.Magery, 8 );
 							cloak.Hue = color;
@@ -141,7 +141,7 @@ namespace Server.Mobiles
 							belt.Attributes.BonusMana = 5;
 							belt.Attributes.BonusInt = 2;
 							belt.Attributes.RegenMana = 1;
-							belt.Attributes.LowerRegCost = 5;   
+							belt.Attributes.LowerRegCost = 5;
 							belt.SkillBonuses.SetValues( 0, SkillName.MagicResist, 8 );
 							belt.SkillBonuses.SetValues( 1, SkillName.Magery, 8 );
 							belt.Hue = color;
@@ -154,7 +154,7 @@ namespace Server.Mobiles
 							candle.Attributes.BonusMana = 5;
 							candle.Attributes.BonusInt = 4;
 							candle.Attributes.RegenMana = 1;
-							candle.Attributes.LowerRegCost = 10;   
+							candle.Attributes.LowerRegCost = 10;
 							candle.SkillBonuses.SetValues( 0, SkillName.MagicResist, 8 );
 							candle.SkillBonuses.SetValues( 1, SkillName.Magery, 8 );
 							candle.Hue = color;

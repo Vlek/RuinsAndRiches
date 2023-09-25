@@ -133,15 +133,15 @@ namespace Server.Items
 					doSythEffect = true;
 				}
 				else if ( dropped.Layer == Layer.Cloak && (
-					dropped.ItemID == 0x1515 || 
-					dropped.ItemID == 0x1530 || 
-					dropped.ItemID == 0x2309 || 
-					dropped.ItemID == 0x230A || 
-					dropped.ItemID == 0x26AD || 
-					dropped.ItemID == 0x2B04 || 
-					dropped.ItemID == 0x2B05 || 
-					dropped.ItemID == 0x2B76 || 
-					dropped.ItemID == 0x316D || 
+					dropped.ItemID == 0x1515 ||
+					dropped.ItemID == 0x1530 ||
+					dropped.ItemID == 0x2309 ||
+					dropped.ItemID == 0x230A ||
+					dropped.ItemID == 0x26AD ||
+					dropped.ItemID == 0x2B04 ||
+					dropped.ItemID == 0x2B05 ||
+					dropped.ItemID == 0x2B76 ||
+					dropped.ItemID == 0x316D ||
 					dropped.ItemID == 0x5679 ) )
 				{
 					dropped.ItemID = 0x1515; dropped.Name = "Syth cloak";
@@ -280,9 +280,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				Server.Spells.Syth.SythSpell.CastSpell( from, info.ButtonID );
 				from.CloseGump( typeof( PowerRow ) );
 				if ( Server.Misc.GetPlayerInfo.isSyth ( from, true ) )
@@ -382,9 +382,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				Server.Spells.Syth.SythSpell.CastSpell( from, info.ButtonID );
 				from.CloseGump( typeof( PowerColumn ) );
 				if ( Server.Misc.GetPlayerInfo.isSyth ( from, true ) )

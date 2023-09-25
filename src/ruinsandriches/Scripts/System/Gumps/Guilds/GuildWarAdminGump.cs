@@ -75,7 +75,7 @@ namespace Server.Gumps
 			{
 				case 1: // Declare war
 				{
-					m_Mobile.SendLocalizedMessage( 1018001 ); // Declare war through search - Enter Guild Name:  
+					m_Mobile.SendLocalizedMessage( 1018001 ); // Declare war through search - Enter Guild Name:
 					m_Mobile.Prompt = new GuildDeclareWarPrompt( m_Mobile, m_Guild );
 
 					break;

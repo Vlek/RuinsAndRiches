@@ -39,11 +39,11 @@ namespace Server.Spells.Necromancy
 		{
 			if ( m is PlayerMobile )
 				((PlayerMobile)m).IgnoreMobiles = true;
-			
+
 			m.PlaySound( 0x17F );
 			m.FixedParticles( 0x374A, 1, 15, 9902, 1108, 4, EffectLayer.Waist );
 		}
-		
+
 		public override void RemoveEffect( Mobile m )
 		{
 			if ( m is PlayerMobile && m.AccessLevel == AccessLevel.Player )

@@ -30,7 +30,7 @@ namespace Server.SkillHandlers
 			m.RevealingAction();
 
 			if ( m.CheckSkill( SkillName.Spiritualism, 0, 100 ) )
-			{	
+			{
 				if ( !m.CanHearGhosts )
 				{
 					Timer t = new SpiritualismTimer( m );
@@ -181,15 +181,15 @@ namespace Server.SkillHandlers
 					Caster.SendLocalizedMessage( 1061285 ); // You lack the mana required to use this skill.
 				}
 				else if ( Caster.Poisoned )
-				{	
+				{
 					Caster.SendMessage( "You cannot do that while poison is in your veins!" );
 				}
 				else if ( Caster.Hunger < 1 )
-				{	
+				{
 					Caster.SendMessage( "You are starving to death and cannot do that!" );
 				}
 				else if ( Caster.Thirst < 1 )
-				{	
+				{
 					Caster.SendMessage( "You are dying of thirst and cannot do that!" );
 				}
 				else

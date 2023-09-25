@@ -8,7 +8,7 @@ namespace Server.Spells.Fifth
 	public class BladeSpiritsSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
-				"Blade Spirits", "In Jux Hur Ylem", 
+				"Blade Spirits", "In Jux Hur Ylem",
 				266,
 				9040,
 				false,

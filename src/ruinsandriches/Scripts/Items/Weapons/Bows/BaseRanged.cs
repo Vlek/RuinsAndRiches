@@ -24,14 +24,14 @@ namespace Server.Items
 		private Timer m_RecoveryTimer; // so we don't start too many timers
 		private bool m_Balanced;
 		private int m_Velocity;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public bool Balanced
 		{
 			get{ return m_Balanced; }
 			set{ m_Balanced = value; InvalidateProperties(); }
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Velocity
 		{

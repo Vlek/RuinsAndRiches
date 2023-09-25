@@ -32,7 +32,7 @@ namespace Server.Items
 
 			list.Add( 1070722, "The Legendary Smithing Hammer");
 			list.Add( 1049644, "Can Only Be Used At The Dragon Head Forge");
-        } 
+        }
 
 		public GodSmithing( Serial serial ) : base( serial )
 		{
@@ -78,7 +78,7 @@ namespace Server.Items
 
 			list.Add( 1070722, "The Legendary Sewing Scissors");
 			list.Add( 1049644, "Can Only Be Used At The Enchanted Spinning Wheel");
-        } 
+        }
 
 		public GodSewing( Serial serial ) : base( serial )
 		{
@@ -123,7 +123,7 @@ namespace Server.Items
 
 			list.Add( 1070722, "The Legendary Alchemy Bottle");
 			list.Add( 1049644, "Can Only Be Used At The Golden Alchemist");
-        } 
+        }
 
 		public GodBrewing( Serial serial ) : base( serial )
 		{

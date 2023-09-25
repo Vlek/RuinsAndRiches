@@ -7,7 +7,7 @@ using Server.Multis;
 using Server.Targeting;
 
 namespace Server.Engines.Apiculture
-{	
+{
 	public class apiBeeHiveMainGump : Gump
 	{
 		apiBeeHive m_hive;
@@ -20,10 +20,10 @@ namespace Server.Engines.Apiculture
 			Disposable=true;
 			Dragable=true;
 			Resizable=false;
-			
+
 			AddPage(0);
 			AddBackground(37, 26, 205, 161, 3600);
-			
+
 			//vines
 			AddItem(12, 91, 3307);
 			AddItem(11, 24, 3307);
@@ -46,13 +46,13 @@ namespace Server.Engines.Apiculture
 			AddItem(45, 148, 3336);
 			AddItem(44, 49, 5154);
 			AddItem(46, 100, 6884);
-			
+
 			//corner boxes
 			AddImage(34, 20, 210);
 			AddImage(228, 20, 210);
 			AddImage(34, 172, 210);
 			AddImage(228, 172, 210);
-			
+
 			//boxes around status icons
 			AddImage(58, 71, 212);  //infestation
 			AddImage(58, 96, 212);  //disease
@@ -64,7 +64,7 @@ namespace Server.Engines.Apiculture
 			AddLabel(190, 72, 0x481,  hive.potPoison.ToString() );   //poison
 			AddLabel(190, 96, 0x481,  hive.potCure.ToString() );     //cure
 			AddLabel(190, 121, 0x481, hive.potHeal.ToString() );     //heal
-			AddLabel(190, 146, 0x481, hive.potStrength.ToString() ); //strength	
+			AddLabel(190, 146, 0x481, hive.potStrength.ToString() ); //strength
 
 			//status labels
 			switch( hive.ParasiteLevel )  //parasites
@@ -95,10 +95,10 @@ namespace Server.Engines.Apiculture
 				case ResourceStatus.VeryHigh: AddLabel(81, 145, 52, @"+"); break;
 				case ResourceStatus.TooHigh : AddLabel(81, 145, 37, @"+"); break;
 			}
-			
+
 			//corner labels
 			AddLabel(40, 20, 0x481, ((int)hive.HiveStage).ToString() ); //top left (stage)
-			
+
 			//last growth
 			switch( m_hive.LastGrowth )
 			{
@@ -108,7 +108,7 @@ namespace Server.Engines.Apiculture
 				case HiveGrowthIndicator.LowResources  : AddLabel(234, 20, 52, "!"); break; //yellow !
 				case HiveGrowthIndicator.Grown         : AddLabel(234, 20, 92, "+"); break; //blue +
 			}
-			
+
 			AddLabel(40, 172, 0x481, "?"); //help
 			AddLabel(232, 172, 37, @"\");   //destroy
 			AddItem(214, 176, 6256, 0);  //destroy
@@ -126,7 +126,7 @@ namespace Server.Engines.Apiculture
 				case HiveHealth.Sickly: AddLabel(116, 146, 52, "Sickly"); break;
 				case HiveHealth.Healthy: AddLabel(116, 146, 67, "Healthy"); break;
 				case HiveHealth.Thriving: AddLabel(116, 146, 92, "Thriving"); break;
-			}  
+			}
 
 			//resource
 			AddButton(58, 46, 212, 212, (int)Buttons.butResource, GumpButtonType.Reply, 0);
@@ -290,13 +290,13 @@ namespace Server.Engines.Apiculture
 			AddBackground(37, 133, 205, 54, 3600);
 			AddBackground(37, 67, 205, 80, 3600);
 			AddBackground(37, 26, 205, 55, 3600);
-			
-			
+
+
 			AddItem(12, 91, 3307);
 			AddItem(11, 24, 3307);
 			AddItem(206, 87, 3307);
 			AddItem(205, 20, 3307);
-			
+
 			AddItem(76, 99, 5154);
 			AddItem(149, 97, 2540);
 
@@ -318,23 +318,23 @@ namespace Server.Engines.Apiculture
 			else
 			{
 				AddLabel(113, 97, 0x481, m_hive.Wax.ToString() );
-			}			
+			}
 
 			AddLabel(110, 43, 92, "Production");  //title
 
 			AddItem(44, 47, 6256);
 			AddItem(191, 151, 2540);
-			
+
 			AddItem(42, 153, 5154);
 
 			AddImage(162, 96, 212);
 			AddImage(90, 96, 212);
-			
+
 			AddButton(204, 150, 212, 212, (int)Buttons.butHoney, GumpButtonType.Reply, 0);
 			AddButton(57, 43, 212, 212, (int)Buttons.butExit, GumpButtonType.Reply, 0);
 			AddButton(56, 150, 212, 212, (int)Buttons.butWax, GumpButtonType.Reply, 0);
 		}
-		
+
 		public enum Buttons
 		{
 			butHoney = 1,
@@ -508,27 +508,27 @@ namespace Server.Engines.Apiculture
 			Disposable=true;
 			Dragable=true;
 			Resizable=false;
-			
+
 			AddPage(0);
-			
+
 			AddBackground(37, 26, 205, 137, 3600);
-			
+
 			AddItem(11, 20, 3307);
 			AddItem(205, 20, 3307);
 			AddItem(12, 65, 3307);
 			AddItem(206, 69, 3307);
 
 			AddLabel(84, 43, 92, "Destory the hive?");
-					
+
 			AddItem(73, 68, 2330);
-			AddItem(160, 68, 5359);	
-			
+			AddItem(160, 68, 5359);
+
 			AddImage(131, 74, 5601);  //arrow
 
 			AddButton(83, 114, 1150, 1152, (int)Buttons.butCancel, GumpButtonType.Reply, 0);
 			AddButton(166, 115, 1153, 1155, (int)Buttons.butOkay, GumpButtonType.Reply, 0);
 		}
-		
+
 		public enum Buttons
 		{
 			butCancel = 1,

@@ -21,9 +21,9 @@ namespace Server.Items
 		private int m_DefaultIndex;
 		private SecureLevel m_Level;
 		private Mobile m_Crafter;
-		
+
 		private DateTime m_NextUse;
-		
+
 		private List<Mobile> m_Openers = new List<Mobile>();
 
 		[CommandProperty( AccessLevel.GameMaster )]
@@ -86,7 +86,7 @@ namespace Server.Items
 				m_MaxCharges = value;
 			}
 		}
-		
+
 		public List<Mobile> Openers
 		{
 			get
@@ -276,7 +276,7 @@ namespace Server.Items
 			if ( m_Description != null && m_Description.Length > 0 )
 				list.Add( m_Description );
 		}
-		
+
 		public override bool OnDragLift( Mobile from )
 		{
 			if ( from.HasGump( typeof( RunebookGump ) ) )
@@ -284,16 +284,16 @@ namespace Server.Items
 				from.SendLocalizedMessage( 500169 ); // You cannot pick that up.
 				return false;
 			}
-			
+
 			foreach ( Mobile m in m_Openers )
 				if ( IsOpen( m ) )
 				{
 					m.CloseGump( typeof( RunebookGump ) );
 					m.SendSound( 0x55 );
 				}
-				
+
 			m_Openers.Clear();
-			
+
 			return true;
 		}
 
@@ -326,7 +326,7 @@ namespace Server.Items
 
 				from.CloseGump( typeof( RunebookGump ) );
 				from.SendGump( new RunebookGump( from, this ) );
-				
+
 				m_Openers.Add( from );
 				from.SendSound( 0x55 );
 			}

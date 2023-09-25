@@ -58,7 +58,7 @@ namespace Server.Items
 			set {
 				if ( base.Locked != value ) {
 					base.Locked = value;
-					
+
 					if ( !value )
 						StartResetTimer();
 				}
@@ -228,13 +228,13 @@ namespace Server.Items
 
 		public enum TreasureLevel
 		{
-			Level1, 
-			Level2, 
-			Level3, 
-			Level4, 
+			Level1,
+			Level2,
+			Level3,
+			Level4,
 			Level5,
 			Level6,
-		}; 
+		};
 
 		private class TreasureResetTimer : Timer
 		{

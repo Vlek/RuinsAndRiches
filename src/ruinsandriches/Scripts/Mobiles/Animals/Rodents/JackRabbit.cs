@@ -51,20 +51,20 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override int GetAttackSound() 
-		{ 
-			return 0xC9; 
-		} 
+		public override int GetAttackSound()
+		{
+			return 0xC9;
+		}
 
-		public override int GetHurtSound() 
-		{ 
-			return 0xCA; 
-		} 
+		public override int GetHurtSound()
+		{
+			return 0xCA;
+		}
 
-		public override int GetDeathSound() 
-		{ 
-			return 0xCB; 
-		} 
+		public override int GetDeathSound()
+		{
+			return 0xCB;
+		}
 
 		public override void Serialize(GenericWriter writer)
 		{

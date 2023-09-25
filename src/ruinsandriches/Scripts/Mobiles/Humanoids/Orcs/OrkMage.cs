@@ -3,11 +3,11 @@ using Server;
 using Server.Misc;
 using Server.Items;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "an orcish corpse" )] 
-	public class OrkMage : BaseCreature 
-	{ 
+namespace Server.Mobiles
+{
+	[CorpseName( "an orcish corpse" )]
+	public class OrkMage : BaseCreature
+	{
 		public override int BreathPhysicalDamage{ get{ return 0; } }
 		public override int BreathFireDamage{ get{ if ( YellHue < 2 ){ return 100; } else { return 0; } } }
 		public override int BreathColdDamage{ get{ if ( YellHue == 3 ){ return 100; } else { return 0; } } }
@@ -21,14 +21,14 @@ namespace Server.Mobiles
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 2 ); }
 		public override double BreathDamageScalar{ get{ return 0.4; } }
 
-		[Constructable] 
-		public OrkMage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public OrkMage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			SpeechHue = Utility.RandomTalkHue();
 
-			if ( this.Female = Utility.RandomBool() ) 
-			{ 
-				Body = 606; 
+			if ( this.Female = Utility.RandomBool() )
+			{
+				Body = 606;
 				Name = NameList.RandomName( "ork_female" );
 				switch ( Utility.RandomMinMax( 0, 5 ) )
 				{
@@ -41,10 +41,10 @@ namespace Server.Mobiles
 				}
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				Body = 605; 
+			}
+			else
+			{
+				Body = 605;
 				Name = NameList.RandomName( "ork_male" );
 				switch ( Utility.RandomMinMax( 0, 5 ) )
 				{

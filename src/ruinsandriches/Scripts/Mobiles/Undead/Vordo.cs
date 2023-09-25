@@ -12,10 +12,10 @@ using Server.Engines.PartySystem;
 namespace Server.Mobiles
 {
 	[CorpseName( "a ghostly essence" )]
-	public class Vordo : BaseCreature 
-	{ 
-		[Constructable] 
-		public Vordo() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+	public class Vordo : BaseCreature
+	{
+		[Constructable]
+		public Vordo() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Body = 400;
 			Name = "Vordo";
@@ -223,7 +223,7 @@ namespace Server.Items
 		{
 			string world = Worlds.GetMyWorld( from.Map, from.Location, from.X, from.Y );
 
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This spell must be in your backpack to use." );
 			}

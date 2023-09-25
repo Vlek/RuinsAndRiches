@@ -122,7 +122,7 @@ namespace Server.Items
 	public class RingOfFire : Item
 	{
 		public double lasts;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public double Lasts
 		{
@@ -143,8 +143,8 @@ namespace Server.Items
 			Name = "magical fire";
 			Light = LightType.Circle300;
 			this.lasts = time;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this, lasts ); 
-			thisTimer.Start(); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this, lasts );
+			thisTimer.Start();
 		}
 
 		public RingOfFire(Serial serial) : base(serial)
@@ -176,25 +176,25 @@ namespace Server.Items
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item, Double lasts ) : base( TimeSpan.FromSeconds( lasts ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item, Double lasts ) : base( TimeSpan.FromSeconds( lasts ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					i_item.Delete();
 				}
-			} 
+			}
 		}
 	}
 }

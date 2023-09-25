@@ -1446,7 +1446,7 @@ namespace Server.Mobiles
 				{
 					loc = target.Location;
 					map = target.Map;
-				} 
+				}
 				else
 				{
 					bool validLocation = false;
@@ -1978,7 +1978,7 @@ namespace Server.Mobiles
 				{
 					if ( bc.HitsMaxSeed >= 0 )
 						bc.HitsMaxSeed = (int)( bc.HitsMaxSeed + ( bc.HitsMaxSeed * HitsBuff ) );
-					
+
 					bc.RawStr = (int)( bc.RawStr + ( bc.RawStr * StrBuff ) );
 					bc.RawInt = (int)( bc.RawInt + ( bc.RawInt * IntBuff ) );
 					bc.RawDex = (int)( bc.RawDex + ( bc.RawDex * DexBuff ) );
@@ -2084,7 +2084,7 @@ namespace Server.Mobiles
 			Region reg = Region.Find( this.Location, this.Map );
 
 			if ( this is Xurtzar || this is Surtaz || this is Vulcrum || this is Arachnar || this is CaddelliteDragon ){ Heat = 4; } // TIME LORD TRIAL CREATURES GET HP BUFF
-			
+
 			// BARDS TALE TWEAKS
 			if ( reg.IsPartOf( "Mangar's Tower" ) && this.Fame >= 5000 ){ Heat = 1; }
 			else if ( reg.IsPartOf( "Mangar's Chamber" ) && this.Fame >= 5000 ){ Heat = 1; }
@@ -2097,18 +2097,18 @@ namespace Server.Mobiles
 
 			if ( this.Map == Map.IslesDread && Utility.RandomMinMax( 1, 4 ) == 1 ) // SOME ANIMALS ARE AGGRESSIVE ON THE ISLES OF DREAD
 			{
-				if (	this is WhiteTiger || 
-						this is WhiteTigerRiding || 
-						this is PolarBear || 
-						this is WhiteWolf || 
-						this is SnowLeopard || 
-						this is Mammoth || 
-						this is Boar || 
-						this is Panda || 
-						this is PandaRiding || 
-						this is Bull || 
-						this is Gorilla || 
-						this is Panther || 
+				if (	this is WhiteTiger ||
+						this is WhiteTigerRiding ||
+						this is PolarBear ||
+						this is WhiteWolf ||
+						this is SnowLeopard ||
+						this is Mammoth ||
+						this is Boar ||
+						this is Panda ||
+						this is PandaRiding ||
+						this is Bull ||
+						this is Gorilla ||
+						this is Panther ||
 						this is GreyWolf ){
 
 					AI = AIType.AI_Melee;
@@ -2217,23 +2217,23 @@ namespace Server.Mobiles
 
 			if ( Utility.RandomMinMax( 1, 4 ) == 1 && Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( this.Map, this.Location ) ) ) // FOR HORSE RIDERS
 			{
-				if (	this is Adventurers || 
-						this is Berserker || 
-						this is Minstrel || 
-						this is Rogue || 
-						this is EvilMage || 
-						this is EvilMageLord || 
-						this is Brigand || 
-						this is Executioner || 
-						this is Monks || 
-						this is ElfBerserker || 
-						this is ElfMage || 
-						this is ElfRogue || 
-						this is ElfMinstrel || 
-						this is ElfMonks || 
-						this is OrkWarrior || 
-						this is OrkMage || 
-						this is OrkRogue || 
+				if (	this is Adventurers ||
+						this is Berserker ||
+						this is Minstrel ||
+						this is Rogue ||
+						this is EvilMage ||
+						this is EvilMageLord ||
+						this is Brigand ||
+						this is Executioner ||
+						this is Monks ||
+						this is ElfBerserker ||
+						this is ElfMage ||
+						this is ElfRogue ||
+						this is ElfMinstrel ||
+						this is ElfMonks ||
+						this is OrkWarrior ||
+						this is OrkMage ||
+						this is OrkRogue ||
 						this is OrkMonks )
 				{
 
@@ -2375,7 +2375,7 @@ namespace Server.Mobiles
 						staff.Name = "sorcerer staff";
 						AddItem( staff );
 
-					Body = 0x190; 
+					Body = 0x190;
 					Title = "the sorcerer";
 					BaseSoundID = 0x47D;
 
@@ -2386,7 +2386,7 @@ namespace Server.Mobiles
 					}
 					else if ( this is EvilMage && Home.X == 6277 && Home.Y == 2099 )
 					{
-						Body = 0x191; 
+						Body = 0x191;
 						Name = "Bane";
 						Title = "the sorceress";
 						BaseSoundID = 0x4B0;
@@ -2600,7 +2600,7 @@ namespace Server.Mobiles
 				else if ( this is Stirge ){ this.Name = "a mynock"; this.Body = 742; }
 				else if ( this is BloodElemental )
 				{
-					this.AddItem( new LighterSource() ); 
+					this.AddItem( new LighterSource() );
 					if ( this.X > 954 && this.Y > 3771 && this.X < 976 && this.Y < 3793 ) { this.Name = "a coolant elemental"; this.Hue = 0xB73; }
 					else { this.Name = "a contaminated elemental"; this.Hue = 0xBAD; }
 				}
@@ -3177,7 +3177,7 @@ namespace Server.Mobiles
 
 						BaseArmor bones = (BaseArmor)bonearmor;
 						bones.Durability = ArmorDurabilityLevel.Indestructible;
-						bones.ProtectionLevel = ArmorProtectionLevel.Invulnerability; 
+						bones.ProtectionLevel = ArmorProtectionLevel.Invulnerability;
 						bones.FireBonus = 8;
 						bones.Attributes.ReflectPhysical = reflect;
 						bones.Hue = 0xB85;
@@ -3579,7 +3579,7 @@ namespace Server.Mobiles
 
 				if ( cashgrab > 0 )
 				{
-					if (	(Region.Find( this.Location, this.Map )).IsPartOf( "the Ancient Crash Site" ) || 
+					if (	(Region.Find( this.Location, this.Map )).IsPartOf( "the Ancient Crash Site" ) ||
 							(Region.Find( this.Location, this.Map )).IsPartOf( "the Ancient Sky Ship" ) )
 					{
 						int xormite = (int)(cashgrab/3);
@@ -4044,7 +4044,7 @@ namespace Server.Mobiles
 
 			if ( (feathers == 0 && wool == 0 && meat == 0 && hides == 0 && scales == 0 && furs == 0) || Summoned || IsBonded || corpse.Animated )
 			{
-				if ( corpse.Animated ) 
+				if ( corpse.Animated )
 					corpse.SendLocalizedMessageTo( from, 500464 );	// Use this on corpses to carve away meat and hide
 				else
 				from.SendLocalizedMessage( 500485 ); // You see nothing useful to carve from the corpse.
@@ -4219,19 +4219,19 @@ namespace Server.Mobiles
 					from.CriminalAction( true );
 			}
 
-			if ( 	( corpse.m_Owner is DemonOfTheSea ) || 
-					( corpse.m_Owner is BloodDemon ) || 
-					( corpse.m_Owner is Devil ) || 
-					( corpse.m_Owner is TitanPyros ) || 
-					( corpse.m_Owner is Balron ) || 
-					( corpse.m_Owner is Fiend ) || 
-					( corpse.m_Owner is Archfiend ) || 
-					( corpse.m_Owner is LesserDemon ) || 
-					( corpse.m_Owner is Xurtzar ) || 
-					( corpse.m_Owner is FireDemon ) || 
-					( corpse.m_Owner is DeepSeaDevil ) || 
-					( corpse.m_Owner is Daemon ) || 
-					( corpse.m_Owner is DaemonTemplate ) || 
+			if ( 	( corpse.m_Owner is DemonOfTheSea ) ||
+					( corpse.m_Owner is BloodDemon ) ||
+					( corpse.m_Owner is Devil ) ||
+					( corpse.m_Owner is TitanPyros ) ||
+					( corpse.m_Owner is Balron ) ||
+					( corpse.m_Owner is Fiend ) ||
+					( corpse.m_Owner is Archfiend ) ||
+					( corpse.m_Owner is LesserDemon ) ||
+					( corpse.m_Owner is Xurtzar ) ||
+					( corpse.m_Owner is FireDemon ) ||
+					( corpse.m_Owner is DeepSeaDevil ) ||
+					( corpse.m_Owner is Daemon ) ||
+					( corpse.m_Owner is DaemonTemplate ) ||
 					( corpse.m_Owner is BlackGateDemon ) )
 			{
 				if ( 90 < Utility.Random( 100 ) ){ DemonSkin goods = new DemonSkin(); goods.Amount = Utility.RandomMinMax( 1, 3 ); corpse.DropItem(goods); }
@@ -4248,66 +4248,66 @@ namespace Server.Mobiles
 			{
 				if ( 95 < Utility.Random( 100 ) ){ TrollSkin goods = new TrollSkin(); goods.Amount = Utility.RandomMinMax( 1, 2 ); corpse.DropItem(goods); }
 			}
-			if ( ( corpse.m_Owner is GoldenSerpent ) || ( corpse.m_Owner is BloodSnake ) || ( corpse.m_Owner is SilverSerpent ) || ( corpse.m_Owner is JungleViper ) || ( corpse.m_Owner is IceSerpent ) || 
+			if ( ( corpse.m_Owner is GoldenSerpent ) || ( corpse.m_Owner is BloodSnake ) || ( corpse.m_Owner is SilverSerpent ) || ( corpse.m_Owner is JungleViper ) || ( corpse.m_Owner is IceSerpent ) ||
 				( corpse.m_Owner is GiantSerpent ) || ( corpse.m_Owner is GiantSnake ) || ( corpse.m_Owner is SeaSnake ) || ( corpse.m_Owner is LavaSerpent ) || ( corpse.m_Owner is LargeSnake ) || ( corpse.m_Owner is GiantAdder ) )
 			{
 				if ( 95 < Utility.Random( 100 ) ){ SerpentSkin goods = new SerpentSkin(); goods.Amount = Utility.RandomMinMax( 1, 2 ); corpse.DropItem(goods); }
 			}
-			if ( 	( corpse.m_Owner is AncientWyrm ) || 
-					( corpse.m_Owner is LavaDragon ) || 
-					( corpse.m_Owner is BottleDragon ) || 
-					( corpse.m_Owner is SeaDragon ) || 
-					( corpse.m_Owner is DeepSeaDragon ) || 
-					( corpse.m_Owner is Dragon ) || 
-					( corpse.m_Owner is Dragons ) || 
-					( corpse.m_Owner is Dragoon ) || 
-					( corpse.m_Owner is RidingDragon ) || 
-					( corpse.m_Owner is DeepSeaDragon ) || 
-					( corpse.m_Owner is SeaDragon ) || 
-					( corpse.m_Owner is BlackDragon ) || 
-					( corpse.m_Owner is AsianDragon ) || 
-					( corpse.m_Owner is PrimevalFireDragon ) || 
-					( corpse.m_Owner is PrimevalGreenDragon ) || 
-					( corpse.m_Owner is PrimevalNightDragon ) || 
-					( corpse.m_Owner is PrimevalRedDragon ) || 
-					( corpse.m_Owner is PrimevalRoyalDragon ) || 
-					( corpse.m_Owner is PrimevalRunicDragon ) || 
-					( corpse.m_Owner is PrimevalSeaDragon ) || 
-					( corpse.m_Owner is ReanimatedDragon ) || 
-					( corpse.m_Owner is VampiricDragon ) || 
-					( corpse.m_Owner is PrimevalAbysmalDragon ) || 
-					( corpse.m_Owner is PrimevalAmberDragon ) || 
-					( corpse.m_Owner is PrimevalBlackDragon ) || 
-					( corpse.m_Owner is PrimevalDragon ) || 
-					( corpse.m_Owner is PrimevalSilverDragon ) || 
-					( corpse.m_Owner is PrimevalVolcanicDragon ) || 
-					( corpse.m_Owner is PrimevalStygianDragon ) || 
-					( corpse.m_Owner is GemDragon ) || 
-					( corpse.m_Owner is DragonKing ) || 
-					( corpse.m_Owner is VolcanicDragon ) || 
-					( corpse.m_Owner is RadiationDragon ) || 
-					( corpse.m_Owner is CrystalDragon ) || 
-					( corpse.m_Owner is VoidDragon ) || 
-					( corpse.m_Owner is ElderDragon ) || 
-					( corpse.m_Owner is BlueDragon ) || 
-					( corpse.m_Owner is SlasherOfVoid ) || 
-					( corpse.m_Owner is GreenDragon ) || 
-					( corpse.m_Owner is WhiteDragon ) || 
-					( corpse.m_Owner is ZombieDragon ) || 
-					( corpse.m_Owner is NightWyrm ) || 
-					( corpse.m_Owner is JungleWyrm ) || 
-					( corpse.m_Owner is DesertWyrm ) || 
-					( corpse.m_Owner is MountainWyrm ) || 
-					( corpse.m_Owner is OnyxWyrm ) || 
-					( corpse.m_Owner is EmeraldWyrm ) || 
-					( corpse.m_Owner is AmethystWyrm ) || 
-					( corpse.m_Owner is SapphireWyrm ) || 
-					( corpse.m_Owner is GarnetWyrm ) || 
-					( corpse.m_Owner is TopazWyrm ) || 
-					( corpse.m_Owner is RubyWyrm ) || 
-					( corpse.m_Owner is SpinelWyrm ) || 
-					( corpse.m_Owner is Wyrms ) || 
-					( corpse.m_Owner is QuartzWyrm ) || 
+			if ( 	( corpse.m_Owner is AncientWyrm ) ||
+					( corpse.m_Owner is LavaDragon ) ||
+					( corpse.m_Owner is BottleDragon ) ||
+					( corpse.m_Owner is SeaDragon ) ||
+					( corpse.m_Owner is DeepSeaDragon ) ||
+					( corpse.m_Owner is Dragon ) ||
+					( corpse.m_Owner is Dragons ) ||
+					( corpse.m_Owner is Dragoon ) ||
+					( corpse.m_Owner is RidingDragon ) ||
+					( corpse.m_Owner is DeepSeaDragon ) ||
+					( corpse.m_Owner is SeaDragon ) ||
+					( corpse.m_Owner is BlackDragon ) ||
+					( corpse.m_Owner is AsianDragon ) ||
+					( corpse.m_Owner is PrimevalFireDragon ) ||
+					( corpse.m_Owner is PrimevalGreenDragon ) ||
+					( corpse.m_Owner is PrimevalNightDragon ) ||
+					( corpse.m_Owner is PrimevalRedDragon ) ||
+					( corpse.m_Owner is PrimevalRoyalDragon ) ||
+					( corpse.m_Owner is PrimevalRunicDragon ) ||
+					( corpse.m_Owner is PrimevalSeaDragon ) ||
+					( corpse.m_Owner is ReanimatedDragon ) ||
+					( corpse.m_Owner is VampiricDragon ) ||
+					( corpse.m_Owner is PrimevalAbysmalDragon ) ||
+					( corpse.m_Owner is PrimevalAmberDragon ) ||
+					( corpse.m_Owner is PrimevalBlackDragon ) ||
+					( corpse.m_Owner is PrimevalDragon ) ||
+					( corpse.m_Owner is PrimevalSilverDragon ) ||
+					( corpse.m_Owner is PrimevalVolcanicDragon ) ||
+					( corpse.m_Owner is PrimevalStygianDragon ) ||
+					( corpse.m_Owner is GemDragon ) ||
+					( corpse.m_Owner is DragonKing ) ||
+					( corpse.m_Owner is VolcanicDragon ) ||
+					( corpse.m_Owner is RadiationDragon ) ||
+					( corpse.m_Owner is CrystalDragon ) ||
+					( corpse.m_Owner is VoidDragon ) ||
+					( corpse.m_Owner is ElderDragon ) ||
+					( corpse.m_Owner is BlueDragon ) ||
+					( corpse.m_Owner is SlasherOfVoid ) ||
+					( corpse.m_Owner is GreenDragon ) ||
+					( corpse.m_Owner is WhiteDragon ) ||
+					( corpse.m_Owner is ZombieDragon ) ||
+					( corpse.m_Owner is NightWyrm ) ||
+					( corpse.m_Owner is JungleWyrm ) ||
+					( corpse.m_Owner is DesertWyrm ) ||
+					( corpse.m_Owner is MountainWyrm ) ||
+					( corpse.m_Owner is OnyxWyrm ) ||
+					( corpse.m_Owner is EmeraldWyrm ) ||
+					( corpse.m_Owner is AmethystWyrm ) ||
+					( corpse.m_Owner is SapphireWyrm ) ||
+					( corpse.m_Owner is GarnetWyrm ) ||
+					( corpse.m_Owner is TopazWyrm ) ||
+					( corpse.m_Owner is RubyWyrm ) ||
+					( corpse.m_Owner is SpinelWyrm ) ||
+					( corpse.m_Owner is Wyrms ) ||
+					( corpse.m_Owner is QuartzWyrm ) ||
 					( corpse.m_Owner is WhiteWyrm ) )
 			{
 				if ( 95 < Utility.Random( 100 ) ){ DragonSkin goods = new DragonSkin(); goods.Amount = Utility.RandomMinMax( 1, 3 ); corpse.DropItem(goods); }
@@ -4846,8 +4846,8 @@ namespace Server.Mobiles
 			{
 				/* Cooked */
 				typeof( Bacon ), typeof( CookedBird ), typeof( Sausage ),
-				typeof( Ham ), typeof( Ribs ), typeof( LambLeg ), typeof( FoodDriedBeef ), 
-				typeof( ChickenLeg ), typeof( FoodBeefJerky ), 
+				typeof( Ham ), typeof( Ribs ), typeof( LambLeg ), typeof( FoodDriedBeef ),
+				typeof( ChickenLeg ), typeof( FoodBeefJerky ),
 
 				/* Uncooked */
 				typeof( RawBird ), typeof( RawRibs ), typeof( RawLambLeg ),
@@ -4863,9 +4863,9 @@ namespace Server.Mobiles
 				typeof( HoneydewMelon ), typeof( YellowGourd ), typeof( GreenGourd ),
 				typeof( Banana ), typeof( Bananas ), typeof( Lemon ), typeof( Lime ),
 				typeof( Dates ), typeof( Grapes ), typeof( Peach ), typeof( Pear ),
-				typeof( Apple ), typeof( Watermelon ), typeof( Squash ), typeof ( SmallWatermelon ), 
-				typeof( Cantaloupe ), typeof( Carrot ), typeof( Cabbage ), typeof ( FoodImpBerry ), 
-				typeof( Onion ), typeof( Lettuce ), typeof( Pumpkin ), typeof( FoodToadStool ), 
+				typeof( Apple ), typeof( Watermelon ), typeof( Squash ), typeof ( SmallWatermelon ),
+				typeof( Cantaloupe ), typeof( Carrot ), typeof( Cabbage ), typeof ( FoodImpBerry ),
+				typeof( Onion ), typeof( Lettuce ), typeof( Pumpkin ), typeof( FoodToadStool ),
 				typeof( Tomato ), typeof( FoodPotato ), typeof( Corn ), typeof( Acorn )
 			};
 
@@ -4985,20 +4985,20 @@ namespace Server.Mobiles
 
 		public virtual bool CheckFeed( Mobile from, Item dropped )
 		{
-			if ( 	!IsDeadPet && 
-					!( this is FrankenPorter ) && 
-					!( this is FrankenFighter ) && 
-					!( this is GolemPorter ) && 
-					!( this is AerialServant ) && 
-					!( this is Robot ) && 
-					!( this is Robot ) && 
-					!( this is PackBeast ) && 
-					!( this is HenchmanFamiliar ) && 
-					!( this is HenchmanFighter ) && 
-					!( this is HenchmanMonster ) && 
-					!( this is HenchmanWizard ) && 
-					!( this is HenchmanArcher ) && 
-					Controlled && 
+			if ( 	!IsDeadPet &&
+					!( this is FrankenPorter ) &&
+					!( this is FrankenFighter ) &&
+					!( this is GolemPorter ) &&
+					!( this is AerialServant ) &&
+					!( this is Robot ) &&
+					!( this is Robot ) &&
+					!( this is PackBeast ) &&
+					!( this is HenchmanFamiliar ) &&
+					!( this is HenchmanFighter ) &&
+					!( this is HenchmanMonster ) &&
+					!( this is HenchmanWizard ) &&
+					!( this is HenchmanArcher ) &&
+					Controlled &&
 					( ControlMaster == from || IsPetFriend( from ) )
 				)
 			{
@@ -5721,7 +5721,7 @@ namespace Server.Mobiles
 		{
 			if ( attacker is PlayerMobile && attacker.RaceID > 0 && attacker.RaceMakeSounds && attacker.RaceAttackSound > 0 && Utility.RandomBool() )
 				attacker.PlaySound( attacker.RaceAttackSound );
-			
+
 			if ( CanDispel( this, attacker ) )
 				Dispel( attacker );
 
@@ -5754,7 +5754,7 @@ namespace Server.Mobiles
 					attacker.AddToBackpack( new Gold( coins ) );
 
 				string stole = "stolen";
-				switch ( Utility.RandomMinMax( 0, 7 ) ) 
+				switch ( Utility.RandomMinMax( 0, 7 ) )
 				{
 					case 1: stole = "swiped"; break;
 					case 2: stole = "grabbed"; break;
@@ -7344,16 +7344,16 @@ namespace Server.Mobiles
 
 		public bool SeaEnemy()
 		{
-			if ( this.WhisperHue == 999 || 
-				 this is PirateCrewMage || 
-				 this is PirateCrewBow || 
-				 this is PirateCrew || 
-				 this is PirateCaptain || 
-				 this is ElfPirateCrewMage || 
-				 this is ElfPirateCrewBow || 
-				 this is ElfPirateCrew || 
-				 this is ElfPirateCaptain || 
-				 this is BaseSailor || 
+			if ( this.WhisperHue == 999 ||
+				 this is PirateCrewMage ||
+				 this is PirateCrewBow ||
+				 this is PirateCrew ||
+				 this is PirateCaptain ||
+				 this is ElfPirateCrewMage ||
+				 this is ElfPirateCrewBow ||
+				 this is ElfPirateCrew ||
+				 this is ElfPirateCaptain ||
+				 this is BaseSailor ||
 				 this is BasePirate )
 				return true;
 
@@ -7399,7 +7399,7 @@ namespace Server.Mobiles
 				}
 
 				string bSay = "Help! Guards!";
-				this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( bSay ) ); 
+				this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( bSay ) );
 			}
 
 			Mobile slayer = this.FindMostRecentDamager(true);
@@ -7461,9 +7461,9 @@ namespace Server.Mobiles
 
 				if ( slayer.Skills[SkillName.Forensics].Value >= Utility.RandomMinMax( 30, 150 ) )
 				{
-					if ( 	this is MummyGiant || this is FleshGolem || this is ReanimatedDragon || this is AncientFleshGolem || this is SkinGolem || 
-							this is Ghoul || this is AquaticGhoul || this is DiseasedMummy || this is Mummy || this is MummyLord || this is RottingCorpse || 
-							this is WalkingCorpse || this is ZombieGiant || this is FrozenCorpse || this is ZombieGargoyle || this is SeaZombie || 
+					if ( 	this is MummyGiant || this is FleshGolem || this is ReanimatedDragon || this is AncientFleshGolem || this is SkinGolem ||
+							this is Ghoul || this is AquaticGhoul || this is DiseasedMummy || this is Mummy || this is MummyLord || this is RottingCorpse ||
+							this is WalkingCorpse || this is ZombieGiant || this is FrozenCorpse || this is ZombieGargoyle || this is SeaZombie ||
 							this is ZombieMage || this is Zombie )
 					{
 						PackItem( new EmbalmingFluid() );
@@ -8225,24 +8225,24 @@ namespace Server.Mobiles
 		public static bool isVortex( Mobile m )
 		{
 			if (
-				m is ElementalFiendWater || 
-				m is ElementalFiendFire || 
-				m is ElementalFiendEarth || 
-				m is ElementalFiendAir || 
-				m is ElementalSpiritAir || 
-				m is ElementalSpiritFire || 
-				m is ElementalSpiritWater || 
-				m is ElementalSpiritEarth || 
-				m is BladeSpirits || 
-				m is DevilPact || 
-				m is SummonSnakes || 
-				m is ElementalFiendWater || 
-				m is GasCloud || 
-				m is DeathVortex || 
-				m is SummonedTreefellow || 
-				m is EnergyVortex || 
-				m is SummonSkeleton || 
-				m is Swarm || 
+				m is ElementalFiendWater ||
+				m is ElementalFiendFire ||
+				m is ElementalFiendEarth ||
+				m is ElementalFiendAir ||
+				m is ElementalSpiritAir ||
+				m is ElementalSpiritFire ||
+				m is ElementalSpiritWater ||
+				m is ElementalSpiritEarth ||
+				m is BladeSpirits ||
+				m is DevilPact ||
+				m is SummonSnakes ||
+				m is ElementalFiendWater ||
+				m is GasCloud ||
+				m is DeathVortex ||
+				m is SummonedTreefellow ||
+				m is EnergyVortex ||
+				m is SummonSkeleton ||
+				m is Swarm ||
 				m is SummonDragon
 			)
 				return true;
@@ -8269,53 +8269,53 @@ namespace Server.Mobiles
 
 			creature.SummonMaster = caster;
 
-			if (	creature is SummonedAirElemental || 
-					creature is SummonedAirElementalGreater || 
-					creature is SummonedDaemon || 
-					creature is SummonedDaemonGreater || 
-					creature is SummonedEarthElemental || 
-					creature is SummonedEarthElementalGreater || 
-					creature is SummonedFireElemental || 
-					creature is SummonedFireElementalGreater || 
-					creature is SummonedWaterElemental || 
-					creature is SummonedWaterElementalGreater || 
-					creature is ElementalCalledFire || 
-					creature is ElementalCalledWater || 
-					creature is ElementalCalledEarth || 
-					creature is ElementalCalledAir || 
-					creature is ElementalSummonIce || 
-					creature is ElementalSummonMagma || 
-					creature is ElementalSummonLightning || 
-					creature is ElementalSummonEnt || 
-					creature is ElementalLordWater || 
-					creature is ElementalLordAir || 
-					creature is ElementalLordEarth || 
-					creature is ElementalLordFire || 
-					creature is AncientFleshGolem || 
-					creature is FleshGolem || 
-					creature is BloodElemental || 
-					creature is ElectricalElemental || 
-					creature is GemElemental || 
-					creature is IceElemental || 
-					creature is MudElemental || 
-					creature is PoisonElemental || 
-					creature is WeedElemental || 
-					creature is ToxicElemental || 
-					creature is SummonedTreefellow || 
-					creature is BoneKnight || 
-					creature is Devil || 
-					creature is BlackBear || 
-					creature is BrownBear || 
-					creature is DireWolf || 
-					creature is WolfDire || 
-					creature is Panther || 
-					creature is Tiger || 
-					creature is TigerRiding || 
-					creature is TimberWolf || 
-					creature is Scorpion || 
-					creature is GiantSpider || 
-					creature is HugeLizard || 
-					creature is GiantToad || 
+			if (	creature is SummonedAirElemental ||
+					creature is SummonedAirElementalGreater ||
+					creature is SummonedDaemon ||
+					creature is SummonedDaemonGreater ||
+					creature is SummonedEarthElemental ||
+					creature is SummonedEarthElementalGreater ||
+					creature is SummonedFireElemental ||
+					creature is SummonedFireElementalGreater ||
+					creature is SummonedWaterElemental ||
+					creature is SummonedWaterElementalGreater ||
+					creature is ElementalCalledFire ||
+					creature is ElementalCalledWater ||
+					creature is ElementalCalledEarth ||
+					creature is ElementalCalledAir ||
+					creature is ElementalSummonIce ||
+					creature is ElementalSummonMagma ||
+					creature is ElementalSummonLightning ||
+					creature is ElementalSummonEnt ||
+					creature is ElementalLordWater ||
+					creature is ElementalLordAir ||
+					creature is ElementalLordEarth ||
+					creature is ElementalLordFire ||
+					creature is AncientFleshGolem ||
+					creature is FleshGolem ||
+					creature is BloodElemental ||
+					creature is ElectricalElemental ||
+					creature is GemElemental ||
+					creature is IceElemental ||
+					creature is MudElemental ||
+					creature is PoisonElemental ||
+					creature is WeedElemental ||
+					creature is ToxicElemental ||
+					creature is SummonedTreefellow ||
+					creature is BoneKnight ||
+					creature is Devil ||
+					creature is BlackBear ||
+					creature is BrownBear ||
+					creature is DireWolf ||
+					creature is WolfDire ||
+					creature is Panther ||
+					creature is Tiger ||
+					creature is TigerRiding ||
+					creature is TimberWolf ||
+					creature is Scorpion ||
+					creature is GiantSpider ||
+					creature is HugeLizard ||
+					creature is GiantToad ||
 					creature is Slime )
 			{
 				creature.ControlOrder = OrderType.Guard;
@@ -8616,10 +8616,10 @@ namespace Server.Mobiles
 			if ( CanBreath && DateTime.Now >= m_NextBreathTime ) // tested: controlled dragons do breath fire, what about summoned skeletal dragons?
 			{
 				Mobile target = this.Combatant;
-				
+
 				if( target != null && target.Alive && !target.IsDeadBondedPet && CanBeHarmful( target ) && target.Map == this.Map && !IsDeadBondedPet && target.InRange( this, BreathRange ) && InLOS( target ) && !BardPacified )
 				{
-					if( ( DateTime.Now - m_NextBreathTime ) < TimeSpan.FromSeconds( 30 ) ) 
+					if( ( DateTime.Now - m_NextBreathTime ) < TimeSpan.FromSeconds( 30 ) )
 					{
 						BreathStart( target );
 					}
@@ -8647,9 +8647,9 @@ namespace Server.Mobiles
 			}
 
 			if ( ( this is TownGuards || ( this is BaseVendor && this.WhisperHue != 999 && !((this.GetType()).IsAssignableFrom(typeof(PlayerVendor))) && !(this is PlayerBarkeeper) ) ) // GUARDS/MERCHANTS SHOULD MOVE BACK TO THEIR POST
-				&& 
+				&&
 				( Math.Abs( this.X-this.Home.X ) > 8 || Math.Abs( this.Y-this.Home.Y ) > 8 || Math.Abs( this.Z-this.Home.Z ) > 8 )
-				&& 
+				&&
 				Combatant == null )
 			{
 				this.Location = this.Home;

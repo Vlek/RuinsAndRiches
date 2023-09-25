@@ -181,7 +181,7 @@ namespace Server.Items
 			Hue = 0xE;
 		}
 
-		
+
 
 		public override void OnDoubleClick( Mobile from )
 		{

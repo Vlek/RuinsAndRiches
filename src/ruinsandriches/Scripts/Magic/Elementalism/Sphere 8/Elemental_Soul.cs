@@ -16,18 +16,18 @@ namespace Server.Spells.Elementalism
                 245,
                 9062
             );
- 
+
         public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
- 
+
         public Elemental_Soul_Spell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
         {
         }
- 
+
         public override void OnCast()
         {
             Caster.Target = new InternalTarget( this );
         }
- 
+
         public void Target( Mobile m )
         {
 			string elm = ElementalSpell.GetElement( Caster );
@@ -112,10 +112,10 @@ namespace Server.Spells.Elementalism
             else if ( m is PlayerMobile && CheckBSequence( m, true ) )
             {
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x3039, 10, 16, hue, 0 );
- 
+
                 m.CloseGump( typeof( ResurrectGump ) );
                 m.SendGump( new ResurrectGump( m, Caster ) );
             }
@@ -124,10 +124,10 @@ namespace Server.Spells.Elementalism
 				BaseCreature pet = (BaseCreature)m;
 				Mobile master = pet.GetMaster();
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x3039, 10, 16, hue, 0 );
- 
+
                 master.CloseGump(typeof(PetResurrectGump));
                 master.SendGump(new PetResurrectGump(master, pet));
             }
@@ -206,16 +206,16 @@ namespace Server.Spells.Elementalism
 			}
             FinishSequence();
 		}
- 
+
         private class InternalTarget : Target
         {
             private Elemental_Soul_Spell m_Owner;
- 
+
             public InternalTarget( Elemental_Soul_Spell owner ) : base( 1, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )
@@ -227,7 +227,7 @@ namespace Server.Spells.Elementalism
                     m_Owner.ItemTarget( (Item)o );
                 }
             }
- 
+
             protected override void OnTargetFinish( Mobile from )
             {
                 m_Owner.FinishSequence();

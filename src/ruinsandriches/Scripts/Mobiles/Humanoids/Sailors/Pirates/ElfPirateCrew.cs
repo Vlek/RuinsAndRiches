@@ -7,7 +7,7 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a pirate corpse" )] 
+	[CorpseName( "a pirate corpse" )]
 	public class ElfPirateCrew : BaseCreature
 	{
 		[Constructable]
@@ -35,7 +35,7 @@ namespace Server.Mobiles
 
             AddItem( new ElvenBoots( 0x6F8 ) );
             Item armor = new LeatherChest(); armor.Hue = 0x6F8; AddItem( armor );
-			AddItem( new FancyShirt( 0 ) );	
+			AddItem( new FancyShirt( 0 ) );
 
             switch ( Utility.Random( 2 ))
 			{

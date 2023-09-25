@@ -56,9 +56,9 @@ namespace Server.Mobiles
 		public override Poison PoisonImmune{ get{ return Poison.Deadly; } }
 		public override Poison HitPoison{ get{ return Poison.Greater; } }
 
-		public override int GetIdleSound() { return 1557; } 
-		public override int GetAngerSound() { return 1554; } 
-		public override int GetHurtSound() { return 1556; } 
+		public override int GetIdleSound() { return 1557; }
+		public override int GetAngerSound() { return 1554; }
+		public override int GetHurtSound() { return 1556; }
 		public override int GetDeathSound()	{ return 1555; }
 
 		public override bool CanRummageCorpses{ get{ return true; } }

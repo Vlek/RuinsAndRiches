@@ -36,7 +36,7 @@ namespace Server.Misc
 				m is ElfBoatPirateBard ||
 				m is ElfBoatPirateMage ||
 				m is BoatPirateArcher ||
-				m is BoatPirateBard 
+				m is BoatPirateBard
 				)
 				{ Skip = false; }
 
@@ -44,7 +44,7 @@ namespace Server.Misc
 
 			return Skip;
 		}
-		
+
 		public static void CheckTarget( Mobile m, Mobile target, Item box )
 		{
 			string explorer = PlayerSettings.GetQuestInfo( m, "FishingQuest" );

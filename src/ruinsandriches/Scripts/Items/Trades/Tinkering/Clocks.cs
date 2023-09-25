@@ -227,7 +227,7 @@ namespace Server.Items
 	public class DDRelicClock1 : Clock
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -286,7 +286,7 @@ namespace Server.Items
 	public class DDRelicClock2 : Clock
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -345,7 +345,7 @@ namespace Server.Items
 	public class DDRelicClock3 : Clock
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 

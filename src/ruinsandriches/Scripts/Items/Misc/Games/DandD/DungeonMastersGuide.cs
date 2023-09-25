@@ -50,9 +50,9 @@ namespace Server.Items
 				AddHtml( 15, 50, 675, 20, @"<BODY><BASEFONT Color=#DC7676>This book contains a listing of almost all of the dungeons in the many world of " + MyServerSettings.ServerName() + ".</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.SendSound( 0x55 );
 			}
 		}

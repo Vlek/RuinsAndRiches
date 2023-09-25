@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Network;
 using System.Collections;
 using System.Globalization;

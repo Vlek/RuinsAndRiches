@@ -126,7 +126,7 @@ namespace Server.Mobiles
 		{
 			if ( !IsBodyMod || RaceID > 0 )
 				return;
-			
+
 			Name = "a bake kitsune";
 			Title = null;
 			BodyMod = 0;
@@ -165,7 +165,7 @@ namespace Server.Mobiles
 				 * Damage: 2 hps per second for 5 seconds
 				 * End cliloc: 1070824
 				 */
-			
+
 				ExpireTimer timer = (ExpireTimer)m_Table[defender];
 
 				if ( timer != null )
@@ -183,7 +183,7 @@ namespace Server.Mobiles
 		}
 
 		private static Hashtable m_Table = new Hashtable();
-	
+
 		private class ExpireTimer : Timer
 		{
 			private Mobile m_Mobile;
@@ -222,7 +222,7 @@ namespace Server.Mobiles
 				}
 			}
 		}
-		
+
 		public override int GetAngerSound()
 		{
 			return 0x4DE;

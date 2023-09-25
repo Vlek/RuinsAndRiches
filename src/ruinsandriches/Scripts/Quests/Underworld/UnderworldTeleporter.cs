@@ -22,7 +22,7 @@ namespace Server.Items
 			Name = "underworld teleporter";
 			PointDest = new Point3D(1320, 605, 57);
 			MapDest = Map.Underworld;
-			GatewayTimer thisTimer = new GatewayTimer( this ); 
+			GatewayTimer thisTimer = new GatewayTimer( this );
 			thisTimer.Start();
 		}
 
@@ -62,22 +62,22 @@ namespace Server.Items
 		}
 	}
 
-	public class GatewayTimer : Timer 
-	{ 
-		private Item i_item; 
-		public GatewayTimer( Item item ) : base( TimeSpan.FromMinutes( 5.0 ) ) 
-		{ 
-			Priority = TimerPriority.OneMinute; 
-			i_item = item; 
-		} 
+	public class GatewayTimer : Timer
+	{
+		private Item i_item;
+		public GatewayTimer( Item item ) : base( TimeSpan.FromMinutes( 5.0 ) )
+		{
+			Priority = TimerPriority.OneMinute;
+			i_item = item;
+		}
 
-		protected override void OnTick() 
-		{ 
+		protected override void OnTick()
+		{
 			if (( i_item != null ) && ( !i_item.Deleted ))
 			{
 				UnderworldGateway.CloseDoor( i_item );
 				i_item.Delete();
 			}
-		} 
+		}
 	}
 }

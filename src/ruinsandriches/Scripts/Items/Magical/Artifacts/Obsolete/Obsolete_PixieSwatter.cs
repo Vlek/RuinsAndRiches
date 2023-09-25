@@ -16,7 +16,7 @@ namespace Server.Items
 			Hue = 0x8A;
 			WeaponAttributes.HitPoisonArea = 75;
 			Attributes.WeaponSpeed = 30;
-            
+
 			WeaponAttributes.UseBestSkill = 1;
 			WeaponAttributes.ResistFireBonus = 12;
 			WeaponAttributes.ResistEnergyBonus = 12;
@@ -47,7 +47,7 @@ namespace Server.Items
 
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

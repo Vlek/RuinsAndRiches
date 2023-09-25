@@ -12,7 +12,7 @@ namespace Server.Items
 		public string Relic_Owner { get { return RelicOwner; } set { RelicOwner = value; InvalidateProperties(); } }
 
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -66,7 +66,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, RelicOwner);
-        } 
+        }
 
         public EmptyCanopicJar( Serial serial ) : base( serial )
 		{

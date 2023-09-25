@@ -2132,7 +2132,7 @@ namespace Server.Items
 
 			if ( version == 0 && Weight == 15 )
 				Weight = -1;
-			
+
 			GumpID = 0x10C;
 		}
 	}

@@ -52,15 +52,15 @@ namespace Server.Mobiles
 		[Constructable]
 		public Citizens() : base( AIType.AI_Citizen, FightMode.None, 10, 1, 0.2, 0.4 )
 		{
-			if ( Female = Utility.RandomBool() ) 
-			{ 
-				Body = 401; 
+			if ( Female = Utility.RandomBool() )
+			{
+				Body = 401;
 				Name = NameList.RandomName( "female" );
 			}
-			else 
-			{ 
-				Body = 400; 			
-				Name = NameList.RandomName( "male" ); 
+			else
+			{
+				Body = 400;
+				Name = NameList.RandomName( "male" );
 				FacialHairItemID = Utility.RandomList( 0, 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
 			}
 
@@ -70,7 +70,7 @@ namespace Server.Mobiles
 
 			switch ( Utility.Random( 3 ) )
 			{
-				case 0: 
+				case 0:
 					Server.Misc.IntelligentAction.DressUpWizards( this, false );
 					CitizenType = 1;
 					switch ( Utility.RandomMinMax( 0, 5 ) )
@@ -889,19 +889,19 @@ namespace Server.Mobiles
 					{
 						Spellbook tome = new MySpellbook();
 						CitizenCost = Utility.RandomMinMax( ((tome.SpellCount+1)*500), ((tome.SpellCount+1)*800) );
-						PackItem( tome ); 
+						PackItem( tome );
 					}
 					else if ( spellbook == 2 )
 					{
 						Spellbook tome = new MyNecromancerSpellbook();
 						CitizenCost = Utility.RandomMinMax( ((tome.SpellCount+1)*800), ((tome.SpellCount+1)*1000) );
-						PackItem( tome ); 
+						PackItem( tome );
 					}
 					else
 					{
 						Spellbook tome = new MyNecromancerSpellbook();
 						CitizenCost = Utility.RandomMinMax( ((tome.SpellCount+1)*600), ((tome.SpellCount+1)*900) );
-						PackItem( tome ); 
+						PackItem( tome );
 					}
 				}
 				else
@@ -1163,7 +1163,7 @@ namespace Server.Mobiles
 				holding = cultInfo.ToTitleCase(holding);
 			}
 
-			if ( holding != "" ){ CitizenPhrase = CitizenPhrase + "<br><br>" + holding; } 
+			if ( holding != "" ){ CitizenPhrase = CitizenPhrase + "<br><br>" + holding; }
 			else if ( CitizenService == 5 ){ CitizenPhrase = null; }
 			else if ( ( CitizenService >= 2 && CitizenService <= 8 ) && CitizenType == 1 ){ CitizenPhrase = null; }
 		}
@@ -1215,17 +1215,17 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			if ( !(this is Humanoid || (this is HouseVisitor && (this.Body == 9 || this.Body == 320))) ){ list.Add( new SpeechGumpEntry( from, this ) ); }
-		} 
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -1803,7 +1803,7 @@ namespace Server.Mobiles
 			if ( Utility.RandomBool() )
 				return true;
 
-			if ( (Region.Find( spot.Location, spot.Map )).Name == "the Lyceum" ) 
+			if ( (Region.Find( spot.Location, spot.Map )).Name == "the Lyceum" )
 				return true;
 
 			return false;
@@ -1910,7 +1910,7 @@ namespace Server.Mobiles
 			public override void OnResponse( NetState sender, RelayInfo info )
 			{
 				Mobile from = sender.Mobile;
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 		}
 

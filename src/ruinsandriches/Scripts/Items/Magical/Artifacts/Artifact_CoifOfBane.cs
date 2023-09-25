@@ -28,7 +28,7 @@ namespace Server.Items
 			base.Serialize( writer );
 			writer.Write( (int) 2 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

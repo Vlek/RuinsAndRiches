@@ -372,7 +372,7 @@ namespace Server.Movement
 				new List<Item>(), new List<Item>(),
 				new List<Item>(), new List<Item>(),
 			};
-		
+
 		private List<Sector> m_Sectors = new List<Sector>();
 
 		private bool Check( Map map, Mobile m, List<Item> items, int x, int y, int startTop, int startZ, bool canSwim, bool cantWalk, out int newZ )

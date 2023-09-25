@@ -124,7 +124,7 @@ namespace Server.Engines.BulkOrders
 			if ( IsChildOf( from.Backpack ) )
 			{
 				if ( Server.Misc.MyServerSettings.AllowMacroResources() )
-				{ 
+				{
 					from.SendGump( new LargeBODGump( from, this ) );
 				}
 				else
@@ -225,7 +225,7 @@ namespace Server.Engines.BulkOrders
 							SmallBOD.AmountMax = this.AmountMax;
 							SmallBOD.Graphic = m_Entries[i].Details.Graphic;
 							SmallBOD.Material = this.Material;
-							SmallBOD.RequireExceptional = this.RequireExceptional;						
+							SmallBOD.RequireExceptional = this.RequireExceptional;
 							from.AddToBackpack(SmallBOD);
 						}
 					}

@@ -68,7 +68,7 @@ namespace Server.Items
 		private bool m_OfferInsurance = true; // Does Dealer offer insurance with ace showing?
 		private bool m_Resplits = true; // Can a player split again? True = 3 resplits (4 hands allowed)
 		private SplitAces m_SplitAces = SplitAces.Once; // Can player's split aces?
-		private bool m_BJSplitAces21 = true; // Split Ace and 10 count as 21 and not BJ! 
+		private bool m_BJSplitAces21 = true; // Split Ace and 10 count as 21 and not BJ!
 		private bool m_BJSplitAcesPaysEven = true; // A blackjack from split aces pays even money
 		private bool m_PlayerCardsFaceUp = true; // Player cards are dealt face up.
 		private bool m_DealerCardsFaceUp = false; // Dealer cards are dealt face up.
@@ -179,7 +179,7 @@ namespace Server.Items
 			}
 		}
 
-		
+
 		private void BlackJackOffline(int error)
 		{
 			if (m_InUseBy != null)
@@ -191,7 +191,7 @@ namespace Server.Items
 			SecurityCamera(0, text);
 			m_ErrorCode = error;
 			Active = false;
-		
+
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -218,7 +218,7 @@ namespace Server.Items
 						m_OfferInsurance = false; // Does Dealer offer insurance with ace showing?
 						m_Resplits = true; // Can a player split again? True = 3 resplits (4 hands allowed)
 						m_SplitAces = SplitAces.No; // Can player's split aces?
-						m_BJSplitAces21 = true; // Split Ace and 10 count as 21 and not BJ! 
+						m_BJSplitAces21 = true; // Split Ace and 10 count as 21 and not BJ!
 						m_BJSplitAcesPaysEven = true; // A blackjack from split aces pays even money
 						m_PlayerCardsFaceUp = false; // Player cards are dealt face up.
 						m_DealerCardsFaceUp = false; // Dealer cards are dealt face up.
@@ -234,9 +234,9 @@ namespace Server.Items
 					case Casino.Reno2:
 						m_CasinoName = "Reno Hilton";
 						m_DoubleAfterSplit = true;
-						m_DealerHitsSoft17 = true; 
-						m_DealerTakesPush = false; 
-						m_OfferInsurance = true; 
+						m_DealerHitsSoft17 = true;
+						m_DealerTakesPush = false;
+						m_OfferInsurance = true;
 						m_Resplits = true;
 						m_SplitAces = SplitAces.NoLimit;
 						m_BJSplitAces21 = true;
@@ -398,7 +398,7 @@ namespace Server.Items
 						m_MaxBet = BetValues.bet1000;
 						OrigHue = 46;
 						break;
-						
+
 					case Casino.Palms8:
 						m_CasinoName = "The Palms";
 						m_DoubleAfterSplit = true;
@@ -471,7 +471,7 @@ namespace Server.Items
 			set { m_CardSounds = value; }
 		}
 
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public VerboseType SecurityChatter
 		{
@@ -611,7 +611,7 @@ namespace Server.Items
 			set { m_ErrorCode = value; InvalidateProperties(); }
 		}
 
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public short NumberOfDecks
 		{
@@ -626,7 +626,7 @@ namespace Server.Items
 				carddeck = new CardDeck(m_NumberOfDecks, 0);
 			}
 		}
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool ContinuousShuffle
 		{
@@ -647,7 +647,7 @@ namespace Server.Items
 			get { return m_DealerCardsFaceUp; }
 			set { m_DealerCardsFaceUp = value; }
 		}
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool DealerTakesPush
 		{
@@ -682,7 +682,7 @@ namespace Server.Items
 			get { return m_Resplits; }
 			set { m_Resplits = value; }
 		}
-	
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public SplitAces SplitAcesRule
 		{
@@ -696,7 +696,7 @@ namespace Server.Items
 			get { return m_BJSplitAces21; }
 			set { m_BJSplitAces21 = value; }
 		}
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public bool BJSplitAPaysEven
 		{
@@ -725,7 +725,7 @@ namespace Server.Items
 			set { m_DealerDelay = value; }
 		}
 
-		
+
 		[Constructable]
 		public CEOBlackJack(): base(20437)
 		{
@@ -755,7 +755,7 @@ namespace Server.Items
 		public override void Serialize(GenericWriter writer)
 		{
 			base.Serialize(writer);
-			writer.Write((int)0); // version 
+			writer.Write((int)0); // version
 			writer.Write(m_Active);
 			writer.Write((int)m_Casino);
 			writer.Write(m_CasinoName);
@@ -950,7 +950,7 @@ namespace Server.Items
                     string tempName = m_InUseBy != null ? m_InUseBy.Name : "Someone";
 					if (m_InUseBy != null && m_InUseBy != from && m_OnCredit != 0)
 						DoCashOut(m_InUseBy); // Previous user disconnected or something? Give them their cash before releasing.
-                    from.SendMessage("{0} has left this table too long, it is yours to play.", tempName); 
+                    from.SendMessage("{0} has left this table too long, it is yours to play.", tempName);
                     InUseBy = from;
 					m_BJInfo.status = GameStatus.Waiting;
 					m_BJInfo.totalhands = m_BJInfo.largesthand = 0;
@@ -973,7 +973,7 @@ namespace Server.Items
 			{
 				m_OnCredit = 100000;
 			}
-			m_HelpGump = false;		
+			m_HelpGump = false;
 			from.CloseGump(typeof(BlackJackCardGump));
 			from.SendGump(new BlackJackCardGump(from, this, message));
 		}
@@ -1015,7 +1015,7 @@ namespace Server.Items
 			m_TotalPlays++;
 			m_Won = m_SplitCount = m_SplitAceCount;
 			m_BJInfo.status = GameStatus.PlayerTurn;
-			m_BJInfo.totalhands = m_BJInfo.largesthand = 2;	
+			m_BJInfo.totalhands = m_BJInfo.largesthand = 2;
 			m_BJInfo.askInsurance = false;
 			m_BJInfo.splitOn = false;
 			m_BJInfo.doubleOn = false;
@@ -1241,7 +1241,7 @@ namespace Server.Items
 					return;
 				}
 			}
-			else 
+			else
 			{
 				try
 				{
@@ -1265,7 +1265,7 @@ namespace Server.Items
 				this.PublicOverheadMessage(0, (this.Hue == 907 ? 0 : this.Hue), false, text);
 			}
 			text = String.Format("{0} is cashing out {1} Gold!", from.Name, credit);
-			SecurityCamera(m_OnCredit >= 10000 ? 0 : 1, text);			
+			SecurityCamera(m_OnCredit >= 10000 ? 0 : 1, text);
 			from.PlaySound(52);
 			from.PlaySound(53);
 			from.PlaySound(54);
@@ -1397,7 +1397,7 @@ namespace Server.Items
 				from.PlaySound(85);
 			Stand(from);
 		}
-		
+
 		private BJStruct Double(Mobile from, int bet, BJStruct bj)
 		{
 			bj.HandInfo[bj.activehand].bet += bet;
@@ -1536,7 +1536,7 @@ namespace Server.Items
 		private static BJStruct Split(Mobile from, int bet, BJStruct bj)
 		{
 			short nexthand = bj.totalhands;
-			bj.HandInfo[nexthand].card[0] = bj.HandInfo[bj.activehand].card[1]; 
+			bj.HandInfo[nexthand].card[0] = bj.HandInfo[bj.activehand].card[1];
 			bj.HandInfo[bj.activehand].card[1] = -1;
 			bj.HandInfo[bj.activehand].totalcards = 1;
 			bj.HandInfo[bj.activehand] = EvalHand(bj.HandInfo[bj.activehand]);
@@ -1624,7 +1624,7 @@ namespace Server.Items
 					{
 						message += " And it's a push!";
 						m_BJInfo.HandInfo[1].status = HandStatus.Push;
-						m_OnCredit += (int)(m_BJInfo.HandInfo[1].bet); // and now even money	
+						m_OnCredit += (int)(m_BJInfo.HandInfo[1].bet); // and now even money
 					}
 				}
 				else
@@ -1879,7 +1879,7 @@ namespace Server.Items
 					else
 					{
 						m_BJInfo.HandInfo[h].status = HandStatus.Win;
-						Credit(m_BJInfo.HandInfo[h].bet * 2, m_BJInfo.HandInfo[h].bet, 
+						Credit(m_BJInfo.HandInfo[h].bet * 2, m_BJInfo.HandInfo[h].bet,
 							m_BJInfo.HandInfo[h].bet);
 					}
 				}
@@ -2456,7 +2456,7 @@ namespace Server.Gumps
 			AddImageTiled(x, y, cardsizex, cardsizey, 2624);
 			AddImageTiled(x + 2, y + 2, cardsizex - 4, cardsizey - 4, 9384); // or 9304
 			AddItem(x + 10, y + 7, 5367);
-		}		
+		}
 
 		private void DrawCard(int x, int y, int card)
 		{

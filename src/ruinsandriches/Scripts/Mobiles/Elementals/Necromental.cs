@@ -66,7 +66,7 @@ namespace Server.Mobiles
 			AddLoot( LootPack.Rich, 3 );
 			AddLoot( LootPack.Gems, 2 );
 		}
-		
+
 		public override void OnDeath( Container c )
 		{
 			base.OnDeath( c );
@@ -164,7 +164,7 @@ namespace Server.Items
 			public override void OnResponse( Mobile from, string text )
 			{
 				m_Sign.Name = text;
-				from.SendMessage("The grave stone has been changed."); 
+				from.SendMessage("The grave stone has been changed.");
 			}
 		}
 

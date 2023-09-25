@@ -24,7 +24,7 @@ namespace Server.Items
 
 			else // BOOK
 			{
-				switch ( Utility.RandomMinMax( 0, 13 ) ) 
+				switch ( Utility.RandomMinMax( 0, 13 ) )
 				{
 					case 0: ItemID = 3643; break;
 					case 1: ItemID = 3834; break;
@@ -42,7 +42,7 @@ namespace Server.Items
 					case 13: ItemID = 8901; break;
 				}
 
-				switch ( Utility.RandomMinMax( 0, 4 ) ) 
+				switch ( Utility.RandomMinMax( 0, 4 ) )
 				{
 					case 0: Hue = Utility.RandomNeutralHue(); break;
 					case 1: Hue = Utility.RandomRedHue(); break;

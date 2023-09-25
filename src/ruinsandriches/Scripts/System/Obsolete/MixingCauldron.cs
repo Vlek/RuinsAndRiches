@@ -527,17 +527,17 @@ namespace Server.Items
 				{
 					from.SendGump( new NecroticGump( from, m_Pot ) );
 				}
-				else if ( !itemz.IsChildOf( from.Backpack ) ) 
+				else if ( !itemz.IsChildOf( from.Backpack ) )
 				{
 					from.SendMessage( "That must be in your backpack to use." );
 				}
 				else if ( ( from.Skills[SkillName.Forensics].Value < 40 ) && ( m_Stage != 7 ) )
 				{
-					from.SendMessage( "You need at least a 40 skill in forensics to concoct anything with this!" ); 
+					from.SendMessage( "You need at least a 40 skill in forensics to concoct anything with this!" );
 				}
 				else if ( ( !burning ) && ( m_Stage != 7 ) )
 				{
-					from.SendMessage( "You need a heat source to cook with this cauldron!" ); 
+					from.SendMessage( "You need a heat source to cook with this cauldron!" );
 				}
 				else if ( m_Stage == 1 && obj is BottleOfParts )
 				{
@@ -728,7 +728,7 @@ namespace Server.Items
 						if ( m_Pot.MyReagent > 1 ){ nLow = (int)(nHigh/2); }
 						int potionType = Utility.RandomMinMax( nLow, nHigh )+0;
 						string potionName = "";
-						bool sMk1 = false; bool sMk2 = false; bool sMk3 = false; bool sMk4 = false; bool sMk5 = false; bool sMk6 = false; bool sMk7 = false; bool sMk8 = false; bool sMk9 = false; bool sMk10 = false; bool sMk11 = false; bool sMk12 = false; bool sMk13 = false; bool sMk14 = false; bool sMk15 = false; 
+						bool sMk1 = false; bool sMk2 = false; bool sMk3 = false; bool sMk4 = false; bool sMk5 = false; bool sMk6 = false; bool sMk7 = false; bool sMk8 = false; bool sMk9 = false; bool sMk10 = false; bool sMk11 = false; bool sMk12 = false; bool sMk13 = false; bool sMk14 = false; bool sMk15 = false;
 
 						if ( m_Pot.MyRecipe01 != "" && m_Pot.MyRecipe01 != null )
 						{

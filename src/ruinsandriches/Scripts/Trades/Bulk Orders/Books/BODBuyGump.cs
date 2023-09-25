@@ -75,7 +75,7 @@ namespace Server.Engines.BulkOrders
 									pv.HoldGold += price;
 									m_From.AddToBackpack( item );
 									m_From.SendLocalizedMessage( 1045152 ); // The bulk order deed has been placed in your backpack.
-									
+
 									if ( m_Book.Entries.Count / 5 < m_Book.ItemCount )
 									{
 										m_Book.ItemCount--;

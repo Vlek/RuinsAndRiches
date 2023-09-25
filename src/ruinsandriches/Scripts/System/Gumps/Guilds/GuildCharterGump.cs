@@ -35,7 +35,7 @@ namespace Server.Gumps
 				AddHtml( 20, 20, 510, 75, charter, true, true );
 
 			AddButton( 20, 200, 4005, 4007, 2, GumpButtonType.Reply, 0 );
-			AddHtmlLocalized( 55, 200, 300, 20, 1011122, false, false ); // Visit the guild website : 
+			AddHtmlLocalized( 55, 200, 300, 20, 1011122, false, false ); // Visit the guild website :
 
 			string website;
 

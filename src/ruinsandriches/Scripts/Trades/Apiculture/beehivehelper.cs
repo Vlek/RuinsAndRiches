@@ -46,12 +46,12 @@ namespace Server.Engines.Apiculture
 		None = 0,
 		LowResources,
 		NotHealthy,
-		Grown,	
+		Grown,
 		PopulationUp,
 		PopulationDown
 	}
 
-	
+
 
 	public class BeeHiveHelper
 	{
@@ -94,21 +94,21 @@ namespace Server.Engines.Apiculture
 
 			hive.NextCheck = DateTime.Now + CheckDelay; //update check timer
 			hive.LastGrowth = HiveGrowthIndicator.None; //reset growth indicator
-			
+
 			hive.HiveAge++;	//update age of the hive
 			hive.FindFlowersInRange(); //update flowers
 			hive.FindWaterInRange();   //update water
 
 			//apply any potions
 			hive.ApplyBenefitEffects();
-			
+
 			//apply negative effects
 			if( !hive.ApplyMaladiesEffects() )  //Dead
 				return;
 
             //update stage
 			hive.Grow();
-			
+
 			//update maladies
 			hive.UpdateMaladies();
 
@@ -125,7 +125,7 @@ namespace Server.Engines.Apiculture
 				0x184A, 0x184C, // Heating stand (left)
 				0x184E, 0x1850, // Heating stand (right)
 				0x19AA, 0x19BB,	// Veteran Reward Brazier
-				0x197A, 0x19A9, // Large Forge 
+				0x197A, 0x19A9, // Large Forge
 				0x2DD8, // Elven Forge
 				0x2DDB, 0x2DDC,	// Elven stove
 				0x398C, 0x399F, // Fire field
@@ -159,9 +159,9 @@ namespace Server.Engines.Apiculture
 				{
 					int vx = from.X + x;
 					int vy = from.Y + y;
-					
+
 					StaticTile[] tiles = map.Tiles.GetStaticTiles( vx, vy, true );
-					
+
 					for ( int i = 0; i < tiles.Length; ++i )
 					{
 						int z = tiles[i].Z;

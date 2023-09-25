@@ -81,8 +81,8 @@ namespace Server.Mobiles
 			VirtualArmor = 100;
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
 			base.GetContextMenuEntries( from, list );
 			if ( !from.Blessed )
 			{
@@ -199,7 +199,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				bool PassTest = false;
 
 				SetSpecialItemRequirement( m_Mobile );
@@ -270,7 +270,7 @@ namespace Server.Mobiles
 		{
 			if ( this.X == 798 && this.Y == 1095 && this.Map == Map.SerpentIsland )
 			{
-				this.Body = Utility.RandomList(427,191); 
+				this.Body = Utility.RandomList(427,191);
 				this.Hue = 0;
 				this.Name = "Lord Draxinusom";
 				this.Title = "the Gargoyle King";
@@ -311,7 +311,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 63 && this.Y == 2893 && this.Map == Map.SavagedEmpire )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x204D;
 				this.HairItemID = 0;
@@ -335,7 +335,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 6067 && this.Y == 344 && this.Map == Map.Lodor )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x2041;
 				this.HairItemID = 0x203C;
@@ -363,7 +363,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 5415 && this.Y == 1160 && this.Map == Map.Lodor )
 			{
-				this.Body = 9; 
+				this.Body = 9;
 				this.Hue = 0x845;
 				this.Name = "Arcadion";
 				this.Title = "the Daemon";
@@ -377,7 +377,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 2142 && this.Y == 2754 && this.Map == Map.Lodor )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0;
 				this.HairItemID = 0x203C;
@@ -405,7 +405,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 5035 && this.Y == 3830 && this.Map == Map.Sosaria )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x2041;
 				this.HairItemID = 0x203B;
@@ -437,7 +437,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 4755 && this.Y == 3978 && this.Map == Map.Sosaria )
 			{
-				this.Body = 401; 
+				this.Body = 401;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0;
 				this.HairItemID = 0x203C;
@@ -461,7 +461,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 3011 && this.Y == 951 && this.Map == Map.Sosaria )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x204B;
 				this.HairItemID = 0x203C;
@@ -489,7 +489,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 2990 && this.Y == 902 && this.Map == Map.Sosaria )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x204B;
 				this.HairItemID = 0x203C;
@@ -523,10 +523,10 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 6732 && this.Y == 1663 && this.Map == Map.Sosaria )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 
 				AddItem( new Server.Items.Boots() );
-				AddItem( new LordBlackthorneSuit()); 
+				AddItem( new LordBlackthorneSuit());
 
 				this.Name = "Lord Blackthorne";
 				this.Title = "the Ruler of Kuldar";
@@ -540,7 +540,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 3025 && this.Y == 962 && this.Map == Map.Sosaria )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x2041;
 				this.HairItemID = 0;
@@ -591,7 +591,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 5615 && this.Y == 2888 && this.Map == Map.Sosaria )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x2041;
 				this.HairItemID = 0;
@@ -673,7 +673,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 2462 && this.Y == 865 && this.Map == Map.Sosaria )
 			{
-				this.Body = 401; 
+				this.Body = 401;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0;
 				this.HairItemID = 0x203C;
@@ -718,7 +718,7 @@ namespace Server.Mobiles
 				this.MyAlignment = "good";
 				this.Direction = Direction.South;
 
-				this.Body = 401; 
+				this.Body = 401;
 				this.Hue = Utility.RandomSkinColor();
 				this.HairItemID = 0x203C;
 				this.HairHue = 0x45C;
@@ -820,7 +820,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 1604 && this.Y == 1604 && this.Map == Map.Sosaria )
 			{
-				this.Body = 401; 
+				this.Body = 401;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0;
 				this.HairItemID = 0x2049;
@@ -847,7 +847,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 4993 && this.Y == 3997 && this.Map == Map.Sosaria )
 			{
-				this.Body = 485; 
+				this.Body = 485;
 				this.Hue = 1461;
 				this.Name = "the Guardian";
 				this.MyAlignment = "evil";
@@ -861,7 +861,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 5033 && this.Y == 3750 && this.Map == Map.Sosaria )
 			{
-				this.Body = 400; 
+				this.Body = 400;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0x204C;
 				this.HairItemID = 0x203C;
@@ -889,7 +889,7 @@ namespace Server.Mobiles
 			}
 			else if ( this.X == 2648 && this.Y == 3306 && this.Map == Map.Sosaria )
 			{
-				this.Body = 401; 
+				this.Body = 401;
 				this.Hue = 0x83EA;
 				this.FacialHairItemID = 0;
 				this.HairItemID = 0x203D;
@@ -1090,7 +1090,7 @@ namespace Server.Mobiles
 			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				EpicCharacter tribute = (EpicCharacter)m_Giver;
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				bool passTest = false;
 
@@ -1437,10 +1437,10 @@ namespace Server.Mobiles
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
 		{
-			if (	( dropped is Artifact_DupresCollar && this.Name == "Dupre" ) || 
-					( dropped is Artifact_DupresShield && this.Name == "Dupre" ) || 
-					( dropped is GwennosHarp && this.Name == "Gwenno" ) || 
-					( dropped is Artifact_ShaMontorrossbow && this.Name == "Shamino" ) || 
+			if (	( dropped is Artifact_DupresCollar && this.Name == "Dupre" ) ||
+					( dropped is Artifact_DupresShield && this.Name == "Dupre" ) ||
+					( dropped is GwennosHarp && this.Name == "Gwenno" ) ||
+					( dropped is Artifact_ShaMontorrossbow && this.Name == "Shamino" ) ||
 					( dropped is IolosLute && this.Name == "Iolo" )
 				)
 			{

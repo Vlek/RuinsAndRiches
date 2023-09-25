@@ -1,23 +1,23 @@
 using System;
 using Server;
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
 using Server.Network;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "an orcish corpse" )] 
-	public class Urk : BaseCreature 
+	[CorpseName( "an orcish corpse" )]
+	public class Urk : BaseCreature
 	{
-		[Constructable] 
-		public Urk() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public Urk() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			BaseSoundID = 0x45A;
 			Hue = 0x430;
-			Body = 0x190; 
+			Body = 0x190;
 			Name = NameList.RandomName( "urk" );
 			HairItemID = 0;
 			FacialHairItemID = 0;
@@ -192,20 +192,20 @@ namespace Server.Mobiles
 			Server.Misc.IntelligentAction.PoisonVictim( defender, this );
 		}
 
-		public Urk( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public Urk( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }

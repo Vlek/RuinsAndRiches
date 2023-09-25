@@ -623,7 +623,7 @@ namespace Server.Engines.PartySystem
 		}
 
 		private void SendToStaffMessage( Mobile from, string text )
-		{	
+		{
 			Packet p = null;
 
 			foreach( NetState ns in from.GetClientsInRange( 8 ) )
@@ -745,7 +745,7 @@ namespace Server.ContextMenus
 	{
 		private Mobile m_From;
 		private Mobile m_Target;
-		
+
 		public RemoveFromPartyEntry( Mobile from, Mobile target ) : base( 0198, 12 )
 		{
 			m_From = from;
@@ -753,7 +753,7 @@ namespace Server.ContextMenus
 		}
 
 		public override void OnClick()
-		{			
+		{
 			Party p = Party.Get( m_From );
 
 			if ( p == null || p.Leader != m_From || !p.Contains( m_Target ) )

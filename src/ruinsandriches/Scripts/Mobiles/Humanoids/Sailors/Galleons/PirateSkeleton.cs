@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateSkeleton : BasePirate 
+	public class PirateSkeleton : BasePirate
 	{
 		public override Poison PoisonImmune{ get{ return Poison.Greater; } }
 
-		[Constructable] 
+		[Constructable]
 		public PirateSkeleton()
 		{
 			Name = NameList.RandomName( "goblin" );

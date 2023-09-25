@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Targeting;
 using Server.Network;
 using Server.Items;
@@ -76,7 +76,7 @@ namespace Server.Spells.Research
 				}
 
 				if ( targets.Count > 0 )
-				{						
+				{
 					for ( int i = 0; i < targets.Count; ++i )
 					{
 						Mobile m = targets[i];

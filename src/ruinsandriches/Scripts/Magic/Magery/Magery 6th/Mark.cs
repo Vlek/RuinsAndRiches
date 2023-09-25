@@ -40,7 +40,7 @@ namespace Server.Spells.Sixth
 		public void Target( RecallRune rune )
 		{
 			Region reg = Region.Find( Caster.Location, Caster.Map );
-					
+
 			if ( !Caster.CanSee( rune ) )
 			{
 				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.

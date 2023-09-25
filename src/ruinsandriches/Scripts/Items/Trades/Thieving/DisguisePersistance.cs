@@ -20,7 +20,7 @@ namespace Server.Items
 		public DisguisePersistance() : base( 1 )
 		{
 			Movable = false;
-			
+
 			if ( m_Instance == null || m_Instance.Deleted )
 				m_Instance = this;
 			else
@@ -37,15 +37,15 @@ namespace Server.Items
 			base.Serialize( writer );
 
 			writer.Write( (int) 0 ); // version
-			
+
 			int timerCount = DisguiseTimers.Timers.Count;
-			
+
 			writer.Write( timerCount );
-				
+
 			foreach ( DictionaryEntry entry in DisguiseTimers.Timers )
 			{
 				Mobile m = (Mobile)entry.Key;
-				
+
 				writer.Write( m );
 				writer.Write( ((Timer)entry.Value).Next - DateTime.Now );
 				writer.Write( m.NameMod );
@@ -63,7 +63,7 @@ namespace Server.Items
 				case 0:
 				{
 					int count = reader.ReadInt();
-									
+
 					for ( int i = 0; i < count; ++i )
 					{
 						Mobile m = reader.ReadMobile();

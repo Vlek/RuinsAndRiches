@@ -963,7 +963,7 @@ namespace Server.Items
 		public PristineDreadHorn()
 			: base( 0x315A )
 		{
-			
+
 		}
 
 		public PristineDreadHorn( Serial serial )

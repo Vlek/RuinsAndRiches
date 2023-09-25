@@ -16,7 +16,7 @@ namespace Server.Items
 					return 0x3D74;
 			}
 		}
-		
+
 		public override int UnlitItemID
 		{
 			get
@@ -27,7 +27,7 @@ namespace Server.Items
 					return 0x3D88;
 			}
 		}
-		
+
 		[Constructable]
 		public ColoredWallTorch() : base( 0x3D89 )
 		{
@@ -44,7 +44,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1049644, "Dye To Color Flame");
-        } 
+        }
 
 		public ColoredWallTorch( Serial serial ) : base( serial )
 		{

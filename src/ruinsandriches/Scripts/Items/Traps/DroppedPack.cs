@@ -13,7 +13,7 @@ namespace Server.Items
 		{
 			Name = "dropped backpack";
 			Movable = false;
-			MyTimer thisTimer = new MyTimer( this ); 
+			MyTimer thisTimer = new MyTimer( this );
 			thisTimer.Start();
 			LiftOverride = true;
 		}
@@ -36,21 +36,21 @@ namespace Server.Items
 		}
 	}
 
-	public class MyTimer : Timer 
-	{ 
-		private Item i_item; 
-		public MyTimer( Item item ) : base( TimeSpan.FromMinutes( 30.0 ) ) 
-		{ 
-			Priority = TimerPriority.OneMinute; 
-			i_item = item; 
-		} 
+	public class MyTimer : Timer
+	{
+		private Item i_item;
+		public MyTimer( Item item ) : base( TimeSpan.FromMinutes( 30.0 ) )
+		{
+			Priority = TimerPriority.OneMinute;
+			i_item = item;
+		}
 
-		protected override void OnTick() 
-		{ 
+		protected override void OnTick()
+		{
 			if (( i_item != null ) && ( !i_item.Deleted ))
 			{
 				i_item.Delete();
 			}
-		} 
+		}
 	}
 }

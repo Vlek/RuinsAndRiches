@@ -72,7 +72,7 @@ namespace Server.Items
 		[Constructable]
 		public AshTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public AshTreeSaw( int uses ) : base( CraftResource.AshTree )
@@ -106,7 +106,7 @@ namespace Server.Items
 		[Constructable]
 		public CherryTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public CherryTreeSaw( int uses ) : base( CraftResource.CherryTree )
@@ -140,7 +140,7 @@ namespace Server.Items
 		[Constructable]
 		public EbonyTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public EbonyTreeSaw( int uses ) : base( CraftResource.EbonyTree )
@@ -174,7 +174,7 @@ namespace Server.Items
 		[Constructable]
 		public GoldenOakTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public GoldenOakTreeSaw( int uses ) : base( CraftResource.GoldenOakTree )
@@ -208,7 +208,7 @@ namespace Server.Items
 		[Constructable]
 		public HickoryTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public HickoryTreeSaw( int uses ) : base( CraftResource.HickoryTree )
@@ -242,7 +242,7 @@ namespace Server.Items
 		[Constructable]
 		public MahoganyTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public MahoganyTreeSaw( int uses ) : base( CraftResource.MahoganyTree )
@@ -276,7 +276,7 @@ namespace Server.Items
 		[Constructable]
 		public OakTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public OakTreeSaw( int uses ) : base( CraftResource.OakTree )
@@ -310,7 +310,7 @@ namespace Server.Items
 		[Constructable]
 		public PineTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public PineTreeSaw( int uses ) : base( CraftResource.PineTree )
@@ -344,7 +344,7 @@ namespace Server.Items
 		[Constructable]
 		public RosewoodTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public RosewoodTreeSaw( int uses ) : base( CraftResource.RosewoodTree )
@@ -378,7 +378,7 @@ namespace Server.Items
 		[Constructable]
 		public WalnutTreeSaw() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public WalnutTreeSaw( int uses ) : base( CraftResource.WalnutTree )

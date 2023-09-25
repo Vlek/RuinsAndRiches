@@ -462,16 +462,16 @@ namespace Server.Items
 				AddHtml( 45, 78, 386, 218, @"<BODY><BASEFONT Color=#d9c781>" + sText + "</BASEFONT></BODY>", (bool)false, (bool)true);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.PlaySound( 0x249 );
 			}
 		}
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) ) 
+			if ( !IsChildOf( e.Backpack ) )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 				return;

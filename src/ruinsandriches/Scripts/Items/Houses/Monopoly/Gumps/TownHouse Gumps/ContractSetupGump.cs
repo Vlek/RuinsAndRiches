@@ -34,7 +34,7 @@ namespace Knives.TownHouses
                 case Page.Length: LengthPage(width, ref y); break;
                 case Page.Price: PricePage(width, ref y); break;
 			}
-        
+
             AddBackgroundZero(0, 0, width, y+40, 0x13BE);
         }
 
@@ -66,7 +66,7 @@ namespace Knives.TownHouses
 				AddButton( 240, y, 0x15E1, 0x15E5, "Clear All", new GumpCallback( ClearBlocks ) );
 			}
 
-			string helptext = String.Format( "   Welcome to the rental contract setup menu!  To begin, you must " + 
+			string helptext = String.Format( "   Welcome to the rental contract setup menu!  To begin, you must " +
 				"first create the area which you wish to sell.  As seen above, there are two ways to do this: " +
 				"rent the entire house, or parts of it.  As you create the area, a simple preview will show you exactly " +
 				"what area you've selected so far.  You can make all sorts of odd shapes by using multiple areas!" );
@@ -96,7 +96,7 @@ namespace Knives.TownHouses
 
 			AddHtml( 100, y+=25, 100, String.Format( "{0} total floor{1}", c_Contract.Floors > 10 ? "1" : "" + c_Contract.Floors, c_Contract.Floors == 1 || c_Contract.Floors > 10 ? "" : "s" ));
 
-			string helptext = String.Format( "   Now you will need to target the floors you wish to rent out.  " + 
+			string helptext = String.Format( "   Now you will need to target the floors you wish to rent out.  " +
 				"If you only want one floor, you can skip targeting the top floor.  Everything within the base " +
 				"and highest floor will come with the rental, and the more floors, the higher the cost later on." );
 
@@ -128,7 +128,7 @@ namespace Knives.TownHouses
 			AddHtml( 100, y+=25, 80, "Set Location");
 			AddButton( 180, y, 0x15E1, 0x15E5, "Sign Loc", new GumpCallback( SignLocSelect ) );
 
-			string helptext = String.Format( "   With this sign, the rentee will have all the powers an owner has " + 
+			string helptext = String.Format( "   With this sign, the rentee will have all the powers an owner has " +
 				"over their area.  If they use this power to demolish their rental unit, they have broken their " +
 				"contract and will not receive their security deposit.  They can also ban you from their rental home!" );
 
@@ -165,7 +165,7 @@ namespace Knives.TownHouses
             AddButton(width / 2 + 25, y + 3, 0x2716, "Lockdowns", new GumpCallback(Lockdowns));
 
 			string helptext = String.Format( "   Without giving storage, this wouldn't be much of a home!  Here you give them lockdowns " +
-				"and secures from your own home.  Use the suggest button for an idea of how much you should give.  Be very careful when " + 
+				"and secures from your own home.  Use the suggest button for an idea of how much you should give.  Be very careful when " +
 				"renting your property: if you use too much storage you begin to use storage you reserved for your clients.  " +
 				"You will receive a 48 hour warning when this happens, but after that the contract disappears!" );
 
@@ -193,7 +193,7 @@ namespace Knives.TownHouses
 			AddButton( 170, y+8, 0x985, "LengthUp", new GumpCallback( LengthUp ) );
 			AddButton( 170, y-2, 0x983, "LengthDown", new GumpCallback( LengthDown ) );
 
-			string helptext = String.Format( "   Every {0} the bank will automatically transfer the rental cost from them to you.  " + 
+			string helptext = String.Format( "   Every {0} the bank will automatically transfer the rental cost from them to you.  " +
 				"By using the arrows, you can cycle through other time periods to something better fitting your needs.", c_Contract.PriceTypeShort.ToLower() );
 
 			AddHtml( 10, y+=35, width-20, 100, helptext, false, false );
@@ -228,7 +228,7 @@ namespace Knives.TownHouses
                 AddButton(width / 2 + 60, y + 3, 0x2716, "Suggest", new GumpCallback(SuggestPrice));
             }
 
-			string helptext = String.Format( "   Now you can finalize the contract by including your price per {0}.  " + 
+			string helptext = String.Format( "   Now you can finalize the contract by including your price per {0}.  " +
 				"Once you finalize, the only way you can modify it is to dump it and start a new contract!  By " +
 				"using the suggest button, a price will automatically be figured based on the following:<BR>", c_Contract.PriceTypeShort );
 

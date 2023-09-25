@@ -1016,9 +1016,9 @@ namespace Server
 		}
 
 		/// <summary>
-		/// Overridable. Determines whether the item will show <see cref="AddWeightProperty" />. 
+		/// Overridable. Determines whether the item will show <see cref="AddWeightProperty" />.
 		/// </summary>
-		public virtual bool DisplayWeight 
+		public virtual bool DisplayWeight
 		{
 			get
 			{
@@ -1029,11 +1029,11 @@ namespace Server
 					return false;
 
 				return true;
-			} 
+			}
 		}
 
 		/// <summary>
-		/// Overridable. Displays cliloc 1072788-1072789. 
+		/// Overridable. Displays cliloc 1072788-1072789.
 		/// </summary>
 		public virtual void AddWeightProperty( ObjectPropertyList list )
 		{
@@ -1200,10 +1200,10 @@ namespace Server
 		///	{
 		///		if ( from.Int &gt;= 100 )
 		///			return true;
-		///		
+		///
 		///		return base.AllowEquipedCast( from );
 		/// }</code>
-		/// 
+		///
 		/// When placed in an Item script, the item may be cast when equiped if the <paramref name="from" /> has 100 or more intelligence. Otherwise, it will drop to their backpack.
 		/// </example>
 		public virtual bool AllowEquipedCast( Mobile from )
@@ -2769,7 +2769,7 @@ namespace Server
 				else if ( m_Parent is Mobile )
 					( m_Parent as Mobile ).UpdateTotal( sender, type, delta );
 				else if ( this.HeldBy != null )
-					( this.HeldBy as Mobile ).UpdateTotal( sender, type, delta );			
+					( this.HeldBy as Mobile ).UpdateTotal( sender, type, delta );
 			}
 		}
 
@@ -2989,7 +2989,7 @@ namespace Server
 
 		public static bool isModded( Item item )
 		{
-			if ( 
+			if (
 			item.ItemID == 0x645C || // BELT
 			item.ItemID == 0x645D || // COAT
 			item.ItemID == 0x645E || // LOIN CLOTH
@@ -3035,10 +3035,10 @@ namespace Server
 			item.ItemID == 0x6487 || // ONE-HANDED SPEAR
 			item.ItemID == 0x6488 || // ONE-HANDED SWORD
 			item.ItemID == 0x6489 || // DAGGER
-			item.ItemID == 0x648A || // CLUB 
+			item.ItemID == 0x648A || // CLUB
 			item.ItemID == 0x648B || // STAFF
 			item.ItemID == 0x648C || // POLE-ARM
-			item.ItemID == 0x648D || // BOW 
+			item.ItemID == 0x648D || // BOW
 			item.ItemID == 0x648E || // FISHING POLE
 			item.ItemID == 0x648F || // ONE-HANDED MACE
 			item.ItemID == 0x6490 || // ONE-HANDED HAMMER
@@ -3062,14 +3062,14 @@ namespace Server
 			int hue = 0;
 
 			if ( // LIGHTS
-			item.GraphicID == 0xA0F || 
-			item.GraphicID == 0xA12 || 
-			item.GraphicID == 0xA15 || 
-			item.GraphicID == 0xA17 || 
-			item.GraphicID == 0xA22 || 
-			item.GraphicID == 0xA28 || 
-			item.GraphicID == 0xF6B || 
-			item.GraphicID == 0xA18 || 
+			item.GraphicID == 0xA0F ||
+			item.GraphicID == 0xA12 ||
+			item.GraphicID == 0xA15 ||
+			item.GraphicID == 0xA17 ||
+			item.GraphicID == 0xA22 ||
+			item.GraphicID == 0xA28 ||
+			item.GraphicID == 0xF6B ||
+			item.GraphicID == 0xA18 ||
 			item.GraphicID == 0xA25 )
 			{
 				allowed = true;
@@ -3077,7 +3077,7 @@ namespace Server
 			}
 
 			if ( // KIMONO
-			item.GraphicID == 0x2783 || 
+			item.GraphicID == 0x2783 ||
 			item.GraphicID == 0x27CE )
 			{
 				allowed = true;
@@ -3085,14 +3085,14 @@ namespace Server
 			}
 
 			if ( // RED ARMOR
-			item.GraphicID == 0x27C8 || 
-			item.GraphicID == 0x27CB || 
-			item.GraphicID == 0x27D0 || 
-			item.GraphicID == 0x27D3 || 
-			item.GraphicID == 0x277D || 
-			item.GraphicID == 0x2780 || 
-			item.GraphicID == 0x2785 || 
-			item.GraphicID == 0x2788 || 
+			item.GraphicID == 0x27C8 ||
+			item.GraphicID == 0x27CB ||
+			item.GraphicID == 0x27D0 ||
+			item.GraphicID == 0x27D3 ||
+			item.GraphicID == 0x277D ||
+			item.GraphicID == 0x2780 ||
+			item.GraphicID == 0x2785 ||
+			item.GraphicID == 0x2788 ||
 			item.GraphicID == 0x278A )
 			{
 				allowed = true;
@@ -3100,7 +3100,7 @@ namespace Server
 			}
 
 			if ( // KAMISHIMO
-			item.GraphicID == 0x2799 || 
+			item.GraphicID == 0x2799 ||
 			item.GraphicID == 0x27E4 )
 			{
 				allowed = true;
@@ -3108,22 +3108,22 @@ namespace Server
 			}
 
 			if ( // BLACK ITEMS
-			item.GraphicID == 0x2AB5 || 
-			item.GraphicID == 0x27A6 || 
-			item.GraphicID == 0x27F1 || 
-			item.GraphicID == 0x63B1 || 
-			item.GraphicID == 0x2AAC || 
-			item.GraphicID == 0x3F65 || 
-			item.GraphicID == 0x3F8F || 
-			item.GraphicID == 0x0DF0 || 
-			item.GraphicID == 0x0DF1 || 
-			item.GraphicID == 0x27CD || 
-			item.GraphicID == 0x27CF || 
-			item.GraphicID == 0x27E6 || 
-			item.GraphicID == 0x27E7 || 
-			item.GraphicID == 0x2782 || 
-			item.GraphicID == 0x2784 || 
-			item.GraphicID == 0x279B || 
+			item.GraphicID == 0x2AB5 ||
+			item.GraphicID == 0x27A6 ||
+			item.GraphicID == 0x27F1 ||
+			item.GraphicID == 0x63B1 ||
+			item.GraphicID == 0x2AAC ||
+			item.GraphicID == 0x3F65 ||
+			item.GraphicID == 0x3F8F ||
+			item.GraphicID == 0x0DF0 ||
+			item.GraphicID == 0x0DF1 ||
+			item.GraphicID == 0x27CD ||
+			item.GraphicID == 0x27CF ||
+			item.GraphicID == 0x27E6 ||
+			item.GraphicID == 0x27E7 ||
+			item.GraphicID == 0x2782 ||
+			item.GraphicID == 0x2784 ||
+			item.GraphicID == 0x279B ||
 			item.GraphicID == 0x279C )
 			{
 				allowed = true;
@@ -3131,149 +3131,149 @@ namespace Server
 			}
 
 			if ( // LEATHER & WOOD
-			item.GraphicID == 0x64B9 || 
-			item.GraphicID == 0x64BA || 
-			item.GraphicID == 0x64BB || 
-			item.GraphicID == 0x64BC || 
-			item.GraphicID == 0x64BD || 
-			item.GraphicID == 0x2667 || 
-			item.GraphicID == 0x2668 || 
-			item.GraphicID == 0x266B || 
-			item.GraphicID == 0x266C || 
-			item.GraphicID == 0x266D || 
-			item.GraphicID == 0x266E || 
-			item.GraphicID == 0x2671 || 
-			item.GraphicID == 0x26C2 || 
-			item.GraphicID == 0x26C3 || 
-			item.GraphicID == 0x26CC || 
-			item.GraphicID == 0x26CD || 
-			item.GraphicID == 0x2D1E || 
-			item.GraphicID == 0x2D1F || 
-			item.GraphicID == 0x2D25 || 
-			item.GraphicID == 0x2D2A || 
-			item.GraphicID == 0x2D2B || 
-			item.GraphicID == 0x2D31 || 
-			item.GraphicID == 0x63A2 || 
-			item.GraphicID == 0x63A3 || 
-			item.GraphicID == 0x63A4 || 
-			item.GraphicID == 0x63A5 || 
-			item.GraphicID == 0x63A6 || 
-			item.GraphicID == 0x63A7 || 
-			item.GraphicID == 0x63A8 || 
-			item.GraphicID == 0x63A9 || 
-			item.GraphicID == 0x63AA || 
-			item.GraphicID == 0x63AB || 
-			item.GraphicID == 0x63AC || 
-			item.GraphicID == 0x63AD || 
-			item.GraphicID == 0x63AE || 
-			item.GraphicID == 0x63AF || 
-			item.GraphicID == 0x63B0 || 
-			item.GraphicID == 0x13B1 || 
-			item.GraphicID == 0x13B2 || 
-			item.GraphicID == 0x13B3 || 
-			item.GraphicID == 0x13B4 || 
-			item.GraphicID == 0x13F4 || 
-			item.GraphicID == 0x13F5 || 
-			item.GraphicID == 0x13F8 || 
-			item.GraphicID == 0x13F9 || 
-			item.GraphicID == 0x13FC || 
-			item.GraphicID == 0x13FD || 
-			item.GraphicID == 0x0E81 || 
-			item.GraphicID == 0x0E82 || 
-			item.GraphicID == 0x0E89 || 
-			item.GraphicID == 0x0E8A || 
-			item.GraphicID == 0x0F4F || 
-			item.GraphicID == 0x0F50 || 
-			item.GraphicID == 0x27A5 || 
-			item.GraphicID == 0x27F0 || 
-			item.GraphicID == 0x1C00 || 
-			item.GraphicID == 0x1C01 || 
-			item.GraphicID == 0x1C02 || 
-			item.GraphicID == 0x1C03 || 
-			item.GraphicID == 0x1C04 || 
-			item.GraphicID == 0x1C05 || 
-			item.GraphicID == 0x1C06 || 
-			item.GraphicID == 0x1C07 || 
-			item.GraphicID == 0x1C08 || 
-			item.GraphicID == 0x1C09 || 
-			item.GraphicID == 0x1C0A || 
-			item.GraphicID == 0x1C0B || 
-			item.GraphicID == 0x1C0C || 
-			item.GraphicID == 0x1C0D || 
-			item.GraphicID == 0x13C5 || 
-			item.GraphicID == 0x13C6 || 
-			item.GraphicID == 0x13C7 || 
-			item.GraphicID == 0x13CB || 
-			item.GraphicID == 0x13CC || 
-			item.GraphicID == 0x13CD || 
-			item.GraphicID == 0x13CE || 
-			item.GraphicID == 0x13D2 || 
-			item.GraphicID == 0x13D3 || 
-			item.GraphicID == 0x13D4 || 
-			item.GraphicID == 0x13D5 || 
-			item.GraphicID == 0x13D6 || 
-			item.GraphicID == 0x13DA || 
-			item.GraphicID == 0x13DB || 
-			item.GraphicID == 0x13DC || 
-			item.GraphicID == 0x13DD || 
-			item.GraphicID == 0x13E1 || 
-			item.GraphicID == 0x13E2 || 
-			item.GraphicID == 0x13EB || 
-			item.GraphicID == 0x13EC || 
-			item.GraphicID == 0x13ED || 
-			item.GraphicID == 0x13EE || 
-			item.GraphicID == 0x13EF || 
-			item.GraphicID == 0x13F0 || 
-			item.GraphicID == 0x13F1 || 
-			item.GraphicID == 0x13F2 || 
-			item.GraphicID == 0x2B77 || 
-			item.GraphicID == 0x2B78 || 
-			item.GraphicID == 0x2B79 || 
-			item.GraphicID == 0x316E || 
-			item.GraphicID == 0x316F || 
-			item.GraphicID == 0x3170 || 
-			item.GraphicID == 0x1545 || 
-			item.GraphicID == 0x1546 || 
-			item.GraphicID == 0x1547 || 
-			item.GraphicID == 0x1548 || 
-			item.GraphicID == 0x2B6D || 
-			item.GraphicID == 0x3164 || 
-			item.GraphicID == 0x49C3 || 
-			item.GraphicID == 0x1B78 || 
-			item.GraphicID == 0x1B79 || 
-			item.GraphicID == 0x1B7A || 
-			item.GraphicID == 0x277B || 
-			item.GraphicID == 0x277E || 
-			item.GraphicID == 0x2786 || 
-			item.GraphicID == 0x2790 || 
-			item.GraphicID == 0x2798 || 
-			item.GraphicID == 0x279A || 
-			item.GraphicID == 0x2791 || 
-			item.GraphicID == 0x2792 || 
-			item.GraphicID == 0x279D || 
-			item.GraphicID == 0x277A || 
-			item.GraphicID == 0x2779 || 
-			item.GraphicID == 0x277C || 
-			item.GraphicID == 0x2776 || 
-			item.GraphicID == 0x2778 || 
-			item.GraphicID == 0x27C1 || 
-			item.GraphicID == 0x27C3 || 
-			item.GraphicID == 0x27C4 || 
-			item.GraphicID == 0x27C5 || 
-			item.GraphicID == 0x27C6 || 
-			item.GraphicID == 0x27C9 || 
-			item.GraphicID == 0x27E3 || 
-			item.GraphicID == 0x27E5 || 
-			item.GraphicID == 0x27E8 || 
-			item.GraphicID == 0x27D1 || 
-			item.GraphicID == 0x27D5 || 
-			item.GraphicID == 0x27DB || 
-			item.GraphicID == 0x647C || 
-			item.GraphicID == 0x27DC || 
-			item.GraphicID == 0x27DD || 
-			item.GraphicID == 0x27A3 || 
-			item.GraphicID == 0x27A8 || 
-			item.GraphicID == 0x27F3 || 
+			item.GraphicID == 0x64B9 ||
+			item.GraphicID == 0x64BA ||
+			item.GraphicID == 0x64BB ||
+			item.GraphicID == 0x64BC ||
+			item.GraphicID == 0x64BD ||
+			item.GraphicID == 0x2667 ||
+			item.GraphicID == 0x2668 ||
+			item.GraphicID == 0x266B ||
+			item.GraphicID == 0x266C ||
+			item.GraphicID == 0x266D ||
+			item.GraphicID == 0x266E ||
+			item.GraphicID == 0x2671 ||
+			item.GraphicID == 0x26C2 ||
+			item.GraphicID == 0x26C3 ||
+			item.GraphicID == 0x26CC ||
+			item.GraphicID == 0x26CD ||
+			item.GraphicID == 0x2D1E ||
+			item.GraphicID == 0x2D1F ||
+			item.GraphicID == 0x2D25 ||
+			item.GraphicID == 0x2D2A ||
+			item.GraphicID == 0x2D2B ||
+			item.GraphicID == 0x2D31 ||
+			item.GraphicID == 0x63A2 ||
+			item.GraphicID == 0x63A3 ||
+			item.GraphicID == 0x63A4 ||
+			item.GraphicID == 0x63A5 ||
+			item.GraphicID == 0x63A6 ||
+			item.GraphicID == 0x63A7 ||
+			item.GraphicID == 0x63A8 ||
+			item.GraphicID == 0x63A9 ||
+			item.GraphicID == 0x63AA ||
+			item.GraphicID == 0x63AB ||
+			item.GraphicID == 0x63AC ||
+			item.GraphicID == 0x63AD ||
+			item.GraphicID == 0x63AE ||
+			item.GraphicID == 0x63AF ||
+			item.GraphicID == 0x63B0 ||
+			item.GraphicID == 0x13B1 ||
+			item.GraphicID == 0x13B2 ||
+			item.GraphicID == 0x13B3 ||
+			item.GraphicID == 0x13B4 ||
+			item.GraphicID == 0x13F4 ||
+			item.GraphicID == 0x13F5 ||
+			item.GraphicID == 0x13F8 ||
+			item.GraphicID == 0x13F9 ||
+			item.GraphicID == 0x13FC ||
+			item.GraphicID == 0x13FD ||
+			item.GraphicID == 0x0E81 ||
+			item.GraphicID == 0x0E82 ||
+			item.GraphicID == 0x0E89 ||
+			item.GraphicID == 0x0E8A ||
+			item.GraphicID == 0x0F4F ||
+			item.GraphicID == 0x0F50 ||
+			item.GraphicID == 0x27A5 ||
+			item.GraphicID == 0x27F0 ||
+			item.GraphicID == 0x1C00 ||
+			item.GraphicID == 0x1C01 ||
+			item.GraphicID == 0x1C02 ||
+			item.GraphicID == 0x1C03 ||
+			item.GraphicID == 0x1C04 ||
+			item.GraphicID == 0x1C05 ||
+			item.GraphicID == 0x1C06 ||
+			item.GraphicID == 0x1C07 ||
+			item.GraphicID == 0x1C08 ||
+			item.GraphicID == 0x1C09 ||
+			item.GraphicID == 0x1C0A ||
+			item.GraphicID == 0x1C0B ||
+			item.GraphicID == 0x1C0C ||
+			item.GraphicID == 0x1C0D ||
+			item.GraphicID == 0x13C5 ||
+			item.GraphicID == 0x13C6 ||
+			item.GraphicID == 0x13C7 ||
+			item.GraphicID == 0x13CB ||
+			item.GraphicID == 0x13CC ||
+			item.GraphicID == 0x13CD ||
+			item.GraphicID == 0x13CE ||
+			item.GraphicID == 0x13D2 ||
+			item.GraphicID == 0x13D3 ||
+			item.GraphicID == 0x13D4 ||
+			item.GraphicID == 0x13D5 ||
+			item.GraphicID == 0x13D6 ||
+			item.GraphicID == 0x13DA ||
+			item.GraphicID == 0x13DB ||
+			item.GraphicID == 0x13DC ||
+			item.GraphicID == 0x13DD ||
+			item.GraphicID == 0x13E1 ||
+			item.GraphicID == 0x13E2 ||
+			item.GraphicID == 0x13EB ||
+			item.GraphicID == 0x13EC ||
+			item.GraphicID == 0x13ED ||
+			item.GraphicID == 0x13EE ||
+			item.GraphicID == 0x13EF ||
+			item.GraphicID == 0x13F0 ||
+			item.GraphicID == 0x13F1 ||
+			item.GraphicID == 0x13F2 ||
+			item.GraphicID == 0x2B77 ||
+			item.GraphicID == 0x2B78 ||
+			item.GraphicID == 0x2B79 ||
+			item.GraphicID == 0x316E ||
+			item.GraphicID == 0x316F ||
+			item.GraphicID == 0x3170 ||
+			item.GraphicID == 0x1545 ||
+			item.GraphicID == 0x1546 ||
+			item.GraphicID == 0x1547 ||
+			item.GraphicID == 0x1548 ||
+			item.GraphicID == 0x2B6D ||
+			item.GraphicID == 0x3164 ||
+			item.GraphicID == 0x49C3 ||
+			item.GraphicID == 0x1B78 ||
+			item.GraphicID == 0x1B79 ||
+			item.GraphicID == 0x1B7A ||
+			item.GraphicID == 0x277B ||
+			item.GraphicID == 0x277E ||
+			item.GraphicID == 0x2786 ||
+			item.GraphicID == 0x2790 ||
+			item.GraphicID == 0x2798 ||
+			item.GraphicID == 0x279A ||
+			item.GraphicID == 0x2791 ||
+			item.GraphicID == 0x2792 ||
+			item.GraphicID == 0x279D ||
+			item.GraphicID == 0x277A ||
+			item.GraphicID == 0x2779 ||
+			item.GraphicID == 0x277C ||
+			item.GraphicID == 0x2776 ||
+			item.GraphicID == 0x2778 ||
+			item.GraphicID == 0x27C1 ||
+			item.GraphicID == 0x27C3 ||
+			item.GraphicID == 0x27C4 ||
+			item.GraphicID == 0x27C5 ||
+			item.GraphicID == 0x27C6 ||
+			item.GraphicID == 0x27C9 ||
+			item.GraphicID == 0x27E3 ||
+			item.GraphicID == 0x27E5 ||
+			item.GraphicID == 0x27E8 ||
+			item.GraphicID == 0x27D1 ||
+			item.GraphicID == 0x27D5 ||
+			item.GraphicID == 0x27DB ||
+			item.GraphicID == 0x647C ||
+			item.GraphicID == 0x27DC ||
+			item.GraphicID == 0x27DD ||
+			item.GraphicID == 0x27A3 ||
+			item.GraphicID == 0x27A8 ||
+			item.GraphicID == 0x27F3 ||
 			item.GraphicID == 0x27EE )
 			{
 				allowed = true;
@@ -3281,7 +3281,7 @@ namespace Server
 			}
 
 			if ( // GUARDSMAN SHIELD
-			item.GraphicID == 0x3181 || 
+			item.GraphicID == 0x3181 ||
 			item.GraphicID == 0x2FCB )
 			{
 				allowed = true;
@@ -3289,7 +3289,7 @@ namespace Server
 			}
 
 			if ( // JEWELED SHIELD
-			item.GraphicID == 0x2B75 || 
+			item.GraphicID == 0x2B75 ||
 			item.GraphicID == 0x316C )
 			{
 				allowed = true;
@@ -3297,7 +3297,7 @@ namespace Server
 			}
 
 			if ( // CRESTED SHIELD
-			item.GraphicID == 0x317F || 
+			item.GraphicID == 0x317F ||
 			item.GraphicID == 0x2FC9 )
 			{
 				allowed = true;
@@ -3305,7 +3305,7 @@ namespace Server
 			}
 
 			if ( // ELVEN SHIELD
-			item.GraphicID == 0x2FCA || 
+			item.GraphicID == 0x2FCA ||
 			item.GraphicID == 0x3180 )
 			{
 				allowed = true;
@@ -3313,7 +3313,7 @@ namespace Server
 			}
 
 			if ( // DARK SHIELD
-			item.GraphicID == 0x2FC8 || 
+			item.GraphicID == 0x2FC8 ||
 			item.GraphicID == 0x317E )
 			{
 				allowed = true;
@@ -3321,13 +3321,13 @@ namespace Server
 			}
 
 			if ( // WANDS
-			item.GraphicID == 0xDF2 || 
-			item.GraphicID == 0xDF3 || 
-			item.GraphicID == 0xDF4 || 
-			item.GraphicID == 0xDF5 || 
-			item.GraphicID == 0x639D || 
-			item.GraphicID == 0x639E || 
-			item.GraphicID == 0x639F || 
+			item.GraphicID == 0xDF2 ||
+			item.GraphicID == 0xDF3 ||
+			item.GraphicID == 0xDF4 ||
+			item.GraphicID == 0xDF5 ||
+			item.GraphicID == 0x639D ||
+			item.GraphicID == 0x639E ||
+			item.GraphicID == 0x639F ||
 			item.GraphicID == 0x63A0 )
 			{
 				allowed = true;
@@ -3357,7 +3357,7 @@ namespace Server
 				else if (		isCoat( item ) || // ROBE
 							isRobe( item ) ||
 							item.ItemID == 0x563E || // Barbaric
-							item.ItemID == 0x5652 || // Barbaric 
+							item.ItemID == 0x5652 || // Barbaric
 							item.ItemID == 0x567A || // Barbaric
 							isShroud( item ) )
 					item.ItemID = 0x6474;
@@ -3383,9 +3383,9 @@ namespace Server
 							item.ItemID == 0x4CFC )
 					item.ItemID = 0x6471;
 				else if (	item.ItemID == 0x4CFF || // AMULET
-							item.ItemID == 0x4CFD || 
-							item.ItemID == 0x4D00 || 
-							item.ItemID == 0x5650 || 
+							item.ItemID == 0x4CFD ||
+							item.ItemID == 0x4D00 ||
+							item.ItemID == 0x5650 ||
 							item.ItemID == 0x4CFE )
 					item.ItemID = 0x6472;
 				else if (	item.ItemID == 0x2790 || // BELT
@@ -3421,10 +3421,10 @@ namespace Server
 					else { item.ItemID = 0x645F; }
 				}
 				else if ( 	item.ItemID == 0x030A || // SKIRT
-							item.ItemID == 0x0408 || 
-							item.ItemID == 0x1516 || 
-							item.ItemID == 0x279A || 
-							item.ItemID == 0x27E5 || 
+							item.ItemID == 0x0408 ||
+							item.ItemID == 0x1516 ||
+							item.ItemID == 0x279A ||
+							item.ItemID == 0x27E5 ||
 							item.ItemID == 0x1537 ||
 							item.ItemID == 0x1538 ||
 							item.ItemID == 0x230B ||
@@ -3436,8 +3436,8 @@ namespace Server
 					else { item.ItemID = 0x6460; }
 				}
 				else if ( 	item.ItemID == 0x153B || // APRON
-							item.ItemID == 0x153C || 
-							item.ItemID == 0x153D || 
+							item.ItemID == 0x153C ||
+							item.ItemID == 0x153D ||
 							item.ItemID == 0x153E )
 				{
 					if ( item.Layer == Layer.MiddleTorso ){ item.ItemID = 0x6480; }
@@ -3474,14 +3474,14 @@ namespace Server
 							item.ItemID == 0x2797 ||
 							item.ItemID == 0x27E1 ||
 							item.ItemID == 0x27E2 ||
-							item.ItemID == 0x2B12 || 
-							item.ItemID == 0x2B13 || 
-							item.ItemID == 0x2B67 || 
-							item.ItemID == 0x2FC4 || 
-							item.ItemID == 0x315E || 
-							item.ItemID == 0x317A || 
-							item.ItemID == 0x4C26 || 
-							item.ItemID == 0x4C27 || 
+							item.ItemID == 0x2B12 ||
+							item.ItemID == 0x2B13 ||
+							item.ItemID == 0x2B67 ||
+							item.ItemID == 0x2FC4 ||
+							item.ItemID == 0x315E ||
+							item.ItemID == 0x317A ||
+							item.ItemID == 0x4C26 ||
+							item.ItemID == 0x4C27 ||
 							item.ItemID == 0x567C )
 					item.ItemID = 0x6462;
 				else if ( 	item.ItemID == 0x0309 || // PANTS
@@ -3526,34 +3526,34 @@ namespace Server
 							item.ItemID == 0x1F0C ||
 							item.ItemID == 0x236C ||
 							item.ItemID == 0x236D ||
-							item.ItemID == 0x2645 || 
-							item.ItemID == 0x2646 || 
-							item.ItemID == 0x2649 || 
-							item.ItemID == 0x2653 || 
-							item.ItemID == 0x267F || 
-							item.ItemID == 0x2689 || 
-							item.ItemID == 0x268A || 
-							item.ItemID == 0x2774 || 
-							item.ItemID == 0x2775 || 
-							item.ItemID == 0x2776 || 
-							item.ItemID == 0x2777 || 
-							item.ItemID == 0x2778 || 
-							item.ItemID == 0x2781 || 
-							item.ItemID == 0x2784 || 
-							item.ItemID == 0x2785 || 
-							item.ItemID == 0x2789 || 
-							item.ItemID == 0x27BF || 
-							item.ItemID == 0x27C0 || 
-							item.ItemID == 0x27C1 || 
-							item.ItemID == 0x27C2 || 
-							item.ItemID == 0x27C3 || 
-							item.ItemID == 0x27CC || 
-							item.ItemID == 0x27CF || 
-							item.ItemID == 0x27D0 || 
-							item.ItemID == 0x27D4 || 
-							item.ItemID == 0x2B10 || 
-							item.ItemID == 0x2B11 || 
-							item.ItemID == 0x2FBB || 
+							item.ItemID == 0x2645 ||
+							item.ItemID == 0x2646 ||
+							item.ItemID == 0x2649 ||
+							item.ItemID == 0x2653 ||
+							item.ItemID == 0x267F ||
+							item.ItemID == 0x2689 ||
+							item.ItemID == 0x268A ||
+							item.ItemID == 0x2774 ||
+							item.ItemID == 0x2775 ||
+							item.ItemID == 0x2776 ||
+							item.ItemID == 0x2777 ||
+							item.ItemID == 0x2778 ||
+							item.ItemID == 0x2781 ||
+							item.ItemID == 0x2784 ||
+							item.ItemID == 0x2785 ||
+							item.ItemID == 0x2789 ||
+							item.ItemID == 0x27BF ||
+							item.ItemID == 0x27C0 ||
+							item.ItemID == 0x27C1 ||
+							item.ItemID == 0x27C2 ||
+							item.ItemID == 0x27C3 ||
+							item.ItemID == 0x27CC ||
+							item.ItemID == 0x27CF ||
+							item.ItemID == 0x27D0 ||
+							item.ItemID == 0x27D4 ||
+							item.ItemID == 0x2B10 ||
+							item.ItemID == 0x2B11 ||
+							item.ItemID == 0x2FBB ||
 							item.ItemID == 0x49C1 )
 					item.ItemID = 0x6465;
 				else if ( 	item.ItemID == 0x153F || // HAT
@@ -3575,9 +3575,9 @@ namespace Server
 							item.ItemID == 0x2306 ||
 							item.ItemID == 0x2798 ||
 							item.ItemID == 0x27E3 ||
-							item.ItemID == 0x2FBC || 
-							item.ItemID == 0x2FC3 || 
-							item.ItemID == 0x3179 || 
+							item.ItemID == 0x2FBC ||
+							item.ItemID == 0x2FC3 ||
+							item.ItemID == 0x3179 ||
 							item.ItemID == 0x4C15 )
 					item.ItemID = 0x6466;
 				else if ( 	item.ItemID == 0x13C6 || // GLOVES
@@ -3596,9 +3596,9 @@ namespace Server
 							item.ItemID == 0x2644 ||
 							item.ItemID == 0x26B0 ||
 							item.ItemID == 0x2792 ||
-							item.ItemID == 0x27DD || 
-							item.ItemID == 0x2B0C || 
-							item.ItemID == 0x2B0D || 
+							item.ItemID == 0x27DD ||
+							item.ItemID == 0x2B0C ||
+							item.ItemID == 0x2B0D ||
 							item.ItemID == 0x499D )
 					item.ItemID = 0x6467;
 				else if ( 	item.ItemID == 0x0303 || // BRACERS
@@ -3616,22 +3616,22 @@ namespace Server
 							item.ItemID == 0x144E ||
 							item.ItemID == 0x1453 ||
 							item.ItemID == 0x1964 ||
-							item.ItemID == 0x264E || 
-							item.ItemID == 0x2657 || 
-							item.ItemID == 0x2658 || 
-							item.ItemID == 0x277E || 
-							item.ItemID == 0x277F || 
-							item.ItemID == 0x2780 || 
-							item.ItemID == 0x27C9 || 
-							item.ItemID == 0x27CA || 
-							item.ItemID == 0x27CB || 
-							item.ItemID == 0x2B0A || 
-							item.ItemID == 0x2B0B || 
-							item.ItemID == 0x2B77 || 
-							item.ItemID == 0x2D01 || 
-							item.ItemID == 0x2D02 || 
-							item.ItemID == 0x2D03 || 
-							item.ItemID == 0x2D04 || 
+							item.ItemID == 0x264E ||
+							item.ItemID == 0x2657 ||
+							item.ItemID == 0x2658 ||
+							item.ItemID == 0x277E ||
+							item.ItemID == 0x277F ||
+							item.ItemID == 0x2780 ||
+							item.ItemID == 0x27C9 ||
+							item.ItemID == 0x27CA ||
+							item.ItemID == 0x27CB ||
+							item.ItemID == 0x2B0A ||
+							item.ItemID == 0x2B0B ||
+							item.ItemID == 0x2B77 ||
+							item.ItemID == 0x2D01 ||
+							item.ItemID == 0x2D02 ||
+							item.ItemID == 0x2D03 ||
+							item.ItemID == 0x2D04 ||
 							item.ItemID == 0x316E )
 					item.ItemID = 0x6468;
 				else if ( 	item.ItemID == 0x13BF || // ARMOR
@@ -3648,42 +3648,42 @@ namespace Server
 							item.ItemID == 0x144F ||
 							item.ItemID == 0x1454 ||
 							item.ItemID == 0x1969 ||
-							item.ItemID == 0x1C02 || 
-							item.ItemID == 0x1C03 || 
-							item.ItemID == 0x1C04 || 
-							item.ItemID == 0x1C05 || 
-							item.ItemID == 0x1C06 || 
-							item.ItemID == 0x1C07 || 
-							item.ItemID == 0x1C0A || 
-							item.ItemID == 0x1C0B || 
-							item.ItemID == 0x1C0C || 
-							item.ItemID == 0x1C0D || 
-							item.ItemID == 0x2641 || 
-							item.ItemID == 0x2642 || 
-							item.ItemID == 0x264A || 
-							item.ItemID == 0x264F || 
-							item.ItemID == 0x2650 || 
-							item.ItemID == 0x2654 || 
-							item.ItemID == 0x2655 || 
-							item.ItemID == 0x277B || 
-							item.ItemID == 0x277C || 
-							item.ItemID == 0x277D || 
-							item.ItemID == 0x2793 || 
-							item.ItemID == 0x2794 || 
-							item.ItemID == 0x27C6 || 
-							item.ItemID == 0x27C7 || 
-							item.ItemID == 0x27C8 || 
-							item.ItemID == 0x27DE || 
-							item.ItemID == 0x27DF || 
-							item.ItemID == 0x2B08 || 
-							item.ItemID == 0x2B09 || 
-							item.ItemID == 0x2B79 || 
-							item.ItemID == 0x3170 || 
-							item.ItemID == 0x4B57 || 
-							item.ItemID == 0x4B58 || 
-							item.ItemID == 0x6399 || 
-							item.ItemID == 0x639A || 
-							item.ItemID == 0x639B || 
+							item.ItemID == 0x1C02 ||
+							item.ItemID == 0x1C03 ||
+							item.ItemID == 0x1C04 ||
+							item.ItemID == 0x1C05 ||
+							item.ItemID == 0x1C06 ||
+							item.ItemID == 0x1C07 ||
+							item.ItemID == 0x1C0A ||
+							item.ItemID == 0x1C0B ||
+							item.ItemID == 0x1C0C ||
+							item.ItemID == 0x1C0D ||
+							item.ItemID == 0x2641 ||
+							item.ItemID == 0x2642 ||
+							item.ItemID == 0x264A ||
+							item.ItemID == 0x264F ||
+							item.ItemID == 0x2650 ||
+							item.ItemID == 0x2654 ||
+							item.ItemID == 0x2655 ||
+							item.ItemID == 0x277B ||
+							item.ItemID == 0x277C ||
+							item.ItemID == 0x277D ||
+							item.ItemID == 0x2793 ||
+							item.ItemID == 0x2794 ||
+							item.ItemID == 0x27C6 ||
+							item.ItemID == 0x27C7 ||
+							item.ItemID == 0x27C8 ||
+							item.ItemID == 0x27DE ||
+							item.ItemID == 0x27DF ||
+							item.ItemID == 0x2B08 ||
+							item.ItemID == 0x2B09 ||
+							item.ItemID == 0x2B79 ||
+							item.ItemID == 0x3170 ||
+							item.ItemID == 0x4B57 ||
+							item.ItemID == 0x4B58 ||
+							item.ItemID == 0x6399 ||
+							item.ItemID == 0x639A ||
+							item.ItemID == 0x639B ||
 							item.ItemID == 0x639C )
 					item.ItemID = 0x6469;
 				else if ( 	item.ItemID == 0x13BE || // LEGGINGS
@@ -3701,39 +3701,39 @@ namespace Server
 							item.ItemID == 0x141A ||
 							item.ItemID == 0x1452 ||
 							item.ItemID == 0x1457 ||
-							item.ItemID == 0x1965 || 
-							item.ItemID == 0x1C00 || 
-							item.ItemID == 0x1C01 || 
-							item.ItemID == 0x1C08 || 
-							item.ItemID == 0x1C09 || 
-							item.ItemID == 0x2647 || 
-							item.ItemID == 0x2648 || 
-							item.ItemID == 0x264D || 
-							item.ItemID == 0x2656 || 
-							item.ItemID == 0x2659 || 
-							item.ItemID == 0x2786 || 
-							item.ItemID == 0x2787 || 
-							item.ItemID == 0x2788 || 
-							item.ItemID == 0x278A || 
-							item.ItemID == 0x278B || 
-							item.ItemID == 0x278D || 
-							item.ItemID == 0x2791 || 
-							item.ItemID == 0x279B || 
-							item.ItemID == 0x27D1 || 
-							item.ItemID == 0x27D2 || 
-							item.ItemID == 0x27D3 || 
-							item.ItemID == 0x27D5 || 
-							item.ItemID == 0x27D6 || 
-							item.ItemID == 0x27D8 || 
-							item.ItemID == 0x27DC || 
-							item.ItemID == 0x2B06 || 
-							item.ItemID == 0x2B07 || 
-							item.ItemID == 0x2B78 || 
-							item.ItemID == 0x316F || 
-							item.ItemID == 0x49C2 || 
-							item.ItemID == 0x6396 || 
-							item.ItemID == 0x6397 || 
-							item.ItemID == 0x6398 || 
+							item.ItemID == 0x1965 ||
+							item.ItemID == 0x1C00 ||
+							item.ItemID == 0x1C01 ||
+							item.ItemID == 0x1C08 ||
+							item.ItemID == 0x1C09 ||
+							item.ItemID == 0x2647 ||
+							item.ItemID == 0x2648 ||
+							item.ItemID == 0x264D ||
+							item.ItemID == 0x2656 ||
+							item.ItemID == 0x2659 ||
+							item.ItemID == 0x2786 ||
+							item.ItemID == 0x2787 ||
+							item.ItemID == 0x2788 ||
+							item.ItemID == 0x278A ||
+							item.ItemID == 0x278B ||
+							item.ItemID == 0x278D ||
+							item.ItemID == 0x2791 ||
+							item.ItemID == 0x279B ||
+							item.ItemID == 0x27D1 ||
+							item.ItemID == 0x27D2 ||
+							item.ItemID == 0x27D3 ||
+							item.ItemID == 0x27D5 ||
+							item.ItemID == 0x27D6 ||
+							item.ItemID == 0x27D8 ||
+							item.ItemID == 0x27DC ||
+							item.ItemID == 0x2B06 ||
+							item.ItemID == 0x2B07 ||
+							item.ItemID == 0x2B78 ||
+							item.ItemID == 0x316F ||
+							item.ItemID == 0x49C2 ||
+							item.ItemID == 0x6396 ||
+							item.ItemID == 0x6397 ||
+							item.ItemID == 0x6398 ||
 							item.ItemID == 0x63B4 )
 					item.ItemID = 0x646A;
 				else if ( 	item.ItemID == 0x0405 || // MASK
@@ -3751,78 +3751,78 @@ namespace Server
 							item.ItemID == 0x3169 )
 					item.ItemID = 0x646B;
 				else if ( 	item.ItemID == 0x278E || // HOOD
-							item.ItemID == 0x64BB || 
-							item.ItemID == 0x0310 || 
-							item.ItemID == 0x278F || 
-							item.ItemID == 0x27D9 || 
-							item.ItemID == 0x27DA || 
-							item.ItemID == 0x2B71 || 
-							item.ItemID == 0x2FBE || 
-							item.ItemID == 0x3168 || 
-							item.ItemID == 0x3176 || 
-							item.ItemID == 0x3177 || 
-							item.ItemID == 0x4CDA || 
-							item.ItemID == 0x4CDB || 
-							item.ItemID == 0x4CDC || 
-							item.ItemID == 0x4CDD || 
-							item.ItemID == 0x4D01 || 
-							item.ItemID == 0x4D02 || 
-							item.ItemID == 0x4D03 || 
-							item.ItemID == 0x4D04 || 
-							item.ItemID == 0x4D09 || 
-							item.ItemID == 0x5C11 || 
-							item.ItemID == 0x5C12 || 
-							item.ItemID == 0x5C13 || 
+							item.ItemID == 0x64BB ||
+							item.ItemID == 0x0310 ||
+							item.ItemID == 0x278F ||
+							item.ItemID == 0x27D9 ||
+							item.ItemID == 0x27DA ||
+							item.ItemID == 0x2B71 ||
+							item.ItemID == 0x2FBE ||
+							item.ItemID == 0x3168 ||
+							item.ItemID == 0x3176 ||
+							item.ItemID == 0x3177 ||
+							item.ItemID == 0x4CDA ||
+							item.ItemID == 0x4CDB ||
+							item.ItemID == 0x4CDC ||
+							item.ItemID == 0x4CDD ||
+							item.ItemID == 0x4D01 ||
+							item.ItemID == 0x4D02 ||
+							item.ItemID == 0x4D03 ||
+							item.ItemID == 0x4D04 ||
+							item.ItemID == 0x4D09 ||
+							item.ItemID == 0x5C11 ||
+							item.ItemID == 0x5C12 ||
+							item.ItemID == 0x5C13 ||
 							item.ItemID == 0x5C14 )
 					item.ItemID = 0x646C;
 				else if ( 	item.ItemID == 0x2B6F || // CIRCLET
 							item.ItemID == 0x3166 )
 					item.ItemID = 0x646D;
 				else if ( 	item.ItemID == 0x1545 || // ANIMAL MASK
-							item.ItemID == 0x1546 || 
-							item.ItemID == 0x1547 || 
-							item.ItemID == 0x1548 || 
-							item.ItemID == 0x2B6D || 
-							item.ItemID == 0x3164 || 
+							item.ItemID == 0x1546 ||
+							item.ItemID == 0x1547 ||
+							item.ItemID == 0x1548 ||
+							item.ItemID == 0x2B6D ||
+							item.ItemID == 0x3164 ||
 							item.ItemID == 0x49C3 )
 					item.ItemID = 0x646E;
 				else if ( 	item.ItemID == 0x13C7 || // GORGET
-							item.ItemID == 0x13D6 || 
-							item.ItemID == 0x1413 || 
-							item.ItemID == 0x1967 || 
-							item.ItemID == 0x264B || 
-							item.ItemID == 0x264C || 
-							item.ItemID == 0x2B0E || 
-							item.ItemID == 0x2B0F || 
+							item.ItemID == 0x13D6 ||
+							item.ItemID == 0x1413 ||
+							item.ItemID == 0x1967 ||
+							item.ItemID == 0x264B ||
+							item.ItemID == 0x264C ||
+							item.ItemID == 0x2B0E ||
+							item.ItemID == 0x2B0F ||
 							item.ItemID == 0x317D )
 					item.ItemID = 0x6473;
 				else if ( 	item.ItemID == 0x1B72 || // SHIELD
-							item.ItemID == 0x1B73 || 
-							item.ItemID == 0x1B74 || 
-							item.ItemID == 0x1B75 || 
-							item.ItemID == 0x1B76 || 
-							item.ItemID == 0x1B77 || 
-							item.ItemID == 0x1B78 || 
-							item.ItemID == 0x1B79 || 
-							item.ItemID == 0x1B7A || 
-							item.ItemID == 0x1B7B || 
-							item.ItemID == 0x1BC3 || 
-							item.ItemID == 0x1BC4 || 
-							item.ItemID == 0x1BC5 || 
-							item.ItemID == 0x1BC6 || 
-							item.ItemID == 0x1BC7 || 
-							item.ItemID == 0x2B01 || 
-							item.ItemID == 0x2B74 || 
-							item.ItemID == 0x2B75 || 
-							item.ItemID == 0x2FC8 || 
-							item.ItemID == 0x2FC9 || 
-							item.ItemID == 0x2FCA || 
-							item.ItemID == 0x2FCB || 
-							item.ItemID == 0x316B || 
-							item.ItemID == 0x316C || 
-							item.ItemID == 0x317E || 
-							item.ItemID == 0x317F || 
-							item.ItemID == 0x3180 || 
+							item.ItemID == 0x1B73 ||
+							item.ItemID == 0x1B74 ||
+							item.ItemID == 0x1B75 ||
+							item.ItemID == 0x1B76 ||
+							item.ItemID == 0x1B77 ||
+							item.ItemID == 0x1B78 ||
+							item.ItemID == 0x1B79 ||
+							item.ItemID == 0x1B7A ||
+							item.ItemID == 0x1B7B ||
+							item.ItemID == 0x1BC3 ||
+							item.ItemID == 0x1BC4 ||
+							item.ItemID == 0x1BC5 ||
+							item.ItemID == 0x1BC6 ||
+							item.ItemID == 0x1BC7 ||
+							item.ItemID == 0x2B01 ||
+							item.ItemID == 0x2B74 ||
+							item.ItemID == 0x2B75 ||
+							item.ItemID == 0x2FC8 ||
+							item.ItemID == 0x2FC9 ||
+							item.ItemID == 0x2FCA ||
+							item.ItemID == 0x2FCB ||
+							item.ItemID == 0x316B ||
+							item.ItemID == 0x316C ||
+							item.ItemID == 0x317E ||
+							item.ItemID == 0x317F ||
+							item.ItemID == 0x3180 ||
 							item.ItemID == 0x3181 )
 					item.ItemID = 0x6475;
 				else if ( item.ItemID == 0xA0F ){ item.ItemID = 0x6476; } // CANDLE
@@ -3832,9 +3832,9 @@ namespace Server
 				else if ( item.ItemID == 0xF6B ){ item.ItemID = 0x647A; } // TORCH U
 				else if ( item.ItemID == 0xA18 || item.ItemID == 0xA25 ){ item.ItemID = 0x647B; } // LANTERN U
 				else if ( 	item.ItemID == 0x2B02 || // QUIVER
-							item.ItemID == 0x2FB7 || 
-							item.ItemID == 0x3171 || 
-							item.ItemID == 0x5770 || 
+							item.ItemID == 0x2FB7 ||
+							item.ItemID == 0x3171 ||
+							item.ItemID == 0x5770 ||
 							item.ItemID == 0x2B03 )
 					item.ItemID = 0x647C;
 				else if ( item.Layer == Layer.Invalid ){ item.ItemID = 0x647D; }
@@ -3863,13 +3863,13 @@ namespace Server
 
 		public static bool isCoat( Item item )
 		{
-			if ( 
-			item.ItemID == 0x567E || 
-			item.ItemID == 0x27E7 || 
-			item.ItemID == 0x279C || 
-			item.ItemID == 0x2B6B || 
-			item.ItemID == 0x4C16 || 
-			item.ItemID == 0x4C17 || 
+			if (
+			item.ItemID == 0x567E ||
+			item.ItemID == 0x27E7 ||
+			item.ItemID == 0x279C ||
+			item.ItemID == 0x2B6B ||
+			item.ItemID == 0x4C16 ||
+			item.ItemID == 0x4C17 ||
 			item.ItemID == 0x3162 )
 				return true;
 
@@ -3878,66 +3878,66 @@ namespace Server
 
 		public static bool isRobe( Item item )
 		{
-			if ( 
-			item.ItemID == 0x2B6E || 
-			item.ItemID == 0x2782 || 
-			item.ItemID == 0x2783 || 
-			item.ItemID == 0x27CD || 
-			item.ItemID == 0x27CE || 
-			item.ItemID == 0x2799 || 
-			item.ItemID == 0x27E4 || 
-			item.ItemID == 0x283 || 
-			item.ItemID == 0x284 || 
-			item.ItemID == 0x285 || 
-			item.ItemID == 0x286 || 
-			item.ItemID == 0x287 || 
-			item.ItemID == 0x288 || 
-			item.ItemID == 0x289 || 
-			item.ItemID == 0x28A || 
-			item.ItemID == 0x301 || 
-			item.ItemID == 0x302 || 
-			item.ItemID == 0x1F03 || 
-			item.ItemID == 0x1F04 || 
-			item.ItemID == 0x201B || 
-			item.ItemID == 0x201C || 
-			item.ItemID == 0x201D || 
-			item.ItemID == 0x201E || 
-			item.ItemID == 0x201F || 
-			item.ItemID == 0x2020 || 
-			item.ItemID == 0x25EC || 
-			item.ItemID == 0x25ED || 
-			item.ItemID == 0x2652 || 
-			item.ItemID == 0x26AE || 
-			item.ItemID == 0x2B69 || 
-			item.ItemID == 0x2B6A || 
-			item.ItemID == 0x2B6C || 
-			item.ItemID == 0x266E || 
-			item.ItemID == 0x2B70 || 
-			item.ItemID == 0x2B73 || 
-			item.ItemID == 0x2FBA || 
-			item.ItemID == 0x2FBD || 
-			item.ItemID == 0x2FC6 || 
-			item.ItemID == 0x2FC7 || 
-			item.ItemID == 0x3160 || 
-			item.ItemID == 0x3161 || 
-			item.ItemID == 0x3163 || 
-			item.ItemID == 0x3165 || 
-			item.ItemID == 0x3167 || 
-			item.ItemID == 0x316A || 
-			item.ItemID == 0x3174 || 
-			item.ItemID == 0x3175 || 
-			item.ItemID == 0x3178 || 
-			item.ItemID == 0x4000 || 
-			item.ItemID == 0x4001 || 
-			item.ItemID == 0x4002 || 
-			item.ItemID == 0x4003 || 
-			item.ItemID == 0x567D || 
-			item.ItemID == 0x1EFF || 
-			item.ItemID == 0x1F00 || 
-			item.ItemID == 0x1F01 || 
-			item.ItemID == 0x1F02 || 
-			item.ItemID == 0x230D || 
-			item.ItemID == 0x230E || 
+			if (
+			item.ItemID == 0x2B6E ||
+			item.ItemID == 0x2782 ||
+			item.ItemID == 0x2783 ||
+			item.ItemID == 0x27CD ||
+			item.ItemID == 0x27CE ||
+			item.ItemID == 0x2799 ||
+			item.ItemID == 0x27E4 ||
+			item.ItemID == 0x283 ||
+			item.ItemID == 0x284 ||
+			item.ItemID == 0x285 ||
+			item.ItemID == 0x286 ||
+			item.ItemID == 0x287 ||
+			item.ItemID == 0x288 ||
+			item.ItemID == 0x289 ||
+			item.ItemID == 0x28A ||
+			item.ItemID == 0x301 ||
+			item.ItemID == 0x302 ||
+			item.ItemID == 0x1F03 ||
+			item.ItemID == 0x1F04 ||
+			item.ItemID == 0x201B ||
+			item.ItemID == 0x201C ||
+			item.ItemID == 0x201D ||
+			item.ItemID == 0x201E ||
+			item.ItemID == 0x201F ||
+			item.ItemID == 0x2020 ||
+			item.ItemID == 0x25EC ||
+			item.ItemID == 0x25ED ||
+			item.ItemID == 0x2652 ||
+			item.ItemID == 0x26AE ||
+			item.ItemID == 0x2B69 ||
+			item.ItemID == 0x2B6A ||
+			item.ItemID == 0x2B6C ||
+			item.ItemID == 0x266E ||
+			item.ItemID == 0x2B70 ||
+			item.ItemID == 0x2B73 ||
+			item.ItemID == 0x2FBA ||
+			item.ItemID == 0x2FBD ||
+			item.ItemID == 0x2FC6 ||
+			item.ItemID == 0x2FC7 ||
+			item.ItemID == 0x3160 ||
+			item.ItemID == 0x3161 ||
+			item.ItemID == 0x3163 ||
+			item.ItemID == 0x3165 ||
+			item.ItemID == 0x3167 ||
+			item.ItemID == 0x316A ||
+			item.ItemID == 0x3174 ||
+			item.ItemID == 0x3175 ||
+			item.ItemID == 0x3178 ||
+			item.ItemID == 0x4000 ||
+			item.ItemID == 0x4001 ||
+			item.ItemID == 0x4002 ||
+			item.ItemID == 0x4003 ||
+			item.ItemID == 0x567D ||
+			item.ItemID == 0x1EFF ||
+			item.ItemID == 0x1F00 ||
+			item.ItemID == 0x1F01 ||
+			item.ItemID == 0x1F02 ||
+			item.ItemID == 0x230D ||
+			item.ItemID == 0x230E ||
 			item.ItemID == 0x5C10 )
 				return true;
 
@@ -3946,16 +3946,16 @@ namespace Server
 
 		public static bool isShroud( Item item )
 		{
-			if ( 
-			item.ItemID == 0x2683 || 
-			item.ItemID == 0x2684 || 
-			item.ItemID == 0x2685 || 
-			item.ItemID == 0x2686 || 
-			item.ItemID == 0x2687 || 
-			item.ItemID == 0x204E || 
-			item.ItemID == 0x25EE || 
-			item.ItemID == 0x25EF || 
-			item.ItemID == 0x25F0 || 
+			if (
+			item.ItemID == 0x2683 ||
+			item.ItemID == 0x2684 ||
+			item.ItemID == 0x2685 ||
+			item.ItemID == 0x2686 ||
+			item.ItemID == 0x2687 ||
+			item.ItemID == 0x204E ||
+			item.ItemID == 0x25EE ||
+			item.ItemID == 0x25EF ||
+			item.ItemID == 0x25F0 ||
 			item.ItemID == 0x25F1 )
 				return true;
 
@@ -3994,144 +3994,144 @@ namespace Server
 
 		public static bool isRaceCostume( Item item )
 		{
-			if ( 
-			item.ItemID == 0x4047 || 
-			item.ItemID == 0x4048 || 
-			item.ItemID == 0x4049 || 
-			item.ItemID == 0x404A || 
-			item.ItemID == 0x404B || 
-			item.ItemID == 0x404C || 
-			item.ItemID == 0x404D || 
-			item.ItemID == 0x404E || 
-			item.ItemID == 0x404F || 
-			item.ItemID == 0x4050 || 
-			item.ItemID == 0x4051 || 
-			item.ItemID == 0x4052 || 
-			item.ItemID == 0x4053 || 
-			item.ItemID == 0x4054 || 
-			item.ItemID == 0x4055 || 
-			item.ItemID == 0x4056 || 
-			item.ItemID == 0x4057 || 
-			item.ItemID == 0x4058 || 
-			item.ItemID == 0x4059 || 
-			item.ItemID == 0x405A || 
-			item.ItemID == 0x405B || 
-			item.ItemID == 0x405C || 
-			item.ItemID == 0x405D || 
-			item.ItemID == 0x405E || 
-			item.ItemID == 0x405F || 
-			item.ItemID == 0x4060 || 
-			item.ItemID == 0x4061 || 
-			item.ItemID == 0x4062 || 
-			item.ItemID == 0x4063 || 
-			item.ItemID == 0x4064 || 
-			item.ItemID == 0x4065 || 
-			item.ItemID == 0x4066 || 
-			item.ItemID == 0x4067 || 
-			item.ItemID == 0x4068 || 
-			item.ItemID == 0x4069 || 
-			item.ItemID == 0x406A || 
-			item.ItemID == 0x2080 || 
-			item.ItemID == 0x2081 || 
-			item.ItemID == 0x2082 || 
-			item.ItemID == 0x2083 || 
-			item.ItemID == 0x2084 || 
-			item.ItemID == 0x2085 || 
-			item.ItemID == 0x2086 || 
-			item.ItemID == 0x2087 || 
-			item.ItemID == 0x2088 || 
-			item.ItemID == 0x2089 || 
-			item.ItemID == 0x208A || 
-			item.ItemID == 0x208B || 
-			item.ItemID == 0x208C || 
-			item.ItemID == 0x208D || 
-			item.ItemID == 0x208E || 
-			item.ItemID == 0x208F || 
-			item.ItemID == 0x2090 || 
-			item.ItemID == 0x2091 || 
-			item.ItemID == 0x2092 || 
-			item.ItemID == 0x2093 || 
-			item.ItemID == 0x2094 || 
-			item.ItemID == 0x2095 || 
-			item.ItemID == 0x2096 || 
-			item.ItemID == 0x2097 || 
-			item.ItemID == 0x2098 || 
-			item.ItemID == 0x2099 || 
-			item.ItemID == 0x209A || 
-			item.ItemID == 0x209B || 
-			item.ItemID == 0x209C || 
-			item.ItemID == 0x209D || 
-			item.ItemID == 0x209E || 
-			item.ItemID == 0x209F || 
-			item.ItemID == 0x20A0 || 
-			item.ItemID == 0x20A1 || 
-			item.ItemID == 0x20A2 || 
-			item.ItemID == 0x20A3 || 
-			item.ItemID == 0x20A4 || 
-			item.ItemID == 0x20A5 || 
-			item.ItemID == 0x20A6 || 
-			item.ItemID == 0x20A7 || 
-			item.ItemID == 0x20A8 || 
-			item.ItemID == 0x20A9 || 
-			item.ItemID == 0x20AA || 
-			item.ItemID == 0x20AB || 
-			item.ItemID == 0x20AC || 
-			item.ItemID == 0x20AD || 
-			item.ItemID == 0x20AE || 
-			item.ItemID == 0x20AF || 
-			item.ItemID == 0x20B0 || 
-			item.ItemID == 0x20B1 || 
-			item.ItemID == 0x20B2 || 
-			item.ItemID == 0x20B3 || 
-			item.ItemID == 0x20B4 || 
-			item.ItemID == 0x20B5 || 
-			item.ItemID == 0x20B6 || 
-			item.ItemID == 0x20B7 || 
-			item.ItemID == 0x20B8 || 
-			item.ItemID == 0x20B9 || 
-			item.ItemID == 0x20BA || 
-			item.ItemID == 0x20BB || 
-			item.ItemID == 0x20BC || 
-			item.ItemID == 0x20BD || 
-			item.ItemID == 0x20BE || 
-			item.ItemID == 0x20BF || 
-			item.ItemID == 0x20C0 || 
-			item.ItemID == 0x20C1 || 
-			item.ItemID == 0x20C2 || 
-			item.ItemID == 0x20C3 || 
-			item.ItemID == 0x20C4 || 
-			item.ItemID == 0x20C5 || 
-			item.ItemID == 0x20C6 || 
-			item.ItemID == 0x20C7 || 
-			item.ItemID == 0x649A || 
-			item.ItemID == 0x649B || 
-			item.ItemID == 0x649C || 
-			item.ItemID == 0x649D || 
-			item.ItemID == 0x649E || 
-			item.ItemID == 0x649F || 
-			item.ItemID == 0x64A0 || 
-			item.ItemID == 0x64A1 || 
-			item.ItemID == 0x64A2 || 
-			item.ItemID == 0x64A3 || 
-			item.ItemID == 0x64A4 || 
-			item.ItemID == 0x64A5 || 
-			item.ItemID == 0x64A6 || 
-			item.ItemID == 0x64A7 || 
-			item.ItemID == 0x64A8 || 
-			item.ItemID == 0x64A9 || 
-			item.ItemID == 0x64AA || 
-			item.ItemID == 0x64AB || 
-			item.ItemID == 0x64AC || 
-			item.ItemID == 0x64AD || 
-			item.ItemID == 0x64AE || 
-			item.ItemID == 0x64AF || 
-			item.ItemID == 0x64B0 || 
-			item.ItemID == 0x64B1 || 
-			item.ItemID == 0x64B2 || 
-			item.ItemID == 0x64B3 || 
-			item.ItemID == 0x64B4 || 
-			item.ItemID == 0x64B5 || 
-			item.ItemID == 0x64B6 || 
+			if (
+			item.ItemID == 0x4047 ||
+			item.ItemID == 0x4048 ||
+			item.ItemID == 0x4049 ||
+			item.ItemID == 0x404A ||
+			item.ItemID == 0x404B ||
+			item.ItemID == 0x404C ||
+			item.ItemID == 0x404D ||
+			item.ItemID == 0x404E ||
+			item.ItemID == 0x404F ||
+			item.ItemID == 0x4050 ||
+			item.ItemID == 0x4051 ||
+			item.ItemID == 0x4052 ||
+			item.ItemID == 0x4053 ||
+			item.ItemID == 0x4054 ||
+			item.ItemID == 0x4055 ||
+			item.ItemID == 0x4056 ||
+			item.ItemID == 0x4057 ||
+			item.ItemID == 0x4058 ||
+			item.ItemID == 0x4059 ||
+			item.ItemID == 0x405A ||
+			item.ItemID == 0x405B ||
+			item.ItemID == 0x405C ||
+			item.ItemID == 0x405D ||
+			item.ItemID == 0x405E ||
+			item.ItemID == 0x405F ||
+			item.ItemID == 0x4060 ||
+			item.ItemID == 0x4061 ||
+			item.ItemID == 0x4062 ||
+			item.ItemID == 0x4063 ||
+			item.ItemID == 0x4064 ||
+			item.ItemID == 0x4065 ||
+			item.ItemID == 0x4066 ||
+			item.ItemID == 0x4067 ||
+			item.ItemID == 0x4068 ||
+			item.ItemID == 0x4069 ||
+			item.ItemID == 0x406A ||
+			item.ItemID == 0x2080 ||
+			item.ItemID == 0x2081 ||
+			item.ItemID == 0x2082 ||
+			item.ItemID == 0x2083 ||
+			item.ItemID == 0x2084 ||
+			item.ItemID == 0x2085 ||
+			item.ItemID == 0x2086 ||
+			item.ItemID == 0x2087 ||
+			item.ItemID == 0x2088 ||
+			item.ItemID == 0x2089 ||
+			item.ItemID == 0x208A ||
+			item.ItemID == 0x208B ||
+			item.ItemID == 0x208C ||
+			item.ItemID == 0x208D ||
+			item.ItemID == 0x208E ||
+			item.ItemID == 0x208F ||
+			item.ItemID == 0x2090 ||
+			item.ItemID == 0x2091 ||
+			item.ItemID == 0x2092 ||
+			item.ItemID == 0x2093 ||
+			item.ItemID == 0x2094 ||
+			item.ItemID == 0x2095 ||
+			item.ItemID == 0x2096 ||
+			item.ItemID == 0x2097 ||
+			item.ItemID == 0x2098 ||
+			item.ItemID == 0x2099 ||
+			item.ItemID == 0x209A ||
+			item.ItemID == 0x209B ||
+			item.ItemID == 0x209C ||
+			item.ItemID == 0x209D ||
+			item.ItemID == 0x209E ||
+			item.ItemID == 0x209F ||
+			item.ItemID == 0x20A0 ||
+			item.ItemID == 0x20A1 ||
+			item.ItemID == 0x20A2 ||
+			item.ItemID == 0x20A3 ||
+			item.ItemID == 0x20A4 ||
+			item.ItemID == 0x20A5 ||
+			item.ItemID == 0x20A6 ||
+			item.ItemID == 0x20A7 ||
+			item.ItemID == 0x20A8 ||
+			item.ItemID == 0x20A9 ||
+			item.ItemID == 0x20AA ||
+			item.ItemID == 0x20AB ||
+			item.ItemID == 0x20AC ||
+			item.ItemID == 0x20AD ||
+			item.ItemID == 0x20AE ||
+			item.ItemID == 0x20AF ||
+			item.ItemID == 0x20B0 ||
+			item.ItemID == 0x20B1 ||
+			item.ItemID == 0x20B2 ||
+			item.ItemID == 0x20B3 ||
+			item.ItemID == 0x20B4 ||
+			item.ItemID == 0x20B5 ||
+			item.ItemID == 0x20B6 ||
+			item.ItemID == 0x20B7 ||
+			item.ItemID == 0x20B8 ||
+			item.ItemID == 0x20B9 ||
+			item.ItemID == 0x20BA ||
+			item.ItemID == 0x20BB ||
+			item.ItemID == 0x20BC ||
+			item.ItemID == 0x20BD ||
+			item.ItemID == 0x20BE ||
+			item.ItemID == 0x20BF ||
+			item.ItemID == 0x20C0 ||
+			item.ItemID == 0x20C1 ||
+			item.ItemID == 0x20C2 ||
+			item.ItemID == 0x20C3 ||
+			item.ItemID == 0x20C4 ||
+			item.ItemID == 0x20C5 ||
+			item.ItemID == 0x20C6 ||
+			item.ItemID == 0x20C7 ||
+			item.ItemID == 0x649A ||
+			item.ItemID == 0x649B ||
+			item.ItemID == 0x649C ||
+			item.ItemID == 0x649D ||
+			item.ItemID == 0x649E ||
+			item.ItemID == 0x649F ||
+			item.ItemID == 0x64A0 ||
+			item.ItemID == 0x64A1 ||
+			item.ItemID == 0x64A2 ||
+			item.ItemID == 0x64A3 ||
+			item.ItemID == 0x64A4 ||
+			item.ItemID == 0x64A5 ||
+			item.ItemID == 0x64A6 ||
+			item.ItemID == 0x64A7 ||
+			item.ItemID == 0x64A8 ||
+			item.ItemID == 0x64A9 ||
+			item.ItemID == 0x64AA ||
+			item.ItemID == 0x64AB ||
+			item.ItemID == 0x64AC ||
+			item.ItemID == 0x64AD ||
+			item.ItemID == 0x64AE ||
+			item.ItemID == 0x64AF ||
+			item.ItemID == 0x64B0 ||
+			item.ItemID == 0x64B1 ||
+			item.ItemID == 0x64B2 ||
+			item.ItemID == 0x64B3 ||
+			item.ItemID == 0x64B4 ||
+			item.ItemID == 0x64B5 ||
+			item.ItemID == 0x64B6 ||
 			item.ItemID == 0x64B7 )
 				return true;
 
@@ -4140,9 +4140,9 @@ namespace Server
 
 		public static bool isHoodedRobe( Item item )
 		{
-			if ( 
-			item.ItemID == 0x20F4 || 
-			item.ItemID == 0x2FB9 || 
+			if (
+			item.ItemID == 0x20F4 ||
+			item.ItemID == 0x2FB9 ||
 			item.ItemID == 0x3173 )
 				return true;
 
@@ -4151,28 +4151,28 @@ namespace Server
 
 		public static bool isPartialHat( Item item )
 		{
-			if ( 
-			item.ItemID == 0x1DB9 || 
-			item.ItemID == 0x1DBA || 
-			item.ItemID == 0x140E || 
-			item.ItemID == 0x140F || 
-			item.ItemID == 0x140A || 
-			item.ItemID == 0x140B || 
-			item.ItemID == 0x13BB || 
-			item.ItemID == 0x13C0 || 
-			item.ItemID == 0x2653 || 
-			item.ItemID == 0x13BB || 
-			item.ItemID == 0x13C0 || 
-			item.ItemID == 0x2653 || 
-			item.ItemID == 0x0310 || 
-			item.ItemID == 0x4D03 || 
-			item.ItemID == 0x5C11 || 
-			item.ItemID == 0x5C14 || 
-			item.ItemID == 0x2B71 || 
-			item.ItemID == 0x3168 || 
-			item.ItemID == 0x4D03 || 
-			item.ItemID == 0x4D09 || 
-			item.ItemID == 0x5C11 || 
+			if (
+			item.ItemID == 0x1DB9 ||
+			item.ItemID == 0x1DBA ||
+			item.ItemID == 0x140E ||
+			item.ItemID == 0x140F ||
+			item.ItemID == 0x140A ||
+			item.ItemID == 0x140B ||
+			item.ItemID == 0x13BB ||
+			item.ItemID == 0x13C0 ||
+			item.ItemID == 0x2653 ||
+			item.ItemID == 0x13BB ||
+			item.ItemID == 0x13C0 ||
+			item.ItemID == 0x2653 ||
+			item.ItemID == 0x0310 ||
+			item.ItemID == 0x4D03 ||
+			item.ItemID == 0x5C11 ||
+			item.ItemID == 0x5C14 ||
+			item.ItemID == 0x2B71 ||
+			item.ItemID == 0x3168 ||
+			item.ItemID == 0x4D03 ||
+			item.ItemID == 0x4D09 ||
+			item.ItemID == 0x5C11 ||
 			item.ItemID == 0x5C14 )
 				return true;
 
@@ -4181,47 +4181,47 @@ namespace Server
 
 		public static bool isFullHat( Item item )
 		{
-			if ( 
-			item.ItemID == 0x140C || 
-			item.ItemID == 0x140D || 
-			item.ItemID == 0x1408 || 
-			item.ItemID == 0x1409 || 
-			item.ItemID == 0x1412 || 
-			item.ItemID == 0x1419 || 
-			item.ItemID == 0x2649 || 
-			item.ItemID == 0x267F || 
-			item.ItemID == 0x2FBB || 
-			item.ItemID == 0x64BB || 
-			item.ItemID == 0x49C1 || 
-			item.ItemID == 0x1451 || 
-			item.ItemID == 0x1456 || 
-			item.ItemID == 0x1F0B || 
-			item.ItemID == 0x1F0C || 
-			item.ItemID == 0x4D01 || 
-			item.ItemID == 0x4D02 || 
-			item.ItemID == 0x4D04 || 
-			item.ItemID == 0x5C12 || 
-			item.ItemID == 0x5C13 || 
-			item.ItemID == 0x278E || 
-			item.ItemID == 0x278F || 
-			item.ItemID == 0x27D9 || 
-			item.ItemID == 0x27DA || 
-			item.ItemID == 0x2B72 || 
-			item.ItemID == 0x2FBE || 
-			item.ItemID == 0x3169 || 
-			item.ItemID == 0x3176 || 
-			item.ItemID == 0x3177 || 
-			item.ItemID == 0x4CDA || 
-			item.ItemID == 0x4CDB || 
-			item.ItemID == 0x4CDC || 
-			item.ItemID == 0x4CDD || 
-			item.ItemID == 0x4D01 || 
-			item.ItemID == 0x4D02 || 
-			item.ItemID == 0x4D04 || 
-			item.ItemID == 0x5C12 || 
-			item.ItemID == 0x5C13 || 
-			item.ItemID == 0x0405 || 
-			item.ItemID == 0x141B || 
+			if (
+			item.ItemID == 0x140C ||
+			item.ItemID == 0x140D ||
+			item.ItemID == 0x1408 ||
+			item.ItemID == 0x1409 ||
+			item.ItemID == 0x1412 ||
+			item.ItemID == 0x1419 ||
+			item.ItemID == 0x2649 ||
+			item.ItemID == 0x267F ||
+			item.ItemID == 0x2FBB ||
+			item.ItemID == 0x64BB ||
+			item.ItemID == 0x49C1 ||
+			item.ItemID == 0x1451 ||
+			item.ItemID == 0x1456 ||
+			item.ItemID == 0x1F0B ||
+			item.ItemID == 0x1F0C ||
+			item.ItemID == 0x4D01 ||
+			item.ItemID == 0x4D02 ||
+			item.ItemID == 0x4D04 ||
+			item.ItemID == 0x5C12 ||
+			item.ItemID == 0x5C13 ||
+			item.ItemID == 0x278E ||
+			item.ItemID == 0x278F ||
+			item.ItemID == 0x27D9 ||
+			item.ItemID == 0x27DA ||
+			item.ItemID == 0x2B72 ||
+			item.ItemID == 0x2FBE ||
+			item.ItemID == 0x3169 ||
+			item.ItemID == 0x3176 ||
+			item.ItemID == 0x3177 ||
+			item.ItemID == 0x4CDA ||
+			item.ItemID == 0x4CDB ||
+			item.ItemID == 0x4CDC ||
+			item.ItemID == 0x4CDD ||
+			item.ItemID == 0x4D01 ||
+			item.ItemID == 0x4D02 ||
+			item.ItemID == 0x4D04 ||
+			item.ItemID == 0x5C12 ||
+			item.ItemID == 0x5C13 ||
+			item.ItemID == 0x0405 ||
+			item.ItemID == 0x141B ||
 			item.ItemID == 0x141C )
 				return true;
 
@@ -4230,19 +4230,19 @@ namespace Server
 
 		public static bool isBarbaric( Item item )
 		{
-			if ( 
-			item.ItemID == 0x406 || 
-			item.ItemID == 0x409 || 
-			item.ItemID == 0x563E || 
-			item.ItemID == 0x5643 || 
-			item.ItemID == 0x5648 || 
-			item.ItemID == 0x564D || 
-			item.ItemID == 0x564E || 
-			item.ItemID == 0x564F || 
-			item.ItemID == 0x5650 || 
-			item.ItemID == 0x5651 || 
-			item.ItemID == 0x5652 || 
-			item.ItemID == 0x5679 || 
+			if (
+			item.ItemID == 0x406 ||
+			item.ItemID == 0x409 ||
+			item.ItemID == 0x563E ||
+			item.ItemID == 0x5643 ||
+			item.ItemID == 0x5648 ||
+			item.ItemID == 0x564D ||
+			item.ItemID == 0x564E ||
+			item.ItemID == 0x564F ||
+			item.ItemID == 0x5650 ||
+			item.ItemID == 0x5651 ||
+			item.ItemID == 0x5652 ||
+			item.ItemID == 0x5679 ||
 			item.ItemID == 0x567A )
 				return true;
 
@@ -4251,15 +4251,15 @@ namespace Server
 
 		public static bool isFullLegs( Item item )
 		{
-			if ( 
-			item.ItemID == 0x1411 || 
-			item.ItemID == 0x141A || 
-			item.ItemID == 0x264D || 
-			item.ItemID == 0x6396 || 
-			item.ItemID == 0x6397 || 
-			item.ItemID == 0x6398 || 
-			item.ItemID == 0x46AA || 
-			item.ItemID == 0x46AB || 
+			if (
+			item.ItemID == 0x1411 ||
+			item.ItemID == 0x141A ||
+			item.ItemID == 0x264D ||
+			item.ItemID == 0x6396 ||
+			item.ItemID == 0x6397 ||
+			item.ItemID == 0x6398 ||
+			item.ItemID == 0x46AA ||
+			item.ItemID == 0x46AB ||
 			item.ItemID == 0x1965 )
 				return true;
 
@@ -4268,12 +4268,12 @@ namespace Server
 
 		public static bool isJester( Item item )
 		{
-			if ( 
-			item.ItemID == 0x27E7 || 
-			item.ItemID == 0x279C || 
-			item.ItemID == 0x2B6B || 
-			item.ItemID == 0x4C16 || 
-			item.ItemID == 0x4C17 || 
+			if (
+			item.ItemID == 0x27E7 ||
+			item.ItemID == 0x279C ||
+			item.ItemID == 0x2B6B ||
+			item.ItemID == 0x4C16 ||
+			item.ItemID == 0x4C17 ||
 			item.ItemID == 0x3162 )
 				return true;
 
@@ -4283,55 +4283,55 @@ namespace Server
 		public static bool isArmor( Item item )
 		{
 			if ( // NORMAL
-			item.ItemID == 0x1415 || 
-			item.ItemID == 0x1416 || 
-			item.ItemID == 0x6399 || 
-			item.ItemID == 0x639A || 
-			item.ItemID == 0x639B || 
-			item.ItemID == 0x639C || 
-			item.ItemID == 0x13CC || 
-			item.ItemID == 0x13D3 || 
-			item.ItemID == 0x264F || 
-			item.ItemID == 0x2650 || 
-			item.ItemID == 0x2B79 || 
-			item.ItemID == 0x3170 || 
-			item.ItemID == 0x13BF || 
-			item.ItemID == 0x13C4 || 
-			item.ItemID == 0x2654 || 
-			item.ItemID == 0x2655 || 
-			item.ItemID == 0x13EC || 
-			item.ItemID == 0x13ED || 
-			item.ItemID == 0x2B08 || 
-			item.ItemID == 0x2B09 || 
-			item.ItemID == 0x13DB || 
-			item.ItemID == 0x13E2 || 
-			item.ItemID == 0x1969 || 
-			item.ItemID == 0x498F || 
-			item.ItemID == 0x4B57 || 
-			item.ItemID == 0x4B58 || 
-			item.ItemID == 0x144F || 
-			item.ItemID == 0x1454 || 
-			item.ItemID == 0x277B || 
-			item.ItemID == 0x277C || 
-			item.ItemID == 0x277D || 
-			item.ItemID == 0x2793 || 
-			item.ItemID == 0x2794 || 
-			item.ItemID == 0x27C6 || 
-			item.ItemID == 0x27C7 || 
-			item.ItemID == 0x27C8 || 
-			item.ItemID == 0x27DE || 
-			item.ItemID == 0x27DF || 
-			item.ItemID == 0x2641 || 
-			item.ItemID == 0x2642 || 
+			item.ItemID == 0x1415 ||
+			item.ItemID == 0x1416 ||
+			item.ItemID == 0x6399 ||
+			item.ItemID == 0x639A ||
+			item.ItemID == 0x639B ||
+			item.ItemID == 0x639C ||
+			item.ItemID == 0x13CC ||
+			item.ItemID == 0x13D3 ||
+			item.ItemID == 0x264F ||
+			item.ItemID == 0x2650 ||
+			item.ItemID == 0x2B79 ||
+			item.ItemID == 0x3170 ||
+			item.ItemID == 0x13BF ||
+			item.ItemID == 0x13C4 ||
+			item.ItemID == 0x2654 ||
+			item.ItemID == 0x2655 ||
+			item.ItemID == 0x13EC ||
+			item.ItemID == 0x13ED ||
+			item.ItemID == 0x2B08 ||
+			item.ItemID == 0x2B09 ||
+			item.ItemID == 0x13DB ||
+			item.ItemID == 0x13E2 ||
+			item.ItemID == 0x1969 ||
+			item.ItemID == 0x498F ||
+			item.ItemID == 0x4B57 ||
+			item.ItemID == 0x4B58 ||
+			item.ItemID == 0x144F ||
+			item.ItemID == 0x1454 ||
+			item.ItemID == 0x277B ||
+			item.ItemID == 0x277C ||
+			item.ItemID == 0x277D ||
+			item.ItemID == 0x2793 ||
+			item.ItemID == 0x2794 ||
+			item.ItemID == 0x27C6 ||
+			item.ItemID == 0x27C7 ||
+			item.ItemID == 0x27C8 ||
+			item.ItemID == 0x27DE ||
+			item.ItemID == 0x27DF ||
+			item.ItemID == 0x2641 ||
+			item.ItemID == 0x2642 ||
 			item.ItemID == 0x264A )
 				return true;
 
 			if ( // FEMALE
-			item.ItemID == 0x1C03 || 
-			item.ItemID == 0x1C04 || 
-			item.ItemID == 0x1C05 || 
-			item.ItemID == 0x1C06 || 
-			item.ItemID == 0x1C07 || 
+			item.ItemID == 0x1C03 ||
+			item.ItemID == 0x1C04 ||
+			item.ItemID == 0x1C05 ||
+			item.ItemID == 0x1C06 ||
+			item.ItemID == 0x1C07 ||
 			item.ItemID == 0x1C02 )
 				return true;
 
@@ -5912,9 +5912,9 @@ namespace Server
 		public bool QuestItem
 		{
 			get { return GetFlag( ImplFlag.QuestItem ); }
-			set 
-			{ 
-				SetFlag( ImplFlag.QuestItem, value ); 
+			set
+			{
+				SetFlag( ImplFlag.QuestItem, value );
 
 				InvalidateProperties();
 

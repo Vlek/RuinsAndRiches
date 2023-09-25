@@ -1,20 +1,20 @@
 using System;
 using Server;
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
 using Server.Network;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class BlackKnight : BaseCreature 
+	public class BlackKnight : BaseCreature
 	{
-		[Constructable] 
-		public BlackKnight() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public BlackKnight() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Body = 0x190; 
+			Body = 0x190;
 
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = Utility.RandomSkinColor();
@@ -130,21 +130,21 @@ namespace Server.Mobiles
 			Server.Misc.IntelligentAction.CryOut( this );
 		}
 
-		public BlackKnight( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public BlackKnight( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }
 
@@ -160,8 +160,8 @@ namespace Server.Items
 			Name = "the Black Knights's box";
 			Movable = false;
 			Hue = 0x96C;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
-			thisTimer.Start(); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
+			thisTimer.Start();
 		}
 
 		public BlackKnightBox( Serial serial ) : base( serial )
@@ -199,25 +199,25 @@ namespace Server.Items
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 }

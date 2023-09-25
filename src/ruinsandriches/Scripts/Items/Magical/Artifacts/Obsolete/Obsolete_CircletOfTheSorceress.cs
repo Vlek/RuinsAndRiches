@@ -10,12 +10,12 @@ namespace Server.Items
 		public override int InitMinHits{ get{ return 80; } }
 		public override int InitMaxHits{ get{ return 160; } }
 
-		public override int BaseColdResistance{ get{ return 11; } } 
-		public override int BaseEnergyResistance{ get{ return 12; } } 
-		public override int BasePhysicalResistance{ get{ return 2; } } 
-		public override int BasePoisonResistance{ get{ return 8; } } 
-		public override int BaseFireResistance{ get{ return 12; } } 
-      
+		public override int BaseColdResistance{ get{ return 11; } }
+		public override int BaseEnergyResistance{ get{ return 12; } }
+		public override int BasePhysicalResistance{ get{ return 2; } }
+		public override int BasePoisonResistance{ get{ return 8; } }
+		public override int BaseFireResistance{ get{ return 12; } }
+
       [Constructable]
 		public CircletOfTheSorceress()
 		{

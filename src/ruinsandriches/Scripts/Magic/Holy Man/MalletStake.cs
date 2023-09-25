@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -37,9 +37,9 @@ namespace Server.Items
             list.Add( 1049644, "Single Click To Use");
         }
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new StakeGump( from, this ) );
 		}
 
@@ -53,7 +53,7 @@ namespace Server.Items
 		{
 			private Mobile m_Mobile;
 			private MalletStake m_Stake;
-			
+
 			public StakeGump( Mobile from, MalletStake stake ) : base( 6132, 3 )
 			{
 				m_Mobile = from;
@@ -70,7 +70,7 @@ namespace Server.Items
 					m_Mobile.SendMessage("This has killed enough vampires.");
 					return;
 				}
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					m_Mobile.SendMessage("What vampire do you want to stake?");
@@ -130,7 +130,7 @@ namespace Server.Items
 							from.PlaySound( 0x13E );
 							m_Stake.InvalidateProperties();
 						}
-						else 
+						else
 						{
 							from.SendMessage("You don't need to do that!");
 							return;

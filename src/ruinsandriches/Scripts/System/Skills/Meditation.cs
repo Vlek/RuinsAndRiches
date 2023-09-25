@@ -36,7 +36,7 @@ namespace Server.SkillHandlers
 				m.SendLocalizedMessage( 501845 ); // You are busy doing something else and cannot focus.
 
 				return TimeSpan.FromSeconds( 5.0 );
-			} 
+			}
 			else if ( !Core.AOS && m.Hits < (m.HitsMax / 10) ) // Less than 10% health
 			{
 				m.SendLocalizedMessage( 501849 ); // The mind is strong but the body is weak.
@@ -55,7 +55,7 @@ namespace Server.SkillHandlers
 
 				return TimeSpan.FromSeconds( 10.0 );
 			}
-			else 
+			else
 			{
 				Item oneHanded = m.FindItemOnLayer( Layer.OneHanded );
 				Item twoHanded = m.FindItemOnLayer( Layer.TwoHanded );
@@ -79,8 +79,8 @@ namespace Server.SkillHandlers
 
 					if ( m.Player || m.Body.IsHuman )
 						m.PlaySound( 0xF9 );
-				} 
-				else 
+				}
+				else
 				{
 					m.SendLocalizedMessage( 501850 ); // You cannot focus your concentration.
 				}

@@ -18,7 +18,8 @@ namespace Server.Items
 		public override void AddNameProperties( ObjectPropertyList list )
 		{
 			base.AddNameProperties( list );
-			list.Add( 1070722, "7th Circle of Power" );			list.Add( 1049644, "Requires 40 Intelligence" );
+			list.Add( 1070722, "7th Circle of Power" );
+			list.Add( 1049644, "Requires 40 Intelligence" );
 		}
 
 		public MeteorSwarmMagicStaff( Serial serial ) : base( serial )
@@ -37,7 +38,8 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			if ( IntRequirement != 40 ) { IntRequirement = 40; }
+
+			if ( IntRequirement != 40 ) { IntRequirement = 40; }
 		}
 
 		public override void OnMagicStaffUse( Mobile from )

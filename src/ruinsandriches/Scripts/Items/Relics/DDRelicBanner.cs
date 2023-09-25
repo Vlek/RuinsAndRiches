@@ -8,7 +8,7 @@ namespace Server.Items
 		public int RelicGoldValue;
 		public int RelicFlipID1;
 		public int RelicFlipID2;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -51,7 +51,7 @@ namespace Server.Items
 				case 19:SuperRare = 1; break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 9 ) ) 
+			switch ( Utility.RandomMinMax( 0, 9 ) )
 			{
 				case 0: ItemID = 0x2D6F; RelicFlipID1 = 0x2D6F; RelicFlipID2 = 0x2D70; break;
 				case 1: ItemID = 0x2D71; RelicFlipID1 = 0x2D71; RelicFlipID2 = 0x2D72; break;
@@ -177,7 +177,7 @@ namespace Server.Items
 					case 3:	sSaying = Server.Misc.RandomThings.GetRandomColorName(0) + " " + Server.Misc.RandomThings.GetRandomThing(0);		break;
 				}
 
-				switch ( Utility.RandomMinMax( 0, 10 ) ) 
+				switch ( Utility.RandomMinMax( 0, 10 ) )
 				{
 					case 0: relic.Weight = 20.0;	relic.ItemID = 0x2D73; relic.RelicFlipID1 = 0x2D73; relic.RelicFlipID2 = 0x2D74; relic.Name = sLook + " map of the " + OwnerNation + " " + sWorld + " of " + OwnerName; break;
 					case 1: relic.Weight = 20.0;	relic.ItemID = 0x2D73; relic.RelicFlipID1 = 0x2D73; relic.RelicFlipID2 = 0x2D74; relic.Name = sLook + " map of a " + sWorld + " during the " + Server.Misc.RandomThings.GetRandomColorName(0) + " Dynasty"; break;

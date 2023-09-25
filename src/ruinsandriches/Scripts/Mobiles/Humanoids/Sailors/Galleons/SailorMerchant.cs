@@ -7,26 +7,26 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class SailorMerchant : BasePirate 
+	public class SailorMerchant : BasePirate
 	{
-		[Constructable] 
+		[Constructable]
 		public SailorMerchant()
 		{
 			Title = "the ship captain";
 			Hue = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() ) 
+			if ( this.Female = Utility.RandomBool() )
 			{
-				this.Body = 0x191; 
-				this.Name = NameList.RandomName( "female" ); 
+				this.Body = 0x191;
+				this.Name = NameList.RandomName( "female" );
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
+			}
+			else
+			{
+				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 				Utility.AssignRandomHair( this );
 				int HairColor = Utility.RandomHairHue();

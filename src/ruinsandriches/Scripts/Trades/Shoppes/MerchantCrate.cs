@@ -53,21 +53,21 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			CrateGold = reader.ReadInt();
-			QuickTimer thisTimer = new QuickTimer( this ); 
+			QuickTimer thisTimer = new QuickTimer( this );
 			thisTimer.Start();
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from ) );
 			if ( !this.Movable && BaseHouse.CheckAccessible( from, this ) == true ){ list.Add( new CashOutEntry( from, this ) ); }
-		} 
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public SpeechGumpEntry( Mobile from ) : base( 6121, 3 )
 			{
 				m_Mobile = from;
@@ -77,7 +77,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -92,7 +92,7 @@ namespace Server.Items
 		{
 			private Mobile m_Mobile;
 			private MerchantCrate m_Crate;
-	
+
 			public CashOutEntry( Mobile from, MerchantCrate crate ) : base( 6113, 3 )
 			{
 				m_Mobile = from;
@@ -103,7 +103,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( m_Crate.CrateGold > 0 )
@@ -1287,7 +1287,7 @@ namespace Server.Items
 			else if ( item is RoyalSkirt ){ gold = 5 * amount; }
 			else if ( item is Skirt ){ gold = 6 * amount; }
 			else if ( item is RoyalLongSkirt ){ gold = 6 * amount; }
-			else if ( item is BarbarianBoots ){ gold = 7 * amount; } 
+			else if ( item is BarbarianBoots ){ gold = 7 * amount; }
 			else if ( item is DeadMask ){ gold = 11 * amount; }
 			else if ( item is WizardHood ){ gold = 6 * amount; }
 			else if ( item is PlainLowTable ){ gold = 87 * amount; }

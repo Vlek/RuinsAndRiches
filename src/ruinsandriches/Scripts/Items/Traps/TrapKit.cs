@@ -15,7 +15,7 @@ namespace Server.Items
 	public class TrapKit : Item
 	{
 		public string m_Metal;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Metal { get { return m_Metal; } set { m_Metal = value; InvalidateProperties(); } }
 
@@ -43,7 +43,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "These tools must be in your backpack to use." );
 				return;
@@ -64,7 +64,7 @@ namespace Server.Items
 				}
 				else if ( !from.Region.AllowHarmful( from, from ) )
 				{
-					from.SendMessage( "That doesn't feel like a good idea." ); 
+					from.SendMessage( "That doesn't feel like a good idea." );
 					return;
 				}
 				else if ( from.Skills[SkillName.RemoveTrap].Value > 0 )
@@ -91,8 +91,8 @@ namespace Server.Items
 					else if ( m_Metal == "Xormite" ){ Power = Power + 42; }
 					else if ( m_Metal == "Dwarven" ){ Power = Power + 78; }
 
-					SetTrap trap = new SetTrap( from, Power ); 
-					trap.Map = from.Map; 
+					SetTrap trap = new SetTrap( from, Power );
+					trap.Map = from.Map;
 					trap.Hue = this.Hue;
 					trap.Location = from.Location;
 				}

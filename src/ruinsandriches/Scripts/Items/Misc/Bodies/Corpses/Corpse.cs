@@ -88,15 +88,15 @@ namespace Server.Items
 		public static readonly TimeSpan InstancedCorpseTime = TimeSpan.FromMinutes( 3.0 );
 
 		[CommandProperty( AccessLevel.GameMaster )]
-		public virtual bool InstancedCorpse 
-		{ 
-			get 
+		public virtual bool InstancedCorpse
+		{
+			get
 			{
 				if ( !Core.SE )
 					return false;
 
 				return ( DateTime.Now < (m_TimeOfDeath + InstancedCorpseTime) );
-			} 
+			}
 		}
 
 		private Dictionary<Item, InstancedItemInfo> m_InstancedItems;
@@ -440,20 +440,20 @@ namespace Server.Items
 
 				return "the remains of " + called;
 			}
-			else if ( 	m is PirateLand || 
-						m is PirateCrew || 
-						m is PirateCrewBow || 
-						m is PirateCrewMage || 
-						m is PirateCaptain || 
-						m is ElfPirateCaptain || 
-						m is ElfPirateCrew || 
-						m is ElfPirateCrewBow || 
-						m is BoatPirateBard || 
-						m is BoatPirateArcher || 
-						m is ElfBoatPirateMage || 
-						m is ElfBoatPirateBard || 
-						m is BoatPirateMage || 
-						m is ElfBoatPirateArcher || 
+			else if ( 	m is PirateLand ||
+						m is PirateCrew ||
+						m is PirateCrewBow ||
+						m is PirateCrewMage ||
+						m is PirateCaptain ||
+						m is ElfPirateCaptain ||
+						m is ElfPirateCrew ||
+						m is ElfPirateCrewBow ||
+						m is BoatPirateBard ||
+						m is BoatPirateArcher ||
+						m is ElfBoatPirateMage ||
+						m is ElfBoatPirateBard ||
+						m is BoatPirateMage ||
+						m is ElfBoatPirateArcher ||
 						m is ElfPirateCrewMage )
 			{
 				return "the remains of " + m.Name + " the pirate";
@@ -1052,7 +1052,7 @@ namespace Server.Items
 								else
 								{
 									Map map = from.Map;
-	
+
 									if ( map != null && map != Map.Internal )
 										robe.MoveToWorld( from.Location, map );
 								}
@@ -1206,15 +1206,15 @@ namespace Server.Items
 				from.SendLocalizedMessage( 500485 ); // You see nothing useful to carve from the corpse.
 			}
 			else if ( ((Body)Amount).IsHuman && ItemID == 0x2006 && ( // DON'T WANT TO CARVE ORKS AND ELVES
-				dead is EvilMage ||		dead is EvilMageLord || 		dead is Brigand || 			dead is Executioner || 
-				dead is Savage ||		dead is SavageRider ||  		dead is Syth || 			dead is Adventurers || 
-				dead is Bandit || 		dead is Mangar || 				dead is ZuluuNative || 		dead is Jedi || 
-				dead is ZuluuArcher ||	dead is NativeWitchDoctor || 	dead is NativeArcher || 	dead is Native || 
-				dead is Rogue ||		dead is ZuluuWitchDoctor || 	dead is PirateLand || 		dead is PirateCrew || 
-				dead is Monks ||		dead is PirateCaptain || 		dead is BoatPirateArcher || dead is BoatPirateMage || 
-				dead is Minstrel ||		dead is BoatPirateBard || 		dead is BoatSailorArcher || dead is BoatSailorMage || 
-				dead is Berserker ||	dead is BoatSailorBard || 		dead is BlackKnight || 		dead is BloodAssassin || 
-				dead is Archmage ||		dead is BombWorshipper || 		dead is Psionicist || 		dead is SavageAlien || 
+				dead is EvilMage ||		dead is EvilMageLord || 		dead is Brigand || 			dead is Executioner ||
+				dead is Savage ||		dead is SavageRider ||  		dead is Syth || 			dead is Adventurers ||
+				dead is Bandit || 		dead is Mangar || 				dead is ZuluuNative || 		dead is Jedi ||
+				dead is ZuluuArcher ||	dead is NativeWitchDoctor || 	dead is NativeArcher || 	dead is Native ||
+				dead is Rogue ||		dead is ZuluuWitchDoctor || 	dead is PirateLand || 		dead is PirateCrew ||
+				dead is Monks ||		dead is PirateCaptain || 		dead is BoatPirateArcher || dead is BoatPirateMage ||
+				dead is Minstrel ||		dead is BoatPirateBard || 		dead is BoatSailorArcher || dead is BoatSailorMage ||
+				dead is Berserker ||	dead is BoatSailorBard || 		dead is BlackKnight || 		dead is BloodAssassin ||
+				dead is Archmage ||		dead is BombWorshipper || 		dead is Psionicist || 		dead is SavageAlien ||
 				( HumanLands == true && dead is BaseVendor ) || ( HumanLands == true && dead is BaseHealer ) || ( HumanLands == true && dead is BasePerson )
 				))
 			{
@@ -1265,8 +1265,8 @@ namespace Server.Items
 				ProcessDelta();
 			}
 			else if (
-				dead is ElfBoatPirateBard ||		dead is ElfBoatPirateArcher || 			dead is ElfBoatPirateMage || 
-				dead is ElfPirateCaptain ||				dead is ElfPirateCrew || 				dead is OrkRogue || 
+				dead is ElfBoatPirateBard ||		dead is ElfBoatPirateArcher || 			dead is ElfBoatPirateMage ||
+				dead is ElfPirateCaptain ||				dead is ElfPirateCrew || 				dead is OrkRogue ||
 				dead is ElfRogue
 				)
 			{

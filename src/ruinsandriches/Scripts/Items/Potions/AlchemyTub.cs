@@ -18,7 +18,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Place In Your Home");
             list.Add( 1049644, "Cleans Jars And Bottles");
-        } 
+        }
 
 		public AlchemyTub( Serial serial ) : base( serial )
 		{

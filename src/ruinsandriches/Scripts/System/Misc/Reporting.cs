@@ -482,13 +482,13 @@ namespace Server.Engines.Reports
 		private float	_maxTickValueWidth;					// Used to calculate left offset of bar graph
 		private float	_totalHeight;
 		private float	_totalWidth;
-		
+
 		// Graph related members
 		private float	_barWidth;
 		private float	_bottomBuffer;	// Space from bottom to x axis
-		private bool	_displayBarData;	
+		private bool	_displayBarData;
 		private Color	_fontColor;
-		private float	_graphHeight;		
+		private float	_graphHeight;
 		private float	_graphWidth;
 		private float	_maxValue = 0.0f;	// = final tick value * tick count
 		private float	_scaleFactor;		// = _maxValue / _graphHeight
@@ -506,7 +506,7 @@ namespace Server.Engines.Reports
 		private string	_longestLabel = string.Empty;	// Used to calculate legend width
 		private float	_maxLabelWidth = 0.0f;
 
-		public string FontFamily 
+		public string FontFamily
 		{
 			get{ return _fontFamily; }
 			set{ _fontFamily = value; }
@@ -518,56 +518,56 @@ namespace Server.Engines.Reports
 			set{ _renderMode = value; }
 		}
 
-		public Color BackgroundColor 
+		public Color BackgroundColor
 		{
 			set{ _backColor = value; }
 		}
 
-		public int BottomBuffer 
+		public int BottomBuffer
 		{
 			set { _bottomBuffer = Convert.ToSingle(value); }
 		}
 
-		public Color FontColor 
+		public Color FontColor
 		{
 			set{ _fontColor = value; }
 		}
 
-		public int Height 
+		public int Height
 		{
 			get{ return Convert.ToInt32(_totalHeight); }
-			set{ _totalHeight = Convert.ToSingle(value); }  
+			set{ _totalHeight = Convert.ToSingle(value); }
 		}
 
-		public int Width 
+		public int Width
 		{
 			get{ return Convert.ToInt32(_totalWidth); }
-			set{ _totalWidth = Convert.ToSingle(value); }	
+			set{ _totalWidth = Convert.ToSingle(value); }
 		}
 
-		public bool ShowLegend 
+		public bool ShowLegend
 		{
 			get{ return _displayLegend; }
 			set{ _displayLegend = value; }
 		}
 
-		public bool ShowData 
+		public bool ShowData
 		{
 			get{ return _displayBarData; }
 			set{ _displayBarData = value; }
 		}
-		public int TopBuffer 
+		public int TopBuffer
 		{
 			set { _topBuffer = Convert.ToSingle(value); }
 		}
 
-		public string VerticalLabel 
+		public string VerticalLabel
 		{
 			get{ return _yLabel; }
 			set{ _yLabel = value; }
 		}
 
-		public int VerticalTickCount 
+		public int VerticalTickCount
 		{
 			get{ return _yTickCount; }
 			set{ _yTickCount = value; }
@@ -594,7 +594,7 @@ namespace Server.Engines.Reports
 
 		//*********************************************************************
 		//
-		// This method collects all data points and calculate all the necessary dimensions 
+		// This method collects all data points and calculate all the necessary dimensions
 		// to draw the bar graph.  It is the method called before invoking the Draw() method.
 		// labels is the x values.
 		// values is the y values.
@@ -603,7 +603,7 @@ namespace Server.Engines.Reports
 
 		public void CollectDataPoints(string[] labels, string[] values)
 		{
-			if (labels.Length == values.Length) 
+			if (labels.Length == values.Length)
 			{
 				for(int i=0; i<labels.Length; i++)
 				{
@@ -612,12 +612,12 @@ namespace Server.Engines.Reports
 
 					// For now put 0.0 for start position and sweep size
 					DataPoints.Add(new DataItem(shortLbl, labels[i], temp, 0.0f, 0.0f, GetColor(i)));
-				
+
 					// Find max value from data; this is only temporary _maxValue
 					if (_maxValue < temp) _maxValue = temp;
 
 					// Find the longest description
-					if (_displayLegend) 
+					if (_displayLegend)
 					{
 						string currentLbl = labels[i] + " (" + shortLbl + ")";
 						float currentWidth = CalculateImgFontWidth(currentLbl, _legendFontSize, FontFamily);
@@ -637,7 +637,7 @@ namespace Server.Engines.Reports
 			else
 				throw new Exception("X data count is different from Y data count");
 		}
-		
+
 		//*********************************************************************
 		//
 		// Same as above; called when user doesn't care about the x values
@@ -697,7 +697,7 @@ namespace Server.Engines.Reports
 
 		//*********************************************************************
 		//
-		// This method returns a bar graph bitmap to the calling function.  It is called after 
+		// This method returns a bar graph bitmap to the calling function.  It is called after
 		// all dimensions and data points are calculated.
 		//
 		//*********************************************************************
@@ -708,7 +708,7 @@ namespace Server.Engines.Reports
 			int width = Convert.ToInt32(_totalWidth);
 
 			Bitmap bmp = new Bitmap(width, height);
-			
+
 			using(Graphics graph = Graphics.FromImage(bmp))
 			{
 				graph.CompositingQuality = CompositingQuality.HighQuality;
@@ -744,7 +744,7 @@ namespace Server.Engines.Reports
 			Font valFont = null;
 			StringFormat sfFormat = null;
 
-			try 
+			try
 			{
 				brsFont = new SolidBrush(_fontColor);
 				valFont = new Font(_fontFamily, _labelFontSize);
@@ -836,7 +836,7 @@ namespace Server.Engines.Reports
 											}
 										}
 
-										graph.DrawString(item.Value.ToString("#,###.##"), valFont, brsFont, recVal, sfFormat);	
+										graph.DrawString(item.Value.ToString("#,###.##"), valFont, brsFont, recVal, sfFormat);
 									}
 								}
 
@@ -886,7 +886,7 @@ namespace Server.Engines.Reports
 											}
 										}
 
-										graph.DrawString(item.Value.ToString("#,###.##"), valFont, brsFont, recVal, sfFormat);	
+										graph.DrawString(item.Value.ToString("#,###.##"), valFont, brsFont, recVal, sfFormat);
 									}
 								}
 							}
@@ -894,7 +894,7 @@ namespace Server.Engines.Reports
 					}
 				}
 			}
-			finally 
+			finally
 			{
 				if (brsFont != null) brsFont.Dispose();
 				if (valFont != null) valFont.Dispose();
@@ -917,7 +917,7 @@ namespace Server.Engines.Reports
 			StringFormat sfVLabel = null;
 
 			float fo = (_yTitle==null?0.0f:20.0f);
-			
+
 			try
 			{
 				brs = new SolidBrush(_fontColor);
@@ -958,9 +958,9 @@ namespace Server.Engines.Reports
 						float currentY = _topBuffer + (i * _yTickValue/_scaleFactor);	// Position for tick mark
 						float labelY = currentY-lblFont.Height/2;						// Place label in the middle of tick
 						RectangleF lblRec = new RectangleF(_spacer+fo-6, labelY, _maxTickValueWidth, lblFont.Height);
-				
+
 						float currentTick = _maxValue - i*_yTickValue;					// Calculate tick value from top to bottom
-						graph.DrawString(currentTick.ToString("#,###.##"), lblFont, brs, lblRec, lblFormat);	// Draw tick value  
+						graph.DrawString(currentTick.ToString("#,###.##"), lblFont, brs, lblRec, lblFormat);	// Draw tick value
 						graph.DrawLine(pen, _xOrigin, currentY, _xOrigin - 4.0f, currentY);						// Draw tick mark
 
 						graph.DrawLine(smallPen, _xOrigin, currentY, _xOrigin + _graphWidth, currentY );
@@ -1147,12 +1147,12 @@ namespace Server.Engines.Reports
 		//
 		//*********************************************************************
 
-		private void CalculateGraphDimension() 
+		private void CalculateGraphDimension()
 		{
 			FindLongestTickValue();
-			
+
 			// Need to add another character for spacing; this is not used for drawing, just for calculation
-			_longestTickValue += "0";		
+			_longestTickValue += "0";
 			//_maxTickValueWidth = CalculateImgFontWidth(_longestTickValue, _labelFontSize, FontFamily);
 			_maxTickValueWidth = 0.0f;
 
@@ -1160,7 +1160,7 @@ namespace Server.Engines.Reports
 			string tickString;
 			for (int i=0; i<_yTickCount; i++)
 			{
-				currentTick = _maxValue - i*_yTickValue;	
+				currentTick = _maxValue - i*_yTickValue;
 				tickString = currentTick.ToString("#,###.##");
 
 				float measured = CalculateImgFontWidth( tickString, _labelFontSize, FontFamily );
@@ -1172,7 +1172,7 @@ namespace Server.Engines.Reports
 			float leftOffset = _spacer + _maxTickValueWidth + (_yTitle == null ? 0.0f : 20.0f);
 			float rtOffset = 0.0f;
 
-			if (_displayLegend) 
+			if (_displayLegend)
 			{
 				_legendWidth = _spacer + _legendRectangleSize + _spacer + _maxLabelWidth + _spacer;
 				rtOffset = _graphLegendSpacer + _legendWidth + _spacer;
@@ -1207,7 +1207,7 @@ namespace Server.Engines.Reports
 			string tickString;
 			for (int i=0; i<_yTickCount; i++)
 			{
-				currentTick = _maxValue - i*_yTickValue;	
+				currentTick = _maxValue - i*_yTickValue;
 				tickString = currentTick.ToString("#,###.##");
 				if (_longestTickValue.Length < tickString.Length)
 					_longestTickValue = tickString;
@@ -1235,7 +1235,7 @@ namespace Server.Engines.Reports
 				graph = Graphics.FromImage(bmp);
 				SizeF oSize = graph.MeasureString(text, font);
 				oSize.Width=4+(float)Math.Ceiling(oSize.Width);
-			
+
 				return oSize.Width;
 			}
 			finally
@@ -1245,7 +1245,7 @@ namespace Server.Engines.Reports
 				if (font != null) font.Dispose();
 			}
 		}
-		
+
 		//*********************************************************************
 		//
 		// This method creates abbreviation from long description; used for making legend
@@ -1255,7 +1255,7 @@ namespace Server.Engines.Reports
 		private string MakeShortLabel(string text)
 		{
 			string label = text;
-			if (text.Length > 2) 
+			if (text.Length > 2)
 			{
 				int midPostition = Convert.ToInt32(Math.Floor(text.Length/2.0));
 				label = text.Substring(0,1) + text.Substring(midPostition, 1) + text.Substring(text.Length-1,1);
@@ -1310,7 +1310,7 @@ namespace Server.Engines.Reports
 			{
 				// This implementation does not support negative value
 				if (item.Value >= 0) item.SweepSize = item.Value/_scaleFactor;
-				
+
 				// (_spaceBtwBars/2) makes half white space for the first bar
 				item.StartPos = (_spaceBtwBars/2) + i * (_barWidth+_spaceBtwBars);
 				i++;
@@ -1326,14 +1326,14 @@ namespace Server.Engines.Reports
 		private void CalculateBarWidth(int dataCount, float barGraphWidth)
 		{
 			// White space between each bar is the same as bar width itself
-			_barWidth = barGraphWidth / (dataCount * 2);  // Each bar has 1 white space 
+			_barWidth = barGraphWidth / (dataCount * 2);  // Each bar has 1 white space
 			//_barWidth =/* (float)Math.Floor(*/_barWidth/*)*/;
 			_spaceBtwBars = _barWidth;
 		}
 
 		//*********************************************************************
 		//
-		// This method assigns default value to the bar graph properties and is only 
+		// This method assigns default value to the bar graph properties and is only
 		// called from BarGraph constructors
 		//
 		//*********************************************************************
@@ -1369,8 +1369,8 @@ namespace Server.Engines.Reports
 	{
 		private const int _colorLimit = 9;
 
-		private Color[] _color = 
-			{ 
+		private Color[] _color =
+			{
 				Color.Firebrick,
 				Color.SkyBlue,
 				Color.MediumSeaGreen,
@@ -1383,10 +1383,10 @@ namespace Server.Engines.Reports
 			};
 
 		// Represent collection of all data points for the chart
-		private ChartItemsCollection _dataPoints = new ChartItemsCollection();  
+		private ChartItemsCollection _dataPoints = new ChartItemsCollection();
 
 		// The implementation of this method is provided by derived classes
-		public abstract Bitmap Draw();	
+		public abstract Bitmap Draw();
 
 		public ChartItemsCollection DataPoints
 		{
@@ -1396,7 +1396,7 @@ namespace Server.Engines.Reports
 
 		public void SetColor(int index, Color NewColor)
 		{
-			if (index < _colorLimit) 
+			if (index < _colorLimit)
 			{
 				_color[index] = NewColor;
 			}
@@ -1410,7 +1410,7 @@ namespace Server.Engines.Reports
 		{
 			//return _color[index%_colorLimit];
 
-			if (index < _colorLimit) 
+			if (index < _colorLimit)
 			{
 				return _color[index];
 			}
@@ -1435,7 +1435,7 @@ namespace Server.Engines.Reports
 	//
 	//*********************************************************************
 
-	public class DataItem 
+	public class DataItem
 	{
 		private string _label;
 		private string _description;
@@ -1445,7 +1445,7 @@ namespace Server.Engines.Reports
 		private float _sweepSize;
 
 		private DataItem()	{}
-		
+
 		public DataItem(string label, string desc, float data, float start, float sweep, Color clr)
 		{
 			_label = label;
@@ -1456,25 +1456,25 @@ namespace Server.Engines.Reports
 			_color = clr;
 		}
 
-		public string Label 
+		public string Label
 		{
 			get{ return _label; }
 			set{ _label = value; }
 		}
 
-		public string Description 
+		public string Description
 		{
 			get{ return _description; }
 			set{ _description = value; }
-		} 
+		}
 
-		public float Value 
+		public float Value
 		{
 			get{ return _value; }
 			set{ _value = value; }
 		}
 
-		public Color ItemColor 
+		public Color ItemColor
 		{
 			get{ return _color; }
 			set{ _color = value; }
@@ -1499,30 +1499,30 @@ namespace Server.Engines.Reports
 	//
 	//*********************************************************************
 
-	public class ChartItemsCollection : CollectionBase 
+	public class ChartItemsCollection : CollectionBase
 	{
-		public DataItem this[int index] 
+		public DataItem this[int index]
 		{
 			get{ return (DataItem)(List[index]); }
 			set{ List[index] = value; }
 		}
- 
-		public int Add(DataItem value) 
+
+		public int Add(DataItem value)
 		{
 			return List.Add(value);
 		}
- 
-		public int IndexOf(DataItem value) 
+
+		public int IndexOf(DataItem value)
 		{
 			return List.IndexOf(value);
 		}
- 
-		public bool Contains(DataItem value) 
+
+		public bool Contains(DataItem value)
 		{
 			return List.Contains(value);
 		}
 
-		public void Remove(DataItem value) 
+		public void Remove(DataItem value)
 		{
 			List.Remove(value);
 		}
@@ -2110,7 +2110,7 @@ namespace Server.Engines.Reports
 
 		//*********************************************************************
 		//
-		// This method collects all data points and calculate all the necessary dimensions 
+		// This method collects all data points and calculate all the necessary dimensions
 		// to draw the chart.  It is the first method called before invoking the Draw() method.
 		//
 		//*********************************************************************
@@ -2118,14 +2118,14 @@ namespace Server.Engines.Reports
 		public void CollectDataPoints(string[] xValues, string[] yValues)
 		{
 			_total = 0.0f;
-			
+
 			for (int i = 0;i < xValues.Length;i++)
 			{
 				float ftemp = Convert.ToSingle(yValues[i]);
 				_chartItems.Add(new DataItem(xValues[i], xValues.ToString(), ftemp, 0, 0, Color.AliceBlue));
 				_total += ftemp;
 			}
-			
+
 			float nextStartPos = 0.0f;
 			int counter = 0;
 			foreach (DataItem item in _chartItems)
@@ -2155,7 +2155,7 @@ namespace Server.Engines.Reports
 			Pen pen = null;
 			Graphics grp = null;
 			StringFormat sf = null, sfp = null;
-			
+
 			try
 			{
 				grp = Graphics.FromImage(bmp);
@@ -2168,8 +2168,8 @@ namespace Server.Engines.Reports
 					grp.FillRectangle(brsh, -1, -1, perimeter + _legendWidth+1, perimeter+1);
 
 				//Align text to the right
-				sf.Alignment = StringAlignment.Far; 
-			
+				sf.Alignment = StringAlignment.Far;
+
 				//Draw all wedges and legends
 				for(int i=0; i<_chartItems.Count; i++)
 				{
@@ -2227,11 +2227,11 @@ namespace Server.Engines.Reports
 
 						grp.FillRectangle(brs, perimeter + _bufferSpace, i * _legendFontHeight + 15, 10, 10);
 						grp.DrawRectangle(pen, perimeter + _bufferSpace, i * _legendFontHeight + 15, 10, 10);
-					
-						grp.DrawString(item.Label, fnt, 
+
+						grp.DrawString(item.Label, fnt,
 							Brushes.Black, perimeter + _bufferSpace + 20, i * _legendFontHeight + 13);
 
-						grp.DrawString(item.Value.ToString("#,###.##"), fnt, 
+						grp.DrawString(item.Value.ToString("#,###.##"), fnt,
 							Brushes.Black, perimeter + _bufferSpace + 200, i * _legendFontHeight + 13,sf);
 					}
 					finally
@@ -2255,10 +2255,10 @@ namespace Server.Engines.Reports
 							brs.Dispose();
 					}
 				}
-			
+
 				//draws the border around Pie
 				using ( Pen pen2 = new Pen( _borderColor, 2 ) )
-					grp.DrawEllipse(pen2, pieRect);  
+					grp.DrawEllipse(pen2, pieRect);
 
 				//draw border around legend
 				using ( Pen pen1 = new Pen( _borderColor, 1 ) )
@@ -2267,12 +2267,12 @@ namespace Server.Engines.Reports
 				//Draw Total under legend
 				using ( Font fntb = new Font( _legendFontStyle, _legendFontSize, FontStyle.Bold ) )
 				{
-					grp.DrawString("Total", fntb, 
+					grp.DrawString("Total", fntb,
 						Brushes.Black, perimeter + _bufferSpace + 30, (_chartItems.Count+1) * _legendFontHeight,sf);
-					grp.DrawString(_total.ToString("#,###.##"), fntb, 
+					grp.DrawString(_total.ToString("#,###.##"), fntb,
 						Brushes.Black, perimeter + _bufferSpace + 200, (_chartItems.Count+1) * _legendFontHeight,sf);
 				}
-			
+
 				grp.SmoothingMode = SmoothingMode.AntiAlias;
 			}
 			finally
@@ -2291,7 +2291,7 @@ namespace Server.Engines.Reports
 		//	This method calculates the space required to draw the chart legend.
 		//
 		//*********************************************************************
-		
+
 		private void CalculateLegendWidthHeight()
 		{
 			Font fontLegend = new Font(_legendFontStyle, _legendFontSize);
@@ -2357,7 +2357,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -2369,15 +2369,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class ObjectCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ObjectCollection() : 
+        public ObjectCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.PersistableObject at a specific position in the ObjectCollection.
         /// </summary>
@@ -2392,7 +2392,7 @@ namespace Server.Engines.Reports
                 this.List[index] = value;
             }
         }
-        
+
         /// <summary>
         /// Append a Server.Engines.Reports.PersistableObject entry to this collection.
         /// </summary>
@@ -2407,7 +2407,7 @@ namespace Server.Engines.Reports
 		{
 			this.InnerList.AddRange( col );
 		}
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.PersistableObject instance is in this collection.
         /// </summary>
@@ -2417,7 +2417,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.PersistableObject instance is in this collection.
         /// </summary>
@@ -2427,7 +2427,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.PersistableObject instance from this collection.
         /// </summary>
@@ -2436,7 +2436,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.PersistableObject instance.
         /// </summary>
@@ -2445,7 +2445,7 @@ namespace Server.Engines.Reports
         {
             return new ObjectCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.PersistableObject instance into this collection at a specified index.
         /// </summary>
@@ -2455,28 +2455,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.PersistableObject.
         /// </summary>
         public class ObjectCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.PersistableObject _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private ObjectCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -2486,7 +2486,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.PersistableObject object in the enumerated ObjectCollection currently indexed by this instance.
             /// </summary>
@@ -2494,7 +2494,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -2505,7 +2505,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -2513,7 +2513,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -2524,7 +2524,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -2533,14 +2533,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -3255,7 +3255,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -3267,15 +3267,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class ChartItemCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ChartItemCollection() : 
+        public ChartItemCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.ChartItem at a specific position in the ChartItemCollection.
         /// </summary>
@@ -3305,7 +3305,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.ChartItem instance is in this collection.
         /// </summary>
@@ -3315,7 +3315,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.ChartItem instance is in this collection.
         /// </summary>
@@ -3325,7 +3325,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.ChartItem instance from this collection.
         /// </summary>
@@ -3334,7 +3334,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.ChartItem instance.
         /// </summary>
@@ -3343,7 +3343,7 @@ namespace Server.Engines.Reports
         {
             return new ChartItemCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.ChartItem instance into this collection at a specified index.
         /// </summary>
@@ -3353,28 +3353,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.ChartItem.
         /// </summary>
         public class ChartItemCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.ChartItem _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private ChartItemCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -3384,7 +3384,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.ChartItem object in the enumerated ChartItemCollection currently indexed by this instance.
             /// </summary>
@@ -3392,7 +3392,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -3403,7 +3403,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -3411,7 +3411,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -3422,7 +3422,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -3431,14 +3431,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -3650,7 +3650,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -3662,15 +3662,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class ItemValueCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ItemValueCollection() : 
+        public ItemValueCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.ItemValue at a specific position in the ItemValueCollection.
         /// </summary>
@@ -3705,7 +3705,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.ItemValue instance is in this collection.
         /// </summary>
@@ -3715,7 +3715,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.ItemValue instance is in this collection.
         /// </summary>
@@ -3725,7 +3725,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.ItemValue instance from this collection.
         /// </summary>
@@ -3734,7 +3734,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.ItemValue instance.
         /// </summary>
@@ -3743,7 +3743,7 @@ namespace Server.Engines.Reports
         {
             return new ItemValueCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.ItemValue instance into this collection at a specified index.
         /// </summary>
@@ -3753,28 +3753,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.ItemValue.
         /// </summary>
         public class ItemValueCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.ItemValue _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private ItemValueCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -3784,7 +3784,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.ItemValue object in the enumerated ItemValueCollection currently indexed by this instance.
             /// </summary>
@@ -3792,7 +3792,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -3803,7 +3803,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -3811,7 +3811,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -3822,7 +3822,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -3831,14 +3831,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -3988,7 +3988,7 @@ namespace Server.Engines.Reports
 		{
 			string resolvedBy;
 			DateTime timeResolved;
-			PageResolution res = GetResolution( out resolvedBy, out timeResolved ); 
+			PageResolution res = GetResolution( out resolvedBy, out timeResolved );
 
 			if ( m_History != null && IsStaffResolution( res ) )
 				Resolver = m_History.GetStaffInfo( resolvedBy );
@@ -4107,7 +4107,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -4119,15 +4119,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class PageInfoCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public PageInfoCollection() : 
+        public PageInfoCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.PageInfo at a specific position in the PageInfoCollection.
         /// </summary>
@@ -4142,7 +4142,7 @@ namespace Server.Engines.Reports
                 this.List[index] = value;
             }
         }
-        
+
         /// <summary>
         /// Append a Server.Engines.Reports.PageInfo entry to this collection.
         /// </summary>
@@ -4152,7 +4152,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.PageInfo instance is in this collection.
         /// </summary>
@@ -4162,7 +4162,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.PageInfo instance is in this collection.
         /// </summary>
@@ -4172,7 +4172,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.PageInfo instance from this collection.
         /// </summary>
@@ -4181,7 +4181,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.PageInfo instance.
         /// </summary>
@@ -4190,7 +4190,7 @@ namespace Server.Engines.Reports
         {
             return new PageInfoCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.PageInfo instance into this collection at a specified index.
         /// </summary>
@@ -4200,28 +4200,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.PageInfo.
         /// </summary>
         public class PageInfoCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.PageInfo _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private PageInfoCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -4231,7 +4231,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.PageInfo object in the enumerated PageInfoCollection currently indexed by this instance.
             /// </summary>
@@ -4239,7 +4239,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -4250,7 +4250,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -4258,7 +4258,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -4269,7 +4269,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -4278,14 +4278,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -4347,7 +4347,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -4359,15 +4359,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class QueueStatusCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public QueueStatusCollection() : 
+        public QueueStatusCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.QueueStatus at a specific position in the QueueStatusCollection.
         /// </summary>
@@ -4382,7 +4382,7 @@ namespace Server.Engines.Reports
                 this.List[index] = value;
             }
         }
-        
+
         /// <summary>
         /// Append a Server.Engines.Reports.QueueStatus entry to this collection.
         /// </summary>
@@ -4392,7 +4392,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.QueueStatus instance is in this collection.
         /// </summary>
@@ -4402,7 +4402,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.QueueStatus instance is in this collection.
         /// </summary>
@@ -4412,7 +4412,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.QueueStatus instance from this collection.
         /// </summary>
@@ -4421,7 +4421,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.QueueStatus instance.
         /// </summary>
@@ -4430,7 +4430,7 @@ namespace Server.Engines.Reports
         {
             return new QueueStatusCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.QueueStatus instance into this collection at a specified index.
         /// </summary>
@@ -4440,28 +4440,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.QueueStatus.
         /// </summary>
         public class QueueStatusCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.QueueStatus _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private QueueStatusCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -4471,7 +4471,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.QueueStatus object in the enumerated QueueStatusCollection currently indexed by this instance.
             /// </summary>
@@ -4479,7 +4479,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -4490,7 +4490,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -4498,7 +4498,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -4509,7 +4509,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -4518,14 +4518,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -4669,7 +4669,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -4681,15 +4681,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class ReportColumnCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ReportColumnCollection() : 
+        public ReportColumnCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.ReportColumn at a specific position in the ReportColumnCollection.
         /// </summary>
@@ -4724,7 +4724,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.ReportColumn instance is in this collection.
         /// </summary>
@@ -4734,7 +4734,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.ReportColumn instance is in this collection.
         /// </summary>
@@ -4744,7 +4744,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.ReportColumn instance from this collection.
         /// </summary>
@@ -4753,7 +4753,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.ReportColumn instance.
         /// </summary>
@@ -4762,7 +4762,7 @@ namespace Server.Engines.Reports
         {
             return new ReportColumnCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.ReportColumn instance into this collection at a specified index.
         /// </summary>
@@ -4772,28 +4772,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.ReportColumn.
         /// </summary>
         public class ReportColumnCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.ReportColumn _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private ReportColumnCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -4803,7 +4803,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.ReportColumn object in the enumerated ReportColumnCollection currently indexed by this instance.
             /// </summary>
@@ -4811,7 +4811,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -4822,7 +4822,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -4830,7 +4830,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -4841,7 +4841,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -4850,14 +4850,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -4912,7 +4912,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -4924,15 +4924,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class ReportItemCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ReportItemCollection() : 
+        public ReportItemCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.ReportItem at a specific position in the ReportItemCollection.
         /// </summary>
@@ -4962,7 +4962,7 @@ namespace Server.Engines.Reports
 
 			return Add( item );
 		}
-        
+
         /// <summary>
         /// Append a Server.Engines.Reports.ReportItem entry to this collection.
         /// </summary>
@@ -4972,7 +4972,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.ReportItem instance is in this collection.
         /// </summary>
@@ -4982,7 +4982,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.ReportItem instance is in this collection.
         /// </summary>
@@ -4992,7 +4992,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.ReportItem instance from this collection.
         /// </summary>
@@ -5001,7 +5001,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.ReportItem instance.
         /// </summary>
@@ -5010,7 +5010,7 @@ namespace Server.Engines.Reports
         {
             return new ReportItemCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.ReportItem instance into this collection at a specified index.
         /// </summary>
@@ -5020,28 +5020,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.ReportItem.
         /// </summary>
         public class ReportItemCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.ReportItem _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private ReportItemCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -5051,7 +5051,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.ReportItem object in the enumerated ReportItemCollection currently indexed by this instance.
             /// </summary>
@@ -5059,7 +5059,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -5070,7 +5070,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -5078,7 +5078,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -5089,7 +5089,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -5098,14 +5098,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -5176,7 +5176,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -5188,15 +5188,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class ResponseInfoCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public ResponseInfoCollection() : 
+        public ResponseInfoCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.ResponseInfo at a specific position in the ResponseInfoCollection.
         /// </summary>
@@ -5216,7 +5216,7 @@ namespace Server.Engines.Reports
 		{
 			return Add( new ResponseInfo( sentBy, message ) );
 		}
-        
+
         /// <summary>
         /// Append a Server.Engines.Reports.ResponseInfo entry to this collection.
         /// </summary>
@@ -5226,7 +5226,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.ResponseInfo instance is in this collection.
         /// </summary>
@@ -5236,7 +5236,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.ResponseInfo instance is in this collection.
         /// </summary>
@@ -5246,7 +5246,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.ResponseInfo instance from this collection.
         /// </summary>
@@ -5255,7 +5255,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.ResponseInfo instance.
         /// </summary>
@@ -5264,7 +5264,7 @@ namespace Server.Engines.Reports
         {
             return new ResponseInfoCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.ResponseInfo instance into this collection at a specified index.
         /// </summary>
@@ -5274,28 +5274,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.ResponseInfo.
         /// </summary>
         public class ResponseInfoCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.ResponseInfo _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private ResponseInfoCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -5305,7 +5305,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.ResponseInfo object in the enumerated ResponseInfoCollection currently indexed by this instance.
             /// </summary>
@@ -5313,7 +5313,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -5324,7 +5324,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -5332,7 +5332,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -5343,7 +5343,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -5352,14 +5352,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -5426,7 +5426,7 @@ namespace Server.Engines.Reports
 //     This code was generated by a tool.
 //     Runtime Version: 1.1.4322.573
 //
-//     Changes to this file may cause incorrect behavior and will be lost if 
+//     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </autogenerated>
 //------------------------------------------------------------------------------
@@ -5438,15 +5438,15 @@ namespace Server.Engines.Reports
     /// </summary>
     public class SnapshotCollection : System.Collections.CollectionBase
     {
-        
+
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public SnapshotCollection() : 
+        public SnapshotCollection() :
                 base()
         {
         }
-        
+
         /// <summary>
         /// Gets or sets the value of the Server.Engines.Reports.Snapshot at a specific position in the SnapshotCollection.
         /// </summary>
@@ -5461,7 +5461,7 @@ namespace Server.Engines.Reports
                 this.List[index] = value;
             }
         }
-        
+
         /// <summary>
         /// Append a Server.Engines.Reports.Snapshot entry to this collection.
         /// </summary>
@@ -5471,7 +5471,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Add(value);
         }
-        
+
         /// <summary>
         /// Determines whether a specified Server.Engines.Reports.Snapshot instance is in this collection.
         /// </summary>
@@ -5481,7 +5481,7 @@ namespace Server.Engines.Reports
         {
             return this.List.Contains(value);
         }
-        
+
         /// <summary>
         /// Retrieve the index a specified Server.Engines.Reports.Snapshot instance is in this collection.
         /// </summary>
@@ -5491,7 +5491,7 @@ namespace Server.Engines.Reports
         {
             return this.List.IndexOf(value);
         }
-        
+
         /// <summary>
         /// Removes a specified Server.Engines.Reports.Snapshot instance from this collection.
         /// </summary>
@@ -5500,7 +5500,7 @@ namespace Server.Engines.Reports
         {
             this.List.Remove(value);
         }
-        
+
         /// <summary>
         /// Returns an enumerator that can iterate through the Server.Engines.Reports.Snapshot instance.
         /// </summary>
@@ -5509,7 +5509,7 @@ namespace Server.Engines.Reports
         {
             return new SnapshotCollectionEnumerator(this);
         }
-        
+
         /// <summary>
         /// Insert a Server.Engines.Reports.Snapshot instance into this collection at a specified index.
         /// </summary>
@@ -5519,28 +5519,28 @@ namespace Server.Engines.Reports
         {
             this.List.Insert(index, value);
         }
-        
+
         /// <summary>
         /// Strongly typed enumerator of Server.Engines.Reports.Snapshot.
         /// </summary>
         public class SnapshotCollectionEnumerator : System.Collections.IEnumerator
         {
-            
+
             /// <summary>
             /// Current index
             /// </summary>
             private int _index;
-            
+
             /// <summary>
             /// Current element pointed to.
             /// </summary>
             private Server.Engines.Reports.Snapshot _currentElement;
-            
+
             /// <summary>
             /// Collection to enumerate.
             /// </summary>
             private SnapshotCollection _collection;
-            
+
             /// <summary>
             /// Default constructor for enumerator.
             /// </summary>
@@ -5550,7 +5550,7 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _collection = collection;
             }
-            
+
             /// <summary>
             /// Gets the Server.Engines.Reports.Snapshot object in the enumerated SnapshotCollection currently indexed by this instance.
             /// </summary>
@@ -5558,7 +5558,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -5569,7 +5569,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Gets the current element in the collection.
             /// </summary>
@@ -5577,7 +5577,7 @@ namespace Server.Engines.Reports
             {
                 get
                 {
-                    if (((_index == -1) 
+                    if (((_index == -1)
                                 || (_index >= _collection.Count)))
                     {
                         throw new System.IndexOutOfRangeException("Enumerator not started.");
@@ -5588,7 +5588,7 @@ namespace Server.Engines.Reports
                     }
                 }
             }
-            
+
             /// <summary>
             /// Reset the cursor, so it points to the beginning of the enumerator.
             /// </summary>
@@ -5597,14 +5597,14 @@ namespace Server.Engines.Reports
                 _index = -1;
                 _currentElement = null;
             }
-            
+
             /// <summary>
             /// Advances the enumerator to the next queue of the enumeration, if one is currently available.
             /// </summary>
             /// <returns>true, if the enumerator was succesfully advanced to the next queue; false, if the enumerator has reached the end of the enumeration.</returns>
             public bool MoveNext()
             {
-                if ((_index 
+                if ((_index
                             < (_collection.Count - 1)))
                 {
                     _index = (_index + 1);
@@ -5963,7 +5963,7 @@ namespace Server.Engines.Reports
 		{
 			int[] totals = new int[24];
 			int[] counts = new int[24];
-			
+
 			DateTime[] dates = new DateTime[24];
 
 			DateTime max = DateTime.Now;

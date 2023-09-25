@@ -149,7 +149,7 @@ namespace Server.Items
 				{
 					Point3D addonLoc = new Point3D( p.X + c.Offset.X, p.Y + c.Offset.Y, p.Z + c.Offset.Z );
 					int addonHeight = c.ItemData.CalcHeight;
-						
+
 					if ( Utility.InRange( doorLoc, addonLoc, 1 ) && (addonLoc.Z == doorLoc.Z || ((addonLoc.Z + addonHeight) > doorLoc.Z && (doorLoc.Z + doorHeight) > addonLoc.Z)) )
 						return AddonFitResult.DoorTooClose;
 				}

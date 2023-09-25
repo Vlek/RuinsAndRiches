@@ -14,9 +14,9 @@ namespace Server.Mobiles
 {
     public class NecroGreeter : BaseNPC
 	{
-		private static bool m_Talked; 		
-		string[] kfcsay = new string[]  
-		{ 
+		private static bool m_Talked;
+		string[] kfcsay = new string[]
+		{
 			"Fear the woods beyond.",
 		};
 
@@ -26,7 +26,7 @@ namespace Server.Mobiles
 			SpeechHue = Utility.RandomRedHue();
 			Direction = Direction.East;
 			CantWalk = true;
-			Body = 0x190; 
+			Body = 0x190;
 			Name = NameList.RandomName( "male" );
 			Title = "the Grounds Keeper";
 			FacialHairItemID = 0;
@@ -67,53 +67,53 @@ namespace Server.Mobiles
 			return false;
 		}
 
-		public override void OnMovement( Mobile m, Point3D oldLocation ) 
-		{                                                    
-			if( m_Talked == false ) 
-			{ 
-				if ( m.InRange( this, 4 ) ) 
-				{                
-					m_Talked = true; 
-					SayRandom( kfcsay, this ); 
+		public override void OnMovement( Mobile m, Point3D oldLocation )
+		{
+			if( m_Talked == false )
+			{
+				if ( m.InRange( this, 4 ) )
+				{
+					m_Talked = true;
+					SayRandom( kfcsay, this );
 					this.Move( GetDirectionTo( m.Location ) );
-					chatTimer t = new chatTimer(); 
-					t.Start(); 
-				} 
-			} 
-		} 
-			
-		private class chatTimer : Timer 
-		{ 
-			public chatTimer() : base( TimeSpan.FromSeconds( 20 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-			} 
-			
-			protected override void OnTick() 
-			{ 
-				m_Talked = false; 
-			} 
-		} 
-			
-		private static void SayRandom( string[] say, Mobile m ) 
-		{ 
-			m.Say( say[Utility.Random( say.Length )] ); 
+					chatTimer t = new chatTimer();
+					t.Start();
+				}
+			}
+		}
+
+		private class chatTimer : Timer
+		{
+			public chatTimer() : base( TimeSpan.FromSeconds( 20 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+			}
+
+			protected override void OnTick()
+			{
+				m_Talked = false;
+			}
+		}
+
+		private static void SayRandom( string[] say, Mobile m )
+		{
+			m.Say( say[Utility.Random( say.Length )] );
 		}
 
         public NecroGreeter(Serial serial) : base(serial)
 		{
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new NecroGreeterEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new NecroGreeterEntry( from, this ) );
+		}
 
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			writer.Write( (int) 0 ); 
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
@@ -121,12 +121,12 @@ namespace Server.Mobiles
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-		
+
 		public class NecroGreeterEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public NecroGreeterEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -137,7 +137,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -147,5 +147,5 @@ namespace Server.Mobiles
 				}
             }
         }
-	}  
+	}
 }

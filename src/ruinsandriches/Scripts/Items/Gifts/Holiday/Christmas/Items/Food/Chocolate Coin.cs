@@ -12,7 +12,7 @@ namespace Server.Items
 		public Chocolatecoin() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public Chocolatecoin( int amount ) : base( 0xF8F, amount )
 		{
@@ -27,11 +27,11 @@ namespace Server.Items
 
 		public Chocolatecoin( Serial serial ) : base( serial )
 		{
-		
 
-		
+
+
 		}
-	
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

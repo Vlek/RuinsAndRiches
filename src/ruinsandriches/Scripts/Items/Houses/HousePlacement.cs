@@ -80,7 +80,7 @@ namespace Server.Multis
 			List<Point2D> yard = new List<Point2D>(), borders = new List<Point2D>();
 
 			/* RULES:
-			 * 
+			 *
 			 * 1) All tiles which are around the -outside- of the foundation must not have anything impassable.
 			 * 2) No impassable object or land tile may come in direct contact with any part of the house.
 			 * 3) Five tiles from the front and back of the house must be completely clear of all house tiles.
@@ -202,9 +202,9 @@ namespace Server.Multis
 
 					// RAVENDARK ISLAND CAN BUILD ON DIRT
 					// THERE IS DIRT AROUND 2 DESERTS THAT DESERVE HOUSING
-					if ( in_reg.IsPartOf( typeof( NecromancerRegion ) ) || in_reg.IsPartOf( typeof( LunaRegion ) ) || in_reg.IsPartOf( typeof( UnderHouseRegion ) ) || 
-						( Worlds.GetMyWorld( from.Map, from.Location, from.X, from.Y ) == "the Underworld" ) || 
-						( from.Map == Map.Lodor && from.X > 1105 && from.Y > 2685 && from.X < 1950 && from.Y < 3201 ) || 
+					if ( in_reg.IsPartOf( typeof( NecromancerRegion ) ) || in_reg.IsPartOf( typeof( LunaRegion ) ) || in_reg.IsPartOf( typeof( UnderHouseRegion ) ) ||
+						( Worlds.GetMyWorld( from.Map, from.Location, from.X, from.Y ) == "the Underworld" ) ||
+						( from.Map == Map.Lodor && from.X > 1105 && from.Y > 2685 && from.X < 1950 && from.Y < 3201 ) ||
 						( from.Map == Map.Sosaria && from.X > 1114 && from.Y > 387 && from.X < 1265 && from.Y < 597 ) ){}
 					else {
 						for ( int i = 0; i < m_RoadIDs.Length; i += 2 )
@@ -278,9 +278,9 @@ namespace Server.Multis
 
 				// ALUCARD ISLAND CAN BUILD ON DIRT
 				// THERE IS DIRT AROUND 2 DESERTS THAT DESERVE HOUSING
-				if ( in_reg.IsPartOf( typeof( NecromancerRegion ) ) || in_reg.IsPartOf( typeof( LunaRegion ) ) || in_reg.IsPartOf( typeof( UnderHouseRegion ) ) || 
-					( Worlds.GetMyWorld( from.Map, from.Location, from.X, from.Y ) == "the Underworld" ) || 
-					(from.Map == Map.Lodor && from.X>1105 && from.Y>2685 && from.X<1950 && from.Y<3201) || 
+				if ( in_reg.IsPartOf( typeof( NecromancerRegion ) ) || in_reg.IsPartOf( typeof( LunaRegion ) ) || in_reg.IsPartOf( typeof( UnderHouseRegion ) ) ||
+					( Worlds.GetMyWorld( from.Map, from.Location, from.X, from.Y ) == "the Underworld" ) ||
+					(from.Map == Map.Lodor && from.X>1105 && from.Y>2685 && from.X<1950 && from.Y<3201) ||
 					(from.Map == Map.Sosaria && from.X>1114 && from.Y>387 && from.X<1265 && from.Y<597) ){}
 				else {
 					for ( int j = 0; j < m_RoadIDs.Length; j += 2 )
@@ -323,10 +323,10 @@ namespace Server.Multis
 
 			for ( int i = 0; i < yard.Count; i++ ) {
 				Sector sector = map.GetSector( yard[i] );
-				
+
 				if ( !_sectors.Contains( sector ) ) {
 					_sectors.Add( sector );
-					
+
 					if ( sector.Multis != null ) {
 						for ( int j = 0; j < sector.Multis.Count; j++ ) {
 							if ( sector.Multis[j] is BaseHouse ) {

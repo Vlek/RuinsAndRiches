@@ -7,7 +7,7 @@ namespace Server.Items
 	{
 		public int PillowFlipID1;
 		public int PillowFlipID2;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Pillow_FlipID1 { get { return PillowFlipID1; } set { PillowFlipID1 = value; InvalidateProperties(); } }
 
@@ -20,7 +20,7 @@ namespace Server.Items
 			Weight = 2;
 			Hue = Utility.RandomColor(0);
 
-			switch ( Utility.RandomMinMax( 0, 5 ) ) 
+			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
 				case 0: ItemID = 0x1397; PillowFlipID1 = 0x1397; PillowFlipID2 = 0x13A6; break;
 				case 1: ItemID = 0x13A4; PillowFlipID1 = 0x13A4; PillowFlipID2 = 0x13A5; break;

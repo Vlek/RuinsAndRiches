@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Targeting;
 using Server.Network;
 using Server.Items;
@@ -58,7 +58,7 @@ namespace Server.Spells.Research
 				}
 				else if ( Server.Misc.Worlds.NoApocalypse( Caster.Location, Caster.Map ) )
 				{
-					Caster.SendMessage( "You don't think it is wise to open a chasm in this area." ); 
+					Caster.SendMessage( "You don't think it is wise to open a chasm in this area." );
 					return;
 				}
 				else
@@ -115,7 +115,7 @@ namespace Server.Spells.Research
 
 						if ( cycle == 25 ){ piT.ItemID = Utility.RandomList( 0x4CC8, 0x4CC9 ); piT.Visible = true; }
 
-						piT.Map = Caster.Map; 
+						piT.Map = Caster.Map;
 						piT.Location = loc;
 
 						cycle--;

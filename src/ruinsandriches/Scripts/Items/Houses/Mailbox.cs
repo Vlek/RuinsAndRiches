@@ -11,7 +11,7 @@ using Server.Items;
 using Server.Misc;
 using Server.Targeting;
 
-namespace Server.Items	
+namespace Server.Items
 {
 	[FlipableAttribute( 0x4142, 0x4144 )]
     public class Mailbox : BaseContainer
@@ -24,7 +24,7 @@ namespace Server.Items
         public Mailbox() : base( 0x4142 )
         {
         }
-        
+
         public override void OnDoubleClick( Mobile from )
         {
         	BaseHouse housefoundation = BaseHouse.FindHouseAt( this );
@@ -33,7 +33,7 @@ namespace Server.Items
         	{
                 from.SendMessage("This must be secured in a home to use!");
         	}
-            else if ( this.IsSecure && housefoundation.IsFriend( from ) ) 
+            else if ( this.IsSecure && housefoundation.IsFriend( from ) )
             {
 				if ( ItemID == 0x4141 )
 					this.ItemID = 0x4142;
@@ -45,7 +45,7 @@ namespace Server.Items
             else
                 from.SendMessage("You cannot access this mailbox!");
         }
-        
+
         public override bool OnDragDrop( Mobile from, Item dropped )
 		{
         	Item item = dropped as Item;
@@ -67,7 +67,7 @@ namespace Server.Items
 				from.SendMessage( "You place the item in the mailbox." );
 				return true;
 			}
-			else 
+			else
 			{
 				from.SendMessage( "You don't need to put that in there." );
 				return false;

@@ -15,14 +15,14 @@ namespace Server.Items
 
 			int trinket = Utility.RandomMinMax( 0, 50 );
 
-			switch ( trinket ) 
+			switch ( trinket )
 			{
 				case 0 :	Name = "talisman"; 						ItemID = 0x2F58; 		break;
 				case 1 :	Name = "idol"; 							ItemID = 0x2F59; 		break;
 				case 2 :	Name = "totem"; 						ItemID = 0x2F5A; 		break;
 				case 3 :	Name = "symbol"; 						ItemID = 0x2F5B; 		break;
 				case 4 : 	Hue = 0xABE;							ItemID = 0x2C7E;				// Pouch
-					switch ( Utility.RandomMinMax( 0, 2 ) ) 
+					switch ( Utility.RandomMinMax( 0, 2 ) )
 					{
 						case 0 : Name = "bag"; break;
 						case 1 : Name = "pouch"; break;
@@ -34,7 +34,7 @@ namespace Server.Items
 				case 7 : 	Name = "cube";							ItemID = 0x2C81;		break;	// Cube
 				case 8 : 	Name = "lamp";							ItemID = 0x2C82;		break;	// Lamp
 				case 9 : 											ItemID = 0x2C83;				// Chest
-					switch ( Utility.RandomMinMax( 0, 3 ) ) 
+					switch ( Utility.RandomMinMax( 0, 3 ) )
 					{
 						case 0 : Name = "box"; break;
 						case 1 : Name = "chest"; break;
@@ -43,7 +43,7 @@ namespace Server.Items
 					}
 					break;
 				case 10 : 											ItemID = 0x2C84;				// Crystal Ball
-					switch ( Utility.RandomMinMax( 0, 2 ) ) 
+					switch ( Utility.RandomMinMax( 0, 2 ) )
 					{
 						case 0 : Name = "ball"; break;
 						case 1 : Name = "orb"; break;
@@ -53,7 +53,7 @@ namespace Server.Items
 				case 11 : 	Name = "dice";							ItemID = 0x2C85;		break;	// Dice
 				case 12 : 	Name = "eye";							ItemID = 0x2C86;		break;	// Eye
 				case 13 : 											ItemID = 0x2C87;				// Emerald
-					switch ( Utility.RandomMinMax( 0, 2 ) ) 
+					switch ( Utility.RandomMinMax( 0, 2 ) )
 					{
 						case 0 : Name = "gem"; break;
 						case 1 : Name = "crystal"; break;
@@ -62,14 +62,14 @@ namespace Server.Items
 					break;
 				case 14 : 	Name = "unicorn horn";					ItemID = 0x2C88;		break;	// Unicorn Horn
 				case 15 : 	Name = "rose";							ItemID = 0x2C89;				// Rose
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "rose"; break;
 						case 1 : Name = "flower"; break;
 					}
 					break;
 				case 16 :											ItemID = 0x2C8A;				// Medal
-					switch ( Utility.RandomMinMax( 0, 2 ) ) 
+					switch ( Utility.RandomMinMax( 0, 2 ) )
 					{
 						case 0 : Name = "medal"; break;
 						case 1 : Name = "badge"; break;
@@ -77,7 +77,7 @@ namespace Server.Items
 					}
 					break;
 				case 17 :											ItemID = 0x2C8B;				// Mug
-					switch ( Utility.RandomMinMax( 0, 2 ) ) 
+					switch ( Utility.RandomMinMax( 0, 2 ) )
 					{
 						case 0 : Name = "mug"; break;
 						case 1 : Name = "tankard"; break;
@@ -86,7 +86,7 @@ namespace Server.Items
 					break;
 				case 18 : 	Name = "mushroom";						ItemID = 0x2C8C;		break;	// Mushroom
 				case 19 :											ItemID = 0x2C8D;				// Pearl
-					switch ( Utility.RandomMinMax( 0, 3 ) ) 
+					switch ( Utility.RandomMinMax( 0, 3 ) )
 					{
 						case 0 : Name = "pearl"; break;
 						case 1 : Name = "orb"; break;
@@ -95,7 +95,7 @@ namespace Server.Items
 					}
 					break;
 				case 20 :											ItemID = 0x2C8E;				// Plant
-					switch ( Utility.RandomMinMax( 0, 4 ) ) 
+					switch ( Utility.RandomMinMax( 0, 4 ) )
 					{
 						case 0 : Name = "plant"; break;
 						case 1 : Name = "flower"; break;
@@ -109,14 +109,14 @@ namespace Server.Items
 				case 23 : 	Name = "rune";							ItemID = 0x2C91;		break;	// Rune
 				case 24 : 	Name = "rune";							ItemID = 0x2C92;		break;	// Rune
 				case 25 :											ItemID = 0x2C93;				// Scroll
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "scroll"; break;
 						case 1 : Name = "parchment"; break;
 					}
 					break;
 				case 26 :											ItemID = 0x2C94;				// Scroll
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "scroll"; break;
 						case 1 : Name = "parchment"; break;
@@ -124,14 +124,14 @@ namespace Server.Items
 					break;
 				case 27 : 	Name = "skull";							ItemID = 0x2C95;		break;	// Skull
 				case 28 : 											ItemID = 0x2C96;				// Stone
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "rock"; break;
 						case 1 : Name = "stone"; break;
 					}
 					break;
 				case 29 :											ItemID = 0x2C97;				// Urn
-					switch ( Utility.RandomMinMax( 0, 4 ) ) 
+					switch ( Utility.RandomMinMax( 0, 4 ) )
 					{
 						case 0 : Name = "urn"; break;
 						case 1 : Name = "vase"; break;
@@ -144,14 +144,14 @@ namespace Server.Items
 				case 31 : 	Name = "bone";							ItemID = 0x2C99;		break;	// Bone
 				case 32 : 	Name = "eye";							ItemID = 0x2C9A;		break;	// Evil Eye
 				case 33 :											ItemID = 0x2C9B;				// Frog
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "frog"; break;
 						case 1 : Name = "toad"; break;
 					}
 					break;
 				case 34 :											ItemID = 0x2C9C;				// Goblet
-					switch ( Utility.RandomMinMax( 0, 3 ) ) 
+					switch ( Utility.RandomMinMax( 0, 3 ) )
 					{
 						case 0 : Name = "chalice"; break;
 						case 1 : Name = "goblet"; break;
@@ -160,7 +160,7 @@ namespace Server.Items
 					}
 					break;
 				case 35 : 											ItemID = 0x2C9D;				// Ruby
-					switch ( Utility.RandomMinMax( 0, 2 ) ) 
+					switch ( Utility.RandomMinMax( 0, 2 ) )
 					{
 						case 0 : Name = "gem"; break;
 						case 1 : Name = "crystal"; break;
@@ -174,7 +174,7 @@ namespace Server.Items
 					break;
 				case 38 : 	Name = "doll";							ItemID = 0x2D81;		break;	// Doll
 				case 39 :											ItemID = 0x2D7F;				// Hand or Claw
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "hand"; break;
 						case 1 : Name = "claw"; break;
@@ -183,7 +183,7 @@ namespace Server.Items
 				case 40 : 	Name = "heart";							ItemID = 0x2D7E;		break;	// Heart
 				case 41 : 	Name = "rabbit foot";					ItemID = 0x2D80;		break;	// Rabbit's Foot
 				case 42 : 	Name = "gems"; Hue = 0xABE;				ItemID = 0x4D0E;				// Rabbit's Foot
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "gems"; break;
 						case 1 : Name = "jewels"; break;
@@ -191,7 +191,7 @@ namespace Server.Items
 					break;
 				case 43 : 	Name = "teeth";	Hue = 0xABE;			ItemID = 0x4D0F;		break;	// Rabbit's Foot
 				case 44 : 	Name = "chains";						ItemID = 0x4D10;				// Rabbit's Foot
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : Name = "chains"; break;
 						case 1 : Name = "shackles"; break;
@@ -199,7 +199,7 @@ namespace Server.Items
 					break;
 
 				case 45 : 	Name = "map";							ItemID = 0x4D11;				// Rabbit's Foot
-					switch ( Utility.RandomMinMax( 0, 1 ) ) 
+					switch ( Utility.RandomMinMax( 0, 1 ) )
 					{
 						case 0 : SkillBonuses.SetValues( 4, SkillName.Cartography, Utility.RandomMinMax( 5, 20 ) ); break;
 						case 1 : SkillBonuses.SetValues( 4, SkillName.Tracking, Utility.RandomMinMax( 5, 20 ) ); break;

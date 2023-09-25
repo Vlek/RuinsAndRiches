@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -118,12 +118,12 @@ namespace Server.Items
 				reg = Region.Find( target.Location, target.Map );
 				string tWorld = Worlds.GetMyWorld( target.Map, target.Location, target.X, target.Y );
 
-				if (	tWorld == "the Land of Sosaria" || 
-						tWorld == "the Land of Lodoria" || 
-						tWorld == "the Serpent Island" || 
-						tWorld == "the Isles of Dread" || 
-						tWorld == "the Savaged Empire" || 
-						tWorld == "the Island of Umber Veil" || 
+				if (	tWorld == "the Land of Sosaria" ||
+						tWorld == "the Land of Lodoria" ||
+						tWorld == "the Serpent Island" ||
+						tWorld == "the Isles of Dread" ||
+						tWorld == "the Savaged Empire" ||
+						tWorld == "the Island of Umber Veil" ||
 						tWorld == "the Bottle World of Kuldar" )
 				{
 					if ( ( target is NecromancerGuildmaster || target is MageGuildmaster || target is Mage || target is NecroMage || target is Necromancer || target is Witches ) && reg.IsPartOf( typeof( VillageRegion ) ))
@@ -416,8 +416,8 @@ namespace Server.Items
 		{
 			public DemonPrisonGump( Mobile from, DemonPrison shard ): base( 50, 50 )
 			{
-				from.SendSound( 0x4A ); 
-				string color = "#c97e75"; 
+				from.SendSound( 0x4A );
+				string color = "#c97e75";
 
 				string sText = "This shard contains a trapped daemon. Warlocks would take these shards and combine them with the four crystals of daemonic power. The shard of hellfire, the shard of the abyss, the shard of souls, and the shard of the void are the four crystals used in this process. These are usually in long lost dungeons or ruins, and said to be last seen in small chests resting on a runic pedestal. Once these crystals are combined with the daemon shard, you can double click the shard and add the gold coins as funds. Once everything is gathered, you can shatter the crystal and free the daemon. The daemon will then owe a life debt to the one that freed it. These arcane skills are rarely ever used today, but you did hear rumors of these various shards being seen in certain places. If you could get them, and bring these shards to a mage or necromancer (spell casters), they may be able to help you release it as you cannot do it alone. The spell caster will require some gold as you will need the help of a particular spell caster and they will require payment for their services. This spell caster is at the location shown below. If you have any magery or necromancy skill, they may refund some of the gold for the help you may provide in the release. When released, these daemons will become your bonded ally. You will have to feed them and stable them when required. You can also perform some druidism on them without having any proficiency in the skill. This will help you with information about them, like what they want to eat.";
 
@@ -463,7 +463,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 		}
 
@@ -539,7 +539,7 @@ namespace Server.Mobiles
 		public Daemonic ( int body, int hue ) : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			rBody = body;
-			Hue = hue; 
+			Hue = hue;
 			Name = NameList.RandomName( "daemon" );
 			Title = "daemon";
 			Body = body;
@@ -811,31 +811,31 @@ namespace Server.Mobiles
 					return ( FoodType.Moon );
 
 				else if ( rFood == "fire_meat" )
-					return FoodType.Fire | FoodType.Meat; 
+					return FoodType.Fire | FoodType.Meat;
 
 				else if ( rFood == "fish_sea" )
-					return FoodType.Fish | FoodType.Sea; 
+					return FoodType.Fish | FoodType.Sea;
 
 				else if ( rFood == "gems_fire" )
-					return FoodType.Gems | FoodType.Fire; 
+					return FoodType.Gems | FoodType.Fire;
 
 				else if ( rFood == "gems_gold" )
-					return FoodType.Gems | FoodType.Gold; 
+					return FoodType.Gems | FoodType.Gold;
 
 				else if ( rFood == "gems_meat" )
-					return FoodType.Gems | FoodType.Meat; 
+					return FoodType.Gems | FoodType.Meat;
 
 				else if ( rFood == "gems_moon" )
-					return FoodType.Gems | FoodType.Moon; 
+					return FoodType.Gems | FoodType.Moon;
 
 				else if ( rFood == "meat_nox" )
-					return FoodType.Meat | FoodType.Nox; 
+					return FoodType.Meat | FoodType.Nox;
 
 				else if ( rFood == "moon_fire" )
-					return FoodType.Moon | FoodType.Fire; 
+					return FoodType.Moon | FoodType.Fire;
 
 				else if ( rFood == "nox_fire" )
-					return FoodType.Nox | FoodType.Fire; 
+					return FoodType.Nox | FoodType.Fire;
 
 				return ( FoodType.Meat );
 			}

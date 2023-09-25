@@ -67,12 +67,12 @@ namespace Server.Regions
 			else if ( m is BaseCreature && !(m is SpellCritter) && !(m is CorpseCritter) && !(m is BaseVendor) && !(m is Citizens) ) // WATER CREATURES GO UNDER THE SURFACE
 			{
 				BaseCreature bc = (BaseCreature)m;
-				if ( bc.ControlMaster == null && 
-				 ( this.Name == "the Forgotten Lighthouse" || 
-				 this.Name == "Anchor Rock Docks" || 
-				 this.Name == "Kraken Reef Docks" || 
-				 this.Name == "the Lankhmar Lighthouse" || 
-				 this.Name == "Savage Sea Docks" || 
+				if ( bc.ControlMaster == null &&
+				 ( this.Name == "the Forgotten Lighthouse" ||
+				 this.Name == "Anchor Rock Docks" ||
+				 this.Name == "Kraken Reef Docks" ||
+				 this.Name == "the Lankhmar Lighthouse" ||
+				 this.Name == "Savage Sea Docks" ||
 				 this.Name == "Serpent Sail Docks" ) )
 				{
 					m.PlaySound( 0x026 );

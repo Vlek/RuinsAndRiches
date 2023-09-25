@@ -553,7 +553,7 @@ namespace Server.Gumps
 
 			/* The landlord for this vendor is offering you a partial refund of your rental fee
 			 * in exchange for immediate termination of your rental contract.<BR><BR>
-			 * 
+			 *
 			 * If you accept this offer, the vendor will be immediately dismissed.  You will then
 			 * be able to claim the inventory and any funds the vendor may be holding for you via
 			 * a context menu on the house sign for this house.

@@ -71,15 +71,15 @@ namespace Server.SkillHandlers
 
 						if ( ((PlayerMobile)from).ClassicPoisoning != 1 )
 						{
-							startTimer = (	weapon.PrimaryAbility == WeaponAbility.InfectiousStrike || 
-											weapon.SecondaryAbility == WeaponAbility.InfectiousStrike || 
-											weapon.ThirdAbility == WeaponAbility.InfectiousStrike || 
-											weapon.FourthAbility == WeaponAbility.InfectiousStrike || 
-											weapon.FifthAbility == WeaponAbility.InfectiousStrike || 
-											weapon.PrimaryAbility == WeaponAbility.ShadowInfectiousStrike || 
-											weapon.SecondaryAbility == WeaponAbility.ShadowInfectiousStrike || 
-											weapon.ThirdAbility == WeaponAbility.ShadowInfectiousStrike || 
-											weapon.FourthAbility == WeaponAbility.ShadowInfectiousStrike || 
+							startTimer = (	weapon.PrimaryAbility == WeaponAbility.InfectiousStrike ||
+											weapon.SecondaryAbility == WeaponAbility.InfectiousStrike ||
+											weapon.ThirdAbility == WeaponAbility.InfectiousStrike ||
+											weapon.FourthAbility == WeaponAbility.InfectiousStrike ||
+											weapon.FifthAbility == WeaponAbility.InfectiousStrike ||
+											weapon.PrimaryAbility == WeaponAbility.ShadowInfectiousStrike ||
+											weapon.SecondaryAbility == WeaponAbility.ShadowInfectiousStrike ||
+											weapon.ThirdAbility == WeaponAbility.ShadowInfectiousStrike ||
+											weapon.FourthAbility == WeaponAbility.ShadowInfectiousStrike ||
 											weapon.FifthAbility == WeaponAbility.ShadowInfectiousStrike );
 						}
 						else if ( weapon.Layer == Layer.OneHanded )

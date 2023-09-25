@@ -103,7 +103,7 @@ namespace Server.SkillHandlers
 				else
 				{
 					from.SendLocalizedMessage( 500210 ); // You failed to peek into the container.
-					
+
 					if ( from.Skills[SkillName.Hiding].Value / 2 < Utility.Random( 100 ) )
 						from.RevealingAction();
 				}

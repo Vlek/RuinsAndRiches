@@ -6,7 +6,7 @@ namespace Server.Items
 	public class DDRelicAlchemy : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 

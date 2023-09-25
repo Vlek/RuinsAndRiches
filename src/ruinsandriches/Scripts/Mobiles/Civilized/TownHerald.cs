@@ -102,7 +102,7 @@ namespace Server.Mobiles
 				if ( Utility.RandomBool() ){ name = NameList.RandomName( "male" ); }
 				name = name + " " + TavernPatrons.GetTitle();
 
-			string seen = "was seen in"; 
+			string seen = "was seen in";
 			switch ( Utility.RandomMinMax( 0, 6 ) )
 			{
 				case 1: seen = "was found in"; 			break;
@@ -113,10 +113,10 @@ namespace Server.Mobiles
 				case 6: seen = "was spotted leaving"; 	break;
 			}
 
-			string city = RandomThings.GetRandomCity();	
+			string city = RandomThings.GetRandomCity();
 				if ( Utility.RandomBool() ){ city = RandomThings.MadeUpCity(); }
 
-			string dungeon = QuestCharacters.SomePlace( "tavern" );	
+			string dungeon = QuestCharacters.SomePlace( "tavern" );
 				if ( Utility.RandomBool() ){ dungeon = RandomThings.MadeUpDungeon(); }
 
 			string place = dungeon;
@@ -157,13 +157,13 @@ namespace Server.Mobiles
 				case 6: crime = "robbery";		break;
 			}
 
-			string item = "destroyed";	
+			string item = "destroyed";
 			switch( Utility.RandomMinMax( 0, 4 ) )
 			{
-				case 1: item = "lost"; break;	
-				case 2: item = "found"; break;	
-				case 3: item = "discovered"; break;	
-				case 4: item = "stole"; break;	
+				case 1: item = "lost"; break;
+				case 2: item = "found"; break;
+				case 3: item = "discovered"; break;
+				case 4: item = "stole"; break;
 			}
 
 			switch ( Utility.RandomMinMax( 0, 5 ) )
@@ -173,7 +173,7 @@ namespace Server.Mobiles
 				case 2: shout = "" + greet + "" + name + " " + died + " by " + RandomThings.GetRandomMonsters() + ""; break;
 				case 3: shout = "" + greet + "" + name + " " + death + " in " + dungeon + ""; break;
 				case 4: shout = "" + greet + "" + name + " is wanted for " + crime + " in " + city + ""; break;
-				case 5: shout = "" + greet + "" + name + " " + item + " " + QuestCharacters.QuestItems( false ) + ""; 
+				case 5: shout = "" + greet + "" + name + " " + item + " " + QuestCharacters.QuestItems( false ) + "";
 					if ( Utility.RandomBool() ){ shout = "" + greet + "" + name + " " + item + " " + QuestCharacters.ArtyItems( false ) + ""; }
 					break;
 			}
@@ -187,16 +187,16 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new TownHeraldEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new TownHeraldEntry( from, this ) );
+		}
 
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			writer.Write( (int) 0 ); 
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
@@ -204,12 +204,12 @@ namespace Server.Mobiles
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-		
+
 		public class TownHeraldEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public TownHeraldEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -220,7 +220,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( LoggingFunctions.LoggingEvents() == true )
@@ -237,5 +237,5 @@ namespace Server.Mobiles
 				}
             }
         }
-	}  
+	}
 }

@@ -2,7 +2,7 @@ using System;
 using Server;
 using Server.Mobiles;
 using Server.Network;
-using System.Collections; 
+using System.Collections;
 using Server.Items;
 using Server.Misc;
 using Server.Gumps;
@@ -37,7 +37,7 @@ namespace Server.Items
 				{
 					m.SendMessage( "This magical gate doesn't seem to do anything." );
 				}
-				else 
+				else
 				{
 					Timer.DelayCall( TimeSpan.FromSeconds( 0.5 ),( delegate
 					{
@@ -75,7 +75,7 @@ namespace Server.Items
 
 				string mainTitle = "MAGICAL PORTAL DESTINATIONS";
 				int img = 9583;
-					if ( IsBlackrock ){ img = 9582; mainTitle = "BLACKROCK GATE DESTINATIONS"; } 
+					if ( IsBlackrock ){ img = 9582; mainTitle = "BLACKROCK GATE DESTINATIONS"; }
 
 				AddPage(0);
 

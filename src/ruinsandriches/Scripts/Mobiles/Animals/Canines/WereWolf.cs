@@ -5,10 +5,10 @@ using Server.Items;
 using System.Collections;
 using Server.Regions;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a lycanthrope corpse" )] 
-	public class WereWolf : BaseCreature 
+namespace Server.Mobiles
+{
+	[CorpseName( "a lycanthrope corpse" )]
+	public class WereWolf : BaseCreature
 	{
 		public override WeaponAbility GetWeaponAbility()
 		{
@@ -20,29 +20,29 @@ namespace Server.Mobiles
 
 		private bool m_TrueForm;
 
-		[Constructable] 
-		public WereWolf() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public WereWolf() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() ) 
+			if ( this.Female = Utility.RandomBool() )
 			{
-				this.Body = 0x191; 
-				this.Name = NameList.RandomName( "female" ); 
+				this.Body = 0x191;
+				this.Name = NameList.RandomName( "female" );
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
+			}
+			else
+			{
+				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 				Utility.AssignRandomHair( this );
 				int HairColor = Utility.RandomHairHue();
 				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
 				HairHue = HairColor;
 				FacialHairHue = HairColor;
-			} 
+			}
 
 			SetStr( 80, 120 );
 			SetDex( 80, 120 );
@@ -238,20 +238,20 @@ namespace Server.Mobiles
 			VirtualArmor = 10;
 		}
 
-		public WereWolf( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public WereWolf( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 );
-			writer.Write( m_TrueForm );	
-		} 
+			writer.Write( m_TrueForm );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			switch ( version )
 			{
@@ -261,6 +261,6 @@ namespace Server.Mobiles
 					break;
 				}
 			}
-		} 
-	} 
+		}
+	}
 }

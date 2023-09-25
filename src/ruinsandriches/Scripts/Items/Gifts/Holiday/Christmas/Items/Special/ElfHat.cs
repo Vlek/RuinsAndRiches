@@ -7,8 +7,8 @@ namespace Server.Items
 {
 	public class ElfHat : WizardsHat
 	{
-		public override int BaseColdResistance{ get{ return 5; } } 
-      
+		public override int BaseColdResistance{ get{ return 5; } }
+
 		[Constructable]
 		public ElfHat()
 		{

@@ -4,7 +4,7 @@ using Server.Network;
 using Server.Misc;
 using Server.Items;
 using Server.Regions;
-using System.Collections; 
+using System.Collections;
 using Server.Mobiles;
 
 namespace Server.Spells.Herbalist
@@ -21,12 +21,12 @@ namespace Server.Spells.Herbalist
 		public DruidicRuneSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-		
+
 		public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-		
+
 		public override bool CheckCast()
 		{
 			if ( !base.CheckCast() )
@@ -37,14 +37,14 @@ namespace Server.Spells.Herbalist
 				Caster.PrivateOverheadMessage(MessageType.Regular, 0x14C, false, "You lack the understanding to use this mixture.", Caster.NetState);
 				return false;
 			}
-			
+
 			return SpellHelper.CheckTravel( Caster, TravelCheckType.Mark );
 		}
-		
+
 		public void Target( RecallRune rune )
 		{
 			Region reg = Region.Find( Caster.Location, Caster.Map );
-			
+
 			if ( !Caster.CanSee( rune ) )
 			{
 				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
@@ -74,19 +74,19 @@ namespace Server.Spells.Herbalist
 				Caster.PlaySound( 0x19 );
 				Effects.SendLocationParticles( Caster, 0xC87, 9, 10, 5025 );
 			}
-			
+
 			FinishSequence();
 		}
-		
+
 		private class InternalTarget : Target
 		{
 			private DruidicRuneSpell m_Owner;
-			
+
 			public InternalTarget( DruidicRuneSpell owner ) : base( 12, false, TargetFlags.None )
 			{
 				m_Owner = owner;
 			}
-			
+
 			protected override void OnTarget( Mobile from, object o )
 			{
 				if ( o is RecallRune )
@@ -98,7 +98,7 @@ namespace Server.Spells.Herbalist
 					from.Send( new MessageLocalized( from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 501797, from.Name, "" ) ); // I cannot mark that object.
 				}
 			}
-			
+
 			protected override void OnTargetFinish( Mobile from )
 			{
 				m_Owner.FinishSequence();

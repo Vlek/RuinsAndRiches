@@ -53,7 +53,7 @@ namespace Server.Spells.Necromancy
 				/* Temporarily creates a dark pact between the caster and the target.
 				 * Any damage dealt by the target to the caster is increased, but the target receives the same amount of damage.
 				 * The effect lasts for ((Spiritualism skill level - target's Resist Magic skill level) / 80 ) + 8 seconds.
-				 * 
+				 *
 				 * NOTE: The above algorithm must be fixed point, it should be:
 				 * ((ss-rm)/8)+8
 				 */
@@ -67,7 +67,7 @@ namespace Server.Spells.Necromancy
 
 				 if ( m.Spell != null )
 					m.Spell.OnCasterHurt();
-				
+
 				Caster.PlaySound( 0x175 );
 
 				Caster.FixedParticles( 0x375A, 1, 17, 9919, 33, 7, EffectLayer.Waist );

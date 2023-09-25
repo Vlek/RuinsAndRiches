@@ -106,22 +106,22 @@ namespace Server.Mobiles
         {
             return 0x56F;
         }
- 
+
         public override int GetAttackSound()
         {
             return 0x570;
         }
- 
+
         public override int GetIdleSound()
         {
             return 0x571;
         }
- 
+
         public override int GetAngerSound()
         {
             return 0x572;
         }
- 
+
         public override int GetHurtSound()
         {
             return 0x573;

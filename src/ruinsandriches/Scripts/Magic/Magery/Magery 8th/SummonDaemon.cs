@@ -43,7 +43,7 @@ namespace Server.Spells.Eighth
 		public override void OnCast()
 		{
 			if ( CheckSequence() )
-			{	
+			{
 				TimeSpan duration = TimeSpan.FromSeconds( (Caster.Skills[SkillName.Magery].Value + Caster.Skills[SkillName.Psychology].Value) * 9 );
 
 				if ( Caster.CheckTargetSkill( SkillName.Psychology, Caster, 0.0, 125.0 ) )

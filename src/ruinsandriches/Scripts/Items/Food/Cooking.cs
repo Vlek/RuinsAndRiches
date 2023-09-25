@@ -189,12 +189,12 @@ namespace Server.Items
 					t.Start();
 				}
 			}
-			
+
 			private class InternalTimer : Timer
 			{
 				private Mobile m_From;
 				private Campfire m_Campfire;
-			
+
 				public InternalTimer( Mobile from, Campfire campfire ) : base( TimeSpan.FromSeconds( 5.0 ) )
 				{
 					m_From = from;
@@ -280,7 +280,7 @@ namespace Server.Items
 
 					from.AddToBackpack( new SweetDough() );
 				}
-				
+
 				if (targeted is BowlFlour)
 				{
 					m_Item.Consume();

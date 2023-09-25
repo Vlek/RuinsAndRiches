@@ -79,11 +79,11 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int HitPoints
 		{
-			get 
+			get
 			{
 				return m_HitPoints;
 			}
-			set 
+			set
 			{
 				if ( value != m_HitPoints && MaxHitPoints > 0 )
 				{
@@ -391,7 +391,7 @@ namespace Server.Items
 
 			damageTaken -= Absorbed;
 
-			if ( damageTaken < 0 ) 
+			if ( damageTaken < 0 )
 				damageTaken = 0;
 
 			if ( 25 > Utility.Random( 100 ) ) // 25% chance to lower durability

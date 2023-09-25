@@ -1,6 +1,6 @@
-using System; 
+using System;
 using System.Collections.Generic;
-using Server; 
+using Server;
 using Server.Mobiles;
 using Server.Items;
 using Server.Regions;
@@ -9,7 +9,7 @@ using Server.Network;
 using Server.Multis;
 using System.Collections;
 
-namespace Server.Items 
+namespace Server.Items
 {
 	public enum SmallTentEffect
 	{
@@ -39,10 +39,10 @@ namespace Server.Items
 		public SmallTent() : base( 0x1914 )
 		{
 			Name = "a small tent";
-			Weight = 2.0; 
+			Weight = 2.0;
 			Charges = 10;
-			Hue = Utility.RandomList( 0x96D, 0x96E, 0x96F, 0x970, 0x971, 0x972, 0x973, 0x974, 0x975, 0x976, 0x977, 0x978, 0x979, 0x97A, 0x97B, 0x97C, 0x97D, 0x97E );		
-			LootType = LootType.Blessed;						
+			Hue = Utility.RandomList( 0x96D, 0x96E, 0x96F, 0x970, 0x971, 0x972, 0x973, 0x974, 0x975, 0x976, 0x977, 0x978, 0x979, 0x97A, 0x97B, 0x97C, 0x97D, 0x97E );
+			LootType = LootType.Blessed;
 		}
 
         public override void AddNameProperties(ObjectPropertyList list)
@@ -50,13 +50,13 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Setup A Small Tent In Which To Rest");
 			list.Add( 1049644, "Usable By Those Skilled In Camping");
-        } 
-		
+        }
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			bool inCombat = ( from.Combatant != null && from.InRange( from.Combatant.Location, 20 ) && from.Combatant.InLOS( from ) );
 
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;
@@ -102,19 +102,19 @@ namespace Server.Items
 			}
 		}
 
-		private bool Validate( Mobile from )  
+		private bool Validate( Mobile from )
 		{
 			if ( from.Skills[SkillName.Camping].Value < 10 )
 			{
-				from.SendMessage( "You need at least a 10.0 camping skill to use this tent!" ); 
+				from.SendMessage( "You need at least a 10.0 camping skill to use this tent!" );
 				return false;
-			}		
-			else 
+			}
+			else
 			{
 				return true;
 			}
 		}
-		
+
 		public void ConsumeCharge( Mobile from )
 		{
 			--Charges;
@@ -133,20 +133,20 @@ namespace Server.Items
 		}
 
 		public SmallTent( Serial serial ) : base( serial )
-		{ 
-		} 
-		
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 );
 			writer.Write( (int) m_SmallTentEffect );
 			writer.Write( (int) m_Charges );
-		} 
-		
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			switch ( version )
 			{
@@ -237,11 +237,11 @@ namespace Server.Items
 			}
 
 			public override void OnCast()
-			{			
+			{
 				SmallTentBuilt();
 				FinishSequence();
 			}
-			
+
 			private void SmallTentBuilt( )
 			{
 				if ( m_SmallTent.Validate( Caster ) )

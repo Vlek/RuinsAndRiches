@@ -36,7 +36,7 @@ namespace Server.Gumps
                     return;
                 }
             }
-            act(from, actionObject);            
+            act(from, actionObject);
         }
 
         private Mobile m_From;
@@ -95,7 +95,7 @@ namespace Server.Gumps
                 int x = letter[i,0] - 4;
                 int y = letter[i,1] - 6;
                 letterCopy[i,0] =(int)Math.Round( ((cos * (double)x ) - (sin * (double)y)) ) + 4;
-                letterCopy[i,1] = (int) Math.Round((sin * (double)x ) + (cos * (double)y)) + 6;                
+                letterCopy[i,1] = (int) Math.Round((sin * (double)x ) + (cos * (double)y)) + 6;
             }
             return letterCopy;
         }
@@ -339,7 +339,7 @@ namespace Server.Gumps
             for (int pixel = 0; pixel < letter.GetLength(0); pixel++)
             {
                 AddImage(x + letter[pixel, 0] * 3, y + letter[pixel, 1] * 3, 9158, hue);//tl
-            }  
+            }
         }
 
         private void setupBackground()

@@ -4,7 +4,7 @@ using Server.Gumps;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0x4D07, 0x4D08 )] 
+	[FlipableAttribute( 0x4D07, 0x4D08 )]
 	public class AlternateRealityMap : Item
 	{
 		[Constructable]

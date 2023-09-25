@@ -52,14 +52,14 @@ namespace Server.Items
 			}
 			else if ( !from.Region.AllowHarmful( from, from ) )
 			{
-				from.SendMessage( "That doesn't feel like a good idea." ); 
+				from.SendMessage( "That doesn't feel like a good idea." );
 				return;
 			}
 			else if ( Core.AOS && (from.Paralyzed || from.Blessed || from.Frozen || (from.Spell != null && from.Spell.IsCasting)) )
 			{
 				from.SendMessage( "You cannot do that yet." );
 				return;
-			} 
+			}
 
 			if ( m_Timer == null )
 			{

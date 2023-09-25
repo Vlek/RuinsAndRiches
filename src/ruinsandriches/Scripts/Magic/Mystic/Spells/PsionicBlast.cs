@@ -63,7 +63,7 @@ namespace Server.Spells.Mystic
 				SpellHelper.CheckReflect( 5, ref from, ref target );
 
 				int damage = (int)((Caster.Skills[SkillName.FistFighting].Value + Caster.Int) / 4);
-				
+
 				if ( damage > 60 )
 					damage = 60;
 

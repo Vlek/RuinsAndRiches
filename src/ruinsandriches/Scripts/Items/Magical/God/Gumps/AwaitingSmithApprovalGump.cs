@@ -31,13 +31,13 @@ namespace Server.Gumps
             int value = m_Scroll.Value;
 
             if (value == 5)
-                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Wondrous scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false); 
+                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Wondrous scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false);
             else if (value == 10)
-                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Exalted scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false); 
+                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Exalted scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false);
             else if (value == 15)
-                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Mythical scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false); 
+                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Mythical scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false);
             else if (value == 20)
-                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Legendary scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false); 
+                AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Legendary scroll of leveling (+{0})</basefont>", value), (bool)false, (bool)false);
             else
                 AddHtml(40, 20, 260, 20, String.Format("<basefont Color=#FBFBFB>Scroll of leveling (+{0})</basefont>", value), false, false);
 

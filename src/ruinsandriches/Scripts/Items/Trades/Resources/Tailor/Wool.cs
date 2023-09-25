@@ -122,7 +122,7 @@ namespace Server.Items
 		public TaintedWool() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public TaintedWool( int amount ) : base( 0x101F )
 		{
@@ -148,7 +148,7 @@ namespace Server.Items
 
 			int version = reader.ReadInt();
 		}
-		
+
 		new public static void OnSpun( ISpinningWheel wheel, Mobile from, Item yarn )
 		{
 			if ( yarn != null )

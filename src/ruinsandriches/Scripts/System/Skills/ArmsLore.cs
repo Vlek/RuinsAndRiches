@@ -54,7 +54,7 @@ namespace Server.SkillHandlers
 			{
 				from.SendMessage( "You will need to get closer to identify that." );
 			}
-			else if ( !(examine.IsChildOf( from.Backpack )) && Server.Misc.MyServerSettings.IdentifyItemsOnlyInPack() ) 
+			else if ( !(examine.IsChildOf( from.Backpack )) && Server.Misc.MyServerSettings.IdentifyItemsOnlyInPack() )
 			{
 				from.SendMessage( "This must be in your backpack to identify." );
 			}

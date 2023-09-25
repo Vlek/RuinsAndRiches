@@ -18,21 +18,21 @@ namespace Server.Mobiles
 		private int m_MoonTime;
 		private InternalTimer m_MoonTimer;
 		private int m_MoonHue;
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int MoonHue
 		{
 			get {return m_MoonHue;}
 			set {m_MoonHue = value;}
 		}
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Point3D MoonDest
 		{
 			get {return m_MoonDest;}
 			set {m_MoonDest = value;}
 		}
-		
+
 		[CommandProperty(AccessLevel.GameMaster)]
 		public int MoonTime
 		{
@@ -46,7 +46,7 @@ namespace Server.Mobiles
 			Name = "Mangar";
 			Title = "the Dark";
 
-			Body = 400; 
+			Body = 400;
 			Hue = 0x83EA;
 			FacialHairItemID = 0x204C; // BEARD
 			FacialHairHue = 0x455;
@@ -195,7 +195,7 @@ namespace Server.Mobiles
 			this.PlaySound( 0x1FE );
 
 			string bSay = "I will return!";
-			switch ( Utility.Random( 5 ))		   
+			switch ( Utility.Random( 5 ))
 			{
 				case 0: bSay = "You will never defeat me!"; break;
 				case 1: bSay = "I will be back!"; break;
@@ -216,7 +216,7 @@ namespace Server.Mobiles
 			m_MoonTimer.Start ();
 			return base.OnBeforeDeath();
 		}
-		
+
 		public override void OnAfterDelete()
 		{
 			m_MoonTimer = null;
@@ -243,13 +243,13 @@ namespace Server.Mobiles
 			int new_Y = reader.ReadInt();
 			int new_Z = reader.ReadInt();
 			m_MoonDest = new Point3D(2830, 1874, 95);
-			/*--------------------*/			
+			/*--------------------*/
 		}
-		
+
 		private class InternalTimer : Timer
 		{
 			private Moongate m_MoonGate;
-			
+
 			public InternalTimer (Mangar owner) : base (TimeSpan.FromSeconds(0))
 			{
 				Delay = TimeSpan.FromSeconds(1800);
@@ -261,7 +261,7 @@ namespace Server.Mobiles
 				m_MoonGate.TargetMap = Map.Sosaria;
 				m_MoonGate.ItemID = 0x1FD4;
 			}
-			
+
 			protected override void OnTick ()
 			{
 				((Item)m_MoonGate).Delete ();
@@ -282,8 +282,8 @@ namespace Server.Items
 			Name = "Mangar's Vault";
 			Movable = false;
 			Hue = 0x497;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
-			thisTimer.Start(); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
+			thisTimer.Start();
 		}
 
 		public BardMangarPack( Serial serial ) : base( serial )
@@ -454,25 +454,25 @@ namespace Server.Items
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 }

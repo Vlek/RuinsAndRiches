@@ -17,7 +17,7 @@ namespace Server.Misc
 		{
 			Priority = TimerPriority.OneSecond;
 		}
-		
+
 		protected override void OnTick()
 		{
 			HitsDecay();
@@ -37,7 +37,7 @@ namespace Server.Misc
 			if ( m != null )
 			{
 				if ( m is PlayerMobile ){ Server.Items.BaseRace.SyncRace( m, true ); }
-				
+
 				if ( m.RaceID != 0 && ( Server.Items.BaseRace.NoFoodOrDrink( m.RaceID ) || Server.Items.BaseRace.NoFood( m.RaceID ) ) )
 				{
 					// THEY DO NOT NEED TO EAT

@@ -28,11 +28,11 @@ namespace Server.Items
             {
                 BaseRanged item = (BaseRanged)target;
                 if (item is BaseRanged)
-                {              
+                {
 					((BaseRanged)item).Velocity += 10;
 					from.SendMessage("Velocity successfully added to item.");
 					m_Deed.Delete();
-                }                  
+                }
             }
             else
             {

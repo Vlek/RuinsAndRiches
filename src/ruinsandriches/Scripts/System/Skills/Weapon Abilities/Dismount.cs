@@ -88,7 +88,7 @@ namespace Server.Items
 			{
 				BaseMount.SetMountPrevention( attacker, BlockMountType.DismountRecovery, AttackerRemountDelay );
 			}
-				
+
 			if ( !attacker.Mounted )
 				AOS.Damage( defender, attacker, Utility.RandomMinMax( 15, 25 ), 100, 0, 0, 0, 0 );
 		}

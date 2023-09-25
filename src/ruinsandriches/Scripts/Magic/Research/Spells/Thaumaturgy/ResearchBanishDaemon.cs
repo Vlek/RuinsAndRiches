@@ -107,7 +107,7 @@ namespace Server.Spells.Research
 
 			protected override void OnTick()
 			{
-				if ( m_Owner != null) 
+				if ( m_Owner != null)
 				{
                     if( m_Owner.CheckAlive() )
 					m_Owner.Delete();

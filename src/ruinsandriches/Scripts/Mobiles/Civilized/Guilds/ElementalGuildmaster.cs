@@ -29,9 +29,9 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			SBInfos.Add( new SBElementalGuild() ); 
+			SBInfos.Add( new SBElementalGuild() );
 			SBInfos.Add( new SBRuneCasting() );
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public override void InitOutfit()

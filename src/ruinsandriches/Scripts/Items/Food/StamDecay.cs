@@ -17,7 +17,7 @@ namespace Server.Misc
 		{
 			Priority = TimerPriority.OneSecond;
 		}
-		
+
 		protected override void OnTick()
 		{
 			StamDecay();
@@ -30,7 +30,7 @@ namespace Server.Misc
 				StamDecaying( state.Mobile );
 			}
 		}
-		
+
 		// Check thirst level if below the value set take away 1 point of stam
 		public static void StamDecaying( Mobile m )
 		{

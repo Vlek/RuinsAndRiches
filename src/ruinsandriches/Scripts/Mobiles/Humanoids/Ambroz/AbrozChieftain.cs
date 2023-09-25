@@ -99,7 +99,7 @@ namespace Server.Mobiles
 				defender.Paralyze( TimeSpan.FromSeconds( 4.0 ) );
 			}
 		}
-		
+
 		public AbrozChieftain( Serial serial ) : base( serial )
 		{
 		}

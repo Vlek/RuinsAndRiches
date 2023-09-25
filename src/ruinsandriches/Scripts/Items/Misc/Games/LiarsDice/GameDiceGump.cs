@@ -35,8 +35,8 @@ namespace Server.Gumps
           	this.currentRoll = _currentRoll;
 			this.diceToBeat = _diceToBeat;
 			AddRollGump();
-		}		
-		private void AddRollGump(){         	
+		}
+		private void AddRollGump(){
             this.Closable=false;
 			this.Disposable=false;
 			this.Dragable=true;
@@ -64,15 +64,15 @@ namespace Server.Gumps
 				}
 			}
         }
-		
+
         private void DisplayRollDice(){
         	if(this.currentRoll >= 0 && this.currentRoll <= 20){
-				this.DisplayDiceCombo(125, 20,  Dice1Values[this.currentRoll],Dice2Values[this.currentRoll]);        
-        	}        
-        }		
+				this.DisplayDiceCombo(125, 20,  Dice1Values[this.currentRoll],Dice2Values[this.currentRoll]);
+        	}
+        }
         /**
          * Die_num must be between 1 and 6, it subtracts one because thats how we access the id of the image
-         */		 
+         */
         private void DisplayDiceCombo(int x, int y,    int first_die, int second_die){
         	int swap=0;
         	if(second_die > first_die){
@@ -82,9 +82,9 @@ namespace Server.Gumps
         	}
         	AddImageTiled(x, y, 21, 21, 11280 + (first_die-1));
         	AddImageTiled(x+30, y, 21, 21, 11280 + (second_die-1));
-        }   
+        }
 		public override void OnResponse( NetState state, RelayInfo info ){
-			int btd = info.ButtonID;			
+			int btd = info.ButtonID;
 			if(info.ButtonID == 2){
 				//20 would be the lowest roll, since 0 is a index
 				bool switched = false;
@@ -98,11 +98,11 @@ namespace Server.Gumps
 				if(switched == false){
 					state.Mobile.SendMessage( "Please select a dice value!");
 					state.Mobile.SendGump(this);
-				}				
+				}
 			}
 			else{
 				state.Mobile.SendMessage( "Illegal option selected");
 			}
-		}    
-    }    
+		}
+    }
 }

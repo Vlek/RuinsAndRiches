@@ -63,7 +63,7 @@ namespace Server.Items
 				AddHtml( 19, 47, 573, 364, @"<BODY><BASEFONT Color=" + color + ">Use a bladed item, like a dagger or knife, on a corpse by double-clicking the bladed item and then selecting the corpse. If there is something to be skinned from it, it will appear in their pack. If they have scales, then those will also appear in their pack.<br><br>Different types of scales can be found on many creatures like dragons and dinosaurs. You can use these scales to make different types of items by using a blacksmith hammer and making scalemail armor.<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>There are 7 different types of scales:</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				from.SendSound( 0x249 );
@@ -72,7 +72,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 ) 
+			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

@@ -93,7 +93,7 @@ namespace Server.Spells.Elementalism
 				SpellHelper.CheckReflect( (int)this.Circle, ref from, ref target );
 
 				int damage = (int)((Caster.Skills[CastSkill].Value + Caster.Int) / 5);
-				
+
 				if ( damage > 60 )
 					damage = 60;
 

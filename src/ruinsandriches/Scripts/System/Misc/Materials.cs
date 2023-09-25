@@ -182,42 +182,42 @@ namespace Server.Misc
 				if ( weapon is BaseMagicStaff )
 					return false;
 
-				if ( weapon.Resource == CraftResource.DullCopper || 
-					weapon.Resource == CraftResource.ShadowIron || 
-					weapon.Resource == CraftResource.Copper || 
-					weapon.Resource == CraftResource.Bronze || 
-					weapon.Resource == CraftResource.Gold || 
-					weapon.Resource == CraftResource.Agapite || 
-					weapon.Resource == CraftResource.Verite || 
-					weapon.Resource == CraftResource.Valorite || 
-					weapon.Resource == CraftResource.Steel || 
-					weapon.Resource == CraftResource.Brass || 
-					weapon.Resource == CraftResource.Mithril || 
-					weapon.Resource == CraftResource.Xormite || 
-					weapon.Resource == CraftResource.Obsidian || 
-					weapon.Resource == CraftResource.Nepturite || 
-					weapon.Resource == CraftResource.Dwarven || 
+				if ( weapon.Resource == CraftResource.DullCopper ||
+					weapon.Resource == CraftResource.ShadowIron ||
+					weapon.Resource == CraftResource.Copper ||
+					weapon.Resource == CraftResource.Bronze ||
+					weapon.Resource == CraftResource.Gold ||
+					weapon.Resource == CraftResource.Agapite ||
+					weapon.Resource == CraftResource.Verite ||
+					weapon.Resource == CraftResource.Valorite ||
+					weapon.Resource == CraftResource.Steel ||
+					weapon.Resource == CraftResource.Brass ||
+					weapon.Resource == CraftResource.Mithril ||
+					weapon.Resource == CraftResource.Xormite ||
+					weapon.Resource == CraftResource.Obsidian ||
+					weapon.Resource == CraftResource.Nepturite ||
+					weapon.Resource == CraftResource.Dwarven ||
 					weapon.Resource == CraftResource.Iron ){ return true; }
 			}
 			else if ( item is BaseArmor )
 			{
 				BaseArmor armor = (BaseArmor)item;
 
-				if ( armor.Resource == CraftResource.DullCopper || 
-					armor.Resource == CraftResource.ShadowIron || 
-					armor.Resource == CraftResource.Copper || 
-					armor.Resource == CraftResource.Bronze || 
-					armor.Resource == CraftResource.Gold || 
-					armor.Resource == CraftResource.Agapite || 
-					armor.Resource == CraftResource.Verite || 
-					armor.Resource == CraftResource.Valorite || 
-					armor.Resource == CraftResource.Steel || 
-					armor.Resource == CraftResource.Brass || 
-					armor.Resource == CraftResource.Mithril || 
-					armor.Resource == CraftResource.Xormite || 
-					armor.Resource == CraftResource.Obsidian || 
-					armor.Resource == CraftResource.Nepturite || 
-					armor.Resource == CraftResource.Dwarven || 
+				if ( armor.Resource == CraftResource.DullCopper ||
+					armor.Resource == CraftResource.ShadowIron ||
+					armor.Resource == CraftResource.Copper ||
+					armor.Resource == CraftResource.Bronze ||
+					armor.Resource == CraftResource.Gold ||
+					armor.Resource == CraftResource.Agapite ||
+					armor.Resource == CraftResource.Verite ||
+					armor.Resource == CraftResource.Valorite ||
+					armor.Resource == CraftResource.Steel ||
+					armor.Resource == CraftResource.Brass ||
+					armor.Resource == CraftResource.Mithril ||
+					armor.Resource == CraftResource.Xormite ||
+					armor.Resource == CraftResource.Obsidian ||
+					armor.Resource == CraftResource.Nepturite ||
+					armor.Resource == CraftResource.Dwarven ||
 					armor.Resource == CraftResource.Iron ){ return true; }
 			}
 
@@ -376,14 +376,14 @@ namespace Server.Misc
 			else if ( item.Name == null )
 				return false;
 
-			if ( 	item is BaseWeapon || 
-					item is BaseArmor || 
-					item is MagicBelt || 
-					item is MagicBoots || 
-					item is MagicCloak || 
-					item is MagicHat || 
-					item is MagicRobe || 
-					item is MagicSash || 
+			if ( 	item is BaseWeapon ||
+					item is BaseArmor ||
+					item is MagicBelt ||
+					item is MagicBoots ||
+					item is MagicCloak ||
+					item is MagicHat ||
+					item is MagicRobe ||
+					item is MagicSash ||
 					item is BaseClothing )
 			{
 				if ( item is BaseWeapon )
@@ -430,7 +430,7 @@ namespace Server.Misc
 			else if ( item.Name == null )
 				return false;
 
-			if ( 	item is BaseWeapon || 
+			if ( 	item is BaseWeapon ||
 					item is BaseArmor )
 			{
 				if ( item is BaseWeapon )
@@ -549,34 +549,34 @@ namespace Server.Misc
 			{
 				BaseWeapon weapon = (BaseWeapon)item;
 
-				if ( weapon.Resource == CraftResource.RegularLeather || 
-					weapon.Resource == CraftResource.SpinedLeather || 
-					weapon.Resource == CraftResource.HornedLeather || 
-					weapon.Resource == CraftResource.BarbedLeather || 
-					weapon.Resource == CraftResource.NecroticLeather || 
-					weapon.Resource == CraftResource.VolcanicLeather || 
-					weapon.Resource == CraftResource.FrozenLeather || 
-					weapon.Resource == CraftResource.GoliathLeather || 
-					weapon.Resource == CraftResource.DraconicLeather || 
-					weapon.Resource == CraftResource.HellishLeather || 
-					weapon.Resource == CraftResource.DinosaurLeather || 
+				if ( weapon.Resource == CraftResource.RegularLeather ||
+					weapon.Resource == CraftResource.SpinedLeather ||
+					weapon.Resource == CraftResource.HornedLeather ||
+					weapon.Resource == CraftResource.BarbedLeather ||
+					weapon.Resource == CraftResource.NecroticLeather ||
+					weapon.Resource == CraftResource.VolcanicLeather ||
+					weapon.Resource == CraftResource.FrozenLeather ||
+					weapon.Resource == CraftResource.GoliathLeather ||
+					weapon.Resource == CraftResource.DraconicLeather ||
+					weapon.Resource == CraftResource.HellishLeather ||
+					weapon.Resource == CraftResource.DinosaurLeather ||
 					weapon.Resource == CraftResource.AlienLeather ){ return true; }
 			}
 			else if ( item is BaseArmor )
 			{
 				BaseArmor armor = (BaseArmor)item;
 
-				if ( armor.Resource == CraftResource.RegularLeather || 
-					armor.Resource == CraftResource.SpinedLeather || 
-					armor.Resource == CraftResource.HornedLeather || 
-					armor.Resource == CraftResource.BarbedLeather || 
-					armor.Resource == CraftResource.NecroticLeather || 
-					armor.Resource == CraftResource.VolcanicLeather || 
-					armor.Resource == CraftResource.FrozenLeather || 
-					armor.Resource == CraftResource.GoliathLeather || 
-					armor.Resource == CraftResource.DraconicLeather || 
-					armor.Resource == CraftResource.HellishLeather || 
-					armor.Resource == CraftResource.DinosaurLeather || 
+				if ( armor.Resource == CraftResource.RegularLeather ||
+					armor.Resource == CraftResource.SpinedLeather ||
+					armor.Resource == CraftResource.HornedLeather ||
+					armor.Resource == CraftResource.BarbedLeather ||
+					armor.Resource == CraftResource.NecroticLeather ||
+					armor.Resource == CraftResource.VolcanicLeather ||
+					armor.Resource == CraftResource.FrozenLeather ||
+					armor.Resource == CraftResource.GoliathLeather ||
+					armor.Resource == CraftResource.DraconicLeather ||
+					armor.Resource == CraftResource.HellishLeather ||
+					armor.Resource == CraftResource.DinosaurLeather ||
 					armor.Resource == CraftResource.AlienLeather ){ return true; }
 			}
 
@@ -592,60 +592,60 @@ namespace Server.Misc
 			{
 				BaseWeapon weapon = (BaseWeapon)item;
 
-				if ( weapon.Resource == CraftResource.RegularWood || 
-					weapon.Resource == CraftResource.AshTree || 
-					weapon.Resource == CraftResource.CherryTree || 
-					weapon.Resource == CraftResource.EbonyTree || 
-					weapon.Resource == CraftResource.GoldenOakTree || 
-					weapon.Resource == CraftResource.HickoryTree || 
-					weapon.Resource == CraftResource.MahoganyTree || 
-					weapon.Resource == CraftResource.OakTree || 
-					weapon.Resource == CraftResource.PineTree || 
-					weapon.Resource == CraftResource.RosewoodTree || 
-					weapon.Resource == CraftResource.DriftwoodTree || 
-					weapon.Resource == CraftResource.WalnutTree || 
-					weapon.Resource == CraftResource.ElvenTree || 
-					weapon.Resource == CraftResource.GhostTree || 
+				if ( weapon.Resource == CraftResource.RegularWood ||
+					weapon.Resource == CraftResource.AshTree ||
+					weapon.Resource == CraftResource.CherryTree ||
+					weapon.Resource == CraftResource.EbonyTree ||
+					weapon.Resource == CraftResource.GoldenOakTree ||
+					weapon.Resource == CraftResource.HickoryTree ||
+					weapon.Resource == CraftResource.MahoganyTree ||
+					weapon.Resource == CraftResource.OakTree ||
+					weapon.Resource == CraftResource.PineTree ||
+					weapon.Resource == CraftResource.RosewoodTree ||
+					weapon.Resource == CraftResource.DriftwoodTree ||
+					weapon.Resource == CraftResource.WalnutTree ||
+					weapon.Resource == CraftResource.ElvenTree ||
+					weapon.Resource == CraftResource.GhostTree ||
 					weapon.Resource == CraftResource.PetrifiedTree ){ return true; }
 			}
 			else if ( item is BaseArmor )
 			{
 				BaseArmor armor = (BaseArmor)item;
 
-				if ( armor.Resource == CraftResource.RegularWood || 
-					armor.Resource == CraftResource.AshTree || 
-					armor.Resource == CraftResource.CherryTree || 
-					armor.Resource == CraftResource.EbonyTree || 
-					armor.Resource == CraftResource.GoldenOakTree || 
-					armor.Resource == CraftResource.HickoryTree || 
-					armor.Resource == CraftResource.MahoganyTree || 
-					armor.Resource == CraftResource.OakTree || 
-					armor.Resource == CraftResource.PineTree || 
-					armor.Resource == CraftResource.RosewoodTree || 
-					armor.Resource == CraftResource.DriftwoodTree || 
-					armor.Resource == CraftResource.WalnutTree || 
-					armor.Resource == CraftResource.ElvenTree || 
-					armor.Resource == CraftResource.GhostTree || 
+				if ( armor.Resource == CraftResource.RegularWood ||
+					armor.Resource == CraftResource.AshTree ||
+					armor.Resource == CraftResource.CherryTree ||
+					armor.Resource == CraftResource.EbonyTree ||
+					armor.Resource == CraftResource.GoldenOakTree ||
+					armor.Resource == CraftResource.HickoryTree ||
+					armor.Resource == CraftResource.MahoganyTree ||
+					armor.Resource == CraftResource.OakTree ||
+					armor.Resource == CraftResource.PineTree ||
+					armor.Resource == CraftResource.RosewoodTree ||
+					armor.Resource == CraftResource.DriftwoodTree ||
+					armor.Resource == CraftResource.WalnutTree ||
+					armor.Resource == CraftResource.ElvenTree ||
+					armor.Resource == CraftResource.GhostTree ||
 					armor.Resource == CraftResource.PetrifiedTree ){ return true; }
 			}
 			else if ( item is BaseInstrument )
 			{
 				BaseInstrument lute = (BaseInstrument)item;
 
-				if ( lute.Resource == CraftResource.RegularWood || 
-					lute.Resource == CraftResource.AshTree || 
-					lute.Resource == CraftResource.CherryTree || 
-					lute.Resource == CraftResource.EbonyTree || 
-					lute.Resource == CraftResource.GoldenOakTree || 
-					lute.Resource == CraftResource.HickoryTree || 
-					lute.Resource == CraftResource.MahoganyTree || 
-					lute.Resource == CraftResource.OakTree || 
-					lute.Resource == CraftResource.PineTree || 
-					lute.Resource == CraftResource.RosewoodTree || 
-					lute.Resource == CraftResource.DriftwoodTree || 
-					lute.Resource == CraftResource.WalnutTree || 
-					lute.Resource == CraftResource.ElvenTree || 
-					lute.Resource == CraftResource.GhostTree || 
+				if ( lute.Resource == CraftResource.RegularWood ||
+					lute.Resource == CraftResource.AshTree ||
+					lute.Resource == CraftResource.CherryTree ||
+					lute.Resource == CraftResource.EbonyTree ||
+					lute.Resource == CraftResource.GoldenOakTree ||
+					lute.Resource == CraftResource.HickoryTree ||
+					lute.Resource == CraftResource.MahoganyTree ||
+					lute.Resource == CraftResource.OakTree ||
+					lute.Resource == CraftResource.PineTree ||
+					lute.Resource == CraftResource.RosewoodTree ||
+					lute.Resource == CraftResource.DriftwoodTree ||
+					lute.Resource == CraftResource.WalnutTree ||
+					lute.Resource == CraftResource.ElvenTree ||
+					lute.Resource == CraftResource.GhostTree ||
 					lute.Resource == CraftResource.PetrifiedTree ){ return true; }
 			}
 
@@ -664,135 +664,135 @@ namespace Server.Misc
 				if ( weapon is BaseMagicStaff )
 					return false;
 
-				if ( weapon.Resource == CraftResource.DullCopper || 
-					weapon.Resource == CraftResource.ShadowIron || 
-					weapon.Resource == CraftResource.Copper || 
-					weapon.Resource == CraftResource.Bronze || 
-					weapon.Resource == CraftResource.Gold || 
-					weapon.Resource == CraftResource.Agapite || 
-					weapon.Resource == CraftResource.Verite || 
-					weapon.Resource == CraftResource.Valorite || 
-					weapon.Resource == CraftResource.Steel || 
-					weapon.Resource == CraftResource.Brass || 
-					weapon.Resource == CraftResource.Mithril || 
-					weapon.Resource == CraftResource.Xormite || 
-					weapon.Resource == CraftResource.Obsidian || 
-					weapon.Resource == CraftResource.Nepturite || 
-					weapon.Resource == CraftResource.Dwarven || 
-					weapon.Resource == CraftResource.SpinedLeather || 
-					weapon.Resource == CraftResource.HornedLeather || 
-					weapon.Resource == CraftResource.BarbedLeather || 
-					weapon.Resource == CraftResource.NecroticLeather || 
-					weapon.Resource == CraftResource.VolcanicLeather || 
-					weapon.Resource == CraftResource.FrozenLeather || 
-					weapon.Resource == CraftResource.GoliathLeather || 
-					weapon.Resource == CraftResource.DraconicLeather || 
-					weapon.Resource == CraftResource.HellishLeather || 
-					weapon.Resource == CraftResource.DinosaurLeather || 
-					weapon.Resource == CraftResource.AlienLeather || 
-					weapon.Resource == CraftResource.AshTree || 
-					weapon.Resource == CraftResource.CherryTree || 
-					weapon.Resource == CraftResource.EbonyTree || 
-					weapon.Resource == CraftResource.GoldenOakTree || 
-					weapon.Resource == CraftResource.HickoryTree || 
-					weapon.Resource == CraftResource.MahoganyTree || 
-					weapon.Resource == CraftResource.OakTree || 
-					weapon.Resource == CraftResource.PineTree || 
-					weapon.Resource == CraftResource.RosewoodTree || 
-					weapon.Resource == CraftResource.DriftwoodTree || 
-					weapon.Resource == CraftResource.WalnutTree || 
-					weapon.Resource == CraftResource.ElvenTree || 
-					weapon.Resource == CraftResource.GhostTree || 
+				if ( weapon.Resource == CraftResource.DullCopper ||
+					weapon.Resource == CraftResource.ShadowIron ||
+					weapon.Resource == CraftResource.Copper ||
+					weapon.Resource == CraftResource.Bronze ||
+					weapon.Resource == CraftResource.Gold ||
+					weapon.Resource == CraftResource.Agapite ||
+					weapon.Resource == CraftResource.Verite ||
+					weapon.Resource == CraftResource.Valorite ||
+					weapon.Resource == CraftResource.Steel ||
+					weapon.Resource == CraftResource.Brass ||
+					weapon.Resource == CraftResource.Mithril ||
+					weapon.Resource == CraftResource.Xormite ||
+					weapon.Resource == CraftResource.Obsidian ||
+					weapon.Resource == CraftResource.Nepturite ||
+					weapon.Resource == CraftResource.Dwarven ||
+					weapon.Resource == CraftResource.SpinedLeather ||
+					weapon.Resource == CraftResource.HornedLeather ||
+					weapon.Resource == CraftResource.BarbedLeather ||
+					weapon.Resource == CraftResource.NecroticLeather ||
+					weapon.Resource == CraftResource.VolcanicLeather ||
+					weapon.Resource == CraftResource.FrozenLeather ||
+					weapon.Resource == CraftResource.GoliathLeather ||
+					weapon.Resource == CraftResource.DraconicLeather ||
+					weapon.Resource == CraftResource.HellishLeather ||
+					weapon.Resource == CraftResource.DinosaurLeather ||
+					weapon.Resource == CraftResource.AlienLeather ||
+					weapon.Resource == CraftResource.AshTree ||
+					weapon.Resource == CraftResource.CherryTree ||
+					weapon.Resource == CraftResource.EbonyTree ||
+					weapon.Resource == CraftResource.GoldenOakTree ||
+					weapon.Resource == CraftResource.HickoryTree ||
+					weapon.Resource == CraftResource.MahoganyTree ||
+					weapon.Resource == CraftResource.OakTree ||
+					weapon.Resource == CraftResource.PineTree ||
+					weapon.Resource == CraftResource.RosewoodTree ||
+					weapon.Resource == CraftResource.DriftwoodTree ||
+					weapon.Resource == CraftResource.WalnutTree ||
+					weapon.Resource == CraftResource.ElvenTree ||
+					weapon.Resource == CraftResource.GhostTree ||
 					weapon.Resource == CraftResource.PetrifiedTree ){ return true; }
 			}
 			else if ( item is BaseArmor )
 			{
 				BaseArmor armor = (BaseArmor)item;
 
-				if ( armor.Resource == CraftResource.DullCopper || 
-					armor.Resource == CraftResource.ShadowIron || 
-					armor.Resource == CraftResource.Copper || 
-					armor.Resource == CraftResource.Bronze || 
-					armor.Resource == CraftResource.Gold || 
-					armor.Resource == CraftResource.Agapite || 
-					armor.Resource == CraftResource.Verite || 
-					armor.Resource == CraftResource.Valorite || 
-					armor.Resource == CraftResource.Steel || 
-					armor.Resource == CraftResource.Brass || 
-					armor.Resource == CraftResource.Mithril || 
-					armor.Resource == CraftResource.Xormite || 
-					armor.Resource == CraftResource.Obsidian || 
-					armor.Resource == CraftResource.Nepturite || 
-					armor.Resource == CraftResource.Dwarven || 
-					armor.Resource == CraftResource.SpinedLeather || 
-					armor.Resource == CraftResource.HornedLeather || 
-					armor.Resource == CraftResource.BarbedLeather || 
-					armor.Resource == CraftResource.NecroticLeather || 
-					armor.Resource == CraftResource.VolcanicLeather || 
-					armor.Resource == CraftResource.FrozenLeather || 
-					armor.Resource == CraftResource.GoliathLeather || 
-					armor.Resource == CraftResource.DraconicLeather || 
-					armor.Resource == CraftResource.HellishLeather || 
-					armor.Resource == CraftResource.DinosaurLeather || 
-					armor.Resource == CraftResource.AlienLeather || 
-					armor.Resource == CraftResource.AshTree || 
-					armor.Resource == CraftResource.CherryTree || 
-					armor.Resource == CraftResource.EbonyTree || 
-					armor.Resource == CraftResource.GoldenOakTree || 
-					armor.Resource == CraftResource.HickoryTree || 
-					armor.Resource == CraftResource.MahoganyTree || 
-					armor.Resource == CraftResource.OakTree || 
-					armor.Resource == CraftResource.PineTree || 
-					armor.Resource == CraftResource.RosewoodTree || 
-					armor.Resource == CraftResource.DriftwoodTree || 
-					armor.Resource == CraftResource.WalnutTree || 
-					armor.Resource == CraftResource.ElvenTree || 
-					armor.Resource == CraftResource.GhostTree || 
+				if ( armor.Resource == CraftResource.DullCopper ||
+					armor.Resource == CraftResource.ShadowIron ||
+					armor.Resource == CraftResource.Copper ||
+					armor.Resource == CraftResource.Bronze ||
+					armor.Resource == CraftResource.Gold ||
+					armor.Resource == CraftResource.Agapite ||
+					armor.Resource == CraftResource.Verite ||
+					armor.Resource == CraftResource.Valorite ||
+					armor.Resource == CraftResource.Steel ||
+					armor.Resource == CraftResource.Brass ||
+					armor.Resource == CraftResource.Mithril ||
+					armor.Resource == CraftResource.Xormite ||
+					armor.Resource == CraftResource.Obsidian ||
+					armor.Resource == CraftResource.Nepturite ||
+					armor.Resource == CraftResource.Dwarven ||
+					armor.Resource == CraftResource.SpinedLeather ||
+					armor.Resource == CraftResource.HornedLeather ||
+					armor.Resource == CraftResource.BarbedLeather ||
+					armor.Resource == CraftResource.NecroticLeather ||
+					armor.Resource == CraftResource.VolcanicLeather ||
+					armor.Resource == CraftResource.FrozenLeather ||
+					armor.Resource == CraftResource.GoliathLeather ||
+					armor.Resource == CraftResource.DraconicLeather ||
+					armor.Resource == CraftResource.HellishLeather ||
+					armor.Resource == CraftResource.DinosaurLeather ||
+					armor.Resource == CraftResource.AlienLeather ||
+					armor.Resource == CraftResource.AshTree ||
+					armor.Resource == CraftResource.CherryTree ||
+					armor.Resource == CraftResource.EbonyTree ||
+					armor.Resource == CraftResource.GoldenOakTree ||
+					armor.Resource == CraftResource.HickoryTree ||
+					armor.Resource == CraftResource.MahoganyTree ||
+					armor.Resource == CraftResource.OakTree ||
+					armor.Resource == CraftResource.PineTree ||
+					armor.Resource == CraftResource.RosewoodTree ||
+					armor.Resource == CraftResource.DriftwoodTree ||
+					armor.Resource == CraftResource.WalnutTree ||
+					armor.Resource == CraftResource.ElvenTree ||
+					armor.Resource == CraftResource.GhostTree ||
 					armor.Resource == CraftResource.PetrifiedTree ){ return true; }
 			}
 			else if ( item is BaseInstrument )
 			{
 				BaseInstrument lute = (BaseInstrument)item;
 
-				if ( lute.Resource == CraftResource.DullCopper || 
-					lute.Resource == CraftResource.ShadowIron || 
-					lute.Resource == CraftResource.Copper || 
-					lute.Resource == CraftResource.Bronze || 
-					lute.Resource == CraftResource.Gold || 
-					lute.Resource == CraftResource.Agapite || 
-					lute.Resource == CraftResource.Verite || 
-					lute.Resource == CraftResource.Valorite || 
-					lute.Resource == CraftResource.Steel || 
-					lute.Resource == CraftResource.Brass || 
-					lute.Resource == CraftResource.Mithril || 
-					lute.Resource == CraftResource.Xormite || 
-					lute.Resource == CraftResource.Obsidian || 
-					lute.Resource == CraftResource.Nepturite || 
-					lute.Resource == CraftResource.Dwarven || 
-					lute.Resource == CraftResource.SpinedLeather || 
-					lute.Resource == CraftResource.HornedLeather || 
-					lute.Resource == CraftResource.BarbedLeather || 
-					lute.Resource == CraftResource.NecroticLeather || 
-					lute.Resource == CraftResource.VolcanicLeather || 
-					lute.Resource == CraftResource.FrozenLeather || 
-					lute.Resource == CraftResource.GoliathLeather || 
-					lute.Resource == CraftResource.DraconicLeather || 
-					lute.Resource == CraftResource.HellishLeather || 
-					lute.Resource == CraftResource.DinosaurLeather || 
-					lute.Resource == CraftResource.AlienLeather || 
-					lute.Resource == CraftResource.AshTree || 
-					lute.Resource == CraftResource.CherryTree || 
-					lute.Resource == CraftResource.EbonyTree || 
-					lute.Resource == CraftResource.GoldenOakTree || 
-					lute.Resource == CraftResource.HickoryTree || 
-					lute.Resource == CraftResource.MahoganyTree || 
-					lute.Resource == CraftResource.OakTree || 
-					lute.Resource == CraftResource.PineTree || 
-					lute.Resource == CraftResource.RosewoodTree || 
-					lute.Resource == CraftResource.DriftwoodTree || 
-					lute.Resource == CraftResource.WalnutTree || 
-					lute.Resource == CraftResource.ElvenTree || 
-					lute.Resource == CraftResource.GhostTree || 
+				if ( lute.Resource == CraftResource.DullCopper ||
+					lute.Resource == CraftResource.ShadowIron ||
+					lute.Resource == CraftResource.Copper ||
+					lute.Resource == CraftResource.Bronze ||
+					lute.Resource == CraftResource.Gold ||
+					lute.Resource == CraftResource.Agapite ||
+					lute.Resource == CraftResource.Verite ||
+					lute.Resource == CraftResource.Valorite ||
+					lute.Resource == CraftResource.Steel ||
+					lute.Resource == CraftResource.Brass ||
+					lute.Resource == CraftResource.Mithril ||
+					lute.Resource == CraftResource.Xormite ||
+					lute.Resource == CraftResource.Obsidian ||
+					lute.Resource == CraftResource.Nepturite ||
+					lute.Resource == CraftResource.Dwarven ||
+					lute.Resource == CraftResource.SpinedLeather ||
+					lute.Resource == CraftResource.HornedLeather ||
+					lute.Resource == CraftResource.BarbedLeather ||
+					lute.Resource == CraftResource.NecroticLeather ||
+					lute.Resource == CraftResource.VolcanicLeather ||
+					lute.Resource == CraftResource.FrozenLeather ||
+					lute.Resource == CraftResource.GoliathLeather ||
+					lute.Resource == CraftResource.DraconicLeather ||
+					lute.Resource == CraftResource.HellishLeather ||
+					lute.Resource == CraftResource.DinosaurLeather ||
+					lute.Resource == CraftResource.AlienLeather ||
+					lute.Resource == CraftResource.AshTree ||
+					lute.Resource == CraftResource.CherryTree ||
+					lute.Resource == CraftResource.EbonyTree ||
+					lute.Resource == CraftResource.GoldenOakTree ||
+					lute.Resource == CraftResource.HickoryTree ||
+					lute.Resource == CraftResource.MahoganyTree ||
+					lute.Resource == CraftResource.OakTree ||
+					lute.Resource == CraftResource.PineTree ||
+					lute.Resource == CraftResource.RosewoodTree ||
+					lute.Resource == CraftResource.DriftwoodTree ||
+					lute.Resource == CraftResource.WalnutTree ||
+					lute.Resource == CraftResource.ElvenTree ||
+					lute.Resource == CraftResource.GhostTree ||
 					lute.Resource == CraftResource.PetrifiedTree ){ return true; }
 			}
 
@@ -1040,7 +1040,7 @@ namespace Server.Misc
 		{
 			if ( color < 1 ){ color = Utility.RandomMinMax( 0, 37 ); }
 
-			switch ( color ) 
+			switch ( color )
 			{
 				case 1: item.Hue = Server.Misc.MaterialInfo.GetMaterialColor( "star ruby", "", 0 ); item.Name = "star ruby " + item.Name;		break;
 				case 2: item.Hue = Server.Misc.MaterialInfo.GetMaterialColor( "spinel", "", 0 ); item.Name = "spinel " + item.Name;			break;
@@ -1084,7 +1084,7 @@ namespace Server.Misc
 
 		public static void ColorPlainMetal( Item item )
 		{
-			switch ( Utility.RandomMinMax( 0, 13 ) ) 
+			switch ( Utility.RandomMinMax( 0, 13 ) )
 			{
 				case 0: item.Hue = Server.Misc.MaterialInfo.GetMaterialColor( "silver", "", 0 ); item.Name = "silver " + item.Name;			break;
 				case 1: item.Hue = Server.Misc.MaterialInfo.GetMaterialColor( "dull copper", "", 0 ); item.Name = "dull copper " + item.Name;	break;
@@ -1105,7 +1105,7 @@ namespace Server.Misc
 
 		public static void ColorPlainWood( Item item )
 		{
-			switch ( Utility.RandomMinMax( 0, 14 ) ) 
+			switch ( Utility.RandomMinMax( 0, 14 ) )
 			{
 				case 0: item.Hue = 0xABE;	break;
 				case 1: item.Hue = MaterialInfo.GetMaterialColor( "ash", "", 0 );	break;
@@ -1130,68 +1130,68 @@ namespace Server.Misc
 			if ( item == null )
 				return false;
 
-			if ( 
-					item is BasePotion || 
-					item is AutoResPotion || 
-					item is ShieldOfEarthPotion || 
-					item is WoodlandProtectionPotion || 
-					item is ProtectiveFairyPotion || 
-					item is HerbalHealingPotion || 
-					item is GraspingRootsPotion || 
-					item is BlendWithForestPotion || 
-					item is SwarmOfInsectsPotion || 
-					item is VolcanicEruptionPotion || 
-					item is TreefellowPotion || 
-					item is StoneCirclePotion || 
-					item is DruidicRunePotion || 
-					item is LureStonePotion || 
-					item is NaturesPassagePotion || 
-					item is MushroomGatewayPotion || 
-					item is RestorativeSoilPotion || 
-					item is FireflyPotion || 
-					item is HellsGateScroll || 
-					item is ManaLeechScroll || 
-					item is NecroCurePoisonScroll || 
-					item is NecroPoisonScroll || 
-					item is NecroUnlockScroll || 
-					item is PhantasmScroll || 
-					item is RetchedAirScroll || 
-					item is SpectreShadowScroll || 
-					item is UndeadEyesScroll || 
-					item is VampireGiftScroll || 
-					item is WallOfSpikesScroll || 
-					item is BloodPactScroll || 
-					item is GhostlyImagesScroll || 
-					item is GhostPhaseScroll || 
-					item is GraveyardGatewayScroll || 
-					item is HellsBrandScroll || 
-					item is MagicalDyes || 
-					item is UnusualDyes || 
-					item is BottleOfAcid || 
-					item is CrystallineJar || 
-					item is NecroSkinPotion || 
-					item is OilWood || 
-					item is OilAmethyst || 
-					item is OilCaddellite || 
-					item is OilEmerald || 
-					item is OilGarnet || 
-					item is OilIce || 
-					item is OilJade || 
-					item is OilLeather || 
-					item is OilMarble || 
-					item is OilMetal || 
-					item is OilOnyx || 
-					item is OilQuartz || 
-					item is OilRuby || 
-					item is OilSapphire || 
-					item is OilSilver || 
-					item is OilSpinel || 
-					item is OilStarRuby || 
-					item is OilTopaz || 
-					item is OilWood || 
-					item is PotionOfWisdom || 
-					item is PotionOfDexterity || 
-					item is PotionOfMight 
+			if (
+					item is BasePotion ||
+					item is AutoResPotion ||
+					item is ShieldOfEarthPotion ||
+					item is WoodlandProtectionPotion ||
+					item is ProtectiveFairyPotion ||
+					item is HerbalHealingPotion ||
+					item is GraspingRootsPotion ||
+					item is BlendWithForestPotion ||
+					item is SwarmOfInsectsPotion ||
+					item is VolcanicEruptionPotion ||
+					item is TreefellowPotion ||
+					item is StoneCirclePotion ||
+					item is DruidicRunePotion ||
+					item is LureStonePotion ||
+					item is NaturesPassagePotion ||
+					item is MushroomGatewayPotion ||
+					item is RestorativeSoilPotion ||
+					item is FireflyPotion ||
+					item is HellsGateScroll ||
+					item is ManaLeechScroll ||
+					item is NecroCurePoisonScroll ||
+					item is NecroPoisonScroll ||
+					item is NecroUnlockScroll ||
+					item is PhantasmScroll ||
+					item is RetchedAirScroll ||
+					item is SpectreShadowScroll ||
+					item is UndeadEyesScroll ||
+					item is VampireGiftScroll ||
+					item is WallOfSpikesScroll ||
+					item is BloodPactScroll ||
+					item is GhostlyImagesScroll ||
+					item is GhostPhaseScroll ||
+					item is GraveyardGatewayScroll ||
+					item is HellsBrandScroll ||
+					item is MagicalDyes ||
+					item is UnusualDyes ||
+					item is BottleOfAcid ||
+					item is CrystallineJar ||
+					item is NecroSkinPotion ||
+					item is OilWood ||
+					item is OilAmethyst ||
+					item is OilCaddellite ||
+					item is OilEmerald ||
+					item is OilGarnet ||
+					item is OilIce ||
+					item is OilJade ||
+					item is OilLeather ||
+					item is OilMarble ||
+					item is OilMetal ||
+					item is OilOnyx ||
+					item is OilQuartz ||
+					item is OilRuby ||
+					item is OilSapphire ||
+					item is OilSilver ||
+					item is OilSpinel ||
+					item is OilStarRuby ||
+					item is OilTopaz ||
+					item is OilWood ||
+					item is PotionOfWisdom ||
+					item is PotionOfDexterity ||
+					item is PotionOfMight
 			)
 			return true;
 
@@ -1203,19 +1203,19 @@ namespace Server.Misc
 			if ( item == null )
 				return false;
 
-			if ( 
-					item is LeftLeg || 
-					item is RightLeg || 
-					item is TastyHeart || 
-					item is BodyPart || 
-					item is Head || 
-					item is LeftArm || 
-					item is RightArm || 
-					item is Torso || 
-					item is Bone || 
-					item is RibCage || 
-					item is BonePile || 
-					item is Bones 
+			if (
+					item is LeftLeg ||
+					item is RightLeg ||
+					item is TastyHeart ||
+					item is BodyPart ||
+					item is Head ||
+					item is LeftArm ||
+					item is RightArm ||
+					item is Torso ||
+					item is Bone ||
+					item is RibCage ||
+					item is BonePile ||
+					item is Bones
 			)
 			return true;
 
@@ -1227,56 +1227,56 @@ namespace Server.Misc
 			if ( item == null )
 				return false;
 
-			if ( 
-					item is BlackPearl || 
-					item is Bloodmoss || 
-					item is Garlic || 
-					item is Ginseng || 
-					item is MandrakeRoot || 
-					item is Nightshade || 
-					item is SpidersSilk || 
-					item is SulfurousAsh || 
-					item is BatWing || 
-					item is GraveDust || 
-					item is DaemonBlood || 
-					item is PigIron || 
-					item is NoxCrystal || 
-					item is SilverSerpentVenom || 
-					item is DragonBlood || 
-					item is EnchantedSeaweed || 
-					item is DragonTooth || 
-					item is GoldenSerpentVenom || 
-					item is LichDust || 
-					item is DemonClaw || 
-					item is PegasusFeather || 
-					item is PhoenixFeather || 
-					item is UnicornHorn || 
-					item is DemigodBlood || 
-					item is GhostlyDust || 
-					item is EyeOfToad || 
-					item is FairyEgg || 
-					item is GargoyleEar || 
-					item is BeetleShell || 
-					item is MoonCrystal || 
-					item is PixieSkull || 
-					item is RedLotus || 
-					item is SeaSalt || 
-					item is SilverWidow || 
-					item is SwampBerries || 
-					item is Brimstone || 
-					item is ButterflyWings || 
-					item is BitterRoot || 
-					item is BlackSand || 
-					item is BloodRose || 
-					item is DriedToad || 
-					item is Maggot || 
-					item is MummyWrap || 
-					item is VioletFungus || 
-					item is WerewolfClaw || 
-					item is Wolfsbane || 
-					item is reagents_magic_jar1 || 
-					item is reagents_magic_jar2 || 
-					item is reagents_magic_jar3 
+			if (
+					item is BlackPearl ||
+					item is Bloodmoss ||
+					item is Garlic ||
+					item is Ginseng ||
+					item is MandrakeRoot ||
+					item is Nightshade ||
+					item is SpidersSilk ||
+					item is SulfurousAsh ||
+					item is BatWing ||
+					item is GraveDust ||
+					item is DaemonBlood ||
+					item is PigIron ||
+					item is NoxCrystal ||
+					item is SilverSerpentVenom ||
+					item is DragonBlood ||
+					item is EnchantedSeaweed ||
+					item is DragonTooth ||
+					item is GoldenSerpentVenom ||
+					item is LichDust ||
+					item is DemonClaw ||
+					item is PegasusFeather ||
+					item is PhoenixFeather ||
+					item is UnicornHorn ||
+					item is DemigodBlood ||
+					item is GhostlyDust ||
+					item is EyeOfToad ||
+					item is FairyEgg ||
+					item is GargoyleEar ||
+					item is BeetleShell ||
+					item is MoonCrystal ||
+					item is PixieSkull ||
+					item is RedLotus ||
+					item is SeaSalt ||
+					item is SilverWidow ||
+					item is SwampBerries ||
+					item is Brimstone ||
+					item is ButterflyWings ||
+					item is BitterRoot ||
+					item is BlackSand ||
+					item is BloodRose ||
+					item is DriedToad ||
+					item is Maggot ||
+					item is MummyWrap ||
+					item is VioletFungus ||
+					item is WerewolfClaw ||
+					item is Wolfsbane ||
+					item is reagents_magic_jar1 ||
+					item is reagents_magic_jar2 ||
+					item is reagents_magic_jar3
 			)
 			return true;
 

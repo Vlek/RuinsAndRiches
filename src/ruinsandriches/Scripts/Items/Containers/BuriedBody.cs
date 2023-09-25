@@ -20,7 +20,7 @@ namespace Server.Items
 			if ( who != "" && who != null )
 			{
 				sCorpse = "bones";
-				switch ( Utility.RandomMinMax( 0, 3 ) ) 
+				switch ( Utility.RandomMinMax( 0, 3 ) )
 				{
 					case 0: sCorpse = "bones"; break;
 					case 1: sCorpse = "body"; break;

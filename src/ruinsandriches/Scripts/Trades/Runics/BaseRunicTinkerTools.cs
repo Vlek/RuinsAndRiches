@@ -72,7 +72,7 @@ namespace Server.Items
 		[Constructable]
 		public VeriteTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public VeriteTinkerTools( int uses ) : base( CraftResource.Verite )
@@ -106,7 +106,7 @@ namespace Server.Items
 		[Constructable]
 		public AgapiteTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public AgapiteTinkerTools( int uses ) : base( CraftResource.Agapite )
@@ -140,7 +140,7 @@ namespace Server.Items
 		[Constructable]
 		public BronzeTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public BronzeTinkerTools( int uses ) : base( CraftResource.Bronze )
@@ -174,7 +174,7 @@ namespace Server.Items
 		[Constructable]
 		public CopperTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public CopperTinkerTools( int uses ) : base( CraftResource.Copper )
@@ -208,7 +208,7 @@ namespace Server.Items
 		[Constructable]
 		public DullCopperTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public DullCopperTinkerTools( int uses ) : base( CraftResource.DullCopper )
@@ -242,7 +242,7 @@ namespace Server.Items
 		[Constructable]
 		public GoldTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public GoldTinkerTools( int uses ) : base( CraftResource.Gold )
@@ -276,7 +276,7 @@ namespace Server.Items
 		[Constructable]
 		public ShadowIronTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public ShadowIronTinkerTools( int uses ) : base( CraftResource.ShadowIron )
@@ -310,7 +310,7 @@ namespace Server.Items
 		[Constructable]
 		public ValoriteTinkerTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public ValoriteTinkerTools( int uses ) : base( CraftResource.Valorite )

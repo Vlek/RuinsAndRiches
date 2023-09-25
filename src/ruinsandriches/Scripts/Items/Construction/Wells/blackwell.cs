@@ -14,7 +14,7 @@ namespace Server.Items
 			get{ return 500; }
 			set{}
 		}
-		
+
 		public override BaseAddonDeed Deed
 		{
 			get
@@ -27,7 +27,7 @@ namespace Server.Items
 		public BlackWellAddon() : this( false )
 		{
 		}
-		
+
 		[Constructable]
 		public BlackWellAddon( bool sandstone )
 		{
@@ -54,17 +54,17 @@ namespace Server.Items
 			AddComponent( new BlackWellPiece(this, 9359 ), 1, -1, 0 );
 			AddComponent( new BlackWellPiece(this, 9364 ), 1, -1, 5 );
 		}
-		
+
 		public BlackWellAddon( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -73,11 +73,11 @@ namespace Server.Items
 	}
 
 	// component
-	
+
 	public class BlackWellPiece : AddonComponent
 	{
 		private BlackWellAddon m_Blackwell;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public BlackWellAddon blackwell
 		{
@@ -89,7 +89,7 @@ namespace Server.Items
 		{
 			m_Blackwell = blackwell;
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( from.InRange( m_Blackwell.GetWorldLocation(), 4 ) )
@@ -101,34 +101,34 @@ namespace Server.Items
 				else
 				{
 					string msg = null;
-					
+
 					if ( m_Blackwell == null )
 					{
 						from.SendMessage( "Debug: Parent was null" );
 						return;
 					}
-					
+
 					switch( Utility.RandomMinMax( 1, 5 ) )
 					{
-						case 1:  
+						case 1:
 							msg = "You drink your fill of the cool well water. The quiet sounds of splashing water are softly musical.";
 							break;
-						case 2:  
-							msg = "The well's invigorating water refreshes you and sets your mind at ease. You drink your fill.";	
+						case 2:
+							msg = "The well's invigorating water refreshes you and sets your mind at ease. You drink your fill.";
 							break;
-						case 3:  
+						case 3:
 							msg = "You drink deeply of the clean well water. The shimmering reflections on the surface stir your thoughts.";
 							break;
-						case 4:  
+						case 4:
 							msg = "As you drink from the water, an tantalizing scent reminds you of memories long forgotten.";
 							break;
-						case 5:  
+						case 5:
 							msg = "You drink from the pure well and quiet dreams of sylvan delight pass through your mind.";
 							break;
 					}
-						
+
 					from.SendMessage( msg );
-					
+
 					from.Thirst = 20;
 				}
 			}
@@ -137,28 +137,28 @@ namespace Server.Items
 				from.SendMessage( "Get closer." );
 			}
 		}
-		
-		
+
+
 		public BlackWellPiece( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			
+
 			writer.Write( (int) 0 ); // version
-			
+
 			writer.Write( m_Blackwell );
-			
+
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
-			
+
 			int version = reader.ReadInt();
-			
+
 			switch( version )
 			{
 				case 0: {

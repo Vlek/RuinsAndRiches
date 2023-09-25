@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -57,7 +57,7 @@ namespace Server.Items
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			int iAmount = 0;
 			string sEnd = ".";
 
@@ -170,7 +170,7 @@ namespace Server.Items
 			public DracolichSkullGump( Mobile from, DracolichSkull skull ): base( 50, 50 )
 			{
 				string color = "#cacaca";
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 
 				string sText = "<BR><BR><BR><BR><BR><BR><BR>This skull contains the essence of an undead dragon. Necromancers would take these skulls and combine it with four rare artifacts of the dead. The heart of the dead god, the eye of the mad king, the orb of the astral lich, and the mind of the planar ghost are the four relics used in this process. These are usually in long lost dungeons or ruins, and said to be last seen in small chests resting on a runic pedestal. Once these items are merged with the skull, it could be used to reanimate the bones of a long dead dragon to serve the necromancer. You have heard many rumors of these items being seen in various places. If you could get them, and bring the skull to a powerful necromancer, they may be able to help you perform the ritual needed. The necromancer will require some gold (placed onto the skull) as payment for such a spell. When reanimated, these creatures will become your bonded servant. You will have to feed it moon crystals and stable it when required. You can also perform some druidism on it without having any proficiency in the skill. This will help you with information about them. If you later feed them a ruby, they will change their skeletal form of a different style of dragon.";
 
@@ -219,7 +219,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 		}
 

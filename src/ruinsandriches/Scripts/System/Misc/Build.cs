@@ -27,17 +27,17 @@ namespace Server.Misc
 			ArrayList mounts = new ArrayList();
 			foreach ( Mobile npc in World.Mobiles.Values )
 			{
-				if (	npc is Mangar || 
-						npc is CaddelliteDragon || 
-						npc is Xurtzar || 
-						npc is Arachnar || 
-						npc is Surtaz || 
-						npc is Vulcrum || 
-						npc is Shadowlord || 
-						npc is BaneOfAnarchy || 
-						npc is BaneOfWantoness || 
-						npc is BaneOfInsanity || 
-						npc is SerpentOfOrder || 
+				if (	npc is Mangar ||
+						npc is CaddelliteDragon ||
+						npc is Xurtzar ||
+						npc is Arachnar ||
+						npc is Surtaz ||
+						npc is Vulcrum ||
+						npc is Shadowlord ||
+						npc is BaneOfAnarchy ||
+						npc is BaneOfWantoness ||
+						npc is BaneOfInsanity ||
+						npc is SerpentOfOrder ||
 						npc is SerpentOfChaos )
 				{
 					npcs.Add( npc );
@@ -4581,7 +4581,7 @@ namespace Server.Commands
 					m_Count += ((DecorationList)list[j]).Generate( maps );
 			}
 		}
-		
+
 		private static Mobile m_Mobile;
 		private static int m_Count;
 	}
@@ -4923,7 +4923,7 @@ namespace Server.Commands
 						unlit = true;
 					else if ( !unprotected && m_Params[i] == "Unprotected" )
 						unprotected = true;
-					
+
 					if ( unlit && unprotected )
 						break;
 				}
@@ -6129,47 +6129,47 @@ namespace Server.Misc
 
 			choice = Utility.RandomMinMax( 1, most ); KeepTrack = KeepTrack + choice.ToString() + "_";
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 1, "shadowlord" ); // BOOK OF TRUTH
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 2, "shadowlord" ); // BELL OF COURAGE
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 3, "shadowlord" ); // CANDLE OF LOVE
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 1, "serpent" ); // SCALES OF ETHICALITY
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 2, "serpent" ); // ORB OF LOGIC
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 3, "serpent" ); // LANTERN OF DISCIPLINE
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 1, "pagan" ); // BREATH OF AIR
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 2, "pagan" ); // TONGUE OF FLAME
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 3, "pagan" ); // HEART OF EARTH
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 4, "pagan" ); // TEAR OF THE SEAS
 
 				while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-					KeepTrack = KeepTrack + choice.ToString() + "_"; 
+					KeepTrack = KeepTrack + choice.ToString() + "_";
 					CreateSpecialPedestal( choice, 0, "runes" ); // VIRTUE CHEST
 		}
 
@@ -16519,7 +16519,7 @@ namespace Server.Misc
 	}
 }
 
-namespace Server.Scripts.Commands 
+namespace Server.Scripts.Commands
 {
     public class BuildWorld
     {

@@ -56,8 +56,8 @@ namespace Server.Mobiles
 			{
 				m_SBInfos.Add( new SBHumanAnimalTrainer() );
 			}
-			m_SBInfos.Add( new SBAnimalTrainer() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBAnimalTrainer() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public override void InitOutfit()
@@ -84,19 +84,19 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new ClaimingGumpEntry( from, this ) ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-			list.Add( new RidingGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new ClaimingGumpEntry( from, this ) );
+			list.Add( new SpeechGumpEntry( from, this ) );
+			list.Add( new RidingGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -107,7 +107,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -123,7 +123,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public RidingGumpEntry( Mobile from, Mobile giver ) : base( 6098, 3 )
 			{
 				m_Mobile = from;
@@ -134,7 +134,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( Server.Mobiles.Veterinarian.RidingGump ) ) )
@@ -149,7 +149,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private AnimalTrainer m_Giver;
-			
+
 			public ClaimingGumpEntry( Mobile from, AnimalTrainer giver ) : base( 6165, 3 )
 			{
 				m_Mobile = from;
@@ -160,7 +160,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					m_Giver.BeginClaimList( m_Mobile );
@@ -178,7 +178,7 @@ namespace Server.Mobiles
 
 			public ClaimListGump( AnimalTrainer trainer, Mobile from, List<BaseCreature> list ) : base( 25, 25 )
 			{
-				from.SendSound( 0x0EB ); 
+				from.SendSound( 0x0EB );
 				string color = "#bfad7d";
 
 				m_Trainer = trainer;
@@ -215,7 +215,7 @@ namespace Server.Mobiles
 
 			public override void OnResponse( NetState sender, RelayInfo info )
 			{
-				m_From.SendSound( 0x0F2 ); 
+				m_From.SendSound( 0x0F2 );
 				int index = info.ButtonID - 1;
 
 				if ( index >= 0 && index < m_List.Count )
@@ -312,7 +312,7 @@ namespace Server.Mobiles
 					m_Trainer.SayTo( from, 1048053 ); // You can't stable that!
 			}
 		}
-		
+
 		private void CloseClaimList( Mobile from )
 		{
 			from.CloseGump( typeof( ClaimListGump ) );
@@ -542,7 +542,7 @@ namespace Server.Mobiles
 		{
 			if ( pet == null || pet.Deleted || from.Map != this.Map || !from.Stabled.Contains( pet ) || !from.CheckAlive() )
 				return;
-			
+
 			if ( !from.InRange( this, 14 ) )
 			{
 				from.SendLocalizedMessage( 500446 ); // That is too far away.
@@ -569,7 +569,7 @@ namespace Server.Mobiles
 			Container bank = from.FindBankNoCreate();
 
 			from.SendMessage( "You are currently using " + from.Stabled.Count + " out of " + GetMaxStabled( from ) + " stable slots." );
-			
+
 			if ( ( from.Backpack == null || from.Backpack.GetAmount( typeof( Gold ) ) < 30 ) && ( bank == null || bank.GetAmount( typeof( Gold ) ) < 30 ) )
 			{
 				SayTo( from, 1042556 ); // Thou dost not have enough gold, not even in thy bank account.
@@ -639,7 +639,7 @@ namespace Server.Mobiles
 
 					pet.IsStabled = true;
 
-					if ( Core.SE )	
+					if ( Core.SE )
 						pet.Loyalty = BaseCreature.MaxLoyalty; // Wonderfully happy
 
 					from.Stabled.Add( pet );
@@ -667,7 +667,7 @@ namespace Server.Mobiles
 
 			bool claimed = false;
 			int stabled = 0;
-			
+
 			bool claimByName = ( petName != null );
 
 			for ( int i = 0; i < from.Stabled.Count; ++i )
@@ -744,16 +744,16 @@ namespace Server.Mobiles
 			if ( !e.Handled && e.HasKeyword( 0x0008 ) ) // *stable*
 			{
 				e.Handled = true;
-				
-				CloseClaimList( e.Mobile );				
+
+				CloseClaimList( e.Mobile );
 				BeginStable( e.Mobile );
 			}
 			else if ( !e.Handled && e.HasKeyword( 0x0009 ) ) // *claim*
 			{
 				e.Handled = true;
-				
+
 				CloseClaimList( e.Mobile );
-				
+
 				int index = e.Speech.IndexOf( ' ' );
 
 				if ( index != -1 )

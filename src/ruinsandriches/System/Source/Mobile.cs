@@ -1588,15 +1588,15 @@ namespace Server
 		}
 
 		/* Logout:
-		 * 
+		 *
 		 * When a client logs into mobile x
 		 *  - if ( x is Internalized ) move x to logout location and map
-		 * 
+		 *
 		 * When a client attached to a mobile disconnects
 		 *  - LogoutTimer is started
 		 *	   - Delay is taken from Region.GetLogoutDelay to allow insta-logout regions.
 		 *     - OnTick : Location and map are stored, and mobile is internalized
-		 * 
+		 *
 		 * Some things to consider:
 		 *  - An internalized person getting killed (say, by poison). Where does the body go?
 		 *  - Regions now have a GetLogoutDelay( Mobile m ); virtual function (see above)
@@ -3862,7 +3862,7 @@ namespace Server
 			else if( !OnBeforeDeath() )
 				return;
 
-			if ( RaceID > 0 )				
+			if ( RaceID > 0 )
 				BodyValue = RaceID;
 
 			BankBox box = FindBankNoCreate();
@@ -6531,39 +6531,39 @@ namespace Server
 			bool CorrectL_11 = false;
 
 			if
-			( 
-				body == 66 || 
-				body == 67 || 
-				body == 93 || 
-				body == 97 || 
-				body == 98 || 
-				body == 103 || 
-				body == 125 || 
-				body == 159 || 
-				body == 160 || 
-				body == 172 || 
-				body == 186 || 
-				body == 269 || 
-				body == 286 || 
-				body == 316 || 
-				body == 319 || 
-				body == 334 || 
-				body == 338 || 
-				body == 438 || 
-				body == 509 || 
-				body == 668 || 
-				body == 669 || 
-				body == 692 || 
-				body == 714 || 
-				body == 716 || 
-				body == 721 || 
-				body == 724 || 
-				body == 732 || 
-				body == 754 || 
-				body == 779 || 
-				body == 806 || 
-				body == 1031 || 
-				body == 808 
+			(
+				body == 66 ||
+				body == 67 ||
+				body == 93 ||
+				body == 97 ||
+				body == 98 ||
+				body == 103 ||
+				body == 125 ||
+				body == 159 ||
+				body == 160 ||
+				body == 172 ||
+				body == 186 ||
+				body == 269 ||
+				body == 286 ||
+				body == 316 ||
+				body == 319 ||
+				body == 334 ||
+				body == 338 ||
+				body == 438 ||
+				body == 509 ||
+				body == 668 ||
+				body == 669 ||
+				body == 692 ||
+				body == 714 ||
+				body == 716 ||
+				body == 721 ||
+				body == 724 ||
+				body == 732 ||
+				body == 754 ||
+				body == 779 ||
+				body == 806 ||
+				body == 1031 ||
+				body == 808
 			)
 			{
 				if ( action == 32 ){ action = 16; }
@@ -6591,52 +6591,52 @@ namespace Server
 
 //90	only has 0, 1 skeletal knight crowned
 
-			if ( 
-				body == 277 || 
-				body == 278 
+			if (
+				body == 277 ||
+				body == 278
 			)
 			{ CorrectL_04 = true; }
 
-			if ( 
-				body == 277 
+			if (
+				body == 277
 			)
 			{ CorrectL_10 = true; }
 
-			if ( 
-				body == 214 || 
-				body == 216 || 
-				body == 217 || 
-				body == 225 || 
-				body == 231 || 
-				body == 232 || 
-				body == 233 || 
-				body == 277 || 
-				body == 708 
+			if (
+				body == 214 ||
+				body == 216 ||
+				body == 217 ||
+				body == 225 ||
+				body == 231 ||
+				body == 232 ||
+				body == 233 ||
+				body == 277 ||
+				body == 708
 			)
 			{ CorrectL_11 = true; }
 
-			if ( 
-				body == 69 || 
-				body == 109 || 
-				body == 111 || 
-				body == 119 || 
-				body == 127 || 
-				body == 135 || 
-				body == 136 || 
-				body == 202 || 
-				body == 203 || 
-				body == 248 || 
-				body == 392 || 
-				body == 393 || 
-				body == 394 || 
-				body == 395 || 
-				body == 600 || 
-				body == 601 || 
-				body == 650 || 
-				body == 652 || 
-				body == 738 || 
-				body == 739 || 
-				body == 769 
+			if (
+				body == 69 ||
+				body == 109 ||
+				body == 111 ||
+				body == 119 ||
+				body == 127 ||
+				body == 135 ||
+				body == 136 ||
+				body == 202 ||
+				body == 203 ||
+				body == 248 ||
+				body == 392 ||
+				body == 393 ||
+				body == 394 ||
+				body == 395 ||
+				body == 600 ||
+				body == 601 ||
+				body == 650 ||
+				body == 652 ||
+				body == 738 ||
+				body == 739 ||
+				body == 769
 			)
 			{ CorrectL = true; }
 
@@ -7533,7 +7533,7 @@ namespace Server
 
 			return false;
 		}
-		
+
 		#endregion
 
 		#region Harmful Checks/Actions
@@ -8206,12 +8206,12 @@ namespace Server
 		}
 
 		#endregion
-		
+
 		public virtual int Luck
 		{
 			get { return 0; }
 		}
-		
+
 		public virtual int HuedItemID
 		{
 			get
@@ -10299,7 +10299,7 @@ namespace Server
 		///			SendMessage( "That is too heavy for you to lift." );
 		///			return false;
 		///		}
-		///		
+		///
 		///		return base.OnDragLift( item );
 		/// }</code>
 		/// </example>
@@ -10826,7 +10826,7 @@ namespace Server
 							if ( sendHealthbarPoison ) {
 								if ( hbpPacket == null )
 									hbpPacket = Packet.Acquire( new HealthbarPoison( m ) );
-								
+
 								state.Send( hbpPacket );
 							}
 
@@ -11421,7 +11421,7 @@ namespace Server
 		private static bool m_DisableDismountInWarmode;
 
 		public static bool DisableDismountInWarmode { get { return m_DisableDismountInWarmode; } set { m_DisableDismountInWarmode = value; } }
-		
+
 		#region OnDoubleClick[..]
 
 		/// <summary>
@@ -11591,7 +11591,7 @@ namespace Server
 		public static bool GuildClickMessage { get { return m_GuildClickMessage; } set { m_GuildClickMessage = value; } }
 		public static bool OldPropertyTitles { get { return m_OldPropertyTitles; } set { m_OldPropertyTitles = value; } }
 
-		public virtual bool ShowFameTitle { get { return true; } }//(m_Player || m_Body.IsHuman) && m_Fame >= 10000; } 
+		public virtual bool ShowFameTitle { get { return true; } }//(m_Player || m_Body.IsHuman) && m_Fame >= 10000; }
 
 		/// <summary>
 		/// Overridable. Event invoked when the Mobile is single clicked.

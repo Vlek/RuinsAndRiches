@@ -1,27 +1,27 @@
-using System; 
-using System.Collections; 
-using Server; 
-using Server.Items; 
-using Server.Misc; 
-using Server.Network; 
-using Server.Spells; 
-using Server.Spells.Elementalism; 
-using Server.Prompts; 
+using System;
+using System.Collections;
+using Server;
+using Server.Items;
+using Server.Misc;
+using Server.Network;
+using Server.Spells;
+using Server.Spells.Elementalism;
+using Server.Prompts;
 
-namespace Server.Gumps 
-{ 
-	public class ElementalSpellbookGump : Gump 
+namespace Server.Gumps
+{
+	public class ElementalSpellbookGump : Gump
 	{
-		private ElementalSpellbook m_Book; 
+		private ElementalSpellbook m_Book;
 
 		public bool HasSpell(Mobile from, int spellID)
 		{
 			return (m_Book.HasSpell(spellID));
 		}
 
-		public ElementalSpellbookGump( Mobile from, ElementalSpellbook book, int page ) : base( 100, 100 ) 
+		public ElementalSpellbookGump( Mobile from, ElementalSpellbook book, int page ) : base( 100, 100 )
 		{
-			m_Book = book; 
+			m_Book = book;
 			m_Book.EllyPage = page;
 
             this.Closable=true;
@@ -143,7 +143,7 @@ namespace Server.Gumps
 				else if ( spell >= 328 && spell <= 331 ){ 	sphere = "VIII"; 	circle = 8;		skill = 80;		sect = 5;	}
 
 				string power = (ElementalSpell.GetPower( circle-1 )).ToString();
-				
+
 				AddImage( 74, 86, ElementalSpell.SpellIcon( book.ItemID, spell ) );
 				AddHtml( 34, 13, 133, 20, @"<BODY><BASEFONT Color=" + fnt + "><BIG><CENTER>Elemental</CENTER></BIG></BASEFONT></BODY>", (bool)false, (bool)false);
 				AddHtml( 34, 29, 133, 20, @"<BODY><BASEFONT Color=" + fnt + "><BIG><CENTER>" + ElementalSpell.CommonInfo( spell, 1 ) + "</CENTER></BIG></BASEFONT></BODY>", (bool)false, (bool)false);
@@ -163,9 +163,9 @@ namespace Server.Gumps
 			}
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 			from.SendSound( 0x55 );
 
 			if ( info.ButtonID < 200 && info.ButtonID > 0 )
@@ -220,13 +220,13 @@ namespace Server.Gumps
 		}
 	}
 
-	public class ElementalSpellHelp : Gump 
+	public class ElementalSpellHelp : Gump
 	{
-		private ElementalSpellbook m_Book; 
+		private ElementalSpellbook m_Book;
 
-		public ElementalSpellHelp( Mobile from, ElementalSpellbook book, int page ) : base( 300, 200 ) 
+		public ElementalSpellHelp( Mobile from, ElementalSpellbook book, int page ) : base( 300, 200 )
 		{
-			m_Book = book; 
+			m_Book = book;
 
 			from.SendSound( 0x55 );
 
@@ -291,9 +291,9 @@ namespace Server.Gumps
 			}
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 			from.SendSound( 0x55 );
 
 			if ( info.ButtonID > 0 )

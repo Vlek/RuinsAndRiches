@@ -15,7 +15,7 @@ namespace Server.Mobiles
 		};
 
 		public static int    Hue   = Utility.RandomList( 0xB33, 0xB34, 0xB35, 0xB36, 0xB37 );        // Paragon hue
-		
+
 		// Buffs
 		public static double HitsBuff   = 5.0;
 		public static double StrBuff    = 1.05;
@@ -36,7 +36,7 @@ namespace Server.Mobiles
 
 			if ( bc.HitsMaxSeed >= 0 )
 				bc.HitsMaxSeed = (int)( bc.HitsMaxSeed * HitsBuff );
-			
+
 			bc.RawStr = (int)( bc.RawStr * StrBuff );
 			bc.RawInt = (int)( bc.RawInt * IntBuff );
 			bc.RawDex = (int)( bc.RawDex * DexBuff );
@@ -85,7 +85,7 @@ namespace Server.Mobiles
 
 			if ( bc.HitsMaxSeed >= 0 )
 				bc.HitsMaxSeed = (int)( bc.HitsMaxSeed / HitsBuff );
-			
+
 			bc.RawStr = (int)( bc.RawStr / StrBuff );
 			bc.RawInt = (int)( bc.RawInt / IntBuff );
 			bc.RawDex = (int)( bc.RawDex / DexBuff );
@@ -101,7 +101,7 @@ namespace Server.Mobiles
 				if ( skill.Base > 0.0 )
 					skill.Base /= SkillsBuff;
 			}
-			
+
 			bc.PassiveSpeed *= SpeedBuff;
 			bc.ActiveSpeed *= SpeedBuff;
 

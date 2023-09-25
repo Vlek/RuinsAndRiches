@@ -59,7 +59,7 @@ namespace Server.Spells.Research
 				while ( creatures > 0 )
 				{
 					creatures--;
-					switch ( Utility.RandomMinMax( 0, 10 ) ) 
+					switch ( Utility.RandomMinMax( 0, 10 ) )
 					{
 						case 0: m_Creature = new BlackBear();		break;
 						case 1: m_Creature = new BrownBear();		break;

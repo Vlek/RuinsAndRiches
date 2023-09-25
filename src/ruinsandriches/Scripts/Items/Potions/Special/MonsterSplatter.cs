@@ -22,8 +22,8 @@ namespace Server.Items
 			owner = source;
 			Name = "splatter";
 			ItemID = Utility.RandomList( 0x122A, 0x122A, 0x122A, 0x122B, 0x122D, 0x122E, 0x263B, 0x263C, 0x263D, 0x263E, 0x263F, 0x2640 );
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
-			thisTimer.Start(); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
+			thisTimer.Start();
 		}
 
 		public MonsterSplatter(Serial serial) : base(serial)
@@ -432,25 +432,25 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			owner = reader.ReadMobile();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromSeconds( 30.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromSeconds( 30.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 }

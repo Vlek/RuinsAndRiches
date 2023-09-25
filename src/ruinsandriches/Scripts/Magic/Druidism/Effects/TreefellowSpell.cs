@@ -16,7 +16,7 @@ namespace Server.Spells.Herbalist
       	public override double RequiredSkill{ get{ return 75.0; } }
       	public override int RequiredMana{ get{ return 0; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 1.0 ); } }
-		
+
 		public TreefellowSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}

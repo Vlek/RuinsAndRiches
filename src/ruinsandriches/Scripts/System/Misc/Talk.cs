@@ -35,7 +35,7 @@ namespace Server.Gumps
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 		}
     }
 }
@@ -89,19 +89,19 @@ namespace Server.Misc
 			sText = sText + "<br><br>You may find some abandoned dungeons throughout the lands. We cleared them out of small vermin and put them up for sale. If you happen to find one for sale, and you have the gold, you may purchase it.<br><br>Over the years, some wizards have fallen from either accidents or old age. They once owned great castles in the sky that we put up for sale as well. They are hard to find as you must find the mystical rope that leads to these castles in the sky. They are not as expensive as dungeons, and they also do not provide all of the space and benefits that dungeons have...but they are generally larger than castles you could build on the ground.<br><br>Decorating your home can be quite the task when you have found many interesting relics you wish to display. If you get a set of 'homeowner tools', it will make this job much easier. These tools allow you to raise or lower locked down items in your home. You can also move them north, south, east, or west. You can quickly secure or unsecure things with this tool, lock down items, or place a trash barrel. Some items can be turned in two different directions, and these tools can do that for you. If you get an item/deed that has a direction in its name (like east or south), place that item/deed on the floor of your home and use the 'flip deed' option to get the item/deed in a different direction. Keep in mind that most of these particular items are 'deeds', but there are some things like carpets or trophies that look like the item that will be placed in the home. If you do place a deeded-type item in your home, you can remove it (re-deed it) by chopping the item with an axe. You can get rid of the trash barrel in a similar fashion.";
 
 				if ( Server.Items.BasementDoor.IsEnabled() )
-				{ 
+				{
 					sText = sText + "<br><br>If you want to have access to the public basement from your home, you simply need to purchase a basement trapdoor and secure it on the floor in your home. This public area is accessed by many places in the land, either from people's homes or from certain shops like tinkers, blacksmiths, or tailors. Basements have areas where people can craft, but only if they enter the basement area from a merchant's shop. It provides a common area for people to meet and crafters to sell their wares and perhaps fix your items. Basements are safe areas where you can relax and meet with others.";
 				}
 				if ( Server.Items.MovingBox.IsEnabled() )
-				{ 
+				{
 					sText = sText + "<br><br>If you ever need to move from your current home to another, the work can be quite involved. I do sell some housing crates you could use. They hold many, many items and the crate is easy to carry even when entirely full. The crates, however, can only be opened by the one I sell it to and they can only be opened when inside someone's home. If you try to lock them down or secure them in the home, the item count will go toward you home's storage. It is also best to fill the crate while it is on the floor in your house and not in your pack. Otherwise you may be trying to put containers, with more items than your pack can hold, within the crate while in your pack and that won't work well. Once the crate is done being filled, however, you can then place it in your pack with no issues. You can also open the crate when at the bank, if you need to move your possessions to a newly placed home. Be careful, however, because the crate can be stolen by others or simply lost. Then your worldly possessions will be forever gone.";
 				}
 				if ( Server.Misc.MyServerSettings.LawnsAllowed() )
-				{ 
+				{
 					sText = sText + "<br><br>For home owners that want to add some character to the outer perimeter of their homes, they can purchase some lawn tools from me. These tools allow you to place items like trees, rocks, water, yard decorations, and various types of ground terrain outside the boundaries of their home. After you purchase them, simply take them home with you and use them while standing on your land. You will be given choices on what you want to build. Each choice costs a particular amount of gold, where any such funds will be drawn from your bank box. You can learn additional details about these tools when you use them in your home.";
 				}
 				if ( Server.Misc.MyServerSettings.ShantysAllowed() )
-				{ 
+				{
 					sText = sText + "<br><br>If you are a homeowner that wants to remodel their home, then you can purchase some remodeling tools from me. These tools allow you to place items like walls, doors, stairs, or other decorative things within it. After you purchase them, simply take them home with you and use them while standing in your house. You will be given choices on what you want to build. Each choice costs a particular amount of gold, where any such funds will be drawn from your bank box. You can learn additional details about these tools when you use them in your home.";
 				}
 			}
@@ -167,17 +167,17 @@ using Server.ContextMenus;
 using Server.Gumps;
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -188,7 +188,7 @@ using Server.Gumps;
 			{
 			  if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )

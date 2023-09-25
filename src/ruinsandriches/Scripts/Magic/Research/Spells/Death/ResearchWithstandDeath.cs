@@ -30,7 +30,7 @@ namespace Server.Spells.Research
         public ResearchWithstandDeath( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
         {
         }
- 
+
 		public override bool CheckCast()
 		{
 			if ( !base.CheckCast() )
@@ -50,7 +50,7 @@ namespace Server.Spells.Research
 			Caster.SendMessage( "Choose who you are going to summon a jewel for." );
             Caster.Target = new InternalTarget( this );
         }
- 
+
         public void Target( Mobile m )
         {
             if ( !Caster.CanSee( m ) )
@@ -75,16 +75,16 @@ namespace Server.Spells.Research
 
             FinishSequence();
         }
- 
+
         private class InternalTarget : Target
         {
             private ResearchWithstandDeath m_Owner;
- 
+
 			public InternalTarget( ResearchWithstandDeath owner ) : base( Core.ML ? 10 : 12, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )
@@ -96,7 +96,7 @@ namespace Server.Spells.Research
 					from.SendMessage( "This spell will not work on that." );
                 }
             }
- 
+
             protected override void OnTargetFinish( Mobile from )
             {
                 m_Owner.FinishSequence();

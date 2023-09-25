@@ -56,19 +56,19 @@ namespace Server.Mobiles
 			return fee;
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			PlayerMobile pm = (PlayerMobile)from;
-			base.GetContextMenuEntries( from, list ); 
+			base.GetContextMenuEntries( from, list );
 			if ( !IntelligentAction.GetMyEnemies( from, this, false ) ){ list.Add( new JoinEntry( from, this ) ); }
 			if ( pm.NpcGuild == this.NpcGuild ){ list.Add( new ResignEntry( from, this ) ); }
-		} 
+		}
 
 		public class JoinEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Guildmaster;
-			
+
 			public JoinEntry( Mobile from, Mobile guildmaster ) : base( 6116, 3 )
 			{
 				m_Mobile = from;
@@ -79,7 +79,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				JoinGuild( m_Mobile, m_Guildmaster );
             }
         }
@@ -88,7 +88,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Guildmaster;
-			
+
 			public ResignEntry( Mobile from, Mobile guildmaster ) : base( 6115, 3 )
 			{
 				m_Mobile = from;
@@ -99,7 +99,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				ResignGuild( m_Mobile, m_Guildmaster );
             }
         }

@@ -25,7 +25,7 @@ namespace Server.Items
 		{
 			if( !( from is PlayerMobile ) )
 			return;
-			
+
 			if ( !from.HasGump( typeof( SpeechGump ) ) )
 			{
 				from.SendGump(new SpeechGump( from, "Fish In A Barrel", SpeechFunctions.SpeechText( from, from, "Aquarium" ) ));

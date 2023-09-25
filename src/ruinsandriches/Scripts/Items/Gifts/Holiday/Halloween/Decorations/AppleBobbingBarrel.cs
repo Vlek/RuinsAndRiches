@@ -50,7 +50,7 @@ namespace Server.Items
                     m_Owner.CantWalk = true;
                     m_Owner.Direction = m_Owner.GetDirectionTo(m_bob);
                     m_Owner.Animate(32, 5, 1, true, true, 0);
- 
+
                     if (m_Owner != null)
                         m_Owner.PlaySound(37);
                 }

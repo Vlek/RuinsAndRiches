@@ -115,7 +115,7 @@ namespace Server.Mobiles
 
 		public virtual int ControlSlots{ get{ return 0; } }
 
-		public virtual bool CanCacheDisplay{ get{ return false; } } //return ( m_Args == null || m_Args.Length == 0 ); } 
+		public virtual bool CanCacheDisplay{ get{ return false; } } //return ( m_Args == null || m_Args.Length == 0 ); }
 
 		private bool IsDeleted( IEntity obj )
 		{

@@ -31,9 +31,9 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBJester() ); 
-			m_SBInfos.Add( new SBThief() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBJester() );
+			m_SBInfos.Add( new SBThief() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public override void InitOutfit()
@@ -54,7 +54,7 @@ namespace Server.Mobiles
 				AddItem( new Server.Items.JokerHat( Utility.RandomBlueHue() ) );
 			}
 
-			switch ( Utility.RandomMinMax( 0, 2 ) ) 
+			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
 				case 0: AddItem( new Server.Items.JokerRobe( Utility.RandomBlueHue() ) ); break;
 				case 1: AddItem( new Server.Items.JesterGarb( Utility.RandomBlueHue() ) ); break;
@@ -64,17 +64,17 @@ namespace Server.Mobiles
 			AddItem( new Server.Items.JesterShoes( Utility.RandomBlueHue() ) );
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -85,7 +85,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -155,24 +155,24 @@ namespace Server.Mobiles
             protected override void OnTarget(Mobile from, object targeted)
 			{
                 if ( (
-					targeted is BaseShoes || 
-					targeted is BaseHat || 
-					targeted is MagicHat || 
-					targeted is MagicBoots || 
-					targeted is LeatherCap || 
-					targeted is LeatherRobe || 
-					targeted is ShinobiRobe || 
-					targeted is ShinobiMask || 
-					targeted is ShinobiCowl || 
-					targeted is ShinobiHood || 
-					targeted is LeatherSandals || 
-					targeted is LeatherShoes || 
-					targeted is LeatherBoots || 
-					targeted is HikingBoots || 
-					targeted is LeatherThighBoots || 
-					targeted is LeatherSoftBoots || 
-					targeted is MagicRobe || 
-					targeted is BaseOuterTorso 
+					targeted is BaseShoes ||
+					targeted is BaseHat ||
+					targeted is MagicHat ||
+					targeted is MagicBoots ||
+					targeted is LeatherCap ||
+					targeted is LeatherRobe ||
+					targeted is ShinobiRobe ||
+					targeted is ShinobiMask ||
+					targeted is ShinobiCowl ||
+					targeted is ShinobiHood ||
+					targeted is LeatherSandals ||
+					targeted is LeatherShoes ||
+					targeted is LeatherBoots ||
+					targeted is HikingBoots ||
+					targeted is LeatherThighBoots ||
+					targeted is LeatherSoftBoots ||
+					targeted is MagicRobe ||
+					targeted is BaseOuterTorso
 
 					) && from.Backpack != null )
                 {
@@ -208,18 +208,18 @@ namespace Server.Mobiles
 						string cls = "jester "; if ( Utility.RandomBool() ){ cls = "joker "; }
 						string adj = Server.Misc.MaterialInfo.GetSpecialMaterialName( ba );
 
-						if (	adj == "" && 
-								( targeted is LeatherCap || 
-								targeted is LeatherRobe || 
-								targeted is ShinobiRobe || 
-								targeted is ShinobiCowl || 
-								targeted is ShinobiHood || 
-								targeted is ShinobiMask || 
-								targeted is LeatherSandals || 
-								targeted is LeatherShoes || 
-								targeted is HikingBoots || 
-								targeted is LeatherBoots || 
-								targeted is LeatherThighBoots || 
+						if (	adj == "" &&
+								( targeted is LeatherCap ||
+								targeted is LeatherRobe ||
+								targeted is ShinobiRobe ||
+								targeted is ShinobiCowl ||
+								targeted is ShinobiHood ||
+								targeted is ShinobiMask ||
+								targeted is LeatherSandals ||
+								targeted is LeatherShoes ||
+								targeted is HikingBoots ||
+								targeted is LeatherBoots ||
+								targeted is LeatherThighBoots ||
 								targeted is LeatherSoftBoots ) )
 						{
 							adj = "leather ";

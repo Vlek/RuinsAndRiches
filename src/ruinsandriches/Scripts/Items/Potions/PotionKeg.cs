@@ -88,16 +88,16 @@ namespace Server.Items
 		}
 
 		public override int LabelNumber
-		{ 
+		{
 			get
-			{ 
+			{
 				if ( m_Held == 0 )
 					return 1041084; // A specially lined keg for potions.
 				else if( m_Type >= PotionEffect.Conflagration )
 					return 1072658 + (int) m_Type - (int) PotionEffect.Conflagration;
 				else
-					return ( 1041620 + (int)m_Type ); 
-			} 
+					return ( 1041620 + (int)m_Type );
+			}
 		}
 
 		public override void GetProperties( ObjectPropertyList list )
@@ -349,7 +349,7 @@ namespace Server.Items
 				case PotionEffect.ExplosionLesser:			return new LesserExplosionPotion();
 				case PotionEffect.Explosion:				return new ExplosionPotion();
 				case PotionEffect.ExplosionGreater:			return new GreaterExplosionPotion();
-				
+
 				case PotionEffect.Conflagration:			return new ConflagrationPotion();
 				case PotionEffect.ConflagrationGreater:		return new GreaterConflagrationPotion();
 
@@ -451,7 +451,7 @@ namespace Server.Items
 			PotionKeg p = (PotionKeg)keg;
 
 			if ( p.Held < 1 )
-			{ 
+			{
 				keg.Hue = 0x96D;
 				keg.Name = "empty potion keg";
 			}

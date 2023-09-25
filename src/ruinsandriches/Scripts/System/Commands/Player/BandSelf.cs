@@ -19,7 +19,7 @@ namespace Server.Scripts.Commands
 		public static void BandSelf_OnCommand(CommandEventArgs e )
 		{
 			Mobile pm = e.Mobile;
-			Item band = pm.Backpack.FindItemByType(typeof( Bandage ));				
+			Item band = pm.Backpack.FindItemByType(typeof( Bandage ));
 
 			if ( band != null )
 			{
@@ -48,7 +48,7 @@ namespace Server.Scripts.Commands
 		public static void BandOther_OnCommand(CommandEventArgs e )
 		{
 			Mobile pm = e.Mobile;
-			Item band = pm.Backpack.FindItemByType(typeof( Bandage ));				
+			Item band = pm.Backpack.FindItemByType(typeof( Bandage ));
 
 			if ( band != null )
 			{

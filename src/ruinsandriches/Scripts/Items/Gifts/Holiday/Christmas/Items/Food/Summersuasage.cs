@@ -12,7 +12,7 @@ namespace Server.Items
 		public SummerSausage() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public SummerSausage( int amount ) : base( 0x9C0, amount )
 		{
@@ -27,11 +27,11 @@ namespace Server.Items
 
 		public SummerSausage( Serial serial ) : base( serial )
 		{
-		
 
-		
+
+
 		}
-	
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

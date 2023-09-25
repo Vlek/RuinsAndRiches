@@ -39,7 +39,7 @@ namespace Server.Spells.Elementalism
 				SpellHelper.CheckReflect( (int)this.Circle, Caster, ref m );
 
 				int nBenefit = (int)(Caster.Skills[CastSkill].Value / 5);
-				
+
 				double damage = GetNewAosDamage( 17, 1, 5, m ) + nBenefit;
 
 				if ( !m.InRange( Caster, 2 ) )

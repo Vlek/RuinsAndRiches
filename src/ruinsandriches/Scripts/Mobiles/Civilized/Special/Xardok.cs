@@ -22,7 +22,7 @@ namespace Server.Mobiles
 			SpeechHue = Utility.RandomTalkHue();
 			NameHue = 1154;
 
-			Body = 400; 
+			Body = 400;
 			Name = "Xardok";
 			Title = "the Baron";
 			AI = AIType.AI_Citizen;
@@ -74,19 +74,19 @@ namespace Server.Mobiles
 			return false;
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from, this ) );
 			list.Add( new XardokEntry( from, this ) );
-			list.Add( new XardokComplete( from, this ) ); 
-		} 
+			list.Add( new XardokComplete( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -97,7 +97,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -113,7 +113,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public XardokEntry( Mobile from, Mobile giver ) : base( 6120, 12 )
 			{
 				m_Mobile = from;
@@ -124,7 +124,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 
 				string myQuest = PlayerSettings.GetQuestInfo( m_Mobile, "AssassinQuest" );
@@ -174,7 +174,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public XardokComplete( Mobile from, Mobile giver ) : base( 548, 12 )
 			{
 				m_Mobile = from;

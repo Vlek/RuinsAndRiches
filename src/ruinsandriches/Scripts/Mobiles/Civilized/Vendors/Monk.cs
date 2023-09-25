@@ -10,7 +10,7 @@ namespace Server.Mobiles
 	{
 		private List<SBInfo> m_SBInfos = new List<SBInfo>();
 		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
-		
+
 		[Constructable]
 		public Monk() : base( "the monk" )
 		{
@@ -20,7 +20,7 @@ namespace Server.Mobiles
 			SetSkill( SkillName.MagicResist, 70.0, 90.0 );
 			SetSkill( SkillName.Bludgeoning, 70.0, 90.0 );
 		}
-		
+
 		public override void InitSBInfo()
 		{
 			m_SBInfos.Add( new SBMonk() );

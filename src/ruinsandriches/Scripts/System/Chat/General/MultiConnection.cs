@@ -257,7 +257,7 @@ namespace Knives.Chat3
         {
             if (!c_Server || c_Master == null)
                 return;
-                
+
             try
             {
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes("   " + str);

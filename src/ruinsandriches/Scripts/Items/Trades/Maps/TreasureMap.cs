@@ -87,7 +87,7 @@ namespace Server.Items
 					bc.Name = "a chest guardian";
 					bc.Hue = 0x835;
 				}
-                
+
                 bc.Title += "[Guardian]";
 
 				return bc;
@@ -151,7 +151,7 @@ namespace Server.Items
 			{
 				map = Map.Sosaria;
 			}
-			
+
 			string world = Server.Misc.Worlds.GetMyWorld( map, location, x, y );
 
 			if ( world == "the Land of Sosaria" ){ map = Map.Sosaria; }
@@ -727,7 +727,7 @@ namespace Server.Items
 				else
 				{
 					bool digTool = HasDiggingTool( from );
-                    
+
 					list.Add( new OpenMapEntry( this ) );
 					list.Add( new DigEntry( this, digTool ) );
 				}
@@ -850,7 +850,7 @@ namespace Server.Items
             string mDesc = "Somewhere in " + world + "<BR> " + GetName();
 
             list.Add(1053099, String.Format("<BASEFONT COLOR=#DDCC22>\t{0}<BASEFONT Color=#FBFBFB>", mDesc)); // for somewhere in Lodor : for somewhere in Sosaria  etc...
-            
+
             if (m_Completed)
             {
                 list.Add(1041507, m_CompletedBy == null ? "someone" : m_CompletedBy.Name); // completed by ~1_val~
@@ -863,7 +863,7 @@ namespace Server.Items
                 if (m_Decoder != null && TimeLeft > 0)
                     list.Add(String.Format("This map will expire in {0} days", TimeLeft));
                 else if (m_Decoder != null && TimeLeft <= 0)
-                    list.Add("This map will expire and reset very soon");                                                
+                    list.Add("This map will expire and reset very soon");
             }
 		}
 
@@ -897,7 +897,7 @@ namespace Server.Items
                     LabelTo(from, 1041522, String.Format("#{0}\t \t#{1}", 1063453, mDesc));
                 else
                     LabelTo(from, 1041522, String.Format("#{0}\t \t#{1}", 1041516 + m_Level, mDesc));
-            }         
+            }
         }
 
 		public override void Serialize( GenericWriter writer )
@@ -913,7 +913,7 @@ namespace Server.Items
 			writer.Write( m_Decoder );
 			writer.Write( m_Map );
 			writer.Write( m_Location );
-            
+
             writer.Write( (DateTime) m_Found);
 		}
 
@@ -948,7 +948,7 @@ namespace Server.Items
 
 					if ( version == 0 && m_Completed )
 						m_CompletedBy = m_Decoder;
-                   
+
 					break;
 				}
 			}

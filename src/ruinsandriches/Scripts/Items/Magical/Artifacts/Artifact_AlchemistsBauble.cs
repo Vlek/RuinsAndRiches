@@ -18,7 +18,7 @@ namespace Server.Items
 			Resistances.Poison = 10;
 			Server.Misc.Arty.ArtySetup( this, 10, "" );
 		}
-		
+
 		public Artifact_AlchemistsBauble( Serial serial ) : base( serial )
 		{
 		}
@@ -28,7 +28,7 @@ namespace Server.Items
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

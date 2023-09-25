@@ -14,7 +14,7 @@ namespace Server.Items
 			Name = "Book Of Knowledge";
 			Hue = 0xAFF;
 
-			switch ( Utility.Random( 6 ) ) 
+			switch ( Utility.Random( 6 ) )
 			{
 				case 0: this.Content = 0xFFFFFFFFFFF;		break;
 				case 1: this.Content = 0xFFFFFFFFFFFF;		break;
@@ -59,7 +59,6 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-		
+
 	}
 }
-

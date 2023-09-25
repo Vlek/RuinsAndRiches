@@ -165,7 +165,7 @@ namespace Server.Mobiles
 		public Surtaz( Serial serial ) : base( serial )
 		{
 		}
-    
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -192,8 +192,8 @@ namespace Server.Items
 			Name = "Surtaz's Vault";
 			Movable = false;
 			Hue = 0xB85;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
-			thisTimer.Start(); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
+			thisTimer.Start();
 		}
 
 		public SurtazChest( Serial serial ) : base( serial )
@@ -268,25 +268,25 @@ namespace Server.Items
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 }

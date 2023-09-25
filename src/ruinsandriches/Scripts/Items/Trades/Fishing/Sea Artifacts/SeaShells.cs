@@ -13,7 +13,7 @@ namespace Server.Items
 			Weight = 1;
 			Name = "sea shell";
 
-			switch ( Utility.RandomMinMax( 0, 8 ) ) 
+			switch ( Utility.RandomMinMax( 0, 8 ) )
 			{
 				case 0: ItemID = 0xFC4; Name = "sea shell"; break;
 				case 1: ItemID = 0xFC5; Name = "sea shells"; break;

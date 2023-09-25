@@ -34,9 +34,9 @@ namespace Knives.Chat3
         #region Statics
 
         private static ArrayList s_Channels = new ArrayList();
-        
+
         public static ArrayList Channels { get{ return s_Channels; } }
-        
+
         public static void Register(Channel c)
         {
             foreach (string str in c.Commands)

@@ -17,7 +17,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Polish Bones For Crafting");
-        } 
+        }
 
 		public PolishBoneBrush( Serial serial ) : base( serial )
 		{

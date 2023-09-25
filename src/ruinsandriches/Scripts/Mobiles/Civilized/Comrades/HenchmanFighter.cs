@@ -1,14 +1,14 @@
-using System; 
-using System.Collections; 
-using Server.Misc; 
-using Server.Items; 
-using Server.Mobiles; 
+using System;
+using System.Collections;
+using Server.Misc;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 using Server.Regions;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a henchman corpse" )] 
+	[CorpseName( "a henchman corpse" )]
 	public class HenchmanFighter : BaseCreature
 	{
 		private DateTime m_Healing;
@@ -24,7 +24,7 @@ namespace Server.Mobiles
 			else { m_NextMorale = (DateTime.Now + TimeSpan.FromSeconds( 60 )); }
 		}
 
-		[Constructable] 
+		[Constructable]
 		public HenchmanFighter( int myBody, int nMounted, double nSkills, int nStats ) : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Name = "henchman";
@@ -133,22 +133,22 @@ namespace Server.Mobiles
 			return base.OnDragDrop( from, dropped );
 		}
 
-		public HenchmanFighter( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public HenchmanFighter( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 			Loyalty = 100;
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			Timer.DelayCall( TimeSpan.FromSeconds( 5.0 ), new TimerCallback( Delete ) );
-		} 
-	} 
-}   
+		}
+	}
+}

@@ -189,14 +189,14 @@ namespace Server.Multis
 
 		public static bool isCarpet( BaseBoat rug )
 		{
-			if (	rug is MagicCarpetA || 
-					rug is MagicCarpetB || 
-					rug is MagicCarpetC || 
-					rug is MagicCarpetD || 
-					rug is MagicCarpetE || 
-					rug is MagicCarpetF || 
-					rug is MagicCarpetG || 
-					rug is MagicCarpetH || 
+			if (	rug is MagicCarpetA ||
+					rug is MagicCarpetB ||
+					rug is MagicCarpetC ||
+					rug is MagicCarpetD ||
+					rug is MagicCarpetE ||
+					rug is MagicCarpetF ||
+					rug is MagicCarpetG ||
+					rug is MagicCarpetH ||
 					rug is MagicCarpetI )
 				return true;
 
@@ -205,14 +205,14 @@ namespace Server.Multis
 
 		public static bool isRolledCarpet( Item rug )
 		{
-			if (	rug is MagicCarpetADeed || rug is MagicDockedCarpetA || 
-					rug is MagicCarpetBDeed || rug is MagicDockedCarpetB || 
-					rug is MagicCarpetCDeed || rug is MagicDockedCarpetC || 
-					rug is MagicCarpetDDeed || rug is MagicDockedCarpetD || 
-					rug is MagicCarpetEDeed || rug is MagicDockedCarpetE || 
-					rug is MagicCarpetFDeed || rug is MagicDockedCarpetF || 
-					rug is MagicCarpetGDeed || rug is MagicDockedCarpetG || 
-					rug is MagicCarpetHDeed || rug is MagicDockedCarpetH || 
+			if (	rug is MagicCarpetADeed || rug is MagicDockedCarpetA ||
+					rug is MagicCarpetBDeed || rug is MagicDockedCarpetB ||
+					rug is MagicCarpetCDeed || rug is MagicDockedCarpetC ||
+					rug is MagicCarpetDDeed || rug is MagicDockedCarpetD ||
+					rug is MagicCarpetEDeed || rug is MagicDockedCarpetE ||
+					rug is MagicCarpetFDeed || rug is MagicDockedCarpetF ||
+					rug is MagicCarpetGDeed || rug is MagicDockedCarpetG ||
+					rug is MagicCarpetHDeed || rug is MagicDockedCarpetH ||
 					rug is MagicCarpetIDeed || rug is MagicDockedCarpetI )
 				return true;
 
@@ -734,17 +734,17 @@ namespace Server.Multis
 
 		public static bool IsNPCBoat( Item boat )
 		{
-			if ( boat is TinyBoat || 
-				boat is GalleonBarbarian || 
-				boat is GalleonRoyal || 
-				boat is GalleonExotic || 
-				boat is GalleonLarge || 
-				boat is GalleonWreckedBarbarian || 
-				boat is GalleonWreckedRoyal || 
-				boat is GalleonWreckedExotic || 
-				boat is GalleonWreckedLarge || 
-				boat is GalleonRuinedBarbarian || 
-				boat is GalleonRuinedRoyal || 
+			if ( boat is TinyBoat ||
+				boat is GalleonBarbarian ||
+				boat is GalleonRoyal ||
+				boat is GalleonExotic ||
+				boat is GalleonLarge ||
+				boat is GalleonWreckedBarbarian ||
+				boat is GalleonWreckedRoyal ||
+				boat is GalleonWreckedExotic ||
+				boat is GalleonWreckedLarge ||
+				boat is GalleonRuinedBarbarian ||
+				boat is GalleonRuinedRoyal ||
 				boat is GalleonRuinedExotic )
 			{
 				return true;

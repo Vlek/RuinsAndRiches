@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Network;
 using System.Collections;
 using System.Globalization;
@@ -198,7 +198,7 @@ namespace Server.Items
 
 			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				Container pack = from.Backpack;
 				from.SendSound( 0x55 );
 				int NumItemsSold = m_Book.AmountSold;
@@ -377,7 +377,7 @@ namespace Server.Items
 									if ( ( who is BlacksmithGuildmaster || who is Garth || who is IronWorker || who is Weaponsmith || who is Armorer || who is Blacksmith ) && m_Book.MaterialType == "metal" && OneSay == 0 )
 									{
 										who.PlaySound( 0x2A );
-										
+
 										switch( Utility.Random( 2 ) )
 										{
 											case 0: who.Say( "I have spent years learning the art of forging this metal." ); 	break;
@@ -393,7 +393,7 @@ namespace Server.Items
 									else if ( ( who is Carpenter || who is CarpenterGuildmaster ) && m_Book.MaterialType == "wood" && OneSay == 0 )
 									{
 										who.PlaySound( 0x23D );
-										
+
 										switch( Utility.Random( 2 ) )
 										{
 											case 0: who.Say( "I have spent years learning the art of carving this wood." ); 	break;
@@ -409,7 +409,7 @@ namespace Server.Items
 									else if ( ( who is Tanner || who is Cobbler || who is Furtrader || who is LeatherWorker || who is Tailor || who is TailorGuildmaster ) && m_Book.MaterialType == "leather" && OneSay == 0 )
 									{
 										who.PlaySound( 0x248 );
-										
+
 										switch( Utility.Random( 2 ) )
 										{
 											case 0: who.Say( "I have spent years learning the art of leather working." );	 	break;
@@ -425,7 +425,7 @@ namespace Server.Items
 									else if ( ( (who.Name == "Iolo" && who.Title == "the Bowman") || who is Ranger || who is RangerGuildmaster || who is Bowyer || who is ArcherGuildmaster ) && m_Book.MaterialType == "bows" && OneSay == 0 )
 									{
 										who.PlaySound( 0x55 );
-										
+
 										switch( Utility.Random( 2 ) )
 										{
 											case 0: who.Say( "I have spent years learning the art of carving this wood." ); 	break;

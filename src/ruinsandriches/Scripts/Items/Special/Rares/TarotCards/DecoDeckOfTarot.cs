@@ -105,7 +105,7 @@ namespace Server.Gumps
 				SendGump( from, m_Cards );
 				from.SendSound( 0x5BB );
 			}
-			else 
+			else
 				from.SendSound( 0x5BB );
 		}
 
@@ -140,21 +140,21 @@ namespace Server.Gumps
 
 		public string wordCity( bool any )
 		{
-			string city = RandomThings.GetRandomCity();	
+			string city = RandomThings.GetRandomCity();
 				if ( Utility.RandomBool() && any ){ city = RandomThings.MadeUpCity(); }
 			return city;
 		}
 
 		public string wordDungeon( bool any )
 		{
-			string dungeon = QuestCharacters.SomePlace( "tavern" );	
+			string dungeon = QuestCharacters.SomePlace( "tavern" );
 				if ( Utility.RandomBool() && any ){ dungeon = RandomThings.MadeUpDungeon(); }
 			return dungeon;
 		}
 
 		public string wordPlace( bool any )
 		{
-			string place = wordCity( any );	
+			string place = wordCity( any );
 				if ( Utility.RandomBool() && any ){ place = wordDungeon( any ); }
 			return place;
 		}
@@ -188,7 +188,7 @@ namespace Server.Gumps
 			if ( Utility.RandomBool() ){ person = person + ", from " + wordCity( true ) + ","; }
 
 
-			string action = "will betray you"; 
+			string action = "will betray you";
 			switch ( Utility.RandomMinMax( 0, 12 ) )
 			{
 				case 1: action = "will try to kill you"; 			break;
@@ -207,7 +207,7 @@ namespace Server.Gumps
 			if ( Utility.RandomBool() ){ action = action + " in " + wordPlace( false ) + ""; }
 
 
-			string assassin = "an assassin"; 
+			string assassin = "an assassin";
 			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 1: assassin = "a killer"; 			break;
@@ -220,7 +220,7 @@ namespace Server.Gumps
 			}
 
 
-			string meet = "come face to face"; 
+			string meet = "come face to face";
 			switch ( Utility.RandomMinMax( 0, 11 ) )
 			{
 				case 1: meet = "have an encounter with"; break;
@@ -237,7 +237,7 @@ namespace Server.Gumps
 			}
 
 
-			string discover = "discover"; 
+			string discover = "discover";
 			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
 				case 1: discover = "find"; 					break;
@@ -287,35 +287,35 @@ namespace Server.Gumps
 			}
 
 
-			string goal = "the Codex of Ultimate Wisdom";	
+			string goal = "the Codex of Ultimate Wisdom";
 			switch( Utility.RandomMinMax( 0, 22 ) )
 			{
-				case 1: goal = "the Dark Core of Exodus";	 	break;	
-				case 2: goal = "the Staff of Five Parts";		break;	
-				case 3: goal = "the Vortex Cube";				break;	
-				case 4: goal = "the Runes of Virtue";			break;	
-				case 5: goal = "the Book of Truth";				break;	
-				case 6: goal = "the Bell of Courage";			break;	
-				case 7: goal = "the Candle of Love";			break;	
-				case 8: goal = "the Scales of Ethicality";		break;	
-				case 9: goal = "the Orb of Logic";				break;	
-				case 10: goal = "the Lantern of Discipline";	break;	
-				case 11: goal = "the Breath of Air";			break;	
-				case 12: goal = "the Tongue of Flame";			break;	
-				case 13: goal = "the Heart of Earth";			break;	
-				case 14: goal = "the Tear of the Seas";			break;	
-				case 15: goal = "the Statue of Gygax";			break;	
-				case 16: goal = "the Skull of Baron Almric";	break;	
-				case 17: goal = "the Shard of Cowardice";		break;	
-				case 18: goal = "the Shard of Falsehood";		break;	
-				case 19: goal = "the Shard of Hatred";			break;	
-				case 20: goal = "the Gem of Immortality";		break;	
-				case 21: goal = "the Manual of Golems";			break;	
-				case 22: goal = "Frankenstein's Journal";		break;	
+				case 1: goal = "the Dark Core of Exodus";	 	break;
+				case 2: goal = "the Staff of Five Parts";		break;
+				case 3: goal = "the Vortex Cube";				break;
+				case 4: goal = "the Runes of Virtue";			break;
+				case 5: goal = "the Book of Truth";				break;
+				case 6: goal = "the Bell of Courage";			break;
+				case 7: goal = "the Candle of Love";			break;
+				case 8: goal = "the Scales of Ethicality";		break;
+				case 9: goal = "the Orb of Logic";				break;
+				case 10: goal = "the Lantern of Discipline";	break;
+				case 11: goal = "the Breath of Air";			break;
+				case 12: goal = "the Tongue of Flame";			break;
+				case 13: goal = "the Heart of Earth";			break;
+				case 14: goal = "the Tear of the Seas";			break;
+				case 15: goal = "the Statue of Gygax";			break;
+				case 16: goal = "the Skull of Baron Almric";	break;
+				case 17: goal = "the Shard of Cowardice";		break;
+				case 18: goal = "the Shard of Falsehood";		break;
+				case 19: goal = "the Shard of Hatred";			break;
+				case 20: goal = "the Gem of Immortality";		break;
+				case 21: goal = "the Manual of Golems";			break;
+				case 22: goal = "Frankenstein's Journal";		break;
 			}
 
 
-			string riches = "great riches"; 
+			string riches = "great riches";
 			switch ( Utility.RandomMinMax( 0, 18 ) )
 			{
 				case 1: riches = "" + piles + " of " + coins + "";				break;
@@ -339,7 +339,7 @@ namespace Server.Gumps
 			}
 
 
-			string death = "perish"; 
+			string death = "perish";
 			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
 				case 1: death = "die"; 					break;
@@ -350,7 +350,7 @@ namespace Server.Gumps
 			}
 
 
-			string victory = "be victorious against"; 
+			string victory = "be victorious against";
 			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
 				case 1: victory = "win a fight with"; 	break;
@@ -361,7 +361,7 @@ namespace Server.Gumps
 			}
 
 
-			string journey = "journey"; 
+			string journey = "journey";
 			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 1: journey = "adventures"; 	break;
@@ -371,7 +371,7 @@ namespace Server.Gumps
 			}
 
 
-			string leads = "will lead to"; 
+			string leads = "will lead to";
 			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 1: leads = "will bring you"; 		break;
@@ -381,7 +381,7 @@ namespace Server.Gumps
 			}
 
 
-			string fate = "The future"; 
+			string fate = "The future";
 			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 1: fate = "Your destiny"; 		break;
@@ -391,7 +391,7 @@ namespace Server.Gumps
 			}
 
 
-			string warn = "Take this as a warning"; 
+			string warn = "Take this as a warning";
 			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 1: warn = "Heed this warning"; 	break;
@@ -401,7 +401,7 @@ namespace Server.Gumps
 			}
 
 
-			string stayOut = "stay away from"; 
+			string stayOut = "stay away from";
 			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 1: stayOut = "stay out of"; 		break;
@@ -411,7 +411,7 @@ namespace Server.Gumps
 			}
 
 
-			string noGood = "nothing good will come of it"; 
+			string noGood = "nothing good will come of it";
 			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 1: noGood = "you will regret it"; 		break;
@@ -421,7 +421,7 @@ namespace Server.Gumps
 			}
 
 
-			string luck = "good luck"; 
+			string luck = "good luck";
 			switch ( Utility.RandomMinMax( 0, 10 ) )
 			{
 				case 1: luck = "a clue"; 			break;
@@ -437,7 +437,7 @@ namespace Server.Gumps
 			}
 
 
-			string youWill = "" + death + " within " + wordDungeon( false ) + ""; 
+			string youWill = "" + death + " within " + wordDungeon( false ) + "";
 			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 1: youWill = "find great treasure in " + wordDungeon( false ) + ""; break;

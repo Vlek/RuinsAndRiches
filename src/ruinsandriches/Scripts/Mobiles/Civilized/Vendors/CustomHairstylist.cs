@@ -78,14 +78,14 @@ namespace Server.Mobiles
 
 		[Constructable]
 		public CustomHairstylist() : base( "the barber" )
-		{ 
+		{
 			SetSkill( SkillName.Alchemy, 80.0, 100.0 );
 			SetSkill( SkillName.Tasting, 85.0, 100.0 );
-		} 
+		}
 
-		public override void InitSBInfo() 
-		{ 
-			m_SBInfos.Add( new SBHairStylist() ); 
+		public override void InitSBInfo()
+		{
+			m_SBInfos.Add( new SBHairStylist() );
 		}
 
 		public CustomHairstylist( Serial serial ) : base( serial )

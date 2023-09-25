@@ -29,9 +29,9 @@ namespace Arya.Misc
         /// <summary>
         /// Set this value if you wish the scripts to be output somewhere else rather than in the default RunUO\TheBox
         /// directory. This should be a full valid path on your computer
-        /// 
+        ///
         /// Example:
-        /// 
+        ///
         /// private static string m_CustomOutputDirector = @"C:\Program Files\RunUO\Scripts\Custom\Addons";
         /// </summary>
         private static string m_CustomOutputDirectory = null;
@@ -87,8 +87,8 @@ namespace {namespace}
 {
 	public class {name}Addon : BaseAddon
 	{
-        {simplelist} 
-        {complexlist}    
+        {simplelist}
+        {complexlist}
 		public override BaseAddonDeed Deed
 		{
 			get
@@ -280,7 +280,7 @@ namespace {namespace}
                         foreach (StaticTile t in stlist)
                         {
                             list.Add(t);
-                            
+
                             int id = t.ID - 36653;
                             if (id < 2 || id > 36653)
                                 remove.Add(t);
@@ -871,7 +871,7 @@ namespace Server.Items
         [Constructable]
         public CEOIdentifyAddon(string init)
         {
-            // Nothing really here, just prevents adding a null contruct via [add command 
+            // Nothing really here, just prevents adding a null contruct via [add command
         }
 
         [Constructable]
@@ -896,7 +896,7 @@ namespace Server.Items
             base.Deserialize(reader);
             int version = reader.ReadInt();
             if (this.Map == null || this.Map == Map.Internal)
-                this.Delete(); // Remove it because it's most 
+                this.Delete(); // Remove it because it's most
         }
 
         public void ReDeed(Mobile m)

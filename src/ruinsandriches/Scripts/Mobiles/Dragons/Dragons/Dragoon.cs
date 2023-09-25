@@ -180,7 +180,7 @@ namespace Server.Mobiles
 					return ( ScaleType.Red );
 				else
 					return ( ScaleType.Black );
-			} 
+			}
 		}
 		public override FoodType FavoriteFood{ get{ return FoodType.Meat; } }
 		public override bool CanAngerOnTame { get { return true; } }

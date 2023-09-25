@@ -10,7 +10,7 @@ namespace Server.Items
 		[Constructable]
 		public HalloweenBonePileAddon()
 		{
-			Name = "Bone Pile";       
+			Name = "Bone Pile";
 			AddComponent( new AddonComponent( 6872 ), 1, 1, 0 );
 			AddComponent( new AddonComponent( 6873 ), 0, 1, 0 );
 			AddComponent( new AddonComponent( 6874 ), -1, 1, 0 );

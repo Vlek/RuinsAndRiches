@@ -49,7 +49,7 @@ namespace Server.Items
 			int pool_type = Utility.Random( 8 );
 
 			if ( pool_type == 1 )
-			{ 
+			{
 				AddComplexComponent( (BaseAddon) this, 767, -1, 1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 768, -1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 8669, 0, -1, 2, 0, -1, "magic pool", 1);
@@ -58,9 +58,9 @@ namespace Server.Items
 				AddComplexComponent( (BaseAddon) this, 767, -1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 767, 1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 765, 1, 1, 2, 0, -1, "magic pool", 1);
-			} 
+			}
 			else if ( pool_type == 2 )
-			{ 
+			{
 				AddComplexComponent( (BaseAddon) this, 273, -1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 271, 0, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 271, 0, 1, 2, 0, -1, "magic pool", 1);
@@ -69,9 +69,9 @@ namespace Server.Items
 				AddComplexComponent( (BaseAddon) this, 271, 1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 272, 1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 270, 1, 1, 2, 0, -1, "magic pool", 1);
-			} 
-			else if ( pool_type == 3 ) 
-			{ 
+			}
+			else if ( pool_type == 3 )
+			{
 				AddComplexComponent( (BaseAddon) this, 48, -1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 47, 0, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 47, 0, 1, 2, 0, -1, "magic pool", 1);
@@ -80,9 +80,9 @@ namespace Server.Items
 				AddComplexComponent( (BaseAddon) this, 47, 1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 46, 1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 45, 1, 1, 2, 0, -1, "magic pool", 1);
-			} 
-			else if ( pool_type == 4 ) 
-			{ 
+			}
+			else if ( pool_type == 4 )
+			{
 				AddComplexComponent( (BaseAddon) this, 700, -1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 699, -1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 699, -1, 1, 2, 0, -1, "magic pool", 1);
@@ -91,9 +91,9 @@ namespace Server.Items
 				AddComplexComponent( (BaseAddon) this, 698, 1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 699, 1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 697, 1, 1, 2, 0, -1, "magic pool", 1);
-			} 
-			else if ( pool_type == 5 ) 
-			{ 
+			}
+			else if ( pool_type == 5 )
+			{
 				AddComplexComponent( (BaseAddon) this, 223, -1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 222, 0, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 222, 0, 1, 2, 0, -1, "magic pool", 1);
@@ -102,9 +102,9 @@ namespace Server.Items
 				AddComplexComponent( (BaseAddon) this, 222, 1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 221, 1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 220, 1, 1, 2, 0, -1, "magic pool", 1);
-			} 
-			else if ( pool_type == 6 ) 
-			{ 
+			}
+			else if ( pool_type == 6 )
+			{
 				AddComplexComponent( (BaseAddon) this, 108, -1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 105, 0, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 105, 0, 1, 2, 0, -1, "magic pool", 1);
@@ -113,9 +113,9 @@ namespace Server.Items
 				AddComplexComponent( (BaseAddon) this, 107, 1, 1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 105, 1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 106, 1, 0, 2, 0, -1, "magic pool", 1);
-			} 
-			else if ( pool_type == 7 ) 
-			{ 
+			}
+			else if ( pool_type == 7 )
+			{
 				AddComplexComponent( (BaseAddon) this, 490, -1, 1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 490, -1, 0, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 491, -1, -1, 2, 0, -1, "magic pool", 1);
@@ -124,7 +124,7 @@ namespace Server.Items
 				AddComplexComponent( (BaseAddon) this, 489, 0, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 489, 1, -1, 2, 0, -1, "magic pool", 1);
 				AddComplexComponent( (BaseAddon) this, 490, 1, 0, 2, 0, -1, "magic pool", 1);
-			} 
+			}
 			else
 			{
 				AddComplexComponent( (BaseAddon) this, 10585, -1, -1, 2, 0, -1, "magic pool", 1);
@@ -227,7 +227,7 @@ namespace Server.Items
 						if ( water == 1 ){ from.RawInt = from.RawInt + up; from.SendMessage( "You drink from the pool and you feel much smarter!" ); }
 						else if ( water == 2 ){ from.RawStr = from.RawStr + up; from.SendMessage( "You drink from the pool and you feel much stronger!" ); }
 						else { from.RawDex = from.RawDex + up; from.SendMessage( "You drink from the pool and you feel much quicker!" ); }
-						
+
 						this.m_Uses = 0;
 					}
 					else
@@ -474,7 +474,7 @@ namespace Server.Items
 					{
 						from.SendMessage( "You are too sick to drink from this pool!" );
 					}
-					else 
+					else
 					{
 						Effects.SendLocationParticles( EffectItem.Create( from.Location, from.Map, EffectItem.DefaultDuration ), 0x36B0, 1, 14, 63, 7, 9915, 0 );
 						from.PlaySound( Utility.RandomList( 0x30, 0x2D6 ) );

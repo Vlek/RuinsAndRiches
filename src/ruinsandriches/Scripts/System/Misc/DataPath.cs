@@ -36,8 +36,8 @@ namespace Server.Misc
 
 		public static void Configure()
 		{
-			if ( CustomPath != null ) 
-				Core.DataDirectories.Add( CustomPath ); 
+			if ( CustomPath != null )
+				Core.DataDirectories.Add( CustomPath );
 
 			if ( Core.DataDirectories.Count == 0 && !Core.Service )
 			{

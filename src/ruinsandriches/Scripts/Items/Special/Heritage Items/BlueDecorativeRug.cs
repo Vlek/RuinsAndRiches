@@ -5,7 +5,7 @@ namespace Server.Items
 	public class BlueDecorativeRugAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed { get { return new BlueDecorativeRugDeed(); } }
-		
+
 		[Constructable]
 		public BlueDecorativeRugAddon() : base()
 		{

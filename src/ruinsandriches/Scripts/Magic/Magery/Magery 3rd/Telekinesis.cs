@@ -95,7 +95,7 @@ namespace Server.Spells.Third
 					Effects.SendLocationParticles(EffectItem.Create(item.Location, item.Map, EffectItem.DefaultDuration), 0x376A, 9, 32, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 0 ), 0, 5022, 0);
 					Effects.PlaySound(item.Location, item.Map, 0x1F5);
 					Caster.AddToBackpack( item );
-					Caster.SendMessage( "You move the object to within your grasp and place it in your backpack."); 
+					Caster.SendMessage( "You move the object to within your grasp and place it in your backpack.");
 				}
 			}
             this.FinishSequence();

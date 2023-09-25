@@ -45,7 +45,7 @@ namespace Server.Network
 			m_Size = 0;
 		}
 
-		private void SetCapacity( int capacity ) 
+		private void SetCapacity( int capacity )
 		{
 			byte[] newBuffer = new byte[capacity];
 

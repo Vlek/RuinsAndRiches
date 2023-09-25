@@ -26,7 +26,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			if ( this.ItemID == 0xA0F ){ list.Add( 1049644, "Double-Click to Unequip"); }
 			else { list.Add( 1049644, "Double-Click to Equip"); }
-        } 
+        }
 
 		public override bool AllowEquipedCast( Mobile from )
 		{

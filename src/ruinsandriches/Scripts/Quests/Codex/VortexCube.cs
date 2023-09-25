@@ -372,7 +372,7 @@ namespace Server.Items
 			public override void OnResponse( NetState sender, RelayInfo info )
 			{
 				Mobile from = sender.Mobile;
-				from.SendSound( 0x5AA ); 
+				from.SendSound( 0x5AA );
 			}
 		}
 

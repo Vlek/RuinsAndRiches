@@ -81,7 +81,7 @@ namespace Server.Mobiles
 						case CraftResource.ElvenTree: price = (int)( price * 6 ); break;
 						case CraftResource.PetrifiedTree: price = (int)( price * 3.25 ); break;
 					}
-				/* End of Changes */ 
+				/* End of Changes */
 
 				price += 100 * (int)armor.Durability;
 
@@ -187,7 +187,7 @@ namespace Server.Mobiles
 		{
 			return IsInList( item.GetType() );
 		}
-	 
+
 		public bool IsResellable( Item item )
 		{
 			return false;

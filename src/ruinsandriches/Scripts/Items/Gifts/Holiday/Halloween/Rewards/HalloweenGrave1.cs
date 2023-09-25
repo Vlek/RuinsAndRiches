@@ -37,7 +37,7 @@ namespace Server.Items
 			public override void OnResponse( Mobile from, string text )
 			{
 				m_Sign.Name = text;
-				from.SendMessage("The Name has been changed"); 
+				from.SendMessage("The Name has been changed");
 			}
 		}
 

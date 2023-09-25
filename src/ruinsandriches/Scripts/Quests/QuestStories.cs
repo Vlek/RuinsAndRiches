@@ -26,8 +26,8 @@ namespace Server.Misc
 		public static string QuestGiverKarma( bool evil )
 		{
 			string sWho = NameList.RandomName( "male" );
-			if ( Utility.RandomMinMax( 1, 2 ) == 1 ) 
-			{ 
+			if ( Utility.RandomMinMax( 1, 2 ) == 1 )
+			{
 				sWho = NameList.RandomName( "female" );
 			}
 
@@ -46,8 +46,8 @@ namespace Server.Misc
 		public static string QuestGiver()
 		{
 			string sWho = NameList.RandomName( "male" );
-			if ( Utility.RandomMinMax( 1, 2 ) == 1 ) 
-			{ 
+			if ( Utility.RandomMinMax( 1, 2 ) == 1 )
+			{
 				sWho = NameList.RandomName( "female" );
 			}
 
@@ -434,7 +434,7 @@ namespace Server.Misc
 			string qte = "";
 				if ( addQuotes ){ qte = "'"; }
 
-			string arty = "";	
+			string arty = "";
 			switch( Utility.RandomMinMax( 1, 306 ) )
 			{
 				case 1: arty = "Abysmal Gloves"; break;

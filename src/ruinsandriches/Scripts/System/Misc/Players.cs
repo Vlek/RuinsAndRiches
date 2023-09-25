@@ -8,7 +8,7 @@ using Server.Misc;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
-using Server; 
+using Server;
 using System.Collections.Generic;
 using System.Collections;
 using System;
@@ -571,7 +571,7 @@ namespace Server.Misc
 					return true;
 
 				if ( Server.Items.BaseRace.IsRavendarkCreature( m ) ) // EVIL UNDEAD CREATURE PLAYERS
-					return true; 
+					return true;
 			}
 
 			return false;
@@ -876,7 +876,7 @@ namespace Server.Misc
 	}
 }
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class StatsGump : Gump
     {
@@ -919,7 +919,7 @@ namespace Server.Gumps
 				if ( SDICap > Server.Misc.MyServerSettings.SpellDamageIncreaseVsMonsters() && Server.Misc.MyServerSettings.SpellDamageIncreaseVsMonsters() > 0 ){ SDICap = Server.Misc.MyServerSettings.SpellDamageIncreaseVsMonsters(); }
             int ReflectDamageCap = 100;
             int SSICap = 100;
-            
+
             int LRC = AosAttributes.GetValue( from, AosAttribute.LowerRegCost ) > LRCCap ? LRCCap : AosAttributes.GetValue( from, AosAttribute.LowerRegCost );
             int LMC = AosAttributes.GetValue( from, AosAttribute.LowerManaCost ) > LMCCap ? LMCCap : AosAttributes.GetValue( from, AosAttribute.LowerManaCost );
             double BandageSpeed = ( 5.0 + (0.5 * ((double)(120 - from.Dex) / 10)) ) < BandageSpeedCap ? BandageSpeedCap : ( 5.0 + (0.5 * ((double)(120 - from.Dex) / 10)) );
@@ -978,7 +978,7 @@ namespace Server.Gumps
 			{
 				warnColor = "#d38a8a";
 				warnMsg = "Guilty";
-			}	
+			}
 
 			AddHtml( 61, 406, 100, 20, @"<BODY><BASEFONT Color=" + warnColor + ">" + warnMsg + "</BASEFONT></BODY>", (bool)false, (bool)false);
 
@@ -1071,7 +1071,7 @@ namespace Server.Gumps
 			AddHtml( 500, 45, 150, 380, @"<BODY><BASEFONT Color=" + color + ">" + colE + "</BASEFONT></BODY>", (bool)false, (bool)false);
 			AddHtml( 615, 45, 80, 380, @"<BODY><BASEFONT Color=" + color + "><div align=right>" + colF + "</div></BASEFONT></BODY>", (bool)false, (bool)false);
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;

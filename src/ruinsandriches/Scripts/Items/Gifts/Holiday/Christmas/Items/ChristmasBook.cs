@@ -15,7 +15,7 @@ namespace Server.Items
 					"   Merry Christmas!  ",
 					" ",
 					"  Here is a Christmas",
-					" goodie bag.",				
+					" goodie bag.",
 				};
 
 			Pages[1].Lines = new string[]

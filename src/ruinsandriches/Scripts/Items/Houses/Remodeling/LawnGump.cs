@@ -177,7 +177,7 @@ namespace Server.Gumps
         public override void OnResponse(NetState state, RelayInfo info)
         {
             Mobile from = state.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			from.CloseGump( typeof( LawnGump ) );
             if (info.ButtonID == 0)
             {
@@ -251,8 +251,8 @@ namespace Server.Gumps
                     if (m_CurrentCategory != null)
                     {
                         from.SendGump(new LawnGump(from, m_LawnTools,
-                                                   m_Categories[info.ButtonID - 80851] == m_CurrentCategory.Name ? "" : m_Categories[info.ButtonID - 80851], 
-                                                   0, m_SelectedID, m_ItemPrice, m_ItemTitle));                        
+                                                   m_Categories[info.ButtonID - 80851] == m_CurrentCategory.Name ? "" : m_Categories[info.ButtonID - 80851],
+                                                   0, m_SelectedID, m_ItemPrice, m_ItemTitle));
                     }
                     else
                     {

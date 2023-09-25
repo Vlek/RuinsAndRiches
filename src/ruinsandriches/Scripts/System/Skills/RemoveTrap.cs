@@ -122,7 +122,7 @@ namespace Server.SkillHandlers
 					if ( (Item)targeted is HiddenTrap )
 					{
 						from.PlaySound( 0x241 );
-						
+
 						if ( from.CheckSkill( SkillName.RemoveTrap, 0, 125 ) )
 						{
 							Item HideTrap = (Item)targeted;

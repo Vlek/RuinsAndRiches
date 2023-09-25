@@ -10,19 +10,19 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Uses { get { return i_Uses; } set { i_Uses = value; InvalidateProperties(); } }
 
-		[Constructable] 
+		[Constructable]
 		public RoughSharpeningStone() : this( 5 )
 		{
 		}
 
-		[Constructable] 
-		public RoughSharpeningStone( int uses ) : base( 0x1F14 ) 
-		{ 
+		[Constructable]
+		public RoughSharpeningStone( int uses ) : base( 0x1F14 )
+		{
 			Weight = 1.0;
 			i_Uses = uses;
 			Hue = 0x38C;
 			Name = "Rough Sharpening Stone";
-		} 
+		}
 
 		public override void GetProperties( ObjectPropertyList list )
 		{
@@ -52,7 +52,7 @@ namespace Server.Items
 			else
 				from.SendMessage("This must be in your backpack to use.");
 		}
-		
+
 		public void Sharpening(Mobile from, object o)
 		{
 			if ( o is Item )

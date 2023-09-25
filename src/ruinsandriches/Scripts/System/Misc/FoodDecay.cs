@@ -19,7 +19,7 @@ namespace Server.Misc
 
 		protected override void OnTick()
 		{
-			FoodDecay();			
+			FoodDecay();
 		}
 
 		public static void FoodDecay()
@@ -48,7 +48,7 @@ namespace Server.Misc
 							// added to give hunger value a real meaning.
 							if ( m.Hunger < 5 ){ m.SendMessage( "You are extremely hungry." ); m.LocalOverheadMessage(MessageType.Emote, 0xB1F, true, "I am extremely hungry."); }
 							else if ( m.Hunger < 10 ){ m.SendMessage( "You are getting very hungry." ); m.LocalOverheadMessage(MessageType.Emote, 0xB1F, true, "I am getting very hungry."); }
-						}	
+						}
 						else
 						{
 							if ( m.Hits > 5 )

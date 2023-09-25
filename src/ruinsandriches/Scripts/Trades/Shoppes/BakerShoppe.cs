@@ -66,7 +66,7 @@ namespace Server.Items
 			string[] sWeirds = new string[] { "ant", "ape", "baboon", "badger", "basilisk", "bear", "beaver", "beetle", "beholder", "boar", "brownie", "buffalo", "bull", "camel", "centaur", "centipede", "chimera", "cockatrice", "crocodile", "deer", "demon", "devil", "dinosaur", "djinni", "dog", "dragon", "dryad", "dwarf", "eagle", "efreet", "elemental", "elephant", "elf", "ettin", "frog", "fungi", "gargoyle", "ghast", "ghost", "ghoul", "giant", "gnoll", "gnome", "goat", "goblin", "golem", "gorgon", "griffon", "hag", "halfling", "harpy", "hell hound", "hippogriff", "hippopotamus", "hobgoblin", "horse", "hydra", "hyena", "imp", "jackal", "jaguar", "ki-rin", "kobold", "leopard", "leprechaun", "lich", "lion", "lizard", "lizardman", "lycanthrope", "lynx", "mammoth", "manticore", "mastodon", "medusa", "minotaur", "mule", "mummy", "naga", "nightmare", "ogre", "orc", "owl", "pegasus", "pixie", "porcupine", "ram", "rat", "reaper", "rhinoceros", "roc", "satyr", "scorpion", "serpent", "shadow", "skeleton", "skunk", "snake", "spectre", "sphinx", "spider", "sprite", "stag", "tiger", "titan", "toad", "troglodyte", "troll", "unicorn", "vampire", "weasel", "wight", "wisp", "wolf", "wolverine", "worm", "wraith", "wyvern", "yeti", "zombie", "zorn" };
 				string sWeird = sWeirds[Utility.RandomMinMax( 0, (sWeirds.Length-1) )];
 
-			if ( Utility.RandomMinMax( 1, 3 ) > 1 ){ sWeird = ""; } else { sWeird = " " + sWeird; }  
+			if ( Utility.RandomMinMax( 1, 3 ) > 1 ){ sWeird = ""; } else { sWeird = " " + sWeird; }
 
 			task = task + " of " + sTaste + sWeird + " " + sFood;
 

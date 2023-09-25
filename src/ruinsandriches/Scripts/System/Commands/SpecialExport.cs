@@ -74,7 +74,7 @@ namespace Server.Misc
 							}
 						}
 					}
-				
+
 					mob.SendMessage("You exported {0} statics from this facet.", i);
 				}
 				catch(Exception e){ mob.SendMessage(e.Message); }

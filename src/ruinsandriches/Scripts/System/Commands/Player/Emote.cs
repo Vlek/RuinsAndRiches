@@ -12,14 +12,14 @@ using Server.Commands;
 namespace Server.Commands
 {
 	public class Emote
-	{	
+	{
 		public static void Initialize()
 		{
 			CommandSystem.Register( "emote", AccessLevel.Player, new CommandEventHandler( Emote_OnCommand ) );
 		}
 
-	  	[Usage( "<sound>" )] 
-	      	[Description( "Emote with sounds, words, and possibly an animation with one command!")] 
+	  	[Usage( "<sound>" )]
+	      	[Description( "Emote with sounds, words, and possibly an animation with one command!")]
 		public static void Emote_OnCommand( CommandEventArgs e )
 		{
 			Mobile pm = e.Mobile;
@@ -32,13 +32,13 @@ namespace Server.Commands
 					break;
 				case "ahha":
 					SoundInt = 2;
-					break;					
+					break;
 				case "applaud":
 					SoundInt = 3;
-					break;				
+					break;
 				case "blownose":
 					SoundInt = 4;
-					break;					
+					break;
 				case "bow":
 					SoundInt = 5;
 					break;
@@ -57,7 +57,7 @@ namespace Server.Commands
 				case "cry":
 					SoundInt = 10;
 					break;
-				case "faint":					
+				case "faint":
 					SoundInt = 11;
 					break;
 				case "fart":
@@ -105,7 +105,7 @@ namespace Server.Commands
 				case "puke":
 					SoundInt = 26;
 					break;
-				case "punch": 					
+				case "punch":
 					SoundInt = 27;
 					break;
 				case "scream":
@@ -152,7 +152,7 @@ namespace Server.Commands
 					break;
 				case "yell":
 					SoundInt = 42;
-					break;				
+					break;
 				default:
 					SoundInt = 0;
 					e.Mobile.SendGump( new EmoteGump( e.Mobile ) );
@@ -160,18 +160,18 @@ namespace Server.Commands
 			}
 			if ( SoundInt > 0 )
 				new ESound( pm, SoundInt );
-		} 
+		}
 	}
-	public class EmoteGump : Gump 
-	{ 
-		private Mobile m_From; 
+	public class EmoteGump : Gump
+	{
+		private Mobile m_From;
 
-		public EmoteGump ( Mobile from ) : base ( 50, 50 ) 
-		{ 
-			from.CloseGump( typeof( EmoteGump ) ); 
-			m_From = from; 
+		public EmoteGump ( Mobile from ) : base ( 50, 50 )
+		{
+			from.CloseGump( typeof( EmoteGump ) );
+			m_From = from;
 			string color = "#869ca9";
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			AddPage(0);
 
@@ -273,81 +273,81 @@ namespace Server.Commands
 
 			AddHtml( 126, 575, 180, 20, @"<BODY><BASEFONT Color=" + color + ">Open Mini Emote Bar</BASEFONT></BODY>", (bool)false, (bool)false);
 			AddButton(89, 574, 4011, 4011, 66, GumpButtonType.Reply, 0);
-		} 
+		}
 
-		public override void OnResponse( Server.Network.NetState sender, RelayInfo info ) 
+		public override void OnResponse( Server.Network.NetState sender, RelayInfo info )
 		{
 			Mobile from = m_From;
 
 			if ( info.ButtonID == 66 )
 			{
-				from.CloseGump( typeof( EmoteMiniGump ) ); 
-				from.CloseGump( typeof( EmoteGump ) ); 
+				from.CloseGump( typeof( EmoteMiniGump ) );
+				from.CloseGump( typeof( EmoteGump ) );
 				from.SendGump( new EmoteMiniGump( from, 1 ) );
 			}
 			else if ( info.ButtonID > 0 )
 			{
 				new ESound( from, info.ButtonID );
-				from.CloseGump( typeof( EmoteGump ) ); 
+				from.CloseGump( typeof( EmoteGump ) );
 				from.SendGump( new EmoteGump( from ) );
 			}
 			else
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 		}
 	}
 
-	public class ItemRemovalTimer : Timer 
-	{ 
-		private Item i_item; 
-		public ItemRemovalTimer( Item item ) : base( TimeSpan.FromSeconds( 10.0 ) ) 
-		{ 
-			Priority = TimerPriority.OneSecond; 
-			i_item = item; 
-		} 
+	public class ItemRemovalTimer : Timer
+	{
+		private Item i_item;
+		public ItemRemovalTimer( Item item ) : base( TimeSpan.FromSeconds( 10.0 ) )
+		{
+			Priority = TimerPriority.OneSecond;
+			i_item = item;
+		}
 
-		protected override void OnTick() 
-		{ 
-		        if (( i_item != null ) && ( !i_item.Deleted )) 
-			        i_item.Delete(); 
-		} 
-	} 
-
-	public class Puke : Item 
-	{ 
-		[Constructable] 
-		public Puke() : base( Utility.RandomList( 0xf3b, 0xf3c ) ) 
-		{ 
-			Name = "A Pile of Puke"; 
-			Hue = 0x557; 
-			Movable = false; 
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
-			thisTimer.Start(); 
-		} 
-
-		public override void OnSingleClick( Mobile from ) 
-		{ 
-			this.LabelTo( from, this.Name ); 
-		} 
-  
-		public Puke( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize(GenericWriter writer) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
-
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-
-			this.Delete(); // none when the world starts 
-		} 
+		protected override void OnTick()
+		{
+		        if (( i_item != null ) && ( !i_item.Deleted ))
+			        i_item.Delete();
+		}
 	}
-	
+
+	public class Puke : Item
+	{
+		[Constructable]
+		public Puke() : base( Utility.RandomList( 0xf3b, 0xf3c ) )
+		{
+			Name = "A Pile of Puke";
+			Hue = 0x557;
+			Movable = false;
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
+			thisTimer.Start();
+		}
+
+		public override void OnSingleClick( Mobile from )
+		{
+			this.LabelTo( from, this.Name );
+		}
+
+		public Puke( Serial serial ) : base( serial )
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+
+			this.Delete(); // none when the world starts
+		}
+	}
+
 	public class ESound
 	{
 		public ESound( Mobile pm, int SoundMade )
@@ -368,7 +368,7 @@ namespace Server.Commands
 					break;
 				case 4:
 					pm.PlaySound( pm.Female ? 781 : 1052 );
-					pm.Say( "*blows nose*" );				
+					pm.Say( "*blows nose*" );
 					if ( !pm.Mounted )
 						pm.Animate( 34, 5, 1, true, false, 0 );
 					break;
@@ -395,7 +395,7 @@ namespace Server.Commands
 					break;
 				case 9:
 					pm.PlaySound( pm.Female ? 785 : 1056 );
-					pm.Say( "*cough!*" );				
+					pm.Say( "*cough!*" );
 					if ( !pm.Mounted )
 						pm.Animate( 33, 5, 1, true, false, 0 );
 					break;
@@ -468,10 +468,10 @@ namespace Server.Commands
 				case 26:
 					pm.PlaySound( pm.Female ? 813 : 1087 );
 					pm.Say( "*pukes*" );
-            		if ( !pm.Mounted ) 
-      					pm.Animate( 32, 5, 1, true, false, 0 );                     
-            		Puke puke = new Puke(); 
-    				puke.Map = pm.Map; 
+            		if ( !pm.Mounted )
+      					pm.Animate( 32, 5, 1, true, false, 0 );
+            		Puke puke = new Puke();
+    				puke.Map = pm.Map;
             		puke.Location = pm.Location;
 					break;
 				case 27:
@@ -531,7 +531,7 @@ namespace Server.Commands
 						pm.Animate( 38, 5, 1, true, false, 0 );
 					break;
 				case 38:
-					pm.PlaySound( pm.Female ? 821 : 1095 );	
+					pm.PlaySound( pm.Female ? 821 : 1095 );
 					pm.Say( "*whistles*" );
 					if ( !pm.Mounted )
 						pm.Animate( 5, 5, 1, true, false, 0 );
@@ -560,22 +560,22 @@ namespace Server.Commands
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public enum EmoteMiniPage 
-	{ 
+	public enum EmoteMiniPage
+	{
 		P1,
 		P2,
 		P3,
 		P4,
 	}
 	public class EmoteMini
-	{	
+	{
 		public static void Initialize()
 		{
 			CommandSystem.Register( "e", AccessLevel.Player, new CommandEventHandler( EmoteMini_OnCommand ) );
 		}
 
-	  	[Usage( "<sound>" )] 
-	      	[Description( "EmoteMini with sounds, words, and possibly an animation with one command!")] 
+	  	[Usage( "<sound>" )]
+	      	[Description( "EmoteMini with sounds, words, and possibly an animation with one command!")]
 		public static void EmoteMini_OnCommand( CommandEventArgs e )
 		{
 			Mobile pm = e.Mobile;
@@ -588,13 +588,13 @@ namespace Server.Commands
 					break;
 				case "ahha":
 					SoundInt = 2;
-					break;					
+					break;
 				case "applaud":
 					SoundInt = 3;
-					break;				
+					break;
 				case "blownose":
 					SoundInt = 4;
-					break;					
+					break;
 				case "bow":
 					SoundInt = 5;
 					break;
@@ -613,7 +613,7 @@ namespace Server.Commands
 				case "cry":
 					SoundInt = 10;
 					break;
-				case "faint":					
+				case "faint":
 					SoundInt = 11;
 					break;
 				case "fart":
@@ -661,7 +661,7 @@ namespace Server.Commands
 				case "puke":
 					SoundInt = 26;
 					break;
-				case "punch": 					
+				case "punch":
 					SoundInt = 27;
 					break;
 				case "scream":
@@ -708,7 +708,7 @@ namespace Server.Commands
 					break;
 				case "yell":
 					SoundInt = 42;
-					break;				
+					break;
 				default:
 					SoundInt = 0;
 					e.Mobile.SendGump( new EmoteMiniGump( e.Mobile, 1 ) );
@@ -716,17 +716,17 @@ namespace Server.Commands
 			}
 			if ( SoundInt > 0 )
 				new ESound( pm, SoundInt );
-		} 
+		}
 	}
-	public class EmoteMiniGump : Gump 
-	{ 
-		private Mobile m_From; 
+	public class EmoteMiniGump : Gump
+	{
+		private Mobile m_From;
 		private int m_Page;
 
-		public EmoteMiniGump ( Mobile from, int page ) : base ( 50, 50 ) 
+		public EmoteMiniGump ( Mobile from, int page ) : base ( 50, 50 )
 		{
-			from.CloseGump( typeof( EmoteMiniGump ) ); 
-			m_From = from; 
+			from.CloseGump( typeof( EmoteMiniGump ) );
+			m_From = from;
 			m_Page = page;
 
 			string color = "#dedede";
@@ -890,12 +890,12 @@ namespace Server.Commands
 				AddHtml( 35, i, 102, 20, @"<BODY><BASEFONT Color=" + color + ">Yell</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(0, i, 4005, 4005, v, GumpButtonType.Reply, 0); i=i+o; v++;
 			}
-		} 
+		}
 
-		public override void OnResponse( Server.Network.NetState sender, RelayInfo info ) 
+		public override void OnResponse( Server.Network.NetState sender, RelayInfo info )
 		{
 			Mobile from = m_From;
-			int type = info.ButtonID; 
+			int type = info.ButtonID;
 
 			if ( type > 49 )
 			{

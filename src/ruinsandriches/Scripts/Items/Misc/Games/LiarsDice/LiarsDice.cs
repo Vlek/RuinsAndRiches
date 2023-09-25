@@ -7,7 +7,7 @@ using Server.LiarsDice;
 
 namespace Server.Items
 {
-	public class LiarsDice : Item 
+	public class LiarsDice : Item
 	{
 		private const int GOLD_PER_GAME=50;
 		private const int GAME_BALANCE_MIN=100;
@@ -36,7 +36,7 @@ namespace Server.Items
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( !from.InRange( this.GetWorldLocation(), 2 ) )
-				return;		
+				return;
 			int val = Banker.GetBalance( from );
 			//make sure user has enough gold in bank
 			if(val >= GAME_BALANCE_MIN){

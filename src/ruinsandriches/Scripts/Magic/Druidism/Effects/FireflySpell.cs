@@ -13,16 +13,16 @@ namespace Server.Spells.Herbalist
       	public override double RequiredSkill{ get{ return 55.0; } }
       	public override int RequiredMana{ get{ return 0; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 1.0 ); } }
-		
+
 		public FireflySpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-		
+
 		public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-		
+
 		public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
@@ -36,12 +36,12 @@ namespace Server.Spells.Herbalist
 			else if ( CheckHSequence( m ) )
 			{
 				SpellHelper.Turn( Caster, m );
-				
+
 				SpellHelper.CheckReflect( 3, Caster, ref m );
-				
+
 				if ( m.Spell != null )
 					m.Spell.OnCasterHurt();
-				
+
 				m.Paralyzed = false;
 
 				if ( !Caster.CanBeHarmful( m, false ) )
@@ -122,12 +122,12 @@ namespace Server.Spells.Herbalist
 		private class InternalTarget : Target
 		{
 			private FireflySpell m_Owner;
-			
+
 			public InternalTarget( FireflySpell owner ) : base( 12, false, TargetFlags.Harmful )
 			{
 				m_Owner = owner;
 			}
-			
+
 			protected override void OnTarget( Mobile from, object o )
 			{
 				if ( o is Mobile )
@@ -135,7 +135,7 @@ namespace Server.Spells.Herbalist
 					m_Owner.Target( (Mobile)o );
 				}
 			}
-			
+
 			protected override void OnTargetFinish( Mobile from )
 			{
 				m_Owner.FinishSequence();

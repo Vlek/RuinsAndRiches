@@ -32,8 +32,8 @@ namespace Server.Items
 		{
 		}
 
-		public override bool CheckItemUse( Mobile from, Item item ) 
-		{ 
+		public override bool CheckItemUse( Mobile from, Item item )
+		{
 			if ( item != this )
 				return base.CheckItemUse( from, item );
 

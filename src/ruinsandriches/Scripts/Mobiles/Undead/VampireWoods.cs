@@ -6,19 +6,19 @@ using System.Collections;
 using Server.Regions;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a vampire corpse" )] 
-	public class VampireWoods : BaseCreature 
-	{ 
+namespace Server.Mobiles
+{
+	[CorpseName( "a vampire corpse" )]
+	public class VampireWoods : BaseCreature
+	{
 		public override WeaponAbility GetWeaponAbility()
 		{
 			return WeaponAbility.BleedAttack;
 		}
 
-		[Constructable] 
-		public VampireWoods() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public VampireWoods() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			Name = "a vampire";
 			Body = 124;
 

@@ -24,7 +24,7 @@ namespace Server.Guilds
 		{
 			m_Guild = g;
 			m_Player = pm;
-			
+
 			pm.CloseGump( typeof( BaseGuildGump ) );
 		}
 
@@ -125,7 +125,7 @@ namespace Server.Guilds
 					return false;
 			}
 
-			return true;			
+			return true;
 		}
 
 		public void AddHtmlText( int x, int y, int width, int height, TextDefinition text, bool back, bool scroll )

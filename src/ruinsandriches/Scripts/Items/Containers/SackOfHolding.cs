@@ -94,7 +94,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 		}
 
@@ -109,7 +109,7 @@ namespace Server.Items
 				i_SackOfHolding = bag;
 			}
 
-			public override void OnClick() 
+			public override void OnClick()
 			{
 				m_From.CloseGump( typeof( BagGump ) );
 				m_From.SendGump( new BagGump( m_From, i_SackOfHolding ) );
@@ -117,7 +117,7 @@ namespace Server.Items
 			}
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 

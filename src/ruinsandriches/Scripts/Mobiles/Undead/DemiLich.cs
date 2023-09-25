@@ -13,13 +13,13 @@ namespace Server.Mobiles
 		{
 			Name = NameList.RandomName( "evil mage" );
 			BaseSoundID = Utility.RandomList( 0x19C, 0x3E9 );
-			Body = 0x190; 
+			Body = 0x190;
 			Title = "the demilich";
 
 			if ( Utility.RandomMinMax( 0, 1 ) == 1 )
 			{
 				Name = NameList.RandomName( "evil witch" );
-				Body = 0x191; 
+				Body = 0x191;
 				BaseSoundID = 0x4B0;
 			}
 
@@ -215,7 +215,7 @@ namespace Server.Mobiles
 		public DemiLich( Serial serial ) : base( serial )
 		{
 		}
-    
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

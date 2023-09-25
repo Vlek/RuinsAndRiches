@@ -19,7 +19,7 @@ namespace Server.Items
 		public HiveTool() : this( 50 )
 		{
 		}
-		
+
 		[Constructable]
 		public HiveTool( int uses ) : base( 2549 )
 		{
@@ -52,7 +52,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick(Mobile from)
 		{
-			from.PrivateOverheadMessage( 0, 1154, false,  "This tool is used to harvest resources from a beehive.", from.NetState );				
+			from.PrivateOverheadMessage( 0, 1154, false,  "This tool is used to harvest resources from a beehive.", from.NetState );
 		}
 
 		public override void Serialize( GenericWriter writer )

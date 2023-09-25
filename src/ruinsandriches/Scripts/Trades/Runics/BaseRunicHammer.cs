@@ -72,7 +72,7 @@ namespace Server.Items
 		[Constructable]
 		public BronzeHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public BronzeHammer( int uses ) : base( CraftResource.Bronze )
@@ -106,7 +106,7 @@ namespace Server.Items
 		[Constructable]
 		public CopperHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public CopperHammer( int uses ) : base( CraftResource.Copper )
@@ -140,7 +140,7 @@ namespace Server.Items
 		[Constructable]
 		public DullCopperHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public DullCopperHammer( int uses ) : base( CraftResource.DullCopper )
@@ -174,7 +174,7 @@ namespace Server.Items
 		[Constructable]
 		public GoldHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public GoldHammer( int uses ) : base( CraftResource.Gold )
@@ -208,7 +208,7 @@ namespace Server.Items
 		[Constructable]
 		public ShadowIronHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public ShadowIronHammer( int uses ) : base( CraftResource.ShadowIron )
@@ -242,7 +242,7 @@ namespace Server.Items
 		[Constructable]
 		public ValoriteHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public ValoriteHammer( int uses ) : base( CraftResource.Valorite )
@@ -276,7 +276,7 @@ namespace Server.Items
 		[Constructable]
 		public VeriteHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public VeriteHammer( int uses ) : base( CraftResource.Verite )
@@ -310,7 +310,7 @@ namespace Server.Items
 		[Constructable]
 		public AgapiteHammer() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public AgapiteHammer( int uses ) : base( CraftResource.Agapite )

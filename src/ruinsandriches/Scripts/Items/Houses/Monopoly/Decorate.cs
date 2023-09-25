@@ -370,7 +370,7 @@ namespace Server.Commands
 						unlit = true;
 					else if ( !unprotected && m_Params[i] == "Unprotected" )
 						unprotected = true;
-					
+
 					if ( unlit && unprotected )
 						break;
 				}

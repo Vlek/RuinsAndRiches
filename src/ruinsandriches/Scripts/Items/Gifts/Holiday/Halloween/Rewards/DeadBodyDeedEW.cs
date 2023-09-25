@@ -10,7 +10,7 @@ namespace Server.Items
 		[Constructable]
 		public DeadBodyEWAddon()
 		{
-			Name = "Dead Body";       
+			Name = "Dead Body";
 			AddComponent( new AddonComponent( 7451 ), 0, 0, 0 );
 			AddComponent( new AddonComponent( 7452 ), -1, 0, 0 );
 			AddComponent( new AddonComponent( 7450 ), 1, 0, 0 );

@@ -1,28 +1,28 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using System.Globalization;
-using Server.Items; 
-using Server.Misc; 
-using Server.Network; 
-using Server.Spells; 
-using Server.Spells.Syth; 
+using Server.Items;
+using Server.Misc;
+using Server.Network;
+using Server.Spells;
+using Server.Spells.Syth;
 using Server.Prompts;
 
-namespace Server.Gumps 
-{ 
-	public class SythSpellbookGump : Gump 
+namespace Server.Gumps
+{
+	public class SythSpellbookGump : Gump
 	{
-		private SythSpellbook m_Book; 
+		private SythSpellbook m_Book;
 
 		public bool HasSpell( int spellID )
 		{
 			return (m_Book.HasSpell(spellID));
 		}
 
-		public SythSpellbookGump( Mobile from, SythSpellbook book, int page ) : base( 25, 25 ) 
+		public SythSpellbookGump( Mobile from, SythSpellbook book, int page ) : base( 25, 25 )
 		{
-			m_Book = book; 
+			m_Book = book;
 
             this.Closable=true;
 			this.Disposable=true;
@@ -82,63 +82,63 @@ namespace Server.Gumps
 				AddHtml( 145, 380, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 270, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 380, 4011, 4011, 270, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 271 ) ){ wordColor = "#00FF06"; AddButton(100, 430, 4005, 4005, 371, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 430, 4005 ); }
 				AddItem(60, 427, 19679);
 				AddHtml( 145, 430, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 271, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 430, 4011, 4011, 271, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 272 ) ){ wordColor = "#00FF06"; AddButton(100, 480, 4005, 4005, 372, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 480, 4005 ); }
 				AddItem(60, 477, 19679);
 				AddHtml( 145, 480, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 272, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 480, 4011, 4011, 272, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 273 ) ){ wordColor = "#00FF06"; AddButton(100, 530, 4005, 4005, 373, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 530, 4005 ); }
 				AddItem(60, 527, 19679);
 				AddHtml( 145, 530, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 273, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 530, 4011, 4011, 273, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 274 ) ){ wordColor = "#00FF06"; AddButton(100, 580, 4005, 4005, 374, GumpButtonType.Reply, 0); }
 				else { AddImage(100, 580, 4005 ); }
 				AddItem(60, 577, 19679);
 				AddHtml( 145, 580, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 274, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(305, 580, 4011, 4011, 274, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 275 ) ){ wordColor = "#00FF06"; AddButton(470, 380, 4005, 4005, 375, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 380, 4005 ); }
 				AddItem(430, 377, 19679);
 				AddHtml( 515, 380, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 275, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 380, 4011, 4011, 275, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 276 ) ){ wordColor = "#00FF06"; AddButton(470, 430, 4005, 4005, 376, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 430, 4005 ); }
 				AddItem(430, 427, 19679);
 				AddHtml( 515, 430, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 276, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 430, 4011, 4011, 276, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 277 ) ){ wordColor = "#00FF06"; AddButton(470, 480, 4005, 4005, 377, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 480, 4005 ); }
 				AddItem(430, 477, 19679);
 				AddHtml( 515, 480, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 277, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 480, 4011, 4011, 277, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 278 ) ){ wordColor = "#00FF06"; AddButton(470, 530, 4005, 4005, 378, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 530, 4005 ); }
 				AddItem(430, 527, 19679);
 				AddHtml( 515, 530, 154, 20, @"<BODY><BASEFONT Color=" + wordColor + ">" + Server.Spells.Syth.SythSpell.SpellInfo( 278, 1 ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 				AddButton(675, 530, 4011, 4011, 278, GumpButtonType.Reply, 0);
 
-				wordColor = "#FF0000"; 
+				wordColor = "#FF0000";
 				if ( HasSpell( from, 279 ) ){ wordColor = "#00FF06"; AddButton(470, 580, 4005, 4005, 379, GumpButtonType.Reply, 0); }
 				else { AddImage(470, 580, 4005 ); }
 				AddItem(430, 577, 19679);
@@ -176,23 +176,23 @@ namespace Server.Gumps
 				Region reg = Region.Find( from.Location, from.Map );
 
 				if ( !Server.Misc.GetPlayerInfo.isSyth ( from, false ) || from.Skills[SkillName.Psychology].Value < 100 || from.Skills[SkillName.Tactics].Value < 100 || from.Skills[SkillName.Swords].Value < 100 || from.Fame < 15000 || from.Karma > -15000 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#FF0000>You lack the attributes as a Syth to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( !( reg.IsPartOf( "the Tomb of Malak the Syth Lord" ) ) )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#FF0000>You need to be at Malak's tomb to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( m_Book.steel < 1 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#FF0000>You need a piece of durasteel to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( m_Book.gem < 1 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#FF0000>You need an ordinary gem to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else if ( GetWealth( from ) < 10000 )
-				{ 
+				{
 					AddHtml( 281, 182, 430, 20, @"<BODY><BASEFONT Color=#FF0000>You need 10,000 gold to construct a laser sword.</BASEFONT></BODY>", (bool)false, (bool)false);
 				}
 				else
@@ -318,9 +318,9 @@ namespace Server.Gumps
 			return ( book != null && book.HasSpell( spellID ) );
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 
 			if ( info.ButtonID >= 270 && info.ButtonID < 280 )
 			{

@@ -16,21 +16,21 @@ namespace Server.Spells.HolyMan
 				266,
 				9040
             );
- 
+
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 3 ); } }
 		public override int RequiredTithing{ get{ return 400; } }
 		public override double RequiredSkill{ get{ return 80.0; } }
 		public override int RequiredMana{ get{ return 40; } }
- 
+
         public RebirthSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
         {
         }
- 
+
         public override void OnCast()
         {
             Caster.Target = new InternalTarget( this );
         }
- 
+
         public void Target( Mobile m )
         {
             if ( !Caster.CanSee( m ) )
@@ -84,10 +84,10 @@ namespace Server.Spells.HolyMan
             else if ( m is PlayerMobile && CheckBSequence( m, true ) )
             {
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16 );
- 
+
                 m.CloseGump( typeof( ResurrectGump ) );
                 m.SendGump( new ResurrectGump( m, Caster ) );
 				DrainSoulsInSymbol( Caster, RequiredTithing );
@@ -97,10 +97,10 @@ namespace Server.Spells.HolyMan
 				BaseCreature pet = (BaseCreature)m;
 				Mobile master = pet.GetMaster();
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16 );
- 
+
                 master.CloseGump(typeof(PetResurrectGump));
                 master.SendGump(new PetResurrectGump(master, pet));
 				DrainSoulsInSymbol( Caster, RequiredTithing );
@@ -180,16 +180,16 @@ namespace Server.Spells.HolyMan
 			}
             FinishSequence();
 		}
- 
+
         private class InternalTarget : Target
         {
             private RebirthSpell m_Owner;
- 
+
             public InternalTarget( RebirthSpell owner ) : base( 1, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )
@@ -201,7 +201,7 @@ namespace Server.Spells.HolyMan
                     m_Owner.ItemTarget( (Item)o );
                 }
             }
- 
+
             protected override void OnTargetFinish( Mobile from )
             {
                 m_Owner.FinishSequence();

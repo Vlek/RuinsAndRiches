@@ -5,7 +5,7 @@ namespace Server.Items
 	public class AppleTrunkAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed { get { return new AppleTrunkDeed(); } }
-		
+
 		[Constructable]
 		public AppleTrunkAddon() : base()
 		{

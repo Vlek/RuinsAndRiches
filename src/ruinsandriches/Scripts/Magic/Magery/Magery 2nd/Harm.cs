@@ -50,7 +50,7 @@ namespace Server.Spells.Second
 				{
 					nBenefit = (int)(Caster.Skills[SkillName.Magery].Value / 5);
 				}
-				
+
 				double damage = GetNewAosDamage( 17, 1, 5, m ) + nBenefit;
 
 				if ( !m.InRange( Caster, 2 ) )

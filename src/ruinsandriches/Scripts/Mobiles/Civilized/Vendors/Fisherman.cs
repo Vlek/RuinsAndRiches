@@ -21,8 +21,8 @@ namespace Server.Mobiles
 		public override void InitSBInfo()
 		{
 			m_SBInfos.Add( new SBFisherman() );
-			m_SBInfos.Add( new SBSailor() ); 
-			m_SBInfos.Add( new SBHighSeas() ); 
+			m_SBInfos.Add( new SBSailor() );
+			m_SBInfos.Add( new SBHighSeas() );
 		}
 
 		public override void InitOutfit()

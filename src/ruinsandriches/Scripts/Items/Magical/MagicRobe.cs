@@ -47,7 +47,7 @@ namespace Server.Items
 				case 19: ItemID = Utility.RandomList( 0x201D, 0x201E ); Name = "vampire robe"; break;
 				case 20: ItemID = 0x567E; Name = "pirate coat"; break;
 				case 21: ItemID = 0x567D; Name = "vagabond robe"; break;
-				case 22: ItemID = Utility.RandomList( 0x2799, 0x27E4 ); 
+				case 22: ItemID = Utility.RandomList( 0x2799, 0x27E4 );
 					switch( Utility.RandomMinMax( 1, 5 ) )
 					{
 						case 1: Name = "sorcerer robe"; break;

@@ -162,7 +162,7 @@ namespace Server.Items
 							from.PlaySound( 0x54B );
 							m_Key.Consume();
 						}
-						else 
+						else
 						{
 							from.SendMessage( "The lock seems too secure for this key card." );
 						}
@@ -200,7 +200,7 @@ namespace Server.Items
 							from.PlaySound( 0x241 );
 							m_Key.Consume();
 						}
-						else 
+						else
 						{
 							from.SendMessage( "The lock seems too complicated for this key." );
 						}

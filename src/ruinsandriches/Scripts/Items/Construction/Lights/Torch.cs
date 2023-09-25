@@ -10,7 +10,7 @@ namespace Server.Items
 
 		public override int LitSound{ get { return 0x54; } }
 		public override int UnlitSound{ get { return 0x4BB; } }
-		
+
 		[Constructable]
 		public Torch() : base( 0xF6B )
 		{

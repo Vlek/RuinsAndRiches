@@ -23,24 +23,24 @@ namespace Server.Network
 		{
 			PacketHandlers.RegisterExtended( 0x2C,  true, new OnPacketReceive( BandageRequest ) );
 		}
-		
+
 		public static void BandageRequest( NetState state, PacketReader pvSrc )
 		{
 			Mobile from = state.Mobile;
-			
+
 			if ( from.AccessLevel >= AccessLevel.Counselor || DateTime.Now >= from.NextActionTime )
 			{
 				Serial use = pvSrc.ReadInt32();
 				Serial targ = pvSrc.ReadInt32();
-				
+
 				Bandage bandage = World.FindItem( use ) as Bandage;
-				
+
 				if( bandage != null && from.InRange( bandage.GetWorldLocation(), Core.AOS ? 2 : 1 ) )
 				{
 					from.RevealingAction();
-					
+
 					Mobile to = World.FindMobile(targ);
-					
+
 					if ( to != null )
 					{
 						if ( from.InRange( bandage.GetWorldLocation(), Core.AOS ? 2 : 1 ) )
@@ -57,8 +57,8 @@ namespace Server.Network
 					{
 						from.SendLocalizedMessage( 500970 ); // Bandages can not be used on that.
 					}
-					
-					from.NextActionTime = DateTime.Now + TimeSpan.FromSeconds( 0.5 );			
+
+					from.NextActionTime = DateTime.Now + TimeSpan.FromSeconds( 0.5 );
 				}
 			}
 			else

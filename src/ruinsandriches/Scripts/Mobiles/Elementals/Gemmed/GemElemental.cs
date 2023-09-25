@@ -70,7 +70,7 @@ namespace Server.Mobiles
 
 			AddItem( new LightSource() );
 		}
-	
+
 		public override void OnDeath( Container c )
 		{
 			base.OnDeath( c );

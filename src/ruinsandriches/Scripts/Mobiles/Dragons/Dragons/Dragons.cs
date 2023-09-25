@@ -23,7 +23,7 @@ namespace Server.Mobiles
 		public Dragons ( int body, int hue ) : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			rBody = body;
-			Hue = hue; 
+			Hue = hue;
 			BaseSoundID = 362;
 		}
 
@@ -139,7 +139,7 @@ namespace Server.Mobiles
 				else if ( Server.Misc.Worlds.IsFireDungeon( this.Location, this.Map ) ){		category = "fire"; }
 				else if ( Server.Misc.Worlds.IsIceDungeon( this.Location, this.Map ) ){			category = "snow"; }
 				else if ( Server.Misc.Worlds.IsSeaDungeon( this.Location, this.Map ) ){			category = "sea"; }
-				else if ( Server.Misc.Worlds.TestTile ( this.Map, this.X, this.Y, "dirt" ) 
+				else if ( Server.Misc.Worlds.TestTile ( this.Map, this.X, this.Y, "dirt" )
 						&& Server.Misc.Worlds.TestMountain ( this.Map, this.X, this.Y, 15 ) ){	category = "mountain"; }
 				else if ( Server.Misc.Worlds.TestMountain ( this.Map, this.X, this.Y, 10 ) ){ 	category = "mountain"; }
 				else if ( Server.Misc.Worlds.TestOcean ( this.Map, this.X, this.Y, 15 ) ){ 		category = "sea"; }
@@ -484,31 +484,31 @@ namespace Server.Mobiles
 					return ( FoodType.Moon );
 
 				else if ( rFood == "fire_meat" )
-					return FoodType.Fire | FoodType.Meat; 
+					return FoodType.Fire | FoodType.Meat;
 
 				else if ( rFood == "fish_sea" )
-					return FoodType.Fish | FoodType.Sea; 
+					return FoodType.Fish | FoodType.Sea;
 
 				else if ( rFood == "gems_fire" )
-					return FoodType.Gems | FoodType.Fire; 
+					return FoodType.Gems | FoodType.Fire;
 
 				else if ( rFood == "gems_gold" )
-					return FoodType.Gems | FoodType.Gold; 
+					return FoodType.Gems | FoodType.Gold;
 
 				else if ( rFood == "gems_meat" )
-					return FoodType.Gems | FoodType.Meat; 
+					return FoodType.Gems | FoodType.Meat;
 
 				else if ( rFood == "gems_moon" )
-					return FoodType.Gems | FoodType.Moon; 
+					return FoodType.Gems | FoodType.Moon;
 
 				else if ( rFood == "meat_nox" )
-					return FoodType.Meat | FoodType.Nox; 
+					return FoodType.Meat | FoodType.Nox;
 
 				else if ( rFood == "moon_fire" )
-					return FoodType.Moon | FoodType.Fire; 
+					return FoodType.Moon | FoodType.Fire;
 
 				else if ( rFood == "nox_fire" )
-					return FoodType.Nox | FoodType.Fire; 
+					return FoodType.Nox | FoodType.Fire;
 
 				return ( FoodType.Meat );
 			}
@@ -568,7 +568,7 @@ namespace Server.Mobiles
 				else if ( terrain == "snow" ){ dragon = Utility.RandomMinMax( 131, 138 ); }
 				else if ( terrain == "sea" )
 				{
-					dragon = Utility.RandomMinMax( 120, 130 ); 
+					dragon = Utility.RandomMinMax( 120, 130 );
 					if ( Utility.RandomMinMax( 1, 20 ) == 1 ){ dragon = 16; }
 				}
 				else if ( terrain == "radiation" ){ dragon = Utility.RandomList( 5, 6, 7, 54, 97, 104, 106, 146 ); }

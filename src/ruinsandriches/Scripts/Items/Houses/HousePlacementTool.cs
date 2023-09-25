@@ -507,12 +507,12 @@ namespace Server.Items
 						/* You are about to place a new house.
 						 * Placing this house will condemn any and all of your other houses that you may have.
 						 * All of your houses on all shards will be affected.
-						 * 
+						 *
 						 * In addition, you will not be able to place another house or have one transferred to you for one (1) real-life week.
-						 * 
+						 *
 						 * Once you accept these terms, these effects cannot be reversed.
 						 * Re-deeding or transferring your new house will not uncondemn your other house(s) nor will the one week timer be removed.
-						 * 
+						 *
 						 * If you are absolutely certain you wish to proceed, click the button next to OKAY below.
 						 * If you do not wish to trade for this house, click CANCEL.
 						 */

@@ -14,12 +14,12 @@ namespace Server.Spells.Undead
 		public NecroPoisonSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-		
+
 		public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-		
+
 		public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
@@ -29,14 +29,14 @@ namespace Server.Spells.Undead
 			else if ( CheckHSequence( m ) )
 			{
 				SpellHelper.Turn( Caster, m );
-				
+
 				SpellHelper.CheckReflect( 3, Caster, ref m );
-				
+
 				if ( m.Spell != null )
 					m.Spell.OnCasterHurt();
-				
+
 				m.Paralyzed = false;
-				
+
 				if ( CheckResisted( m ) )
 				{
 					m.SendLocalizedMessage( 501783 ); // You feel yourself resisting magical energy.
@@ -44,11 +44,11 @@ namespace Server.Spells.Undead
 				else
 				{
 					int level;
-					
+
 					if ( Caster.InRange( m, 2 ) && Caster.Map == m.Map )
 					{
 						int total = (Caster.Skills.Necromancy.Fixed + Caster.Skills.Poisoning.Fixed + Server.Items.BasePotion.EnhancePotions( Caster )) / 2;
-						
+
 						if ( total >= 1000 )
 							level = 3;
 						else if ( total > 850 )
@@ -62,14 +62,14 @@ namespace Server.Spells.Undead
 					{
 						level = 0;
 					}
-					
+
 					m.ApplyPoison( Caster, Poison.GetPoison( level ) );
 				}
-				
+
 				m.FixedParticles( 0x374A, 10, 15, 5021, EffectLayer.Waist );
 				m.PlaySound( 0x474 );
 			}
-			
+
 			FinishSequence();
 		}
 
@@ -106,16 +106,16 @@ namespace Server.Spells.Undead
 		{
 			return GetResistPercentForCircle( target );
 		}
-		
+
 		private class InternalTarget : Target
 		{
 			private NecroPoisonSpell m_Owner;
-			
+
 			public InternalTarget( NecroPoisonSpell owner ) : base( 12, false, TargetFlags.Harmful )
 			{
 				m_Owner = owner;
 			}
-			
+
 			protected override void OnTarget( Mobile from, object o )
 			{
 				if ( o is Mobile )
@@ -123,7 +123,7 @@ namespace Server.Spells.Undead
 					m_Owner.Target( (Mobile)o );
 				}
 			}
-			
+
 			protected override void OnTargetFinish( Mobile from )
 			{
 				m_Owner.FinishSequence();

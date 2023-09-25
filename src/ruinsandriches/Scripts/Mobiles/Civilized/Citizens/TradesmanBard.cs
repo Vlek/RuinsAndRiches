@@ -196,10 +196,10 @@ namespace Server.Items
 						string dungeon = RandomThings.MadeUpDungeon();
 							if ( Utility.RandomBool() ){ dungeon = QuestCharacters.SomePlace( null ); }
 
-						string city = RandomThings.GetRandomCity();	
+						string city = RandomThings.GetRandomCity();
 							if ( Utility.RandomBool() ){ city = RandomThings.MadeUpCity(); }
 
-						string singer = "written";	
+						string singer = "written";
 						switch( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 1: singer = "created"; break;
@@ -207,7 +207,7 @@ namespace Server.Items
 							case 3: singer = "composed"; break;
 						}
 
-						string book = "written on a scroll";	
+						string book = "written on a scroll";
 						switch( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 1: book = "carved on a tablet"; break;
@@ -215,7 +215,7 @@ namespace Server.Items
 							case 3: book = "scrawled on a wall"; break;
 						}
 
-						string verb = "found";	
+						string verb = "found";
 						switch( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 1: verb = "discovered"; break;

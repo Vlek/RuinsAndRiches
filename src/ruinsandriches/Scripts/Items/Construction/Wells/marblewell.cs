@@ -15,7 +15,7 @@ namespace Server.Items
 			get{ return 500; }
 			set{}
 		}
-		
+
 		public override BaseAddonDeed Deed
 		{
 			get
@@ -28,7 +28,7 @@ namespace Server.Items
 		public MarbleWellAddon() : this( false )
 		{
 		}
-		
+
 		[Constructable]
 		public MarbleWellAddon( bool sandstone )
 		{
@@ -60,17 +60,17 @@ namespace Server.Items
 			AddComponent( new MarbleWellPiece(this, 3247 ), 2, 0, 1 );
 
 		}
-		
+
 		public MarbleWellAddon( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -79,11 +79,11 @@ namespace Server.Items
 	}
 
 	// component
-	
+
 	public class MarbleWellPiece : AddonComponent
 	{
 		private MarbleWellAddon m_marblewell;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public MarbleWellAddon marblewell
 		{
@@ -95,7 +95,7 @@ namespace Server.Items
 		{
 			m_marblewell = marblewell;
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( from.InRange( m_marblewell.GetWorldLocation(), 4 ) )
@@ -107,34 +107,34 @@ namespace Server.Items
 				else
 				{
 					string msg = null;
-					
+
 					if ( m_marblewell == null )
 					{
 						from.SendMessage( "Debug: Parent was null" );
 						return;
 					}
-					
+
 					switch( Utility.RandomMinMax( 1, 5 ) )
 					{
-						case 1:  
+						case 1:
 							msg = "You drink your fill of the cool well water. The quiet sounds of splashing water are softly musical.";
 							break;
-						case 2:  
-							msg = "The well's invigorating water refreshes you and sets your mind at ease. You drink your fill.";	
+						case 2:
+							msg = "The well's invigorating water refreshes you and sets your mind at ease. You drink your fill.";
 							break;
-						case 3:  
+						case 3:
 							msg = "You drink deeply of the clean well water. The shimmering reflections on the surface stir your thoughts.";
 							break;
-						case 4:  
+						case 4:
 							msg = "As you drink from the water, an tantalizing scent reminds you of memories long forgotten.";
 							break;
-						case 5:  
+						case 5:
 							msg = "You drink from the pure well and quiet dreams of sylvan delight pass through your mind.";
 							break;
 					}
-						
+
 					from.SendMessage( msg );
-					
+
 					from.Thirst = 20;
 				}
 			}
@@ -143,28 +143,28 @@ namespace Server.Items
 				from.SendMessage( "Get closer." );
 			}
 		}
-		
-	
+
+
 		public MarbleWellPiece( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			
+
 			writer.Write( (int) 0 ); // version
-			
+
 			writer.Write( m_marblewell );
-			
+
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
-			
+
 			int version = reader.ReadInt();
-			
+
 			switch( version )
 			{
 				case 0: {

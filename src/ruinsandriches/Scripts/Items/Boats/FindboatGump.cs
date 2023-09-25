@@ -117,7 +117,7 @@ namespace Server.Gumps
 				int row;
 				btn = (index) + 101;
 				row = index % 12;
-		
+
 				BaseBoat boat = m_List[index] as BaseBoat;
 
 				AddLabel(32, 40 +(row * 20), 1152, String.Format( "{0}", boat.ShipName ));
@@ -157,7 +157,7 @@ namespace Server.Gumps
 
 				Point3D dest = new Point3D( x, y, z );
 				from.MoveToWorld( dest, boat.Map );
-				
+
 			}
 		}
 	}

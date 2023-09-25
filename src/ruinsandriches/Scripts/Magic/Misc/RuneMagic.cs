@@ -63,8 +63,8 @@ namespace Server.Items
 			bool foundYlem	= false; // Matter		- semi-common
 			bool foundZu	= false; // Sleep		- semi-common
 
-			foreach( Item I in bag.Items ) 
-			{ 
+			foreach( Item I in bag.Items )
+			{
 				if      ( I is An )
 					foundAn		= true;
 				else if ( I is Bet )
@@ -366,39 +366,39 @@ namespace Server.Items
 				m_SpellID = 55;
 
 // Captain the First was the First one to code the 8th circle spells and publish them!
-/// Eighth  circle   //////////////////////////////////////////// 
+/// Eighth  circle   ////////////////////////////////////////////
 
-// "Earthquake", "In Vas Por" 
-         if ( ( foundIn && foundVas && foundPor ) && bag.Items.Count == 3 ) 
-            m_SpellID = 56; 
+// "Earthquake", "In Vas Por"
+         if ( ( foundIn && foundVas && foundPor ) && bag.Items.Count == 3 )
+            m_SpellID = 56;
 
-// "Energy Vortex", "Vas Corp Por" 
-         if ( ( foundVas && foundCorp && foundPor ) && bag.Items.Count == 3 ) 
-            m_SpellID = 57; 
+// "Energy Vortex", "Vas Corp Por"
+         if ( ( foundVas && foundCorp && foundPor ) && bag.Items.Count == 3 )
+            m_SpellID = 57;
 
-// "Resurrection", "An Corp" 
-         if ( ( foundAn && foundCorp ) && bag.Items.Count == 2 ) 
-            m_SpellID = 58; 
+// "Resurrection", "An Corp"
+         if ( ( foundAn && foundCorp ) && bag.Items.Count == 2 )
+            m_SpellID = 58;
 
-// "Air Elemental", "Kal Vas Xen Hur" 
-         if ( ( foundKal && foundVas && foundXen && foundHur ) && bag.Items.Count ==  4 ) 
-            m_SpellID = 59; 
+// "Air Elemental", "Kal Vas Xen Hur"
+         if ( ( foundKal && foundVas && foundXen && foundHur ) && bag.Items.Count ==  4 )
+            m_SpellID = 59;
 
-// "Summon Daemon", "Kal Vas Xen Corp" 
-         if ( ( foundKal && foundVas && foundXen && foundCorp ) && bag.Items.Count ==  4 ) 
-            m_SpellID = 60; 
+// "Summon Daemon", "Kal Vas Xen Corp"
+         if ( ( foundKal && foundVas && foundXen && foundCorp ) && bag.Items.Count ==  4 )
+            m_SpellID = 60;
 
-// "Earth Elemental", "Kal Vas Xen Ylem" 
-         if ( ( foundKal && foundVas && foundXen && foundYlem ) && bag.Items.Count ==  4 ) 
-            m_SpellID = 61; 
+// "Earth Elemental", "Kal Vas Xen Ylem"
+         if ( ( foundKal && foundVas && foundXen && foundYlem ) && bag.Items.Count ==  4 )
+            m_SpellID = 61;
 
-// "Fire Elemental", "Kal Vas Xen Flam" 
-         if ( ( foundKal && foundVas && foundXen && foundFlam ) && bag.Items.Count ==  4 ) 
-            m_SpellID = 62; 
+// "Fire Elemental", "Kal Vas Xen Flam"
+         if ( ( foundKal && foundVas && foundXen && foundFlam ) && bag.Items.Count ==  4 )
+            m_SpellID = 62;
 
-// "Water Elemental", "Kal Vas Xen An Flam" 
-         if ( ( foundKal && foundVas && foundXen && foundAn && foundFlam ) && bag.Items.Count ==  5 ) 
-            m_SpellID = 63; 
+// "Water Elemental", "Kal Vas Xen An Flam"
+         if ( ( foundKal && foundVas && foundXen && foundAn && foundFlam ) && bag.Items.Count ==  5 )
+            m_SpellID = 63;
 
 //FIST Start Necromancy Spells
 
@@ -453,7 +453,7 @@ namespace Server.Items
 // "Vampiric Embrace", Rel Xen An Sanct
 		 if ( ( foundRel && foundXen && foundAn && foundSanct ) && bag.Items.Count == 4 )
 			 m_SpellID = 112;
-		 
+
 /// end spells /////////////////////////////////////
 
          if ( foundBet || foundTym || foundZu )  // currently unused.
@@ -488,31 +488,31 @@ namespace Server.Items
 				m.SendLocalizedMessage( 502345 ); // This spell has been temporarily disabled.
 		}
 
-		public class RuneBagMenu : ContextMenuEntry 
-		{ 
-			private RuneBag i_RuneBag; 
-			private Mobile m_From; 
+		public class RuneBagMenu : ContextMenuEntry
+		{
+			private RuneBag i_RuneBag;
+			private Mobile m_From;
 
-			public RuneBagMenu( Mobile from, RuneBag bag ) : base( 6122, 1 ) 
-			{ 
-				m_From = from; 
-				i_RuneBag = bag; 
-			} 
+			public RuneBagMenu( Mobile from, RuneBag bag ) : base( 6122, 1 )
+			{
+				m_From = from;
+				i_RuneBag = bag;
+			}
 
-			public override void OnClick() 
-			{          
-				if( i_RuneBag.IsChildOf( m_From.Backpack ) ) 
-				{ 
+			public override void OnClick()
+			{
+				if( i_RuneBag.IsChildOf( m_From.Backpack ) )
+				{
 					i_RuneBag.Open( m_From );
-				} 
-				else 
+				}
+				else
 				{
 					m_From.SendMessage( "This must be in your backpack to look through." );
-				} 
-			} 
-		} 
+				}
+			}
+		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 
@@ -522,8 +522,8 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if( this.IsChildOf( from.Backpack ) ) 
-			{ 
+			if( this.IsChildOf( from.Backpack ) )
+			{
 				this.RuneBagCast( from, this );
 			}
 			else
@@ -664,7 +664,7 @@ namespace Server.Items
 			Name = "An";
 			ItemID = 0x2379;
 		}
-	
+
 		public An( Serial serial ) : base( serial )
 		{
 		}
@@ -690,7 +690,7 @@ namespace Server.Items
 			Name = "Bet";
 			ItemID = 0x237A;
 		}
-	
+
 		public Bet( Serial serial ) : base( serial )
 		{
 		}
@@ -716,7 +716,7 @@ namespace Server.Items
 			Name = "Corp";
 			ItemID = 0x237B;
 		}
-	
+
 		public Corp( Serial serial ) : base( serial )
 		{
 		}
@@ -742,7 +742,7 @@ namespace Server.Items
 			Name = "Des";
 			ItemID = 0x237C;
 		}
-	
+
 		public Des( Serial serial ) : base( serial )
 		{
 		}
@@ -768,7 +768,7 @@ namespace Server.Items
 			Name = "Ex";
 			ItemID = 0x237D;
 		}
-	
+
 		public Ex( Serial serial ) : base( serial )
 		{
 		}
@@ -794,7 +794,7 @@ namespace Server.Items
 			Name = "Flam";
 			ItemID = 0x2387;
 		}
-	
+
 		public Flam( Serial serial ) : base( serial )
 		{
 		}
@@ -820,7 +820,7 @@ namespace Server.Items
 			Name = "Grav";
 			ItemID = 0x2389;
 		}
-	
+
 		public Grav( Serial serial ) : base( serial )
 		{
 		}
@@ -846,7 +846,7 @@ namespace Server.Items
 			Name = "Hur";
 			ItemID = 0x238A;
 		}
-	
+
 		public Hur( Serial serial ) : base( serial )
 		{
 		}
@@ -872,7 +872,7 @@ namespace Server.Items
 			Name = "In";
 			ItemID = 0x2393;
 		}
-	
+
 		public In( Serial serial ) : base( serial )
 		{
 		}
@@ -898,7 +898,7 @@ namespace Server.Items
 			Name = "Jux";
 			ItemID = 0x2394;
 		}
-	
+
 		public Jux( Serial serial ) : base( serial )
 		{
 		}
@@ -924,7 +924,7 @@ namespace Server.Items
 			Name = "Kal";
 			ItemID = 0x2395;
 		}
-	
+
 		public Kal( Serial serial ) : base( serial )
 		{
 		}
@@ -950,7 +950,7 @@ namespace Server.Items
 			Name = "Lor";
 			ItemID = 0x2396;
 		}
-	
+
 		public Lor( Serial serial ) : base( serial )
 		{
 		}
@@ -1002,7 +1002,7 @@ namespace Server.Items
 			Name = "Nox";
 			ItemID = 0x238B;
 		}
-	
+
 		public Nox( Serial serial ) : base( serial )
 		{
 		}
@@ -1028,7 +1028,7 @@ namespace Server.Items
 			Name = "Ort";
 			ItemID = 0x2398;
 		}
-	
+
 		public Ort( Serial serial ) : base( serial )
 		{
 		}
@@ -1054,7 +1054,7 @@ namespace Server.Items
 			Name = "Por";
 			ItemID = 0x237F;
 		}
-	
+
 		public Por( Serial serial ) : base( serial )
 		{
 		}
@@ -1080,7 +1080,7 @@ namespace Server.Items
 			Name = "Quas";
 			ItemID = 0x2380;
 		}
-	
+
 		public Quas( Serial serial ) : base( serial )
 		{
 		}
@@ -1106,7 +1106,7 @@ namespace Server.Items
 			Name = "Rel";
 			ItemID = 0x2381;
 		}
-	
+
 		public Rel( Serial serial ) : base( serial )
 		{
 		}
@@ -1132,7 +1132,7 @@ namespace Server.Items
 			Name = "Sanct";
 			ItemID = 0x2382;
 		}
-	
+
 		public Sanct( Serial serial ) : base( serial )
 		{
 		}
@@ -1158,7 +1158,7 @@ namespace Server.Items
 			Name = "Tym";
 			ItemID = 0x2383;
 		}
-	
+
 		public Tym( Serial serial ) : base( serial )
 		{
 		}
@@ -1184,7 +1184,7 @@ namespace Server.Items
 			Name = "Uus";
 			ItemID = 0x2384;
 		}
-	
+
 		public Uus( Serial serial ) : base( serial )
 		{
 		}
@@ -1210,7 +1210,7 @@ namespace Server.Items
 			Name = "Vas";
 			ItemID = 0x2385;
 		}
-	
+
 		public Vas( Serial serial ) : base( serial )
 		{
 		}
@@ -1236,7 +1236,7 @@ namespace Server.Items
 			Name = "Wis";
 			ItemID = 0x2399;
 		}
-	
+
 		public Wis( Serial serial ) : base( serial )
 		{
 		}
@@ -1262,7 +1262,7 @@ namespace Server.Items
 			Name = "Xen";
 			ItemID = 0x239C;
 		}
-	
+
 		public Xen( Serial serial ) : base( serial )
 		{
 		}
@@ -1288,7 +1288,7 @@ namespace Server.Items
 			Name = "Ylem";
 			ItemID = 0x239D;
 		}
-	
+
 		public Ylem( Serial serial ) : base( serial )
 		{
 		}
@@ -1314,7 +1314,7 @@ namespace Server.Items
 			Name = "Zu";
 			ItemID = 0x239E;
 		}
-	
+
 		public Zu( Serial serial ) : base( serial )
 		{
 		}
@@ -1344,283 +1344,283 @@ namespace Server.Items
 			Hue = Utility.RandomColor(0);
 			ItemID = 0x2255;
 
-			// NOTE: There are 8 lines per page and 
-			// approx 22 to 24 characters per line! 
-			//	0----+----1----+----2----+ 
-			int cnt = 0; 
-			string[] lines; 
-			lines = new string[] 
-			{ 
-				"     Rune Magic", 
-				"     by Garamon", 
-				"", 
-				"With reagents being rare", 
-				"in the Abyss, I began to", 
+			// NOTE: There are 8 lines per page and
+			// approx 22 to 24 characters per line!
+			//	0----+----1----+----2----+
+			int cnt = 0;
+			string[] lines;
+			lines = new string[]
+			{
+				"     Rune Magic",
+				"     by Garamon",
+				"",
+				"With reagents being rare",
+				"in the Abyss, I began to",
 				"research other ways to",
 				"cast magery spells. I",
-				"have found various old", 
-			}; 
+				"have found various old",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"stone tablets here that", 
-				"describe the use of rune", 
-				"stones in this manner.", 
-				"One must find a rune of", 
-				"marked with the symbols", 
-				"needed to speak the", 
-				"mantra for the spell.", 
-				"Once the correct ones", 
-			}; 
+			lines = new string[]
+			{
+				"stone tablets here that",
+				"describe the use of rune",
+				"stones in this manner.",
+				"One must find a rune of",
+				"marked with the symbols",
+				"needed to speak the",
+				"mantra for the spell.",
+				"Once the correct ones",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"are assembled they must", 
-				"be placed in a magical", 
-				"rune bag where one can", 
-				"then use the sack to", 
-				"unleash the magic power", 
-				"of the spell. This is", 
-				"by no means a simple", 
-				"process, as gathering", 
-			}; 
+			lines = new string[]
+			{
+				"are assembled they must",
+				"be placed in a magical",
+				"rune bag where one can",
+				"then use the sack to",
+				"unleash the magic power",
+				"of the spell. This is",
+				"by no means a simple",
+				"process, as gathering",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"the runes can be quite", 
-				"tedious, but it is a", 
-				"way to cast spells in", 
-				"a pinch. The runes and", 
-				"bag seem to bind with", 
-				"the caster as I thought", 
-				"I lost them at one", 
-				"point, but they seemed", 
-			}; 
+			lines = new string[]
+			{
+				"the runes can be quite",
+				"tedious, but it is a",
+				"way to cast spells in",
+				"a pinch. The runes and",
+				"bag seem to bind with",
+				"the caster as I thought",
+				"I lost them at one",
+				"point, but they seemed",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"to have come back to me", 
-				"as if magically. Though", 
-				"I could lose my spell", 
-				"book and reagents, the", 
-				"runes allow me to still", 
-				"work with spells. I", 
-				"have been searching for", 
-				"a spell to summon a", 
-			}; 
+			lines = new string[]
+			{
+				"to have come back to me",
+				"as if magically. Though",
+				"I could lose my spell",
+				"book and reagents, the",
+				"runes allow me to still",
+				"work with spells. I",
+				"have been searching for",
+				"a spell to summon a",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"daemon for years now.", 
-				"I have already found the", 
-				"runes that will allow me", 
-				"to cast such a spell", 
-				"without the need of a", 
-				"rare scroll. Many mages", 
-				"scoff at the use of", 
-				"runes, but to me they", 
-			}; 
+			lines = new string[]
+			{
+				"daemon for years now.",
+				"I have already found the",
+				"runes that will allow me",
+				"to cast such a spell",
+				"without the need of a",
+				"rare scroll. Many mages",
+				"scoff at the use of",
+				"runes, but to me they",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"are becoming a valuable", 
-				"arcana that I have not", 
-				"been able to do without.", 
-				"I will attempt to write", 
-				"my findings on these", 
-				"ancient ways to cast", 
-				"magic spells so others", 
-				"may one day benefit.", 
-			}; 
+			lines = new string[]
+			{
+				"are becoming a valuable",
+				"arcana that I have not",
+				"been able to do without.",
+				"I will attempt to write",
+				"my findings on these",
+				"ancient ways to cast",
+				"magic spells so others",
+				"may one day benefit.",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"     Rune Magic", 
-				"     by Garamon", 
-				"", 
-				"The following is all of", 
-				"my research on rune", 
+			lines = new string[]
+			{
+				"     Rune Magic",
+				"     by Garamon",
+				"",
+				"The following is all of",
+				"my research on rune",
 				"magic, the known spells,",
 				"and the rune symbols.",
-				"", 
-			}; 
+				"",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"     Rune Bags", 
-				"", 
-				"Rune bags and runes are", 
-				"imbued with the power to", 
-				"assist the caster in the", 
-				"casting of a spell without", 
-				"the need of reagents.", 
-				"", 
-			}; 
+			lines = new string[]
+			{
+				"     Rune Bags",
+				"",
+				"Rune bags and runes are",
+				"imbued with the power to",
+				"assist the caster in the",
+				"casting of a spell without",
+				"the need of reagents.",
+				"",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"Place one of each", 
-				"required rune stone", 
-				"inside the rune bag", 
-				"by opening the bag.", 
-				"[click on the bag]", 
-				"and concentrate on the", 
-				"incantation of the spell.", 
-				"[double click the bag]", 
-			}; 
+			lines = new string[]
+			{
+				"Place one of each",
+				"required rune stone",
+				"inside the rune bag",
+				"by opening the bag.",
+				"[click on the bag]",
+				"and concentrate on the",
+				"incantation of the spell.",
+				"[double click the bag]",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"Following is a complete", 
-				"list of all known spells", 
-				"and the runes needed to", 
-				"cast them.", 
-				"Note that even with the", 
-				"runes, a mage must still", 
-				"have the will and power", 
-				"to cast the spell.", 
-			}; 
+			lines = new string[]
+			{
+				"Following is a complete",
+				"list of all known spells",
+				"and the runes needed to",
+				"cast them.",
+				"Note that even with the",
+				"runes, a mage must still",
+				"have the will and power",
+				"to cast the spell.",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"First Circle", 
-				" Clumsy", 
-				"    In Jux", 
+			lines = new string[]
+			{
+				"First Circle",
+				" Clumsy",
+				"    In Jux",
 				"",
 				"",
-				" Create Food", 
-				"    In Mani Ylem", 
-				"", 
-			}; 
+				" Create Food",
+				"    In Mani Ylem",
+				"",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"", 
-				" Feeblemind", 
-				"    Rel Wis", 
+			lines = new string[]
+			{
+				"",
+				" Feeblemind",
+				"    Rel Wis",
 				"",
 				"",
-				" Heal", 
-				"    In Mani", 
-				"", 
-			}; 
+				" Heal",
+				"    In Mani",
+				"",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"", 
-				" Magic Arrow", 
-				"    In Por Ylem", 
+			lines = new string[]
+			{
+				"",
+				" Magic Arrow",
+				"    In Por Ylem",
 				"",
 				"",
-				" Night Sight", 
-				"    In Lor", 
-				"", 
-			}; 
-			Pages[cnt++].Lines = lines;
-
-			lines = new string[] 
-			{ 
-				"", 
-				" Reactive Armor", 
-				"    Flam Sanct", 
+				" Night Sight",
+				"    In Lor",
 				"",
-				"", 
-				" Weaken", 
-				"    Des Mani", 
-				"", 
-			}; 
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"  Meanings of Runes", 
-				"", 
-				"An   - Negate/Dispel", 
-				"Bet  - Small", 
-				"Corp - Death", 
-				"Des  - Lower/Down", 
-				"Ex   - Freedom", 
-				"Flam - Flame", 
-			}; 
-			Pages[cnt++].Lines = lines; 
-
-			lines = new string[] 
-			{ 
-				"Grav - Energy/Field", 
-				"Hur  - Wind", 
-				"In   - Make/Create/Cause", 
-				"Jux  - Danger/Trap/Harm", 
-				"Kal  - Summon/Invoke", 
-				"Lor  - Light", 
-				"Mani - Life/Healing", 
-				"Nox  - Poison", 
-			}; 
+			lines = new string[]
+			{
+				"",
+				" Reactive Armor",
+				"    Flam Sanct",
+				"",
+				"",
+				" Weaken",
+				"    Des Mani",
+				"",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"Ort  - Magic", 
-				"Por  - Move/Movement", 
-				"Quas - Illusion", 
-				"Rel  - Change", 
-				"Sanct- Protection", 
-				"Tym  - Time", 
-				"Uus  - Raise/Up", 
-				"Vas  - Great", 
-			}; 
+			lines = new string[]
+			{
+				"  Meanings of Runes",
+				"",
+				"An   - Negate/Dispel",
+				"Bet  - Small",
+				"Corp - Death",
+				"Des  - Lower/Down",
+				"Ex   - Freedom",
+				"Flam - Flame",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"Wis  - Knowledge", 
-				"Xen  - Creature", 
-				"Ylem - Matter", 
-				"Zu   - Sleep", 
-				"", 
-				"Runes must be used in", 
-				"combinations to form", 
-				"spells of power!", 
-			}; 
+			lines = new string[]
+			{
+				"Grav - Energy/Field",
+				"Hur  - Wind",
+				"In   - Make/Create/Cause",
+				"Jux  - Danger/Trap/Harm",
+				"Kal  - Summon/Invoke",
+				"Lor  - Light",
+				"Mani - Life/Healing",
+				"Nox  - Poison",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"", 
-				"The meanings are the key!", 
-				"", 
-				"", 
-				"The following pages have", 
-				"been left blank for thee", 
-				"to take thy notes here.", 
-				"", 
-			}; 
+			lines = new string[]
+			{
+				"Ort  - Magic",
+				"Por  - Move/Movement",
+				"Quas - Illusion",
+				"Rel  - Change",
+				"Sanct- Protection",
+				"Tym  - Time",
+				"Uus  - Raise/Up",
+				"Vas  - Great",
+			};
 			Pages[cnt++].Lines = lines;
 
-			lines = new string[] 
-			{ 
-				"", 
-				"Go forth to learn", 
-				"the other spells.", 
-				"", 
-				"Best of luck in", 
-				"thy experiments!", 
-				"", 
-				" - Garamon", 
+			lines = new string[]
+			{
+				"Wis  - Knowledge",
+				"Xen  - Creature",
+				"Ylem - Matter",
+				"Zu   - Sleep",
+				"",
+				"Runes must be used in",
+				"combinations to form",
+				"spells of power!",
+			};
+			Pages[cnt++].Lines = lines;
 
-			}; 
+			lines = new string[]
+			{
+				"",
+				"The meanings are the key!",
+				"",
+				"",
+				"The following pages have",
+				"been left blank for thee",
+				"to take thy notes here.",
+				"",
+			};
+			Pages[cnt++].Lines = lines;
+
+			lines = new string[]
+			{
+				"",
+				"Go forth to learn",
+				"the other spells.",
+				"",
+				"Best of luck in",
+				"thy experiments!",
+				"",
+				" - Garamon",
+
+			};
 			Pages[cnt++].Lines = lines;
 		}
 

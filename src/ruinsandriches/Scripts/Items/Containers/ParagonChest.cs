@@ -88,7 +88,7 @@ namespace Server.Items
             base.GetProperties( list );
             list.Add( "A Cursed Chest From " + m_Name );
         }
-		
+
 		public void Flip()
 		{
 			switch ( ItemID )

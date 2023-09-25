@@ -53,9 +53,9 @@ namespace Server.Items
 				{
 					from.SendMessage( "These henchman wouldn't want the scrutiny." );
 				}
-				else if (	targeted is BaseVendor || targeted is BasePerson || targeted is Citizens || targeted is PackBeast || 
-							targeted is FrankenPorter || targeted is FrankenFighter || targeted is HenchmanFamiliar || targeted is AerialServant || 
-							targeted is GolemPorter || targeted is Robot || targeted is GolemFighter || targeted is HenchmanArcher || 
+				else if (	targeted is BaseVendor || targeted is BasePerson || targeted is Citizens || targeted is PackBeast ||
+							targeted is FrankenPorter || targeted is FrankenFighter || targeted is HenchmanFamiliar || targeted is AerialServant ||
+							targeted is GolemPorter || targeted is Robot || targeted is GolemFighter || targeted is HenchmanArcher ||
 							targeted is HenchmanMonster || targeted is HenchmanFighter || targeted is HenchmanWizard )
 				{
 					from.SendMessage( "They don't seem to be in this book." );

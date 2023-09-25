@@ -40,10 +40,10 @@ namespace Server.Mobiles
 		public override void InitSBInfo()
 		{
 			SBInfos.Add( new SBBowyer() );
-			SBInfos.Add( new SBRangedWeapon() ); 
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBRangedWeapon() );
+			SBInfos.Add( new SBBuyArtifacts() );
 			SBInfos.Add( new SBLotsOfArrows() );
-			SBInfos.Add( new SBProvisioner() ); 
+			SBInfos.Add( new SBProvisioner() );
 		}
 
 		public RangerGuildmaster( Serial serial ) : base( serial )

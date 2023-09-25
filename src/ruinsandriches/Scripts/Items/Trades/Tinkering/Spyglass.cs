@@ -69,16 +69,16 @@ namespace Server.Items
 		{
 			return ( m_Table[m] != null );
 		}
-		
+
 		public static void RemoveEffect( Mobile m )
 		{
 			object[] mods = (object[])m_Table[m];
-			
+
 			if ( mods != null )
 			{
 				m.RemoveSkillMod( (SkillMod)mods[0] );
 			}
-			
+
 			m_Table.Remove( m );
 			m.EndAction( typeof( Spyglass ) );
 			m.Hidden = false;
@@ -90,12 +90,12 @@ namespace Server.Items
 		    {
 				m.SendMessage( "You are already using the this." );
 		    }
-			else if (	!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( m.Map, m.Location ) ) && 
-						!m.Region.IsPartOf( typeof( OutDoorRegion ) ) && 
-						!m.Region.IsPartOf( typeof( OutDoorBadRegion ) ) && 
+			else if (	!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( m.Map, m.Location ) ) &&
+						!m.Region.IsPartOf( typeof( OutDoorRegion ) ) &&
+						!m.Region.IsPartOf( typeof( OutDoorBadRegion ) ) &&
 						!m.Region.IsPartOf( typeof( VillageRegion ) ) )
 			{
-				m.SendMessage( "You can only use this outdoors." ); 
+				m.SendMessage( "You can only use this outdoors." );
 				return;
 			}
 			else if ( Charges > 0 )
@@ -121,13 +121,13 @@ namespace Server.Items
 		{
 			private Mobile m_m;
 			private DateTime m_Expire;
-			
+
 			public InternalTimer( Mobile m, TimeSpan duration ) : base( TimeSpan.Zero, TimeSpan.FromSeconds( 0.1 ) )
 			{
 				m_m = m;
 				m_Expire = DateTime.Now + duration;
 			}
-			
+
 			protected override void OnTick()
 			{
 				if ( DateTime.Now >= m_Expire )

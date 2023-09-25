@@ -63,7 +63,7 @@ namespace Server.Mobiles
 			AddLoot( LootPack.LowScrolls );
 			AddLoot( LootPack.Potions );
 		}
-		
+
 		public override bool BleedImmune{ get{ return true; } }
 
 		public override Poison PoisonImmune{ get{ return Poison.Regular; } }

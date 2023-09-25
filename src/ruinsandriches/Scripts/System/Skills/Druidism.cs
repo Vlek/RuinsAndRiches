@@ -103,7 +103,7 @@ namespace Server.SkillHandlers
 
 	public class DruidismGump : Gump
 	{
-		private int m_Book; 
+		private int m_Book;
 
 		private static string FormatSkill( BaseCreature c, SkillName name )
 		{
@@ -249,9 +249,9 @@ namespace Server.SkillHandlers
 			return String.Format( "<div align=right>{0}-{1}</div>", min, max );
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 			if ( m_Book > 0 ){ from.SendSound( 0x55 ); }
 			else { from.SendSound( 0x0F9 ); }
 		}
@@ -337,7 +337,7 @@ namespace Server.SkillHandlers
 				colA = colA + "  Loyalty Rating<BR>";
 					string loyalty = "Wild";
 					int loyal = 1 + (c.Loyalty / 10);
-					switch ( loyal ) 
+					switch ( loyal )
 					{
 						case 1: loyalty = "Confused"; break;
 						case 2: loyalty = "Extremely Unhappy"; break;

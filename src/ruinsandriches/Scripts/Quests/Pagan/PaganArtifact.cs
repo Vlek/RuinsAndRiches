@@ -166,18 +166,18 @@ namespace Server.Items
 
 				if ( info.ButtonID == 1 )
 				{
-					if ( 
-						m_Artifact.PaganItem == 0x1408 || 
-						m_Artifact.PaganItem == 0x140A || 
-						m_Artifact.PaganItem == 0x140C || 
-						m_Artifact.PaganItem == 0x1412 || 
-						m_Artifact.PaganItem == 0x2645 || 
-						m_Artifact.PaganItem == 0x2FBB || 
-						m_Artifact.PaganItem == 0x140E || 
-						m_Artifact.PaganItem == 0x1410 || 
-						m_Artifact.PaganItem == 0x46AA || 
-						m_Artifact.PaganItem == 0x1413 || 
-						m_Artifact.PaganItem == 0x1414 || 
+					if (
+						m_Artifact.PaganItem == 0x1408 ||
+						m_Artifact.PaganItem == 0x140A ||
+						m_Artifact.PaganItem == 0x140C ||
+						m_Artifact.PaganItem == 0x1412 ||
+						m_Artifact.PaganItem == 0x2645 ||
+						m_Artifact.PaganItem == 0x2FBB ||
+						m_Artifact.PaganItem == 0x140E ||
+						m_Artifact.PaganItem == 0x1410 ||
+						m_Artifact.PaganItem == 0x46AA ||
+						m_Artifact.PaganItem == 0x1413 ||
+						m_Artifact.PaganItem == 0x1414 ||
 						m_Artifact.PaganItem == 0x1415
 					)
 					{
@@ -205,7 +205,7 @@ namespace Server.Items
 					else if ( m_Artifact.PaganItem == 0x1BC4 || m_Artifact.PaganItem == 0x1BC3 )
 					{
 						BaseGiftShield shield = new GiftOrderShield();
-						
+
 						if ( m_Artifact.PaganItem == 0x1BC3 ){ shield.Delete(); shield = new GiftChaosShield(); }
 
 						shield.Name = m_Artifact.PaganName;
@@ -222,7 +222,7 @@ namespace Server.Items
 					else if ( m_Artifact.PaganItem == 0x1406 || m_Artifact.PaganItem == 0xF5D )
 					{
 						BaseGiftBashing mace = new GiftWarMace();
-						
+
 						if ( m_Artifact.PaganItem == 0x1BC3 ){ mace.Delete(); mace = new GiftMace(); mace.Slayer = SlayerName.Silver; }
 						else
 						{

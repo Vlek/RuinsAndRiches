@@ -13,7 +13,7 @@ namespace Server.Items
 		public BloodPactScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public BloodPactScroll( int amount ) : base( 140, 0x282F, amount )
 		{
@@ -29,13 +29,13 @@ namespace Server.Items
 		public BloodPactScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -87,7 +87,7 @@ namespace Server.Items
 		public GhostPhaseScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public GhostPhaseScroll( int amount ) : base( 144, 0x282F, amount )
 		{
@@ -103,13 +103,13 @@ namespace Server.Items
 		public GhostPhaseScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -124,7 +124,7 @@ namespace Server.Items
 		public GraveyardGatewayScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public GraveyardGatewayScroll( int amount ) : base( 135, 0x282F, amount )
 		{
@@ -140,13 +140,13 @@ namespace Server.Items
 		public GraveyardGatewayScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -198,7 +198,7 @@ namespace Server.Items
 		public HellsGateScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public HellsGateScroll( int amount ) : base( 142, 0x282F, amount )
 		{
@@ -214,13 +214,13 @@ namespace Server.Items
 		public HellsGateScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -235,7 +235,7 @@ namespace Server.Items
 		public ManaLeechScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public ManaLeechScroll( int amount ) : base( 132, 0x282F, amount )
 		{
@@ -251,13 +251,13 @@ namespace Server.Items
 		public ManaLeechScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -272,7 +272,7 @@ namespace Server.Items
 		public NecroCurePoisonScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public NecroCurePoisonScroll( int amount ) : base( 133, 0x282F, amount )
 		{
@@ -288,13 +288,13 @@ namespace Server.Items
 		public NecroCurePoisonScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -309,7 +309,7 @@ namespace Server.Items
 		public NecroPoisonScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public NecroPoisonScroll( int amount ) : base( 141, 0x282F, amount )
 		{
@@ -325,13 +325,13 @@ namespace Server.Items
 		public NecroPoisonScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -346,7 +346,7 @@ namespace Server.Items
 		public NecroUnlockScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public NecroUnlockScroll( int amount ) : base( 145, 0x282F, amount )
 		{
@@ -362,13 +362,13 @@ namespace Server.Items
 		public NecroUnlockScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -383,7 +383,7 @@ namespace Server.Items
 		public PhantasmScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public PhantasmScroll( int amount ) : base( 146, 0x282F, amount )
 		{
@@ -399,13 +399,13 @@ namespace Server.Items
 		public PhantasmScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -420,7 +420,7 @@ namespace Server.Items
 		public RetchedAirScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public RetchedAirScroll( int amount ) : base( 136, 0x282F, amount )
 		{
@@ -436,13 +436,13 @@ namespace Server.Items
 		public RetchedAirScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -457,7 +457,7 @@ namespace Server.Items
 		public SpectreShadowScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public SpectreShadowScroll( int amount ) : base( 131, 0x282F, amount )
 		{
@@ -473,13 +473,13 @@ namespace Server.Items
 		public SpectreShadowScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -494,7 +494,7 @@ namespace Server.Items
 		public UndeadEyesScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public UndeadEyesScroll( int amount ) : base( 137, 0x282F, amount )
 		{
@@ -510,13 +510,13 @@ namespace Server.Items
 		public UndeadEyesScroll( Serial ser ) : base(ser)
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -568,7 +568,7 @@ namespace Server.Items
 		public WallOfSpikesScroll() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public WallOfSpikesScroll( int amount ) : base( 138, 0x282F, amount )
 		{
@@ -584,13 +584,13 @@ namespace Server.Items
 		public WallOfSpikesScroll( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );

@@ -32,7 +32,7 @@ namespace Server.Mobiles
 			SBInfos.Add( new SBMage() );
 			SBInfos.Add( new RSScrolls() );
 			SBInfos.Add( new SBFortuneTeller() );
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBBuyArtifacts() );
 
 			if ( this.Map == Map.Lodor )
 				SBInfos.Add( new SBElfWizard() );

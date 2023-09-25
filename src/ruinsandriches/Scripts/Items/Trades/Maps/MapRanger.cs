@@ -12,7 +12,7 @@ using Server.ContextMenus;
 using Server.Gumps;
 using Server.Commands;
 
-namespace Server.Items 
+namespace Server.Items
 {
 	public enum MapRangerEffect
 	{
@@ -45,7 +45,7 @@ namespace Server.Items
 		[Constructable]
 		public MapRanger() : base( 0x14EB )
 		{
-			Weight = 1.0; 
+			Weight = 1.0;
 			Charges = 10;
 			ItemID = Utility.RandomList( 0x14EB, 0x14EC );
 			MapSetup( this );
@@ -57,8 +57,8 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, Worlds.GetMyWorld( m_MapDest, m_PointDest, m_PointDest.X, m_PointDest.Y ) );
 			list.Add( 1049644, "Use To Get To Locations Quicker");
-        } 
-		
+        }
+
 		public override void OnDoubleClick( Mobile from )
 		{
 
@@ -80,19 +80,19 @@ namespace Server.Items
 				from.SendMessage( "You must be a adept ranger or cartographer to use this map." );
 				return;
 			}
-			else if (	from.Region.IsPartOf( typeof( BardTownRegion ) ) || 
+			else if (	from.Region.IsPartOf( typeof( BardTownRegion ) ) ||
 						from.Region.IsPartOf( typeof( BardDungeonRegion ) ) )
 			{
-				from.SendMessage( "This won't lead you out of this place." ); 
+				from.SendMessage( "This won't lead you out of this place." );
 				return;
 			}
-			else if (	!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) && 
-						!from.Region.IsPartOf( typeof( OutDoorRegion ) ) && 
-						!from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) && 
-						!from.Region.IsPartOf( typeof( VillageRegion ) ) && 
+			else if (	!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) &&
+						!from.Region.IsPartOf( typeof( OutDoorRegion ) ) &&
+						!from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) &&
+						!from.Region.IsPartOf( typeof( VillageRegion ) ) &&
 						!from.Region.IsPartOf( typeof( PublicRegion ) ) )
 			{
-				from.SendMessage( "You can only use this map outdoors." ); 
+				from.SendMessage( "You can only use this map outdoors." );
 				return;
 			}
 			else if ( CanUseMap == false )
@@ -101,7 +101,7 @@ namespace Server.Items
 				this.Delete();
 				return;
 			}
-			else if ( IsChildOf( from.Backpack ) && Charges > 0 ) 
+			else if ( IsChildOf( from.Backpack ) && Charges > 0 )
 			{
 				ConsumeCharge( from );
 				MapTeleport( from, m_PointDest, m_MapDest );
@@ -191,16 +191,16 @@ namespace Server.Items
 			}
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from ) );
-		} 
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public SpeechGumpEntry( Mobile from ) : base( 6121, 3 )
 			{
 				m_Mobile = from;
@@ -210,7 +210,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -333,23 +333,23 @@ namespace Server.Items
 		}
 
 		public MapRanger( Serial serial ) : base( serial )
-		{ 
-		} 
-		
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 );
 			writer.Write( (int) m_MapRangerEffect );
 			writer.Write( (int) m_Charges );
             writer.Write( (string) m_MapDestination );
 			writer.Write( m_PointDest );
 			writer.Write( m_MapDest );
-		} 
-		
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			switch ( version )
 			{
@@ -429,7 +429,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Double-Click To Follow The Path");
-        } 
+        }
 
 		public static void MapTeleport( Mobile m, Point3D loc, Map map )
 		{

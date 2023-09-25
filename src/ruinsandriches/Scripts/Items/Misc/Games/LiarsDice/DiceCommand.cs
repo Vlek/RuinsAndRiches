@@ -34,6 +34,6 @@ namespace Server.Commands
 			}else{
 				e.Mobile.SendMessage( "Sorry, but you must have at least " + GAME_BALANCE_MIN  + " gold in your bank to play!" );
 			}
-        }			
-	}	
+        }
+	}
 }

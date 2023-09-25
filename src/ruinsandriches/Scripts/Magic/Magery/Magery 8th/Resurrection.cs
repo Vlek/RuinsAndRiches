@@ -19,18 +19,18 @@ namespace Server.Spells.Eighth
                 Reagent.Garlic,
                 Reagent.Ginseng
             );
- 
+
         public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
- 
+
         public ResurrectionSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
         {
         }
- 
+
         public override void OnCast()
         {
             Caster.Target = new InternalTarget( this );
         }
- 
+
         public void Target( Mobile m )
         {
             if ( !Caster.CanSee( m ) )
@@ -83,10 +83,10 @@ namespace Server.Spells.Eighth
             else if ( m is PlayerMobile && CheckBSequence( m, true ) )
             {
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 0 ), 0 );
- 
+
                 m.CloseGump( typeof( ResurrectGump ) );
                 m.SendGump( new ResurrectGump( m, Caster ) );
             }
@@ -95,10 +95,10 @@ namespace Server.Spells.Eighth
 				BaseCreature pet = (BaseCreature)m;
 				Mobile master = pet.GetMaster();
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 0 ), 0 );
- 
+
                 master.CloseGump(typeof(PetResurrectGump));
                 master.SendGump(new PetResurrectGump(master, pet));
             }
@@ -177,16 +177,16 @@ namespace Server.Spells.Eighth
 			}
             FinishSequence();
 		}
- 
+
         private class InternalTarget : Target
         {
             private ResurrectionSpell m_Owner;
- 
+
             public InternalTarget( ResurrectionSpell owner ) : base( 1, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )
@@ -198,7 +198,7 @@ namespace Server.Spells.Eighth
                     m_Owner.ItemTarget( (Item)o );
                 }
             }
- 
+
             protected override void OnTargetFinish( Mobile from )
             {
                 m_Owner.FinishSequence();

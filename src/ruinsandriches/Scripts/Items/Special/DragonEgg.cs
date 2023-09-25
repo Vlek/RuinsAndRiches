@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -55,7 +55,7 @@ namespace Server.Items
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			int iAmount = 0;
 			string sEnd = ".";
 
@@ -184,7 +184,7 @@ namespace Server.Items
 		{
 			public DragonEggGump( Mobile from, DragonEgg egg ): base( 50, 50 )
 			{
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 				string color = "#94d3b4";
 				string sDragon = "dragon";
 					if ( egg.DragonBody == 59 ){ sDragon = "wyrm"; }
@@ -233,7 +233,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 		}
 

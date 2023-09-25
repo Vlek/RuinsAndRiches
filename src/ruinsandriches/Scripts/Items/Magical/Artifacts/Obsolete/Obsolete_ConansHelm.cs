@@ -25,7 +25,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
             list.Add( 1049644, "Conan's Lost Helm");
-        } 
+        }
 
 		public ConansHelm( Serial serial ) : base( serial )
 		{

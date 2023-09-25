@@ -52,8 +52,8 @@ namespace Server.Spells
 		public virtual bool DelayedDamage{ get{ return false; } }
 
         public virtual bool DelayedDamageStacking { get { return true; } }
-        //In reality, it's ANY delayed Damage spell Post-AoS that can't stack, but, only 
-        //Expo & Magic Arrow have enough delay and a short enough cast time to bring up 
+        //In reality, it's ANY delayed Damage spell Post-AoS that can't stack, but, only
+        //Expo & Magic Arrow have enough delay and a short enough cast time to bring up
         //the possibility of stacking 'em.  Note that a MA & an Explosion will stack, but
 		//of course, two MA's won't.
 
@@ -752,10 +752,10 @@ namespace Server.Spells
 
 		public virtual TimeSpan GetCastDelay()
 		{
-			// Faster casting cap of 2 (if not using the protection spell) 
-			// Faster casting cap of 0 (if using the protection spell) 
-			// Paladin spells are subject to a faster casting cap of 4 
-			// Paladins with magery of 70.0 or above are subject to a faster casting cap of 2 
+			// Faster casting cap of 2 (if not using the protection spell)
+			// Faster casting cap of 0 (if using the protection spell)
+			// Paladin spells are subject to a faster casting cap of 4
+			// Paladins with magery of 70.0 or above are subject to a faster casting cap of 2
 			int fcMax = 4;
 
 			if ( CastSkill == SkillName.Elementalism || CastSkill == SkillName.Magery || CastSkill == SkillName.Necromancy || ( CastSkill == SkillName.Knightship && m_Caster.Skills[SkillName.Magery].Value >= 70.0 ) )

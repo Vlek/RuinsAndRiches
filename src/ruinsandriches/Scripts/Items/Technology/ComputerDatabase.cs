@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Misc;
 using Server.Gumps;
 using Server.Mobiles;
@@ -126,7 +126,7 @@ namespace Server.Items
 				AddButton(685, 573, 3609, 3609, 32, GumpButtonType.Reply, 0);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 

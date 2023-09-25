@@ -64,7 +64,7 @@ namespace Server.Mobiles
 
 		public override bool ReacquireOnMovement{ get{ return true; } }
 		public override Poison PoisonImmune{ get{ return Poison.Deadly; } }
-		public override Poison HitPoison{ get{ return Utility.RandomBool() ? Poison.Deadly : Poison.Lethal; } } 
+		public override Poison HitPoison{ get{ return Utility.RandomBool() ? Poison.Deadly : Poison.Lethal; } }
 		public override int TreasureMapLevel{ get{ return 5; } }
 		public override int Hides{ get{ return 20; } }
 		public override HideType HideType{ get{ return HideType.Barbed; } }
@@ -105,7 +105,7 @@ namespace Server.Mobiles
 				if ( attacker is BaseCreature )
 				{
 					Mobile m = ((BaseCreature)attacker).GetMaster();
-					
+
 					if( m != null )
 						target = m;
 				}
@@ -141,7 +141,7 @@ namespace Server.Mobiles
 				}
 			}
 		}
-		
+
 		public override int GetAttackSound()
 		{
 			return 1260;

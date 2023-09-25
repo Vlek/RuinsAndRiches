@@ -22,7 +22,7 @@ namespace Server.Items
 		[Constructable]
 		public GoldenFeathers( Mobile from ) : base( 0x4CCD )
 		{
-			this.owner = from;	
+			this.owner = from;
 			Name = "golden feathers";
 			Weight = 1.0;
 			Hue = 0xAD4;
@@ -32,7 +32,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			if ( owner != null ){ list.Add( 1070722, "Gifted to " + owner.Name + ""); }
-        } 
+        }
 
 		public GoldenFeathers( Serial serial ) : base( serial )
 		{

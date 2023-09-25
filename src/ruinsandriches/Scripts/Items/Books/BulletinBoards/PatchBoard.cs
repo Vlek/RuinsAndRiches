@@ -38,17 +38,17 @@ namespace Server.Items
             base.GetProperties( list );
             list.Add( "September 12th, 2017" );
         }
- 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from ) );
-		} 
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public SpeechGumpEntry( Mobile from ) : base( 6122, 10 )
 			{
 				m_Mobile = from;
@@ -58,7 +58,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				m_Mobile.LaunchBrowser( "http://www.google.com" );
             }
         }

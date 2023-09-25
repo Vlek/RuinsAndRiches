@@ -13,7 +13,7 @@ namespace Server.Spells.Song
 {
 	public class FireCarolSong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Fire Carol", "*plays a fire carol*",
 				//SpellCircle.First,
@@ -26,17 +26,17 @@ namespace Server.Spells.Song
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
 		public override double RequiredSkill{ get{ return 50.0; } }
 		public override int RequiredMana{ get{ return 12; } }
-		
+
 		public FireCarolSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
-			
+
 		}
 
         public override void OnCast()
         {
 
 			bool sings = false;
- 
+
             //get songbook instrument
             Spellbook book = Spellbook.Find(Caster, -1, SpellbookType.Song);
             if (book == null)
@@ -58,7 +58,7 @@ namespace Server.Spells.Song
                 else if (CheckSequence())
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
@@ -70,18 +70,18 @@ namespace Server.Spells.Song
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
+
 					TimeSpan duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster ) * 2) );
                     int amount = Server.Misc.MyServerSettings.PlayerLevelMod( (int)(MusicSkill( Caster ) / 16), Caster );
 					m.SendMessage( "Your resistance to fire has increased." );
 					ResistanceMod mod1 = new ResistanceMod( ResistanceType.Fire, + amount );
-						
+
 					m.AddResistanceMod( mod1 );
-						
+
 					m.FixedParticles( 0x373A, 10, 15, 5012, 0x21, 3, EffectLayer.Waist );
-						
+
 					new ExpireTimer( m, mod1, duration ).Start();
-					
+
 				}
 			}
 
@@ -104,8 +104,8 @@ namespace Server.Spells.Song
 			{
 				PlayerMobile dpm = m_Mobile as PlayerMobile;
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
-							
+
+
 				Stop();
 			}
 

@@ -16,7 +16,7 @@ namespace Server.Misc
 		public static void Initialize()
 		{
 			/* Static weather:
-			 * 
+			 *
 			 * Format:
 			 *   AddWeather( map, temperature, chanceOfPercipitation, chanceOfExtremeTemperature, <area ...> );
 			 */
@@ -37,7 +37,7 @@ namespace Server.Misc
 			AddWeather( Map.Lodor, -15, 100, 0, new Rectangle2D( 6677, 2051, 6915, 2217 ) );
 
 			/* Dynamic weather:
-			 * 
+			 *
 			 * Format:
 			 *   AddDynamicWeather( map, temperature, chanceOfPercipitation, chanceOfExtremeTemperature, moveSpeed, width, height, bounds );
 			 */

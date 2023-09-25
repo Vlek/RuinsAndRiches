@@ -25,7 +25,7 @@ namespace Server.Misc
 			};
 		private static Point2D[] m_Underworld = new Point2D[]
 			{
-				new Point2D( 585, 1029 ), new Point2D( 922, 1003 ), 
+				new Point2D( 585, 1029 ), new Point2D( 922, 1003 ),
 				new Point2D( 784, 1387 ), new Point2D( 326, 1378 )
 			};
 		private static Point2D[] m_SerpentIsland = new Point2D[]
@@ -72,9 +72,9 @@ namespace Server.Misc
 			if ( map == null )
 				return false;
 
-			if (	Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) || 
-					from.Region.IsPartOf( typeof( OutDoorRegion ) ) || 
-					from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) || 
+			if (	Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) ||
+					from.Region.IsPartOf( typeof( OutDoorRegion ) ) ||
+					from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) ||
 					from.Region.IsPartOf( typeof( VillageRegion ) ) )
 			{
 				object surface = map.GetTopSurface( from.Location );

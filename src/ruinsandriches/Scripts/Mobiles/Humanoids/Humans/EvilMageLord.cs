@@ -3,11 +3,11 @@ using Server;
 using Server.Misc;
 using Server.Items;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a mage corpse" )] 
-	public class EvilMageLord : BaseCreature 
-	{ 
+namespace Server.Mobiles
+{
+	[CorpseName( "a mage corpse" )]
+	public class EvilMageLord : BaseCreature
+	{
 		public override int BreathPhysicalDamage{ get{ return 0; } }
 		public override int BreathFireDamage{ get{ if ( YellHue < 2 ){ return 100; } else { return 0; } } }
 		public override int BreathColdDamage{ get{ if ( YellHue == 3 ){ return 100; } else { return 0; } } }
@@ -21,8 +21,8 @@ namespace Server.Mobiles
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 2 ); }
 		public override double BreathDamageScalar{ get{ return 0.4; } }
 
-		[Constructable] 
-		public EvilMageLord() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public EvilMageLord() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			string sGrand = "grand";
 
@@ -36,9 +36,9 @@ namespace Server.Mobiles
 				case 5: sGrand = "almighty"; break;
 			}
 
-			if ( this.Female = Utility.RandomBool() ) 
-			{ 
-				Body = 0x191; 
+			if ( this.Female = Utility.RandomBool() )
+			{
+				Body = 0x191;
 				Name = NameList.RandomName( "evil witch" );
 				switch ( Utility.RandomMinMax( 0, 5 ) )
 				{
@@ -51,10 +51,10 @@ namespace Server.Mobiles
 				}
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				Body = 0x190; 
+			}
+			else
+			{
+				Body = 0x190;
 				Name = NameList.RandomName( "evil mage" );
 				switch ( Utility.RandomMinMax( 0, 5 ) )
 				{
@@ -168,20 +168,20 @@ namespace Server.Mobiles
 			AddItem( item );
 		}
 
-		public EvilMageLord( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public EvilMageLord( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

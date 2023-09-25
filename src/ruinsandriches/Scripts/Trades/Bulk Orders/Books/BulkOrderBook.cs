@@ -42,7 +42,7 @@ namespace Server.Engines.BulkOrders
 		{
 			get{ return m_Filter; }
 		}
-		
+
 		public int ItemCount
 		{
 			get{ return m_ItemCount; }
@@ -116,9 +116,9 @@ namespace Server.Engines.BulkOrders
 						m_Entries.Add( new BOBLargeEntry( (LargeBOD)dropped ) );
 					else if ( dropped is SmallBOD ) // Sanity
 						m_Entries.Add( new BOBSmallEntry( (SmallBOD)dropped ) );
-					
+
 					InvalidateProperties();
-					
+
 					if ( m_Entries.Count / 5 > m_ItemCount )
 					{
 						m_ItemCount++;
@@ -145,17 +145,17 @@ namespace Server.Engines.BulkOrders
 			from.SendLocalizedMessage( 1062388 ); // That is not a bulk order deed.
 			return false;
 		}
-		
+
 		public override int GetTotal( TotalType type )
 		{
 			int total = base.GetTotal( type );
-			
+
 			if ( type == TotalType.Items )
 				total = m_ItemCount;
 
 			return total;
 		}
-		
+
 		public void InvalidateItems()
 		{
 			if ( RootParent is Mobile )
@@ -166,13 +166,13 @@ namespace Server.Engines.BulkOrders
 				InvalidateContainers( Parent );
 			}
 		}
-		
+
 		public void InvalidateContainers( object parent )
 		{
 			if ( parent != null && parent is Container )
 			{
 				Container c = (Container)parent;
-				
+
 				c.InvalidateProperties();
 				InvalidateContainers( c.Parent );
 			}
@@ -187,7 +187,7 @@ namespace Server.Engines.BulkOrders
 			base.Serialize( writer );
 
 			writer.Write( (int) 2 ); // version
-			
+
 			writer.Write( (int) m_ItemCount );
 
 			writer.Write( (int) m_Level );

@@ -51,7 +51,7 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 55.1, 65.0 );
 			SetSkill( SkillName.MagicResist, 110.1, 125.0 );
 			SetSkill( SkillName.Anatomy, 25.1, 35.0 );
-		
+
 			Fame = 8000;
 			Karma = -8000;
 
@@ -88,11 +88,11 @@ namespace Server.Mobiles
 
 				defender.FixedEffect( 0x37B9, 10, 5 );
 				defender.SendLocalizedMessage( 1070839 ); // The creature attacks with stunning force!
- 
+
 				// This should be done in place of the normal attack damage.
 				//AOS.Damage( defender, this, Utility.RandomMinMax( 35, 65 ), 0, 0, 0, 0, 100 );
 
-				defender.Frozen = true; 
+				defender.Frozen = true;
 
 				ExpireTimer timer = new ExpireTimer( defender, TimeSpan.FromSeconds( 4.0 ) );
 				timer.Start();

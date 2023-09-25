@@ -143,7 +143,7 @@ namespace Server.Items
             ShipName = reader.ReadString();
             ShipStory = reader.ReadString();
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( IsChildOf( from.Backpack ) )
@@ -185,9 +185,9 @@ namespace Server.Items
 				AddHtml( 62, 326, 347, 20, @"<BODY><BASEFONT Color=#9dc1d5>" + fmt + "</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.PlaySound( 0x249 );
 			}
 		}

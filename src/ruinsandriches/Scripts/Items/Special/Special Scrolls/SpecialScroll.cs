@@ -9,17 +9,17 @@ namespace Server.Items
 	{
 		private SkillName m_Skill;
 		private double m_Value;
-		
+
 		#region Old Item Serialization Vars
 		/* DO NOT USE! Only used in serialization of special scrolls that originally derived from Item */
 		private bool m_InheritsItem;
-		
+
 		protected bool InheritsItem
-		{ 
-			get{ return m_InheritsItem; } 
+		{
+			get{ return m_InheritsItem; }
 		}
 		#endregion
-		
+
 		public abstract int Message{ get; }
 		public virtual int Title{ get { return 0; } }
 		public abstract string DefaultTitle{ get; }
@@ -123,7 +123,7 @@ namespace Server.Items
 		}
 
 		public virtual string GetName()
-		{			
+		{
 			int index = (int)m_Skill;
 			SkillInfo[] table = SkillInfo.Table;
 
@@ -132,18 +132,18 @@ namespace Server.Items
 			else
 				return "???";
 		}
-		
+
 		public virtual bool CanUse( Mobile from )
 		{
 			if ( Deleted )
 				return false;
-			
+
 			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
 				return false;
 			}
-			
+
 			return true;
 		}
 
@@ -155,7 +155,7 @@ namespace Server.Items
 		{
 			if ( !CanUse( from ) )
 				return;
-			
+
 			from.CloseGump( typeof( SpecialScroll.InternalGump ) );
 			from.SendGump( new InternalGump( from, this ) );
 		}

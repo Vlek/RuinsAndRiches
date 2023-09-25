@@ -7,21 +7,21 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a pirate corpse" )] 
-	public class PirateCrewMage : BaseCreature 
-	{ 
-		[Constructable] 
-		public PirateCrewMage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+	[CorpseName( "a pirate corpse" )]
+	public class PirateCrewMage : BaseCreature
+	{
+		[Constructable]
+		public PirateCrewMage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			if ( this.Female = Utility.RandomBool() ) 
-			{ 
-				Body = 0x191; 
+			if ( this.Female = Utility.RandomBool() )
+			{
+				Body = 0x191;
 				Name = NameList.RandomName( "evil witch" );
 				Title = "the pirate mage";
-			} 
-			else 
-			{ 
-				Body = 0x190; 
+			}
+			else
+			{
+				Body = 0x190;
 				Name = NameList.RandomName( "evil mage" );
 				Title = "the pirate mage";
 			}
@@ -58,7 +58,7 @@ namespace Server.Mobiles
 				{
 					case 0: AddItem( new LongPants ( 0xBB4 ) ); break;
 					case 1: AddItem( new ShortPants ( 0xBB4 ) ); break;
-				}				
+				}
 
 				switch ( Utility.Random( 2 ))
 				{
@@ -108,20 +108,20 @@ namespace Server.Mobiles
 		public override bool ShowFameTitle{ get{ return false; } }
 		public override bool AlwaysAttackable{ get{ return true; } }
 
-		public PirateCrewMage( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public PirateCrewMage( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

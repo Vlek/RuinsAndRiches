@@ -8,7 +8,7 @@ namespace Server.Items
 		public int RelicGoldValue;
 		public int RelicFlipID1;
 		public int RelicFlipID2;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -29,7 +29,7 @@ namespace Server.Items
 
 			Hue = Utility.RandomColor(0);
 
-			switch ( Utility.RandomMinMax( 0, 1 ) ) 
+			switch ( Utility.RandomMinMax( 0, 1 ) )
 			{
 				case 0: ItemID = 0xE1A; RelicFlipID1 = 0xE1A; RelicFlipID2 = 0xFA4; break;
 				case 1: ItemID = 0xE1B; RelicFlipID1 = 0xE1B; RelicFlipID2 = 0xFA5; break;

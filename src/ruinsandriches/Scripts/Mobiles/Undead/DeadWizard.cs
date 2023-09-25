@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using Server.Items;
 using Server.Misc;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a corpse" )] 
-	public class DeadWizard : BaseCreature 
-	{ 
-		[Constructable] 
-		public DeadWizard() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+namespace Server.Mobiles
+{
+	[CorpseName( "a corpse" )]
+	public class DeadWizard : BaseCreature
+	{
+		[Constructable]
+		public DeadWizard() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			switch ( Utility.Random( 3 ) )
 			{
@@ -20,10 +20,10 @@ namespace Server.Mobiles
 				case 2: Hue = 0xB97;	BaseSoundID = 471;										break;	// ZOMBIE
 			}
 
-			if ( this.Female = Utility.RandomBool() ) 
-			{ 
-				this.Body = 0x191; 
-				this.Name = NameList.RandomName( "female" ); 
+			if ( this.Female = Utility.RandomBool() )
+			{
+				this.Body = 0x191;
+				this.Name = NameList.RandomName( "female" );
 				switch ( Utility.RandomMinMax( 0, 5 ) )
 				{
 					case 0: Title = "the undead wizard"; break;
@@ -33,10 +33,10 @@ namespace Server.Mobiles
 					case 4: Title = "the undead magician"; break;
 					case 5: Title = "the undead witch"; break;
 				}
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
+			}
+			else
+			{
+				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 				switch ( Utility.RandomMinMax( 0, 5 ) )
 				{
@@ -56,7 +56,7 @@ namespace Server.Mobiles
 				AddItem( robe );
 
 			if ( 50 > Utility.Random( 100 ) )
-			{ 
+			{
 				WizardsHat hat = new WizardsHat( );
 					hat.Hue = Utility.RandomColor( clothHue );
 					AddItem( hat );

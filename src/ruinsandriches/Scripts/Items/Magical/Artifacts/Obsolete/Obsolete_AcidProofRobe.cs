@@ -43,8 +43,8 @@ namespace Server.Items
 			else if ( CanFillBottle > 0 )
 			{
 				TimeSpan t = TimeSpan.FromMinutes( CanFillBottle );
-				string wait = string.Format("{0:D1} hours and {1:D2} minutes", 
-								t.Hours, 
+				string wait = string.Format("{0:D1} hours and {1:D2} minutes",
+								t.Hours,
 								t.Minutes);
 				from.SendMessage( "You can squeeze out acid in " + wait + "." );
 			}
@@ -67,14 +67,14 @@ namespace Server.Items
 		public AcidProofRobe( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 1 );
             writer.Write( TimeUsed );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

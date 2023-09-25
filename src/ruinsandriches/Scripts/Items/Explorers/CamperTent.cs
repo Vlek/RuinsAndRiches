@@ -12,7 +12,7 @@ using Server.ContextMenus;
 using Server.Gumps;
 using Server.Commands;
 
-namespace Server.Items 
+namespace Server.Items
 {
 	public enum CamperTentEffect
 	{
@@ -42,9 +42,9 @@ namespace Server.Items
 		public CampersTent() : base( 0x0A59 )
 		{
 			Name = "camping tent";
-			Weight = 5.0; 
+			Weight = 5.0;
 			Charges = 10;
-			Hue = Utility.RandomList( 0x96D, 0x96E, 0x96F, 0x970, 0x971, 0x972, 0x973, 0x974, 0x975, 0x976, 0x977, 0x978, 0x979, 0x97A, 0x97B, 0x97C, 0x97D, 0x97E );		
+			Hue = Utility.RandomList( 0x96D, 0x96E, 0x96F, 0x970, 0x971, 0x972, 0x973, 0x974, 0x975, 0x976, 0x977, 0x978, 0x979, 0x97A, 0x97B, 0x97C, 0x97D, 0x97E );
 		}
 
         public override void AddNameProperties(ObjectPropertyList list)
@@ -52,18 +52,18 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Setup A Safe Tent In Which To Rest");
 			list.Add( 1049644, "Usable By Those Skilled In Camping");
-        } 
+        }
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from ) );
-		} 
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public SpeechGumpEntry( Mobile from ) : base( 6121, 3 )
 			{
 				m_Mobile = from;
@@ -73,7 +73,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -97,7 +97,7 @@ namespace Server.Items
 			}
 			else if ( from.Region.IsPartOf( typeof( PublicRegion ) ) )
 			{
-				from.SendMessage( "This is a really nice camping tent." ); 
+				from.SendMessage( "This is a really nice camping tent." );
 				return;
 			}
 			else if ( Server.Misc.Worlds.IsOnBoat( from ) )
@@ -119,24 +119,24 @@ namespace Server.Items
 			{
 				CanUseTent = 1;
 			}
-			else if (	from.Skills[SkillName.Camping].Value < 90 && 
-						!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) && 
-						!from.Region.IsPartOf( typeof( OutDoorRegion ) ) && 
-						!from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) && 
+			else if (	from.Skills[SkillName.Camping].Value < 90 &&
+						!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) &&
+						!from.Region.IsPartOf( typeof( OutDoorRegion ) ) &&
+						!from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) &&
 						!from.Region.IsPartOf( typeof( VillageRegion ) ) )
 			{
-				from.SendMessage( "You are only skilled enough to use this tent outdoors." ); 
+				from.SendMessage( "You are only skilled enough to use this tent outdoors." );
 				return;
 			}
-			else if (	from.Skills[SkillName.Camping].Value >= 90 && 
-						!from.Region.IsPartOf( typeof( DungeonRegion ) ) && 
-						!from.Region.IsPartOf( typeof( BardDungeonRegion ) ) && 
-						!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) && 
-						!from.Region.IsPartOf( typeof( OutDoorRegion ) ) && 
-						!from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) && 
+			else if (	from.Skills[SkillName.Camping].Value >= 90 &&
+						!from.Region.IsPartOf( typeof( DungeonRegion ) ) &&
+						!from.Region.IsPartOf( typeof( BardDungeonRegion ) ) &&
+						!Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) &&
+						!from.Region.IsPartOf( typeof( OutDoorRegion ) ) &&
+						!from.Region.IsPartOf( typeof( OutDoorBadRegion ) ) &&
 						!from.Region.IsPartOf( typeof( VillageRegion ) ) )
 			{
-				from.SendMessage( "You can only use this tent outdoors or in dungeons." ); 
+				from.SendMessage( "You can only use this tent outdoors or in dungeons." );
 				return;
 			}
 			else
@@ -146,7 +146,7 @@ namespace Server.Items
 
 			if ( CanUseTent > 0 && from.CheckSkill( SkillName.Camping, 0.0, 125.0 ) )
 			{
-				if ( IsChildOf( from.Backpack ) && Charges > 0 ) 
+				if ( IsChildOf( from.Backpack ) && Charges > 0 )
 				{
 					Server.Items.Kindling.RaiseCamping( from );
 					ConsumeCharge( from );
@@ -294,20 +294,20 @@ namespace Server.Items
 		}
 
 		public CampersTent( Serial serial ) : base( serial )
-		{ 
-		} 
-		
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 );
 			writer.Write( (int) m_CamperTentEffect );
 			writer.Write( (int) m_Charges );
-		} 
-		
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			switch ( version )
 			{

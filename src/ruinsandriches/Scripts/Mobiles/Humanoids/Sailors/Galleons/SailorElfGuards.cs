@@ -7,24 +7,24 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class SailorElfGuards : BasePirate 
+	public class SailorElfGuards : BasePirate
 	{
-		[Constructable] 
+		[Constructable]
 		public SailorElfGuards()
 		{
 			Race = Race.Elf;
 			Hue = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() ) 
-			{ 
-				Body = 606; 
+			if ( this.Female = Utility.RandomBool() )
+			{
+				Body = 606;
 				Name = NameList.RandomName( "elf_female" );
-			} 
-			else 
-			{ 
-				Body = 605; 
+			}
+			else
+			{
+				Body = 605;
 				Name = NameList.RandomName( "elf_male" );
 			}
 

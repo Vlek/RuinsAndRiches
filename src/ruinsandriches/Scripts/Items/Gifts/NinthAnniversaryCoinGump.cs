@@ -1,10 +1,10 @@
-﻿using System; 
-using System.Net; 
-using Server; 
-using Server.Accounting; 
-using Server.Gumps; 
-using Server.Items; 
-using Server.Mobiles; 
+﻿using System;
+using System.Net;
+using Server;
+using Server.Accounting;
+using Server.Gumps;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Gumps
@@ -37,7 +37,7 @@ namespace Server.Gumps
             AddButton(12, 40, 4005, 4007, 1, GumpButtonType.Reply, 1);
             AddLabel(52, 60, 0, "Crystal Token");
             AddButton(12, 60, 4005, 4007, 2, GumpButtonType.Reply, 2);
-            
+
 
         }
 
@@ -47,7 +47,7 @@ namespace Server.Gumps
 
             switch (info.ButtonID)
             {
-                case 0: //Close Gump 
+                case 0: //Close Gump
                     {
                         from.CloseGump(typeof(NinthAnniversaryCoinGump));
                         break;

@@ -7,7 +7,7 @@ using Server.Regions;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Server.Items 
+namespace Server.Items
 {
 	public enum GemOfSeeingEffect
 	{
@@ -28,7 +28,7 @@ namespace Server.Items
 		[Constructable]
 		public GemOfSeeing() : base( 0x4078 )
 		{
-			Weight = 1.0; 
+			Weight = 1.0;
 			Charges = 50;
 			Name = "Gem of Seeing";
 		}
@@ -38,8 +38,8 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
 			list.Add( 1049644, "Find Hidden Items And Traps" );
-        } 
-		
+        }
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( from.InRange( this.GetWorldLocation(), 3 ) && Charges > 0 )
@@ -90,7 +90,7 @@ namespace Server.Items
 					p = ((Item)targ).Location;
 				else if ( targ is IPoint3D )
 					p = new Point3D( (IPoint3D)targ );
-				else 
+				else
 					p = src.Location;
 
 				double srcSkill = 100.00;
@@ -152,20 +152,20 @@ namespace Server.Items
 		}
 
 		public GemOfSeeing( Serial serial ) : base( serial )
-		{ 
-		} 
-		
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 );
 			writer.Write( (int) m_GemOfSeeingEffect );
 			writer.Write( (int) m_Charges );
-		} 
-		
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			switch ( version )
 			{

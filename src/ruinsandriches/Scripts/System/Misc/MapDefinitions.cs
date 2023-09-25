@@ -8,7 +8,7 @@ namespace Server.Misc
 		public static void Configure()
 		{
 			/* Here we configure all maps. Some notes:
-			 * 
+			 *
 			 * 1) The first 32 maps are reserved for core use.
 			 * 2) Map 0x7F is reserved for core use.
 			 * 3) Map 0xFF is reserved for core use.
@@ -27,7 +27,7 @@ namespace Server.Misc
 
 			/* Example of registering a custom map:
 			 * RegisterMap( 32, 0, 0, 6144, 4096, 3, "Iceland", MapRules.LodorRules );
-			 * 
+			 *
 			 * Defined:
 			 * RegisterMap( <index>, <mapID>, <fileIndex>, <width>, <height>, <season>, <name>, <rules> );
 			 *  - <index> : An unreserved unique index for this map

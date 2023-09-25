@@ -197,7 +197,7 @@ namespace Server.SkillHandlers
 									if ( m is BaseVendor && m.CanSee( m_Thief ) && m.InLOS( m_Thief ) )
 									{
 										m_Thief.CriminalAction( false );
-										m.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Stop! Thief!" ) ); 
+										m.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Stop! Thief!" ) );
 									}
 								}
 							}
@@ -348,7 +348,7 @@ namespace Server.SkillHandlers
 				{
 					root = ((Item)target).RootParent;
 					stolen = TryStealItem( (Item)target, ref caught );
-				} 
+				}
 				else if ( target is Mobile )
 				{
 					Container pack = ((Mobile)target).Backpack;
@@ -360,8 +360,8 @@ namespace Server.SkillHandlers
 						root = target;
 						stolen = TryStealItem( pack.Items[randomIndex], ref caught );
 					}
-				} 
-				else 
+				}
+				else
 				{
 					m_Thief.SendLocalizedMessage( 502710 ); // You can't steal that!
 				}
@@ -421,9 +421,9 @@ namespace Server.SkillHandlers
 			{
 				if ( from.FindItemOnLayer( Layer.OneHanded ) is BaseWeapon )
 				{
-					if ( 
-						!( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGlove ) && 
-						!( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGloves ) 
+					if (
+						!( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGlove ) &&
+						!( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGloves )
 					)
 					{
 						return false;
@@ -434,9 +434,9 @@ namespace Server.SkillHandlers
 			{
 				if ( from.FindItemOnLayer( Layer.TwoHanded ) is BaseWeapon )
 				{
-					if ( 
-						!( from.FindItemOnLayer( Layer.TwoHanded ) is PugilistGlove ) && 
-						!( from.FindItemOnLayer( Layer.TwoHanded ) is PugilistGloves ) 
+					if (
+						!( from.FindItemOnLayer( Layer.TwoHanded ) is PugilistGlove ) &&
+						!( from.FindItemOnLayer( Layer.TwoHanded ) is PugilistGloves )
 					)
 					{
 						return false;

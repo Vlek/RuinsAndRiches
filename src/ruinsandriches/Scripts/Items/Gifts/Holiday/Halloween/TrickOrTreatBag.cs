@@ -16,7 +16,7 @@ namespace Server.Items
 			get{ return m_Uses; }
 			set{ m_Uses = value; InvalidateProperties(); }
 		}
-		
+
 		public override int DefaultDropSound{ get{ return 0x3EA; } }
 
 		[Constructable]
@@ -31,7 +31,7 @@ namespace Server.Items
 		public TrickOrTreatBag( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void AddNameProperties( ObjectPropertyList list )
  		{
  			base.AddNameProperties( list );
@@ -72,7 +72,7 @@ namespace Server.Items
 				}
 			}
 		}
-		
+
 		public bool ConsumeUse( Mobile from )
 		{
 			--Uses;

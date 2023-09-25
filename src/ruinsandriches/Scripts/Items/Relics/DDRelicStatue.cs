@@ -29,7 +29,7 @@ namespace Server.Items
 			RelicGoldValue = Server.Misc.RelicItems.RelicValue();
 
 			string sMade = "Made of colored stone";
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: Hue = Utility.RandomColor(0); break;
 				case 1: Hue = Utility.RandomColor(0); break;
@@ -64,7 +64,7 @@ namespace Server.Items
 				case 17:sLook = "a unique";	break;
 				case 18:sLook = "an unusual";	break;
 			}
-			
+
 			string sDecon = "decorative";
 			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
@@ -97,7 +97,7 @@ namespace Server.Items
 			}
 			RelicDescription = sMade;
 
-			switch ( Utility.RandomMinMax( 0, 37 ) ) 
+			switch ( Utility.RandomMinMax( 0, 37 ) )
 			{
 				case 0: ItemID = 0x1224; RelicFlipID1 = 0x1224; RelicFlipID2 = 0x139A; Name = sLook + ", " + sDecon + " statue of a woman"; break;
 				case 1: ItemID = 0x1225; RelicFlipID1 = 0x1225; RelicFlipID2 = 0x1225; Name = sLook + ", " + sDecon + " statue of a man"; break;
@@ -186,7 +186,7 @@ namespace Server.Items
 				case 17:sLook = "a unique";	break;
 				case 18:sLook = "an unusual";	break;
 			}
-			
+
 			string sDecon = "decorative";
 			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
@@ -201,7 +201,7 @@ namespace Server.Items
 			string OwnerName = Server.Misc.RandomThings.GetRandomOrientalName();
 			string OwnerTitle = Server.LootPackEntry.MagicItemAdj( "end", true, false, item.ItemID );
 
-			switch ( Utility.RandomMinMax( 0, 4 ) ) 
+			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 0: relic.ItemID = 0x1947; relic.RelicFlipID1 = 0x1947; relic.RelicFlipID2 = 0x1948; relic.Name = sLook + ", " + sDecon + " statue of Budah"; break;
 				case 1: relic.ItemID = 0x2419; relic.RelicFlipID1 = 0x2419; relic.RelicFlipID2 = 0x2419; relic.Name = sLook + ", " + sDecon + " sculpture"; break;

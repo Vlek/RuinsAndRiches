@@ -107,7 +107,7 @@ namespace Server.Engines.Help
 			string color = "#ddbc4b";
 			int button = 4005;
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
             this.Closable=true;
 			this.Disposable=true;
@@ -429,7 +429,7 @@ namespace Server.Engines.Help
 					if ( xr == 1 ){ g=g+j; xr=0; xs=xm; } else { xr=1; xs=xo; }
 				}
 
-				if ( from.RaceID > 0 
+				if ( from.RaceID > 0
 					&& (
 					(from.Region).Name == "the Tavern" ||
 					( from.Map == Map.Sosaria && from.X >= 6982 && from.Y >= 694 && from.X <= 6999 && from.Y <= 713 )
@@ -497,7 +497,7 @@ namespace Server.Engines.Help
 
 				if ( xr == 1 ){ g=g+j; xr=0; xs=xm; } else { xr=1; xs=xo; }
 
-				string skillLocks = "Skill List (Show Up)"; 
+				string skillLocks = "Skill List (Show Up)";
 				if ( ((PlayerMobile)from).SkillDisplay == 1 ){ setB = 4018; skillLocks = "Skill List (Show Up and Locked)"; } else { setB = 4017; }
 				AddButton(xs, g, setB, setB, 982, GumpButtonType.Reply, 0);
 				AddButton(xs+40, g, 4011, 4011, 199, GumpButtonType.Reply, 0);
@@ -527,8 +527,8 @@ namespace Server.Engines.Help
 				g=g+j;
 
 				string amazon = "";
-				if ( ((PlayerMobile)from).CharacterBarbaric == 1 ){ setB = 4018; } 
-				else if ( ((PlayerMobile)from).CharacterBarbaric == 2 ){ setB = 4003; amazon = " with Amazon Fighting Titles"; } 
+				if ( ((PlayerMobile)from).CharacterBarbaric == 1 ){ setB = 4018; }
+				else if ( ((PlayerMobile)from).CharacterBarbaric == 2 ){ setB = 4003; amazon = " with Amazon Fighting Titles"; }
 				else { setB = 3609; }
 				AddButton(325, g, setB, setB, 984, GumpButtonType.Reply, 0);
 				AddButton(370, g, 4011, 4011, 198, GumpButtonType.Reply, 0);
@@ -642,7 +642,7 @@ namespace Server.Engines.Help
 		{
 			Mobile from = state.Mobile;
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			from.CloseGump( typeof(Server.Engines.Help.HelpGump) );
 
@@ -779,7 +779,7 @@ namespace Server.Engines.Help
 					case 13: // Library
 					{
 						from.CloseGump( typeof( MyLibrary ) );
-						from.SendSound( 0x4A ); 
+						from.SendSound( 0x4A );
 						from.SendGump( new MyLibrary( from, 1 ) );
 						break;
 					}
@@ -826,7 +826,7 @@ namespace Server.Engines.Help
 					case 18: // Conversations
 					{
 						from.CloseGump( typeof( MyChat ) );
-						from.SendSound( 0x4A ); 
+						from.SendSound( 0x4A );
 						from.SendGump( new MyChat( from, 1 ) );
 						break;
 					}
@@ -1397,7 +1397,7 @@ namespace Server.Engines.Help
 					{
 						ObeliskTip obelisk = (ObeliskTip)item;
 						quests = quests + "-You are trying to become a Titan of Ether.<br>";
-						quests = quests + "   -You have the Obelisk Tip.<br>"; 
+						quests = quests + "   -You have the Obelisk Tip.<br>";
 
 						if ( obelisk.WonAir > 0 ){ quests = quests + "   -You have defeated Stratos, the Titan of Air.<br>"; }
 						else if ( obelisk.HasAir > 0 ){ quests = quests + "   -You have the Breath of Air.<br>"; }
@@ -1435,21 +1435,21 @@ namespace Server.Engines.Help
 				}
 			}
 
-			if ( 	from.Backpack.FindItemByType( typeof ( ScalesOfEthicality ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( OrbOfLogic ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( LanternOfDiscipline ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( BlackrockSerpentOrder ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( BlackrockSerpentChaos ) ) != null || 
+			if ( 	from.Backpack.FindItemByType( typeof ( ScalesOfEthicality ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( OrbOfLogic ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( LanternOfDiscipline ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( BlackrockSerpentOrder ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( BlackrockSerpentChaos ) ) != null ||
 					from.Backpack.FindItemByType( typeof ( BlackrockSerpentBalance ) ) != null )
 			{
 				quests = quests + "-You are on a quest to bring the Serpents back into balance.<br><br>";
 			}
 
-			if ( 	from.Backpack.FindItemByType( typeof ( ShardOfFalsehood ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( ShardOfCowardice ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( ShardOfHatred ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( CandleOfLove ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( BookOfTruth ) ) != null || 
+			if ( 	from.Backpack.FindItemByType( typeof ( ShardOfFalsehood ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( ShardOfCowardice ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( ShardOfHatred ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( CandleOfLove ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( BookOfTruth ) ) != null ||
 					from.Backpack.FindItemByType( typeof ( BellOfCourage ) ) != null )
 			{
 				quests = quests + "-You are on a quest to destroy the Shadowlords and construct a Gem of Immortality.<br><br>";
@@ -1491,10 +1491,10 @@ namespace Server.Engines.Help
 			{
 				quests = quests + "-You have destroyed Dracula, the ruler of all vampires.<br><br>";
 			}
-			if ( 	from.Backpack.FindItemByType( typeof ( StaffPartVenom ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( StaffPartCaddellite ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( StaffPartFire ) ) != null || 
-					from.Backpack.FindItemByType( typeof ( StaffPartLight ) ) != null || 
+			if ( 	from.Backpack.FindItemByType( typeof ( StaffPartVenom ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( StaffPartCaddellite ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( StaffPartFire ) ) != null ||
+					from.Backpack.FindItemByType( typeof ( StaffPartLight ) ) != null ||
 					from.Backpack.FindItemByType( typeof ( StaffPartEnergy ) ) != null )
 			{
 				quests = quests + "-You are seeking to assemble the Staff of Ultimate Power.<br><br>";

@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateDaemon : BasePirate 
+	public class PirateDaemon : BasePirate
 	{
 		public override bool ReacquireOnMovement{ get{ return true; } }
 		public override bool HasBreath{ get{ return true; } } // fire breath enabled
 
-		[Constructable] 
+		[Constructable]
 		public PirateDaemon()
 		{
 			Name = NameList.RandomName( "daemon" );

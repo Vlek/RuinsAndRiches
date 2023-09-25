@@ -31,8 +31,8 @@ namespace Server.Mobiles
 			{
 				foreach ( Item shrine in this.GetItemsInRange( 6 ) )
 				{
-					if ( 	shrine is AnkhWest || shrine is AnkhNorth || shrine is AltarEvil || shrine is AltarDurama || shrine is AltarWizard || shrine is AltarGargoyle || 
-							shrine is AltarDaemon || shrine is AltarSea || shrine is AltarStatue || shrine is AltarShrineSouth || shrine is AltarShrineEast || 
+					if ( 	shrine is AnkhWest || shrine is AnkhNorth || shrine is AltarEvil || shrine is AltarDurama || shrine is AltarWizard || shrine is AltarGargoyle ||
+							shrine is AltarDaemon || shrine is AltarSea || shrine is AltarStatue || shrine is AltarShrineSouth || shrine is AltarShrineEast ||
 							shrine is AltarDryad || shrine is AltarGodsSouth || shrine is AltarGodsEast )
 					{
 						Point3D goal = shrine.Location;
@@ -71,11 +71,11 @@ namespace Server.Mobiles
 							this.Animate( 269, 5, 1, true, false, 0 );
 							string plead = "Oh Great Spirits";
 							string resurrect = ", please resurrect";
-							string who = NameList.RandomName( "male" ); 
+							string who = NameList.RandomName( "male" );
 								if ( Utility.RandomBool() ){ who = NameList.RandomName( "female" ); }
 								if ( Utility.RandomBool() ){ who = who + " " + TavernPatrons.GetTitle(); }
 
-							string dungeon = QuestCharacters.SomePlace( "tavern" );	
+							string dungeon = QuestCharacters.SomePlace( "tavern" );
 								if ( Utility.RandomBool() ){ dungeon = RandomThings.MadeUpDungeon(); }
 
 							string died = "was killed";

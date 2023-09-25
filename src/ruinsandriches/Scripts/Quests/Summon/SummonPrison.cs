@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -115,15 +115,15 @@ namespace Server.Items
 
 				choice = Utility.RandomMinMax( 1, most ); KeepTrack = KeepTrack + choice.ToString() + "_";
 					while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-						KeepTrack = KeepTrack + choice.ToString() + "_"; 
+						KeepTrack = KeepTrack + choice.ToString() + "_";
 						KeyA = GetItemNeeded( choice, 3 );
 
 					while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-						KeepTrack = KeepTrack + choice.ToString() + "_"; 
+						KeepTrack = KeepTrack + choice.ToString() + "_";
 						KeyB = GetItemNeeded( choice, 3 );
 
 					while ( UsedNumberCheck( KeepTrack, choice ) == true ){ choice = Utility.RandomMinMax( 1, most ); }
-						KeepTrack = KeepTrack + choice.ToString() + "_"; 
+						KeepTrack = KeepTrack + choice.ToString() + "_";
 						KeyC = GetItemNeeded( choice, 3 );
 
 				ReagentNameA = GetReagentNeeded();
@@ -250,7 +250,7 @@ namespace Server.Items
 
 				if ( from.AccessLevel == AccessLevel.Player  ){ TestMyPack( from, Dungeon, KeyA, KeyB, KeyC, ReagentQtyA, ReagentNameA, ReagentQtyB, ReagentNameB, true ); }
 
-				SummonTimer thisTimer = new SummonTimer( this ); 
+				SummonTimer thisTimer = new SummonTimer( this );
 				thisTimer.Start();
 			}
 			else
@@ -541,19 +541,19 @@ namespace Server.Items
 		{
 			int pick = Utility.RandomMinMax( 1, 25 );
 
-			if ( pick == 1 ){		item.Prisoner = "Tiamat the Lord of Dragons";		item.PrisonerBase = "AncientWyrm"; 		item.PrisonerBody = 105;	item.PrisonerHue = 0xA54; 
+			if ( pick == 1 ){		item.Prisoner = "Tiamat the Lord of Dragons";		item.PrisonerBase = "AncientWyrm"; 		item.PrisonerBody = 105;	item.PrisonerHue = 0xA54;
 				item.RewardID = Utility.RandomList( 0x2234, 0x2235 );	item.RewardHue = 0xA54;	item.RewardName = "Head of " + item.Prisoner;
 				item.PrisonerClothColorUsed = 0;			item.PrisonerFullNameUsed = 0; }
-			else if ( pick == 2 ){	item.Prisoner = "Bahamut the Platinum Dragon";		item.PrisonerBase = "AncientWyrm"; 		item.PrisonerBody = 105; 	item.PrisonerHue = 0x430; 
+			else if ( pick == 2 ){	item.Prisoner = "Bahamut the Platinum Dragon";		item.PrisonerBase = "AncientWyrm"; 		item.PrisonerBody = 105; 	item.PrisonerHue = 0x430;
 				item.RewardID = Utility.RandomList( 0x2234, 0x2235 );	item.RewardHue = 0x430;	item.RewardName = "Head of " + item.Prisoner;
 				item.PrisonerClothColorUsed = 0;			item.PrisonerFullNameUsed = 0; }
-			else if ( pick == 3 ){	item.Prisoner = "Balar of the Evil Eye";			item.PrisonerBase = "ShamanicCyclops"; 	item.PrisonerBody = 0; 		item.PrisonerHue = 0xB96; 
+			else if ( pick == 3 ){	item.Prisoner = "Balar of the Evil Eye";			item.PrisonerBase = "ShamanicCyclops"; 	item.PrisonerBody = 0; 		item.PrisonerHue = 0xB96;
 				item.RewardID = 0x2F60;	item.RewardHue = 0;	item.RewardName = "Eye of " + item.Prisoner;
 				item.PrisonerClothColorUsed = 0;			item.PrisonerFullNameUsed = 0; }
-			else if ( pick == 4 ){	item.Prisoner = "Vecna the Lich";					item.PrisonerBase = "LichLord"; 		item.PrisonerBody = 0; 		item.PrisonerHue = 0xA03; 
+			else if ( pick == 4 ){	item.Prisoner = "Vecna the Lich";					item.PrisonerBase = "LichLord"; 		item.PrisonerBody = 0; 		item.PrisonerHue = 0xA03;
 				item.RewardID = 0x5721;	item.RewardHue = 0xA03;	item.RewardName = "Hand of " + item.Prisoner;
 				item.PrisonerClothColorUsed = 0;			item.PrisonerFullNameUsed = 0; }
-			else if ( pick == 5 ){	item.Prisoner = "Orcus the Daemon Prince";			item.PrisonerBase = "DaemonTemplate"; 	item.PrisonerBody = 427; 	item.PrisonerHue = 0xA93; 
+			else if ( pick == 5 ){	item.Prisoner = "Orcus the Daemon Prince";			item.PrisonerBase = "DaemonTemplate"; 	item.PrisonerBody = 427; 	item.PrisonerHue = 0xA93;
 				item.RewardID = Utility.RandomList( 0x369C, 0x364D );	item.RewardHue = 0;	item.RewardName = "Wand of " + item.Prisoner;
 				item.PrisonerClothColorUsed = 0;			item.PrisonerFullNameUsed = 0; }
 			else if ( pick == 6 ){	item.Prisoner = "Kronos the Ancient Titan";			item.PrisonerBase = "ElderTitan"; 		item.PrisonerBody = 0; 		item.PrisonerHue = 0xB8E;
@@ -1040,21 +1040,21 @@ namespace Server.Items
 		}
 	}
 
-	public class SummonTimer : Timer 
-	{ 
-		private Item i_item; 
-		public SummonTimer( Item item ) : base( TimeSpan.FromMinutes( 60.0 ) ) 
-		{ 
-			Priority = TimerPriority.OneMinute; 
-			i_item = item; 
-		} 
+	public class SummonTimer : Timer
+	{
+		private Item i_item;
+		public SummonTimer( Item item ) : base( TimeSpan.FromMinutes( 60.0 ) )
+		{
+			Priority = TimerPriority.OneMinute;
+			i_item = item;
+		}
 
-		protected override void OnTick() 
-		{ 
+		protected override void OnTick()
+		{
 			if (( i_item != null ) && ( !i_item.Deleted ))
 			{
 				SummonPrison.LeaveThisPlace( (SummonPrison)i_item );
 			}
-		} 
+		}
 	}
 }

@@ -113,11 +113,11 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int HitPoints
 		{
-			get 
+			get
 			{
 				return m_HitPoints;
 			}
-			set 
+			set
 			{
 				if ( value != m_HitPoints && MaxHitPoints > 0 )
 				{
@@ -168,12 +168,12 @@ namespace Server.Items
 		public bool ReplenishesCharges
 		{
 			get { return m_ReplenishesCharges; }
-			set 
+			set
 			{
 				if( value != m_ReplenishesCharges && value )
 					m_LastReplenished = DateTime.Now;
 
-				m_ReplenishesCharges = value; 
+				m_ReplenishesCharges = value;
 			}
 		}
 

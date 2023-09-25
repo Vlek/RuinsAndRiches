@@ -62,9 +62,9 @@ namespace Server.Spells.Research
 				{
 					from.SendMessage( "This spell can really tell you nothing of importance for this one." );
 				}
-				else if (	targeted is BaseVendor || targeted is BasePerson || targeted is Citizens || targeted is PackBeast || 
-							targeted is FrankenPorter || targeted is FrankenFighter || targeted is HenchmanFamiliar || targeted is AerialServant || 
-							targeted is GolemPorter || targeted is Robot || targeted is GolemFighter || targeted is HenchmanArcher || 
+				else if (	targeted is BaseVendor || targeted is BasePerson || targeted is Citizens || targeted is PackBeast ||
+							targeted is FrankenPorter || targeted is FrankenFighter || targeted is HenchmanFamiliar || targeted is AerialServant ||
+							targeted is GolemPorter || targeted is Robot || targeted is GolemFighter || targeted is HenchmanArcher ||
 							targeted is HenchmanMonster || targeted is HenchmanFighter || targeted is HenchmanWizard )
 				{
 					from.SendMessage( "This spell can really tell you nothing of importance for this one." );

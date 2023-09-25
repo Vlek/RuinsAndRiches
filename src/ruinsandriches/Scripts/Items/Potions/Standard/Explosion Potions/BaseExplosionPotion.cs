@@ -72,7 +72,7 @@ namespace Server.Items
 			}
 			else if ( !from.Region.AllowHarmful( from, from ) )
 			{
-				from.SendMessage( "That doesn't feel like a good idea." ); 
+				from.SendMessage( "That doesn't feel like a good idea." );
 				return;
 			}
 
@@ -209,7 +209,7 @@ namespace Server.Items
 
 				if( p is Mobile )
 				{
-					if( !RelativeLocation ) // explosion location = current mob location. 
+					if( !RelativeLocation ) // explosion location = current mob location.
 						p = ((Mobile)p).Location;
 					else
 						to = (Mobile)p;
@@ -285,7 +285,7 @@ namespace Server.Items
 						from.DoHarmful( m );
 
 					int damage = Utility.RandomMinMax( min, max );
-					
+
 					damage += alchemyBonus;
 
 					if ( !Core.AOS && damage > 40 )

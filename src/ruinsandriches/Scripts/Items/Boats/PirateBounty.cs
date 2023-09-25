@@ -34,7 +34,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "For " + BountyWho + "");
         }
-    
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( from.InRange( this.GetWorldLocation(), 4 ) )
@@ -69,9 +69,9 @@ namespace Server.Items
 				AddHtml( 94, 56, 161, 20, @"<BODY><BASEFONT Color=" + value + ">" + bounty.BountyValue + " Gold</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.PlaySound( 0x249 );
 			}
 		}

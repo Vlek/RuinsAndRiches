@@ -4,7 +4,7 @@ using Server;
 using Server.Targeting;
 using Server.Commands;
 
-namespace Server.Scripts.Commands 
+namespace Server.Scripts.Commands
 {
     public class RecordItems
     {

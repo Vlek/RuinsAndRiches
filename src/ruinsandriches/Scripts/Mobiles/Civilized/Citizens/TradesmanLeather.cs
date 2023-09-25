@@ -92,7 +92,7 @@ namespace Server.Items
 			if ( from is Citizens )
 			{
 				from.Direction = from.GetDirectionTo( GetWorldLocation() );
-				from.Animate( 230, 5, 1, true, false, 0 ); 
+				from.Animate( 230, 5, 1, true, false, 0 );
 				if ( this.X == from.X && ( this.ItemID == 0x1069 || this.ItemID == 0x106A ) )
 				{
 					this.ItemID = 0x107A;
@@ -147,7 +147,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to open." );
 				return;

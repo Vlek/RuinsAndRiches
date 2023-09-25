@@ -4,7 +4,7 @@ using Server.Items;
 namespace Server.Items
 {
 	public class Pestilence: BaseQuiver, IIslesDreadDyable
-	{		
+	{
 		[Constructable]
 		public Pestilence() : base()
         {

@@ -45,7 +45,7 @@ namespace Server.Mobiles
 				i.Amount = 3;
 				PackItem( i );
 			}
-			
+
 			switch ( Utility.Random( 12 ) )
 			{
 				case 0: PackItem( new LeatherGorget() ); break;

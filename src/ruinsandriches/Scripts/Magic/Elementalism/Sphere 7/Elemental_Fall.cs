@@ -79,7 +79,7 @@ namespace Server.Spells.Elementalism
 					Effects.PlaySound( p, Caster.Map, 0x160 );
 
 					damage = (damage * 2) / targets.Count;
-						
+
 					double toDeal;
 					for ( int i = 0; i < targets.Count; ++i )
 					{

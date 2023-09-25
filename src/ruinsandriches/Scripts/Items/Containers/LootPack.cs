@@ -119,7 +119,7 @@ namespace Server
 							itemID.Name = RandomThings.GetOddityAdjective() + " item";
 							if ( item is BaseJewel )
 							{
-								itemID.SkillRequired = "ItemID"; 
+								itemID.SkillRequired = "ItemID";
 								itemID.VendorCanID = "Jeweler";
 								if ( item is MagicBelt || item is MagicSash || item is MagicRobe || item is MagicHat || item is MagicCloak || item is MagicBoots ){ itemID.VendorCanID = "Tailor"; }
 								else if ( item is MagicTalisman || item is MagicTorch || item is MagicCandle || item is MagicLantern ){ itemID.VendorCanID = "Sage"; }
@@ -165,7 +165,7 @@ namespace Server
 							if ( cont != null && ( itemID.VendorCanID == "" || itemID.VendorCanID == null ) )
 							{
 								cont.DropItem( item );
-								itemID.Delete(); 
+								itemID.Delete();
 							}
 							else if ( cont != null )
 							{
@@ -1741,7 +1741,7 @@ namespace Server
 				new Type[] // high
 				{
 					typeof( VengefulSpiritScroll ),		typeof( VampiricEmbraceScroll ), typeof( ExorcismScroll )
-				} : 
+				} :
 				new Type[] // high
 				{
 					typeof( VengefulSpiritScroll ),		typeof( VampiricEmbraceScroll )

@@ -65,9 +65,9 @@ namespace Server.Mobiles
 
 				VirtualArmor = 50;
 
-				PackItem( new WaterFlask() ); 
-				PackItem( new WaterFlask() ); 
-				PackItem( new WaterFlask() ); 
+				PackItem( new WaterFlask() );
+				PackItem( new WaterFlask() );
+				PackItem( new WaterFlask() );
 			}
 			else
 			{
@@ -98,7 +98,7 @@ namespace Server.Mobiles
 
 				VirtualArmor = 40;
 
-				PackItem( new WaterFlask() ); 
+				PackItem( new WaterFlask() );
 			}
 		}
 

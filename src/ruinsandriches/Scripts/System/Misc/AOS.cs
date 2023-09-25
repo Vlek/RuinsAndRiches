@@ -86,7 +86,7 @@ namespace Server
 			}
 
 			BaseQuiver quiver = null;
-			
+
 			if ( archer && from != null )
 				quiver = from.FindItemOnLayer( Layer.Cloak ) as BaseQuiver;
 

@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace Server.Items
 	public class MaterialLiquifier : Item
 	{
 		public int ItemCharges;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Item_Charges { get { return ItemCharges; } set { ItemCharges = value; InvalidateProperties(); } }
 

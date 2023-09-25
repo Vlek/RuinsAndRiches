@@ -207,7 +207,7 @@ namespace Server.Items
                 FindHouseOfPlacer();
                 if ( House == null || !Server.Misc.MyServerSettings.ShantysAllowed() )
                 {
-                    Refund( Placer );                    
+                    Refund( Placer );
                 }
             }
         }

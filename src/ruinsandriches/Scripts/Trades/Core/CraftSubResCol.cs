@@ -14,7 +14,7 @@ namespace Server.Engines.Craft
 			get { return m_Init; }
 			set { m_Init = value; }
 		}
-				
+
 		public Type ResType
 		{
 			get { return m_Type; }

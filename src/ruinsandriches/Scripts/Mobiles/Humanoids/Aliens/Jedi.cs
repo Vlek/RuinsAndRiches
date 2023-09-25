@@ -9,9 +9,9 @@ using Server.Gumps;
 using Server.Misc;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
-{ 
-	public class Jedi : BaseCreature 
+namespace Server.Mobiles
+{
+	public class Jedi : BaseCreature
 	{
 		public int actionCount;
 		[CommandProperty(AccessLevel.Owner)]
@@ -30,8 +30,8 @@ namespace Server.Mobiles
 		public override double BreathEffectDelay{ get{ return 0.1; } }
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 21 ); }
 
-		[Constructable] 
-		public Jedi() : base( AIType.AI_Mage, FightMode.Evil, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public Jedi() : base( AIType.AI_Mage, FightMode.Evil, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Title = "the Jedi";
@@ -47,7 +47,7 @@ namespace Server.Mobiles
 			else
 			{
 				Body = 0x190;
-				Name = NameList.RandomName( "male" ); 
+				Name = NameList.RandomName( "male" );
 				Utility.AssignRandomHair( this );
 				int HairColor = Utility.RandomHairHue();
 				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
@@ -182,17 +182,17 @@ namespace Server.Mobiles
 			}
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -203,7 +203,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -289,22 +289,22 @@ namespace Server.Mobiles
 		public override int Meat{ get{ return 1; } }
 		public override Poison PoisonImmune{ get{ return Poison.Greater; } }
 
-		public Jedi( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public Jedi( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
 			writer.Write( actionCount );
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
 			actionCount = reader.ReadInt();
-		} 
-	} 
+		}
+	}
 }

@@ -12,7 +12,7 @@ namespace Server.Items
 		public Lemonhead() : this( 1 )
 		{
 		}
-		
+
 		[Constructable]
 		public Lemonhead( int amount ) : base( 0xF8F, amount )
 		{
@@ -27,11 +27,11 @@ namespace Server.Items
 
 		public Lemonhead( Serial serial ) : base( serial )
 		{
-		
 
-		
+
+
 		}
-	
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

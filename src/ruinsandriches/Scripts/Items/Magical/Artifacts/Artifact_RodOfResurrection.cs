@@ -59,7 +59,7 @@ namespace Server.Items
             {
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16 );
- 
+
                 m.CloseGump( typeof( ResurrectGump ) );
                 m.SendGump( new ResurrectGump( m, from ) );
             }
@@ -67,10 +67,10 @@ namespace Server.Items
 			{
 				BaseCreature pet = (BaseCreature)m;
 				Mobile master = pet.GetMaster();
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16 );
- 
+
                 master.CloseGump(typeof(PetResurrectGump));
                 master.SendGump(new PetResurrectGump(master, pet));
             }
@@ -147,18 +147,18 @@ namespace Server.Items
 				from.SendMessage("This spell didn't seem to work.");
 			}
 		}
- 
+
         private class InternalTarget : Target
         {
             private Mobile m_Owner;
             private Artifact_RodOfResurrection m_Rod;
- 
+
             public InternalTarget( Mobile owner, Artifact_RodOfResurrection rod ) : base( 1, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
 				m_Rod = rod;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )

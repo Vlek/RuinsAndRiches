@@ -4,10 +4,10 @@ using Server.Misc;
 using Server.Items;
 using System.Collections;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a vampire corpse" )] 
-	public class Vampire : BaseCreature 
+namespace Server.Mobiles
+{
+	[CorpseName( "a vampire corpse" )]
+	public class Vampire : BaseCreature
 	{
 		private bool m_TrueForm;
 
@@ -16,9 +16,9 @@ namespace Server.Mobiles
 			return WeaponAbility.BleedAttack;
 		}
 
-		[Constructable] 
-		public Vampire() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public Vampire() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			Name = "a young vampire";
 			Body = 124;
 
@@ -180,7 +180,7 @@ namespace Server.Mobiles
 
 			SetHits( 90, 150 );
 
-			Say("Squeak!"); 
+			Say("Squeak!");
 		}
 
 		public Vampire( Serial serial ) : base( serial )
@@ -191,7 +191,7 @@ namespace Server.Mobiles
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
-			writer.Write( m_TrueForm );	
+			writer.Write( m_TrueForm );
 		}
 
 		public override void Deserialize( GenericReader reader )

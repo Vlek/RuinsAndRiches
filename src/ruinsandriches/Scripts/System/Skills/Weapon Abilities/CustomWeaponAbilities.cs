@@ -11,40 +11,40 @@ namespace Server
 		{
 			EventSink.Login += new LoginEventHandler( EventSink_Login );
 		}
-		
+
 		private static void EventSink_Login( LoginEventArgs args )
 		{
 			Mobile from = args.Mobile;
-			
+
 			if ( from != null && Server.Misc.PlayerSettings.AutoOpenWepBar( from ) )
 			{
 				Check(from);
 			}
 		}
-		
+
 		public static void Check(Mobile from)
 		{
 			BaseWeapon weapon = (BaseWeapon)(from.Weapon);
 			Check(weapon,from);
 		}
-		
+
 		public static void Check(BaseWeapon weapon, Mobile from)
 		{
 			from.CloseGump(typeof(SpecialAttackGump));
-			
+
 			int abilities=0;
-			
+
 			if ( from != null && weapon != null )
 			{
 				abilities=HasAbilities( weapon, from );
-				
+
 				if( abilities > 0 )
 				{
 					from.SendGump(new SpecialAttackGump( weapon, from, abilities ));
 				}
 			}
 		}
-		
+
 		private static int HasAbilities(BaseWeapon weapon, Mobile from)
 		{
 			int number = 0;
@@ -62,7 +62,7 @@ namespace Server
 					number++;
 				}
 			}
-			
+
 			if(weapon.SecondaryAbility != null)
 			{
 				if ( ( from.Skills[weapon.DefSkill].Value >= sk2 || from.Skills[weapon.GetUsedSkill(from,true)].Value >= sk2 ) && ( from.Skills[SkillName.Tactics].Value >= sk2 ) )
@@ -91,10 +91,10 @@ namespace Server
 					number++;
 				}
 			}
-			
+
 			return number;
 		}
-		
+
 		public static bool ServerSideSetAbility(Mobile from, int index)
 		{
 			if ( index == 0 )
@@ -106,7 +106,7 @@ namespace Server
 			}
 			return false;
 		}
-		
+
 		public static void SetAbilities(BaseWeapon weapon, ref int Primary, ref int Secondary, ref int Third, ref int Fourth, ref int Fifth)
 		{
 			WeaponAbility prim = weapon.PrimaryAbility;
@@ -114,7 +114,7 @@ namespace Server
 			WeaponAbility third = weapon.ThirdAbility;
 			WeaponAbility fourth = weapon.FourthAbility;
 			WeaponAbility fifth = weapon.FifthAbility;
-			
+
 			for(int i=0;i<WeaponAbility.Abilities.Length;i++)
 			{
 				WeaponAbility index = WeaponAbility.Abilities[i];

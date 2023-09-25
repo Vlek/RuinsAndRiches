@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -98,7 +98,7 @@ namespace Server.Items
 		{
 			public RugGump( Mobile from, int gold, int cloth ) : base( 50, 50 )
 			{
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 				string color = "#9ab9cb";
 
 				this.Closable=true;
@@ -122,12 +122,12 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			Container pack = from.Backpack;
 			int iAmount = 0;
 

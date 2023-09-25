@@ -132,7 +132,7 @@ namespace Server.Items
                 AddAlphaRegion(10, 10, 250, 310);
 
                 AddHtmlLocalized(13, 12, 250, 20, 1076724, 0x7FFF, false, false); //Position
-               
+
 				AddButton(15, 48, 0x4B9, 0x4BA, 1, GumpButtonType.Reply, 0); // South
                 AddHtmlLocalized(38, 46, 340, 20, 1075386, 0x7FFF, false, false); // South
 

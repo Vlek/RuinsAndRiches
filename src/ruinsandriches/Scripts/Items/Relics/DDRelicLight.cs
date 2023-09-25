@@ -6,7 +6,7 @@ namespace Server.Items
 	public class DDRelicLight1 : BaseLight
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -87,7 +87,7 @@ namespace Server.Items
 	public class DDRelicLight2 : BaseLight
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -168,7 +168,7 @@ namespace Server.Items
 	public class DDRelicLight3 : BaseLight
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 

@@ -66,13 +66,13 @@ namespace Server.Misc
 					if ( GhostHelper.SameArea( from, mSp ) == true && cadaver.Owner == from && carrying > 0 )
 					{
 						distchk++;
-						bodies.Add( mSp ); 
+						bodies.Add( mSp );
 						if ( GhostHelper.HowFar( from.X, from.Y, mSp.X, mSp.Y ) < TheClosest ){ TheClosest = GhostHelper.HowFar( from.X, from.Y, mSp.X, mSp.Y ); IsClosest = distchk; }
 					}
 					else
 					{
-						mice.Add( mSp ); 
-						empty.Add( cadaver ); 
+						mice.Add( mSp );
+						empty.Add( cadaver );
 					}
 				}
 			}

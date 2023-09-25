@@ -16,7 +16,7 @@ namespace Server.Items
 			Attributes.LowerRegCost = 50;
 			Server.Misc.Arty.ArtySetup( this, 5, "" );
 		}
-		
+
 		public Artifact_ShimmeringTalisman( Serial serial ) :  base( serial )
 		{
 		}

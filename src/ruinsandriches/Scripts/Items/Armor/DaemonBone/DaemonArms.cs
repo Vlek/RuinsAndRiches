@@ -32,7 +32,7 @@ namespace Server.Items
 		{
 			Weight = 2.0;
 			Hue = 0x648;
-                 
+
 			ArmorAttributes.MageArmor = 1;
 			ArmorAttributes.SelfRepair = 1;
 			Attributes.BonusMana = 5;
@@ -45,7 +45,7 @@ namespace Server.Items
 		public DaemonArms( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -55,7 +55,7 @@ namespace Server.Items
 			if ( Weight == 1.0 )
 				Weight = 2.0;
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

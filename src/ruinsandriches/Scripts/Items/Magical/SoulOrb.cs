@@ -12,7 +12,7 @@ namespace Server.Items
     public class SoulOrb : Item
     {
 		private static Dictionary<Mobile, SoulOrb> m_ResList;
-		
+
         public Mobile m_Owner;
 
         [CommandProperty( AccessLevel.GameMaster )]
@@ -27,14 +27,14 @@ namespace Server.Items
 
         [CommandProperty(AccessLevel.GameMaster)]
         public TimeSpan Delay { get { return m_Delay; } set { m_Delay = value; } }
-	
+
         public static void Initialize()
         {
             EventSink.PlayerDeath += new PlayerDeathEventHandler(EventSink_Death);
         }
 
         [Constructable]
-        public SoulOrb() : base( 0x2C84 ) 
+        public SoulOrb() : base( 0x2C84 )
         {
             Name = "soul orb";
             LootType = LootType.Blessed;
@@ -57,7 +57,7 @@ namespace Server.Items
 				m_ResList.Add(from, orb);
 			}
 		}
-		
+
 		private static void EventSink_Death(PlayerDeathEventArgs e)
         {
             PlayerMobile owner = e.Mobile as PlayerMobile;
@@ -66,7 +66,7 @@ namespace Server.Items
             {
                 if (owner.Alive)
                     return;
-				
+
 				if(m_ResList != null && m_ResList.ContainsKey(owner))
 				{
 					SoulOrb arp = m_ResList[owner];
@@ -110,19 +110,19 @@ namespace Server.Items
 			if ( this.Name == "blood of a vampire" ){ list.Add( 1049644, "Contains vampire blood for " + m_Owner.Name ); }
 			else if ( this.Name == "cloning crystal" ){ list.Add( 1049644, "Contains genetic patterns for " + m_Owner.Name ); }
 			else { list.Add( 1049644, "Contains the Soul of " + m_Owner.Name ); }
-        } 
+        }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write( (int) 0 ); // version          
+            writer.Write( (int) 0 ); // version
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
         }
     }
 }

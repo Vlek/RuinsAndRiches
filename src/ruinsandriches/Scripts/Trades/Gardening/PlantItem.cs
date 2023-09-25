@@ -342,9 +342,9 @@ namespace Server.Engines.Plants
 		{
 			if ( m_PlantStatus >= PlantStatus.DecorativePlant )
 				return;
-			
-			Point3D loc = this.GetWorldLocation();	
-			
+
+			Point3D loc = this.GetWorldLocation();
+
 			if ( !from.InLOS( loc ) || !from.InRange( loc, 2 ) )
 			{
 				from.LocalOverheadMessage( MessageType.Regular, 0x3E9, 1019045 ); // I can't reach that.

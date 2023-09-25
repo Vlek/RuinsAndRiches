@@ -14,7 +14,7 @@ namespace Server.Misc
 
         // Spaces to left of house allowed for placement.
         public static int Left = 15;
-        
+
         // Spaces to right of house allowed for placement.
         public static int Right = 15;
 
@@ -24,9 +24,9 @@ namespace Server.Misc
         // Spaces to back of house allowed for placement.
         public static int Back = 15;
 
-        //This variable is used to tell the system how many seconds after 
+        //This variable is used to tell the system how many seconds after
         //the World.Save the cleanup of any orphaned LawnItems happens.
-        //Set it so it runs after the save is complete, so if your saves 
+        //Set it so it runs after the save is complete, so if your saves
         //take 10 seconds, set it to 15.
         public static int SecondsToCleanup = 30;
 

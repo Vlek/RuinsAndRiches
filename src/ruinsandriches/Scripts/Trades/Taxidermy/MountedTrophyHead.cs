@@ -34,7 +34,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to flip." );
 				return;
@@ -209,8 +209,8 @@ namespace Server.Items
 				else if ( this.ItemID == 0x33B4 ){ this.ItemID = 0x33B3; } //mounted skeletal dragon
 				else if ( this.ItemID == 0x33B5 ){ this.ItemID = 0x33B6; } //mounted wyvern
 				else if ( this.ItemID == 0x33B6 ){ this.ItemID = 0x33B5; } //mounted wyvern
-				else if ( this.ItemID == 0x33B9 ){ this.ItemID = 0x33BA; } //mounted alien 
-				else if ( this.ItemID == 0x33BA ){ this.ItemID = 0x33B9; } //mounted alien 
+				else if ( this.ItemID == 0x33B9 ){ this.ItemID = 0x33BA; } //mounted alien
+				else if ( this.ItemID == 0x33BA ){ this.ItemID = 0x33B9; } //mounted alien
 				else if ( this.ItemID == 0x33CB ){ this.ItemID = 0x33CC; } //mounted dragon abysmal
 				else if ( this.ItemID == 0x33CC ){ this.ItemID = 0x33CB; } //mounted dragon abysmal
 				else if ( this.ItemID == 0x33D1 ){ this.ItemID = 0x33D2; } //mounted dragon amber
@@ -239,22 +239,22 @@ namespace Server.Items
 				else if ( this.ItemID == 0x33CA ){ this.ItemID = 0x33C9; } //mounted dragon stygian
 				else if ( this.ItemID == 0x33CD ){ this.ItemID = 0x33CE; } //mounted dragon vampiric
 				else if ( this.ItemID == 0x33CE ){ this.ItemID = 0x33CD; } //mounted dragon vampiric
-				else if ( this.ItemID == 0x33DB ){ this.ItemID = 0x33DC; } //mounted hell beast 
-				else if ( this.ItemID == 0x33DC ){ this.ItemID = 0x33DB; } //mounted hell beast 
-				else if ( this.ItemID == 0x33DD ){ this.ItemID = 0x33DE; } //mounted hippogriff 
-				else if ( this.ItemID == 0x33DE ){ this.ItemID = 0x33DD; } //mounted hippogriff 
-				else if ( this.ItemID == 0x33BD ){ this.ItemID = 0x33BE; } //mounted lion 
-				else if ( this.ItemID == 0x33BE ){ this.ItemID = 0x33BD; } //mounted lion 
-				else if ( this.ItemID == 0x33B7 ){ this.ItemID = 0x33B8; } //mounted styguana 
-				else if ( this.ItemID == 0x33B8 ){ this.ItemID = 0x33B7; } //mounted styguana 
-				else if ( this.ItemID == 0x33BB ){ this.ItemID = 0x33BC; } //mounted watcher 
-				else if ( this.ItemID == 0x33BC ){ this.ItemID = 0x33BB; } //mounted watcher 
-				else if ( this.ItemID == 0x33DF ){ this.ItemID = 0x33E0; } //mounted walrus 
-				else if ( this.ItemID == 0x33E0 ){ this.ItemID = 0x33DF; } //mounted walrus 
-				else if ( this.ItemID == 0x33E1 ){ this.ItemID = 0x33E2; } //mounted ogre 
-				else if ( this.ItemID == 0x33E2 ){ this.ItemID = 0x33E1; } //mounted ogre 
-				else if ( this.ItemID == 0x33E3 ){ this.ItemID = 0x33E4; } //mounted trollbear 
-				else if ( this.ItemID == 0x33E4 ){ this.ItemID = 0x33E3; } //mounted trollbear 
+				else if ( this.ItemID == 0x33DB ){ this.ItemID = 0x33DC; } //mounted hell beast
+				else if ( this.ItemID == 0x33DC ){ this.ItemID = 0x33DB; } //mounted hell beast
+				else if ( this.ItemID == 0x33DD ){ this.ItemID = 0x33DE; } //mounted hippogriff
+				else if ( this.ItemID == 0x33DE ){ this.ItemID = 0x33DD; } //mounted hippogriff
+				else if ( this.ItemID == 0x33BD ){ this.ItemID = 0x33BE; } //mounted lion
+				else if ( this.ItemID == 0x33BE ){ this.ItemID = 0x33BD; } //mounted lion
+				else if ( this.ItemID == 0x33B7 ){ this.ItemID = 0x33B8; } //mounted styguana
+				else if ( this.ItemID == 0x33B8 ){ this.ItemID = 0x33B7; } //mounted styguana
+				else if ( this.ItemID == 0x33BB ){ this.ItemID = 0x33BC; } //mounted watcher
+				else if ( this.ItemID == 0x33BC ){ this.ItemID = 0x33BB; } //mounted watcher
+				else if ( this.ItemID == 0x33DF ){ this.ItemID = 0x33E0; } //mounted walrus
+				else if ( this.ItemID == 0x33E0 ){ this.ItemID = 0x33DF; } //mounted walrus
+				else if ( this.ItemID == 0x33E1 ){ this.ItemID = 0x33E2; } //mounted ogre
+				else if ( this.ItemID == 0x33E2 ){ this.ItemID = 0x33E1; } //mounted ogre
+				else if ( this.ItemID == 0x33E3 ){ this.ItemID = 0x33E4; } //mounted trollbear
+				else if ( this.ItemID == 0x33E4 ){ this.ItemID = 0x33E3; } //mounted trollbear
 			}
 		}
 

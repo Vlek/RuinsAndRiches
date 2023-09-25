@@ -54,7 +54,7 @@ namespace Server.Regions
 					this.Name == "the Corrupt Pass" ||
 					this.Name == "the Great Pyramid" ||
 					this.Name == "the Altar of the Dragon King" ||
-					this.Name == "the Hidden Valley" 
+					this.Name == "the Hidden Valley"
 				){} else { global = LightCycle.DungeonLevel; }
 		}
 

@@ -22,7 +22,7 @@ namespace Server.Items
 			Stackable = true;
 			Amount = amount;
 
-			switch ( Utility.RandomMinMax( 0, 9 ) ) 
+			switch ( Utility.RandomMinMax( 0, 9 ) )
 			{
 				case 0: Hue = MaterialInfo.GetMaterialColor( "deep sea", "", 0 ); Name = "oil of leather enhancement ( deep sea )";	break;
 				case 1: Hue = MaterialInfo.GetMaterialColor( "lizard", "", 0 ); Name = "oil of leather enhancement ( lizard )";	break;

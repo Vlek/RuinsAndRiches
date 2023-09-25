@@ -47,7 +47,7 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.Meager );
 		}
-		
+
 		public override bool BleedImmune{ get{ return true; } }
 
 		public override Poison PoisonImmune{ get{ return Poison.Deadly; } }

@@ -171,13 +171,13 @@ namespace Server.Engines.Craft
 					if ( Server.Misc.MaterialInfo.IsAnyKindOfClothItem( ((Item)weapon) ) )
 						return true;
 
-					return ( weapon is PugilistGlove ) 
-						|| ( weapon is ThrowingGloves ) 
-						|| ( weapon is LevelPugilistGloves ) 
-						|| ( weapon is LevelThrowingGloves ) 
-						|| ( weapon is GiftPugilistGloves ) 
-						|| ( weapon is GiftThrowingGloves ) 
-						|| ( weapon is BaseWhip ) 
+					return ( weapon is PugilistGlove )
+						|| ( weapon is ThrowingGloves )
+						|| ( weapon is LevelPugilistGloves )
+						|| ( weapon is LevelThrowingGloves )
+						|| ( weapon is GiftPugilistGloves )
+						|| ( weapon is GiftThrowingGloves )
+						|| ( weapon is BaseWhip )
 						|| ( weapon is PugilistGloves );
 				}
 
@@ -195,7 +195,7 @@ namespace Server.Engines.Craft
 				bool toDelete = false;
 
 				//TODO: Make a IRepairable
-				
+
 				if ( m_CraftSystem.CanCraft( from, m_Tool, targeted.GetType() ) == 1044267 )
 				{
 					number = 1044282; // You must be near a forge and and anvil to repair items. * Yes, there are two and's *

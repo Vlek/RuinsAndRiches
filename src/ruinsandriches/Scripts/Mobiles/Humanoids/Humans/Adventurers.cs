@@ -19,15 +19,15 @@ namespace Server.Mobiles
 		[Constructable]
 		public Adventurers () : base( AIType.AI_Melee, FightMode.Evil, 10, 1, 0.2, 0.4 )
 		{
-			if ( Female = Utility.RandomBool() ) 
-			{ 
-				Body = 401; 
+			if ( Female = Utility.RandomBool() )
+			{
+				Body = 401;
 				Name = NameList.RandomName( "female" );
 			}
-			else 
-			{ 
-				Body = 400; 			
-				Name = NameList.RandomName( "male" ); 
+			else
+			{
+				Body = 400;
+				Name = NameList.RandomName( "male" );
 				FacialHairItemID = Utility.RandomList( 0, 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
 			}
 
@@ -142,7 +142,7 @@ namespace Server.Mobiles
 				ThrowingGloves glove = new ThrowingGloves();
 				ThrowingWeapon ammo = new ThrowingWeapon( Utility.RandomMinMax( 15, 30 ) );
 
-				switch ( Utility.Random( 5 ))		   
+				switch ( Utility.Random( 5 ))
 				{
 					case 0: glove.GloveType = "Stones";		ammo.ammo = "Throwing Stones"; 	ammo.ItemID = 0x10B6; ammo.Name = "throwing stone";		break;
 					case 1: glove.GloveType = "Axes"; 		ammo.ammo = "Throwing Axes"; 	ammo.ItemID = 0x10B3; ammo.Name = "throwing axe";		break;
@@ -156,7 +156,7 @@ namespace Server.Mobiles
 			}
 			else if ( CitizenType == 1 )
 			{
-				switch ( Utility.Random( 2 ))		   
+				switch ( Utility.Random( 2 ))
 				{
 					case 0: AddItem( new WizardStaff() );		break;
 					case 1: AddItem( new WizardStick() );		break;
@@ -166,7 +166,7 @@ namespace Server.Mobiles
 			}
 			else
 			{
-				switch ( Utility.Random( 8 ))		   
+				switch ( Utility.Random( 8 ))
 				{
 					case 0: AddItem( new Bow() );					PackItem( new Arrow( Utility.RandomMinMax( 15, 30 ) ) );		break;
 					case 1: AddItem( new Crossbow() );				PackItem( new Bolt( Utility.RandomMinMax( 15, 30 ) ) );			break;

@@ -40,7 +40,7 @@ namespace Server.SkillHandlers
 		{
 			if( !Core.AOS )
 				return (int)m.ArmorRating;
-			
+
 			int ar = 0;
 
 			for( int i = 0; i < m.Items.Count; i++ )

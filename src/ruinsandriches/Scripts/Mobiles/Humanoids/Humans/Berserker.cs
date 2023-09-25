@@ -1,32 +1,32 @@
 using System;
 using Server;
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
 using Server.Network;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class Berserker : BaseCreature 
+	public class Berserker : BaseCreature
 	{
-		[Constructable] 
-		public Berserker() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public Berserker() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() ) 
+			if ( this.Female = Utility.RandomBool() )
 			{
-				this.Body = 0x191; 
-				this.Name = NameList.RandomName( "female" ); 
+				this.Body = 0x191;
+				this.Name = NameList.RandomName( "female" );
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
+			}
+			else
+			{
+				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 				Utility.AssignRandomHair( this );
 				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
@@ -90,20 +90,20 @@ namespace Server.Mobiles
 			base.OnAfterSpawn();
 		}
 
-		public Berserker( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public Berserker( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }

@@ -14,7 +14,7 @@ namespace Server.Items
 
 		private int m_UsesRemaining;
 		private int m_Beeswax;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int UsesRemaining
 		{
@@ -33,7 +33,7 @@ namespace Server.Items
 		public apiLargeWaxPot() : this( 50 )
 		{
 		}
-		
+
 		[Constructable]
 		public apiLargeWaxPot( int uses ) : base( 2541 )
 		{
@@ -109,7 +109,7 @@ namespace Server.Items
 						from.PrivateOverheadMessage( 0, 1154, false,  "You must be near a heat source to melt beeswax.", from.NetState );
 						return;
 					}
-	
+
 					Beeswax wax = (Beeswax)o;
 
 					if( (wax.Amount + MeltedBeeswax) > MaxWax )
@@ -122,10 +122,10 @@ namespace Server.Items
 						MeltedBeeswax += wax.Amount;
 						wax.Delete();
 					}
-					
+
 					from.PrivateOverheadMessage( 0, 1154, false,  "You slowly melt the beeswax and mix it in the pot.", from.NetState );
 
-					this.ItemID = 5162; //change the graphic					
+					this.ItemID = 5162; //change the graphic
 
 					from.PlaySound( 43 ); //bellow sound
 					//from.PlaySound( 0x21 ); //bubbling sound
@@ -152,7 +152,7 @@ namespace Server.Items
 						}
 
 						MeltedBeeswax = 0;
-					
+
 						ItemID = 2541; //empty pot
 
 						from.PrivateOverheadMessage( 0, 1154, false,  "You empty the pot and place the beeswax in your pack.", from.NetState );

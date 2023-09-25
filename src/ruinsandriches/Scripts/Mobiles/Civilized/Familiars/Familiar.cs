@@ -1,15 +1,15 @@
-using System; 
-using System.Collections; 
-using Server.Misc; 
-using Server.Items; 
-using Server.Mobiles; 
+using System;
+using System.Collections;
+using Server.Misc;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 using System.Collections.Generic;
 using Server.ContextMenus;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a familiar corpse" )] 
+	[CorpseName( "a familiar corpse" )]
 	public class HenchmanFamiliar : BaseCreature
 	{
 		private DateTime m_NextTalking;
@@ -23,7 +23,7 @@ namespace Server.Mobiles
 			}
 		}
 
-		[Constructable] 
+		[Constructable]
 		public HenchmanFamiliar( ) : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			m_NextTalking = (DateTime.Now + TimeSpan.FromSeconds( 60 ));
@@ -56,25 +56,25 @@ namespace Server.Mobiles
 		public override bool IsBondable{ get{ return false; } }
 		public override bool CanBeRenamedBy( Mobile from ){ return true; }
 
-		public HenchmanFamiliar( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public HenchmanFamiliar( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 			Loyalty = 100;
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 
-			LeaveNowTimer thisTimer = new LeaveNowTimer( this ); 
-			thisTimer.Start(); 
-		} 
+			LeaveNowTimer thisTimer = new LeaveNowTimer( this );
+			thisTimer.Start();
+		}
 
 		public override bool IsSnoop( Mobile from )
 		{
@@ -115,19 +115,19 @@ namespace Server.Mobiles
 		}
 	}
 
-	public class LeaveNowTimer : Timer 
-	{ 
+	public class LeaveNowTimer : Timer
+	{
 		private Mobile i_me;
-		public LeaveNowTimer( Mobile me ) : base( TimeSpan.FromSeconds( 10.0 ) ) 
-		{ 
-			Priority = TimerPriority.OneSecond; 
-			i_me = me; 
-		} 
+		public LeaveNowTimer( Mobile me ) : base( TimeSpan.FromSeconds( 10.0 ) )
+		{
+			Priority = TimerPriority.OneSecond;
+			i_me = me;
+		}
 
-		protected override void OnTick() 
-		{ 
-			if (( i_me != null ) && ( !i_me.Deleted )) 
+		protected override void OnTick()
+		{
+			if (( i_me != null ) && ( !i_me.Deleted ))
 				((BaseCreature)i_me).AIObject.DoOrderRelease();
-		} 
-	} 
+		}
+	}
 }

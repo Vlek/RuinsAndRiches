@@ -27,8 +27,8 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
 		}
 
 		public DragonRider( Serial serial ) : base( serial )

@@ -6,56 +6,56 @@ using Server.Mobiles;
 namespace Server.Items
 {
 	/// <summary>
-	/// Lockpickable Door v1.0  
+	/// Lockpickable Door v1.0
 	/// Original script created b Carding. Modified by PitHelvit
 	/// </summary>
 	public class PickableDoor : DarkWoodDoor, ILockpickable
 	{
-		
+
 		private int m_LockLevel, m_MaxLockLevel, m_RequiredSkill;
 		private Mobile m_Picker;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public Mobile Picker
 		{
 			get	{ return m_Picker; }
 			set { m_Picker = value; }
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int LockLevel
 		{
 			get { return m_LockLevel; }
 			set { m_LockLevel = value; }
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int MaxLockLevel
 		{
 			get { return m_MaxLockLevel; }
 			set { m_MaxLockLevel = value; }
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int RequiredSkill
 		{
 			get { return m_RequiredSkill; }
 			set { m_RequiredSkill = value; }
 		}
-		
+
 		public virtual void LockPick( Mobile from )
 		{
 			Picker = from;
 			Locked = false;
-            m_Unlocked = DateTime.Now;		
+            m_Unlocked = DateTime.Now;
 		}
-		
+
 		[Constructable]
 		public PickableDoor( DoorFacing facing ) : base( facing )
 		{
-// default values		
+// default values
 			m_LockLevel = 80;
-			m_MaxLockLevel = 110; 
+			m_MaxLockLevel = 110;
 			m_RequiredSkill = 100;
 		}
 
@@ -96,21 +96,21 @@ namespace Server.Items
 			}
 			if ( m_Message != null && m_Message.Length > 0 )
 				from.SendMessage( m_Message );
-			
+
 			base.Use( from );
 		}
 
 		public PickableDoor( Serial serial ) : base( serial )
 		{
-			
+
 		}
 
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			
+
 			writer.Write( (int) 0 );
-			
+
 			writer.Write( m_Unlocked );
 			writer.Write( m_RelockTime );
 			writer.Write( m_Message );
@@ -122,9 +122,9 @@ namespace Server.Items
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
-			
+
 			int version = reader.ReadInt();
-			
+
 			m_Unlocked = reader.ReadDateTime();
 			m_RelockTime = reader.ReadTimeSpan();
 			m_Message = reader.ReadString();

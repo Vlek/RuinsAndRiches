@@ -50,7 +50,7 @@ namespace Server.Items
 			else if ( Name == "crystalline ice" ){ material = "ice"; }
 			else if ( Name == "crystalline obsidian" ){ material = "obsidian"; }
 			else if ( Name == "crystalline nepturite" ){ material = "nepturite"; }
-			else if ( Name == "crystalline steel" ){ material = "steel"; }	
+			else if ( Name == "crystalline steel" ){ material = "steel"; }
 			else if ( Name == "crystalline brass" ){ material = "brass"; }
 			else if ( Name == "crystalline mithril" ){ material = "mithril"; }
 			else if ( Name == "crystalline xormite" ){ material = "xormite"; }

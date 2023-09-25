@@ -8,7 +8,7 @@ namespace Server.Items
 	public class LevelThrowingGloves : BaseLevelRanged
 	{
 		public string GloveType;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Glove_Type { get { return GloveType; } set { GloveType = value; InvalidateProperties(); } }
 
@@ -121,7 +121,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to change the weapon type." );
 				return;

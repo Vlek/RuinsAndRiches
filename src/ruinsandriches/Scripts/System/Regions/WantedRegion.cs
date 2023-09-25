@@ -50,7 +50,7 @@ namespace Server.Regions
 			m.SendMessage( "That does not seem to work here." );
 			return false;
 		}
-		
+
 		public override void OnEnter( Mobile m )
 		{
 			base.OnEnter( m );
@@ -65,6 +65,6 @@ namespace Server.Regions
 			}
 
 			Server.Misc.RegionMusic.MusicRegion( m, this );
-		}								
+		}
 	}
 }

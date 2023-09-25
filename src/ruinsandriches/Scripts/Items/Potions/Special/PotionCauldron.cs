@@ -42,7 +42,7 @@ namespace Server.Items
 			m_Pool = Utility.Random( 30 );
 			m_Uses = Utility.RandomMinMax( 1, 10 );
 
-			switch ( m_Pool ) 
+			switch ( m_Pool )
 			{
 				case 0: potionHue = 1109; potionName = "Cauldron of Nightsight Liquid"; break;
 				case 1: potionHue = 45; potionName = "Cauldron of Lesser Cure Liquid"; break;

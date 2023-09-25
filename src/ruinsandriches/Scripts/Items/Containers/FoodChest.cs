@@ -33,7 +33,7 @@ namespace Server.Items
 			}
 			else if ( from.InRange( this.GetWorldLocation(), 4 ) )
 			{
-				from.SendMessage( "You should wait a minute to see if there is food in here." ); 
+				from.SendMessage( "You should wait a minute to see if there is food in here." );
 			}
 			else
 			{

@@ -196,7 +196,7 @@ namespace Server.Mobiles
 			}
 			return beggar;
 		}
-		
+
 		public static int BeggingKarma( Mobile from ) // LET US SEE IF THEY ARE BEGGING
 		{
 			int charisma = 0;
@@ -689,7 +689,7 @@ namespace Server.Mobiles
 				return false;
 
 			string bSay = "Help! Guards!";
-			this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( bSay ) ); 
+			this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( bSay ) );
 
 			return true;
 		}
@@ -707,7 +707,7 @@ namespace Server.Mobiles
 
 		public override void OnGaveMeleeAttack( Mobile defender )
 		{
-			switch ( Utility.Random( 4 ))		   
+			switch ( Utility.Random( 4 ))
 			{
 				case 0: Say("Leave this place!"); break;
 				case 1: Say("" + defender.Name + ", we have heard of you!"); break;
@@ -733,9 +733,9 @@ namespace Server.Mobiles
 				return;
 			}
 
-			if (	DateTime.Now - m_LastRestock > RestockDelay || 
-					( from.Region.IsPartOf( typeof( PublicRegion ) ) && DateTime.Now - m_LastRestock > RestockDelayFull ) || 
-					( this is BaseGuildmaster && DateTime.Now - m_LastRestock > RestockDelayFull ) 
+			if (	DateTime.Now - m_LastRestock > RestockDelay ||
+					( from.Region.IsPartOf( typeof( PublicRegion ) ) && DateTime.Now - m_LastRestock > RestockDelayFull ) ||
+					( this is BaseGuildmaster && DateTime.Now - m_LastRestock > RestockDelayFull )
 			)
 				Restock();
 
@@ -1184,7 +1184,7 @@ namespace Server.Mobiles
 
 					return false;
 				}
-				else if (	( dropped is DDCopper || dropped is DDSilver ) && 
+				else if (	( dropped is DDCopper || dropped is DDSilver ) &&
 							( this is Minter || this is Banker )	)
 				{
 					int nRate = 5;
@@ -1277,28 +1277,28 @@ namespace Server.Mobiles
 					return true;
 				}
 				else if ( this is ThiefGuildmaster && pm.NpcGuild == NpcGuild.ThievesGuild && ( // TOMB RAIDING
-					dropped is RockArtifact || 
-					dropped is SkullCandleArtifact || 
-					dropped is BottleArtifact || 
-					dropped is DamagedBooksArtifact || 
-					dropped is StretchedHideArtifact || 
-					dropped is BrazierArtifact || 
-					dropped is LampPostArtifact || 
-					dropped is BooksNorthArtifact || 
-					dropped is BooksWestArtifact || 
-					dropped is BooksFaceDownArtifact || 
-					dropped is StuddedLeggingsArtifact || 
-					dropped is EggCaseArtifact || 
-					dropped is SkinnedGoatArtifact || 
-					dropped is GruesomeStandardArtifact || 
-					dropped is BloodyWaterArtifact || 
-					dropped is TarotCardsArtifact || 
-					dropped is BackpackArtifact || 
-					dropped is StuddedTunicArtifact || 
-					dropped is CocoonArtifact || 
-					dropped is SkinnedDeerArtifact || 
-					dropped is SaddleArtifact || 
-					dropped is LeatherTunicArtifact || 
+					dropped is RockArtifact ||
+					dropped is SkullCandleArtifact ||
+					dropped is BottleArtifact ||
+					dropped is DamagedBooksArtifact ||
+					dropped is StretchedHideArtifact ||
+					dropped is BrazierArtifact ||
+					dropped is LampPostArtifact ||
+					dropped is BooksNorthArtifact ||
+					dropped is BooksWestArtifact ||
+					dropped is BooksFaceDownArtifact ||
+					dropped is StuddedLeggingsArtifact ||
+					dropped is EggCaseArtifact ||
+					dropped is SkinnedGoatArtifact ||
+					dropped is GruesomeStandardArtifact ||
+					dropped is BloodyWaterArtifact ||
+					dropped is TarotCardsArtifact ||
+					dropped is BackpackArtifact ||
+					dropped is StuddedTunicArtifact ||
+					dropped is CocoonArtifact ||
+					dropped is SkinnedDeerArtifact ||
+					dropped is SaddleArtifact ||
+					dropped is LeatherTunicArtifact ||
 					dropped is RuinedPaintingArtifact ) )
 				{
 					int TombRaid = 8000;
@@ -2218,7 +2218,7 @@ namespace Server.Mobiles
 			{
 				if ( SupportsBulkOrders( from ) )
 					list.Add( new BulkOrderInfoEntry( from, this ) );
-				
+
 				if ( IsActiveSeller )
 					list.Add( new VendorBuyEntry( from, this ) );
 
@@ -2227,17 +2227,17 @@ namespace Server.Mobiles
 			}
 
 			if (
-				( from.Skills[SkillName.Forensics].Value >= 50 && ( this is Undertaker || this is NecroMage || this is Witches || this is Necromancer || this is NecromancerGuildmaster ) ) || 
-				( from.Skills[SkillName.Druidism].Value >= 50 && ( this is Herbalist || this is DruidTree || this is Druid || this is DruidGuildmaster ) ) || 
-				( from.Skills[SkillName.Alchemy].Value >= 50 && ( this is Alchemist || this is AlchemistGuildmaster ) ) || 
-				( from.Skills[SkillName.Blacksmith].Value >= 50 && ( this is Blacksmith || this is BlacksmithGuildmaster ) ) || 
-				( from.Skills[SkillName.Bowcraft].Value >= 50 && ( this is Bowyer || this is ArcherGuildmaster ) ) || 
-				( from.Skills[SkillName.Carpentry].Value >= 50 && ( this is Carpenter || this is CarpenterGuildmaster ) ) || 
-				( from.Skills[SkillName.Cartography].Value >= 50 && ( this is Mapmaker || this is CartographersGuildmaster ) ) || 
-				( from.Skills[SkillName.Cooking].Value >= 50 && ( this is Cook || this is Baker || this is CulinaryGuildmaster ) ) || 
-				( from.Skills[SkillName.Inscribe].Value >= 50 && ( this is Scribe || this is Sage || this is LibrarianGuildmaster ) ) || 
-				( from.Skills[SkillName.Tailoring].Value >= 50 && ( this is Weaver || this is Tailor || this is LeatherWorker || this is TailorGuildmaster ) ) || 
-				( from.Skills[SkillName.Tinkering].Value >= 50 && ( this is Tinker || this is TinkerGuildmaster ) ) 
+				( from.Skills[SkillName.Forensics].Value >= 50 && ( this is Undertaker || this is NecroMage || this is Witches || this is Necromancer || this is NecromancerGuildmaster ) ) ||
+				( from.Skills[SkillName.Druidism].Value >= 50 && ( this is Herbalist || this is DruidTree || this is Druid || this is DruidGuildmaster ) ) ||
+				( from.Skills[SkillName.Alchemy].Value >= 50 && ( this is Alchemist || this is AlchemistGuildmaster ) ) ||
+				( from.Skills[SkillName.Blacksmith].Value >= 50 && ( this is Blacksmith || this is BlacksmithGuildmaster ) ) ||
+				( from.Skills[SkillName.Bowcraft].Value >= 50 && ( this is Bowyer || this is ArcherGuildmaster ) ) ||
+				( from.Skills[SkillName.Carpentry].Value >= 50 && ( this is Carpenter || this is CarpenterGuildmaster ) ) ||
+				( from.Skills[SkillName.Cartography].Value >= 50 && ( this is Mapmaker || this is CartographersGuildmaster ) ) ||
+				( from.Skills[SkillName.Cooking].Value >= 50 && ( this is Cook || this is Baker || this is CulinaryGuildmaster ) ) ||
+				( from.Skills[SkillName.Inscribe].Value >= 50 && ( this is Scribe || this is Sage || this is LibrarianGuildmaster ) ) ||
+				( from.Skills[SkillName.Tailoring].Value >= 50 && ( this is Weaver || this is Tailor || this is LeatherWorker || this is TailorGuildmaster ) ) ||
+				( from.Skills[SkillName.Tinkering].Value >= 50 && ( this is Tinker || this is TinkerGuildmaster ) )
 			)
 			{
 				list.Add( new SetupShoppeEntry( from, this ) );
@@ -2269,7 +2269,7 @@ namespace Server.ContextMenus
 	{
 		private BaseVendor m_Vendor;
 		private Mobile m_From;
-		
+
 		public SetupShoppeEntry( Mobile from, BaseVendor vendor ) : base( 6164, 3 )
 		{
 			m_Vendor = vendor;

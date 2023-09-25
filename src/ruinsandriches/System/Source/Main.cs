@@ -125,7 +125,7 @@ namespace Server
 		public static int ProcessorCount { get { return m_ProcessorCount; } }
 
 		private static bool m_Unix;
-		
+
 		public static bool Unix { get { return m_Unix; } }
 
 		public static string FindDataFile( string path )
@@ -308,7 +308,7 @@ namespace Server
 		{
 			if( World.Saving || ( m_Service && type == ConsoleEventType.CTRL_LOGOFF_EVENT ) )
 				return true;
-			
+
 			Kill();	//Kill -> HandleClosed will hadnle waiting for the completion of flushign to disk
 
 			return true;
@@ -473,18 +473,18 @@ namespace Server
 			while( !ScriptCompiler.Compile( m_Debug, m_Cache ) )
 			{
 				Console.WriteLine( "Scripts: One or more scripts failed to compile or no script files were found." );
-				
+
 				if( m_Service )
 					return;
 
 				Console.WriteLine( " - Press return to exit, or R to try again." );
-				
+
 				if( Console.ReadKey( true ).Key != ConsoleKey.R )
 					return;
 			}
 
 			ScriptCompiler.Invoke( "Configure" );
-			
+
 			Region.Load();
 			World.Load();
 
@@ -670,7 +670,7 @@ namespace Server
 				return;
 
 #if Framework_4_0
-			Parallel.ForEach(a.GetTypes(), t => 
+			Parallel.ForEach(a.GetTypes(), t =>
 				{
 					VerifyType(t);
 				});
@@ -701,7 +701,7 @@ namespace Server
 			m_FileName = file;
 			using( StreamWriter writer = new StreamWriter( new FileStream( m_FileName, append ? FileMode.Append : FileMode.Create, FileAccess.Write, FileShare.Read ) ) )
 			{
-				writer.WriteLine( ">>>Logging started on {0}.", DateTime.Now.ToString( "f" ) ); //f = Tuesday, April 10, 2001 3:51 PM 
+				writer.WriteLine( ">>>Logging started on {0}.", DateTime.Now.ToString( "f" ) ); //f = Tuesday, April 10, 2001 3:51 PM
 			}
 			m_NewLine = true;
 		}

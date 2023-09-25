@@ -131,6 +131,6 @@ namespace Server.Items
 				from.SendLocalizedMessage( 1005018 ); // What would you like to bless? (Clothes Only)
 				from.Target = new ClothingBlessTarget( this ); // Call our target
 			 }
-		}	
+		}
 	}
 }

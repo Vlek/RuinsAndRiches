@@ -24,7 +24,7 @@ namespace Server.Commands
 	// Update by X-SirSly-X
 	// 12/15/2005
 	// www.LandofObsidian.com
-	// The update fixes a issue when a item is given only once per account. The problem happens when a player deletes their first char which is char slot 0. So if char slot 0 is empty it just skips over that player, and they end up not getting a item in their bank. 
+	// The update fixes a issue when a item is given only once per account. The problem happens when a player deletes their first char which is char slot 0. So if char slot 0 is empty it just skips over that player, and they end up not getting a item in their bank.
 
 	public class AddToBank
 	{
@@ -92,7 +92,7 @@ namespace Server.Commands
 			{
 				done = AddToBank.GiveItemToAccessLevel( item, amount, access );
 			}
-			
+
 			if ( !done )
 			{
 				from.SendMessage( "Unable to give out to 1 or more players." );
@@ -107,7 +107,7 @@ namespace Server.Commands
 		private static bool GiveItemToAccounts( Item item, int amount )
 		{
 			bool success = true;
-		
+
 			foreach ( Account acct in Accounts.GetAccounts() )
 			{
 				if ( acct[0] != null )
@@ -129,7 +129,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[2] != null )
@@ -141,7 +141,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[3] != null )
@@ -153,7 +153,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[4] != null )
@@ -165,7 +165,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[5] != null )
@@ -177,7 +177,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[6] != null )
@@ -189,7 +189,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[7] != null )
@@ -201,7 +201,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[8] != null )
@@ -213,7 +213,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[9] != null )
@@ -225,7 +225,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[10] != null )
@@ -237,7 +237,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[11] != null )
@@ -249,7 +249,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[12] != null )
@@ -261,7 +261,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[13] != null )
@@ -273,7 +273,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[14] != null )
@@ -285,7 +285,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[15] != null )
@@ -297,7 +297,7 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
+				}
 				else if ( acct[0] == null )
 				{
 					if ( acct[16] != null )
@@ -309,9 +309,9 @@ namespace Server.Commands
 							success = false;
 						}
 					}
-				}	
-				
-			
+				}
+
+
 			}
 			return success;
 		}
@@ -388,7 +388,7 @@ namespace Server.Commands
 				{
 					object[] objParams = new object[0];
 
-					try 
+					try
 					{
 						for (int i=0;i<count;i++)
 						{
@@ -426,12 +426,12 @@ namespace Server.Commands
 
 		} // end function
 
-		private static void CopyProperties ( Item dest, Item src ) 
-		{ 
-			PropertyInfo[] props = src.GetType().GetProperties(); 
+		private static void CopyProperties ( Item dest, Item src )
+		{
+			PropertyInfo[] props = src.GetType().GetProperties();
 
-			for ( int i = 0; i < props.Length; i++ ) 
-			{ 
+			for ( int i = 0; i < props.Length; i++ )
+			{
 				try
 				{
 					if ( props[i].CanRead && props[i].CanWrite )
@@ -443,7 +443,7 @@ namespace Server.Commands
 						}
 						else
 						{
-							props[i].SetValue( dest, props[i].GetValue( src, null ), null ); 
+							props[i].SetValue( dest, props[i].GetValue( src, null ), null );
 						}
 					}
 				}

@@ -48,7 +48,7 @@ namespace Server.Misc
 				m.AddItem( robe );
 
 			if ( Utility.RandomMinMax( 1, 2 ) == 1 ) // FEMALE
-			{ 
+			{
 				m.Body = 401;
 				m.BaseSoundID = 0x4B0;
 				if ( Job == "mage" )
@@ -63,9 +63,9 @@ namespace Server.Misc
 						case 5: m.Title = "the gargoyle witch"; break;
 					}
 				}
-			} 
-			else 
-			{ 
+			}
+			else
+			{
 				m.Body = 400;
 				m.BaseSoundID = 372;
 				if ( Job == "mage" )
@@ -306,7 +306,7 @@ namespace Server.Misc
 
 			if ( item.Name != null && item.Name != "" ){ name = item.Name; }
 			if ( name == "item" ){ name = MorphingItem.AddSpacesToSentence( (item.GetType()).Name ); }
-			
+
 			item.Name = word + " " + name;
 		}
 
@@ -342,7 +342,7 @@ namespace Server.Misc
 			else if ( item.ItemID == 0x4CFD || item.ItemID == 0x4CFE ){ item.Name = material + suffix + " Beads"; }
 			else if ( Server.Misc.MaterialInfo.IsJewelryAmulet( item ) ){ item.Name = material + suffix + " Amulet"; }
 			else if ( Server.Misc.MaterialInfo.IsJewelryEarrings( item ) ){ item.Name = material + suffix + " Earrings"; }
-			else if ( Server.Misc.MaterialInfo.IsJewelryBracelet( item ) ){ item.Name = material + suffix + " Bracelet"; }	
+			else if ( Server.Misc.MaterialInfo.IsJewelryBracelet( item ) ){ item.Name = material + suffix + " Bracelet"; }
 			else if ( item is MagicJewelryCirclet || item.ItemID == 0x2B6F || item.ItemID == 0x3166 ){ item.Name = material + suffix + " Circlet"; }
 			else
 			{
@@ -808,7 +808,7 @@ namespace Server.Misc
 					else if ( item is Axe ) { item.Name = "ono"; }
 					else if ( item is ElvenMachete ) { item.Name = "sutou sabre"; }
 					else if ( item is ShortSword ) { item.ItemID = 0x27A4; item.Name = "wakizashi"; }
-					else if ( item is Scimitar ) { item.Name = "dao"; }	
+					else if ( item is Scimitar ) { item.Name = "dao"; }
 					else if ( item is Leafblade ) { item.Name = "tanto"; }
 					else if ( item is Longsword ) { item.ItemID = 0x27A8; item.Name = "daito"; if ( item.Hue == 0 ){ item.Hue = 0x539; } }
 					else if ( item is Dagger ) { item.Name = "aikuchi"; }
@@ -829,20 +829,20 @@ namespace Server.Misc
 			if ( 	Server.Misc.MaterialInfo.IsStrangeMetalItem( item ) ||
 					Server.Misc.MaterialInfo.IsStrangeWoodItem( item ) ||
 					Server.Misc.MaterialInfo.IsStrangeClothItem( item ) ||
-					item is MagicBoneChest || 
-					item is MagicBoneHelm || 
-					item is MagicBoneSkirt || 
-					item is MagicBoneLegs || 
-					item is MagicBoneGloves || 
-					item is MagicBoneArms || 
-					item is MagicDragonArms || 
-					item is MagicDragonChest || 
-					item is MagicDragonGloves || 
-					item is MagicFurLegs || 
-					item is MagicFurArms || 
-					item is MagicFurChest || 
-					item is MagicDragonHelm || 
-					item is BaseMagicStaff || 
+					item is MagicBoneChest ||
+					item is MagicBoneHelm ||
+					item is MagicBoneSkirt ||
+					item is MagicBoneLegs ||
+					item is MagicBoneGloves ||
+					item is MagicBoneArms ||
+					item is MagicDragonArms ||
+					item is MagicDragonChest ||
+					item is MagicDragonGloves ||
+					item is MagicFurLegs ||
+					item is MagicFurArms ||
+					item is MagicFurChest ||
+					item is MagicDragonHelm ||
+					item is BaseMagicStaff ||
 					item is MagicDragonLegs )
 			{
 				// DON'T CHANGE
@@ -1059,11 +1059,11 @@ namespace Server.Misc
 				int pick = Utility.RandomMinMax( 1, 22 );
 					if ( isEvil == true ){ pick = Utility.RandomMinMax( 1, 6 ); }
 
-				if ( item.ItemID == 0x2790 ){ suffix = "belt"; } 
-				else if ( item.ItemID == 0x2B68 ){ suffix = "loin cloth"; } 
-				else if ( item.ItemID == 0x55DB ){ suffix = "royal loin cloth"; } 
-				else if ( item.ItemID == 0x153b ){ suffix = "apron"; } 
-				else if ( item is MagicSash ){ suffix = "sash"; } 
+				if ( item.ItemID == 0x2790 ){ suffix = "belt"; }
+				else if ( item.ItemID == 0x2B68 ){ suffix = "loin cloth"; }
+				else if ( item.ItemID == 0x55DB ){ suffix = "royal loin cloth"; }
+				else if ( item.ItemID == 0x153b ){ suffix = "apron"; }
+				else if ( item is MagicSash ){ suffix = "sash"; }
 				else if ( item is MagicLantern ){ suffix = "lantern"; }
 				else if ( item is MagicCandle ){ suffix = "candle"; }
 				else if ( item is MagicCloak ){ suffix = "cloak"; }
@@ -1074,33 +1074,33 @@ namespace Server.Misc
 				else if ( item.ItemID == 0x1f01 || item.ItemID == 0x1f02 ){ suffix = "dress"; }
 				else if ( item.ItemID == 0x170d || item.ItemID == 0x170e ){ suffix = "sandals"; }
 				else if ( item.ItemID == 0x170f || item.ItemID == 0x1710 ){ suffix = "shoes"; }
-				else if ( item.ItemID == 5914 ){ suffix = "feathered hat"; } 
-				else if ( item.ItemID == 5916 ){ suffix = "jester hat"; } 
-				else if ( item.ItemID == 5911 ){ suffix = "straw hat"; } 
-				else if ( item.ItemID == 5910 ){ suffix = "tall straw hat"; } 
-				else if ( item.ItemID == 5908 ){ suffix = "wide brim hat"; } 
-				else if ( item.ItemID == 5912 ){ suffix = "wizard hat"; } 
-				else if ( item.ItemID == 5915 ){ suffix = "tricorne hat"; } 
-				else if ( item.ItemID == 5907 ){ suffix = "floppy hat"; } 
-				else if ( item.ItemID == 5907 ){ suffix = "floppy hat"; } 
-				else if ( item.ItemID == 5444 ){ suffix = "skullcap"; } 
-				else if ( item.ItemID == 5909 ){ suffix = "bonnet"; } 
-				else if ( item.ItemID == 0x2B71 ){ suffix = "hood"; } 
-				else if ( item.ItemID == 0x3176 ){ suffix = "cowl"; } 
-				else if ( item.ItemID == 0x4D09 ){ suffix = "fancy hood"; } 
-				else if ( item.ItemID == 0x4CDA ){ suffix = "Syth hood"; } 
-				else if ( item.ItemID == 0x4CDC ){ suffix = "Syth cowl"; } 
-				else if ( item.ItemID == 0x4CDB ){ suffix = "reaper hood"; } 
-				else if ( item.ItemID == 0x4CDD ){ suffix = "reaper cowl"; } 
-				else if ( item.ItemID == 0x2FC3 ){ suffix = "witch hat"; } 
-				else if ( item.ItemID == 0x2FBC ){ suffix = "pirate hat"; } 
-				else if ( item.ItemID == 0x2B6D ){ suffix = "wolfskin cap"; } 
-				else if ( item.ItemID == 0x278F ){ suffix = "executioners hood"; } 
-				else if ( item.ItemID == 0x1540 ){ suffix = "bandana"; } 
-				else if ( item.ItemID == 0x1549 ){ suffix = "shaman mask"; } 
-				else if ( item.ItemID == 0x154B ){ suffix = "tribal mask"; } 
-				else if ( item.ItemID == 5445 ){ suffix = "bearskin cap"; } 
-				else if ( item.ItemID == 5447 ){ suffix = "dearskin cap"; } 
+				else if ( item.ItemID == 5914 ){ suffix = "feathered hat"; }
+				else if ( item.ItemID == 5916 ){ suffix = "jester hat"; }
+				else if ( item.ItemID == 5911 ){ suffix = "straw hat"; }
+				else if ( item.ItemID == 5910 ){ suffix = "tall straw hat"; }
+				else if ( item.ItemID == 5908 ){ suffix = "wide brim hat"; }
+				else if ( item.ItemID == 5912 ){ suffix = "wizard hat"; }
+				else if ( item.ItemID == 5915 ){ suffix = "tricorne hat"; }
+				else if ( item.ItemID == 5907 ){ suffix = "floppy hat"; }
+				else if ( item.ItemID == 5907 ){ suffix = "floppy hat"; }
+				else if ( item.ItemID == 5444 ){ suffix = "skullcap"; }
+				else if ( item.ItemID == 5909 ){ suffix = "bonnet"; }
+				else if ( item.ItemID == 0x2B71 ){ suffix = "hood"; }
+				else if ( item.ItemID == 0x3176 ){ suffix = "cowl"; }
+				else if ( item.ItemID == 0x4D09 ){ suffix = "fancy hood"; }
+				else if ( item.ItemID == 0x4CDA ){ suffix = "Syth hood"; }
+				else if ( item.ItemID == 0x4CDC ){ suffix = "Syth cowl"; }
+				else if ( item.ItemID == 0x4CDB ){ suffix = "reaper hood"; }
+				else if ( item.ItemID == 0x4CDD ){ suffix = "reaper cowl"; }
+				else if ( item.ItemID == 0x2FC3 ){ suffix = "witch hat"; }
+				else if ( item.ItemID == 0x2FBC ){ suffix = "pirate hat"; }
+				else if ( item.ItemID == 0x2B6D ){ suffix = "wolfskin cap"; }
+				else if ( item.ItemID == 0x278F ){ suffix = "executioners hood"; }
+				else if ( item.ItemID == 0x1540 ){ suffix = "bandana"; }
+				else if ( item.ItemID == 0x1549 ){ suffix = "shaman mask"; }
+				else if ( item.ItemID == 0x154B ){ suffix = "tribal mask"; }
+				else if ( item.ItemID == 5445 ){ suffix = "bearskin cap"; }
+				else if ( item.ItemID == 5447 ){ suffix = "dearskin cap"; }
 				else if ( item is MagicRobe ){ suffix = "robe"; }
 				else if ( item is MagicBoots){ suffix = "boots"; }
 				else if ( item is MagicHat){ suffix = "hat"; }
@@ -1212,11 +1212,11 @@ namespace Server.Misc
 			if ( from.Region.IsPartOf( typeof( BardTownRegion ) ) )
 				return false;
 
-			if ( 
-				from.Region.IsPartOf( "the Ethereal Plane" ) || 
-				from.Region.IsPartOf( "the Ranger Outpost" ) || 
-				from.Region.IsPartOf( "the Glowing Pond" ) || 
-				from.Region.IsPartOf( "the Altar of Golden Rangers" ) || 
+			if (
+				from.Region.IsPartOf( "the Ethereal Plane" ) ||
+				from.Region.IsPartOf( "the Ranger Outpost" ) ||
+				from.Region.IsPartOf( "the Glowing Pond" ) ||
+				from.Region.IsPartOf( "the Altar of Golden Rangers" ) ||
 				from.Region.IsPartOf( "the Weary Camper Tavern" )
 			)
 				return false;
@@ -1525,26 +1525,26 @@ namespace Server.Misc
 			if ( from is Humanoid )
 				return;
 
-			if ( from is Priest || 
-				from is DruidGuildmaster || 
-				from is Druid || 
-				from is HealerGuildmaster || 
-				from is Healer || 
-				from is MageGuildmaster || 
-				from is Mage || 
-				from is HolyMage || 
-				from is NecromancerGuildmaster || 
-				from is Witches || 
-				from is Undertaker || 
-				from is Necromancer || 
-				from is NecroMage || 
-				from is EvilHealer || 
-				from is WanderingHealer || 
-				from is Enchanter || 
-				from is TownGuards || 
-				from is DruidTree || 
-				from is Genie || 
-				from is GypsyLady || 
+			if ( from is Priest ||
+				from is DruidGuildmaster ||
+				from is Druid ||
+				from is HealerGuildmaster ||
+				from is Healer ||
+				from is MageGuildmaster ||
+				from is Mage ||
+				from is HolyMage ||
+				from is NecromancerGuildmaster ||
+				from is Witches ||
+				from is Undertaker ||
+				from is Necromancer ||
+				from is NecroMage ||
+				from is EvilHealer ||
+				from is WanderingHealer ||
+				from is Enchanter ||
+				from is TownGuards ||
+				from is DruidTree ||
+				from is Genie ||
+				from is GypsyLady ||
 				from is Sage )
 			{
 				// DON'T MORPH THESE TYPES
@@ -1600,7 +1600,7 @@ namespace Server.Misc
 				}
 
 				if ( Utility.RandomBool() )
-				{ 
+				{
 					int myHat = Utility.RandomMinMax( 0, 4 );
 					if ( from.Body == 605 ){ myHat = 1; }
 					switch ( myHat )
@@ -1657,7 +1657,7 @@ namespace Server.Misc
 			int hairHue = Utility.RandomHairHue();
 			Utility.AssignRandomHair( from, hairHue );
 			from.FacialHairItemID = 0;
-			from.Hue = Utility.RandomSkinColor(); 
+			from.Hue = Utility.RandomSkinColor();
 
 			if ( from.Female )
 			{
@@ -1862,7 +1862,7 @@ namespace Server.Misc
 	}
 }
 
-namespace Server.Scripts.Commands 
+namespace Server.Scripts.Commands
 {
     public class HueGear
     {

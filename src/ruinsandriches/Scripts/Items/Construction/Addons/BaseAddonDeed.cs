@@ -87,7 +87,7 @@ namespace Server.Items
 						from.SendLocalizedMessage( 500271 ); // You cannot build near the door.
 					else if ( res == AddonFitResult.NoWall )
 						from.SendLocalizedMessage( 500268 ); // This object needs to be mounted on something.
-					
+
 					if ( res == AddonFitResult.Valid )
 					{
 						m_Deed.Delete();

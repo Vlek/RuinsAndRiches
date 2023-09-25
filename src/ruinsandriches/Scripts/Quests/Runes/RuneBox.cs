@@ -266,7 +266,7 @@ namespace Server.Items
 
 			public RuneBoxGump( RuneBox box, Mobile from ) : base( 50, 50 )
 			{
-				from.SendSound( 0x5AA ); 
+				from.SendSound( 0x5AA );
 
 				m_Box = box;
 
@@ -315,7 +315,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x5AA ); 
+				from.SendSound( 0x5AA );
 			}
 		}
 	}

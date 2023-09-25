@@ -10,12 +10,12 @@ using Server.Gumps;
 using Server.Misc;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
-{ 
+namespace Server.Mobiles
+{
 	public class TownGuards : BasePerson
 	{
-		[Constructable] 
-		public TownGuards() : base( ) 
+		[Constructable]
+		public TownGuards() : base( )
 		{
 			Title = "the guard";
 			NameHue = 1154;
@@ -495,7 +495,7 @@ namespace Server.Mobiles
 
 		public override void OnGaveMeleeAttack( Mobile defender )
 		{
-			switch ( Utility.Random( 8 ))		   
+			switch ( Utility.Random( 8 ))
 			{
 				case 0: Say("Die villian!"); break;
 				case 1: Say("I will bring you justice!"); break;
@@ -526,17 +526,17 @@ namespace Server.Mobiles
 			return true;
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -547,7 +547,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -598,20 +598,20 @@ namespace Server.Mobiles
 			return false;
 		}
 
-		public TownGuards( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public TownGuards( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
-}   
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
+}

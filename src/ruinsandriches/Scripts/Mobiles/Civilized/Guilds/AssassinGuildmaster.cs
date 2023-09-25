@@ -27,8 +27,8 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			SBInfos.Add( new SBAssassin() ); 
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBAssassin() );
+			SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public override void InitOutfit()
@@ -47,18 +47,18 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			if ( Server.Misc.MyServerSettings.AllowBribes() >= 1000 ){ list.Add( new HireEntry( from, this ) ); }
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -69,7 +69,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					Server.Misc.IntelligentAction.SayHey( m_Giver );
@@ -93,7 +93,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_From is PlayerMobile ) )
 				return;
-				
+
 				m_Giver.Bribery( m_From );
 			}
 		}

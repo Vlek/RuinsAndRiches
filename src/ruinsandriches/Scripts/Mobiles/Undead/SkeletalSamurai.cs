@@ -40,7 +40,7 @@ namespace Server.Mobiles
 			Karma = -3000;
 
 			VirtualArmor = 40;
-			
+
 			switch ( Utility.Random( 6 ) )
 			{
 				case 0: Item drop1 = new PlateArms(); 		drop1.Hue = 0x539;	drop1.ItemID = 0x2780; drop1.Name = "plate kote";		PackItem( drop1 );	break;

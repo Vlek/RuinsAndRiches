@@ -1,7 +1,7 @@
 using System;
-using Server; 
+using Server;
 using Server.Network;
-using System.Collections; 
+using System.Collections;
 using Server.Items;
 using Server.Misc;
 using Server.Gumps;
@@ -31,7 +31,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to read." );
 				return;
@@ -41,7 +41,7 @@ namespace Server.Items
 				from.SendMessage( "This is not your book." );
 				return;
 			}
-			else 
+			else
 			{
 				from.SendSound( 0x55 );
 				from.CloseGump( typeof( SearchBookGump ) );
@@ -166,7 +166,7 @@ namespace Server.Items
 
 			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				from.SendSound( 0x55 );
 

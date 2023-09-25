@@ -371,7 +371,7 @@ namespace Server.Misc
 				}
 
 				int syllableCount;
-                                                       
+
 				if ( 30 > Utility.Random( 100 ) )
 					syllableCount = Utility.Random( 1, 5 );
 				else

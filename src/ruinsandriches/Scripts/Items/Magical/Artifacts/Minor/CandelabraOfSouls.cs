@@ -6,7 +6,7 @@ namespace Server.Items
 	public class CandelabraOfSouls : CandelabraStand
 	{
 		public override int LabelNumber{ get{ return 1063478; } }
-		
+
 		[Constructable]
 		public CandelabraOfSouls() : base()
 		{
@@ -23,7 +23,7 @@ namespace Server.Items
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

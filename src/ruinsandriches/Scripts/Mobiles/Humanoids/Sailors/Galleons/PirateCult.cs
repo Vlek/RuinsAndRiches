@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateCult : BasePirate 
+	public class PirateCult : BasePirate
 	{
-		[Constructable] 
+		[Constructable]
 		public PirateCult()
 		{
 			SpeechHue = Utility.RandomColor( 0 );
@@ -40,7 +40,7 @@ namespace Server.Mobiles
 				case 8: Title = "of the Dragon Turtle " + cult;	break;
 			}
 
-			Hue = Utility.RandomSkinColor(); 
+			Hue = Utility.RandomSkinColor();
 
             if (this.Female = Utility.RandomBool())
             {
@@ -60,7 +60,7 @@ namespace Server.Mobiles
 				FacialHairHue = HairColor;
             }
 
-			AddItem( new Robe( 0 ) );	
+			AddItem( new Robe( 0 ) );
 			MorphingTime.ColorMyClothes( this, SpeechHue, 0 );
 
 			int hood = Utility.RandomColor( 0 );

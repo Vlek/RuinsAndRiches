@@ -450,7 +450,7 @@ namespace Server
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)1); // version 
+            writer.Write((int)1); // version
 
 			writer.Write( (Mobile)CodexOwner);
 

@@ -32,7 +32,8 @@ namespace Server.Items
 		{
 			Hue = 0x304;
 			Weight = 3.0;
-			ItemID = 0x13F8;			Name = "Staff of the Serpent";
+			ItemID = 0x13F8;
+			Name = "Staff of the Serpent";
 			AosElementDamages.Poison = 100;
 			Attributes.SpellChanneling = 1;
 			Slayer = SlayerName.SnakesBane;

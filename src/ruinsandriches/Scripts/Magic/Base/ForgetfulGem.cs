@@ -5,8 +5,8 @@ using System.Text;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Misc;
-using System.Collections; 
-using Server.Network; 
+using System.Collections;
+using Server.Network;
 
 namespace Server.Items
 {
@@ -91,9 +91,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.SendSound( 0x5C9 );
 				bool magicAct = false;
 				Skill skill = from.Skills[SkillName.Necromancy];

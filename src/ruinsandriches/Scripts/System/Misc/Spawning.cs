@@ -3,17 +3,17 @@ using Server.Commands;
 using Server.Gumps;
 using Server.Items;
 using Server.Misc;
-using Server.Mobiles; 
+using Server.Mobiles;
 using Server.Network;
 using Server.Regions;
 using Server;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.Collections;
-using System.IO; 
-using System.Net; 
+using System.IO;
+using System.Net;
 using System.Reflection;
-using System.Text; 
-using System; 
+using System.Text;
+using System;
 
 namespace Server.Commands
 {
@@ -23,8 +23,8 @@ namespace Server.Commands
 		{
 		}
 
-		public static void Initialize() 
-		{ 
+		public static void Initialize()
+		{
 			CommandSystem.Register( "GumpSaveRegion", AccessLevel.Administrator, new CommandEventHandler( OptionsGumps1_OnCommand ) );
 			CommandSystem.Register( "GumpSaveCoordinate", AccessLevel.Administrator, new CommandEventHandler( OptionsGumps2_OnCommand ) );
 			CommandSystem.Register( "GumpRemoveID", AccessLevel.Administrator, new CommandEventHandler( OptionsGumps3_OnCommand ) );
@@ -33,37 +33,37 @@ namespace Server.Commands
 		}
 
 		[Usage( "[GumpSaveRegion" )]
-		[Description( "Gump to Save inside Region" )] 
+		[Description( "Gump to Save inside Region" )]
 		private static void OptionsGumps1_OnCommand( CommandEventArgs e )
-		{ 
+		{
 			e.Mobile.SendGump( new GumpSaveRegion( e ) );
 		}
 
 		[Usage( "[GumpSaveCoordinate" )]
-		[Description( "Gump to save by coordinates" )] 
+		[Description( "Gump to save by coordinates" )]
 		private static void OptionsGumps2_OnCommand( CommandEventArgs e )
-		{ 
+		{
 			e.Mobile.SendGump( new GumpSaveCoordinate( e ) );
 		}
 
 		[Usage( "[GumpRemoveID" )]
-		[Description( "Gump to remove by ID" )] 
+		[Description( "Gump to remove by ID" )]
 		private static void OptionsGumps3_OnCommand( CommandEventArgs e )
-		{ 
+		{
 			e.Mobile.SendGump( new GumpRemoveID( e ) );
 		}
 
 		[Usage( "[GumpRemoveCoordinate" )]
-		[Description( "Gump to remove by coordinates" )] 
+		[Description( "Gump to remove by coordinates" )]
 		private static void OptionsGumps4_OnCommand( CommandEventArgs e )
-		{ 
+		{
 			e.Mobile.SendGump( new GumpRemoveCoordinate( e ) );
 		}
 
 		[Usage( "[GumpRemoveRegion" )]
-		[Description( "Gump to remove inside region" )] 
+		[Description( "Gump to remove inside region" )]
 		private static void OptionsGumps5_OnCommand( CommandEventArgs e )
-		{ 
+		{
 			e.Mobile.SendGump( new GumpRemoveRegion( e ) );
 		}
 	}
@@ -98,14 +98,14 @@ namespace Server.Gumps
 		public override void OnResponse(NetState state, RelayInfo info)
 		{
 			Mobile from = state.Mobile;
-			
+
 			switch ( info.ButtonID )
 			{
 				case 0: // close the gump
 				{
 					break;
 				}
-					
+
 				case 101:
 				{
 					TextRelay oRegion = info.GetTextEntry( 0 );
@@ -154,14 +154,14 @@ namespace Server.Gumps
 		public override void OnResponse(NetState state, RelayInfo info)
 		{
 			Mobile from = state.Mobile;
-			
+
 			switch ( info.ButtonID )
 			{
 				case 0: // close the gump
 				{
 					break;
 				}
-					
+
 				case 101:
 				{
 					TextRelay oRegion = info.GetTextEntry( 0 );
@@ -210,14 +210,14 @@ namespace Server.Gumps
 		public override void OnResponse(NetState state, RelayInfo info)
 		{
 			Mobile from = state.Mobile;
-			
+
 			switch ( info.ButtonID )
 			{
 				case 0: // close the gump
 				{
 					break;
 				}
-					
+
 				case 101:
 				{
 					TextRelay oID = info.GetTextEntry( 0 );
@@ -287,14 +287,14 @@ namespace Server.Gumps
 		public override void OnResponse(NetState state, RelayInfo info)
 		{
 			Mobile from = state.Mobile;
-			
+
 			switch ( info.ButtonID )
 			{
 				case 0: // close the gump
 				{
 					break;
 				}
-					
+
 				case 101:
 				{
 					TextRelay oX1 = info.GetTextEntry( 0 );
@@ -373,14 +373,14 @@ namespace Server.Gumps
 		public override void OnResponse(NetState state, RelayInfo info)
 		{
 			Mobile from = state.Mobile;
-			
+
 			switch ( info.ButtonID )
 			{
 				case 0: // close the gump
 				{
 					break;
 				}
-					
+
 				case 101:
 				{
 					TextRelay oX1 = info.GetTextEntry( 0 );
@@ -1049,7 +1049,7 @@ namespace Server.Mobiles
 		public bool IsFullc{ get{ return ( m_CreaturesC != null && m_CreaturesC.Count >= m_CountC ); } }
 		public bool IsFulld{ get{ return ( m_CreaturesD != null && m_CreaturesD.Count >= m_CountD ); } }
 		public bool IsFulle{ get{ return ( m_CreaturesE != null && m_CreaturesE.Count >= m_CountE ); } }
-		
+
 		public List<string> CreaturesName
 		{
 			get { return m_CreaturesName; }
@@ -1149,7 +1149,7 @@ namespace Server.Mobiles
 			s.m_CreaturesNameD = new List<string>( m_CreaturesNameD );
 			s.m_CreaturesNameE = new List<string>( m_CreaturesNameE );
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Count
 		{
@@ -1227,11 +1227,11 @@ namespace Server.Mobiles
 			set { m_HomeRange = value; InvalidateProperties(); }
 		}
 
-		[CommandProperty( AccessLevel.GameMaster )] 
-		public int WalkingRange 
-		{ 
-		   get { return m_WalkingRange; } 
-		   set { m_WalkingRange = value; InvalidateProperties(); } 
+		[CommandProperty( AccessLevel.GameMaster )]
+		public int WalkingRange
+		{
+		   get { return m_WalkingRange; }
+		   set { m_WalkingRange = value; InvalidateProperties(); }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
@@ -1409,7 +1409,7 @@ namespace Server.Mobiles
 			m_CreaturesE = new List<IEntity>();
 			DoTimer( TimeSpan.FromSeconds( 1 ) );
 		}
-			
+
 		public PremiumSpawner( Serial serial ) : base( serial )
 		{
 		}
@@ -1890,7 +1890,7 @@ namespace Server.Mobiles
 
 			if ( Worlds.IsMassSpawnZone( i.Map, i.X, i.Y ) ){ i.Delete(); }
 		}
-		
+
 		public void Respawn() // remove all creatures and spawn all again
 		{
 			RemoveCreatures();
@@ -1913,7 +1913,7 @@ namespace Server.Mobiles
 			for ( int i = 0; i < m_CountE; i++ )
 				SpawnE();
 		}
-		
+
 		public void Spawn()
 		{
 			if ( CreaturesNameCount > 0 )
@@ -2293,9 +2293,9 @@ namespace Server.Mobiles
 				else if ( !MyServerSettings.AllowFox() && m is Fox ){ m.Delete(); m = new GreyWolf(); }
 
 				m_Creatures.Add( m );
-				
+
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
-				
+
 				if ( m is WanderingHealer || m is Adventurers || m is Jedi )
 				{
 					loc = GetSpawnPosition();
@@ -2313,7 +2313,7 @@ namespace Server.Mobiles
 				if ( m is BaseCreature )
 				{
 					BaseCreature c = (BaseCreature)m;
-					
+
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
@@ -2396,9 +2396,9 @@ namespace Server.Mobiles
 				else if ( !MyServerSettings.AllowFox() && m is Fox ){ m.Delete(); m = new GreyWolf(); }
 
 				m_CreaturesA.Add( m );
-				
+
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
-				
+
 				if ( m is WanderingHealer || m is Adventurers || m is Jedi )
 				{
 					loc = GetSpawnPosition();
@@ -2416,7 +2416,7 @@ namespace Server.Mobiles
 				if ( m is BaseCreature )
 				{
 					BaseCreature c = (BaseCreature)m;
-					
+
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
@@ -2493,9 +2493,9 @@ namespace Server.Mobiles
 				else if ( !MyServerSettings.AllowFox() && m is Fox ){ m.Delete(); m = new GreyWolf(); }
 
 				m_CreaturesB.Add( m );
-				
+
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
-				
+
 				if ( m is WanderingHealer || m is Adventurers || m is Jedi )
 				{
 					loc = GetSpawnPosition();
@@ -2513,7 +2513,7 @@ namespace Server.Mobiles
 				if ( m is BaseCreature )
 				{
 					BaseCreature c = (BaseCreature)m;
-					
+
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
@@ -2590,10 +2590,10 @@ namespace Server.Mobiles
 				else if ( !MyServerSettings.AllowFox() && m is Fox ){ m.Delete(); m = new GreyWolf(); }
 
 				m_CreaturesC.Add( m );
-				
+
 
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
-				
+
 				if ( m is WanderingHealer || m is Adventurers || m is Jedi )
 				{
 					loc = GetSpawnPosition();
@@ -2611,7 +2611,7 @@ namespace Server.Mobiles
 				if ( m is BaseCreature )
 				{
 					BaseCreature c = (BaseCreature)m;
-					
+
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
@@ -2688,9 +2688,9 @@ namespace Server.Mobiles
 				else if ( !MyServerSettings.AllowFox() && m is Fox ){ m.Delete(); m = new GreyWolf(); }
 
 				m_CreaturesD.Add( m );
-				
+
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
-				
+
 				if ( m is WanderingHealer || m is Adventurers || m is Jedi )
 				{
 					loc = GetSpawnPosition();
@@ -2708,7 +2708,7 @@ namespace Server.Mobiles
 				if ( m is BaseCreature )
 				{
 					BaseCreature c = (BaseCreature)m;
-					
+
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
@@ -2785,9 +2785,9 @@ namespace Server.Mobiles
 				else if ( !MyServerSettings.AllowFox() && m is Fox ){ m.Delete(); m = new GreyWolf(); }
 
 				m_CreaturesE.Add( m );
-				
+
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
-				
+
 				if ( m is WanderingHealer || m is Adventurers || m is Jedi )
 				{
 					loc = GetSpawnPosition();
@@ -2805,7 +2805,7 @@ namespace Server.Mobiles
 				if ( m is BaseCreature )
 				{
 					BaseCreature c = (BaseCreature)m;
-					
+
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
@@ -3102,7 +3102,7 @@ namespace Server.Mobiles
 
 			InvalidateProperties();
 		}
-		
+
 		public void RemoveCreatures()
 		{
 			Defrag();
@@ -3290,7 +3290,7 @@ namespace Server.Mobiles
 			if ( m_Timer != null )
 				m_Timer.Stop();
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -3315,7 +3315,7 @@ namespace Server.Mobiles
 			writer.Write( m_Team );
 			writer.Write( m_HomeRange );
 			writer.Write( m_Running );
-			
+
 			if ( m_Running )
 				writer.WriteDeltaTime( m_End );
 
@@ -3468,7 +3468,7 @@ namespace Server.Mobiles
 				case 1:
 				{
 					m_Group = reader.ReadBool();
-					
+
 					goto case 0;
 				}
 
@@ -3485,7 +3485,7 @@ namespace Server.Mobiles
 
 					if ( m_Running )
 						ts = reader.ReadDeltaTime() - DateTime.Now;
-					
+
 					int size = reader.ReadInt();
 					m_CreaturesName = new List<string>( size );
 					for ( int i = 0; i < size; ++i )
@@ -3720,25 +3720,25 @@ namespace Server.Mobiles
 		}
 	}
 }
-namespace Server.Commands 
-{ 
-	public class PSpawnerCount 
-	{ 
-		public static void Initialize() 
-		{ 
-			Register( "pscount", AccessLevel.Administrator, new CommandEventHandler( Clearall_OnCommand ) ); 
-		} 
+namespace Server.Commands
+{
+	public class PSpawnerCount
+	{
+		public static void Initialize()
+		{
+			Register( "pscount", AccessLevel.Administrator, new CommandEventHandler( Clearall_OnCommand ) );
+		}
 
-		public static void Register( string command, AccessLevel access, CommandEventHandler handler ) 
-		{ 
-			CommandSystem.Register( command, access, handler ); 
-		} 
+		public static void Register( string command, AccessLevel access, CommandEventHandler handler )
+		{
+			CommandSystem.Register( command, access, handler );
+		}
 
-		[Usage( "pscount" )] 
-		[Description( "Count PremiumSpawners." )] 
-		public static void Clearall_OnCommand( CommandEventArgs e ) 
-		{ 
-			Mobile from = e.Mobile; 
+		[Usage( "pscount" )]
+		[Description( "Count PremiumSpawners." )]
+		public static void Clearall_OnCommand( CommandEventArgs e )
+		{
+			Mobile from = e.Mobile;
 			DateTime time = DateTime.Now;
 
 			List<Item> pspawnerlist = new List<Item>();
@@ -3752,8 +3752,8 @@ namespace Server.Commands
 			}
 
 			from.SendMessage( "Premium Spawners: {0}", pspawnerlist.Count );
-		} 
-	} 
+		}
+	}
 }
 namespace Server.Commands
 {
@@ -3857,7 +3857,7 @@ namespace Server.Commands
 					{
 						walkrange = spawner.WalkingRange.ToString();
 					}
-					
+
 					int MinDelay = ConvertToInt(spawner.MinDelay);
 
 					if (MinDelay < 1)
@@ -3871,7 +3871,7 @@ namespace Server.Commands
 					{
 						MaxDelay = MinDelay;
 					}
-					
+
 					string towrite = "*|";
 
 					if( spawner.SpawnNames.Count > 0 )
@@ -3883,17 +3883,17 @@ namespace Server.Commands
 							towrite = towrite + ":" + spawner.SpawnNames[i].ToString();
 						}
 					}
-					
+
 					if ( spawner.SpawnNames.Count > 0 && spawner.Running == true )
 					{
 						op.WriteLine( "{0}||||||{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|1|{9}|0|0|0|0|0", towrite, spawner.X, spawner.Y, spawner.Z, mapfinal, MinDelay, MaxDelay, walkrange, spawner.HomeRange, spawner.Count);
 					}
-					
+
 					if( spawner.SpawnNames.Count == 0 )
 					{
 						op.WriteLine( "## Void: {0}||||||{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|1|{9}|0|0|0|0|0", towrite, spawner.X, spawner.Y, spawner.Z, mapfinal, MinDelay, MaxDelay, walkrange, spawner.HomeRange, spawner.Count);
 					}
-					
+
 					if( spawner.SpawnNames.Count > 0 && spawner.Running == false )
 					{
 						op.WriteLine( "## Inactive: {0}||||||{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|1|{9}|0|0|0|0|0", towrite, spawner.X, spawner.Y, spawner.Z, mapfinal, MinDelay, MaxDelay, walkrange, spawner.HomeRange, spawner.Count);
@@ -3923,7 +3923,7 @@ namespace Server.Mobiles
 		private WayPoint m_WayPoint;
 
 		public bool IsFull{ get{ return ( m_Spawned != null && m_Spawned.Count >= m_Count ); } }
-		
+
 		public List<string> SpawnNames
 		{
 			get { return m_SpawnNames; }
@@ -3949,7 +3949,7 @@ namespace Server.Mobiles
 			s.m_SpawnNames = new List<string>( m_SpawnNames );
 			s.m_Spawned = new List<ISpawnable>();
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Count
 		{
@@ -3992,12 +3992,12 @@ namespace Server.Mobiles
 			set { m_HomeRange = value; InvalidateProperties(); }
 		}
 
-		[CommandProperty( AccessLevel.GameMaster )] 
-		public int WalkingRange 
-		{ 
-		   get { return m_WalkingRange; } 
-		   set { m_WalkingRange = value; InvalidateProperties(); } 
-		} 
+		[CommandProperty( AccessLevel.GameMaster )]
+		public int WalkingRange
+		{
+		   get { return m_WalkingRange; }
+		   set { m_WalkingRange = value; InvalidateProperties(); }
+		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Team
@@ -4090,12 +4090,12 @@ namespace Server.Mobiles
 			m_Count = amount;
 			m_Team = team;
 			m_HomeRange = homeRange;
-			m_WalkingRange = -1; 
+			m_WalkingRange = -1;
 			m_SpawnNames = spawnNames;
 			m_Spawned = new List<ISpawnable>();
 			DoTimer( TimeSpan.FromSeconds( 1 ) );
 		}
-			
+
 		public Spawner( Serial serial ) : base( serial )
 		{
 		}
@@ -4119,7 +4119,7 @@ namespace Server.Mobiles
 
 				list.Add( 1060656, m_Count.ToString() ); // amount to make: ~1_val~
 				list.Add( 1061169, m_HomeRange.ToString() ); // range ~1_val~
-				list.Add( 1060658, "walking range\t{0}", m_WalkingRange ); // ~1_val~: ~2_val~ 
+				list.Add( 1060658, "walking range\t{0}", m_WalkingRange ); // ~1_val~: ~2_val~
 
 				list.Add( 1060659, "group\t{0}", m_Group ); // ~1_val~: ~2_val~
 				list.Add( 1060660, "team\t{0}", m_Team ); // ~1_val~: ~2_val~
@@ -4250,7 +4250,7 @@ namespace Server.Mobiles
 				Spawn();
 			}
 		}
-		
+
 		public void Respawn()
 		{
 			RemoveSpawned();
@@ -4258,13 +4258,13 @@ namespace Server.Mobiles
 			for ( int i = 0; i < m_Count; i++ )
 				Spawn();
 		}
-		
+
 		public void Spawn()
 		{
 			if ( SpawnNamesCount > 0 )
 				Spawn( Utility.Random( SpawnNamesCount ) );
 		}
-		
+
 		public void Spawn( string creatureName )
 		{
 			for ( int i = 0; i < m_SpawnNames.Count; i++ )
@@ -4438,7 +4438,7 @@ namespace Server.Mobiles
 			if (spawned is BaseCreature)
 			{
 				BaseCreature bc = (BaseCreature)spawned;
-					
+
 				if( m_WalkingRange >= 0 )
 					bc.RangeHome = m_WalkingRange;
 				else
@@ -4559,7 +4559,7 @@ namespace Server.Mobiles
 
 			InvalidateProperties();
 		}
-		
+
 		public void RemoveSpawned()
 		{
 			Defrag();
@@ -4569,7 +4569,7 @@ namespace Server.Mobiles
 
 			InvalidateProperties();
 		}
-		
+
 		public void BringToHome()
 		{
 			Defrag();
@@ -4592,7 +4592,7 @@ namespace Server.Mobiles
 			if ( m_Timer != null )
 				m_Timer.Stop();
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -4610,7 +4610,7 @@ namespace Server.Mobiles
 			writer.Write( m_Team );
 			writer.Write( m_HomeRange );
 			writer.Write( m_Running );
-			
+
 			if ( m_Running )
 				writer.WriteDeltaTime( m_End );
 
@@ -4661,7 +4661,7 @@ namespace Server.Mobiles
 				case 1:
 				{
 					m_Group = reader.ReadBool();
-					
+
 					goto case 0;
 				}
 
@@ -4678,7 +4678,7 @@ namespace Server.Mobiles
 
 					if ( m_Running )
 						ts = reader.ReadDeltaTime() - DateTime.Now;
-					
+
 					int size = reader.ReadInt();
 
 					m_SpawnNames = new List<string>( size );
@@ -4830,7 +4830,7 @@ namespace Server
 			{
 				Save( e.Mobile, e.Arguments[1].ToLower() );
 			}
-			//[spawngen unload SpawnID 
+			//[spawngen unload SpawnID
 			else if ( e.Arguments[0].ToLower() == "unload" && e.Arguments.Length == 2 )
 			{
 				int ID = Utility.ToInt32( e.Arguments[1] );
@@ -4870,7 +4870,7 @@ namespace Server
 		{
 			World.Broadcast( 0x35, true, "Spawns are being {0}, please wait.", alfa );
 		}
-		
+
 		public static string GetRegion(Item item)
 		{
 			Region re = Region.Find(item.Location, item.Map);
@@ -4886,7 +4886,7 @@ namespace Server
 			List<Item> itemtodo = new List<Item>();
 
 			string prefix = Server.Commands.CommandSystem.Prefix;
-		
+
 			if( region == null || region == "" )
 			{
 				CommandSystem.Handle( from, String.Format( "{0}Global remove where premiumspawner", prefix ) );
@@ -4917,7 +4917,7 @@ namespace Server
 			List<Item> itemtodo = new List<Item>();
 
 			foreach ( Item itemremove in World.Items.Values )
-			{ 
+			{
 				if ( itemremove is PremiumSpawner && ((PremiumSpawner)itemremove).SpawnID == ID )
 				{
 					itemtodo.Add( itemremove );
@@ -4936,7 +4936,7 @@ namespace Server
 			List<Item> itemtodo = new List<Item>();
 
 			foreach ( Item itemremove in World.Items.Values )
-			{ 
+			{
 				if ( itemremove is PremiumSpawner && ( ( itemremove.X >= x1 && itemremove.X <= x2 ) && ( itemremove.Y >= y1 && itemremove.Y <= y2 ) && itemremove.Map == from.Map ) )
 				{
 					itemtodo.Add( itemremove );
@@ -4956,7 +4956,7 @@ namespace Server
 			List<Item> itemtodo = new List<Item>();
 
 			foreach ( Item itemremove in World.Items.Values )
-			{ 
+			{
 				if ( itemremove is PremiumSpawner && itemremove.Map == from.Map && itemremove.Parent == null )
 				{
 					itemtodo.Add( itemremove );
@@ -4976,12 +4976,12 @@ namespace Server
 			else
 			{
 				Talk("removed");
-				
+
 				foreach ( Item item in colecao )
 				{
 					item.Delete();
 				}
-				
+
 				DateTime bTime = DateTime.Now;
 				World.Broadcast( 0x35, true, "{0} PremiumSpawners have been removed in {1:F1} seconds.", count, (bTime - aTime).TotalSeconds );
 			}
@@ -5028,7 +5028,7 @@ namespace Server
 			string mapanome = "SpawnsByHand";
 
 			foreach ( Item itemsave in World.Items.Values )
-			{ 
+			{
 				if ( itemsave is PremiumSpawner && ((PremiumSpawner)itemsave).SpawnID == 1 )
 				{
 					itemtodo.Add( itemsave );
@@ -5048,7 +5048,7 @@ namespace Server
 			string mapanome = "SpawnsByCoords";
 
 			foreach ( Item itemsave in World.Items.Values )
-			{ 
+			{
 				if ( itemsave is PremiumSpawner && ( ( itemsave.X >= x1 && itemsave.X <= x2 ) && ( itemsave.Y >= y1 && itemsave.Y <= y2 ) && itemsave.Map == from.Map ) )
 				{
 					itemtodo.Add( itemsave );
@@ -5063,7 +5063,7 @@ namespace Server
 		{
 			List<Item> itemssave = new List<Item>( colecao );
 			string mapanome = mapa;
-			
+
 			if( itemssave.Count == 0 )
 			{
 				World.Broadcast( 0x35, true, "There are no PremiumSpawners to be saved." );
@@ -5071,7 +5071,7 @@ namespace Server
 			else
 			{
 				Talk("saved");
-				
+
 				if ( !Directory.Exists( "Data/Spawns" ) )
 					Directory.CreateDirectory( "Data/Spawns" );
 
@@ -5117,14 +5117,14 @@ namespace Server
 						string timer1d = timer1c.ToString();
 						if ( Utility.ToInt32( timer1b[0] ) == 0 && Utility.ToInt32( timer1b[1] ) == 0 ) //If hh and mm are 0, use seconds, else drop ss
 							timer1d = Utility.ToInt32( timer1b[2] ) + "s";
-						
+
 						string timer2a = itemsave2.MaxDelay.ToString();
 						string[] timer2b = timer2a.Split( ':' );
 						int timer2c = ( Utility.ToInt32( timer2b[0] ) * 60 ) + Utility.ToInt32( timer2b[1] );
 						string timer2d = timer2c.ToString();
 						if ( Utility.ToInt32( timer2b[0] ) == 0 && Utility.ToInt32( timer2b[1] ) == 0 )
 							timer2d = Utility.ToInt32( timer2b[2] ) + "s";
-						
+
 						string towrite = "";
 						string towriteA = "";
 						string towriteB = "";
@@ -5234,7 +5234,7 @@ namespace Server
 						if ( split.Length < 19 )
 							continue;
 
-						switch( split[0].ToLower() ) 
+						switch( split[0].ToLower() )
 						{
 							//Comment Line
 							case "##":
@@ -5273,34 +5273,34 @@ namespace Server
 			int y = Utility.ToInt32( sy );
 			int z = Utility.ToInt32( sz );
 			int map = Utility.ToInt32( sm );
-			
+
 			//MinTime
 			string samintime = smintime;
-			
+
 			if ( smintime.Contains("s") || smintime.Contains("m") || smintime.Contains("h") )
 				samintime = smintime.Remove(smintime.Length - 1);
-			
+
 			double dmintime = Utility.ToDouble( samintime );
-			
+
 			if ( m_MinTimeOverride != -1 )
 				dmintime = m_MinTimeOverride;
 
 			TimeSpan mintime = TimeSpan.FromMinutes( dmintime );
-			
+
 			if ( smintime.Contains("s") )
 				mintime = TimeSpan.FromSeconds( dmintime );
 			else if ( smintime.Contains("m") )
 				mintime = TimeSpan.FromMinutes( dmintime );
 			else if ( smintime.Contains("h") )
 				mintime = TimeSpan.FromHours( dmintime );
-			
+
 			//MaxTime
-			
+
 			string samaxtime = smaxtime;
-			
+
 			if ( smaxtime.Contains("s") || smaxtime.Contains("m") || smaxtime.Contains("h") )
 				samaxtime = smaxtime.Remove(smaxtime.Length - 1);
-			
+
 			double dmaxtime = Utility.ToDouble( samaxtime );
 
 			if ( m_MaxTimeOverride != -1 )
@@ -5312,14 +5312,14 @@ namespace Server
 			}
 
 			TimeSpan maxtime = TimeSpan.FromMinutes( dmaxtime );
-			
+
 			if ( smaxtime.Contains("s") )
 				maxtime = TimeSpan.FromSeconds( dmaxtime );
 			else if ( smaxtime.Contains("m") )
 				maxtime = TimeSpan.FromMinutes( dmaxtime );
 			else if ( smaxtime.Contains("h") )
 				maxtime = TimeSpan.FromHours( dmaxtime );
-			
+
 			//
 			int homerange = Utility.ToInt32( shomerange );
 	        int walkingrange = Utility.ToInt32( swalkingrange );
@@ -5400,7 +5400,7 @@ namespace Server
 			PremiumSpawner spawner = new PremiumSpawner( npccount, fakecountA, fakecountB, fakecountC, fakecountD, fakecountE, spawnid, mintime, maxtime, Team, walkingrange, homerange, tipos, noneA, noneB, noneC, noneD, noneE );
 
 			spawner.MoveToWorld( new Point3D( x, y, z ), map );
-			
+
 			if ( spawner.SpawnID == 9999 )
 			{
 				spawner.MinDelay = TimeSpan.FromSeconds( 1.0 );
@@ -5419,7 +5419,7 @@ namespace Server
 			{
 				spawner.Respawn();
 			}
-			
+
 			m_Count++;
 		}
 	}
@@ -5460,7 +5460,7 @@ namespace Server.Gumps
 		{
 			CommandSystem.Register( command, access, handler );
 		}
-		
+
 		[Usage( "SpawnEditor" )]
 		[Aliases( "Editor" )]
 		[Description( "Used to find and edit spawns" )]
@@ -5739,7 +5739,7 @@ namespace Server.Gumps
 						}
 					}
 				}
-				else if( strNum == 3 )	
+				else if( strNum == 3 )
 				{
 					if( i < initSpn.CreaturesName.Count - 1 )
 						spns3 += (string)initSpn.CreaturesName[i] + ", ";
@@ -5816,7 +5816,7 @@ namespace Server.Gumps
 						}
 					}
 				}
-				else if( strNum == 3 )	
+				else if( strNum == 3 )
 				{
 					if( i < initSpn.SubSpawnerA.Count - 1 )
 						spns3a += (string)initSpn.SubSpawnerA[i] + ", ";
@@ -5893,7 +5893,7 @@ namespace Server.Gumps
 						}
 					}
 				}
-				else if( strNum == 3 )	
+				else if( strNum == 3 )
 				{
 					if( i < initSpn.SubSpawnerB.Count - 1 )
 						spns3b += (string)initSpn.SubSpawnerB[i] + ", ";
@@ -5970,7 +5970,7 @@ namespace Server.Gumps
 						}
 					}
 				}
-				else if( strNum == 3 )	
+				else if( strNum == 3 )
 				{
 					if( i < initSpn.SubSpawnerC.Count - 1 )
 						spns3c += (string)initSpn.SubSpawnerC[i] + ", ";
@@ -6047,7 +6047,7 @@ namespace Server.Gumps
 						}
 					}
 				}
-				else if( strNum == 3 )	
+				else if( strNum == 3 )
 				{
 					if( i < initSpn.SubSpawnerD.Count - 1 )
 						spns3d += (string)initSpn.SubSpawnerD[i] + ", ";
@@ -6124,7 +6124,7 @@ namespace Server.Gumps
 						}
 					}
 				}
-				else if( strNum == 3 )	
+				else if( strNum == 3 )
 				{
 					if( i < initSpn.SubSpawnerE.Count - 1 )
 						spns3e += (string)initSpn.SubSpawnerE[i] + ", ";
@@ -6379,12 +6379,12 @@ namespace Server.Gumps
 		public static void FilterByRegion( Mobile from, ArrayList facetList, Region regr, Map regmap, int page )
 		{
 			ArrayList filregList = new ArrayList();
-			
+
 			foreach( Item regItem in facetList )
 			{
 				Point2D p2 = new Point2D( regItem.X, regItem.Y );
 				Point3D p = new Point3D( p2, regItem.Z );
-						
+
 				if( Region.Find( p, regmap ) == regr )
 					filregList.Add( regItem );
 			}
@@ -6555,7 +6555,7 @@ namespace Server.Mobiles
 
 			return creaturesName;
 		}
-		
+
 		public override void OnResponse( NetState state, RelayInfo info )
 		{
 			if ( m_Spawner.Deleted )

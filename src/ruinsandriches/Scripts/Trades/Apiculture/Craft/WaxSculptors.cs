@@ -240,13 +240,13 @@ namespace Server.Items
 				else if ( (Item)targeted == m_Wax )
 				{
 					string fakeName = "";
-					if ( Utility.RandomMinMax( 1, 2 ) == 1 ) 
-					{ 
+					if ( Utility.RandomMinMax( 1, 2 ) == 1 )
+					{
 						fakeName = NameList.RandomName( "female" );
 					}
-					else 
-					{ 		
-						fakeName = NameList.RandomName( "male" ); 
+					else
+					{
+						fakeName = NameList.RandomName( "male" );
 					}
 					fakeName = fakeName + " " + GetTitle();
 					m_Wax.Name = "sculptor of " + fakeName;

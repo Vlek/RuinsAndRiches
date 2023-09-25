@@ -9,7 +9,7 @@ namespace Server.Items
 	public class DDRelicOrbs : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -20,7 +20,7 @@ namespace Server.Items
 
 			RelicGoldValue = Server.Misc.RelicItems.RelicValue();
 
-			switch ( Utility.RandomMinMax( 0, 5 ) ) 
+			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
 				case 0: ItemID = 0xE2F; Weight = 20; break;
 				case 1: ItemID = 0x4FD6; Weight = 20; break;

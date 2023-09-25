@@ -67,12 +67,12 @@ namespace Server.Items
           else
           {
             // "That doesn't seem like the smartest thing to do."
-            // "That was an encounter you don't wish to repeat." 
+            // "That was an encounter you don't wish to repeat."
             // "Ha! You missed!"
-            from.SendLocalizedMessage( 1062845 + Utility.Random( 3 ) );	
+            from.SendLocalizedMessage( 1062845 + Utility.Random( 3 ) );
           }
 				}
-				else if( targeted is Item && !((Item)targeted).Movable ) 
+				else if( targeted is Item && !((Item)targeted).Movable )
 				{
 					if( targeted is IScissorable )
 					{

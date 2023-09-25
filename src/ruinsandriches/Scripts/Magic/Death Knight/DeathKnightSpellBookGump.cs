@@ -1,25 +1,25 @@
-using System; 
-using System.Collections; 
-using Server; 
-using Server.Items; 
-using Server.Misc; 
-using Server.Network; 
-using Server.Spells; 
-using Server.Spells.DeathKnight; 
-using Server.Prompts; 
+using System;
+using System.Collections;
+using Server;
+using Server.Items;
+using Server.Misc;
+using Server.Network;
+using Server.Spells;
+using Server.Spells.DeathKnight;
+using Server.Prompts;
 
-namespace Server.Gumps 
-{ 
-	public class DeathKnightSpellbookGump : Gump 
+namespace Server.Gumps
+{
+	public class DeathKnightSpellbookGump : Gump
 	{
-		private DeathKnightSpellbook m_Book; 
+		private DeathKnightSpellbook m_Book;
 
 		public bool HasSpell(Mobile from, int spellID)
 		{
 			return (m_Book.HasSpell(spellID));
 		}
 
-		public DeathKnightSpellbookGump( Mobile from, DeathKnightSpellbook book, int page ) : base( 100, 100 ) 
+		public DeathKnightSpellbookGump( Mobile from, DeathKnightSpellbook book, int page ) : base( 100, 100 )
 		{
 			from.PlaySound( 0x55 );
 			m_Book = book;
@@ -291,9 +291,9 @@ namespace Server.Gumps
 			}
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 
 			if ( info.ButtonID < 700 && info.ButtonID > 0 )
 			{

@@ -19,7 +19,7 @@ namespace Server.Items
 		{
 			return ( Validate( attacker ) && CheckMana( attacker, true ) );
 		}
-		
+
 		public override void OnMiss( Mobile attacker, Mobile defender )
 		{
 			//Validates in OnSwing for accuracy scalar

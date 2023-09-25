@@ -50,8 +50,8 @@ namespace Server.Mobiles
 
 			VirtualArmor = 58;
 
-			TarjanTimer thisTimer = new TarjanTimer( this ); 
-			thisTimer.Start(); 
+			TarjanTimer thisTimer = new TarjanTimer( this );
+			thisTimer.Start();
 		}
 
 		public override void GenerateLoot()
@@ -103,17 +103,17 @@ namespace Server.Mobiles
    			c.DropItem( MyChest );
 		}
 
-		public class TarjanTimer : Timer 
-		{ 
-			private Mobile m_tarjan; 
+		public class TarjanTimer : Timer
+		{
+			private Mobile m_tarjan;
 			public TarjanTimer( Mobile from ) : base( TimeSpan.FromSeconds( 120.0 ) )
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				m_tarjan = from; 
-			} 
+			{
+				Priority = TimerPriority.OneSecond;
+				m_tarjan = from;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if ( m_tarjan != null )
 				{
 					if ( m_tarjan.Warmode == false )
@@ -130,12 +130,12 @@ namespace Server.Mobiles
 					}
 					else
 					{
-						TarjanTimer thisTimer = new TarjanTimer( m_tarjan ); 
+						TarjanTimer thisTimer = new TarjanTimer( m_tarjan );
 						thisTimer.Start();
 					}
 				}
-			} 
-		} 
+			}
+		}
 
 		public Tarjan( Serial serial ) : base( serial )
 		{
@@ -151,8 +151,8 @@ namespace Server.Mobiles
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			TarjanTimer thisTimer = new TarjanTimer( this ); 
-			thisTimer.Start(); 
+			TarjanTimer thisTimer = new TarjanTimer( this );
+			thisTimer.Start();
 		}
 	}
 }

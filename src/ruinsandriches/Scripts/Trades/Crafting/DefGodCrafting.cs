@@ -14,7 +14,7 @@ namespace Server.Engines.Craft
         {
             get { return 0; }
         }
- 
+
         public override string GumpTitleString
         {
             get { return "<BASEFONT Color=#FBFBFB><CENTER>MAGICAL SMITHING MENU</CENTER></BASEFONT>"; }
@@ -266,7 +266,7 @@ namespace Server.Engines.Craft
         {
             get { return 0; }
         }
- 
+
         public override string GumpTitleString
         {
             get { return "<BASEFONT Color=#FBFBFB><CENTER>MAGICAL SEWING MENU</CENTER></BASEFONT>"; }
@@ -393,7 +393,7 @@ namespace Server.Engines.Craft
         {
             get { return 0; }
         }
- 
+
         public override string GumpTitleString
         {
             get { return "<BASEFONT Color=#FBFBFB><CENTER>MAGICAL ALCHEMY MENU</CENTER></BASEFONT>"; }

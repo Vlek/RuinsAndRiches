@@ -229,7 +229,7 @@ namespace Server.Items
 				case DoorFacing.WestCW:
 				case DoorFacing.EastCCW: x = -r; y = -r; w = bs; h = ss; break;
 
-				case DoorFacing.EastCW: 
+				case DoorFacing.EastCW:
 				case DoorFacing.WestCCW: x = -r; y = 0; w = bs; h = ss; break;
 
 				case DoorFacing.SouthCW:

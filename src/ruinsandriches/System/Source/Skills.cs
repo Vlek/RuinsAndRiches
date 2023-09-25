@@ -113,24 +113,24 @@ namespace Server
 
 		public static string CharacterTitle( string skillTitle, bool gender, int karma, double knightship, double seafaring, double magery, double necromancy, double healing, double spirits, int isBarbaric, bool isOriental, bool isMonk, bool isSyth, bool isJedi, bool isJester, bool isEvil )
 		{
-			if ( isBarbaric > 0 && 
-				( skillTitle.Contains("Alchemist") || 
-				skillTitle.Contains("Naturalist") || 
-				skillTitle.Contains("Archer") || 
-				skillTitle.Contains("Explorer") || 
-				skillTitle.Contains("Knight") || 
-				skillTitle.Contains("Fencer") || 
-				skillTitle.Contains("Shepherd") || 
-				skillTitle.Contains("Bludgeoner") || 
-				skillTitle.Contains("Wizard") || 
-				skillTitle.Contains("Bard") || 
-				skillTitle.Contains("Necromancer") || 
-				skillTitle.Contains("Sailor") || 
-				skillTitle.Contains("Ranger") || 
-				skillTitle.Contains("Duelist") || 
-				skillTitle.Contains("Swordsman") || 
-				skillTitle.Contains("Man-at-arms") || 
-				skillTitle.Contains("Tactician") || 
+			if ( isBarbaric > 0 &&
+				( skillTitle.Contains("Alchemist") ||
+				skillTitle.Contains("Naturalist") ||
+				skillTitle.Contains("Archer") ||
+				skillTitle.Contains("Explorer") ||
+				skillTitle.Contains("Knight") ||
+				skillTitle.Contains("Fencer") ||
+				skillTitle.Contains("Shepherd") ||
+				skillTitle.Contains("Bludgeoner") ||
+				skillTitle.Contains("Wizard") ||
+				skillTitle.Contains("Bard") ||
+				skillTitle.Contains("Necromancer") ||
+				skillTitle.Contains("Sailor") ||
+				skillTitle.Contains("Ranger") ||
+				skillTitle.Contains("Duelist") ||
+				skillTitle.Contains("Swordsman") ||
+				skillTitle.Contains("Man-at-arms") ||
+				skillTitle.Contains("Tactician") ||
 				skillTitle.Contains("Veterinarian") )
 			)
 			{
@@ -989,7 +989,7 @@ namespace Server
 		[CommandProperty( AccessLevel.Counselor, AccessLevel.GameMaster )]
 		public int Cap
 		{
-			get{ return m_Cap; } 
+			get{ return m_Cap; }
 			set{ m_Cap = value; }
 		}
 

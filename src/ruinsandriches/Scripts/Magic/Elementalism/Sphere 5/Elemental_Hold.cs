@@ -43,9 +43,9 @@ namespace Server.Spells.Elementalism
 				SpellHelper.CheckReflect( (int)this.Circle, Caster, ref m );
 
 				int nBenefit = (int)(Caster.Skills[CastSkill].Value / 2);
-				
+
 				int secs = (int)((GetDamageSkill( Caster ) / 10) - (GetResistSkill( m ) / 10)) + nBenefit;
-				
+
 				if( !Core.SE )
 					secs += 2;
 

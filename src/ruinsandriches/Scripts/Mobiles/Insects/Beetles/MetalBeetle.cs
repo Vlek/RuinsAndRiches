@@ -50,7 +50,7 @@ namespace Server.Mobiles
 
 			if ( Utility.RandomDouble() < .25 )
 				PackItem( Engines.Plants.Seed.RandomBonsaiSeed() );
-				
+
 			switch ( Utility.Random( 10 ))
 			{
 				case 0: PackItem( new LeftArm() ); break;

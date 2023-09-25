@@ -1956,7 +1956,7 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherNinjaJacket ), 51, Utility.Random( 1,15 ), 0x2793, MaterialInfo.PlainLeatherColor() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherNinjaMitts ), 60, Utility.Random( 1,15 ), 0x2792, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherNinjaHood ), 10, Utility.Random( 1,15 ), 0x278E, MaterialInfo.PlainLeatherColor() ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( NinjaTabi ), 15, Utility.Random( 1,15 ), 0x2797, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( NinjaTabi ), 15, Utility.Random( 1,15 ), 0x2797, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( OniwabanBoots ), 120, Utility.Random( 1,15 ), 0x64BA, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( OniwabanGloves ), 60, Utility.Random( 1,15 ), 0x64B9, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( OniwabanHood ), 10, Utility.Random( 1,15 ), 0x64BB, 0 ) ); }
@@ -1988,7 +1988,7 @@ namespace Server.Mobiles
 				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherNinjaMitts ), 30 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherNinjaHood ), 5 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( NinjaTabi ), 7 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( OniwabanBoots ), 60 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( OniwabanBoots ), 60 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( OniwabanGloves ), 30 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( OniwabanHood ), 5 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( OniwabanLeggings ), 40 ); } // DO NOT WANT?
@@ -2031,7 +2031,7 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Tekagi ), 55, Utility.Random( 1,15 ), 0x27AB, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Shuriken ), 18, Utility.Random( 1,15 ), 0x27AC, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Kama ), 61, Utility.Random( 1,15 ), 0x27AD, 0 ) ); }
-				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Sai ), 56, Utility.Random( 1,15 ), 0x27AF, 0 ) ); }		
+				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Sai ), 56, Utility.Random( 1,15 ), 0x27AF, 0 ) ); }
 			}
 		}
 
@@ -2257,10 +2257,10 @@ namespace Server.Mobiles
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Bolt ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Arrow ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Shaft ), 1 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Feather ), 1 ); } // DO NOT WANT?			
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Feather ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( HeavyCrossbow ), 27 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Bow ), 17 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Crossbow ), 25 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Crossbow ), 25 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( CompositeBow ), 23 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( RepeatingCrossbow ), 22 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicalShortbow ), 18 ); } // DO NOT WANT?
@@ -2423,7 +2423,7 @@ namespace Server.Mobiles
 		public class InternalBuyInfo : List<GenericBuyInfo>
 		{
 			public InternalBuyInfo()
-			{  
+			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BagOfSending ), 4000, Utility.Random( 1,10 ), 0xE76, 0x8AD ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BallOfSummoning ), 3000, Utility.Random( 1,10 ), 0xE2E, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BraceletOfBinding ), 3500, Utility.Random( 1,10 ), 0x4CF1, 0x489 ) ); }
@@ -2454,7 +2454,7 @@ namespace Server.Mobiles
 		public class InternalBuyInfo : List<GenericBuyInfo>
 		{
 			public InternalBuyInfo()
-			{  
+			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( FountainOfLifeDeed ), 7400, 1, 0x14F0, 0 ) ); }
 			}
 		}
@@ -2550,14 +2550,14 @@ namespace Server.Mobiles
 		public class InternalBuyInfo : List<GenericBuyInfo>
 		{
 			public InternalBuyInfo()
-			{  
+			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( MortarPestle ), 8, Utility.Random( 1,15 ), 0x4CE9, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WitchCauldron ), 16, Utility.Random( 1,15 ), 0x640B, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BookWitchBrewing ), 50, Utility.Random( 1,15 ), 0x5689, 0x9A2 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemicalElixirs ), 50, Utility.Random( 1,15 ), 0x2219, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemicalMixtures ), 50, Utility.Random( 1,15 ), 0x2223, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BookOfPoisons ), 50, Utility.Random( 1,15 ), 0x2253, 0xB51 ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( HeatingStand ), 2, Utility.Random( 1,15 ), 0x1849, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( HeatingStand ), 2, Utility.Random( 1,15 ), 0x1849, 0 ) ); }
 
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BlackPearl ), 5, Utility.Random( 1,15 ), 0x266F, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, Utility.Random( 1,15 ), 0xF7B, 0 ) ); }
@@ -2634,45 +2634,45 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( CanopicJar ), Utility.Random( 50,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( DragonTooth ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( EnchantedSeaweed ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( GhostlyDust ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( GoldenSerpentVenom ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( LichDust ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SilverSerpentVenom ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( UnicornHorn ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( DemigodBlood ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( DemonClaw ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( DragonBlood ), 120 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackPearl ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Bloodmoss ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MandrakeRoot ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Garlic ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Ginseng ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Nightshade ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SpidersSilk ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( SulfurousAsh ), 1 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( CanopicJar ), Utility.Random( 50,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( DragonTooth ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( EnchantedSeaweed ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( GhostlyDust ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( GoldenSerpentVenom ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( LichDust ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SilverSerpentVenom ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( UnicornHorn ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( DemigodBlood ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( DemonClaw ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( DragonBlood ), 120 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackPearl ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Bloodmoss ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MandrakeRoot ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Garlic ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Ginseng ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Nightshade ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SpidersSilk ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( SulfurousAsh ), 1 ); } // DO NOT WANT?
 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Brimstone ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( ButterflyWings ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( EyeOfToad ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FairyEgg ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( GargoyleEar ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( BeetleShell ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MoonCrystal ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( PixieSkull ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( RedLotus ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SeaSalt ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SilverWidow ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SwampBerries ), 3 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Brimstone ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( ButterflyWings ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( EyeOfToad ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FairyEgg ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( GargoyleEar ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( BeetleShell ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MoonCrystal ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( PixieSkull ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( RedLotus ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SeaSalt ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SilverWidow ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SwampBerries ), 3 ); } // DO NOT WANT?
 
 				if ( MyServerSettings.BuyChance() ){Add( typeof( MortarPestle ), 4 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( AgilityPotion ), 7 ); } // DO NOT WANT?
@@ -3267,10 +3267,10 @@ namespace Server.Mobiles
 		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
 		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Harpoon ), 40, Utility.Random( 3,31 ), 0xF63, 0 ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( HarpoonRope ), 2, Utility.Random( 50,250 ), 0x52B1, 0 ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( FishingPole ), 15, Utility.Random( 3,31 ), 0xDC0, 0 ) ); }
@@ -3280,15 +3280,15 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( GrapplingHook ), 58, Utility.Random( 1,15 ), 0x4F40, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DockingLantern ), 58, Utility.Random( 3,31 ), 0x40FF, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( "1041205", typeof( SmallBoatDeed ), 9500, Utility.Random( 1,15 ), 0x14F3, 0x5BE ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
-			} 
-		} 
+			}
+		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBHighSeas : SBInfo
@@ -3303,16 +3303,16 @@ namespace Server.Mobiles
 		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
 		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyRareChance() ){Add( typeof( Harpoon ), 20 ); }
 				if ( MyServerSettings.BuyRareChance() ){Add( typeof( HarpoonRope ), 1 ); }
@@ -3358,8 +3358,8 @@ namespace Server.Mobiles
 				if ( MyServerSettings.BuyChance() ){Add( typeof( AquariumSouthAddonDeed ), Utility.RandomMinMax( 200, 800 ) );}
 				if ( MyServerSettings.BuyChance() ){Add( typeof( DolphinEastSmallAddonDeed ), Utility.RandomMinMax( 200, 800 ) );}
 				if ( MyServerSettings.BuyChance() ){Add( typeof( SeaShell ), Utility.RandomMinMax( 100, 120 ) );}
-			} 
-		} 
+			}
+		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBKungFu: SBInfo
@@ -3403,22 +3403,22 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBBaker : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBBaker : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBBaker() 
-		{ 
-		} 
+		public SBBaker()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( BreadLoaf ), 6, Utility.Random( 1,15 ), 0x103B, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BreadLoaf ), 5, Utility.Random( 1,15 ), 0x103C, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( ApplePie ), 7, Utility.Random( 1,15 ), 0x1041, 0 ) ); }
@@ -3426,32 +3426,32 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Muffins ), 3, Utility.Random( 1,15 ), 0x9EA, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SackFlour ), 3, Utility.Random( 1,15 ), 0x1039, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( FrenchBread ), 5, Utility.Random( 1,15 ), 0x98C, 0 ) ); }
-             	if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cookies ), 3, Utility.Random( 1,15 ), 0x160b, 0 ) ); } 
+             	if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cookies ), 3, Utility.Random( 1,15 ), 0x160b, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( CheesePizza ), 8, 10, 0x1040, 0 ) ); } // OSI just has Pizza
 				if ( MyServerSettings.SellChance() ){Add (new GenericBuyInfo( typeof( BowlFlour ), 7, Utility.Random( 1,15 ), 0xA1E, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( BreadLoaf ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FrenchBread ), 1 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Cake ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Cookies ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Muffins ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( CheesePizza ), 4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( ApplePie ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( PeachCobbler ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Quiche ), 6 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Dough ), 4 ); } // DO NOT WANT? 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
+				if ( MyServerSettings.BuyChance() ){Add( typeof( BreadLoaf ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FrenchBread ), 1 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Cake ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Cookies ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Muffins ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( CheesePizza ), 4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( ApplePie ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( PeachCobbler ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Quiche ), 6 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Dough ), 4 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Pitcher ), 5 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SackFlour ), 1 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Eggs ), 1 ); } // DO NOT WANT? 
-			} 
-		} 
-	} 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SackFlour ), 1 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Eggs ), 1 ); } // DO NOT WANT?
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBBanker : SBInfo
 	{
@@ -3500,71 +3500,71 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBBard: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBBard: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBBard() 
-		{ 
-		} 
+		public SBBard()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Drums ), 21, Utility.Random( 1,15 ), 0x0E9C, 0 ) ); } 
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Tambourine ), 21, Utility.Random( 1,15 ), 0x0E9E, 0 ) ); } 
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LapHarp ), 21, Utility.Random( 1,15 ), 0x0EB2, 0 ) ); } 
-				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Lute ), 21, Utility.Random( 1,15 ), 0x0EB3, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Drums ), 21, Utility.Random( 1,15 ), 0x0E9C, 0 ) ); }
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Tambourine ), 21, Utility.Random( 1,15 ), 0x0E9E, 0 ) ); }
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LapHarp ), 21, Utility.Random( 1,15 ), 0x0EB2, 0 ) ); }
+				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Lute ), 21, Utility.Random( 1,15 ), 0x0EB3, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BambooFlute ), 21, Utility.Random( 1,15 ), 0x2805, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Trumpet ), 21, Utility.Random( 1,15 ), 0x6458, 0 ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SongBook ), 24, Utility.Random( 1,5 ), 0x225A, 0 ) ); } 
-				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( EnergyCarolScroll ), 32, 1, 0x1F48, 0x96 ) ); } 
-				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( FireCarolScroll ), 32, 1, 0x1F49, 0x96 ) ); } 
-				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( IceCarolScroll ), 32, 1, 0x1F34, 0x96 ) ); } 
-				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( KnightsMinneScroll ), 32, 1, 0x1F31, 0x96 ) ); } 
-				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( PoisonCarolScroll ), 32, 1, 0x1F33, 0x96 ) ); } 
-				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( JarsOfWaxInstrument ), 160, Utility.Random( 1,5 ), 0x1005, 0x845 ) ); } 
-			} 
-		} 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SongBook ), 24, Utility.Random( 1,5 ), 0x225A, 0 ) ); }
+				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( EnergyCarolScroll ), 32, 1, 0x1F48, 0x96 ) ); }
+				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( FireCarolScroll ), 32, 1, 0x1F49, 0x96 ) ); }
+				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( IceCarolScroll ), 32, 1, 0x1F34, 0x96 ) ); }
+				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( KnightsMinneScroll ), 32, 1, 0x1F31, 0x96 ) ); }
+				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( PoisonCarolScroll ), 32, 1, 0x1F33, 0x96 ) ); }
+				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( JarsOfWaxInstrument ), 160, Utility.Random( 1,5 ), 0x1005, 0x845 ) ); }
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
-				if ( MyServerSettings.BuyChance() ){Add( typeof( JarsOfWaxInstrument ), 80 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( LapHarp ), 10 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Lute ), 10 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Drums ), 10 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Harp ), 10 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( JarsOfWaxInstrument ), 80 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( LapHarp ), 10 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Lute ), 10 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Drums ), 10 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Harp ), 10 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Tambourine ), 10 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BambooFlute ), 10 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Trumpet ), 10 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MySongbook ), Utility.Random( 50,200 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SongBook ), 12 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( EnergyCarolScroll ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FireCarolScroll ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( IceCarolScroll ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( KnightsMinneScroll ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( PoisonCarolScroll ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( ArmysPaeonScroll ), 6 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MagesBalladScroll ), 6 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( EnchantingEtudeScroll ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SheepfoeMamboScroll ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SinewyEtudeScroll ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( EnergyThrenodyScroll ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FireThrenodyScroll ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( IceThrenodyScroll ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( PoisonThrenodyScroll ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FoeRequiemScroll ), 9 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicFinaleScroll ), 10 ); } // DO NOT WANT? 
-			} 
-		} 
-	} 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Trumpet ), 10 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MySongbook ), Utility.Random( 50,200 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SongBook ), 12 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( EnergyCarolScroll ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FireCarolScroll ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( IceCarolScroll ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( KnightsMinneScroll ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( PoisonCarolScroll ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( ArmysPaeonScroll ), 6 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MagesBalladScroll ), 6 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( EnchantingEtudeScroll ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SheepfoeMamboScroll ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SinewyEtudeScroll ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( EnergyThrenodyScroll ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FireThrenodyScroll ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( IceThrenodyScroll ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( PoisonThrenodyScroll ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FoeRequiemScroll ), 9 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicFinaleScroll ), 10 ); } // DO NOT WANT?
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBBarkeeper : SBInfo
 	{
@@ -3723,37 +3723,37 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBBlacksmith : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBBlacksmith : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBBlacksmith() 
-		{ 
-		} 
+		public SBBlacksmith()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 	
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Tongs ), 13, Utility.Random( 1,15 ), 0xFBB, 0 ) ); } 
-				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( SmithHammer ), 21, Utility.Random( 1,15 ), 0x0FB4, 0 ) ); }
-			} 
-		} 
-
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Tongs ), 7 ); } // DO NOT WANT? 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Tongs ), 13, Utility.Random( 1,15 ), 0xFBB, 0 ) ); }
+				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( SmithHammer ), 21, Utility.Random( 1,15 ), 0x0FB4, 0 ) ); }
+			}
+		}
+
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Tongs ), 7 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( SmithHammer ), 10 ); } // DO NOT WANT?
 				Add( typeof( MagicHammer ), Utility.Random( 300,400 ) );
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBBowyer : SBInfo
 	{
@@ -3786,54 +3786,54 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBButcher : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBButcher : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBButcher() 
-		{ 
-		} 
+		public SBButcher()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Bacon ), 7, Utility.Random( 1,15 ), 0x979, 0 ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Ham ), 26, Utility.Random( 1,15 ), 0x9C9, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Ham ), 26, Utility.Random( 1,15 ), 0x9C9, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Sausage ), 18, Utility.Random( 1,15 ), 0x9C0, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RawChickenLeg ), 6, Utility.Random( 1,15 ), 0x1607, 0 ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RawBird ), 9, Utility.Random( 1,15 ), 0x9B9, 0 ) ); } 
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RawPig ), 18, Utility.Random( 1,15 ), 0x9D3, 0xB01 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RawBird ), 9, Utility.Random( 1,15 ), 0x9B9, 0 ) ); }
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RawPig ), 18, Utility.Random( 1,15 ), 0x9D3, 0xB01 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RawLambLeg ), 9, Utility.Random( 1,15 ), 0x1609, 0 ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( RawRibs ), 16, Utility.Random( 1,15 ), 0x9F1, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( ButcherKnife ), 13, Utility.Random( 1,15 ), 0x13F6, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cleaver ), 13, Utility.Random( 1,15 ), 0xEC3, 0 ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SkinningKnife ), 13, Utility.Random( 1,15 ), 0xEC4, 0 ) ); } 
-			} 
-		} 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SkinningKnife ), 13, Utility.Random( 1,15 ), 0xEC4, 0 ) ); }
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( RawPig ), 9 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( RawRibs ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( RawLambLeg ), 4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( RawChickenLeg ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( RawBird ), 4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Bacon ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Sausage ), 9 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Ham ), 13 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( ButcherKnife ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Cleaver ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkinningKnife ), 7 ); } // DO NOT WANT? 
-			} 
-		} 
-	} 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
+				if ( MyServerSettings.BuyChance() ){Add( typeof( RawPig ), 9 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( RawRibs ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( RawLambLeg ), 4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( RawChickenLeg ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( RawBird ), 4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Bacon ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Sausage ), 9 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Ham ), 13 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( ButcherKnife ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Cleaver ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkinningKnife ), 7 ); } // DO NOT WANT?
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBCarpenter: SBInfo
 	{
@@ -4065,71 +4065,71 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBCobbler : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBCobbler : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBCobbler() 
-		{ 
-		} 
+		public SBCobbler()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 	
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( ThighBoots ), 15, Utility.Random( 1,15 ), 0x1711, Utility.RandomNeutralHue() ) ); } 
-				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Shoes ), 8, Utility.Random( 1,15 ), 0x170f, Utility.RandomNeutralHue() ) ); } 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( ThighBoots ), 15, Utility.Random( 1,15 ), 0x1711, Utility.RandomNeutralHue() ) ); }
+				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Shoes ), 8, Utility.Random( 1,15 ), 0x170f, Utility.RandomNeutralHue() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Boots ), 10, Utility.Random( 1,15 ), 0x170b, Utility.RandomNeutralHue() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Sandals ), 5, Utility.Random( 1,15 ), 0x170d, Utility.RandomNeutralHue() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BarbarianBoots ), 15, Utility.Random( 1,5 ), 0x406, 0x220 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherSandals ), 60, Utility.Random( 1,15 ), 0x170d, MaterialInfo.PlainLeatherColor() ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherShoes ), 75, Utility.Random( 1,15 ), 0x170f, MaterialInfo.PlainLeatherColor() ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherShoes ), 75, Utility.Random( 1,15 ), 0x170f, MaterialInfo.PlainLeatherColor() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherBoots ), 90, Utility.Random( 1,15 ), 0x170b, MaterialInfo.PlainLeatherColor() ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherThighBoots ), 105, Utility.Random( 1,15 ), 0x1711, MaterialInfo.PlainLeatherColor() ) ); }  
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LeatherThighBoots ), 105, Utility.Random( 1,15 ), 0x1711, MaterialInfo.PlainLeatherColor() ) ); }
 				if ( MyServerSettings.SellChance() && MyServerSettings.MonstersAllowed() ){Add( new GenericBuyInfo( typeof( HikingBoots ), 800, Utility.Random( 1,15 ), 0x2FC4, MaterialInfo.PlainLeatherColor() ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicBoots ), 70 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Shoes ), 4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Boots ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( ThighBoots ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Sandals ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( BarbarianBoots ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBoots ), 25 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherSandals ), 30 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherShoes ), 37 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherBoots ), 45 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherThighBoots ), 52 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( LeatherSoftBoots ), 60 ); } // DO NOT WANT? 
-			} 
-		} 
-	} 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Shoes ), 4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Boots ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( ThighBoots ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Sandals ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( BarbarianBoots ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBoots ), 25 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherSandals ), 30 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherShoes ), 37 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherBoots ), 45 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( LeatherThighBoots ), 52 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( LeatherSoftBoots ), 60 ); } // DO NOT WANT?
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBCook : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBCook : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBCook() 
-		{ 
-		} 
+		public SBCook()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BreadLoaf ), 5, Utility.Random( 1,15 ), 0x103B, 0 ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( BreadLoaf ), 5, Utility.Random( 1,15 ), 0x103C, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( ApplePie ), 7, Utility.Random( 1,15 ), 0x1041, 0 ) ); }
@@ -4155,13 +4155,13 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RollingPin ), 2, Utility.Random( 1,15 ), 0x1043, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( FlourSifter ), 2, Utility.Random( 1,15 ), 0x103E, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( "1044567", typeof( Skillet ), 3, Utility.Random( 1,15 ), 0x97F, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( CheeseWheel ), 12 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( CookedBird ), 8 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( RoastPig ), 53 ); } // DO NOT WANT?
@@ -4186,26 +4186,26 @@ namespace Server.Mobiles
 				if ( MyServerSettings.BuyChance() ){Add( typeof( PewterBowlOfFoodPotatos ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( WoodenBowlOfStew ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( WoodenBowlOfTomatoSoup ), 1 ); } // DO NOT WANT?
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBFarmer : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBFarmer : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBFarmer() 
-		{ 
-		} 
+		public SBFarmer()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cabbage ), 5, Utility.Random( 1,15 ), 0xC7B, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cantaloupe ), 6, Utility.Random( 1,15 ), 0xC79, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Carrot ), 3, Utility.Random( 1,15 ), 0xC78, 0 ) ); }
@@ -4226,13 +4226,13 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Grapes ), 3, Utility.Random( 1,15 ), 0x9D1, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Apple ), 3, Utility.Random( 1,15 ), 0x9D0, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SheafOfHay ), 2, Utility.Random( 1,15 ), 0xF36, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Pitcher ), 5 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Eggs ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Apple ), 1 ); } // DO NOT WANT?
@@ -4258,26 +4258,26 @@ namespace Server.Mobiles
 				if ( MyServerSettings.BuyChance() ){Add( typeof( PumpkinTall ), Utility.Random( 35,50 ) ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( PumpkinGreen ), Utility.Random( 60,75 ) ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( PumpkinGiant ), Utility.Random( 85,100 ) ); } // DO NOT WANT?
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBFisherman : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBFisherman : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBFisherman() 
-		{ 
-		} 
+		public SBFisherman()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RawFishSteak ), 3, Utility.Random( 1,15 ), 0x97A, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Fish ), 6, Utility.Random( 1,15 ), 0x9CC, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Fish ), 6, Utility.Random( 1,15 ), 0x9CD, 0 ) ); }
@@ -4285,20 +4285,20 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Fish ), 6, Utility.Random( 1,15 ), 0x9CF, 0 ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( FishingPole ), 15, Utility.Random( 1,15 ), 0xDC0, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( GrapplingHook ), 58, Utility.Random( 1,15 ), 0x4F40, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
 				if ( MyServerSettings.BuyRareChance() ){Add( typeof( RawFishSteak ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){Add( typeof( Fish ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( FishingPole ), 7 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( GrapplingHook ), 29 ); } // DO NOT WANT?
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBFortuneTeller : SBInfo
 	{
@@ -4336,22 +4336,22 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBFurtrader : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBFurtrader : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBFurtrader() 
-		{ 
-		} 
+		public SBFurtrader()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Furs ), 5, Utility.Random( 1,25 ), 0x11F4, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( FursWhite ), 8, Utility.Random( 1,25 ), 0x11F4, 0x481 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( FurCape ), 16, Utility.Random( 1,5 ), 0x230A, 0x907 ) ); }
@@ -4380,36 +4380,36 @@ namespace Server.Mobiles
 				if ( SetStock.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( SerpentSkin ), 1214, Utility.Random( 1,10 ), 0x1081, MaterialInfo.GetMaterialColor( "serpent skin", "", 0 ) ) ); }
 				if ( SetStock.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( TrollSkin ), 1221, Utility.Random( 1,10 ), 0x1081, MaterialInfo.GetMaterialColor( "troll skin", "", 0 ) ) ); }
 				if ( SetStock.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( UnicornSkin ), 1228, Utility.Random( 1,10 ), 0x1081, MaterialInfo.GetMaterialColor( "unicorn skin", "", 0 ) ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Furs ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FursWhite ), 4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurCape ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurCape ), 9 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurRobe ), 10 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurRobe ), 12 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurBoots ), 5 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurBoots ), 6 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurSarong ), 7 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurSarong ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurCap ), 4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurCap ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurArms ), 50 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurTunic ), 60 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( FurLegs ), 50 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurArms ), 50 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurTunic ), 60 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurLegs ), 50 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( BearMask ), 14 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( DeerMask ), 14 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WolfMask ), 14 ); } // DO NOT WANT? 
-			} 
-		} 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Furs ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FursWhite ), 4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurCape ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurCape ), 9 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurRobe ), 10 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurRobe ), 12 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurBoots ), 5 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurBoots ), 6 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurSarong ), 7 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurSarong ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurCap ), 4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurCap ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurArms ), 50 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurTunic ), 60 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( FurLegs ), 50 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurArms ), 50 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurTunic ), 60 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WhiteFurLegs ), 50 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( BearMask ), 14 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( DeerMask ), 14 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WolfMask ), 14 ); } // DO NOT WANT?
+			}
+		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBGlassblower : SBInfo
@@ -4431,7 +4431,7 @@ namespace Server.Mobiles
 				if ( 1 > 0 ){Add( new GenericBuyInfo( "Crafting Glass With Glassblowing", typeof( GlassblowingBook ), 10637, Utility.Random( 1,15 ), 0xFF4, 0 ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( "Finding Glass-Quality Sand", typeof( SandMiningBook ), 10637, Utility.Random( 1,15 ), 0xFF4, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( "1044608", typeof( Blowpipe ), 21, Utility.Random( 1,15 ), 0xE8A, 0x3B9 ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Monocle ), 24, Utility.Random( 1,25 ), 0x543B, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Monocle ), 24, Utility.Random( 1,25 ), 0x543B, 0 ) ); }
 			}
 		}
 
@@ -4447,41 +4447,41 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBHairStylist : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBHairStylist : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBHairStylist() 
-		{ 
-		} 
+		public SBHairStylist()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				Add( new GenericBuyInfo( "special beard dye", typeof( SpecialBeardDye ), 500, Utility.Random( 1,15 ), 0xE26, 0 ) );
 				Add( new GenericBuyInfo( "special hair dye", typeof( SpecialHairDye ), 500, Utility.Random( 1,15 ), 0xE26, 0 ) );
 				Add( new GenericBuyInfo( "1041060", typeof( HairDye ), 100, Utility.Random( 1,15 ), 0xEFF, 0 ) );
 				Add( new GenericBuyInfo( "hair dye bottle", typeof( HairDyeBottle ), 1000, Utility.Random( 1,15 ), 0xE0F, 0 ) );
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DisguiseKit ), 700, Utility.Random( 1,5 ), 0xE05, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
 				Add( typeof( HairDye ), 50 );
 				Add( typeof( SpecialBeardDye ), 250 );
 				Add( typeof( SpecialHairDye ), 250 );
 				Add( typeof( HairDyeBottle ), 300 );
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBHealer : SBInfo
 	{
@@ -4642,7 +4642,7 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( RefreshPotion ), 15, Utility.Random( 1,15 ), 0xF0B, 0 ) ); }
 				Add( new GenericBuyInfo( typeof( DruidCauldron ), 16, Utility.Random( 1,15 ), 0x640A, 0 ) );
 				Add( new GenericBuyInfo( typeof( BookDruidBrewing ), 50, Utility.Random( 1,15 ), 0x5688, 0x85D ) );
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); }
 				Add( new GenericBuyInfo( typeof( DruidPouch ), Utility.Random( 800,1200 ), Utility.Random( 1,2 ), 0x5776, 0x8A1 ) );
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( AlchemyPouch ), Utility.Random( 2900,3500 ), Utility.Random( 1,2 ), 0x1C10, 0x89F ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AppleTreeDeed ), 640, Utility.Random( 1,2 ), 0x14F0, 0 ) ); }
@@ -4701,22 +4701,22 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBHerbalist : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBHerbalist : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBHerbalist() 
-		{ 
-		} 
+		public SBHerbalist()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, Utility.Random( 10,100 ), 0x266F, 0 ) );
 				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, Utility.Random( 10,100 ), 0xF7B, 0 ) );
 				Add( new GenericBuyInfo( typeof( Garlic ), 3, Utility.Random( 10,100 ), 0xF84, 0 ) );
@@ -4738,7 +4738,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( MortarPestle ), 8, Utility.Random( 1,15 ), 0x4CE9, 0 ) );
 				Add( new GenericBuyInfo( typeof( DruidCauldron ), 16, Utility.Random( 1,15 ), 0x640A, 0 ) );
 				Add( new GenericBuyInfo( typeof( BookDruidBrewing ), 50, Utility.Random( 1,15 ), 0x5688, 0x85D ) );
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemistPouch ), Utility.Random( 800,1200 ), Utility.Random( 1,2 ), 0x5776, 0xAFE ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DruidPouch ), Utility.Random( 800,1200 ), Utility.Random( 1,2 ), 0x5776, 0x8A1 ) ); }
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( AlchemyPouch ), Utility.Random( 2900,3500 ), Utility.Random( 1,2 ), 0x1C10, 0x89F ) ); }
@@ -4752,13 +4752,13 @@ namespace Server.Mobiles
 				if ( SetStock.SellChance() ){Add( new GenericBuyInfo( typeof( HomePlants_Cactus ), Utility.Random( 50, 100 ), Utility.Random( 1, 5 ), 0x11C6, 0 ) ); }
 				if ( SetStock.SellChance() ){Add( new GenericBuyInfo( typeof( HomePlants_Lilly ), Utility.Random( 50, 100 ), Utility.Random( 1, 5 ), 0x11C6, 0 ) ); }
 				if ( SetStock.SellChance() ){Add( new GenericBuyInfo( typeof( HomePlants_Grass ), Utility.Random( 50, 100 ), Utility.Random( 1, 5 ), 0x11C6, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
 				Add( typeof( BlackPearl ), 3 );
 				Add( typeof( Bloodmoss ), 3 );
 				Add( typeof( MandrakeRoot ), 2 );
@@ -4786,13 +4786,13 @@ namespace Server.Mobiles
 				Add( typeof( HomePlants_Lilly ), Utility.Random( 10, 25 ) );
 				Add( typeof( HomePlants_Grass ), Utility.Random( 10, 25 ) );
 				Add( typeof( SpecialSeaweed ), Utility.Random( 15, 35 ) );
-				if ( MyServerSettings.BuyChance() ){Add( typeof( HangingPlantA ), Utility.Random( 10, 100 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( HangingPlantB ), Utility.Random( 10, 100 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( HangingPlantC ), Utility.Random( 10, 100 ) ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( HangingPlantA ), Utility.Random( 10, 100 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( HangingPlantB ), Utility.Random( 10, 100 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( HangingPlantC ), Utility.Random( 10, 100 ) ); } // DO NOT WANT?
 				Add( typeof( AlchemyTub ), Utility.Random( 200, 500 ) );
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBHolyMage : SBInfo
 	{
@@ -4850,15 +4850,15 @@ namespace Server.Mobiles
 			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackStaff ), 11 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackPearl ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Bloodmoss ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MandrakeRoot ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Garlic ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Ginseng ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Nightshade ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SpidersSilk ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( SulfurousAsh ), 1 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackPearl ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Bloodmoss ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MandrakeRoot ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Garlic ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Ginseng ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Nightshade ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SpidersSilk ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( SulfurousAsh ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( RecallRune ), 8 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Spellbook ), 9 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyCommonChance() ){Add( typeof( MysticalPearl ), 250 ); } // DO NOT WANT?
@@ -5493,21 +5493,21 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBLeatherWorker: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBLeatherWorker: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBLeatherWorker() 
-		{ 
-		} 
+		public SBLeatherWorker()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Waterskin ), 5, Utility.Random( 1,15 ), 0xA21, 0 ) ); }
 				if ( SetStock.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( DemonSkin ), 1235, Utility.Random( 1,10 ), 0x1081, MaterialInfo.GetMaterialColor( "demon skin", "", 0 ) ) ); }
@@ -5516,24 +5516,24 @@ namespace Server.Mobiles
 				if ( SetStock.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( SerpentSkin ), 1214, Utility.Random( 1,10 ), 0x1081, MaterialInfo.GetMaterialColor( "serpent skin", "", 0 ) ) ); }
 				if ( SetStock.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( TrollSkin ), 1221, Utility.Random( 1,10 ), 0x1081, MaterialInfo.GetMaterialColor( "troll skin", "", 0 ) ) ); }
 				if ( SetStock.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( UnicornSkin ), 1228, Utility.Random( 1,10 ), 0x1081, MaterialInfo.GetMaterialColor( "unicorn skin", "", 0 ) ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( ThighBoots ), 28 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBoots ), 25 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBelt ), 15 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicSash ), 15 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBoots ), 25 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBelt ), 15 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicSash ), 15 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){Add( typeof( ThrowingGloves ), 10 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){Add( typeof( PugilistGlove ), 10 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){Add( typeof( PugilistGloves ), 10 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Waterskin ), 2 ); } // DO NOT WANT?
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBMapmaker : SBInfo
 	{
@@ -5581,36 +5581,36 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBMiller : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBMiller : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBMiller() 
-		{ 
-		} 
+		public SBMiller()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
 				Add( new GenericBuyInfo( typeof( SackFlour ), 3, Utility.Random( 1,15 ), 0x1039, 0 ) );
 				Add( new GenericBuyInfo( typeof( SheafOfHay ), 2, Utility.Random( 1,15 ), 0xF36, 0 ) );
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( SackFlour ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( SheafOfHay ), 1 ); } // DO NOT WANT?
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBMiner: SBInfo
 	{
@@ -6337,35 +6337,35 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBSmithTools: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBSmithTools: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBSmithTools() 
-		{ 
-		} 
+		public SBSmithTools()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
-				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Tongs ), 13, Utility.Random( 1,15 ), 0xFBB, 0 ) ); } 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
+				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Tongs ), 13, Utility.Random( 1,15 ), 0xFBB, 0 ) ); }
 
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Tongs ), 7 ); } // DO NOT WANT? 
-			} 
-		} 
-	} 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Tongs ), 7 ); } // DO NOT WANT?
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBStoneCrafter : SBInfo
 	{
@@ -6470,10 +6470,10 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SewingKit ), 3, Utility.Random( 1,15 ), 0x4C81, 0xB61 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( SewingKit ), 3, Utility.Random( 1,15 ), 0x4C81, 0xB61 ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Scissors ), 11, Utility.Random( 1,15 ), 0xF9F, 0 ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DyeTub ), 8, Utility.Random( 1,15 ), 0xFAB, 0 ) ); } 
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Dyes ), 8, Utility.Random( 1,15 ), 0xFA9, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DyeTub ), 8, Utility.Random( 1,15 ), 0xFAB, 0 ) ); }
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Dyes ), 8, Utility.Random( 1,15 ), 0xFA9, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Shirt ), 12, Utility.Random( 1,15 ), 0x1517, Utility.RandomDyedHue() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( ShortPants ), 7, Utility.Random( 1,15 ), 0x152E, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( FancyShirt ), 21, Utility.Random( 1,15 ), 0x1EFD, Utility.RandomDyedHue() ) ); }
@@ -6545,8 +6545,8 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( HoodedMantle ), 12, Utility.Random( 1,15 ), 0x5C14, Utility.RandomDyedHue() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WizardHood ), 12, Utility.Random( 1,15 ), 0x310, Utility.RandomDyedHue() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( FancyHood ), 12, Utility.Random( 1,15 ), 0x4D09, Utility.RandomDyedHue() ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cloth ), 2, Utility.Random( 1,15 ), 0x1766, Utility.RandomDyedHue() ) ); } 
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( UncutCloth ), 2, Utility.Random( 1,15 ), 0x1767, Utility.RandomDyedHue() ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cloth ), 2, Utility.Random( 1,15 ), 0x1766, Utility.RandomDyedHue() ) ); }
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( UncutCloth ), 2, Utility.Random( 1,15 ), 0x1767, Utility.RandomDyedHue() ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Cotton ), 102, Utility.Random( 1,15 ), 0xDF9, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Wool ), 62, Utility.Random( 1,15 ), 0xDF8, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Flax ), 102, Utility.Random( 1,15 ), 0x1A9C, 0 ) ); }
@@ -6638,11 +6638,11 @@ namespace Server.Mobiles
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Flax ), 51 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Cotton ), 51 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Wool ), 31 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicRobe ), 30 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicHat ), 20 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicCloak ), 30 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBelt ), 20 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicSash ), 20 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicRobe ), 30 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicHat ), 20 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicCloak ), 30 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicBelt ), 20 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( MagicSash ), 20 ); } // DO NOT WANT?
 				Add( typeof( MagicScissors ), Utility.Random( 300,400 ) );
 			}
 		}
@@ -6902,21 +6902,21 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBTinker: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBTinker: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBTinker() 
-		{ 
-		} 
+		public SBTinker()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Clock ), 22, Utility.Random( 1,15 ), 0x104B, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Nails ), 3, Utility.Random( 1,15 ), 0x102E, 0 ) ); }
@@ -6959,12 +6959,12 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( ColoredWallTorch ), 100, Utility.Random( 5,20 ), 0x3D89, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( light_dragon_brazier ), 750, Utility.Random( 1,15 ), 0x194E, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( TrapKit ), 420, Utility.Random( 1,5 ), 0x1EBB, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyCommonChance() ){Add( typeof( LootChest ), 600 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Shovel ), 6 ); } // DO NOT WANT?
@@ -7054,9 +7054,9 @@ namespace Server.Mobiles
 				if ( MyServerSettings.BuyChance() ){Add( typeof( MaterialLiquifier ), Utility.Random( 100, 300 ) ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( Chainsaw ), Utility.Random( 130, 260 ) ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( PortableSmelter ), Utility.Random( 130, 260 ) ); } // DO NOT WANT?
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7297,74 +7297,74 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBWeaponSmith: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBWeaponSmith: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBWeaponSmith() 
-		{ 
-		} 
+		public SBWeaponSmith()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WeaponAbilityBook ), 5, Utility.Random( 1,15 ), 0x2254, 0 ) ); }
 			}
-		} 
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( RareAnvil ), Utility.Random( 200,1000 ) ); } // DO NOT WANT?
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBWeaver: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBWeaver: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBWeaver() 
-		{ 
-		} 
+		public SBWeaver()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
-			{ 
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Dyes ), 8, Utility.Random( 1,15 ), 0xFA9, 0 ) ); } 
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DyeTub ), 8, Utility.Random( 1,15 ), 0xFAB, 0 ) ); } 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
+			{
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( Dyes ), 8, Utility.Random( 1,15 ), 0xFA9, 0 ) ); }
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DyeTub ), 8, Utility.Random( 1,15 ), 0xFAB, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( DarkYarn ), 18, Utility.Random( 1,15 ), 0xE1D, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LightYarn ), 18, Utility.Random( 1,15 ), 0xE1E, 0 ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( LightYarnUnraveled ), 18, Utility.Random( 1,15 ), 0xE1F, 0 ) ); }
 				if ( MyServerSettings.SellVeryRareChance() ){Add( new GenericBuyInfo( typeof( PaintCanvas ), 500, Utility.Random( 1,15 ), 0xA6C, 0x47E ) ); }
 				if ( 1 > 0 ){Add( new GenericBuyInfo( typeof( Scissors ), 11, Utility.Random( 1,15 ), 0xF9F, 0 ) ); }
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
-			{ 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Scissors ), 6 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Dyes ), 4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( DyeTub ), 4 ); } // DO NOT WANT? 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
+			{
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Scissors ), 6 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Dyes ), 4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( DyeTub ), 4 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( LightYarnUnraveled ), 9 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( LightYarn ), 9 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( DarkYarn ), 9 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( PaintCanvas ), 250 ); } // DO NOT WANT?
-			} 
-		} 
+			}
+		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBNecroMage : SBInfo
@@ -7416,7 +7416,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( WitchCauldron ), 16, Utility.Random( 1,15 ), 0x640B, 0 ) );
 				Add( new GenericBuyInfo( typeof( BookWitchBrewing ), 50, Utility.Random( 1,15 ), 0x5689, 0x9A2 ) );
 				Add( new GenericBuyInfo( typeof( WitchPouch ), Utility.Random( 800,1200 ), Utility.Random( 1,2 ), 0x5776, 0x845 ) );
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); }
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( AlchemyPouch ), Utility.Random( 2900,3500 ), Utility.Random( 1,2 ), 0x1C10, 0x89F ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WizardStaff ), 40, Utility.Random( 1,5 ), 0x0908, MaterialInfo.PlainIronColor(0) ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WizardStick ), 38, Utility.Random( 1,5 ), 0xDF2, MaterialInfo.PlainIronColor(0) ) ); }
@@ -7473,13 +7473,13 @@ namespace Server.Mobiles
 				Add( typeof( PolishBoneBrush ), 6 );
 				Add( typeof( PolishedSkull ), 3 );
 				Add( typeof( PolishedBone ), 3 );
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
 				Add( typeof( CorpseSailor ), Utility.RandomMinMax( 50, 300 ) );
 				Add( typeof( CorpseChest ), Utility.RandomMinMax( 50, 300 ) );
 				Add( typeof( BuriedBody ), Utility.RandomMinMax( 50, 300 ) );
@@ -7566,7 +7566,7 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( BlackStaff ), 22, Utility.Random( 1,15 ), 0xDF1, 0 ) ); }
 				Add( new GenericBuyInfo( "undead horse", typeof( NecroHorse ), 10000, 5, 0x2617, 0xB97 ) );
 				Add( new GenericBuyInfo( "daemon servant", typeof( DaemonMount ), 15000, 5, 11669, 0x4AA ) );
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); }
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( AlchemyPouch ), Utility.Random( 2900,3500 ), Utility.Random( 1,2 ), 0x1C10, 0x89F ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WizardStaff ), 40, Utility.Random( 1,5 ), 0x0908, MaterialInfo.PlainIronColor(0) ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WizardStick ), 38, Utility.Random( 1,5 ), 0xDF2, MaterialInfo.PlainIronColor(0) ) ); }
@@ -7626,10 +7626,10 @@ namespace Server.Mobiles
 				Add( typeof( NecromancerSpellbook ), 55 );
 				Add( typeof( DeathKnightSpellbook ), Utility.Random( 100,300 ) );
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackStaff ), 11 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){ Add( typeof( BoneContainer ), 250 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){ Add( typeof( ClumsyMagicStaff ), Utility.Random( 10,20 ) ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){ Add( typeof( CreateFoodMagicStaff ), Utility.Random( 10,20 ) ); } // DO NOT WANT?
@@ -7797,7 +7797,7 @@ namespace Server.Mobiles
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( GhostPhaseScroll ), Utility.Random( 10,100 ), Utility.Random( 1,5 ), 0x1007, 0x47E ) ); }
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( GraveyardGatewayScroll ), Utility.Random( 10,100 ), Utility.Random( 1,5 ), 0x1007, 0x2EA ) ); }
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( HellsBrandScroll ), Utility.Random( 10,100 ), Utility.Random( 1,5 ), 0x1007, 0x54C ) ); }
-				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); } 
+				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) ); }
 				if ( MyServerSettings.SellRareChance() ){Add( new GenericBuyInfo( typeof( AlchemyPouch ), Utility.Random( 2900,3500 ), Utility.Random( 1,2 ), 0x1C10, 0x89F ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WizardStaff ), 40, Utility.Random( 1,5 ), 0x0908, MaterialInfo.PlainIronColor(0) ) ); }
 				if ( MyServerSettings.SellChance() ){Add( new GenericBuyInfo( typeof( WizardStick ), 38, Utility.Random( 1,5 ), 0xDF2, MaterialInfo.PlainIronColor(0) ) ); }
@@ -7857,15 +7857,15 @@ namespace Server.Mobiles
 				Add( typeof( NecromancerSpellbook ), 55 );
 				Add( typeof( DeathKnightSpellbook ), Utility.Random( 100,300 ) );
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackStaff ), 11 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){ Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){ Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){ Add( typeof( MyNecromancerSpellbook ), Utility.Random( 100,500 ) ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyRareChance() ){ Add( typeof( BlackDyeTub ), 2500 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyRareChance() ){ Add( typeof( BlackDyeTub ), 2500 ); } // DO NOT WANT?
 				Add( typeof( CorpseSailor ), Utility.RandomMinMax( 50, 300 ) );
 				Add( typeof( CorpseChest ), Utility.RandomMinMax( 50, 300 ) );
 				Add( typeof( BuriedBody ), Utility.RandomMinMax( 50, 300 ) );
@@ -7943,13 +7943,13 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){ Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullMinotaur ), Utility.Random( 50,150 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullWyrm ), Utility.Random( 200,400 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGreatDragon ), Utility.Random( 300,600 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDragon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullDemon ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SkullGiant ), Utility.Random( 100,300 ) ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){ Add( typeof( WitchCauldron ), 8 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyRareChance() ){ Add( typeof( MyNecromancerSpellbook ), Utility.Random( 100,500 ) ); } // DO NOT WANT?
 				Add( typeof( CorpseSailor ), Utility.RandomMinMax( 50, 300 ) );
 				Add( typeof( CorpseChest ), Utility.RandomMinMax( 50, 300 ) );
@@ -8057,17 +8057,17 @@ namespace Server.Mobiles
 			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackStaff ), 11 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( WizardsHat ), 5 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchHat ), 5 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackPearl ), 3 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Bloodmoss ),4 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MandrakeRoot ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Garlic ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Ginseng ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( Nightshade ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyChance() ){Add( typeof( SpidersSilk ), 2 ); } // DO NOT WANT? 
-				if ( MyServerSettings.BuyRareChance() ){Add( typeof( SulfurousAsh ), 1 ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackPearl ), 3 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Bloodmoss ),4 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MandrakeRoot ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Garlic ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Ginseng ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( Nightshade ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyChance() ){Add( typeof( SpidersSilk ), 2 ); } // DO NOT WANT?
+				if ( MyServerSettings.BuyRareChance() ){Add( typeof( SulfurousAsh ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BatWing ), 1 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( DaemonBlood ), 3 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( PigIron ), 2 ); } // DO NOT WANT?
@@ -8254,7 +8254,7 @@ namespace Server.Mobiles
 			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackStaff ), 11 ); } // DO NOT WANT?
-				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) ); } // DO NOT WANT? 
+				if ( MyServerSettings.BuyChance() ){Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( WizardsHat ), 5 ); } // DO NOT WANT?
 				if ( MyServerSettings.BuyChance() ){Add( typeof( WitchHat ), 5 ); } // DO NOT WANT?
 				Add( typeof( ElementalSpellbook ), 35 );
@@ -9571,21 +9571,21 @@ namespace Server.Mobiles
 
 /////----------------------------------------------------------------------------------------------------------------------------------------------------/////
 
-	public class SBTinkerGuild: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBTinkerGuild: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBTinkerGuild() 
-		{ 
-		} 
+		public SBTinkerGuild()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
 				Add( new GenericBuyInfo( typeof( GuildTinkering ), 500, Utility.Random( 1,5 ), 0x1EBB, 0x430 ) );
 				Add( new GenericBuyInfo( typeof( Clock ), 22, Utility.Random( 3,31 ), 0x104B, 0 ) );
@@ -9628,12 +9628,12 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( light_wall_torch ), 50, Utility.Random( 3,31 ), 0xA07, 0 ) );
 				Add( new GenericBuyInfo( typeof( light_dragon_brazier ), 750, Utility.Random( 3,31 ), 0x194E, 0 ) );
 				Add( new GenericBuyInfo( typeof( TrapKit ), 420, Utility.Random( 1,3 ), 0x1EBB, 0 ) );
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
 				Add( typeof( LootChest ), 600 );
 				Add( typeof( Shovel ), 6 );
@@ -9723,9 +9723,9 @@ namespace Server.Mobiles
 				Add( typeof( MaterialLiquifier ), Utility.Random( 100, 300 ) );
 				Add( typeof( Chainsaw ), Utility.Random( 130, 260 ) );
 				Add( typeof( PortableSmelter ), Utility.Random( 130, 260 ) );
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBThiefGuild : SBInfo
 	{
@@ -9792,10 +9792,10 @@ namespace Server.Mobiles
 			public InternalBuyInfo()
 			{
 				Add( new GenericBuyInfo( typeof( GuildSewing ), 500, Utility.Random( 1,5 ), 0x4C81, 0x430 ) );
-				Add( new GenericBuyInfo( typeof( SewingKit ), 3, Utility.Random( 3,31 ), 0x4C81, 0xB61 ) ); 
+				Add( new GenericBuyInfo( typeof( SewingKit ), 3, Utility.Random( 3,31 ), 0x4C81, 0xB61 ) );
 				Add( new GenericBuyInfo( typeof( Scissors ), 11, Utility.Random( 3,31 ), 0xF9F, 0 ) );
-				Add( new GenericBuyInfo( typeof( DyeTub ), 8, Utility.Random( 3,31 ), 0xFAB, 0 ) ); 
-				Add( new GenericBuyInfo( typeof( Dyes ), 8, Utility.Random( 3,31 ), 0xFA9, 0 ) ); 
+				Add( new GenericBuyInfo( typeof( DyeTub ), 8, Utility.Random( 3,31 ), 0xFAB, 0 ) );
+				Add( new GenericBuyInfo( typeof( Dyes ), 8, Utility.Random( 3,31 ), 0xFA9, 0 ) );
 				Add( new GenericBuyInfo( typeof( Shirt ), 12, Utility.Random( 3,31 ), 0x1517, Utility.RandomDyedHue() ) );
 				Add( new GenericBuyInfo( typeof( ShortPants ), 7, Utility.Random( 3,31 ), 0x152E, 0 ) );
 				Add( new GenericBuyInfo( typeof( FancyShirt ), 21, Utility.Random( 3,31 ), 0x1EFD, Utility.RandomDyedHue() ) );
@@ -9853,8 +9853,8 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( HoodedMantle ), 12, Utility.Random( 1,15 ), 0x5C14, Utility.RandomDyedHue() ) );
 				Add( new GenericBuyInfo( typeof( WizardHood ), 12, Utility.Random( 1,15 ), 0x310, Utility.RandomDyedHue() ) );
 				Add( new GenericBuyInfo( typeof( FancyHood ), 12, Utility.Random( 1,15 ), 0x4D09, Utility.RandomDyedHue() ) );
-				Add( new GenericBuyInfo( typeof( Cloth ), 2, Utility.Random( 3,31 ), 0x1766, Utility.RandomDyedHue() ) ); 
-				Add( new GenericBuyInfo( typeof( UncutCloth ), 2, Utility.Random( 3,31 ), 0x1767, Utility.RandomDyedHue() ) ); 
+				Add( new GenericBuyInfo( typeof( Cloth ), 2, Utility.Random( 3,31 ), 0x1766, Utility.RandomDyedHue() ) );
+				Add( new GenericBuyInfo( typeof( UncutCloth ), 2, Utility.Random( 3,31 ), 0x1767, Utility.RandomDyedHue() ) );
 				Add( new GenericBuyInfo( typeof( Cotton ), 102, Utility.Random( 3,31 ), 0xDF9, 0 ) );
 				Add( new GenericBuyInfo( typeof( Wool ), 62, Utility.Random( 3,31 ), 0xDF8, 0 ) );
 				Add( new GenericBuyInfo( typeof( Flax ), 102, Utility.Random( 3,31 ), 0x1A9C, 0 ) );
@@ -9909,11 +9909,11 @@ namespace Server.Mobiles
 				Add( typeof( Flax ), 51 );
 				Add( typeof( Cotton ), 51 );
 				Add( typeof( Wool ), 31 );
-				Add( typeof( MagicRobe ), 30 ); 
-				Add( typeof( MagicHat ), 20 ); 
-				Add( typeof( MagicCloak ), 30 ); 
-				Add( typeof( MagicBelt ), 20 ); 
-				Add( typeof( MagicSash ), 20 ); 
+				Add( typeof( MagicRobe ), 30 );
+				Add( typeof( MagicHat ), 20 );
+				Add( typeof( MagicCloak ), 30 );
+				Add( typeof( MagicBelt ), 20 );
+				Add( typeof( MagicSash ), 20 );
 				Add( typeof( JokerRobe ), 19 );
 				Add( typeof( AssassinRobe ), 19 );
 				Add( typeof( FancyRobe ), 19 );
@@ -10051,17 +10051,17 @@ namespace Server.Mobiles
 			public InternalSellInfo()
 			{
 				if ( MyServerSettings.BuyChance() ){Add( typeof( BlackStaff ), 11 ); } // DO NOT WANT?
-				Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) ); 
+				Add( typeof( MagicTalisman ), Utility.Random( 50,100 ) );
 				Add( typeof( WizardsHat ), 15 );
 				Add( typeof( WitchHat ), 5 );
-				Add( typeof( BlackPearl ), 3 ); 
-				Add( typeof( Bloodmoss ),4 ); 
-				Add( typeof( MandrakeRoot ), 2 ); 
-				Add( typeof( Garlic ), 2 ); 
-				Add( typeof( Ginseng ), 2 ); 
-				Add( typeof( Nightshade ), 2 ); 
-				Add( typeof( SpidersSilk ), 2 ); 
-				Add( typeof( SulfurousAsh ), 1 ); 
+				Add( typeof( BlackPearl ), 3 );
+				Add( typeof( Bloodmoss ),4 );
+				Add( typeof( MandrakeRoot ), 2 );
+				Add( typeof( Garlic ), 2 );
+				Add( typeof( Ginseng ), 2 );
+				Add( typeof( Nightshade ), 2 );
+				Add( typeof( SpidersSilk ), 2 );
+				Add( typeof( SulfurousAsh ), 1 );
 				Add( typeof( RecallRune ), 13 );
 				Add( typeof( Spellbook ), 25 );
 				Add( typeof( MysticalPearl ), 250 );
@@ -10070,7 +10070,7 @@ namespace Server.Mobiles
 
 				for ( int i = 0; i < types.Length; ++i )
 					Add( types[i], ((i / 8) + 1) * 4 );
-			
+
 				Add( typeof( ClumsyMagicStaff ), Utility.Random( 10,20 ) );
 				Add( typeof( CreateFoodMagicStaff ), Utility.Random( 10,20 ) );
 				Add( typeof( FeebleMagicStaff ), Utility.Random( 10,20 ) );
@@ -10252,24 +10252,24 @@ namespace Server.Mobiles
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBBlacksmithGuild : SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBBlacksmithGuild : SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBBlacksmithGuild() 
-		{ 
-		} 
+		public SBBlacksmithGuild()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
 				Add( new GenericBuyInfo( typeof( GuildHammer ), 500, Utility.Random( 1,5 ), 0xFB5, 0x430 ) );
-				Add( new GenericBuyInfo( typeof( Tongs ), 13, Utility.Random( 3,31 ), 0xFBB, 0 ) ); 
+				Add( new GenericBuyInfo( typeof( Tongs ), 13, Utility.Random( 3,31 ), 0xFBB, 0 ) );
 				Add( new GenericBuyInfo( typeof( BronzeShield ), 66, Utility.Random( 3,31 ), 0x1B72, Server.Misc.MaterialInfo.PlainIronColor(0x1B72) ) );
 				Add( new GenericBuyInfo( typeof( Buckler ), 50, Utility.Random( 3,31 ), 0x1B73, 0 ) );
 				Add( new GenericBuyInfo( typeof( MetalKiteShield ), 123, Utility.Random( 3,31 ), 0x1B74, 0 ) );
@@ -10360,12 +10360,12 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( RadiantScimitar ), 35, Utility.Random( 1,15 ), 0x2D33, 0 ) );
 				Add( new GenericBuyInfo( typeof( ElvenSpellblade ), 33, Utility.Random( 1,15 ), 0x2D20, 0 ) );
 				Add( new GenericBuyInfo( typeof( ElvenMachete ), 35, Utility.Random( 1,15 ), 0x2D35, 0 ) );
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
 				Add( typeof( GuardsmanShield ), 115 );
 				Add( typeof( ElvenShield ), 115 );
@@ -10373,7 +10373,7 @@ namespace Server.Mobiles
 				Add( typeof( CrestedShield ), 115 );
 				Add( typeof( ChampionShield ), 115 );
 				Add( typeof( JeweledShield ), 115 );
-				Add( typeof( Tongs ), 7 ); 
+				Add( typeof( Tongs ), 7 );
 				Add( typeof( Buckler ), 25 );
 				Add( typeof( BronzeShield ), 33 );
 				Add( typeof( MetalShield ), 60 );
@@ -10459,74 +10459,74 @@ namespace Server.Mobiles
 				Add( typeof( ElvenMachete ), 17 );
 				Add( typeof( RareAnvil ), Utility.Random( 400,1500 ) );
 				Add( typeof( MagicHammer ), Utility.Random( 300,400 ) );
-			} 
-		} 
-	} 
+			}
+		}
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class SBBardGuild: SBInfo 
-	{ 
-		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo(); 
-		private IShopSellInfo m_SellInfo = new InternalSellInfo(); 
+	public class SBBardGuild: SBInfo
+	{
+		private List<GenericBuyInfo> m_BuyInfo = new InternalBuyInfo();
+		private IShopSellInfo m_SellInfo = new InternalSellInfo();
 
-		public SBBardGuild() 
-		{ 
-		} 
+		public SBBardGuild()
+		{
+		}
 
-		public override IShopSellInfo SellInfo { get { return m_SellInfo; } } 
-		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } } 
+		public override IShopSellInfo SellInfo { get { return m_SellInfo; } }
+		public override List<GenericBuyInfo> BuyInfo { get { return m_BuyInfo; } }
 
-		public class InternalBuyInfo : List<GenericBuyInfo> 
-		{ 
-			public InternalBuyInfo() 
+		public class InternalBuyInfo : List<GenericBuyInfo>
+		{
+			public InternalBuyInfo()
 			{
-				Add( new GenericBuyInfo( typeof( Drums ), 21, Utility.Random( 3,31 ), 0x0E9C, 0 ) ); 
-				Add( new GenericBuyInfo( typeof( Tambourine ), 21, Utility.Random( 3,31 ), 0x0E9E, 0 ) ); 
-				Add( new GenericBuyInfo( typeof( LapHarp ), 21, Utility.Random( 3,31 ), 0x0EB2, 0 ) ); 
-				Add( new GenericBuyInfo( typeof( Lute ), 21, Utility.Random( 3,31 ), 0x0EB3, 0 ) ); 
+				Add( new GenericBuyInfo( typeof( Drums ), 21, Utility.Random( 3,31 ), 0x0E9C, 0 ) );
+				Add( new GenericBuyInfo( typeof( Tambourine ), 21, Utility.Random( 3,31 ), 0x0E9E, 0 ) );
+				Add( new GenericBuyInfo( typeof( LapHarp ), 21, Utility.Random( 3,31 ), 0x0EB2, 0 ) );
+				Add( new GenericBuyInfo( typeof( Lute ), 21, Utility.Random( 3,31 ), 0x0EB3, 0 ) );
 				Add( new GenericBuyInfo( typeof( BambooFlute ), 21, Utility.Random( 1,15 ), 0x2805, 0 ) );
-				Add( new GenericBuyInfo( typeof( Trumpet ), 21, Utility.Random( 3,31 ), 0x6458, 0 ) ); 
-				Add( new GenericBuyInfo( typeof( SongBook ), 24, Utility.Random( 1,5 ), 0x225A, 0 ) ); 
-				Add( new GenericBuyInfo( typeof( EnergyCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F48, 0x96 ) ); 
-				Add( new GenericBuyInfo( typeof( FireCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F49, 0x96 ) ); 
-				Add( new GenericBuyInfo( typeof( IceCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F34, 0x96 ) ); 
-				Add( new GenericBuyInfo( typeof( KnightsMinneScroll ), 32, Utility.Random( 1,5 ), 0x1F31, 0x96 ) ); 
-				Add( new GenericBuyInfo( typeof( PoisonCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F33, 0x96 ) ); 
+				Add( new GenericBuyInfo( typeof( Trumpet ), 21, Utility.Random( 3,31 ), 0x6458, 0 ) );
+				Add( new GenericBuyInfo( typeof( SongBook ), 24, Utility.Random( 1,5 ), 0x225A, 0 ) );
+				Add( new GenericBuyInfo( typeof( EnergyCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F48, 0x96 ) );
+				Add( new GenericBuyInfo( typeof( FireCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F49, 0x96 ) );
+				Add( new GenericBuyInfo( typeof( IceCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F34, 0x96 ) );
+				Add( new GenericBuyInfo( typeof( KnightsMinneScroll ), 32, Utility.Random( 1,5 ), 0x1F31, 0x96 ) );
+				Add( new GenericBuyInfo( typeof( PoisonCarolScroll ), 32, Utility.Random( 1,5 ), 0x1F33, 0x96 ) );
 				Add( new GenericBuyInfo( typeof( JarsOfWaxInstrument ), 160, Utility.Random( 1,5 ), 0x1005, 0x845 ) );
-			} 
-		} 
+			}
+		}
 
-		public class InternalSellInfo : GenericSellInfo 
-		{ 
-			public InternalSellInfo() 
+		public class InternalSellInfo : GenericSellInfo
+		{
+			public InternalSellInfo()
 			{
 				Add( typeof( JarsOfWaxInstrument ), 80 );
 				Add( typeof( BambooFlute ), 10 );
-				Add( typeof( LapHarp ), 10 ); 
-				Add( typeof( Lute ), 10 ); 
-				Add( typeof( Trumpet ), 10 ); 
-				Add( typeof( Drums ), 10 ); 
-				Add( typeof( Harp ), 10 ); 
+				Add( typeof( LapHarp ), 10 );
+				Add( typeof( Lute ), 10 );
+				Add( typeof( Trumpet ), 10 );
+				Add( typeof( Drums ), 10 );
+				Add( typeof( Harp ), 10 );
 				Add( typeof( Tambourine ), 10 );
 				Add( typeof( MySongbook ), 200 );
-				Add( typeof( SongBook ), 12 ); 
-				Add( typeof( EnergyCarolScroll ), 5 ); 
-				Add( typeof( FireCarolScroll ), 5 ); 
-				Add( typeof( IceCarolScroll ), 5 ); 
-				Add( typeof( KnightsMinneScroll ), 5 ); 
-				Add( typeof( PoisonCarolScroll ), 5 ); 
-				Add( typeof( ArmysPaeonScroll ), 6 ); 
-				Add( typeof( MagesBalladScroll ), 6 ); 
-				Add( typeof( EnchantingEtudeScroll ), 7 ); 
-				Add( typeof( SheepfoeMamboScroll ), 7 ); 
-				Add( typeof( SinewyEtudeScroll ), 7 ); 
-				Add( typeof( EnergyThrenodyScroll ), 8 ); 
-				Add( typeof( FireThrenodyScroll ), 8 ); 
-				Add( typeof( IceThrenodyScroll ), 8 ); 
-				Add( typeof( PoisonThrenodyScroll ), 8 ); 
-				Add( typeof( FoeRequiemScroll ), 9 ); 
-				Add( typeof( MagicFinaleScroll ), 10 ); 
-			} 
-		} 
+				Add( typeof( SongBook ), 12 );
+				Add( typeof( EnergyCarolScroll ), 5 );
+				Add( typeof( FireCarolScroll ), 5 );
+				Add( typeof( IceCarolScroll ), 5 );
+				Add( typeof( KnightsMinneScroll ), 5 );
+				Add( typeof( PoisonCarolScroll ), 5 );
+				Add( typeof( ArmysPaeonScroll ), 6 );
+				Add( typeof( MagesBalladScroll ), 6 );
+				Add( typeof( EnchantingEtudeScroll ), 7 );
+				Add( typeof( SheepfoeMamboScroll ), 7 );
+				Add( typeof( SinewyEtudeScroll ), 7 );
+				Add( typeof( EnergyThrenodyScroll ), 8 );
+				Add( typeof( FireThrenodyScroll ), 8 );
+				Add( typeof( IceThrenodyScroll ), 8 );
+				Add( typeof( PoisonThrenodyScroll ), 8 );
+				Add( typeof( FoeRequiemScroll ), 9 );
+				Add( typeof( MagicFinaleScroll ), 10 );
+			}
+		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class SBHolidayXmas : SBInfo
@@ -10912,7 +10912,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( BookWitchBrewing ), 50, Utility.Random( 3,31 ), 0x5689, 0x9A2 ) );
 				Add( new GenericBuyInfo( typeof( WitchPouch ), Utility.Random( 800,1200 ), Utility.Random( 1,2 ), 0x5776, 0x845 ) );
 				Add( new GenericBuyInfo( typeof( NecromancerSpellbook ), 115, Utility.Random( 3,31 ), 0x2253, 0 ) );
-				Add( new GenericBuyInfo( typeof( TarotDeck ), 5, Utility.Random( 3,31 ), 0x12AB, 0 ) ); 
+				Add( new GenericBuyInfo( typeof( TarotDeck ), 5, Utility.Random( 3,31 ), 0x12AB, 0 ) );
 				Add( new GenericBuyInfo( typeof( AlchemyTub ), 2400, Utility.Random( 1,5 ), 0x126A, 0 ) );
 				Add( new GenericBuyInfo( typeof( AlchemyPouch ), Utility.Random( 2900,3500 ), Utility.Random( 1,2 ), 0x1C10, 0x89F ) );
 				if ( MyServerSettings.SellChance() ){ Add( new GenericBuyInfo( typeof( BlackDyeTub ), 5000, Utility.Random( 1,1 ), 0xFAB, 0x1 ) ); }
@@ -10993,9 +10993,9 @@ namespace Server.Mobiles
 				Add( typeof( WitherScroll ), 64 );
 				Add( typeof( VampiricEmbraceScroll ), 101 );
 				Add( typeof( VengefulSpiritScroll ), 114 );
-				Add( typeof( WitchCauldron ), 8 ); 
+				Add( typeof( WitchCauldron ), 8 );
 				Add( typeof( MyNecromancerSpellbook ), 500 );
-				Add( typeof( BlackDyeTub ), 2500 ); 
+				Add( typeof( BlackDyeTub ), 2500 );
 				Add( typeof( PolishBoneBrush ), 6 );
 				Add( typeof( PolishedSkull ), 3 );
 				Add( typeof( PolishedBone ), 3 );
@@ -11205,14 +11205,14 @@ namespace Server.Mobiles
 		public class InternalBuyInfo : List<GenericBuyInfo>
 		{
 			public InternalBuyInfo()
-			{  
+			{
 				Add( new GenericBuyInfo( typeof( MortarPestle ), 8, Utility.Random( 3,31 ), 0x4CE9, 0 ) );
 				Add( new GenericBuyInfo( typeof( WitchCauldron ), 16, Utility.Random( 3,31 ), 0x640B, 0 ) );
 				Add( new GenericBuyInfo( typeof( BookWitchBrewing ), 50, Utility.Random( 3,31 ), 0x5689, 0x9A2 ) );
 				Add( new GenericBuyInfo( typeof( AlchemicalElixirs ), 50, Utility.Random( 1,15 ), 0x2219, 0 ) );
 				Add( new GenericBuyInfo( typeof( AlchemicalMixtures ), 50, Utility.Random( 1,15 ), 0x2223, 0 ) );
 				Add( new GenericBuyInfo( typeof( BookOfPoisons ), 50, Utility.Random( 1,15 ), 0x2253, 0xB51 ) );
-				Add( new GenericBuyInfo( typeof( HeatingStand ), 2, Utility.Random( 1,15 ), 0x1849, 0 ) ); 
+				Add( new GenericBuyInfo( typeof( HeatingStand ), 2, Utility.Random( 1,15 ), 0x1849, 0 ) );
 
 				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, Utility.Random( 30,310 ), 0x266F, 0 ) );
 				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, Utility.Random( 30,310 ), 0xF7B, 0 ) );

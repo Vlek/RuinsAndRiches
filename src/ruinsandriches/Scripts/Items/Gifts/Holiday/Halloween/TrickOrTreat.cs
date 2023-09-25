@@ -23,7 +23,7 @@ namespace Server.Misc
 			if ( from is PlayerMobile )
 			{
 				PlayerMobile player = from as PlayerMobile;
-				
+
 				if ( args.Speech.ToLower().Equals("trick or treat"))
 				{
 					Item[] items = from.Backpack.FindItemsByType( typeof( TrickOrTreatBag ) );
@@ -35,16 +35,16 @@ namespace Server.Misc
 					else
 					{
 						bool foundbag = false;
-						
+
 						foreach( TrickOrTreatBag tb in items )
 						{
 							if ( tb.Uses > 0 )
-							{ 
+							{
 								foreach ( Mobile m in from.GetMobilesInRange( 2 ) ) // TODO: Validate range
 								{
 									Container cont = m.Backpack;
 
-									if ( m is KungFu) 
+									if ( m is KungFu)
 									{
 										from.Direction = from.GetDirectionTo( m );
 										m.Direction = m.GetDirectionTo( from );
@@ -74,10 +74,10 @@ namespace Server.Misc
 										TrickOrTreat.GiveTreat( from, m, tb );
 										tb.ConsumeUse( from );
 										cont.ConsumeTotal( typeof( Gold ), m_Amount );
-											
+
 										return;
 									}
-									else if ( m is BaseVendor ) 
+									else if ( m is BaseVendor )
 									{
 										from.Direction = from.GetDirectionTo( m );
 										m.Direction = m.GetDirectionTo( from );
@@ -103,7 +103,7 @@ namespace Server.Misc
 		{
 			parent.AddItem( item );
 		}
-		
+
 		public static void GiveTreat ( Mobile from, Mobile vendor, Container gb)
 		{
 			if ( Utility.Random ( 100 ) < 10 )

@@ -51,7 +51,7 @@ namespace Server.Spells.DeathKnight
 				else
 					m.SendMessage( "You feel hatred shielding you from physical harm." );
             		m.PlaySound( 0x5C0 );
-					m.FixedParticles( 0x376A, 1, 29, 9961, 1152, 0, EffectLayer.Waist ); 
+					m.FixedParticles( 0x376A, 1, 29, 9961, 1152, 0, EffectLayer.Waist );
 
 				TimeSpan duration = TimeSpan.FromSeconds( GetKarmaPower( Caster ) );
 

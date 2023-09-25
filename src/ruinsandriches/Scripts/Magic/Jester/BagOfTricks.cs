@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;
@@ -51,7 +51,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
             if ( PrankPoints > 0 ){ list.Add( 1070722, "" + PrankPoints + " Prank Points"); }
-        } 
+        }
 
 		public static int GetPranks( Mobile m )
 		{
@@ -131,34 +131,34 @@ namespace Server.Items
 		{
 			string str = "";
 
-			if ( ability == 20749 || ability == ( 20749 + 10 ) ){ if ( type == "name" ){ 		str = "Can of Snakes"; } else if ( type == "points" ){ 	str = "200"; } else if ( type == "mana" ){ 	str = "40"; } else { 
+			if ( ability == 20749 || ability == ( 20749 + 10 ) ){ if ( type == "name" ){ 		str = "Can of Snakes"; } else if ( type == "points" ){ 	str = "200"; } else if ( type == "mana" ){ 	str = "40"; } else {
 				str = "Opening a can of nuts will simply dazzle the audience as snakes are released instead. These snakes will follow your commands for a short period of time. The better your jester skills, the longer they will remain and the stronger they will be. Their venom will also be equally strong.";
 			}}
-			else if ( ability == 20751 || ability == ( 20751 + 10 ) ){ if ( type == "name" ){ 	str = "Clowns"; } else if ( type == "points" ){ 		str = "50"; } else if ( type == "mana" ){ 	str = "25"; } else { 
+			else if ( ability == 20751 || ability == ( 20751 + 10 ) ){ if ( type == "name" ){ 	str = "Clowns"; } else if ( type == "points" ){ 		str = "50"; } else if ( type == "mana" ){ 	str = "25"; } else {
 				str = "Fool your audience by creating illusions of yourself, which may help you sneak away or distract one from yourself. Your illusions will vary in duration and amount, depending on your jester skills.";
 			}}
-			else if ( ability == 20748 || ability == ( 20748 + 10 ) ){ if ( type == "name" ){ 	str = "Flower Power"; } else if ( type == "points" ){ 	str = "50"; } else if ( type == "mana" ){ 	str = "20"; } else { 
+			else if ( ability == 20748 || ability == ( 20748 + 10 ) ){ if ( type == "name" ){ 	str = "Flower Power"; } else if ( type == "points" ){ 	str = "50"; } else if ( type == "mana" ){ 	str = "20"; } else {
 				str = "It may be an ordinary flower, but smelling this flower will simply get you covered in acidic slime. The effectiveness of the slime is dependent on your jester skills, and it may have the potential to cover the ground in annoying splatter.";
 			}}
-			else if ( ability == 20750 || ability == ( 20750 + 10 ) ){ if ( type == "name" ){ 	str = "Hilarity"; } else if ( type == "points" ){ 		str = "40"; } else if ( type == "mana" ){ 	str = "50"; } else { 
+			else if ( ability == 20750 || ability == ( 20750 + 10 ) ){ if ( type == "name" ){ 	str = "Hilarity"; } else if ( type == "points" ){ 		str = "40"; } else if ( type == "mana" ){ 	str = "50"; } else {
 				str = "Keep your audience in stitches! Tell a joke and see if others are frozen in laughter. The duration of the laughter is based on both your jester skills and the difficulty of the audience. The range of which your joke is heard, is also dependent on your jester skills.";
 			}}
-			else if ( ability == 20747 || ability == ( 20747 + 10 ) ){ if ( type == "name" ){ 	str = "Insult"; } else if ( type == "points" ){ 		str = "60"; } else if ( type == "mana" ){ 	str = "60"; } else { 
+			else if ( ability == 20747 || ability == ( 20747 + 10 ) ){ if ( type == "name" ){ 	str = "Insult"; } else if ( type == "points" ){ 		str = "60"; } else if ( type == "mana" ){ 	str = "60"; } else {
 				str = "Get ready to deal a sharp tongued insult! Although your words won't have them slipping on their tears, it will demoralize them to the point where their mana will begin to fade as they reflect on their hurt feelings. The duration of the decline, as well as how much mana is lost each second, is dependent on your jester skills.";
 			}}
-			else if ( ability == 20754 || ability == ( 20754 + 10 ) ){ if ( type == "name" ){ 	str = "Jump Around"; } else if ( type == "points" ){ 	str = "20"; } else if ( type == "mana" ){ 	str = "20"; } else { 
+			else if ( ability == 20754 || ability == ( 20754 + 10 ) ){ if ( type == "name" ){ 	str = "Jump Around"; } else if ( type == "points" ){ 	str = "20"; } else if ( type == "mana" ){ 	str = "20"; } else {
 				str = "This allows you to demonstrate your acrobatic skills, as you can quickly jump and leap around, perhaps avoiding dangers or getting to hard reaching places.";
 			}}
-			else if ( ability == 20746 || ability == ( 20746 + 10 ) ){ if ( type == "name" ){ 	str = "Popping Balloon"; } else if ( type == "points" ){ str = "100"; } else if ( type == "mana" ){ 	str = "20"; } else { 
+			else if ( ability == 20746 || ability == ( 20746 + 10 ) ){ if ( type == "name" ){ 	str = "Popping Balloon"; } else if ( type == "points" ){ str = "100"; } else if ( type == "mana" ){ 	str = "20"; } else {
 				str = "Everyong likes balloons, until they decide to play with one of yours. These balloons will float toward your foes, where it will be easily popped and thus cause a physically explosive force. The explosion is equitable to your jester skills, and the range of the explosion will also increase with those skilled as fools.";
 			}}
-			else if ( ability == 20753 || ability == ( 20753 + 10 ) ){ if ( type == "name" ){ 	str = "Rabbit in a Hat"; } else if ( type == "points" ){str = "150"; } else if ( type == "mana" ){ 	str = "30"; } else { 
+			else if ( ability == 20753 || ability == ( 20753 + 10 ) ){ if ( type == "name" ){ 	str = "Rabbit in a Hat"; } else if ( type == "points" ){str = "150"; } else if ( type == "mana" ){ 	str = "30"; } else {
 				str = "Alakazam! Pull rabbits from a hat to dazzle your audience, although petting them may be unwise. Said to be the babies of the killer rabbit of Caerbannog, these critters will follow your commands for a short period of time, and maul those you set them loose on. The strength of the rabbits, and the time they remain, is dependent on your jester skills.";
 			}}
-			else if ( ability == 20755 || ability == ( 20755 + 10 ) ){ if ( type == "name" ){ 	str = "Seltzer Bottle"; } else if ( type == "points" ){ str = "50"; } else if ( type == "mana" ){ 	str = "20"; } else { 
+			else if ( ability == 20755 || ability == ( 20755 + 10 ) ){ if ( type == "name" ){ 	str = "Seltzer Bottle"; } else if ( type == "points" ){ str = "50"; } else if ( type == "mana" ){ 	str = "20"; } else {
 				str = "Offer your audience a drink, and they will probably not ask you again. This will spray a target with freezing water, where the effectiveness is dependent on your jester skills, and it may have the potential to cover the ground in ice cold water.";
 			}}
-			else if ( ability == 20752 || ability == ( 20752 + 10 ) ){ if ( type == "name" ){ 	str = "Surprise Gift"; } else if ( type == "points" ){ 	str = "80"; } else if ( type == "mana" ){ 	str = "20"; } else { 
+			else if ( ability == 20752 || ability == ( 20752 + 10 ) ){ if ( type == "name" ){ 	str = "Surprise Gift"; } else if ( type == "points" ){ 	str = "80"; } else if ( type == "mana" ){ 	str = "20"; } else {
 				str = "Surprise your audience with a gift they will never forget. These presents are placed on the ground where nearby foes may be intrigued enough to go open it. They will be surprise by a nice fiery bang. The explosion is equitable to your jester skills, and the range of the explosion will also increase with those skilled as fools.";
 			}}
 
@@ -266,9 +266,9 @@ namespace Server.Items
 				AddHtml( 705, 480+v, 106, 20, @"<BODY><BASEFONT Color=" + color + ">Cancel</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				if ( info.ButtonID > 0 && info.ButtonID < 60 )
 				{
@@ -313,9 +313,9 @@ namespace Server.Items
 				AddButton(527, 0, 20752, 20752, 269, GumpButtonType.Reply, 0);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				DoPrank( from, info.ButtonID );
 				from.CloseGump( typeof( TricksLargeRow ) );
 				if ( Server.Misc.GetPlayerInfo.isJester ( from ) )
@@ -348,9 +348,9 @@ namespace Server.Items
 				AddButton(15, 503, 20752, 20752, 269, GumpButtonType.Reply, 0);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				DoPrank( from, info.ButtonID );
 				from.CloseGump( typeof( TricksLargeColumn ) );
 				if ( Server.Misc.GetPlayerInfo.isJester ( from ) )
@@ -383,9 +383,9 @@ namespace Server.Items
 				AddButton(340, 0, 20762, 20762, 269, GumpButtonType.Reply, 0);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				DoPrank( from, info.ButtonID );
 				from.CloseGump( typeof( TricksSmallRow ) );
 				if ( Server.Misc.GetPlayerInfo.isJester ( from ) )
@@ -418,9 +418,9 @@ namespace Server.Items
 				AddButton(7, 327, 20762, 20762, 269, GumpButtonType.Reply, 0);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				DoPrank( from, info.ButtonID );
 				from.CloseGump( typeof( TricksSmallColumn ) );
 				if ( Server.Misc.GetPlayerInfo.isJester ( from ) )

@@ -89,7 +89,7 @@ namespace Server.Items
 			writer.Write( (int) m_HelmEffect );
 			writer.Write( (int) m_Charges );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

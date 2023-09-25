@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -107,15 +107,15 @@ namespace Server.Items
 						ChangeItem( dropped, 0x1541, "sash", from );
 					}
 					else if ( dropped.Layer == Layer.Cloak && (
-						dropped.ItemID == 0x1515 || 
-						dropped.ItemID == 0x1530 || 
-						dropped.ItemID == 0x2309 || 
-						dropped.ItemID == 0x230A || 
-						dropped.ItemID == 0x26AD || 
-						dropped.ItemID == 0x2B04 || 
-						dropped.ItemID == 0x2B05 || 
-						dropped.ItemID == 0x2B76 || 
-						dropped.ItemID == 0x316D || 
+						dropped.ItemID == 0x1515 ||
+						dropped.ItemID == 0x1530 ||
+						dropped.ItemID == 0x2309 ||
+						dropped.ItemID == 0x230A ||
+						dropped.ItemID == 0x26AD ||
+						dropped.ItemID == 0x2B04 ||
+						dropped.ItemID == 0x2B05 ||
+						dropped.ItemID == 0x2B76 ||
+						dropped.ItemID == 0x316D ||
 						dropped.ItemID == 0x5679 ) )
 					{
 						if ( dropped.ItemID != 0x5679 ){ ChangeItem( dropped, 0x5679, "fleece", from ); }
@@ -256,9 +256,9 @@ namespace Server.Items
 				AddButton(609, 8, 4017, 4017, 0, GumpButtonType.Reply, 0);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.PlaySound( 0x48 );
 			}
 		}
@@ -270,7 +270,7 @@ namespace Server.Items
 			public BarbaricAlterGump( Mobile from, Item item, string make ): base( 25, 25 )
 			{
 				from.PlaySound( 0x48 );
-				m_Item = item; 
+				m_Item = item;
 				string color = "#dbd354";
 
 				this.Closable=true;
@@ -432,9 +432,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				string NewName = "";
 				int itemID = 0;
 

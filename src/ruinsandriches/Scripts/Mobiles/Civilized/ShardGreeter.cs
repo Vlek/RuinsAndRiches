@@ -48,16 +48,16 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new ShardGreeterEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new ShardGreeterEntry( from, this ) );
+		}
 
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			writer.Write( (int) 0 ); 
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )
@@ -148,7 +148,7 @@ namespace Server.Gumps
 			AddImage(13, 12, header, 2126);
 
 			AddHtml( 13, 58, 482, 312, @"<BODY><BASEFONT Color=#94C541>For you, the day was normal compared to any other. However, when the evening sun finally disappeared below the landscape, you retired to bed where the sleep felt restless and the dreams more vivid. You cannot remember the details of the dream, but you can recall being drawn from this world through a swirling portal. When you awoke, you found yourself here in this forest. Your night clothes are gone and you are now dressed in some medieval garb, wielding a light in your hand.<BR><BR><BR><BR>Through the darkness of the night, you see a campfire just ahead. A colorful tent is next to it with the welcoming glow of lanterns about. The sounds of the nearby stream provides a tranquility, and you can see a grizzly bear soundly sleeping next to the warmth of the fire. If you were to shrug off the worries of your current life, you feel like this would be the place to start anew. You decide to see who is camping here and to perhaps find out where you are.</BASEFONT></BODY>", (bool)false, (bool)false);
-			
+
 			AddButton(468, 10, 4017, 4017, 0, GumpButtonType.Reply, 0);
         }
 
@@ -330,7 +330,7 @@ namespace Server.Gumps
 					case 4: val = 1343; break;
 				}
 			}
-			else 
+			else
 			{
 				switch ( page )
 				{
@@ -368,7 +368,7 @@ namespace Server.Gumps
 				if ( Server.Items.BaseRace.GetUndead( creature ) )
 					scroll = true;
 			}
-			else 
+			else
 			{
 				switch ( page )
 				{

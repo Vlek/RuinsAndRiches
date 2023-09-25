@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Server.Items;
 using Server.Misc;
-using Server.Network; 
+using Server.Network;
 
 namespace Server.Mobiles
 {
@@ -217,7 +217,7 @@ namespace Server.Mobiles
 				this.FixedParticles( 0, 10, 0, 0x2530, EffectLayer.Waist );
 
 			return move;
-		}		
+		}
 
 		public void SendEBolt( Mobile to )
 		{
@@ -284,11 +284,11 @@ namespace Server.Items
 	}
 }
 
-namespace Server.Gumps 
-{ 
-	public class DarkCoreGump : Gump 
+namespace Server.Gumps
+{
+	public class DarkCoreGump : Gump
 	{
-		public DarkCoreGump( Mobile from, string items, bool scroller ) : base( 50, 50 ) 
+		public DarkCoreGump( Mobile from, string items, bool scroller ) : base( 50, 50 )
 		{
 			from.SendSound( 0x4A );
 
@@ -325,9 +325,9 @@ namespace Server.Gumps
 			AddHtml( 13, 43, 440, 301, @"<BODY><BASEFONT Color=" + color + ">" + text + "</BASEFONT></BODY>", (bool)false, (bool)false);
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 			from.SendSound( 0x4A );
 		}
 	}

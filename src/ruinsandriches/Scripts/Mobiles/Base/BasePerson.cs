@@ -5,24 +5,24 @@ using Server.ContextMenus;
 using Server.Misc;
 using Server.Network;
 
-namespace Server.Mobiles 
-{ 
+namespace Server.Mobiles
+{
 	public class BasePerson : BaseCreature
 	{
-		[Constructable] 
-		public BasePerson() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public BasePerson() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			Name = "person";
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = Utility.RandomSkinColor();
 
-			if ( Female = Utility.RandomBool() ) 
-			{ 
+			if ( Female = Utility.RandomBool() )
+			{
 				this.Body = 0x191;
 				this.Name = NameList.RandomName( "female" );
 			}
-			else 
-			{ 
+			else
+			{
 				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 			}
@@ -38,9 +38,9 @@ namespace Server.Mobiles
 		public override bool Unprovokable { get { return true; } }
 		public override bool Uncalmable{ get{ return true; } }
 
-		public BasePerson( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public BasePerson( Serial serial ) : base( serial )
+		{
+		}
 
 		public override bool IsEnemy( Mobile m )
 		{
@@ -87,7 +87,7 @@ namespace Server.Mobiles
 
 			string bSay = "Help!";
 
-				switch ( Utility.Random( 5 ))		   
+				switch ( Utility.Random( 5 ))
 				{
 					case 0: bSay = "Guards!"; break;
 					case 1: bSay = "There will be no place for you to hide!"; break;
@@ -116,16 +116,16 @@ namespace Server.Mobiles
 			Server.Misc.MorphingTime.CheckMorph( this );
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
@@ -137,4 +137,4 @@ namespace Server.Mobiles
 			return base.OnDragDrop( from, dropped );
 		}
 	}
-}   
+}

@@ -22,7 +22,7 @@ namespace Server.Items
 
 			if ( this.Weight < 1.95 && soaked ) // FILL IT IF NEAR WATER AND FLASK IS NOT FULL
 			{
-				if ( !IsChildOf( from.Backpack ) ) 
+				if ( !IsChildOf( from.Backpack ) )
 				{
 					from.SendMessage( "This must be in your backpack to fill." );
 					return;
@@ -46,11 +46,11 @@ namespace Server.Items
 			}
 			else if ( this.ItemID == 0xA21 || this.ItemID == 0x4971 ) // TOTALLY EMPTY
 			{
-				from.SendMessage( "You can only fill this at a water trough, tub, or barrel!" ); 
+				from.SendMessage( "You can only fill this at a water trough, tub, or barrel!" );
 			}
 			else
 			{
-				if ( !IsChildOf( from.Backpack ) ) 
+				if ( !IsChildOf( from.Backpack ) )
 				{
 					from.SendMessage( "This must be in your backpack to drink." );
 					return;
@@ -73,7 +73,7 @@ namespace Server.Items
 						else if ( iThirst < 10 )
 							from.SendMessage( "You drink the water and feel less thirsty" );
 						else if ( iThirst < 15 )
-							from.SendMessage( "You drink the water and feel much less thirsty" ); 
+							from.SendMessage( "You drink the water and feel much less thirsty" );
 						else
 							from.SendMessage( "You drink the water and are no longer thirsty" );
 
@@ -163,7 +163,7 @@ namespace Server.Items
 			bool soaked;
 			Server.Items.DrinkingFunctions.CheckWater( from, 3, out soaked );
 
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;
@@ -195,7 +195,7 @@ namespace Server.Items
 				else if ( iThirst < 10 )
 					from.SendMessage( "You drink the dirty water and feel less thirsty" );
 				else if ( iThirst < 15 )
-					from.SendMessage( "You drink the dirty water and feel much less thirsty" ); 
+					from.SendMessage( "You drink the dirty water and feel much less thirsty" );
 				else
 					from.SendMessage( "You drink the dirty water and are no longer thirsty" );
 
@@ -260,14 +260,14 @@ namespace Server.Items
 		{
 			bool isWater = false;
 
-			isWater = ( id== 4090 || id== 0x21F2 || id== 0x1519 || id== 0x1534 || 
-				id== 0x22A1 || id== 0x22A2 || id== 0x22A3 || 
-				id== 0x22A4 || id== 0x22A5 || id== 0x22A6 || 
-				id== 0x21F3 || id== 0x21F4 || id== 0x21F5 || 
-				( id >= 0x4CCF && id <= 0x4CD9 ) || 
-				id== 0xFFA || id== 0xB41 || id== 0xB42 || id== 0x0F33 || 
-				id== 0xB43 || id== 0xB44 || id== 0xE7B || id== 0x154D || 
-				id== 3707 || id== 5453 || id== 2882 || id== 2881 || 
+			isWater = ( id== 4090 || id== 0x21F2 || id== 0x1519 || id== 0x1534 ||
+				id== 0x22A1 || id== 0x22A2 || id== 0x22A3 ||
+				id== 0x22A4 || id== 0x22A5 || id== 0x22A6 ||
+				id== 0x21F3 || id== 0x21F4 || id== 0x21F5 ||
+				( id >= 0x4CCF && id <= 0x4CD9 ) ||
+				id== 0xFFA || id== 0xB41 || id== 0xB42 || id== 0x0F33 ||
+				id== 0xB43 || id== 0xB44 || id== 0xE7B || id== 0x154D ||
+				id== 3707 || id== 5453 || id== 2882 || id== 2881 ||
 				id== 13422 || id== 2883 || id== 2884 );
 
 			return isWater;
@@ -330,7 +330,7 @@ namespace Server.Items
 
 		public static void OnDrink( Item drink, Mobile from )
 		{
-			if ( !drink.IsChildOf( from.Backpack ) ) 
+			if ( !drink.IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to drink." );
 				return;
@@ -353,7 +353,7 @@ namespace Server.Items
 					else if ( iThirst < 10 )
 						from.SendMessage( "You drink the water and feel less thirsty" );
 					else if ( iThirst < 15 )
-						from.SendMessage( "You drink the water and feel much less thirsty" ); 
+						from.SendMessage( "You drink the water and feel much less thirsty" );
 					else
 						from.SendMessage( "You drink the water and are no longer thirsty" );
 

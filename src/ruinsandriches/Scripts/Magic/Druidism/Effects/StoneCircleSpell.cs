@@ -136,11 +136,11 @@ namespace Server.Spells.Herbalist
 				mushy=loc.Y;
 				mushz=loc.Z;
 				Point3D mushxyzh = new Point3D(mushx,mushy,mushz);
-				firstFlamei.MoveToWorld( mushxyzh, Caster.Map );  
+				firstFlamei.MoveToWorld( mushxyzh, Caster.Map );
             }
 			FinishSequence();
 		}
-    
+
 		[DispellableField]
 		private class InternalItem : Item
 		{

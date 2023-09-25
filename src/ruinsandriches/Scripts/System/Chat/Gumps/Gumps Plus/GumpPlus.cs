@@ -351,7 +351,7 @@ namespace Knives.Chat3
         {
             return Utility.ToInt32(GetTextField(name));
         }
-        
+
         protected virtual void OnClose()
 		{
 		}
@@ -417,14 +417,14 @@ namespace Knives.Chat3
         private void TextUp()
         {
             Info.TextColorUp();
-            
+
             NewGump();
         }
 
         private void TextDown()
         {
             Info.TextColorDown();
-            
+
             NewGump();
         }
 

@@ -170,7 +170,7 @@ namespace Server.Items
 		{
 			Name = "a gargoyle's corpse";
 			Movable = false;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
 			thisTimer.Start();
 			ItemID = Utility.RandomList( 0x4AA2, 0x4AA3 );
 		}
@@ -296,25 +296,25 @@ namespace Server.Items
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 }

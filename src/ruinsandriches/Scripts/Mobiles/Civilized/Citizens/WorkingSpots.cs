@@ -46,22 +46,22 @@ namespace Server.Items
 			foreach ( Mobile mobile in spot.GetMobilesInRange( 0 ) )
 			{
 				if ( mobile.Location == spot.Location && mobile.Map == spot.Map && (
-					mobile is SpellCritter || 
-					mobile is TradesmanAlchemist || 
-					mobile is TradesmanLeather || 
-					mobile is TradesmanLogger || 
-					mobile is TradesmanLumber || 
-					mobile is TradesmanMiner || 
-					mobile is TradesmanSmelter || 
-					mobile is TradesmanCook || 
-					mobile is TradesmanSmith || 
-					mobile is TradesmanButcher || 
-					mobile is TradesmanBard || 
-					mobile is TrainingBow || 
-					mobile is TrainingFishing || 
-					mobile is TrainingMagery || 
-					mobile is TrainingSingle || 
-					mobile is TrainingSpirits || 
+					mobile is SpellCritter ||
+					mobile is TradesmanAlchemist ||
+					mobile is TradesmanLeather ||
+					mobile is TradesmanLogger ||
+					mobile is TradesmanLumber ||
+					mobile is TradesmanMiner ||
+					mobile is TradesmanSmelter ||
+					mobile is TradesmanCook ||
+					mobile is TradesmanSmith ||
+					mobile is TradesmanButcher ||
+					mobile is TradesmanBard ||
+					mobile is TrainingBow ||
+					mobile is TrainingFishing ||
+					mobile is TrainingMagery ||
+					mobile is TrainingSingle ||
+					mobile is TrainingSpirits ||
 					mobile is Warriors ) )
 						clean.Add( mobile );
 			}

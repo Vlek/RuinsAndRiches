@@ -50,7 +50,7 @@ namespace Server.Mobiles
 
 		public override void OnDeath( Container c )
 		{
-			base.OnDeath( c );		
+			base.OnDeath( c );
 			GoldenSerpentVenom ingut = new GoldenSerpentVenom();
    			ingut.Amount = Utility.RandomMinMax( 1, 5 );
    			c.DropItem(ingut);

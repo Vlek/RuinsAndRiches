@@ -1,10 +1,10 @@
-﻿using System; 
-using System.Net; 
-using Server; 
-using Server.Accounting; 
-using Server.Gumps; 
-using Server.Items; 
-using Server.Mobiles; 
+﻿using System;
+using System.Net;
+using Server;
+using Server.Accounting;
+using Server.Gumps;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Gumps
@@ -49,8 +49,8 @@ namespace Server.Gumps
             AddButton(12, 160, 4005, 4007, 7, GumpButtonType.Reply, 7);
             AddLabel(52, 180, 0, "Crystal Throne");
             AddButton(12, 180, 4005, 4007, 8, GumpButtonType.Reply, 8);
-            
-            
+
+
 }
 
         public override void OnResponse(NetState state, RelayInfo info)
@@ -59,7 +59,7 @@ namespace Server.Gumps
 
             switch (info.ButtonID)
             {
-                case 0: //Close Gump 
+                case 0: //Close Gump
                     {
                         from.CloseGump(typeof(CrystalTokenGump));
                         break;
@@ -135,7 +135,7 @@ namespace Server.Gumps
                         from.CloseGump(typeof(CrystalTokenGump));
                         m_Deed.Delete();
                         break;
-                   
+
                     }
               }
         }

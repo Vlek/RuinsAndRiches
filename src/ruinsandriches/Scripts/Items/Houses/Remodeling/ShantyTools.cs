@@ -62,7 +62,7 @@ namespace Server.Items
 			}
 
             ShantyTarget yt;
-            
+
             if (m_Category != null)
             {
                 yt = new ShantyTarget(this, from, 0, 0, Category, Title, Page);
@@ -73,7 +73,7 @@ namespace Server.Items
             }
 
             yt.GumpUp();
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
         }
 
         public override void Serialize(GenericWriter writer)

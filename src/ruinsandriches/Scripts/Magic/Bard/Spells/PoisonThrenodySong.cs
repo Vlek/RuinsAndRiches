@@ -9,14 +9,14 @@ namespace Server.Spells.Song
 {
 	public class PoisonThrenodySong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Poison Threnody", "*plays a poison threnody*",
 				//SpellCircle.First,
 				//212,9041
 				-1
 			);
-		
+
 		public PoisonThrenodySong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
@@ -26,7 +26,7 @@ namespace Server.Spells.Song
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
 		public override double RequiredSkill{ get{ return 70.0; } }
 		public override int RequiredMana{ get{ return 25; } }
-		
+
 		public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
@@ -54,7 +54,7 @@ namespace Server.Spells.Song
 			bool sings = false;
 
 			PlayerMobile p = m as PlayerMobile;
-			
+
 			if ( !Caster.CanSee( m ) )
 			{
 				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
@@ -68,7 +68,7 @@ namespace Server.Spells.Song
                 Caster.SendMessage("Your instrument is missing! You can select another from your song book.");
                 return;
             }
-				
+
 				Mobile source = Caster;
 				SpellHelper.Turn( source, m );
 
@@ -88,7 +88,7 @@ namespace Server.Spells.Song
 
 				m.SendMessage( "Your resistance to poison has decreased." );
 				ResistanceMod mod1 = new ResistanceMod( ResistanceType.Poison, - amount );
-				
+
 				m.AddResistanceMod( mod1 );
 
 				ExpireTimer timer1 = new ExpireTimer( m, mod1, duration );
@@ -114,7 +114,7 @@ namespace Server.Spells.Song
 			{
 				PlayerMobile p = m_Mobile as PlayerMobile;
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

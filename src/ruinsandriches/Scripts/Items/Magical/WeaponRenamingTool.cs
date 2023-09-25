@@ -8,16 +8,16 @@ using Server.Engines.VeteranRewards;
 namespace Server.Items
 {
 	public class WeaponRenamingTool : Item, IRewardItem
-	{				
+	{
 		private bool m_IsRewardItem;
-	
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public bool IsRewardItem
 		{
 			get{ return m_IsRewardItem; }
 			set{ m_IsRewardItem = value; InvalidateProperties(); }
 		}
-		
+
 		[Constructable]
 		public WeaponRenamingTool() : base( 0x32F8 )
 		{
@@ -29,7 +29,7 @@ namespace Server.Items
 		public WeaponRenamingTool( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_IsRewardItem && !RewardSystem.CheckIsUsableBy( from, this, null ) )
@@ -38,81 +38,81 @@ namespace Server.Items
 				from.SendMessage( "Select an object to rename" ); // Select an object to engrave.
 				from.Target = new TargetWeapon( this );
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			
+
 			writer.Write( (int) 0 ); // version
-			
+
 			writer.Write( (bool) m_IsRewardItem );
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
-			
+
 			int version = reader.ReadInt();
-			
+
 		m_IsRewardItem = reader.ReadBool();
 		}
-				
+
 		public static WeaponRenamingTool Find( Mobile from )
 		{
 			if ( from.Backpack != null )
 				return from.Backpack.FindItemByType( typeof( WeaponRenamingTool ) ) as WeaponRenamingTool;
-				
+
 			return null;
 		}
-		
+
 		private class TargetWeapon : Target
 		{
 			private WeaponRenamingTool m_Tool;
-		
+
 			public TargetWeapon( WeaponRenamingTool tool ) : base( -1, true, TargetFlags.None )
 			{
 				m_Tool = tool;
 			}
-			
+
 			protected override void OnTarget( Mobile from, object targeted )
 			{
 				if ( m_Tool == null || m_Tool.Deleted )
 					return;
-					
+
 				if ( targeted is BaseWeapon )
 				{
 					BaseWeapon item = (BaseWeapon) targeted;
-					
+
 					from.CloseGump( typeof( InternalGump ) );
 					from.SendGump( new InternalGump( m_Tool, item ) );
 				}
 				else
-					from.SendMessage( "The selected item cannobt be renamed using this tool" ); 
+					from.SendMessage( "The selected item cannobt be renamed using this tool" );
 			}
 		}
-		
+
 		private class InternalGump : Gump
 		{
 			private WeaponRenamingTool m_Tool;
 			private BaseWeapon m_Target;
-		
+
 			private enum Buttons
 			{
 				Cancel,
 				Okay,
 				Text
 			}
-		
+
 			public InternalGump( WeaponRenamingTool tool, BaseWeapon target ) : base( 0, 0 )
 			{
 				m_Tool = tool;
 				m_Target = target;
-			
+
 				Closable = true;
 				Disposable = true;
 				Dragable = true;
 				Resizable = false;
-				
+
 				AddBackground( 50, 50, 400, 300, 0xA28 );
 
 				AddPage( 0 );
@@ -126,19 +126,19 @@ namespace Server.Items
 				AddImageTiled( 75, 245, 2, 40, 0x23C3 );
 				AddImageTiled( 75, 285, 350, 2, 0x23C5 );
 				AddImageTiled( 425, 245, 2, 42, 0x23C3 );
-				
+
 				AddTextEntry( 75, 245, 350, 40, 0x0, (int) Buttons.Text, "" );
 			}
-			
+
 			public override void OnResponse( Server.Network.NetState state, RelayInfo info )
-			{		
+			{
 				if ( m_Tool == null || m_Tool.Deleted || m_Target == null || m_Target.Deleted )
 					return;
-			
+
 				if ( info.ButtonID == (int) Buttons.Okay )
 				{
 					TextRelay relay = info.GetTextEntry( (int) Buttons.Text );
-					
+
 					if ( relay != null )
 					{
 						if ( String.IsNullOrEmpty( relay.Text ) )
@@ -152,8 +152,8 @@ namespace Server.Items
 								m_Target.Name = relay.Text.Substring( 0, 64 );
 							else
 								m_Target.Name = relay.Text;
-						
-							state.Mobile.SendLocalizedMessage( 1072361 ); // You engraved the object.						
+
+							state.Mobile.SendLocalizedMessage( 1072361 ); // You engraved the object.
 							m_Tool.Delete();
 						}
 					}
@@ -163,4 +163,4 @@ namespace Server.Items
 			}
 		}
 	}
-}	
+}

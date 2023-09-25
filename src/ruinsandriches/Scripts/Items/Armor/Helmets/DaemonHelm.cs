@@ -36,21 +36,21 @@ namespace Server.Items
 			Attributes.BonusMana = 5;
 			Attributes.BonusInt = 4;
 			Attributes.RegenMana = 1;
-			Attributes.Luck = 50; 
+			Attributes.Luck = 50;
 			Attributes.LowerRegCost = 12;
 		}
 
 		public DaemonHelm( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

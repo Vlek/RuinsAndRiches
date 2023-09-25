@@ -23,7 +23,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1049644, "Double Click To Burn");
-        } 
+        }
 
 		public BurningScarecrowA( Serial serial ) : base( serial )
 		{

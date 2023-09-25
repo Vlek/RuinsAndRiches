@@ -90,7 +90,7 @@ namespace Server.Mobiles
 		{
 			scalar = 0.0; // Immune to magic
 		}
-		
+
 		public override void AlterSpellDamageFrom( Mobile from, ref int damage )
 		{
 			damage = 0;

@@ -25,7 +25,7 @@ namespace Server.ContextMenus
 		public override void OnClick()
 		{
 			Owner.From.CloseGump( typeof( ItemExperienceGump ) );
-			Owner.From.SendGump( new ItemExperienceGump( m_From, m_Item, m_Cat ) ); 
+			Owner.From.SendGump( new ItemExperienceGump( m_From, m_Item, m_Cat ) );
 		}
 	}
 }

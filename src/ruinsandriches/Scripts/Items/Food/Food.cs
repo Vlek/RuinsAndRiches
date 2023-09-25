@@ -25,7 +25,7 @@ namespace Server.Items
 			get { return m_Poison; }
 			set { m_Poison = value; }
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int FillFactor
 		{

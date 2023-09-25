@@ -46,7 +46,7 @@ namespace Server.Guilds
 			AddImageTiled( 65, 148, 160, 26, 0xA40 );
 			AddImageTiled( 67, 150, 156, 22, 0xBBC );
 			AddHtmlLocalized( 70, 151, 150, 20, 1063084, 0x0, false, false ); // <i>Guild Faction</i>
-		
+
 			Faction f = Faction.Find( guild.Leader );
 			if( f != null )
 				AddHtml( 233, 152, 320, 26, f.ToString(), false, false );
@@ -85,9 +85,9 @@ namespace Server.Guilds
 			if( !IsMember( pm, guild ) )
 				return;
 
-			
+
 			pm.DisplayGuildTitle = info.IsSwitched( 0 );
-			
+
 			switch( info.ButtonID )
 			{
 				//1-3 handled by base.OnResponse

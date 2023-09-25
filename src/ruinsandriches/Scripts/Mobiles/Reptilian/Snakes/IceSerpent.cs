@@ -44,7 +44,7 @@ namespace Server.Mobiles
 			VirtualArmor = 32;
 
 			PackItem( Loot.RandomArmorOrShieldOrWeapon() );
-			
+
 			switch ( Utility.Random( 10 ))
 			{
 				case 0: PackItem( new LeftArm() ); break;
@@ -58,7 +58,7 @@ namespace Server.Mobiles
 				case 8: PackItem( new BonePile() ); break;
 				case 9: PackItem( new BonePile() ); break;
 			}
-			
+
 			if ( 0.025 > Utility.RandomDouble() )
 				PackItem( new GlacialStaff() );
 

@@ -73,32 +73,32 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 351 ) )
 					{
-					new ArmysPaeonSong( e.Mobile, null ).Cast(); 
+					new ArmysPaeonSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
                     }
-        } 			
+        }
 
-		
+
 		[Usage( "EnchantingEtude" )]
 		[Description( "Casts EnchantingEtude" )]
 		public static void EnchantingEtude_OnCommand( CommandEventArgs e )
 		{
 				Mobile from = e.Mobile;
-			
+
          			if ( !Multis.DesignContext.Check( e.Mobile ) )
             				return; // They are customizing
 
 				if ( HasSpell( from, 352 ) )
 					{
-					new EnchantingEtudeSong( e.Mobile, null ).Cast(); 
+					new EnchantingEtudeSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -113,12 +113,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 353 ) )
 					{
-					new EnergyCarolSong( e.Mobile, null ).Cast(); 
+					new EnergyCarolSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -133,12 +133,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 354 ) )
 					{
-					new EnergyThrenodySong( e.Mobile, null ).Cast(); 
+					new EnergyThrenodySong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -153,12 +153,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 355 ) )
 					{
-					new FireCarolSong( e.Mobile, null ).Cast(); 
+					new FireCarolSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -173,12 +173,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 356 ) )
 					{
-					new  FireThrenodySong( e.Mobile, null ).Cast(); 
+					new  FireThrenodySong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -193,12 +193,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 357 ) )
 					{
-					new FoeRequiemSong( e.Mobile, null ).Cast(); 
+					new FoeRequiemSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -213,12 +213,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 358 ) )
 					{
-					new IceCarolSong( e.Mobile, null ).Cast(); 
+					new IceCarolSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -233,12 +233,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 359 ) )
 					{
-					new IceThrenodySong( e.Mobile, null ).Cast(); 
+					new IceThrenodySong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -253,12 +253,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 360 ) )
 					{
-					new KnightsMinneSong( e.Mobile, null ).Cast(); 
+					new KnightsMinneSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -273,12 +273,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 361 ) )
 					{
-					new MagesBalladSong( e.Mobile, null ).Cast(); 
+					new MagesBalladSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -293,12 +293,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 362 ) )
 					{
-					new MagicFinaleSong( e.Mobile, null ).Cast(); 
+					new MagicFinaleSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -313,12 +313,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 363 ) )
 					{
-					new PoisonCarolSong( e.Mobile, null ).Cast(); 
+					new PoisonCarolSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -333,12 +333,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 364 ) )
 					{
-					new PoisonThrenodySong( e.Mobile, null ).Cast(); 
+					new PoisonThrenodySong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -353,12 +353,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 365 ) )
 					{
-					new SheepfoeMamboSong( e.Mobile, null ).Cast(); 
+					new SheepfoeMamboSong( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 		[Usage( "SinewyEtude" )]
@@ -378,7 +378,7 @@ namespace Server.Scripts.Commands
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 
+					}
 
 		}
 	}

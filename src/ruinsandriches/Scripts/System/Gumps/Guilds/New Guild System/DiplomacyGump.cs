@@ -62,7 +62,7 @@ namespace Server.Guilds
 					return -1;
 				else if ( y == null )
 					return 1;
-				
+
 				GuildCompareStatus aStatus = GuildCompareStatus.Peace;
 				GuildCompareStatus bStatus = GuildCompareStatus.Peace;
 
@@ -71,7 +71,7 @@ namespace Server.Guilds
 				else if( m_Guild.IsWar( x ) )
 					aStatus = GuildCompareStatus.War;
 
-				
+
 				if( m_Guild.IsAlly( y ) )
 					bStatus = GuildCompareStatus.Ally;
 				else if( m_Guild.IsWar( y ) )
@@ -106,7 +106,7 @@ namespace Server.Guilds
 		GuildDisplayType m_Display;
 		TextDefinition m_LowerText;
 
-		public GuildDiplomacyGump( PlayerMobile pm, Guild g ) 
+		public GuildDiplomacyGump( PlayerMobile pm, Guild g )
 			: this( pm, g, GuildDiplomacyGump.NameComparer.Instance, true, "", 0, GuildDisplayType.All, Utility.CastConvertList<BaseGuild, Guild>( new List<BaseGuild>( Guild.List.Values ) ), (1063136 + (int)GuildDisplayType.All) )
 		{
 		}
@@ -121,7 +121,7 @@ namespace Server.Guilds
 		{
 		}
 
-		public GuildDiplomacyGump( PlayerMobile pm, Guild g, bool ascending, string filter, int startNumber, List<Guild> list, TextDefinition lowerText ) 
+		public GuildDiplomacyGump( PlayerMobile pm, Guild g, bool ascending, string filter, int startNumber, List<Guild> list, TextDefinition lowerText )
 			: this( pm, g, GuildDiplomacyGump.NameComparer.Instance, ascending, filter, startNumber, GuildDisplayType.All, list, lowerText )
 		{
 		}
@@ -145,7 +145,7 @@ namespace Server.Guilds
 		{
 			base.PopulateGump();
 
-			AddHtmlLocalized( 431, 43, 110, 26, 1062978, 0xF, false, false ); // Diplomacy			
+			AddHtmlLocalized( 431, 43, 110, 26, 1062978, 0xF, false, false ); // Diplomacy
 		}
 
 		protected override TextDefinition[] GetValuesFor( Guild g, int aryLength )
@@ -185,7 +185,7 @@ namespace Server.Guilds
 			if( alliance != null )
 			{
 				Guild leader = alliance.Leader;
-				
+
 				if ( leader != null )
 				{
 					if ( guild == leader && alliance.IsPendingMember( g ) || g == leader && alliance.IsPendingMember( guild ) )
@@ -229,7 +229,7 @@ namespace Server.Guilds
 
 					if( !( guild.FindActiveWar( g ) != null || guild.IsAlly( g ) ) )	//As per OSI, only the guild leader wars show up under the sorting by relation
 						return true;
-					
+
 					return false;
 				}
 				case GuildDisplayType.AwaitingAction:

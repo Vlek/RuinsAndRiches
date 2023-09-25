@@ -168,7 +168,7 @@ namespace Server.Items
 		TwoStoryLogCabin,
 		TwoStoryVilla,
 		SandstoneHouseWithPatio,
-		SmallStoneWorkshop, 
+		SmallStoneWorkshop,
 		SmallMarbleWorkshop,
 		SerpentIslandMountainPass,	//Veteran reward house
 		ChurchAtNight		//Veteran reward house

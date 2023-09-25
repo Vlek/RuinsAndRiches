@@ -21,7 +21,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public ArcticBeacon( Serial serial ) : base( serial )
 		{

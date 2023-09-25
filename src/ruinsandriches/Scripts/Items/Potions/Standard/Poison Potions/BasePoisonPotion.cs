@@ -60,12 +60,12 @@ namespace Server.Items
 				}
 				else if ( !from.Region.AllowHarmful( from, from ) )
 				{
-					from.SendMessage( "That doesn't feel like a good idea." ); 
+					from.SendMessage( "That doesn't feel like a good idea." );
 					return;
 				}
 				else if ( Server.Items.MonsterSplatter.TooMuchSplatter( from ) )
 				{
-					from.SendMessage( "There is too much liquid on the ground already." ); 
+					from.SendMessage( "There is too much liquid on the ground already." );
 					return;
 				}
 				else
@@ -106,7 +106,7 @@ namespace Server.Items
 			{
 				if ( m_Potion.Deleted || m_Potion.Map == Map.Internal )
 					return;
-					
+
 				IPoint3D p = targeted as IPoint3D;
 				Point3D d = new Point3D( p );
 

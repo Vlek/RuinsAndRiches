@@ -18,7 +18,7 @@ using Server.Spells.Seventh;
 using Server.Spells.Eighth;
 using Server.Spells.Necromancy;
 using Server.Spells.Chivalry;
-using Server.Spells.DeathKnight; 
+using Server.Spells.DeathKnight;
 using Server.Spells.Song;
 using Server.Spells.HolyMan;
 using Server.Prompts;

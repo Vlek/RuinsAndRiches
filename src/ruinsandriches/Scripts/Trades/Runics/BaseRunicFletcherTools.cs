@@ -75,7 +75,7 @@ namespace Server.Items
 		[Constructable]
 		public AshTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public AshTreeFletcherTools( int uses ) : base( CraftResource.AshTree )
@@ -109,7 +109,7 @@ namespace Server.Items
 		[Constructable]
 		public CherryTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public CherryTreeFletcherTools( int uses ) : base( CraftResource.CherryTree )
@@ -143,7 +143,7 @@ namespace Server.Items
 		[Constructable]
 		public EbonyTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public EbonyTreeFletcherTools( int uses ) : base( CraftResource.EbonyTree )
@@ -177,7 +177,7 @@ namespace Server.Items
 		[Constructable]
 		public GoldenOakTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public GoldenOakTreeFletcherTools( int uses ) : base( CraftResource.GoldenOakTree )
@@ -211,7 +211,7 @@ namespace Server.Items
 		[Constructable]
 		public HickoryTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public HickoryTreeFletcherTools( int uses ) : base( CraftResource.HickoryTree )
@@ -245,7 +245,7 @@ namespace Server.Items
 		[Constructable]
 		public MahoganyTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public MahoganyTreeFletcherTools( int uses ) : base( CraftResource.MahoganyTree )
@@ -279,7 +279,7 @@ namespace Server.Items
 		[Constructable]
 		public OakTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public OakTreeFletcherTools( int uses ) : base( CraftResource.OakTree )
@@ -313,7 +313,7 @@ namespace Server.Items
 		[Constructable]
 		public PineTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public PineTreeFletcherTools( int uses ) : base( CraftResource.PineTree )
@@ -347,7 +347,7 @@ namespace Server.Items
 		[Constructable]
 		public RosewoodTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public RosewoodTreeFletcherTools( int uses ) : base( CraftResource.RosewoodTree )
@@ -381,7 +381,7 @@ namespace Server.Items
 		[Constructable]
 		public WalnutTreeFletcherTools() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public WalnutTreeFletcherTools( int uses ) : base( CraftResource.WalnutTree )

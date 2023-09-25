@@ -25,15 +25,15 @@ namespace Server.Items
 		Dwarven,
 
 		RegularLeather = 101,
-		SpinedLeather, 
-		HornedLeather, 
-		BarbedLeather, 
-		NecroticLeather, 
-		VolcanicLeather, 
-		FrozenLeather, 
-		GoliathLeather, 
-		DraconicLeather, 
-		HellishLeather, 
+		SpinedLeather,
+		HornedLeather,
+		BarbedLeather,
+		NecroticLeather,
+		VolcanicLeather,
+		FrozenLeather,
+		GoliathLeather,
+		DraconicLeather,
+		HellishLeather,
 		DinosaurLeather,
 		AlienLeather,
 
@@ -1276,13 +1276,13 @@ namespace Server.Items
 			if ( resource >= CraftResource.RegularLeather && resource <= CraftResource.BarbedLeather )
 				return CraftResourceType.Leather;
 
-			if ( 	resource == CraftResource.NecroticLeather || 
-					resource == CraftResource.VolcanicLeather || 
-					resource == CraftResource.FrozenLeather || 
-					resource == CraftResource.GoliathLeather || 
-					resource == CraftResource.DraconicLeather || 
-					resource == CraftResource.HellishLeather || 
-					resource == CraftResource.DinosaurLeather || 
+			if ( 	resource == CraftResource.NecroticLeather ||
+					resource == CraftResource.VolcanicLeather ||
+					resource == CraftResource.FrozenLeather ||
+					resource == CraftResource.GoliathLeather ||
+					resource == CraftResource.DraconicLeather ||
+					resource == CraftResource.HellishLeather ||
+					resource == CraftResource.DinosaurLeather ||
 					resource == CraftResource.AlienLeather )
 				return CraftResourceType.Leather;
 
@@ -1292,20 +1292,20 @@ namespace Server.Items
 			if ( resource == CraftResource.DinosaurScales )
 				return CraftResourceType.Scales;
 
-			if (	resource == CraftResource.RegularWood || 
-					resource == CraftResource.AshTree || 
-					resource == CraftResource.CherryTree || 
-					resource == CraftResource.EbonyTree || 
-					resource == CraftResource.GoldenOakTree || 
-					resource == CraftResource.HickoryTree || 
-					resource == CraftResource.MahoganyTree || 
-					resource == CraftResource.OakTree || 
-					resource == CraftResource.PineTree || 
-					resource == CraftResource.GhostTree || 
-					resource == CraftResource.RosewoodTree || 
-					resource == CraftResource.WalnutTree || 
-					resource == CraftResource.DriftwoodTree || 
-					resource == CraftResource.ElvenTree || 
+			if (	resource == CraftResource.RegularWood ||
+					resource == CraftResource.AshTree ||
+					resource == CraftResource.CherryTree ||
+					resource == CraftResource.EbonyTree ||
+					resource == CraftResource.GoldenOakTree ||
+					resource == CraftResource.HickoryTree ||
+					resource == CraftResource.MahoganyTree ||
+					resource == CraftResource.OakTree ||
+					resource == CraftResource.PineTree ||
+					resource == CraftResource.GhostTree ||
+					resource == CraftResource.RosewoodTree ||
+					resource == CraftResource.WalnutTree ||
+					resource == CraftResource.DriftwoodTree ||
+					resource == CraftResource.ElvenTree ||
 					resource == CraftResource.PetrifiedTree )
 				return CraftResourceType.Wood;
 
@@ -1442,18 +1442,18 @@ namespace Server.Items
 		/// </summary>
 		public static CraftResource GetFromOreInfo( OreInfo info, ArmorMaterialType material )
 		{
-			if ( material == ArmorMaterialType.Studded || 
-					material == ArmorMaterialType.Leather || 
-					material == ArmorMaterialType.Spined || 
-					material == ArmorMaterialType.Necrotic || 
-					material == ArmorMaterialType.Volcanic || 
-					material == ArmorMaterialType.Frozen || 
-					material == ArmorMaterialType.Goliath || 
-					material == ArmorMaterialType.Draconic || 
-					material == ArmorMaterialType.Hellish || 
-					material == ArmorMaterialType.Horned || 
-					material == ArmorMaterialType.Barbed || 
-					material == ArmorMaterialType.Dinosaur || 
+			if ( material == ArmorMaterialType.Studded ||
+					material == ArmorMaterialType.Leather ||
+					material == ArmorMaterialType.Spined ||
+					material == ArmorMaterialType.Necrotic ||
+					material == ArmorMaterialType.Volcanic ||
+					material == ArmorMaterialType.Frozen ||
+					material == ArmorMaterialType.Goliath ||
+					material == ArmorMaterialType.Draconic ||
+					material == ArmorMaterialType.Hellish ||
+					material == ArmorMaterialType.Horned ||
+					material == ArmorMaterialType.Barbed ||
+					material == ArmorMaterialType.Dinosaur ||
 					material == ArmorMaterialType.Alien )
 			{
 				if ( info.Level == 0 )

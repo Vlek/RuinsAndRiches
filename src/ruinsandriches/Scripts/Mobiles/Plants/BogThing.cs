@@ -158,7 +158,7 @@ namespace Server.Mobiles
 		public void EatBoglings()
 		{
 			ArrayList toEat = new ArrayList();
-  
+
 			foreach ( Mobile m in this.GetMobilesInRange( 2 ) )
 			{
 				if ( m is Bogling )

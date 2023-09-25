@@ -10,7 +10,7 @@ namespace Server.Items
 	public class ShipwreckedItem : Item, IDyable, IShipwreckedItem
 	{
 		public string ShipName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Ship_Name { get { return ShipName; } set { ShipName = value; InvalidateProperties(); } }
 

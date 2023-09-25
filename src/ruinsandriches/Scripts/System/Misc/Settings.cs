@@ -80,7 +80,7 @@ namespace Server.Misc
 		private static double S_HomeDecay = 365.0;
 		private static bool S_HousesDecay = false;
 		private static int S_HousesPerAccount = 5;
-		private static bool S_EnableDungeonSoundEffects = true;	
+		private static bool S_EnableDungeonSoundEffects = true;
 		private static int S_SellChance = 50;
 		private static int S_SellCommonChance = 80;
 		private static int S_SellRareChance = 25;
@@ -421,7 +421,7 @@ namespace Server.Misc
 		public static double DamageToPets()
 		{
 			// IF YOU THINK TAMER PETS SOMEHOW RUIN YOUR GAME, YOU CAN INCREASE THIS VALUE
-			// AS IT WILL INCREASE A CREATURES DAMAGE TOWARD SUCH PETS AND IT ONLY ALTERS MELEE DAMAGE 
+			// AS IT WILL INCREASE A CREATURES DAMAGE TOWARD SUCH PETS AND IT ONLY ALTERS MELEE DAMAGE
 
 			if ( S_DamageToPets < 1 ){ S_DamageToPets = 1.0; }
 
@@ -488,7 +488,7 @@ namespace Server.Misc
 		public static int WyrmBody()
 		{
 			if ( S_WyrmBody != 723 && S_WyrmBody != 12 && S_WyrmBody != 59 ){ S_WyrmBody = 723; }
- 
+
 			return S_WyrmBody; // THIS IS WHAT WYRMS LOOK LIKE IN THE GAME...IF YOU WANT A DIFFERENT APPEARANCE THEN CHANGE THIS VALUE
 		}
 
@@ -545,7 +545,7 @@ namespace Server.Misc
 
 		public static bool EnableDungeonSoundEffects() // DO THE DUNGEONS HAVE RANDOM SOUND EFFECTS?
 		{
-			return S_EnableDungeonSoundEffects;	
+			return S_EnableDungeonSoundEffects;
 		}
 
 		// ******************************************************************************************************************************************

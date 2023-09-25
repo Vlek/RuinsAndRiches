@@ -285,7 +285,7 @@ namespace Server.Network
 			for ( int i = list.Count - 1; i >= 0; --i )
 			{
 				BuyItemState bis = (BuyItemState)list[i];
-		
+
 				m_Stream.Write( (int)bis.MySerial );
 				m_Stream.Write( (ushort)bis.ItemID );
 				m_Stream.Write( (byte)0 );//itemid offset
@@ -313,7 +313,7 @@ namespace Server.Network
 			for ( int i = list.Count - 1; i >= 0; --i )
 			{
 				BuyItemState bis = (BuyItemState)list[i];
-		
+
 				m_Stream.Write( (int)bis.MySerial );
 				m_Stream.Write( (ushort)bis.ItemID );
 				m_Stream.Write( (byte)0 );//itemid offset
@@ -557,7 +557,7 @@ namespace Server.Network
 
 				m_Stream.Write( (int) -3 );
 
-				if ( name == null ) 
+				if ( name == null )
 					m_Stream.Write( (ushort) 0 );
 				else
 				{
@@ -819,7 +819,7 @@ namespace Server.Network
 
 			string question = menu.Question;
 
-			if ( question == null ) 
+			if ( question == null )
 				m_Stream.Write( (byte) 0 );
 			else
 			{
@@ -840,7 +840,7 @@ namespace Server.Network
 
 				string answer = answers[i];
 
-				if ( answer == null ) 
+				if ( answer == null )
 					m_Stream.Write( (byte) 0 );
 				else
 				{
@@ -1124,7 +1124,7 @@ namespace Server.Network
 
 				itemID &= 0x3FFF;
 
-				m_Stream.Write( (short) itemID ); 
+				m_Stream.Write( (short) itemID );
 
 				m_Stream.Write( (byte) 0 );
 			/*} else if (  ) {
@@ -1132,7 +1132,7 @@ namespace Server.Network
 
 				m_Stream.Write( (int) item.Serial );
 
-				m_Stream.Write( (short) itemID ); 
+				m_Stream.Write( (short) itemID );
 
 				m_Stream.Write( (byte) item.Direction );*/
 			} else {
@@ -1142,7 +1142,7 @@ namespace Server.Network
 
 				itemID &= 0x7FFF;
 
-				m_Stream.Write( (short) itemID ); 
+				m_Stream.Write( (short) itemID );
 
 				m_Stream.Write( (byte) 0 );
 			}
@@ -1179,7 +1179,7 @@ namespace Server.Network
 
 				itemID &= 0x3FFF;
 
-				m_Stream.Write( (ushort) itemID ); 
+				m_Stream.Write( (ushort) itemID );
 
 				m_Stream.Write( (byte) 0 );
 			/*} else if (  ) {
@@ -1187,7 +1187,7 @@ namespace Server.Network
 
 				m_Stream.Write( (int) item.Serial );
 
-				m_Stream.Write( (ushort) itemID ); 
+				m_Stream.Write( (ushort) itemID );
 
 				m_Stream.Write( (byte) item.Direction );*/
 			} else {
@@ -1197,7 +1197,7 @@ namespace Server.Network
 
 				itemID &= 0xFFFF;
 
-				m_Stream.Write( (ushort) itemID ); 
+				m_Stream.Write( (ushort) itemID );
 
 				m_Stream.Write( (byte) 0 );
 			}
@@ -3094,7 +3094,7 @@ namespace Server.Network
 
 			m_Stream.Write( (int)   m.Serial );
 			m_Stream.Write( (short) 1 );
-			
+
 			m_Stream.Write( (short) 1 );
 
 			Poison p = m.Poison;
@@ -4288,7 +4288,7 @@ namespace Server.Network
 					m_CompiledBuffer, 0, length,
 					ref length
 				);
-			
+
 				if ( m_CompiledBuffer == null )
 				{
 					Console.WriteLine( "Warning: Compression buffer overflowed on packet 0x{0:X2} ('{1}') (length={2})", m_PacketID, GetType().Name, length );

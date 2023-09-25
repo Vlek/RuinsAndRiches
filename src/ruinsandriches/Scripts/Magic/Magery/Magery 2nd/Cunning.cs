@@ -56,7 +56,7 @@ namespace Server.Spells.Second
 			public InternalTarget( CunningSpell owner ) : base( Core.ML ? 10 : 12, false, TargetFlags.Beneficial )
 			{
 				m_Owner = owner;
-			} 
+			}
 
 			protected override void OnTarget( Mobile from, object o )
 			{

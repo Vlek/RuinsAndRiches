@@ -429,9 +429,9 @@ namespace Server
 			//Console.Write( "Scripts: Verifying..." );
 
 			Stopwatch watch = Stopwatch.StartNew();
-			
+
 			Core.VerifySerialization();
-			
+
 			watch.Stop();
 
 			//Console.WriteLine("done ({0} items, {1} mobiles) ({2:F2} seconds)", Core.ScriptItems, Core.ScriptMobiles, watch.Elapsed.TotalSeconds);

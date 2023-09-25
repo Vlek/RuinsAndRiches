@@ -28,7 +28,7 @@ namespace Server.Items
 			public Mobile Eater { get { return m_Eater; } }
 			public int Eaten { get { return m_Eaten; } set { m_Eaten = value; } }
 
-			public CandyCaneTimer( Mobile eater ) 
+			public CandyCaneTimer( Mobile eater )
 				: base( TimeSpan.FromSeconds( 30 ), TimeSpan.FromSeconds( 30 ) )
 			{
 				m_Eater = eater;
@@ -76,7 +76,7 @@ namespace Server.Items
 		{
 			if( IsChildOf( from.Backpack ) || from.InRange(this, 1) )
 			{
-				from.PlaySound( 0x3a + Utility.Random(3) ); 
+				from.PlaySound( 0x3a + Utility.Random(3) );
 				from.Animate( 34, 5, 1, true, false, 0 );
 
 				if ( !ToothAches.ContainsKey( from ) )
@@ -110,15 +110,15 @@ namespace Server.Items
 
 	public class GingerBreadCookie : Food
 	{
-		private readonly int[] m_Messages = 
-		{ 
-			0, 
+		private readonly int[] m_Messages =
+		{
+			0,
 			1077396, // Noooo!
 			1077397, // Please don't eat me... *whimper*
 			1077405, // etc etc etc ..
-			1077406, 
-			1077407, 
-			1077408, 
+			1077406,
+			1077407,
+			1077408,
 			1077409
 		};
 
@@ -163,4 +163,3 @@ namespace Server.Items
 		}
 	}
 }
-

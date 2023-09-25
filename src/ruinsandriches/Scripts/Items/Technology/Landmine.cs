@@ -23,7 +23,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This mine needs to be in your pack to setup." );
 				return;
@@ -44,7 +44,7 @@ namespace Server.Items
 				}
 				else if ( !from.Region.AllowHarmful( from, from ) )
 				{
-					from.SendMessage( "That doesn't feel like a good idea." ); 
+					from.SendMessage( "That doesn't feel like a good idea." );
 					return;
 				}
 				else
@@ -53,11 +53,11 @@ namespace Server.Items
 
 					from.PlaySound( 0x42 );
 
-					Landmine mine = new Landmine( from, Power ); 
-					mine.Map = from.Map; 
+					Landmine mine = new Landmine( from, Power );
+					mine.Map = from.Map;
 					mine.Location = from.Location;
 					this.Delete();
-					from.SendMessage( "You place the landmine at your feet." ); 
+					from.SendMessage( "You place the landmine at your feet." );
 				}
 			}
 		}
@@ -118,9 +118,9 @@ namespace Server.Items
 				int StrMin = (int)(power/2);
 
 				if (
-				( m is PlayerMobile && m.Blessed == false && m.Alive && m.AccessLevel == AccessLevel.Player && Server.Misc.SeeIfGemInBag.GemInPocket( m ) == false && Server.Misc.SeeIfJewelInBag.JewelInPocket( m ) == false ) 
-				|| 
-				( m is BaseCreature && m.Blessed == false && !(m is PlayerMobile ) ) 
+				( m is PlayerMobile && m.Blessed == false && m.Alive && m.AccessLevel == AccessLevel.Player && Server.Misc.SeeIfGemInBag.GemInPocket( m ) == false && Server.Misc.SeeIfJewelInBag.JewelInPocket( m ) == false )
+				||
+				( m is BaseCreature && m.Blessed == false && !(m is PlayerMobile ) )
 				)
 				{
 					int itHurts = (int)( (Utility.RandomMinMax(StrMin,StrMax) * ( 100 - m.PhysicalResistance ) ) / 100 ) + 10;

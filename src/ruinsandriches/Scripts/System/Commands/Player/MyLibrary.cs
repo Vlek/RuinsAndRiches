@@ -15,7 +15,7 @@ using Server.Misc;
 using Server.Items;
 using System.Globalization;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class MyLibrary : Gump
     {

@@ -42,7 +42,7 @@ namespace Server.Misc
 				nLine++;
 			}
 
-			((PlayerMobile)m).CharacterLoot = newSettings; 
+			((PlayerMobile)m).CharacterLoot = newSettings;
 		}
 
 		public static void InitializeLootChoice( Mobile m )
@@ -52,7 +52,7 @@ namespace Server.Misc
 	}
 }
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class LootChoices : Gump
     {
@@ -160,7 +160,7 @@ namespace Server.Gumps
 
 			AddHtml( 15, 44, 394, 210, @"<BODY><BASEFONT Color=" + color + ">Check the categories of items to automatically take from common dungeon chests or corpses and put them in your backpack. Magery and necromancer reagents are those used specifically by those characters, where witches brew reagents fall into the necromancer category. Alchemic reagents are unique to alchemy only. Herbalist reagents are plants that one may find, used in druidic herbalism.</BASEFONT></BODY>", (bool)false, (bool)false);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;

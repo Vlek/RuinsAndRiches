@@ -10,7 +10,7 @@ using Server.Commands.Generic;
 using Server.Prompts;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SkillTitleGump : Gump
     {
@@ -43,7 +43,7 @@ namespace Server.Gumps
 				GetLine( line, skillTitle, statCap );
 			}
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;

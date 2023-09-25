@@ -39,7 +39,7 @@ namespace Server.Guilds
 
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
-			
+
 			PlayerMobile pm = sender.Mobile as PlayerMobile;
 
 			if( !IsMember( pm, guild ) )
@@ -52,7 +52,7 @@ namespace Server.Guilds
 				case 1:
 				{
 					AllianceInfo alliance = guild.Alliance;
-					AllianceInfo otherAlliance = m_Other.Alliance;	
+					AllianceInfo otherAlliance = m_Other.Alliance;
 
 					if( !playerRank.GetFlag( RankFlags.ControlWarStatus ) )
 					{

@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Misc;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -103,7 +103,7 @@ namespace Server.Mobiles
 
 			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				mouse.PlaySound( 0x0CD );
 

@@ -6,7 +6,7 @@ namespace Server.Items
 	public class DDRelicVase : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -17,7 +17,7 @@ namespace Server.Items
 			RelicGoldValue = Server.Misc.RelicItems.RelicValue();
 			Hue = Utility.RandomColor(0);
 
-			switch ( Utility.RandomMinMax( 0, 8 ) ) 
+			switch ( Utility.RandomMinMax( 0, 8 ) )
 			{
 				case 0: ItemID = 0x44F1; break;
 				case 1: ItemID = 0xB46; break;

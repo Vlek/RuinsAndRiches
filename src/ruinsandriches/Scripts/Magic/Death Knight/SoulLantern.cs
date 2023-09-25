@@ -32,7 +32,7 @@ namespace Server.Items
 
 			string sPower = string.Format("{0:n0}", TrappedSouls);
             if ( owner != null ){ list.Add( 1070722, "Souls For " + owner.Name + ": " + sPower + ""); }
-        } 
+        }
 
 		public override void OnDoubleClick( Mobile from )
 		{

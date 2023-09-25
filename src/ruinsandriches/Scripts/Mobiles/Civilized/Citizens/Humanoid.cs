@@ -121,8 +121,8 @@ namespace Server.Mobiles
 							case 5: m.Body = 322; m.Name = "an ice elemental"; m.BaseSoundID = 268; break;
 							case 6: m.Body = 698; m.Name = "a lava elemental"; m.BaseSoundID = 268; break;
 							case 7: m.Body = 13; m.Name = "an air elemental"; m.BaseSoundID = 655; break;
-							case 8: 
-								m.Body = Utility.RandomList(142, 14); m.Name = "an earth elemental"; m.BaseSoundID = 268; 
+							case 8:
+								m.Body = Utility.RandomList(142, 14); m.Name = "an earth elemental"; m.BaseSoundID = 268;
 								switch ( Utility.RandomMinMax( 0, 9 ) )
 								{
 									case 1: m.Name = "a bronze elemental"; m.Hue = MaterialInfo.GetMaterialColor( "bronze", "monster", 0 ); break;
@@ -140,7 +140,7 @@ namespace Server.Mobiles
 							case 10: m.Body = Utility.RandomList(707, 16); m.Name = "a water elemental"; m.BaseSoundID = 278; break;
 							case 11: m.Body = 16; m.Name = "a blood elemental"; m.BaseSoundID = 278; m.Hue = Utility.RandomList( 0xB1E, 0xABD, 0xAB4, 0x9A2, 0x8B3, 0x7CA ); break;
 							case 12: m.Body = 16; m.Name = "an acid elemental"; m.BaseSoundID = 278; m.Hue = 60; break;
-							case 13: 
+							case 13:
 								m.Body = 322; m.Name = "a caddellite elemental"; m.BaseSoundID = 268; m.Hue = 0x5B6;
 								switch ( Utility.RandomMinMax( 0, 15 ) )
 								{
@@ -173,7 +173,7 @@ namespace Server.Mobiles
 							case 1: m.Body = Utility.RandomList(212, 213, 34, 177, 190, 179); m.Name = "a bear"; m.BaseSoundID = 0xA3; break;
 							case 2: m.Body = Utility.RandomList(178, 291); m.Name = "a pack horse"; m.BaseSoundID = 0xA8; break;
 							case 3: m.Body = 21; m.Name = "a serpent"; m.Hue = Utility.RandomMonsterHue(); m.BaseSoundID = 219;break;
-							case 4: 
+							case 4:
 								switch ( Utility.RandomMinMax( 1, 3 ) )
 								{
 									case 1: m.Body = 277; m.Name = "a black wolf"; m.Hue = 0xB3A; m.BaseSoundID = 0xE5; break;
@@ -181,7 +181,7 @@ namespace Server.Mobiles
 									case 3: m.Body = 277; m.Name = "a white wolf"; m.Hue = 0x9C3; m.BaseSoundID = 0xE5; break;
 								}
 							break;
-							case 5: 
+							case 5:
 								switch ( Utility.RandomMinMax( 1, 7 ) )
 								{
 									case 1: m.Body = 118; m.Name = "a crag cat"; m.BaseSoundID = 0x462; break;
@@ -193,21 +193,21 @@ namespace Server.Mobiles
 									case 7: m.Body = 340; m.Name = "a tiger"; m.BaseSoundID = 0x3EE; m.Hue = 0x9C2; break;
 								}
 							break;
-							case 6: 
+							case 6:
 								switch ( Utility.RandomMinMax( 1, 2 ) )
 								{
 									case 1: m.Body = Utility.RandomList( 0x1D, 161 ); m.Name = "a gorilla"; m.BaseSoundID = 0x9E; break;
 									case 2: m.Body = 332; m.Name = "an ape"; m.BaseSoundID = 0x3EE; m.Hue = 0x902; break;
 								}
 							break;
-							case 7: 
+							case 7:
 								switch ( Utility.RandomMinMax( 1, 2 ) )
 								{
 									case 1: m.Body = 81; m.Name = "a frog"; m.BaseSoundID = 0x266; m.Hue = Utility.RandomList( 0x7D7, 0x7D8, 0x7D9, 0x7DA, 0x7DB, 0x7DC ); break;
 									case 2: m.Body = 80; m.Name = "a toad"; m.BaseSoundID = 0x26B; m.Hue = Utility.RandomList( 0, 0xB79, 0xB19, 0xB0D, 0xACE, 0xACF, 0xAB0 ); break;
 								}
 							break;
-							case 8: 
+							case 8:
 								switch ( Utility.RandomMinMax( 1, 4 ) )
 								{
 									case 1: m.Body = 243; m.Name = "a phoenix"; m.BaseSoundID = 0x8F; m.Hue = 0xB73; break;
@@ -216,7 +216,7 @@ namespace Server.Mobiles
 									case 4: m.Body = 243; m.Name = "a raven"; m.BaseSoundID = 0x2EE; m.Hue = 0x497; break;
 								}
 							break;
-							case 9: 
+							case 9:
 								switch ( Utility.RandomMinMax( 1, 7 ) )
 								{
 									case 1: m.Body = 672; m.Name = "a pegasus"; m.BaseSoundID = 0xA8; m.Hue = 2500; break;
@@ -229,7 +229,7 @@ namespace Server.Mobiles
 								}
 							break;
 							case 10: m.Body = Utility.RandomList( 116, 117, 219 ); m.Name = "a raptor"; m.BaseSoundID = 0x5A; break;
-							case 11: 
+							case 11:
 								int roll = Utility.RandomMinMax( 1, 6 );
 									if ( spawned ){ roll = 5; }
 								switch ( roll )
@@ -286,7 +286,7 @@ namespace Server.Mobiles
 						case 36: m.Body = 650; m.Name = NameList.RandomName( "greek" ); m.BaseSoundID = 0x54E; break; // minotaur
 						case 37: m.Body = 107; m.Name = NameList.RandomName( "greek" ); m.BaseSoundID = 0x54E; break; // minotaur
 						case 38: m.Body = 281; m.Name = NameList.RandomName( "greek" ); m.BaseSoundID = 0x54E; break; // minotaur
-						case 39: 
+						case 39:
 							switch ( Utility.RandomMinMax( 1, 2 ) )
 							{
 								case 1: m.Body = 356; m.Name = NameList.RandomName( "pixie" ); m.BaseSoundID = 0x467; break;

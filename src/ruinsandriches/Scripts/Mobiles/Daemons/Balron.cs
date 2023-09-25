@@ -171,7 +171,7 @@ namespace Server.Mobiles
 				else if ( Server.Misc.Worlds.IsFireDungeon( this.Location, this.Map ) ){			category = "fire"; }
 				else if ( Server.Misc.Worlds.IsIceDungeon( this.Location, this.Map ) ){				category = "snow"; }
 				else if ( Server.Misc.Worlds.IsSeaDungeon( this.Location, this.Map ) ){				category = "sea"; }
-				else if ( Server.Misc.Worlds.TestTile ( this.Map, this.X, this.Y, "dirt" ) 
+				else if ( Server.Misc.Worlds.TestTile ( this.Map, this.X, this.Y, "dirt" )
 						&& Server.Misc.Worlds.TestMountain ( this.Map, this.X, this.Y, 15 ) ){		category = "mountain"; }
 				else if ( Server.Misc.Worlds.TestMountain ( this.Map, this.X, this.Y, 10 ) ){ 		category = "mountain"; }
 				else if ( Server.Misc.Worlds.TestOcean ( this.Map, this.X, this.Y, 15 ) ){ 			category = "sea"; }
@@ -394,31 +394,31 @@ namespace Server.Mobiles
 					return ( FoodType.Moon );
 
 				else if ( rFood == "fire_meat" )
-					return FoodType.Fire | FoodType.Meat; 
+					return FoodType.Fire | FoodType.Meat;
 
 				else if ( rFood == "fish_sea" )
-					return FoodType.Fish | FoodType.Sea; 
+					return FoodType.Fish | FoodType.Sea;
 
 				else if ( rFood == "gems_fire" )
-					return FoodType.Gems | FoodType.Fire; 
+					return FoodType.Gems | FoodType.Fire;
 
 				else if ( rFood == "gems_gold" )
-					return FoodType.Gems | FoodType.Gold; 
+					return FoodType.Gems | FoodType.Gold;
 
 				else if ( rFood == "gems_meat" )
-					return FoodType.Gems | FoodType.Meat; 
+					return FoodType.Gems | FoodType.Meat;
 
 				else if ( rFood == "gems_moon" )
-					return FoodType.Gems | FoodType.Moon; 
+					return FoodType.Gems | FoodType.Moon;
 
 				else if ( rFood == "meat_nox" )
-					return FoodType.Meat | FoodType.Nox; 
+					return FoodType.Meat | FoodType.Nox;
 
 				else if ( rFood == "moon_fire" )
-					return FoodType.Moon | FoodType.Fire; 
+					return FoodType.Moon | FoodType.Fire;
 
 				else if ( rFood == "nox_fire" )
-					return FoodType.Nox | FoodType.Fire; 
+					return FoodType.Nox | FoodType.Fire;
 
 				return ( FoodType.Meat );
 			}
@@ -473,7 +473,7 @@ namespace Server.Mobiles
 				else if ( terrain == "snow" ){ daemon = Utility.RandomMinMax( 131, 138 ); }
 				else if ( terrain == "sea" )
 				{
-					daemon = Utility.RandomMinMax( 120, 130 ); 
+					daemon = Utility.RandomMinMax( 120, 130 );
 					if ( Utility.RandomMinMax( 1, 20 ) == 1 ){ daemon = 16; }
 				}
 				else if ( terrain == "radiation" ){ daemon = Utility.RandomList( 5, 6, 7, 54, 97, 104, 106, 146 ); }
@@ -932,33 +932,33 @@ namespace Server.Mobiles
 
 namespace Server.Items
 {
-	public class DemonGate : Item 
-	{ 
-		[Constructable] 
-		public DemonGate() : base( 0x3D5E ) 
-		{ 
-			Name = "demon gate"; 
-			Movable = false; 
+	public class DemonGate : Item
+	{
+		[Constructable]
+		public DemonGate() : base( 0x3D5E )
+		{
+			Name = "demon gate";
+			Movable = false;
 			Light = LightType.Circle300;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
 			thisTimer.Start();
 		}
-  
-		public DemonGate( Serial serial ) : base( serial ) 
-		{ 
-		} 
 
-		public override void Serialize(GenericWriter writer) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public DemonGate( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-			this.Delete(); // none when the world starts 
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+			this.Delete(); // none when the world starts
 		}
 
 		public static void MakeDemonGate( Mobile m )
@@ -1003,20 +1003,20 @@ namespace Server.Items
 			door.MoveToWorld (new Point3D(m.X, m.Y, z), m.Map);
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromSeconds( 20.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromSeconds( 20.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
-					if (( i_item != null ) && ( !i_item.Deleted )) 
-						i_item.Delete(); 
-			} 
-		} 
+			protected override void OnTick()
+			{
+					if (( i_item != null ) && ( !i_item.Deleted ))
+						i_item.Delete();
+			}
+		}
 	}
 }

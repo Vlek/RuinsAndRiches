@@ -1,19 +1,19 @@
 using System;
 using Server;
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
 using Server.Network;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a corpse" )] 
-	public class DeadKnight : BaseCreature 
+	[CorpseName( "a corpse" )]
+	public class DeadKnight : BaseCreature
 	{
-		[Constructable] 
-		public DeadKnight() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public DeadKnight() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			switch ( Utility.Random( 3 ) )
 			{
@@ -22,14 +22,14 @@ namespace Server.Mobiles
 				case 2: Hue = 0xB97;	BaseSoundID = 471;										break;	// ZOMBIE
 			}
 
-			if ( this.Female = Utility.RandomBool() ) 
+			if ( this.Female = Utility.RandomBool() )
 			{
-				this.Body = 0x191; 
-				this.Name = NameList.RandomName( "female" ); 
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
+				this.Body = 0x191;
+				this.Name = NameList.RandomName( "female" );
+			}
+			else
+			{
+				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 			}
 
@@ -105,20 +105,20 @@ namespace Server.Mobiles
 			return base.OnBeforeDeath();
 		}
 
-		public DeadKnight( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public DeadKnight( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }

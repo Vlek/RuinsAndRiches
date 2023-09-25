@@ -26,7 +26,7 @@ namespace Server.Items
 
 		[CommandProperty(AccessLevel.Owner)]
 		public string Statue_Name { get { return StatueName; } set { StatueName = value; InvalidateProperties(); } }
- 
+
 		public override BaseAddonDeed Deed
 		{
 			get
@@ -465,7 +465,7 @@ namespace Server.Items
 			if ( IsOdd( StatueID ) ){ statue.Name = (statue.Name).Replace("(south)", "(east)"); }
 			else { statue.Name = (statue.Name).Replace("(east)", "(south)"); }
 
-			statue.InvalidateProperties(); 
+			statue.InvalidateProperties();
 		}
 
 		public static string BuiltName( string statue )

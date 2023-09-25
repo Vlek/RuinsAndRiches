@@ -148,7 +148,7 @@ namespace Knives.Chat3
 
             }
             catch(Exception e)
-            { 
+            {
                 Errors.Report(General.Local(266), e);
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.Source);
@@ -199,7 +199,7 @@ namespace Knives.Chat3
                 str = str.Replace("PING", "PONG");
             else
                 str = str.Replace("PONG", "PING");
-            
+
 			SendMessage( str );
 		}
 
@@ -381,7 +381,7 @@ namespace Knives.Chat3
                 }
             }
             catch (Exception e)
-            { 
+            {
                 Errors.Report(General.Local(267), e);
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.Message);

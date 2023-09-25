@@ -26,7 +26,7 @@ namespace Server.Items
             Attributes.Luck = 150;
             ArmorAttributes.SelfRepair = 3;
 			Attributes.NightSight = 1;
-            
+
 		}
 
         public override void AddNameProperties(ObjectPropertyList list)
@@ -59,7 +59,7 @@ namespace Server.Items
 				}
 				else if (this.ItemID != 2597 || this.ItemID != 2594 )
 				{
-					from.SendMessage("There was a problem lighting your lantern. Please contact a staff member");				
+					from.SendMessage("There was a problem lighting your lantern. Please contact a staff member");
 				}
 				else
 				{
@@ -67,7 +67,7 @@ namespace Server.Items
 				}
 			}
 		}
-		
+
         public override void Serialize( GenericWriter writer )
         {
             base.Serialize( writer );

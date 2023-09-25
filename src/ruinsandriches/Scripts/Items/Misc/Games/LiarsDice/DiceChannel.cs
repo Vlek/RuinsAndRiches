@@ -53,13 +53,13 @@ namespace Server.LiarsDice
 		/**
 			Gets the previous roll for use in bluff checking. This is the actual roll of the player
 		*/
-		public int GetPrevRoll(){			
+		public int GetPrevRoll(){
 			return this.prevRoll;
 		}
 		/**
 			Get the "bluffed" dice roll of the player on their previous roll
 		*/
-		public int GetPrevRollOrBluff(){			
+		public int GetPrevRollOrBluff(){
 			return this.prevRollOrBluff;
 		}
 		/**
@@ -91,8 +91,8 @@ namespace Server.LiarsDice
 			//set prev roll
     		this.prevRoll = roll;
     		return roll;
-    	}		
-	}	
+    	}
+	}
 	public class DiceState{
 		private const int DICE_RESET=20;
 		//wager per game
@@ -120,7 +120,7 @@ namespace Server.LiarsDice
 		private  int updatedMobileIdx;
 		private  int prevPlayerIdx;
 		private  int nextPlayerIdx;
-		
+
 		public DiceState(int _goldPerGame,  int _gameBalanceMin, int _gameBalanceMax, int _playerToActSeconds, int _maxNumberOfPlayers){
 			this.goldPerGame = _goldPerGame;
 			this.gameBalanceMin = _gameBalanceMin;
@@ -138,7 +138,7 @@ namespace Server.LiarsDice
 			EventSink.Disconnected += new DisconnectedEventHandler( EventSink_Disconnected );
 			//register crashed handler. -- Not sure this will actually do anything, unless a save takes place before full crash
 			EventSink.Crashed += new CrashedEventHandler( EventSink_ServerCrashed );
-			
+
 		}
 		/**
 		* Give gold back to each player.
@@ -159,7 +159,7 @@ namespace Server.LiarsDice
 			for (int i = 0; i < this.playerCnt; i++){
 				if(m == dicePlayers[i].getMobile() ){
 					RemovePlayer(m,true);
-					SendMessageAllPlayers( "Player " +  m.Name + " has disconnected." );	
+					SendMessageAllPlayers( "Player " +  m.Name + " has disconnected." );
 				}
 			}
 		}
@@ -210,16 +210,16 @@ namespace Server.LiarsDice
 			//add to our main dice players list
 			dicePlayers.Add(mds);
 			//increment player count
-			this.playerCnt +=1;			
+			this.playerCnt +=1;
 			//Wait for 2nd player before starting
 			if(dicePlayers.Count == 1){
-				AddPlayerWaiting(0);	
+				AddPlayerWaiting(0);
 				m.SendMessage( "Must have at least 2 players to play! Waiting.." );
 			}
 			//Don't start with more than 2 ppl, otherwise we get missing gumps
 			else if(dicePlayers.Count == 2){
 				//start game at index 0 of player list
-				updatedMobileIdx = 0; 
+				updatedMobileIdx = 0;
 				prevPlayerIdx = GetNextDicePlayerIdx(updatedMobileIdx);
 				nextPlayerIdx=GetNextDicePlayerIdx(updatedMobileIdx);
 				PlayerTurn(dicePlayers[updatedMobileIdx],DICE_RESET);
@@ -233,8 +233,8 @@ namespace Server.LiarsDice
 		/**
 			Way more complex code than it should actually be.. Removes a player, changes turn, updates bank balance
 		*/
-		public void RemovePlayer(Mobile m, bool exchangeBalance){	
-			int exitMobileIdx = GetCurrentDicePlayerIdx(m); 
+		public void RemovePlayer(Mobile m, bool exchangeBalance){
+			int exitMobileIdx = GetCurrentDicePlayerIdx(m);
 			int prevExitPlayerIdx = GetPrevDicePlayerIdx(exitMobileIdx);
 			//make the next updated mobile idx
 			MobileDiceStstatus mds = dicePlayers[exitMobileIdx] ;
@@ -244,18 +244,18 @@ namespace Server.LiarsDice
 			//only subtract balances, if exchangeBalance is true, and therefore player left the table, and not kicked out by
 			//a too low of balance
 			if(this.playerCnt > 1 && exchangeBalance == true){
-				if(exitMobileIdx == updatedMobileIdx){			
+				if(exitMobileIdx == updatedMobileIdx){
 					//give previous player the balance
 					//give next player a fresh roll
 					mds.SetTableBalance(exitPlayerBal - this.goldPerGame);
-					dicePlayers[prevExitPlayerIdx].SetTableBalance(exitPrevPlayerBal + this.goldPerGame);				
-					SendMessageAllPlayers("Player " + mds.getMobile().Name + " Left on his turn, so " + dicePlayers[prevPlayerIdx].getMobile().Name + " wins "  + this.goldPerGame + " gp. from " + mds.getMobile().Name); 
+					dicePlayers[prevExitPlayerIdx].SetTableBalance(exitPrevPlayerBal + this.goldPerGame);
+					SendMessageAllPlayers("Player " + mds.getMobile().Name + " Left on his turn, so " + dicePlayers[prevPlayerIdx].getMobile().Name + " wins "  + this.goldPerGame + " gp. from " + mds.getMobile().Name);
 				}else if(exitMobileIdx == prevPlayerIdx){
 					//give next player the balance.
 					//give current player a fresh roll
 					mds.SetTableBalance(exitPlayerBal - this.goldPerGame);
-					dicePlayers[updatedMobileIdx].SetTableBalance(exitPrevPlayerBal + this.goldPerGame);				
-					SendMessageAllPlayers("Player " + mds.getMobile().Name + " Left the game before " + dicePlayers[updatedMobileIdx].getMobile().Name + " could make his decision, and so " + dicePlayers[updatedMobileIdx].getMobile().Name + " wins "  + this.goldPerGame + " gp. from " + mds.getMobile().Name ); 
+					dicePlayers[updatedMobileIdx].SetTableBalance(exitPrevPlayerBal + this.goldPerGame);
+					SendMessageAllPlayers("Player " + mds.getMobile().Name + " Left the game before " + dicePlayers[updatedMobileIdx].getMobile().Name + " could make his decision, and so " + dicePlayers[updatedMobileIdx].getMobile().Name + " wins "  + this.goldPerGame + " gp. from " + mds.getMobile().Name );
 				}
 			}
 			//deposite old money
@@ -290,7 +290,7 @@ namespace Server.LiarsDice
 					AddPlayerWaiting(0);
 					return;
 				}
-				PlayerTurn(dicePlayers[updatedMobileIdx], DICE_RESET);				
+				PlayerTurn(dicePlayers[updatedMobileIdx], DICE_RESET);
 				AddPlayerWaiting(updatedMobileIdx);
 				SetTimerAction(dicePlayers[prevPlayerIdx], dicePlayers[updatedMobileIdx]);
 			}else if (this.playerCnt == 1){
@@ -300,9 +300,9 @@ namespace Server.LiarsDice
 				this.playerCnt =0;
 				//unfreeze character, used so they can't enter more than 1 game at time
 				mds.getMobile().Frozen = false;
-			}			
+			}
 		}
-		
+
 		/**
 			Send the bluff decision gump to the next player, and send a callBluff gump to the user
 		*/
@@ -313,25 +313,25 @@ namespace Server.LiarsDice
 			try{
 				currPlayer.getMobile().SendGump(cbg);
 			}catch{
-					SendMessageAllPlayers( "Player " + currPlayer.getMobile().Name + " was disconnected" );		
-					RemovePlayer(currPlayer.getMobile(), true);						
-			}				
+					SendMessageAllPlayers( "Player " + currPlayer.getMobile().Name + " was disconnected" );
+					RemovePlayer(currPlayer.getMobile(), true);
+			}
 			//do timer checking, since timer is a thread, when the callback occurs we just look at the "previous" player
-			SetTimerAction(prevPlayer, currPlayer);			
+			SetTimerAction(prevPlayer, currPlayer);
 		}
 		/**
 			Player turn, with a dice level they must beat
 		*/
-		public void PlayerTurn(MobileDiceStstatus mds, int diceToBeat ){		
+		public void PlayerTurn(MobileDiceStstatus mds, int diceToBeat ){
 			RemoveGumps(mds);
 			//rolls and sets to previous
-			int currRoll = mds.Roll();		
+			int currRoll = mds.Roll();
 			gdg = new GameDiceGump(this,currRoll,diceToBeat);
 			try{
-				mds.getMobile().SendGump(gdg);			
+				mds.getMobile().SendGump(gdg);
 			}catch{
-					SendMessageAllPlayers("Player " + mds.getMobile().Name + " was disconnected" );	
-					RemovePlayer(mds.getMobile(), true);							
+					SendMessageAllPlayers("Player " + mds.getMobile().Name + " was disconnected" );
+					RemovePlayer(mds.getMobile(), true);
 			}
 		}
 		/**
@@ -352,18 +352,18 @@ namespace Server.LiarsDice
 		}
 		/**
 		Basically the game loop, updates current player with decision/parses it
-		
+
 		And then displays a status gump to the user
 		**/
-		public void UpdateGameChannelBluff(Mobile m, int diceRollTypeidx){	
+		public void UpdateGameChannelBluff(Mobile m, int diceRollTypeidx){
 			if(HasEnoughPlayers() == false){
 				RemoveGumps(dicePlayers[0]);
-				AddPlayerWaiting(0);	
+				AddPlayerWaiting(0);
 				SendMessageAllPlayers( "There is no longer 2 players to play! Waiting.." );
 				return;
 			}
 			//initialize class variables.
-			prevPlayerIdx = GetCurrentDicePlayerIdx(m); 
+			prevPlayerIdx = GetCurrentDicePlayerIdx(m);
 			updatedMobileIdx = GetNextDicePlayerIdx(updatedMobileIdx);
 			nextPlayerIdx=GetNextDicePlayerIdx(updatedMobileIdx);
 			//set the roll/bluff to the previous
@@ -378,8 +378,8 @@ namespace Server.LiarsDice
 		public void UpdateGameChannel(Mobile m, int buttonId){
 			if(HasEnoughPlayers() == false){
 				RemoveGumps(dicePlayers[0]);
-				AddPlayerWaiting(0);	
-				SendMessageAllPlayers( "There is no longer 2 players to play! Waiting.." );				
+				AddPlayerWaiting(0);
+				SendMessageAllPlayers( "There is no longer 2 players to play! Waiting.." );
 				return;
 			}
 			//after
@@ -405,13 +405,13 @@ namespace Server.LiarsDice
 						AddPlayerWaiting(updatedMobileIdx);
 						SetTimerAction(dicePlayers[prevPlayerIdx], dicePlayers[updatedMobileIdx]);
 						SendMessageAllPlayers( m.Name + " called out " + dicePlayers[prevPlayerIdx].getMobile().Name + "'s bluff and won " + this.goldPerGame + " gp." );
-					
+
 					}
-				}else{			
+				}else{
 					//if telling truth
 					//subtract/add gold to balance
 					dicePlayers[updatedMobileIdx].SetTableBalance(currPlayerBal - this.goldPerGame);
-					dicePlayers[prevPlayerIdx].SetTableBalance(prevPlayerBal + this.goldPerGame);	
+					dicePlayers[prevPlayerIdx].SetTableBalance(prevPlayerBal + this.goldPerGame);
 					currPlayerBal = dicePlayers[updatedMobileIdx].GetTableBalance();
 					if(currPlayerBal < this.goldPerGame){
 						SendMessageAllPlayers( m.Name + " called out " + dicePlayers[prevPlayerIdx].getMobile().Name + " and was telling the truth!");
@@ -419,15 +419,15 @@ namespace Server.LiarsDice
 						RemovePlayer(dicePlayers[updatedMobileIdx].getMobile(), false);
 					}else{
 						SendMessageAllPlayers( m.Name + " called out " + dicePlayers[prevPlayerIdx].getMobile().Name + " and was telling the truth!");
-						//players then loses loses turn					
+						//players then loses loses turn
 						prevPlayerIdx = updatedMobileIdx;
-						updatedMobileIdx = GetNextDicePlayerIdx(updatedMobileIdx);					
+						updatedMobileIdx = GetNextDicePlayerIdx(updatedMobileIdx);
 						PlayerTurn(dicePlayers[updatedMobileIdx],DICE_RESET);
-						AddPlayerWaiting(updatedMobileIdx);		
+						AddPlayerWaiting(updatedMobileIdx);
 						SetTimerAction(dicePlayers[prevPlayerIdx], dicePlayers[updatedMobileIdx]);
 					}
-				}				
-			}			
+				}
+			}
 		}
 		/**
 			Shows exit gump
@@ -439,15 +439,15 @@ namespace Server.LiarsDice
 				}
 				m.SendGump(edg );
 			}catch{
-					SendMessageAllPlayers( "Player " + m.Name + " was disconnected" );	
-					RemovePlayer(m, true);							
+					SendMessageAllPlayers( "Player " + m.Name + " was disconnected" );
+					RemovePlayer(m, true);
 			}
 		}
 		/**
 			re-add the status dice gump
 		*/
 		public void AddStatusGump(Mobile m){
-			int noExitMobileIdx = GetCurrentDicePlayerIdx(m); 
+			int noExitMobileIdx = GetCurrentDicePlayerIdx(m);
 			PlayerWaiting(dicePlayers[noExitMobileIdx],updatedMobileIdx);
 		}
 		/**
@@ -464,7 +464,7 @@ namespace Server.LiarsDice
 					m.SendGump(ndgg );
 				}catch{
 					SendMessageAllPlayers( "Player " + m.Name + " was disconnected" );
-					RemovePlayer(m, true);								
+					RemovePlayer(m, true);
 				}
 			}else{
 				m.Frozen = false;
@@ -472,7 +472,7 @@ namespace Server.LiarsDice
 			}
 		}
 		/********************************** START OF PRIVATE FUNCTIONS *****************************/
-		
+
 		/**
 			Sends a plyer waiting gump, create gumps with 3 status arrays
 		*/
@@ -485,15 +485,15 @@ namespace Server.LiarsDice
 			int[] playPrevRollIdx = this.GetPlayerPrevRollOrBluff();
 			sdg = new StatusDiceGump(this,playerNames, playerBalances, playPrevRollIdx, currentPlayerIdx);
 			try{
-				bool success = mds.getMobile().SendGump(sdg);	
+				bool success = mds.getMobile().SendGump(sdg);
 				//check to make sure the status gump was actually sent, and use THIS as our dissconnect protection
 				if(success == false){
 					SendMessageAllPlayers( "Player " + mds.getMobile().Name + " was disconnected" );
-					RemovePlayer(mds.getMobile(), true);	
+					RemovePlayer(mds.getMobile(), true);
 				}
 			}catch{
 					SendMessageAllPlayers( "Player " + mds.getMobile().Name + " was disconnected" );
-					RemovePlayer(mds.getMobile(), true);								
+					RemovePlayer(mds.getMobile(), true);
 			}
 		}
 		/**
@@ -504,23 +504,23 @@ namespace Server.LiarsDice
 			currPlayer.SetTimeStamp(DateTime.Now);
 			//setup the "warning" timer
 			Timer timer = Timer.DelayCall( TimeSpan.FromSeconds(this.playerToActSeconds - 5), new TimerCallback( delegate( ) {
-				TimeSpan timeDiff = (DateTime.Now - currPlayer.GetTimeStamp());	
+				TimeSpan timeDiff = (DateTime.Now - currPlayer.GetTimeStamp());
 				//check time in miliseconds
 				if(timeDiff.TotalMilliseconds  > ( (this.playerToActSeconds-5) * 1000)){
 					if(this.playerCnt > 1){
-					SendMessageAllPlayers( currPlayer.getMobile().Name + " has 5 seconds to act before being kicked!" );	
+					SendMessageAllPlayers( currPlayer.getMobile().Name + " has 5 seconds to act before being kicked!" );
 					}
 				}
 			} ) );
 			//setup timer to kick player if applicable
 			Timer timer2 = Timer.DelayCall( TimeSpan.FromSeconds( this.playerToActSeconds), new TimerCallback( delegate( ) {
-				TimeSpan timeDiff = (DateTime.Now - currPlayer.GetTimeStamp());	
+				TimeSpan timeDiff = (DateTime.Now - currPlayer.GetTimeStamp());
 				//check time in miliseconds
 				if(timeDiff.TotalMilliseconds  > (this.playerToActSeconds * 1000)){
 					if(this.playerCnt > 1){
-					SendMessageAllPlayers( currPlayer.getMobile().Name + " ran out of time, and has been kicked from the game." );	
+					SendMessageAllPlayers( currPlayer.getMobile().Name + " ran out of time, and has been kicked from the game." );
 					RemovePlayer(currPlayer.getMobile(), true);
-					
+
 					}
 				}
 			} ) );
@@ -560,7 +560,7 @@ namespace Server.LiarsDice
 		/**
 			Get the prvious dice players index
 		*/
-		private int GetPrevDicePlayerIdx(int currentIdx){		
+		private int GetPrevDicePlayerIdx(int currentIdx){
 			if(currentIdx == 0){
 				return this.playerCnt-1;
 			}else if(currentIdx > 0){
@@ -568,7 +568,7 @@ namespace Server.LiarsDice
 			}else {
 				//error
 				return -1;
-			}		
+			}
 		}
 		/**
 			Checks a dice bluff
@@ -583,7 +583,7 @@ namespace Server.LiarsDice
 			}
 		}
 		/**
-			Sends status message to all players 
+			Sends status message to all players
 		*/
 		private void SendMessageAllPlayers(string text){
 			for (int i = 0; i < this.playerCnt; i++){
@@ -640,8 +640,8 @@ namespace Server.LiarsDice
 					mds.getMobile().CloseGump(typeof(StatusDiceGump));
 				}
 			}catch{
-					SendMessageAllPlayers( "Player " + mds.getMobile().Name + " was disconnected" );	
-					RemovePlayer(mds.getMobile(), true);							
+					SendMessageAllPlayers( "Player " + mds.getMobile().Name + " was disconnected" );
+					RemovePlayer(mds.getMobile(), true);
 			}
 		}
 		/**
@@ -655,7 +655,7 @@ namespace Server.LiarsDice
 				while (mds.getMobile().HasGump(typeof(ExitDiceGump))){
 					mds.getMobile().CloseGump(typeof(ExitDiceGump));
 				}
-			
+
 				while (mds.getMobile().HasGump(typeof(StatusDiceGump))){
 					mds.getMobile().CloseGump(typeof(StatusDiceGump));
 				}
@@ -667,8 +667,8 @@ namespace Server.LiarsDice
 				}
 			}catch{
 					SendMessageAllPlayers( "Player " + mds.getMobile().Name + " was disconnected" );
-					RemovePlayer(mds.getMobile(), true);								
-			}	
-		}		
-	}	
+					RemovePlayer(mds.getMobile(), true);
+			}
+		}
+	}
 }

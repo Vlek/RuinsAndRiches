@@ -5,7 +5,7 @@ using Server.Mobiles;
 using System.Collections.Generic;
 using System.Collections;
 using Server.Misc;
-using Server.Regions; 
+using Server.Regions;
 
 namespace Server.Items
 {

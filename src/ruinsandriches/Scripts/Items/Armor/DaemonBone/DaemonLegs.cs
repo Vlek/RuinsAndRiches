@@ -33,7 +33,7 @@ namespace Server.Items
 			Weight = 3.0;
 			Hue = 0x648;
 
-			ArmorAttributes.SelfRepair = 1;                                  
+			ArmorAttributes.SelfRepair = 1;
 			ArmorAttributes.MageArmor = 1;
 			Attributes.BonusMana = 5;
 			Attributes.BonusInt = 4;
@@ -45,13 +45,13 @@ namespace Server.Items
 		public DaemonLegs( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

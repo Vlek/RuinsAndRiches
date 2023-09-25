@@ -14,7 +14,7 @@ namespace Server.Mobiles
 			return WeaponAbility.CrushingBlow;
 		}
 		[Constructable]
-		public DeathwatchBeetle() : base( AIType.AI_Melee, Core.ML ? FightMode.Aggressor : FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		public DeathwatchBeetle() : base( AIType.AI_Melee, Core.ML ? FightMode.Aggressor : FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Name = "a deathwatch beetle";
 			Body = 242;
@@ -130,7 +130,7 @@ namespace Server.Mobiles
 			m.SendLocalizedMessage( 1070821, this.Name ); // %s spits a poisonous substance at you!
 		}
 
-		public override int Hides{ get{ return 8; } }	
+		public override int Hides{ get{ return 8; } }
 		public DeathwatchBeetle( Serial serial ) : base( serial )
 		{
 		}

@@ -8,7 +8,7 @@ namespace Server.Items
 		public int RelicGoldValue;
 		public int RelicFlipID1;
 		public int RelicFlipID2;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -48,7 +48,7 @@ namespace Server.Items
 				case 17:sLook = "a unique";	break;
 				case 18:sLook = "an unusual";	break;
 			}
-			
+
 			string sDecon = "";
 			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
@@ -57,7 +57,7 @@ namespace Server.Items
 				case 2:	sDecon = ", ornamental";		break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 9 ) ) 
+			switch ( Utility.RandomMinMax( 0, 9 ) )
 			{
 				case 0: ItemID = 0x48B0; RelicFlipID1 = 0x48B0; RelicFlipID2 = 0x48B1; Name = sLook + sDecon + " axe"; break;
 				case 1: ItemID = 0x48B2; RelicFlipID1 = 0x48B2; RelicFlipID2 = 0x48B3; Name = sLook + sDecon + " axe"; break;
@@ -110,10 +110,10 @@ namespace Server.Items
 
 			string OwnerName = Server.Misc.RandomThings.GetRandomOrientalName();
 			string OwnerTitle = Server.LootPackEntry.MagicItemAdj( "end", true, false, item.ItemID );
-			
-			relic.Name = sLook + " of " + OwnerName + " " + OwnerTitle; 
 
-			switch ( Utility.RandomMinMax( 0, 9 ) ) 
+			relic.Name = sLook + " of " + OwnerName + " " + OwnerTitle;
+
+			switch ( Utility.RandomMinMax( 0, 9 ) )
 			{
 				case 0: relic.ItemID = 0x2851; relic.RelicFlipID1 = 0x2851; relic.RelicFlipID2 = 0x2852; break;
 				case 1: relic.ItemID = 0x2853; relic.RelicFlipID1 = 0x2853; relic.RelicFlipID2 = 0x2854; break;

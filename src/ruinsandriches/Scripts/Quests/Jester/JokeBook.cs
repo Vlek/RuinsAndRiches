@@ -21,7 +21,7 @@ namespace Server.Items
 		{
 			if ( from is PlayerMobile )
 			{
-				switch ( Utility.RandomMinMax( 0, 8 ) ) 
+				switch ( Utility.RandomMinMax( 0, 8 ) )
 				{
 					case 0: from.PlaySound( from.Female ? 801 : 1073 );		from.Say( "*laughs*" );	break;
 					case 1: from.PlaySound( from.Female ? 801 : 1073 );		from.Say( "Good one!" );	break;

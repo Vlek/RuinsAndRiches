@@ -10,7 +10,7 @@ using Server.Commands.Generic;
 using Server.Prompts;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SkillListingGump : Gump
     {

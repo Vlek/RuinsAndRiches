@@ -9,12 +9,12 @@ namespace Server.Items
 	public class DDRelicGem : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
 		public string RelicCameFrom;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Relic_CameFrom { get { return RelicCameFrom; } set { RelicCameFrom = value; InvalidateProperties(); } }
 
@@ -23,11 +23,11 @@ namespace Server.Items
 		{
 			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
-				case 0:	Hue = Utility.RandomList( 0x47E, 0x47F, 0x480, 0x481, 0x482, 0xB93, 0xB94, 0xB95, 0xB96, 0xB83, 0x48D, 0x48E, 0x48F, 0x490, 0x491, 0x492, 0x489, 0x495, 0x496, 0x499 );			
+				case 0:	Hue = Utility.RandomList( 0x47E, 0x47F, 0x480, 0x481, 0x482, 0xB93, 0xB94, 0xB95, 0xB96, 0xB83, 0x48D, 0x48E, 0x48F, 0x490, 0x491, 0x492, 0x489, 0x495, 0x496, 0x499 );
 					break;
-				case 1:	Hue = Utility.RandomMinMax( 0x9C5, 0xA54 );			
+				case 1:	Hue = Utility.RandomMinMax( 0x9C5, 0xA54 );
 					break;
-				case 2:	Hue = Utility.RandomMinMax( 0xA5B, 0xA66 );			
+				case 2:	Hue = Utility.RandomMinMax( 0xA5B, 0xA66 );
 					break;
 			}
 

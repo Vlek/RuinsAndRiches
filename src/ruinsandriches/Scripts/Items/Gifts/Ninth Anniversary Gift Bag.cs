@@ -7,7 +7,7 @@ namespace Server.Items
 {
 	public class NinthAnniversaryGiftBag : Container
 	{
-	
+
 	    public override int DefaultGumpID{ get{ return 0x42; } }
 		public override int DefaultDropSound{ get{ return 0x42; } }
 
@@ -15,13 +15,13 @@ namespace Server.Items
 		{
 			get{ return new Rectangle2D( 20, 105, 150, 180 ); }
 		}
-		
+
 		private static void PlaceItemIn( Container parent, int x, int y, Item item )
 		{
 			parent.AddItem( item );
 			item.Location = new Point3D( x, y, 0 );
 		}
-		
+
 		[Constructable]
         public NinthAnniversaryGiftBag(): base(3701)
 		{
@@ -43,7 +43,7 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 ); 
+			writer.Write( (int) 0 );
 		}
 
 		public override void Deserialize( GenericReader reader )

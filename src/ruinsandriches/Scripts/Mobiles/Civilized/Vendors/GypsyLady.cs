@@ -119,17 +119,17 @@ namespace Server.Mobiles
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -140,7 +140,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -215,7 +215,7 @@ namespace Server.Mobiles
 					{
 						string WillSay = "";
 
-						switch ( Utility.RandomMinMax( 0, 3 ) ) 
+						switch ( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 0: WillSay = "The spirits tell me that this parchment is"; break;
 							case 1: WillSay = "My mind is showing me that this parchment is"; break;
@@ -257,7 +257,7 @@ namespace Server.Mobiles
 					{
 						string WillSay = "";
 
-						switch ( Utility.RandomMinMax( 0, 3 ) ) 
+						switch ( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 0: WillSay = "The spirits tell me that this legend "; break;
 							case 1: WillSay = "My mind is showing me that this legend "; break;
@@ -299,7 +299,7 @@ namespace Server.Mobiles
 					{
 						string WillSay = "";
 
-						switch ( Utility.RandomMinMax( 0, 3 ) ) 
+						switch ( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 0: WillSay = "The spirits tell me that this book "; break;
 							case 1: WillSay = "My mind is showing me that this book "; break;
@@ -341,7 +341,7 @@ namespace Server.Mobiles
 					{
 						string WillSay = "";
 
-						switch ( Utility.RandomMinMax( 0, 3 ) ) 
+						switch ( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 0: WillSay = "The spirits tell me that this parchment is"; break;
 							case 1: WillSay = "My mind is showing me that this parchment is"; break;
@@ -381,7 +381,7 @@ namespace Server.Mobiles
 					{
 						string WillSay = "";
 
-						switch ( Utility.RandomMinMax( 0, 3 ) ) 
+						switch ( Utility.RandomMinMax( 0, 3 ) )
 						{
 							case 0: WillSay = "The spirits tell me that this glowing book is"; break;
 							case 1: WillSay = "My mind is showing me that this glowing book is"; break;

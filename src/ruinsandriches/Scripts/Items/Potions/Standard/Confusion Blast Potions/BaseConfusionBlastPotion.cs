@@ -35,7 +35,7 @@ namespace Server.Items
 			}
 			else if ( !from.Region.AllowHarmful( from, from ) )
 			{
-				from.SendMessage( "That doesn't feel like a good idea." ); 
+				from.SendMessage( "That doesn't feel like a good idea." );
 				return;
 			}
 
@@ -123,11 +123,11 @@ namespace Server.Items
 			if ( map.CanFit( p, 12, true, false ) )
 				Effects.SendLocationEffect( p, map, 0x376A, 4, 9 );
 		}
-		
+
 		public void CircleEffect2( object state )
 		{
 			object[] states = (object[]) state;
-				
+
 			Geometry.Circle2D( (Point3D)states[0], (Map)states[1], Radius, new DoEffect_Callback( BlastEffect ), 90, 270 );
 		}
 		#endregion
@@ -171,7 +171,7 @@ namespace Server.Items
 				m_Delay.Remove( m );
 			}
 		}
-		#endregion		
+		#endregion
 
 		private class ThrowTarget : Target
 		{

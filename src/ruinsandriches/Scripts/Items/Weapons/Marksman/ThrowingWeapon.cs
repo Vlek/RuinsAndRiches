@@ -26,7 +26,7 @@ namespace Server.Items
 			Name = "throwing star";
 			if ( ammo == "" || ammo == null )
 			{
-				switch ( Utility.RandomMinMax( 0, 4 ) ) 
+				switch ( Utility.RandomMinMax( 0, 4 ) )
 				{
 					case 0: ammo = "Throwing Axes"; ItemID = 0x10B3; Name = "throwing axe"; break;
 					case 1: ammo = "Throwing Daggers"; ItemID = 0x10B7; Name = "throwing dagger"; break;
@@ -58,7 +58,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to change the ammo type." );
 				return;

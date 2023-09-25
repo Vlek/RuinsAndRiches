@@ -24,7 +24,7 @@ namespace Server.Items
 			Weight = 20.0;
 			m_Level = SecureLevel.Anyone;
 			SetupShelf();
-			QuickTimer thisTimer = new QuickTimer( this ); 
+			QuickTimer thisTimer = new QuickTimer( this );
 			thisTimer.Start();
 		}
 
@@ -36,9 +36,9 @@ namespace Server.Items
 			else { list.Add( 1070722, "Owner: " + ShoppeOwner.Name + "" ); }
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			SetSecureLevelEntry.AddTo( from, this, list );
 			if ( !this.Movable && CheckAccess( from ) )
 			{
@@ -67,7 +67,7 @@ namespace Server.Items
 			return task;
 		}
 
-		public void SetupShelf() 
+		public void SetupShelf()
 		{
 			ShoppeGold = 0;
 			ShoppeTools = 0;
@@ -85,7 +85,7 @@ namespace Server.Items
 			Customer10 = "";
 			Customer11 = "";
 			Customer12 = "";
-		} 
+		}
 
 		public static void GiveNewShoppe( Mobile from, Mobile merchant )
 		{
@@ -121,7 +121,7 @@ namespace Server.Items
 			}
 			else if ( AlreadyHasShoppe( from, shoppe ) )
 			{
-				merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your shoppe." ) ); 
+				merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your shoppe." ) );
 			}
 			else if ( gold >= fee && shoppe != null )
 			{
@@ -133,14 +133,14 @@ namespace Server.Items
 				store.ShoppeName = from.Name;
 				from.AddToBackpack( store );
 				Server.Misc.Customers.CustomerCycle( from, store );
-				
+
 				if ( begging )
-					merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Since you are begging, this shoppe is only " + fee + " gold." ) ); 
+					merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Since you are begging, this shoppe is only " + fee + " gold." ) );
 				else
-					merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your shoppe." ) ); 
+					merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with your shoppe." ) );
 			}
 			else
-				merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Sorry, but you do not have enough gold to start a shoppe." ) ); 
+				merchant.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Sorry, but you do not have enough gold to start a shoppe." ) );
 		}
 
 		public static bool AlreadyHasShoppe( Mobile from, Item shelf )
@@ -173,7 +173,7 @@ namespace Server.Items
 
 					if ( store.ShoppeOwner == from )
 					{
-						HasShoppe = true; 
+						HasShoppe = true;
 
 						from.SendSound( 0x23D );
 
@@ -260,7 +260,7 @@ namespace Server.Items
 		{
 			private Mobile m_Mobile;
 			private BaseShoppe m_Shoppe;
-	
+
 			public CashOutEntry( Mobile from, BaseShoppe shelf ) : base( 6113, 3 )
 			{
 				m_Mobile = from;
@@ -271,7 +271,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( m_Shoppe.ShoppeGold > 0 )
@@ -295,55 +295,55 @@ namespace Server.Items
         }
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			bool procResource = false;
 			bool procTools = false;
 
 			if ( ( dropped.ItemID >= 0x1BE3 && dropped.ItemID <= 0x1BFA ) && this is BlacksmithShoppe ){ procResource = true; }
 			else if ( ( dropped.ItemID >= 0x1BE3 && dropped.ItemID <= 0x1BFA ) && this is TinkerShoppe ){ procResource = true; }
-			else if ( ( dropped is BoltOfCloth || 
-						dropped is Cloth || 
+			else if ( ( dropped is BoltOfCloth ||
+						dropped is Cloth ||
 						dropped is UncutCloth ) && this is TailorShoppe ){ procResource = true; }
 			else if ( Server.Misc.MaterialInfo.IsReagent( dropped ) && Server.Items.WitchPouch.isWitchery( dropped ) && this is MorticianShoppe ){ procResource = true; }
 			else if ( ( dropped is BlankScroll ) && this is LibrarianShoppe ){ procResource = true; }
 			else if ( ( dropped is Dough ) && this is BakerShoppe ){ procResource = true; }
-			else if ( ( dropped is BlankScroll || 
+			else if ( ( dropped is BlankScroll ||
 						dropped is BlankMap ) && this is CartographyShoppe ){ procResource = true; }
-			else if ( ( dropped is BaseLog || 
+			else if ( ( dropped is BaseLog ||
 						dropped is BaseWoodBoard ) && this is CarpentryShoppe ){ procResource = true; }
-			else if ( ( dropped is BaseLog || 
+			else if ( ( dropped is BaseLog ||
 						dropped is BaseWoodBoard ) && this is BowyerShoppe ){ procResource = true; }
 			else if ( Server.Misc.MaterialInfo.IsReagent( dropped ) && Server.Items.DruidPouch.isDruidery( dropped ) && this is HerbalistShoppe ){ procResource = true; }
 			else if ( Server.Misc.MaterialInfo.IsReagent( dropped ) && this is AlchemistShoppe ){ procResource = true; }
 
-			else if ( ( dropped is GodSmithing || 
-						dropped is SledgeHammer || 
-						dropped is SmithHammer || 
-						dropped is Tongs || 
+			else if ( ( dropped is GodSmithing ||
+						dropped is SledgeHammer ||
+						dropped is SmithHammer ||
+						dropped is Tongs ||
 						dropped is AncientSmithyHammer ) && this is BlacksmithShoppe ){ procTools = true; }
 			else if ( dropped is TinkerTools && this is TinkerShoppe ){ procTools = true; }
-			else if ( ( dropped is GodSewing || 
+			else if ( ( dropped is GodSewing ||
 						dropped is SewingKit ) && this is TailorShoppe ){ procTools = true; }
 			else if ( dropped is ScribesPen && this is LibrarianShoppe ){ procTools = true; }
 			else if ( dropped is MapmakersPen && this is CartographyShoppe ){ procTools = true; }
 			else if ( dropped is FletcherTools && this is BowyerShoppe ){ procTools = true; }
 			else if ( dropped is WitchCauldron && this is MorticianShoppe ){ procTools = true; }
 			else if ( dropped is DruidCauldron && this is HerbalistShoppe ){ procTools = true; }
-			else if ( ( dropped is MortarPestle || 
+			else if ( ( dropped is MortarPestle ||
 						dropped is GodBrewing ) && this is AlchemistShoppe ){ procTools = true; }
-			else if ( ( dropped is RollingPin || 
+			else if ( ( dropped is RollingPin ||
 						dropped is Skillet ) && this is BakerShoppe ){ procTools = true; }
-			else if ( ( dropped is DovetailSaw || 
-						dropped is DrawKnife || 
-						dropped is Hammer || 
-						dropped is Froe || 
-						dropped is Inshave || 
-						dropped is WoodworkingTools || 
-						dropped is JointingPlane || 
-						dropped is MouldingPlane || 
-						dropped is Nails || 
-						dropped is Saw || 
-						dropped is Scorp || 
+			else if ( ( dropped is DovetailSaw ||
+						dropped is DrawKnife ||
+						dropped is Hammer ||
+						dropped is Froe ||
+						dropped is Inshave ||
+						dropped is WoodworkingTools ||
+						dropped is JointingPlane ||
+						dropped is MouldingPlane ||
+						dropped is Nails ||
+						dropped is Saw ||
+						dropped is Scorp ||
 						dropped is SmoothingPlane ) && this is CarpentryShoppe ){ procTools = true; }
 
 			if ( Movable )
@@ -408,7 +408,7 @@ namespace Server.Items
 				if ( m_Timer != null )
 					m_Timer.Stop();
 
-				m_Timer = new CustomerTimer( this ); 
+				m_Timer = new CustomerTimer( this );
 				m_Timer.Start();
 			}
 			else
@@ -496,7 +496,7 @@ namespace Server.Items
 			Customer11 = reader.ReadString();
 			Customer12 = reader.ReadString();
 
-			QuickTimer thisTimer = new QuickTimer( this ); 
+			QuickTimer thisTimer = new QuickTimer( this );
 			thisTimer.Start();
 		}
 
@@ -727,7 +727,7 @@ namespace Server.Items
         {
             m_From = from;
             m_Merchant = merchant;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#b7765d";
 
             this.Closable=true;
@@ -839,7 +839,7 @@ namespace Server.Items
 				int guildBonus = 0;
 				if ( ((PlayerMobile)from).NpcGuild == shoppe.ShelfGuild ){ guildBonus = 500 + (int)(Server.Items.BaseShoppe.GetSkillValue( shoppe.ShelfSkill, from ) * 5 ); }
 				AddItem(631+o, 97+i, 10922);
-				AddHtml( 682+o, 100+i, 48, 20, @"<BODY><BASEFONT Color=" + hilit + ">" + guildBonus + "</BASEFONT></BODY>", (bool)false, (bool)false); // GUILD BONUS 
+				AddHtml( 682+o, 100+i, 48, 20, @"<BODY><BASEFONT Color=" + hilit + ">" + guildBonus + "</BASEFONT></BODY>", (bool)false, (bool)false); // GUILD BONUS
 
 				AddItem(808+o, 97+i, 10283);
 				AddHtml( 833+o, 100+i, 48, 20, @"<BODY><BASEFONT Color=" + hilit + ">" + shoppe.ShoppeReputation + "</BASEFONT></BODY>", (bool)false, (bool)false); // TOTAL REPUTATION

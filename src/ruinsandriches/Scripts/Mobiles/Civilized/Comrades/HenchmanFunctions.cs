@@ -22,8 +22,8 @@ namespace Server.Misc
 			if ( from.Region is HouseRegion )
 			    if (((HouseRegion)from.Region).House.IsOwner(from))
 					house = true;
-			
-			if ( from.Region.GetLogoutDelay( from ) == TimeSpan.Zero || house ) 
+
+			if ( from.Region.GetLogoutDelay( from ) == TimeSpan.Zero || house )
 				return true;
 
 			return false;
@@ -158,7 +158,7 @@ namespace Server.Misc
 
 						if ( monster )
 						{
-							switch ( Utility.Random( 2 ) )		   
+							switch ( Utility.Random( 2 ) )
 							{
 								case 0: from.Say("There is not enough reward in this for me."); break;
 								case 1: from.Say("If you hear stories of riches, come and get me."); break;
@@ -166,7 +166,7 @@ namespace Server.Misc
 						}
 						else
 						{
-							switch ( Utility.Random( 5 ) )		   
+							switch ( Utility.Random( 5 ) )
 							{
 								case 0: from.Say("Sorry, but there is not enough reward on this journey for me."); break;
 								case 1: from.Say("I think I will head back to town and get a drink."); break;
@@ -181,7 +181,7 @@ namespace Server.Misc
 					{
 						if ( monster )
 						{
-							switch ( Utility.Random( 2 ) )		   
+							switch ( Utility.Random( 2 ) )
 							{
 								case 0: from.Say("I will leave soon if we don't find treasure."); break;
 								case 1: from.Say("You said there were riches, but I don't see it."); break;
@@ -189,7 +189,7 @@ namespace Server.Misc
 						}
 						else
 						{
-							switch ( Utility.Random( 5 ))		   
+							switch ( Utility.Random( 5 ))
 							{
 								case 0: from.Say("I will have to leave soon if we don't find some treasure."); break;
 								case 1: from.Say("I feel this quest is a dead end and may leave soon."); break;
@@ -252,7 +252,7 @@ namespace Server.Misc
 		{
 			if ( !(from is HenchmanMonster) )
 			{
-				switch ( Utility.Random( 28 ))		   
+				switch ( Utility.Random( 28 ))
 				{
 					case 0: from.Say("Time to die!"); break;
 					case 1: from.Say("I will send you to hell!"); break;
@@ -279,7 +279,7 @@ namespace Server.Misc
         {
 			if ( !(from is HenchmanMonster) )
 			{
-				switch ( Utility.Random( 28 ))		   
+				switch ( Utility.Random( 28 ))
 				{
 					case 0: from.Say("Time to die!"); break;
 					case 1: from.Say("I will send you to hell!"); break;
@@ -308,7 +308,7 @@ namespace Server.Misc
 			{
 				Server.Misc.IntelligentAction.CryOut( from );
 
-				switch ( Utility.Random( 22 ))		   
+				switch ( Utility.Random( 22 ))
 				{
 					case 0: from.Say("Is that all you got?"); break;
 					case 1: from.Say("Tis but a scratch!"); break;
@@ -449,7 +449,7 @@ namespace Server.Misc
 					henchman.Animate( 34, 5, 1, true, false, 0 );
 				dropped.Delete();
 			}
-			else 
+			else
 			{
 				int nAmount = dropped.Amount;
 				int nGold = 0;
@@ -549,7 +549,7 @@ namespace Server.Misc
 						Armor4.LootType = LootType.Blessed;
 							friend.AddItem( Armor4 );
 				}
-				else 
+				else
 				{
 					Item Armor4 = new Robe();
 						Armor4.Hue = henchman.HenchGearColor;
@@ -615,7 +615,7 @@ namespace Server.Misc
 					henchman.Hue = henchman.HenchGearColor;
 					henchman.HenchCloakColor = Utility.RandomList( 0x485, 0x497, 0x4E9 );
 					if ( henchman.HenchHelmID > 0 ){ henchman.HenchHelmID = 0x2FBB; }
-					switch ( Utility.Random( 2 ))		   
+					switch ( Utility.Random( 2 ))
 					{
 						case 0: henchman.HenchShieldID = 0x2FC8; break;
 						case 1: henchman.HenchShieldID = 0x1BC3; break;
@@ -641,7 +641,7 @@ namespace Server.Misc
 							friend.AddItem( Armor1 );
 
 						if ( isOriental == true )
-						{ 
+						{
 							Item Bootsy = new Boots();
 								Bootsy.Hue = 0x967;
 								Bootsy.ItemID = 0x2796;
@@ -677,7 +677,7 @@ namespace Server.Misc
 							Armor4.LootType = LootType.Blessed;
 								friend.AddItem( Armor4 );
 					}
-					else 
+					else
 					{
 						Item Armor4 = new PlateChest(); if ( isOriental == true ){ Armor4.ItemID = 0x277D; }
 							Armor4.Hue = henchman.HenchGearColor;
@@ -846,7 +846,7 @@ namespace Server.Misc
 							Armor4.LootType = LootType.Blessed;
 								friend.AddItem( Armor4 );
 					}
-					else 
+					else
 					{
 						Item Armor4 = new LeatherChest(); if ( isOriental == true ){ Armor4.ItemID = 0x2793; }
 							Armor4.Hue = henchman.HenchGearColor;
@@ -901,7 +901,7 @@ namespace Server.Misc
 							Armor4.LootType = LootType.Blessed;
 								friend.AddItem( Armor4 );
 					}
-					else 
+					else
 					{
 						Item Armor4 = new StuddedChest(); if ( isOriental == true ){ Armor4.ItemID = 0x2793; }
 							Armor4.Hue = henchman.HenchGearColor;

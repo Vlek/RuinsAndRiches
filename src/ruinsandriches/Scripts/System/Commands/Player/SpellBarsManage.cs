@@ -18,7 +18,7 @@ using Server.Spells.Seventh;
 using Server.Spells.Eighth;
 using Server.Spells.Necromancy;
 using Server.Spells.Chivalry;
-using Server.Spells.DeathKnight; 
+using Server.Spells.DeathKnight;
 using Server.Spells.Song;
 using Server.Spells.HolyMan;
 using Server.Spells.Mystic;
@@ -26,7 +26,7 @@ using Server.Spells.Elementalism;
 using Server.Prompts;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsMage1 : Gump
     {
@@ -540,7 +540,7 @@ namespace Server.Gumps
 			AddButton(x2, y2, button64, button64, rp, GumpButtonType.Reply, 0);
 				y1=y1+45;	y2=y2+45;	rp++;
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -628,7 +628,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsMage2 : Gump
     {
@@ -1142,7 +1142,7 @@ namespace Server.Gumps
 			AddButton(x2, y2, button64, button64, rp, GumpButtonType.Reply, 0);
 				y1=y1+45;	y2=y2+45;	rp++;
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -1230,7 +1230,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsMage3 : Gump
     {
@@ -1744,7 +1744,7 @@ namespace Server.Gumps
 			AddButton(x2, y2, button64, button64, rp, GumpButtonType.Reply, 0);
 				y1=y1+45;	y2=y2+45;	rp++;
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -1832,7 +1832,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsMage4 : Gump
     {
@@ -2346,7 +2346,7 @@ namespace Server.Gumps
 			AddButton(x2, y2, button64, button64, rp, GumpButtonType.Reply, 0);
 				y1=y1+45;	y2=y2+45;	rp++;
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -2434,7 +2434,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsElement1 : Gump
     {
@@ -2766,7 +2766,7 @@ namespace Server.Gumps
 			AddButton(x2, y2, button32, button32, rp, GumpButtonType.Reply, 0);
 				y1=y1+90;	y2=y2+90;	rp++;
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -2822,7 +2822,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsElement2 : Gump
     {
@@ -3154,7 +3154,7 @@ namespace Server.Gumps
 			AddButton(x2, y2, button32, button32, rp, GumpButtonType.Reply, 0);
 				y1=y1+90;	y2=y2+90;	rp++;
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -3210,7 +3210,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsNecro1 : Gump
     {
@@ -3433,7 +3433,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 20495);
 			AddButton(x2, y2, button16, button16, 16, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -3474,7 +3474,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsNecro2 : Gump
     {
@@ -3697,7 +3697,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 20495);
 			AddButton(x2, y2, button16, button16, 16, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -3738,7 +3738,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsKnight1 : Gump
     {
@@ -3901,7 +3901,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 20745);
 			AddButton(x2, y2, button10, button10, 10, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -3935,7 +3935,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsKnight2 : Gump
     {
@@ -4098,7 +4098,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 20745);
 			AddButton(x2, y2, button10, button10, 10, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -4132,7 +4132,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsBard1 : Gump
     {
@@ -4349,7 +4349,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 1044);
 			AddButton(x2, y2, button16, button16, 16, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -4389,7 +4389,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsBard2 : Gump
     {
@@ -4606,7 +4606,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 1044);
 			AddButton(x2, y2, button16, button16, 16, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -4646,7 +4646,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsDeath1 : Gump
     {
@@ -4845,7 +4845,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 0x2E, 2405);
 			AddButton(x2, y2, button14, button14, 14, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -4883,7 +4883,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsDeath2 : Gump
     {
@@ -5082,7 +5082,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 0x2E, 2405);
 			AddButton(x2, y2, button14, button14, 14, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -5120,7 +5120,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsPriest1 : Gump
     {
@@ -5319,7 +5319,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 0x972, 1071);
 			AddButton(x2, y2, button14, button14, 14, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -5357,7 +5357,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsPriest2 : Gump
     {
@@ -5556,7 +5556,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 0x972, 1071);
 			AddButton(x2, y2, button14, button14, 14, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -5594,7 +5594,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsMonk1 : Gump
     {
@@ -5757,7 +5757,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 0x19, 2422);
 			AddButton(x2, y2, button10, button10, 10, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -5791,7 +5791,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SetupBarsMonk2 : Gump
     {
@@ -5954,7 +5954,7 @@ namespace Server.Gumps
 			AddImage(x1, y1, 0x19, 2422);
 			AddButton(x2, y2, button10, button10, 10, GumpButtonType.Reply, 0);
         }
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;

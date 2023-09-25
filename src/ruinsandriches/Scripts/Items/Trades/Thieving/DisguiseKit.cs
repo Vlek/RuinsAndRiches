@@ -54,11 +54,11 @@ namespace Server.Items
 				// That must be in your pack for you to use it.
 				from.SendLocalizedMessage( 1042001 );
 			}
-			else if ( 
-				from.Skills[SkillName.Ninjitsu].Base < 50 && 
-				from.Skills[SkillName.Stealth].Base < 50 && 
-				from.Skills[SkillName.Hiding].Base < 50 && 
-				from.Skills[SkillName.Psychology].Base < 50 && 
+			else if (
+				from.Skills[SkillName.Ninjitsu].Base < 50 &&
+				from.Skills[SkillName.Stealth].Base < 50 &&
+				from.Skills[SkillName.Hiding].Base < 50 &&
+				from.Skills[SkillName.Psychology].Base < 50 &&
 				from.Skills[SkillName.Snooping].Base < 50 )
 			{
 				from.SendMessage("You don't seem to have the skills to apply this disguise.");
@@ -225,7 +225,7 @@ namespace Server.Items
 				m_From.SendGump( new DisguiseGump( m_From, m_Kit, hair, true ) );
 
 				DisguiseTimers.RemoveTimer( m_From );
-				
+
 				DisguiseTimers.CreateTimer( m_From, TimeSpan.FromHours( 2.0 ) );
 				DisguiseTimers.StartTimer( m_From );
 				m_From.CloseGump( typeof( DisguiseGump ) );
@@ -277,18 +277,18 @@ namespace Server.Items
 			}
 		}
 	}
-	
+
 	public class DisguiseTimers
 	{
 		public static void Initialize()
 		{
 			new DisguisePersistance();
 		}
-		
+
 		private class InternalTimer : Timer
 		{
 			private Mobile m_Player;
-			
+
 			public InternalTimer( Mobile m, TimeSpan delay ) : base( delay )
 			{
 				m_Player = m;
@@ -301,22 +301,22 @@ namespace Server.Items
 
 				if ( m_Player is PlayerMobile )
 					((PlayerMobile)m_Player).SetHairMods( -1, -1 );
-			
+
 				DisguiseTimers.RemoveTimer( m_Player );
 			}
 		}
-		
+
 		public static void CreateTimer( Mobile m, TimeSpan delay )
 		{
 			if ( m != null )
 				if ( !m_Timers.Contains( m ) )
 					m_Timers[m] = new InternalTimer( m, delay );
 		}
-		
+
 		public static void StartTimer( Mobile m )
 		{
 			Timer t = (Timer)m_Timers[m];
-			
+
 			if ( t != null )
 				t.Start();
 		}
@@ -338,7 +338,7 @@ namespace Server.Items
 
 			return ( t != null );
 		}
-		
+
 		public static bool RemoveTimer( Mobile m )
 		{
 			Timer t = (Timer)m_Timers[m];
@@ -348,10 +348,10 @@ namespace Server.Items
 				t.Stop();
 				m_Timers.Remove( m );
 			}
-			
+
 			return ( t != null );
 		}
-		
+
 		public static TimeSpan TimeRemaining( Mobile m )
 		{
 			Timer t = (Timer)m_Timers[m];
@@ -360,12 +360,12 @@ namespace Server.Items
 			{
 				return t.Next - DateTime.Now;
 			}
-			
+
 			return TimeSpan.Zero;
 		}
-		
+
 		private static Hashtable m_Timers = new Hashtable();
-		
+
 		public static Hashtable Timers
 		{
 			get { return m_Timers; }

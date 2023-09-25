@@ -54,7 +54,7 @@ namespace Server.Misc
 				}
 				else if ( arty == "neptune" ) // ONLY FOR SEA TRAVELERS
 				{
-					switch ( Utility.RandomMinMax( 0, 4 ) ) 
+					switch ( Utility.RandomMinMax( 0, 4 ) )
 					{
 						case 1: artifact = CreateArmorItem( "any" ); break;
 						case 2: artifact = CreateBowItem(); break;
@@ -631,7 +631,7 @@ namespace Server.Misc
 		public static Item CreateWoodenArmor()
 		{
 			Item item = null;
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0:		item = new LeatherArms();		item.ItemID = 0x1410;	item.Name = "arms";			break;
 				case 1:		item = new LeatherChest();		item.ItemID = 0x1415;	item.Name = "tunic";		break;

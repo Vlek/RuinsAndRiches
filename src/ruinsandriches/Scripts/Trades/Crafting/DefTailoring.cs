@@ -115,7 +115,7 @@ namespace Server.Engines.Craft
 					return 1044156; // You create an exceptional quality item and affix your maker's mark.
 				else if ( quality == 2 )
 					return 1044155; // You create an exceptional quality item.
-				else				
+				else
 					return 1044154; // You create the item.
 			}
 		}
@@ -169,7 +169,7 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( WhiteFurCap ), 1011375, "white fur cap", 12.0, 48.0, typeof( FursWhite ), "White Fur", 9, 1042081 );
 			AddCraft( typeof( FlowerGarland ), 1011375, 1028965, 10.0, 35.0, typeof( Cloth ), 1044286, 5, 1044287 );
 			AddCraft( typeof( ClothNinjaHood ), 1011375, 1030202, 80.0, 105.0, typeof( Cloth ), 1044286, 13, 1044287 );
-			AddCraft( typeof( Kasa ), 1011375, 1030211, 60.0, 85.0, typeof( Cloth ), 1044286, 12, 1044287 );	
+			AddCraft( typeof( Kasa ), 1011375, 1030211, 60.0, 85.0, typeof( Cloth ), 1044286, 12, 1044287 );
 			#endregion
 
 			#region Shirts

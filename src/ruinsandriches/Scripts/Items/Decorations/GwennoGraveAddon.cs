@@ -7,8 +7,8 @@ namespace Server.Items
 	public class GwennoGraveAddon : BaseAddon
 	{
         private static int[,] m_AddOnSimpleComponents = new int[,] {
-			  {4487, 1, 1, 0}, {4488, 2, 0, 0}, {4489, 2, -2, 0}// 1	2	3	
-			, {4486, 0, 2, 0}, {4485, -2, 2, 0}// 4	5	
+			  {4487, 1, 1, 0}, {4488, 2, 0, 0}, {4489, 2, -2, 0}// 1	2	3
+			, {4486, 0, 2, 0}, {4485, -2, 2, 0}// 4	5
 		};
 
 		public override BaseAddonDeed Deed

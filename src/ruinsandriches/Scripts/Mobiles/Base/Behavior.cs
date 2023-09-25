@@ -181,9 +181,9 @@ namespace Server
 					typeof( LivingStoneStatue ),
 					typeof( Lobstran ),
 					typeof( MetalGolem ),
-					typeof( CombatDroid ), 
-					typeof( BattleDroid ), 
-					typeof( MaintenanceDroid ), 
+					typeof( CombatDroid ),
+					typeof( BattleDroid ),
+					typeof( MaintenanceDroid ),
 					typeof( SecurityDroid ),
 					typeof( ServiceDroid ),
 					typeof( Mouse ),
@@ -255,8 +255,8 @@ namespace Server
 					typeof( AncientWyrm ),
 					typeof( AnyElemental ),
 					typeof( AnyGemElemental ),
-					typeof( AnimatedRocks ), 
-					typeof( GemElemental ), 
+					typeof( AnimatedRocks ),
+					typeof( GemElemental ),
 					typeof( Arachnar ),
 					typeof( AshDragon ),
 					typeof( Balron ),
@@ -291,10 +291,10 @@ namespace Server
 					typeof( DesertWyrm ),
 					typeof( Dracula ),
 					typeof( DreadSpider ),
-					typeof( AntaurKing ), 
-					typeof( AntaurProgenitor ), 
-					typeof( AntaurSoldier ), 
-					typeof( AntaurWorker ), 
+					typeof( AntaurKing ),
+					typeof( AntaurProgenitor ),
+					typeof( AntaurSoldier ),
+					typeof( AntaurWorker ),
 					typeof( Drider ),
 					typeof( DriderWizard ),
 					typeof( DustElemental ),
@@ -338,10 +338,10 @@ namespace Server
 					typeof( OphidianWarrior ),
 					typeof( Serpentar ),
 					typeof( SerpentarWizard ),
-					typeof( Serpyn ), 
-					typeof( SandSerpyn ), 
-					typeof( SerpynChampion ), 
-					typeof( SerpynSorceress ), 
+					typeof( Serpyn ),
+					typeof( SandSerpyn ),
+					typeof( SerpynChampion ),
+					typeof( SerpynSorceress ),
 					typeof( PoisonElemental ),
 					typeof( QuartzWyrm ),
 					typeof( LightningElemental ),
@@ -409,8 +409,8 @@ namespace Server
 					typeof( AxeBeakRiding ),
 					typeof( Raptor ),
 					typeof( Raptus ),
-					typeof( Xenomorph ), 
-					typeof( Xenomutant ), 
+					typeof( Xenomorph ),
+					typeof( Xenomutant ),
 					typeof( ElectricalElemental )
 				} ),
 				/* Medium */
@@ -462,22 +462,22 @@ namespace Server
 					typeof( Angel ),
 					typeof( Archangel ),
 					typeof( ElementalSteed ),
-					typeof( PrimevalFireDragon ), 
-					typeof( PrimevalGreenDragon ), 
-					typeof( PrimevalNightDragon ), 
-					typeof( PrimevalRedDragon ), 
-					typeof( PrimevalRoyalDragon ), 
-					typeof( PrimevalRunicDragon ), 
-					typeof( PrimevalSeaDragon ), 
-					typeof( ReanimatedDragon ), 
-					typeof( VampiricDragon ), 
-					typeof( PrimevalAbysmalDragon ), 
-					typeof( PrimevalAmberDragon ), 
-					typeof( PrimevalBlackDragon ), 
-					typeof( PrimevalDragon ), 
-					typeof( PrimevalSilverDragon ), 
-					typeof( PrimevalVolcanicDragon ), 
-					typeof( PrimevalStygianDragon ), 
+					typeof( PrimevalFireDragon ),
+					typeof( PrimevalGreenDragon ),
+					typeof( PrimevalNightDragon ),
+					typeof( PrimevalRedDragon ),
+					typeof( PrimevalRoyalDragon ),
+					typeof( PrimevalRunicDragon ),
+					typeof( PrimevalSeaDragon ),
+					typeof( ReanimatedDragon ),
+					typeof( VampiricDragon ),
+					typeof( PrimevalAbysmalDragon ),
+					typeof( PrimevalAmberDragon ),
+					typeof( PrimevalBlackDragon ),
+					typeof( PrimevalDragon ),
+					typeof( PrimevalSilverDragon ),
+					typeof( PrimevalVolcanicDragon ),
+					typeof( PrimevalStygianDragon ),
 					typeof( BlackKnight ),
 					typeof( BloodAssassin ),
 					typeof( BloodElemental ),
@@ -528,13 +528,13 @@ namespace Server
 					typeof( DeathWolf ),
 					typeof( NecroticHound ),
 					typeof( DeepSeaGiant ),
-					typeof( TitanLich ), 
-					typeof( MummyGiant ), 
-					typeof( HillGiant ), 
-					typeof( HillGiantShaman ), 
+					typeof( TitanLich ),
+					typeof( MummyGiant ),
+					typeof( HillGiant ),
+					typeof( HillGiantShaman ),
 					typeof( DeepSeaSerpent ),
 					typeof( Jormungandr ),
-					typeof( Cronosaurus ), 
+					typeof( Cronosaurus ),
 					typeof( DeepWaterElemental ),
 					typeof( ElementalLordWater ),
 					typeof( DemiLich ),
@@ -552,7 +552,7 @@ namespace Server
 					typeof( Dog ),
 					typeof( Dolphin ),
 					typeof( Dracolich ),
-					typeof( SkeletonDragon ), 
+					typeof( SkeletonDragon ),
 					typeof( Dragon ),
 					typeof( Dragons ),
 					typeof( Dragoon ),
@@ -634,14 +634,14 @@ namespace Server
 					typeof( StygianGargoyleLord ),
 					typeof( GargoyleAmethyst ),
 					typeof( AncientGargoyle ),
-					typeof( MutantGargoyle ), 
-					typeof( CosmicGargoyle ), 
+					typeof( MutantGargoyle ),
+					typeof( CosmicGargoyle ),
 					typeof( GargoyleEmerald ),
 					typeof( GargoyleMarble ),
 					typeof( GargoyleOnyx ),
 					typeof( GargoyleRuby ),
-					typeof( CodexGargoyleA ), 
-					typeof( CodexGargoyleB ), 
+					typeof( CodexGargoyleA ),
+					typeof( CodexGargoyleB ),
 					typeof( GargoyleSapphire ),
 					typeof( GarnetElemental ),
 					typeof( Gazer ),
@@ -677,7 +677,7 @@ namespace Server
 					typeof( Gorgon ),
 					typeof( GorgonRiding ),
 					typeof( Gorilla ),
-					typeof( Gorakong ), 
+					typeof( Gorakong ),
 					typeof( Infected ),
 					typeof( Grathek ),
 					typeof( GreatHart ),
@@ -906,23 +906,23 @@ namespace Server
 					typeof( Spirit ),
 					typeof( Squirrel ),
 					typeof( StarRubyElemental ),
-					typeof( SapphireElemental ), 
+					typeof( SapphireElemental ),
 					typeof( XormiteElemental ),
-					typeof( DilithiumElemental ), 
-					typeof( TrilithiumElemental ), 
+					typeof( DilithiumElemental ),
+					typeof( TrilithiumElemental ),
 					typeof( Stegosaurus ),
 					typeof( Styguana ),
 					typeof( StoneDragon ),
 					typeof( StoneElemental ),
 					typeof( StoneGargoyle ),
-					typeof( GargoyleWarrior ), 
+					typeof( GargoyleWarrior ),
 					typeof( StoneGiant ),
-					typeof( TitanLithos ), 
+					typeof( TitanLithos ),
 					typeof( StoneHarpy ),
 					typeof( StoneRoper ),
 					typeof( StormGiant ),
-					typeof( CloudGiant ), 
-					typeof( StarGiant ), 
+					typeof( CloudGiant ),
+					typeof( StarGiant ),
 					typeof( StrangleVine ),
 					typeof( Succubus ),
 					typeof( SummonedDaemon ),
@@ -1008,7 +1008,7 @@ namespace Server
 					typeof( AbrozShaman ),
 					typeof( AbrozWarrior ),
 					typeof( ZombieDragon ),
-					typeof( DragonGhost ), 
+					typeof( DragonGhost ),
 					typeof( ZornTheBlacksmith ),
 					typeof( ZuluuArcher ),
 					typeof( ZuluuNative ),
@@ -1180,7 +1180,7 @@ namespace Server.Misc
 				BaseCreature c = (BaseCreature)m;
 				if ( c.Controlled || c.FightMode == FightMode.Aggressor || c.FightMode == FightMode.None )
 					enemy = false;
-			}	
+			}
 
 			return enemy;
 		}
@@ -1947,7 +1947,7 @@ namespace Server.Misc
 			if ( wizard )
 			{
 				if ( Utility.RandomBool() )
-				{ 
+				{
 					int myHat = Utility.RandomMinMax( 0, 4 );
 					if ( from.Body == 605 ){ myHat = 1; }
 					switch ( myHat )
@@ -2027,7 +2027,7 @@ namespace Server.Misc
 				}
 
 			if ( isDojo )
-			{ 
+			{
 				Item robe = new Robe();
 					robe.Delete();
 					switch ( Utility.RandomMinMax( 1, 5 ) )
@@ -2039,10 +2039,10 @@ namespace Server.Misc
 						case 5: robe = new Robe(); break;
 					}
 					robe.Hue = clothHue; if ( IsDrow( from ) ){ robe.Hue = Utility.RandomDrowHue(); } else if ( IsOrk( from ) ){ robe.Hue = Utility.RandomOrkHue(); }
-					from.AddItem( robe ); 
+					from.AddItem( robe );
 			}
 			else if ( Utility.RandomBool() )
-			{ 
+			{
 				Item robe = new Robe();
 					robe.Delete();
 
@@ -2074,23 +2074,23 @@ namespace Server.Misc
 						case 20: robe = new SorcererRobe(); break;
 					}
 					robe.Hue = clothHue; if ( IsDrow( from ) ){ robe.Hue = Utility.RandomDrowHue(); } else if ( IsOrk( from ) ){ robe.Hue = Utility.RandomOrkHue(); }
-					from.AddItem( robe ); 
+					from.AddItem( robe );
 			}
 			else if ( from.Body == 0x190 || from.Body == 605 )
 			{
 				Item robe = new Robe();
 					robe.Hue = clothHue; if ( IsDrow( from ) ){ robe.Hue = Utility.RandomDrowHue(); } else if ( IsOrk( from ) ){ robe.Hue = Utility.RandomOrkHue(); }
-					from.AddItem( robe ); 
+					from.AddItem( robe );
 			}
 			else
 			{
 				Item dress = new PlainDress();
 					dress.Hue = clothHue; if ( IsDrow( from ) ){ dress.Hue = Utility.RandomDrowHue(); } else if ( IsOrk( from ) ){ dress.Hue = Utility.RandomOrkHue(); }
-					from.AddItem( dress ); 
+					from.AddItem( dress );
 			}
 
 			if ( Utility.Random( 5 ) == 1 )
-			{ 
+			{
 				Cloak cloak = new Cloak();
 					cloak.Hue = cloakHue; if ( IsDrow( from ) ){ cloak.Hue = Utility.RandomDrowHue(); } else if ( IsOrk( from ) ){ cloak.Hue = Utility.RandomOrkHue(); }
 					from.AddItem( cloak );
@@ -2098,9 +2098,9 @@ namespace Server.Misc
 			}
 
 			if ( Utility.RandomBool() )
-			{ 
+			{
 				if ( isDojo )
-				{ 
+				{
 					Item hat = new WizardsHat( clothHue );
 
 						switch ( Utility.RandomMinMax( 1, 4 ) )
@@ -2118,10 +2118,10 @@ namespace Server.Misc
 							case 3: hat.ItemID = 0x5C13;	hat.Name = "cowl";		break;
 						}
 
-						from.AddItem( hat ); 
+						from.AddItem( hat );
 				}
 				else if ( Utility.RandomBool() )
-				{ 
+				{
 					int myHat = Utility.RandomMinMax( 0, 4 );
 					if ( from.Body == 605 ){ myHat = 1; }
 					Item hat = new WizardsHat();
@@ -2134,7 +2134,7 @@ namespace Server.Misc
 							case 3: hat = new WizardHood( clothHue); break;
 							case 4: hat = new HoodedMantle( clothHue); break;
 						}
-						from.AddItem( hat ); 
+						from.AddItem( hat );
 				}
 				else if ( from.Body == 0x190 || from.Body == 605 )
 				{
@@ -2192,7 +2192,7 @@ namespace Server.Misc
 
 			from.AddItem( new Boots( Utility.RandomNeutralHue() ) );
 			from.AddItem( new FancyShirt( shirtHue ));
-			
+
 			switch ( Utility.Random( 4 ))
 			{
 				case 0: from.AddItem( new FeatheredHat( hatHue ) ); break;
@@ -2337,7 +2337,7 @@ namespace Server.Misc
 							m.AddItem( cloth2 );
 					}
 				}
-				else 
+				else
 				{
 					if ( Utility.RandomBool() )
 					{
@@ -2482,7 +2482,7 @@ namespace Server.Misc
 
 			if ( isTown && Utility.RandomMinMax(1,20) == 1 )
 			{
-				CanHaveShield = 0; 
+				CanHaveShield = 0;
 				switch ( Utility.Random( 8 ) )
 				{
 					case 0: weapon = new Bow(); break;
@@ -2497,7 +2497,7 @@ namespace Server.Misc
 			}
 			else if ( iArmor == 5 )
 			{
-				CanHaveShield = 0; 
+				CanHaveShield = 0;
 				switch ( Utility.Random( 5 ) )
 				{
 					case 0: weapon = new NoDachi(); break;
@@ -2832,7 +2832,7 @@ namespace Server.Misc
 
 			if ( isTown && Utility.RandomMinMax(1,20) == 1 )
 			{
-				CanHaveShield = 0; 
+				CanHaveShield = 0;
 				switch ( Utility.Random( 8 ) )
 				{
 					case 0: weapon = new Bow(); break;
@@ -2847,7 +2847,7 @@ namespace Server.Misc
 			}
 			else if ( iArmor == 2 )
 			{
-				CanHaveShield = 0; 
+				CanHaveShield = 0;
 				switch ( Utility.Random( 7 ) )
 				{
 					case 0: weapon = new Daisho(); break;
@@ -2890,7 +2890,7 @@ namespace Server.Misc
 			if ( CanHaveShield == 1 && Utility.RandomMinMax( 1, 3 ) == 1 )
 			{
 				Item shield1 = new Buckler();
-				shield1.Hue = clothHue; 
+				shield1.Hue = clothHue;
 				m.AddItem( shield1 );
 			}
 
@@ -3040,7 +3040,7 @@ namespace Server.Misc
 				Mobile killer = from.LastKiller;
 
 				Region reg = Region.Find( from.Location, from.Map );
-				
+
 				if (killer is BaseCreature)
 				{
 					BaseCreature bc_killer = (BaseCreature)killer;
@@ -3073,7 +3073,7 @@ namespace Server.Misc
 						a = "her";
 						b = "she";
 						c = "her";
-					} 
+					}
 
 					string ScrollText = from.Name + ",<br><br>You have been given a task by " + RandomThings.GetRandomSociety() + ". You are to find " + killer.Name + " and make sure you kill " + a + " while " + b + " is in " + Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) + ". When the deed is done, meet " + QuestCharacters.ParchmentWriter() + " in " + RandomThings.GetRandomCity() + " where you can collect your " + gold.ToString() + ",000 gold.<br><br> - " + QuestCharacters.ParchmentWriter();
 
@@ -3251,26 +3251,26 @@ namespace Server.Misc
 				Item robe = new VagabondRobe();
 					robe.Hue = clothHue;
 					robe.Name = named;
-					m.AddItem( robe ); 
+					m.AddItem( robe );
 			}
 			else if ( m.Body == 0x190 || m.Body == 605 )
 			{
 				Item robe = new Robe();
 					robe.Hue = clothHue;
 					robe.Name = named;
-					m.AddItem( robe ); 
+					m.AddItem( robe );
 			}
 			else
 			{
 				Item dress = new PlainDress();
 					dress.Hue = clothHue;
 					dress.Name = named;
-					m.AddItem( dress ); 
+					m.AddItem( dress );
 			}
 
 			Item sandals = new Sandals();
 				sandals.Hue = Utility.RandomNeutralHue();
-				m.AddItem( sandals ); 
+				m.AddItem( sandals );
 
 			if ( Utility.RandomBool() )
 			{
@@ -3634,7 +3634,7 @@ namespace Server.Misc
 			{
 				Server.Misc.IntelligentAction.DressUpFighters( m, race, true, false, false );
 			}
-			else 
+			else
 			{
 				Server.Misc.IntelligentAction.DressUpFighters( m, race, true, false, false );
 				Server.Misc.IntelligentAction.GiveAdventureGear( bc );
@@ -3754,7 +3754,7 @@ namespace Server.Misc
 						else if ( validLocation = map.CanFit( x, y, z, 16, false, false ) )
 							loc = new Point3D( x, y, z );
 					}
-					
+
 					Effects.SendLocationParticles( EffectItem.Create( m.Location, m.Map, EffectItem.DefaultDuration ), 0x3728, 8, 20, 5042 );
 					Effects.PlaySound( m, m.Map, 0x201 );
 					m.Combatant = null;
@@ -3827,7 +3827,7 @@ namespace Server.Misc
 						else if ( validLocation = map.CanFit( x, y, z, 16, false, false ) )
 							loc = new Point3D( x, y, z );
 					}
-					
+
 					Effects.SendLocationParticles( EffectItem.Create( m.Location, m.Map, EffectItem.DefaultDuration ), 0x3728, 8, 20, 5042 );
 					Effects.PlaySound( m, m.Map, 0x201 );
 					m.Combatant = null;
@@ -3896,10 +3896,10 @@ namespace Server.Misc
 			if ( job == "necromancer" && from.Skills[SkillName.Necromancy].Value >= Utility.RandomMinMax( 25, 125 ) ){ return true; }
 			if ( job == "alchemist" && from.Skills[SkillName.Alchemy].Value >= Utility.RandomMinMax( 25, 125 ) ){ return true; }
 			if ( job == "undertaker" && from.Skills[SkillName.Forensics].Value >= Utility.RandomMinMax( 25, 125 ) ){ return true; }
-			if ( job == "mixologist" && from.Skills[SkillName.Alchemy].Value >= Utility.RandomMinMax( 25, 125 ) && 
+			if ( job == "mixologist" && from.Skills[SkillName.Alchemy].Value >= Utility.RandomMinMax( 25, 125 ) &&
 										from.Skills[SkillName.Cooking].Value >= Utility.RandomMinMax( 25, 125 ) ){ return true; }
 			if ( job == "wizard" && from.Skills[SkillName.Magery].Value >= Utility.RandomMinMax( 25, 125 ) ){ return true; }
-			if ( job == "herbalist" && from.Skills[SkillName.Taming].Value >= Utility.RandomMinMax( 25, 125 ) && 
+			if ( job == "herbalist" && from.Skills[SkillName.Taming].Value >= Utility.RandomMinMax( 25, 125 ) &&
 										from.Skills[SkillName.Druidism].Value >= Utility.RandomMinMax( 25, 125 ) ){ return true; }
 
 			return false;
@@ -3938,7 +3938,7 @@ namespace Server.Misc
 			}
 			if ( flame.Slays(monster) )
 			{
-				switch ( Utility.RandomMinMax(0,1) ) 
+				switch ( Utility.RandomMinMax(0,1) )
 				{
 					case 0: monster.PackItem( new Brimstone( amount ) ); break;
 					case 1: monster.PackItem( new SulfurousAsh( amount ) ); break;
@@ -3958,7 +3958,7 @@ namespace Server.Misc
 			}
 			if ( (monster.Name).Contains("frog") || (monster.Name).Contains("toad") )
 			{
-				switch ( Utility.RandomMinMax( 0, 1 ) ) 
+				switch ( Utility.RandomMinMax( 0, 1 ) )
 				{
 					case 0: monster.PackItem( new EyeOfToad( Utility.RandomMinMax( 1, 2 ) ) ); break;
 					case 1: monster.PackItem( new DriedToad( 1 ) ); break;
@@ -3966,7 +3966,7 @@ namespace Server.Misc
 			}
 			if ( monster is Pixie || monster is Sprite || monster is Faerie )
 			{
-				switch ( Utility.RandomMinMax( 0, 2 ) ) 
+				switch ( Utility.RandomMinMax( 0, 2 ) )
 				{
 					case 0: monster.PackItem( new FairyEgg( Utility.RandomMinMax( 1, 2 ) ) ); break;
 					case 1: monster.PackItem( new PixieSkull( 1 ) ); break;
@@ -3988,7 +3988,7 @@ namespace Server.Misc
 			if ( plants.Slays(monster) )
 			{
 				int pick = Utility.RandomMinMax( 0, 9 );
-				switch ( pick ) 
+				switch ( pick )
 				{
 					case 0: monster.PackItem( new MandrakeRoot( amount ) ); break;
 					case 1: monster.PackItem( new Nightshade( amount ) ); break;
@@ -4008,7 +4008,7 @@ namespace Server.Misc
 
 		public static void DropItem( Mobile from, Mobile killer )
 		{
-			if (	from is BoneMagi || from is SkeletalMage || from is SkeletalWizard || from is Lich || from is Vordo || from is Nazghoul || from is LichLord || from is DemiLich || 
+			if (	from is BoneMagi || from is SkeletalMage || from is SkeletalWizard || from is Lich || from is Vordo || from is Nazghoul || from is LichLord || from is DemiLich ||
 					from is AncientLich || from is Surtaz || from is LichKing || from is UndeadDruid )
 			{
 				if ( from.Fame > Utility.Random( 40000 ) )
@@ -4096,7 +4096,7 @@ namespace Server.Misc
 
 							switch( Utility.RandomMinMax( 0, 1 ) )
 							{
-								case 0: 
+								case 0:
 									NecromancerRobe robe = new NecromancerRobe();
 										robe.Name = gear + " robe";
 										robe.Hue = MagicHue;
@@ -4107,7 +4107,7 @@ namespace Server.Misc
 										robe.Attributes.SpellDamage = 2 + Magic;
 										from.AddItem( robe );
 									break;
-								case 1: 
+								case 1:
 									QuarterStaff staff = new QuarterStaff();
 										staff.Name = gear + " staff";
 										staff.ItemID = Utility.RandomList( 0xDF0, 0x13F8, 0xE89, 0x2D25 );
@@ -4169,7 +4169,7 @@ namespace Server.Misc
 
 							switch( Utility.RandomMinMax( 0, 1 ) )
 							{
-								case 0: 
+								case 0:
 									VampireRobe robe = new VampireRobe();
 										robe.Name = gear + " robe";
 										robe.Hue = MagicHue;
@@ -4180,7 +4180,7 @@ namespace Server.Misc
 										robe.Attributes.RegenHits = 1 + Mgear;
 										from.AddItem( robe );
 									break;
-								case 1: 
+								case 1:
 									MagicCloak cloak = new MagicCloak();
 										cloak.Name = gear + " cloak";
 										cloak.Hue = MgearHue;
@@ -4202,7 +4202,7 @@ namespace Server.Misc
 				{
 					switch( Utility.RandomMinMax( 0, 1 ) )
 					{
-						case 0: 
+						case 0:
 							Robe robe = new Robe( );
 								robe.Hue = 0xA2A;
 								robe.Name = "robe of the mad archmage";
@@ -4213,7 +4213,7 @@ namespace Server.Misc
 								robe.Attributes.LowerRegCost = 30;
 								from.AddItem( robe );
 							break;
-						case 1: 
+						case 1:
 							WizardsHat hat = new WizardsHat( );
 								hat.Hue = 0xA2A;
 								hat.Name = "hat of the mad archmage";
@@ -4233,7 +4233,7 @@ namespace Server.Misc
 				{
 					switch( Utility.RandomMinMax( 0, 1 ) )
 					{
-						case 0: 
+						case 0:
 							Robe robe = new Robe( );
 								robe.Hue = 0x482;
 								robe.Name = "ice queen robe";
@@ -4242,7 +4242,7 @@ namespace Server.Misc
 								robe.Attributes.SpellDamage = 35;
 								from.AddItem( robe );
 							break;
-						case 1: 
+						case 1:
 							WizardsHat hat = new WizardsHat( );
 								hat.Hue = 0x482;
 								hat.Name = "ice queen hat";
@@ -4309,12 +4309,12 @@ namespace Server.Misc
 				from.EmoteHue = 15;
 				PackGear = 0;
 			}
-			else if (	reg.IsPartOf( "the Ruins of the Black Blade" ) || 
+			else if (	reg.IsPartOf( "the Ruins of the Black Blade" ) ||
 						reg.IsPartOf( typeof( BardDungeonRegion ) ) )
 			{
 				from.EmoteHue = 0;
 			}
-			else if (	from.Map == Map.IslesDread || 
+			else if (	from.Map == Map.IslesDread ||
 						reg.IsPartOf( "the Blood Temple" ) )
 			{
 				from.EmoteHue = 2;
@@ -4325,23 +4325,23 @@ namespace Server.Misc
 				from.EmoteHue = 3;
 			}
 			else if (
-						( from.X >= 6362 && from.Y >= 3854 && from.X <= 6372 && from.Y <= 3864 && from.Map == Map.Lodor ) || 
-						( from.X >= 6442 && from.Y >= 3821 && from.X <= 6452 && from.Y <= 3831 && from.Map == Map.Lodor ) || 
-						reg.IsPartOf( "the Hall of the Mountain King" ) || 
+						( from.X >= 6362 && from.Y >= 3854 && from.X <= 6372 && from.Y <= 3864 && from.Map == Map.Lodor ) ||
+						( from.X >= 6442 && from.Y >= 3821 && from.X <= 6452 && from.Y <= 3831 && from.Map == Map.Lodor ) ||
+						reg.IsPartOf( "the Hall of the Mountain King" ) ||
 						reg.IsPartOf( "Dungeon Shame" )
 			)
 			{
 				from.EmoteHue = 4;
 			}
 			else if (
-						( from.X >= 6312 && from.Y >= 3538 && from.X <= 6397 && from.Y <= 3628 && from.Map == Map.Sosaria ) || 
-						( from.X >= 6266 && from.Y >= 469 && from.X <= 6276 && from.Y <= 479 && from.Map == Map.Lodor ) || 
-						( from.X >= 6272 && from.Y >= 534 && from.X <= 6282 && from.Y <= 544 && from.Map == Map.Lodor ) || 
-						( from.X >= 6309 && from.Y >= 578 && from.X <= 6319 && from.Y <= 588 && from.Map == Map.Lodor ) || 
-						( from.X >= 6203 && from.Y >= 661 && from.X <= 6213 && from.Y <= 671 && from.Map == Map.Sosaria ) || 
-						( from.X >= 6331 && from.Y >= 145 && from.X <= 6341 && from.Y <= 155 && from.Map == Map.Sosaria ) || 
-						( from.X >= 6284 && from.Y >= 3598 && from.X <= 6294 && from.Y <= 3608 && from.Map == Map.Lodor ) || 
-						( from.X >= 28 && from.Y >= 3294 && from.X <= 101 && from.Y <= 3329 && from.Map == Map.SavagedEmpire ) || 
+						( from.X >= 6312 && from.Y >= 3538 && from.X <= 6397 && from.Y <= 3628 && from.Map == Map.Sosaria ) ||
+						( from.X >= 6266 && from.Y >= 469 && from.X <= 6276 && from.Y <= 479 && from.Map == Map.Lodor ) ||
+						( from.X >= 6272 && from.Y >= 534 && from.X <= 6282 && from.Y <= 544 && from.Map == Map.Lodor ) ||
+						( from.X >= 6309 && from.Y >= 578 && from.X <= 6319 && from.Y <= 588 && from.Map == Map.Lodor ) ||
+						( from.X >= 6203 && from.Y >= 661 && from.X <= 6213 && from.Y <= 671 && from.Map == Map.Sosaria ) ||
+						( from.X >= 6331 && from.Y >= 145 && from.X <= 6341 && from.Y <= 155 && from.Map == Map.Sosaria ) ||
+						( from.X >= 6284 && from.Y >= 3598 && from.X <= 6294 && from.Y <= 3608 && from.Map == Map.Lodor ) ||
+						( from.X >= 28 && from.Y >= 3294 && from.X <= 101 && from.Y <= 3329 && from.Map == Map.SavagedEmpire ) ||
 						Server.Misc.Worlds.IsCrypt( from.Location, from.Map )
 			)
 			{
@@ -4349,18 +4349,18 @@ namespace Server.Misc
 			}
 			else if (
 
-						( from.X >= 6590 && from.Y >= 373 && from.X <= 6629 && from.Y <= 465 && from.Map == Map.Lodor ) || 
-						( Utility.RandomMinMax( 1, 4 ) > 1 && Server.Misc.Worlds.TestTile ( from.Map, from.X, from.Y, "forest" ) ) || 
+						( from.X >= 6590 && from.Y >= 373 && from.X <= 6629 && from.Y <= 465 && from.Map == Map.Lodor ) ||
+						( Utility.RandomMinMax( 1, 4 ) > 1 && Server.Misc.Worlds.TestTile ( from.Map, from.X, from.Y, "forest" ) ) ||
 						reg.IsPartOf( "the Valley of Dark Druids" ) )
 			{
 				from.EmoteHue = 6;
 			}
 			else if (
-						( from is EvilMage || from is ElfMage || from is OrkMage ) && 
+						( from is EvilMage || from is ElfMage || from is OrkMage ) &&
 						(
-							( from.X >= 6177 && from.Y >= 256 && from.X <= 6224 && from.Y <= 297 && from.Map == Map.Sosaria ) || 
-							( from.X >= 6359 && from.Y >= 508 && from.X <= 6451 && from.Y <= 564 && from.Map == Map.Lodor ) || 
-							Server.Misc.Worlds.TestTile ( from.Map, from.X, from.Y, "snow" ) || 
+							( from.X >= 6177 && from.Y >= 256 && from.X <= 6224 && from.Y <= 297 && from.Map == Map.Sosaria ) ||
+							( from.X >= 6359 && from.Y >= 508 && from.X <= 6451 && from.Y <= 564 && from.Map == Map.Lodor ) ||
+							Server.Misc.Worlds.TestTile ( from.Map, from.X, from.Y, "snow" ) ||
 							Server.Misc.Worlds.IsIceDungeon( from.Location, from.Map )
 						)
 			)
@@ -4368,28 +4368,28 @@ namespace Server.Misc
 				from.EmoteHue = 7;
 			}
 			else if (
-						( from.X >= 6184 && from.Y >= 496 && from.X <= 6208 && from.Y <= 520 && from.Map == Map.Sosaria ) || 
-						( from.X >= 6314 && from.Y >= 250 && from.X <= 6339 && from.Y <= 285 && from.Map == Map.Sosaria ) || 
-						( from.X >= 6459 && from.Y >= 460 && from.X <= 6481 && from.Y <= 477 && from.Map == Map.Sosaria ) || 
-						( from.X >= 3094 && from.Y >= 3582 && from.X <= 3118 && from.Y <= 3602 && from.Map == Map.Lodor ) || 
-						Server.Misc.Worlds.IsFireDungeon( from.Location, from.Map ) || 
-						reg.IsPartOf( "the Tower of Brass" ) 
+						( from.X >= 6184 && from.Y >= 496 && from.X <= 6208 && from.Y <= 520 && from.Map == Map.Sosaria ) ||
+						( from.X >= 6314 && from.Y >= 250 && from.X <= 6339 && from.Y <= 285 && from.Map == Map.Sosaria ) ||
+						( from.X >= 6459 && from.Y >= 460 && from.X <= 6481 && from.Y <= 477 && from.Map == Map.Sosaria ) ||
+						( from.X >= 3094 && from.Y >= 3582 && from.X <= 3118 && from.Y <= 3602 && from.Map == Map.Lodor ) ||
+						Server.Misc.Worlds.IsFireDungeon( from.Location, from.Map ) ||
+						reg.IsPartOf( "the Tower of Brass" )
 			)
 			{
 				from.EmoteHue = 8;
 			}
 			else if (
-						( from.X >= 6289 && from.Y >= 119 && from.X <= 6299 && from.Y <= 129 && from.Map == Map.Sosaria ) || 
-						( from.X >= 6312 && from.Y >= 125 && from.X <= 6326 && from.Y <= 133 && from.Map == Map.Sosaria ) || 
-						Server.Misc.Worlds.TestTile ( from.Map, from.X, from.Y, "swamp" ) || 
-						reg.IsPartOf( "the Temple of Osirus" ) || 
+						( from.X >= 6289 && from.Y >= 119 && from.X <= 6299 && from.Y <= 129 && from.Map == Map.Sosaria ) ||
+						( from.X >= 6312 && from.Y >= 125 && from.X <= 6326 && from.Y <= 133 && from.Map == Map.Sosaria ) ||
+						Server.Misc.Worlds.TestTile ( from.Map, from.X, from.Y, "swamp" ) ||
+						reg.IsPartOf( "the Temple of Osirus" ) ||
 						reg.IsPartOf( "the Dragon's Maw" ) ||
-						reg.IsPartOf( "Dungeon Destard" ) 
+						reg.IsPartOf( "Dungeon Destard" )
 			)
 			{
 				from.EmoteHue = 9;
 			}
-			else if ( Server.Misc.Worlds.IsSeaDungeon( from.Location, from.Map ) || 
+			else if ( Server.Misc.Worlds.IsSeaDungeon( from.Location, from.Map ) ||
 						Server.Misc.Worlds.TestOcean ( from.Map, from.X, from.Y, 15 ) )
 			{
 				from.EmoteHue = 10;
@@ -4476,7 +4476,7 @@ namespace Server.Misc
 					case 1: from.Title = from.Title + " of the grave"; break;
 					case 2: from.Title = from.Title + " of the dead"; break;
 				}
-				
+
 				Server.Misc.MorphingTime.TurnToNecromancer( from );
 			}
 			else if ( from.EmoteHue == 6 )
@@ -4590,7 +4590,7 @@ namespace Server.Misc
 			{
 				BaseCreature bsct = (BaseCreature)from;
 
-				from.Body = 0x191; 
+				from.Body = 0x191;
 				from.Female = true;
 				from.Name = NameList.RandomName( "female" );
 				from.Title = "the ice queen";
@@ -4774,7 +4774,7 @@ namespace Server.Misc
 				{
 					if ( from is Exodus )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I will vanquish your existence from all time!"); break;
 							case 1: from.Say("" + m.Name + ", prepare to meet your end!"); break;
@@ -4784,7 +4784,7 @@ namespace Server.Misc
 					}
 					else if ( from is FleshGolem || from is AncientFleshGolem )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I am fearless, and therefore powerful!"); break;
 							case 1: from.Say("I am a monster, cut off from all the world!"); break;
@@ -4794,7 +4794,7 @@ namespace Server.Misc
 					}
 					else if ( from is BloodDemigod )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Foolish mortal!"); break;
 							case 1: from.Say("I will summon your gore to crawl these halls!"); break;
@@ -4802,21 +4802,21 @@ namespace Server.Misc
 							case 3: from.Say("Let this be your final battle!"); break;
 						};
 					}
-					else if ( from is Balron 
-							|| from is Devil 
-							|| from is BlackGateDemon 
-							|| from is AbysmalDaemon 
-							|| from is Xurtzar 
-							|| from is TitanPyros 
-							|| from is Marilith 
-							|| from is Daemonic 
-							|| from is Archfiend 
-							|| from is Fiend 
-							|| from is Daemon 
-							|| from is DaemonTemplate 
+					else if ( from is Balron
+							|| from is Devil
+							|| from is BlackGateDemon
+							|| from is AbysmalDaemon
+							|| from is Xurtzar
+							|| from is TitanPyros
+							|| from is Marilith
+							|| from is Daemonic
+							|| from is Archfiend
+							|| from is Fiend
+							|| from is Daemon
+							|| from is DaemonTemplate
 							|| from is BloodDemon )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Your soul will be mine!"); break;
 							case 1: from.Say("I will use your corpse to feed my minions!"); break;
@@ -4826,7 +4826,7 @@ namespace Server.Misc
 					}
 					else if ( from is DeepSeaDevil || from is DemonOfTheSea )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Your soul will soon be one with the deep!"); break;
 							case 1: from.Say("You dare face the power of the sea?!"); break;
@@ -4836,7 +4836,7 @@ namespace Server.Misc
 					}
 					else if ( from is IceDevil )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Your soul will soon be encased in ice!"); break;
 							case 1: from.Say("You dare face my glacial power?!"); break;
@@ -4846,7 +4846,7 @@ namespace Server.Misc
 					}
 					else if ( from is Succubus )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Your blood smells sweet!"); break;
 							case 1: from.Say("Are you ready to give yourself to me?!"); break;
@@ -4856,7 +4856,7 @@ namespace Server.Misc
 					}
 					else if ( from is Satan )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Your soul will serve me well!"); break;
 							case 1: from.Say("I will break a spirit such as yours!"); break;
@@ -4866,7 +4866,7 @@ namespace Server.Misc
 					}
 					else if ( from is VampiricDragon )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I will drain every breath of life from you!"); break;
 							case 1: from.Say("I can smell the blood from your wounds!"); break;
@@ -4876,7 +4876,7 @@ namespace Server.Misc
 					}
 					else if ( from is ShadowWyrm )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I will take you from the light!"); break;
 							case 1: from.Say("I can feel the darkness filling you!"); break;
@@ -4886,7 +4886,7 @@ namespace Server.Misc
 					}
 					else if ( from is AshDragon || from is VolcanicDragon )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I will leave your corpse as ashes!"); break;
 							case 1: from.Say("I can smell your burning flesh!"); break;
@@ -4918,7 +4918,7 @@ namespace Server.Misc
 						 || from is PrimevalVolcanicDragon
 						 || from is AncientWyrm )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I have slain those mightier than you, " + m.Name + "!"); break;
 							case 1: from.Say("You will make me an excellent meal!"); break;
@@ -4944,7 +4944,7 @@ namespace Server.Misc
 						 || from is CosmicGargoyle
 						 || from is GargoyleMarble )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Esaeu lizz gia xes zes soth!"); break;
 							case 1: from.Say("Dnadona qae zaaq esaeun doom!"); break;
@@ -4954,7 +4954,7 @@ namespace Server.Misc
 					}
 					else if ( from is ZornTheBlacksmith )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("You will never have the secrets of the ore!"); break;
 							case 1: from.Say("You should leave before I crush you!"); break;
@@ -4964,7 +4964,7 @@ namespace Server.Misc
 					}
 					else if ( from is OrkDemigod )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Kneel before me you puny creature!"); break;
 							case 1: from.Say("Feel the might of the orks!"); break;
@@ -4980,14 +4980,14 @@ namespace Server.Misc
 						 || from is FrostTroll )
 					{
 						string organ = "spleen";
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: organ = "spleen"; break;
 							case 1: organ = "heart"; break;
 							case 2: organ = "liver"; break;
 							case 3: organ = "guts"; break;
 						};
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Me will be eating your " + organ + " me thinks!"); break;
 							case 1: from.Say("Me see you living no longer!"); break;
@@ -5000,7 +5000,7 @@ namespace Server.Misc
 						 || from is Ettin
 						 || from is ArcticEttin )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I smash you to pulp!"); break;
 							case 1: from.Say("I will smash you into dirt!"); break;
@@ -5013,7 +5013,7 @@ namespace Server.Misc
 						 || from is CloudGiant
 						 || from is StormGiant )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Feel the wrath of the storm!"); break;
 							case 1: from.Say("I unleash the storms on you!"); break;
@@ -5033,14 +5033,14 @@ namespace Server.Misc
 						 || from is HillGiantShaman )
 					{
 						string organ = "arm";
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: organ = "arms"; break;
 							case 1: organ = "legs"; break;
 							case 2: organ = "bones"; break;
 							case 3: organ = "corpse"; break;
 						};
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Me hit, you die!"); break;
 							case 1: from.Say("You no match for me!"); break;
@@ -5050,7 +5050,7 @@ namespace Server.Misc
 					}
 					else if ( from is IceGiant )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Feel the cold of glacial ice!"); break;
 							case 1: from.Say("You are nothing but an insect to me!"); break;
@@ -5060,7 +5060,7 @@ namespace Server.Misc
 					}
 					else if ( from is LavaGiant )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Feel the fires of volcanic might!"); break;
 							case 1: from.Say("You are nothing but an insect to me!"); break;
@@ -5071,7 +5071,7 @@ namespace Server.Misc
 					else if ( from is DeepSeaGiant
 						 || from is SeaGiant )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Feel the strength of the sea!"); break;
 							case 1: from.Say("You will soon will rot below the waves!"); break;
@@ -5091,7 +5091,7 @@ namespace Server.Misc
 						 || from is ShamanicCyclops
 						 || from is Cyclops )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("My foot will be the last thing you see!"); break;
 							case 1: from.Say("I will crush you into the dirt!"); break;
@@ -5105,7 +5105,7 @@ namespace Server.Misc
 						 || from is AncientReaper
 						 || from is AncientEnt )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("You...dare...fight...me?!"); break;
 							case 1: from.Say("I...will...dispatch...of...you!"); break;
@@ -5115,7 +5115,7 @@ namespace Server.Misc
 					}
 					else if ( from is SwampThing )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Gri Gril Gestroy Groo!"); break;
 							case 1: from.Say("Groo Gran Grever Gregreat Gre!"); break;
@@ -5125,7 +5125,7 @@ namespace Server.Misc
 					}
 					else if ( from is Beholder )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("*blinks a red eye*"); break;
 							case 1: from.Say("*blinks a blue eye*"); break;
@@ -5136,7 +5136,7 @@ namespace Server.Misc
 					else if ( from is Dracolich
 						 || from is SkeletalDragon )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Your soul will make an excellent meal!"); break;
 							case 1: from.Say("" + m.Name + ", do I frighten you?!"); break;
@@ -5149,7 +5149,7 @@ namespace Server.Misc
 						 || from is VampirePrince
 						 || from is VampireWoods )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("I can smell the blood from your wounds!"); break;
 							case 1: from.Say("Look into my eyes..."); break;
@@ -5159,7 +5159,7 @@ namespace Server.Misc
 					}
 					else if ( from is Dracula )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("" + m.Name + ", your blood will fill my glass tonight!"); break;
 							case 1: from.Say("Look into my eyes, " + m.Name + "..."); break;
@@ -5169,7 +5169,7 @@ namespace Server.Misc
 					}
 					else if ( from is Vordo )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("" + m.Name + ", you will join!"); break;
 							case 1: from.Say("Look into my eyes, " + m.Name + "..."); break;
@@ -5188,7 +5188,7 @@ namespace Server.Misc
 						 || from is UndeadDruid
 						 || from is DemiLich )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("Feel the power of " + from.Name + "!"); break;
 							case 1: from.Say("I will have a place for the bones of " + m.Name + "!"); break;
@@ -5198,7 +5198,7 @@ namespace Server.Misc
 					}
 					else if ( from is Executioner )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("" + m.Name + ", you are sentenced to death!"); break;
 							case 1: from.Say("Your head will look good on the block!"); break;
@@ -5208,7 +5208,7 @@ namespace Server.Misc
 					}
 					else if ( from is BlackKnight )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("" + m.Name + ", do you think you can defeat me?!"); break;
 							case 1: from.Say("You will never gain entry to my vault!"); break;
@@ -5218,7 +5218,7 @@ namespace Server.Misc
 					}
 					else if ( from is Archmage )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("" + m.Name + ", you have no hope against my power!"); break;
 							case 1: from.Say("You will never leave this place alive!"); break;
@@ -5228,7 +5228,7 @@ namespace Server.Misc
 					}
 					else if ( from is BombWorshipper || from is Psionicist )
 					{
-						switch ( Utility.Random( 9 ))		   
+						switch ( Utility.Random( 9 ))
 						{
 							case 0: from.Say("I have converted others stonger than you, " + m.Name + "!"); break;
 							case 1: from.Say("You will soon be one with the glow!"); break;
@@ -5243,7 +5243,7 @@ namespace Server.Misc
 					}
 					else if ( from is Syth )
 					{
-						switch ( Utility.Random( 9 ))		   
+						switch ( Utility.Random( 9 ))
 						{
 							case 0: from.Say("The Syth will be the last thing you see, " + m.Name + "!"); break;
 							case 1: from.Say("You will submit to my dark power!"); break;
@@ -5276,7 +5276,7 @@ namespace Server.Misc
 						 || from is OrkWarrior
 						 || from is OrkRogue )
 					{
-						switch ( Utility.Random( 9 ))		   
+						switch ( Utility.Random( 9 ))
 						{
 							case 0: from.Say("I have slain others better than you, " + m.Name + "!"); break;
 							case 1: from.Say("Your riches will soon be mine!"); break;
@@ -5291,7 +5291,7 @@ namespace Server.Misc
 					}
 					else if ( from is Adventurers || from is Jedi )
 					{
-						switch ( Utility.Random( 9 ))		   
+						switch ( Utility.Random( 9 ))
 						{
 							case 0: from.Say("I have brought justice to others more vile than you, " + m.Name + "!"); break;
 							case 1: from.Say("You will pay for your crimes!"); break;
@@ -5306,7 +5306,7 @@ namespace Server.Misc
 					}
 					else if ( Server.Mobiles.BasePirate.IsSailor( from ) )
 					{
-						switch ( Utility.Random( 9 ))		   
+						switch ( Utility.Random( 9 ))
 						{
 							case 0: from.Say("" + m.Name + ", you will soon walk the plank!"); break;
 							case 1: from.Say("I could beat you if I were three sheets to the wind!"); break;
@@ -5342,7 +5342,7 @@ namespace Server.Misc
 					}
 					else if ( from is FleshGolem || from is AncientFleshGolem )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("No...I am eternal!"); break;
 							case 1: from.Say("No...How can this be?!"); break;
@@ -5354,18 +5354,18 @@ namespace Server.Misc
 					{
 						from.Say("Some day your blood will fill these halls, " + m.Name + "!");
 					}
-					else if ( from is Balron 
-							|| from is Devil 
-							|| from is BlackGateDemon 
-							|| from is AbysmalDaemon 
-							|| from is Xurtzar 
-							|| from is Marilith 
-							|| from is Archfiend 
-							|| from is Fiend 
-							|| from is Daemon 
+					else if ( from is Balron
+							|| from is Devil
+							|| from is BlackGateDemon
+							|| from is AbysmalDaemon
+							|| from is Xurtzar
+							|| from is Marilith
+							|| from is Archfiend
+							|| from is Fiend
+							|| from is Daemon
 							|| from is BloodDemon )
 					{
-						switch ( Utility.Random( 5 ))		   
+						switch ( Utility.Random( 5 ))
 						{
 							case 0: from.Say("No...I will not be vanquished!"); break;
 							case 1: from.Say("I will return..."); break;
@@ -5376,7 +5376,7 @@ namespace Server.Misc
 					}
 					else if ( from is DeepSeaDevil || from is DemonOfTheSea )
 					{
-						switch ( Utility.Random( 5 ))		   
+						switch ( Utility.Random( 5 ))
 						{
 							case 0: from.Say("No...I will not be vanquished!"); break;
 							case 1: from.Say("I will return..."); break;
@@ -5387,7 +5387,7 @@ namespace Server.Misc
 					}
 					else if ( from is IceDevil )
 					{
-						switch ( Utility.Random( 5 ))		   
+						switch ( Utility.Random( 5 ))
 						{
 							case 0: from.Say("No...I will not be vanquished!"); break;
 							case 1: from.Say("I will return..."); break;
@@ -5402,7 +5402,7 @@ namespace Server.Misc
 					}
 					else if ( from is Satan )
 					{
-						switch ( Utility.Random( 5 ))		   
+						switch ( Utility.Random( 5 ))
 						{
 							case 0: from.Say("No...I cannot return to hell!"); break;
 							case 1: from.Say("Hell will not be able to hold me..."); break;
@@ -5413,7 +5413,7 @@ namespace Server.Misc
 					}
 					else if ( from is VampiricDragon )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("No...you cannot do this!"); break;
 							case 1: from.Say("Curse you, " + m.Name + "!"); break;
@@ -5421,7 +5421,7 @@ namespace Server.Misc
 					}
 					else if ( from is ShadowWyrm )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("No...you cannot have light without dark!"); break;
 							case 1: from.Say("Let the shadows take you, " + m.Name + "!"); break;
@@ -5429,7 +5429,7 @@ namespace Server.Misc
 					}
 					else if ( from is AshDragon || from is VolcanicDragon )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("No...this cannot be how it ends!"); break;
 							case 1: from.Say("Let the mountain fires take you, " + m.Name + "!"); break;
@@ -5458,7 +5458,7 @@ namespace Server.Misc
 						 || from is PrimevalVolcanicDragon
 						 || from is AncientWyrm )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("No...this cannot be the end!"); break;
 							case 1: from.Say("How...can...this...be..."); break;
@@ -5479,7 +5479,7 @@ namespace Server.Misc
 						 || from is AncientGargoyle
 						 || from is GargoyleMarble )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("Rae...sael yor yiz xa?"); break;
 							case 1: from.Say("Zae zes hima ends sabbia!"); break;
@@ -5487,7 +5487,7 @@ namespace Server.Misc
 					}
 					else if ( from is ZornTheBlacksmith )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("No...you will never get the ore!"); break;
 							case 1: from.Say("You will never find the caddellite!"); break;
@@ -5495,7 +5495,7 @@ namespace Server.Misc
 					}
 					else if ( from is OrkDemigod )
 					{
-						switch ( Utility.Random( 3 ))		   
+						switch ( Utility.Random( 3 ))
 						{
 							case 0: from.Say("You cannot defeat the power of gods..."); break;
 							case 1: from.Say("" + m.Name + ", you have bested me in battle..."); break;
@@ -5509,7 +5509,7 @@ namespace Server.Misc
 						 || from is FrostTrollShaman
 						 || from is FrostTroll )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("Me cannot lose!"); break;
 							case 1: from.Say("Me curse you..."); break;
@@ -5520,7 +5520,7 @@ namespace Server.Misc
 						 || from is Ettin
 						 || from is ArcticEttin )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("Arrrggghhh..."); break;
 							case 1: from.Say("You...fight...good..."); break;
@@ -5530,7 +5530,7 @@ namespace Server.Misc
 						 || from is ElderTitan
 						 || from is StormGiant )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("By what thunder is this?"); break;
 							case 1: from.Say("No, it cannot be..."); break;
@@ -5549,7 +5549,7 @@ namespace Server.Misc
 						 || from is HillGiant
 						 || from is HillGiantShaman )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("Me no feel good!"); break;
 							case 1: from.Say("Arrgghhh..."); break;
@@ -5557,7 +5557,7 @@ namespace Server.Misc
 					}
 					else if ( from is IceGiant )
 					{
-						switch ( Utility.Random( 3 ))		   
+						switch ( Utility.Random( 3 ))
 						{
 							case 0: from.Say("By iceberg's might, how..."); break;
 							case 1: from.Say("Arrgghhh..."); break;
@@ -5566,7 +5566,7 @@ namespace Server.Misc
 					}
 					else if ( from is LavaGiant )
 					{
-						switch ( Utility.Random( 3 ))		   
+						switch ( Utility.Random( 3 ))
 						{
 							case 0: from.Say("By magma's might, how..."); break;
 							case 1: from.Say("Arrgghhh..."); break;
@@ -5576,7 +5576,7 @@ namespace Server.Misc
 					else if ( from is DeepSeaGiant
 						 || from is SeaGiant )
 					{
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: from.Say("By Neptunes's might, how..."); break;
 							case 1: from.Say("By Poseidon's wrath, how..."); break;
@@ -5597,14 +5597,14 @@ namespace Server.Misc
 						 || from is Cyclops )
 					{
 						string called = "fly";
-						switch ( Utility.Random( 4 ))		   
+						switch ( Utility.Random( 4 ))
 						{
 							case 0: called = "fly"; break;
 							case 1: called = "wretch"; break;
 							case 2: called = "toad"; break;
 							case 3: called = "thing"; break;
 						};
-						switch ( Utility.Random( 3 ))		   
+						switch ( Utility.Random( 3 ))
 						{
 							case 0: from.Say("You puny " + called + ", how..."); break;
 							case 1: from.Say("Arrgghhh..."); break;
@@ -5617,7 +5617,7 @@ namespace Server.Misc
 						 || from is AncientReaper
 						 || from is AncientEnt )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("How...did...you..."); break;
 							case 1: from.Say("I...am...no...more..."); break;
@@ -5625,7 +5625,7 @@ namespace Server.Misc
 					}
 					else if ( from is SwampThing )
 					{
-						switch ( Utility.Random( 2 ))		   
+						switch ( Utility.Random( 2 ))
 						{
 							case 0: from.Say("Groo Grite Grood!"); break;
 							case 1: from.Say("Grarrgh..."); break;
@@ -5638,7 +5638,7 @@ namespace Server.Misc
 					else if ( from is Dracolich
 						 || from is SkeletalDragon )
 					{
-						switch ( Utility.Random( 3 ))		   
+						switch ( Utility.Random( 3 ))
 						{
 							case 0: from.Say("My power is eternal!"); break;
 							case 1: from.Say("" + m.Name + ", I will have my revenge..."); break;
@@ -5656,7 +5656,7 @@ namespace Server.Misc
 						 || from is UndeadDruid
 						 || from is DemiLich )
 					{
-						switch ( Utility.Random( 3 ))		   
+						switch ( Utility.Random( 3 ))
 						{
 							case 0: from.Say("My magic is eternal!"); break;
 							case 1: from.Say("" + m.Name + ", I will have vengeance..."); break;
@@ -5688,7 +5688,7 @@ namespace Server.Misc
 						 || from is OrkRogue
 						 || Server.Mobiles.BasePirate.IsSailor( from ) )
 					{
-						switch ( Utility.Random( 5 ))		   
+						switch ( Utility.Random( 5 ))
 						{
 							case 0: from.Say("No!"); break;
 							case 1: from.Say("Argh!"); break;
@@ -5778,7 +5778,7 @@ namespace Server
 		{
 			get{ return m_SavagesAndOrcs; }
 		}
-		
+
 		private static OppositionGroup m_FeyAndUndead = new OppositionGroup( new Type[][]
 			{
 				new Type[]
@@ -5817,7 +5817,7 @@ namespace Server.Mobiles
 			}
 			else if ( m_Mobile.IsHurt() || m_Mobile.Combatant != null )
 			{
-				m_Mobile.DebugSay( "I am hurt or being attacked, I flee" );						
+				m_Mobile.DebugSay( "I am hurt or being attacked, I flee" );
 				Action = ActionType.Flee;
 			}
 			else
@@ -5918,7 +5918,7 @@ namespace Server.Mobiles
 					{
 						m_Mobile.DebugSay( "Well, here I am safe" );
 						Action = ActionType.Wander;
-					}					
+					}
 				}
 				else
 				{
@@ -6015,7 +6015,7 @@ namespace Server.Mobiles
 				return true;
 			}
 
-			
+
 			// At 20% we should check if we must leave
 			if ( m_Mobile.Hits < m_Mobile.HitsMax*20/100 )
 			{
@@ -6037,10 +6037,10 @@ namespace Server.Mobiles
 						bFlee = true;
 					}
 				}
-						
+
 				if (bFlee)
 				{
-					Action = ActionType.Flee; 
+					Action = ActionType.Flee;
 				}
 			}
 
@@ -7808,7 +7808,7 @@ namespace Server.Mobiles
 
 			if( m_Mobile.DeleteOnRelease || m_Mobile.IsDeadPet )
 				m_Mobile.Delete();
-			
+
 			m_Mobile.BeginDeleteTimer();
 			m_Mobile.DropBackpack();
 
@@ -7875,7 +7875,7 @@ namespace Server.Mobiles
 					Name = FriendlyNameAttribute.GetFriendlyNameFor( creature.GetType() ).ToString();
 
 				//(As Per OSI)No name.  Normally, set by the ItemID of the Shrink Item unless we either explicitly set it with an Attribute, or, no lookup found
-				
+
 				Hue = creature.Hue & 0x0FFF;
 			}
 
@@ -8609,12 +8609,12 @@ namespace Server.Mobiles
 
 		/*
 		 *  Walk at range distance from mobile
-		 * 
+		 *
 		 *	iSteps : Number of steps
 		 *	bRun   : Do we run
 		 *	iWantDistMin : The minimum distance we want to be
 		 *  iWantDistMax : The maximum distance we want to be
-		 * 
+		 *
 		 */
 		public virtual bool WalkMobileRange( Mobile m, int iSteps, bool bRun, int iWantDistMin, int iWantDistMax )
 		{
@@ -8694,13 +8694,13 @@ namespace Server.Mobiles
 
 		/*
 		 * Here we check to acquire a target from our surronding
-		 * 
+		 *
 		 *  iRange : The range
 		 *  acqType : A type of acquire we want (closest, strongest, etc)
 		 *  bPlayerOnly : Don't bother with other creatures or NPCs, want a player
 		 *  bFacFriend : Check people in my faction
 		 *  bFacFoe : Check people in other factions
-		 * 
+		 *
 		 */
 		public virtual bool AcquireFocusMob( int iRange, FightMode acqType, bool bPlayerOnly, bool bFacFriend, bool bFacFoe )
 		{
@@ -8830,7 +8830,7 @@ namespace Server.Mobiles
 					// Ignore players with activated honor
 					if ( m is PlayerMobile && ( (PlayerMobile)m ).HonorActive && !( m_Mobile.Combatant == m ))
 						continue;
-					
+
 					if( acqType == FightMode.Aggressor || acqType == FightMode.Evil || acqType == FightMode.CharmMonster || acqType == FightMode.CharmAnimal )
 					{
 						// Only acquire this mobile if it attacked us, or if it's evil.
@@ -8842,7 +8842,7 @@ namespace Server.Mobiles
 							if ( bValid && acqType == FightMode.Evil ){ m.CriminalAction( false ); }
 						}
 
-						for ( int a = 0; !bValid && a < m_Mobile.Aggressed.Count; ++a )	
+						for ( int a = 0; !bValid && a < m_Mobile.Aggressed.Count; ++a )
 						{
 							bValid = ( m_Mobile.Aggressed[a].Defender == m );
 							if ( bValid && acqType == FightMode.Evil ){ m.CriminalAction( false ); }
@@ -10619,7 +10619,7 @@ namespace Server.Mobiles
 					if ( cpack != null )
 					{
 						Item steal1 = cpack.FindItemByType( typeof ( Bandage ) );
-						if ( steal1 != null ) 
+						if ( steal1 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10627,7 +10627,7 @@ namespace Server.Mobiles
 								m_Mobile.Target.Invoke( m_Mobile, steal1 );
 						}
 						Item steal2 = cpack.FindItemByType( typeof ( Nightshade ) );
-						if ( steal2 != null ) 
+						if ( steal2 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10635,7 +10635,7 @@ namespace Server.Mobiles
 								m_Mobile.Target.Invoke( m_Mobile, steal2 );
 						}
 						Item steal3 = cpack.FindItemByType( typeof ( BlackPearl ) );
-						if ( steal3 != null ) 
+						if ( steal3 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10644,7 +10644,7 @@ namespace Server.Mobiles
 						}
 
 						Item steal4 = cpack.FindItemByType( typeof ( MandrakeRoot ) );
-						if ( steal4 != null ) 
+						if ( steal4 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10653,7 +10653,7 @@ namespace Server.Mobiles
 						}
 
 						Item steal5 = cpack.FindItemByType( typeof ( Spellbook ) );
-						if ( steal5 != null ) 
+						if ( steal5 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10662,7 +10662,7 @@ namespace Server.Mobiles
 						}
 
 						Item steal6 = cpack.FindItemByType( typeof ( Runebook ) );
-						if ( steal6 != null ) 
+						if ( steal6 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10671,7 +10671,7 @@ namespace Server.Mobiles
 						}
 
 						Item steal7 = cpack.FindItemByType( typeof ( BasePotion ) );
-						if ( steal7 != null ) 
+						if ( steal7 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10680,7 +10680,7 @@ namespace Server.Mobiles
 						}
 
 						Item steal8 = cpack.FindItemByType( typeof ( SpellScroll ) );
-						if ( steal8 != null ) 
+						if ( steal8 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10689,7 +10689,7 @@ namespace Server.Mobiles
 						}
 
 						Item steal9 = cpack.FindItemByType( typeof ( BaseMagicStaff ) );
-						if ( steal9 != null ) 
+						if ( steal9 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10698,7 +10698,7 @@ namespace Server.Mobiles
 						}
 
 						Item steal10 = cpack.FindItemByType( typeof ( Gold ) );
-						if ( steal10 != null ) 
+						if ( steal10 != null )
 						{
 							m_Mobile.DebugSay( "Trying to steal from combatant." );
 							m_Mobile.UseSkill( SkillName.Stealing );
@@ -10706,15 +10706,15 @@ namespace Server.Mobiles
 								m_Mobile.Target.Invoke( m_Mobile, steal10 );
 						}
 
-						if (	steal1 == null && 
-								steal2 == null && 
-								steal3 == null && 
-								steal4 == null && 
-								steal5 == null && 
-								steal6 == null && 
-								steal7 == null && 
-								steal8 == null && 
-								steal9 == null && 
+						if (	steal1 == null &&
+								steal2 == null &&
+								steal3 == null &&
+								steal4 == null &&
+								steal5 == null &&
+								steal6 == null &&
+								steal7 == null &&
+								steal8 == null &&
+								steal9 == null &&
 								steal10 == null )
 						{
 							m_Mobile.DebugSay( "I am going to flee from {0}", combatant.Name );
@@ -10801,11 +10801,11 @@ namespace Server.Mobiles
 		public BerserkAI(BaseCreature m) : base (m)
 		{
 		}
-	
+
 		public override bool DoActionWander()
 		{
 			m_Mobile.DebugSay( "I have No Combatant" );
-			
+
 			if( AcquireFocusMob( m_Mobile.RangePerception, FightMode.Closest, false, true, true) )
 			{
 				if ( m_Mobile.Debug )
@@ -10813,15 +10813,15 @@ namespace Server.Mobiles
 
 				m_Mobile.Combatant = m_Mobile.FocusMob;
 				Action = ActionType.Combat;
-			}			
+			}
 			else
 			{
 				base.DoActionWander();
 			}
 
-			return true;			
+			return true;
 		}
-			
+
 		public override bool DoActionCombat()
 		{
 			if( m_Mobile.Combatant == null || m_Mobile.Combatant.Deleted )
@@ -10853,10 +10853,10 @@ namespace Server.Mobiles
 					}
 				}
 			}
-			
+
 			return true;
 		}
-		
+
 		public override bool DoActionGuard()
 		{
 			if ( AcquireFocusMob(m_Mobile.RangePerception, m_Mobile.FightMode, false, true, true ) )
@@ -10920,7 +10920,7 @@ namespace Server.Mobiles
 		{
 			if ( m_Mobile.Combatant != null )
 			{
-				m_Mobile.DebugSay( "I am hurt or being attacked, I kill him" );						
+				m_Mobile.DebugSay( "I am hurt or being attacked, I kill him" );
 				Action = ActionType.Combat;
 			}
 			else if (AcquireFocusMob(m_Mobile.RangePerception, m_Mobile.FightMode, true, false, true))
@@ -10983,7 +10983,7 @@ namespace Server.Mobiles
 					{
 						m_Mobile.DebugSay( "Well, here I am safe" );
 						Action = ActionType.Wander;
-					}					
+					}
 				}
 				else
 				{
@@ -11050,7 +11050,7 @@ namespace Server.Mobiles
 				m_Mobile.Say( Utility.RandomList( 1005305, 501603 ) );
 
 				Action = ActionType.Flee;
-				
+
 				return true;
 			}
 
@@ -11077,7 +11077,7 @@ namespace Server.Mobiles
 
 					m_Mobile.FocusMob = null;
 
-					Action = ActionType.Wander;	
+					Action = ActionType.Wander;
 				}
 			}
 
@@ -11098,13 +11098,13 @@ namespace Server.Mobiles
 			return base.HandlesOnSpeech( from );
 		}
 
-		// Temporary 
+		// Temporary
 		public override void OnSpeech( SpeechEventArgs e )
 		{
 			base.OnSpeech( e );
- 
+
 			Mobile from = e.Mobile;
- 
+
 			if ( m_Mobile is BaseVendor && from.InRange( m_Mobile, Core.AOS ? 1 : 4 ) && !e.Handled )
 			{
 				if ( e.HasKeyword( 0x14D ) ) // *vendor sell*

@@ -16,7 +16,7 @@ namespace Server.Items
 					return 0xA0C;
 			}
 		}
-		
+
 		public override int UnlitItemID
 		{
 			get
@@ -27,7 +27,7 @@ namespace Server.Items
 					return 0xA0A;
 			}
 		}
-		
+
 		[Constructable]
 		public WallTorch() : base( 0xA05 )
 		{

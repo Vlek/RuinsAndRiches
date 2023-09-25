@@ -1,12 +1,12 @@
-using System; 
+using System;
 using Server;
 using Server.Items;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "an archmage corpse" )] 
-	public class Archmage : BaseCreature 
-	{ 
+namespace Server.Mobiles
+{
+	[CorpseName( "an archmage corpse" )]
+	public class Archmage : BaseCreature
+	{
 		public override int BreathPhysicalDamage{ get{ return 0; } }
 		public override int BreathFireDamage{ get{ if ( YellHue < 2 ){ return 100; } else { return 0; } } }
 		public override int BreathColdDamage{ get{ if ( YellHue == 3 ){ return 100; } else { return 0; } } }
@@ -19,10 +19,10 @@ namespace Server.Mobiles
 		public override double BreathEffectDelay{ get{ return 0.1; } }
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 2 ); }
 
-		[Constructable] 
-		public Archmage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public Archmage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Body = 0x190; 
+			Body = 0x190;
 			Name = NameList.RandomName( "evil mage" );
 			Title = "the mad archmage";
 			EmoteHue = 11;
@@ -150,20 +150,20 @@ namespace Server.Mobiles
 			return base.OnBeforeDeath();
 		}
 
-		public Archmage( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public Archmage( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

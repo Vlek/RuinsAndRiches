@@ -241,7 +241,7 @@ namespace Server.Multis
 			int version = reader.ReadEncodedInt();
 
 			m_House = reader.ReadItem() as BaseHouse;
-			
+
 			if( m_House != null )
 			{
 				m_House.MovingCrate = this;

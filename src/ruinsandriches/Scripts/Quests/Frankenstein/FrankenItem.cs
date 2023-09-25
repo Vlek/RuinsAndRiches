@@ -111,10 +111,10 @@ namespace Server.Items
 										from.SendMessage( "The current brain is beginning to rot, so you throw it out." );
 									}
 									from.SendMessage( "You now have a fresh brain for this experiment." );
-									from.SendSound( 0x48 ); 
+									from.SendSound( 0x48 );
 									xJournal.HasBrain = brain.BrainLevel;
 									xJournal.BrainFrom = brain.BrainSource;
-									from.Backpack.FindItemByType( typeof ( SewingKit ) ).Delete(); 
+									from.Backpack.FindItemByType( typeof ( SewingKit ) ).Delete();
 									m_Part.Delete();
 								}
 							}

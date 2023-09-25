@@ -42,11 +42,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
             if (CheckSequence())
 			{
 				sings = true;
- 
+
                 double allvalue = (double)MusicSkill( Caster );
 
                     {
@@ -84,7 +84,7 @@ namespace Server.Spells.Song
                             //10
                             else
                             { new ExpireTimer(m, 0, rounds, TimeSpan.FromSeconds(2)).Start(); }
-                            //not required, just in case the else if dont cover it all, same as first if 
+                            //not required, just in case the else if dont cover it all, same as first if
 
                             m.FixedParticles(0x376A, 9, 32, 5030, 0x256, 3, EffectLayer.Waist);
                             m.PlaySound(0x1F2);

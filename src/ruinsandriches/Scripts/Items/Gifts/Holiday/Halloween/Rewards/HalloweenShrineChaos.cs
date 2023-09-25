@@ -10,7 +10,7 @@ namespace Server.Items
 		[Constructable]
 		public HalloweenShrineChaosAddon()
 		{
-			Name = "Chaos Shrine";       
+			Name = "Chaos Shrine";
 			AddComponent( new AddonComponent( 5349 ), 0, 0, 0 );
 			AddComponent( new AddonComponent( 5348 ), -1, 0, 0 );
 			AddComponent( new AddonComponent( 5347 ), -1, -1, 0 );

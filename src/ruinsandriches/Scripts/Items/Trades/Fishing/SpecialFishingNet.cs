@@ -297,7 +297,7 @@ namespace Server.Items
 					{
 						case 0: spawn = new TritunMage(); break;
 						case 1: spawn = new Tritun(); break;
-					} 
+					}
 				}
 
 				Spawn( SpawnAt, map, spawn, onBoat );

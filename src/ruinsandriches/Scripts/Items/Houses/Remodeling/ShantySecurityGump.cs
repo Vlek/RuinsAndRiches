@@ -39,7 +39,7 @@ namespace Server.Gumps
 
         public override void OnResponse(NetState state, RelayInfo info)
         {
-			m_From.SendSound( 0x4A ); 
+			m_From.SendSound( 0x4A );
             switch (info.ButtonID)
             {
                 case 1:

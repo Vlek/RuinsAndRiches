@@ -16,7 +16,7 @@ namespace Server.Items
 			Hue = Utility.RandomColor(0);
 
 			string book = "Book";
-			switch ( Utility.RandomMinMax( 1, 7 ) ) 
+			switch ( Utility.RandomMinMax( 1, 7 ) )
 			{
 				case 1: book = "Manual"; break;
 				case 2: book = "Tome"; break;
@@ -26,7 +26,7 @@ namespace Server.Items
 				case 6: book = "Omnibus"; break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: Name = Name + "'s " + book + " of Ninjitsu"; break;
 				case 1: Name = Name + "'s " + book + " of the Ninja"; break;
@@ -42,13 +42,13 @@ namespace Server.Items
 		public MyNinjaBook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -68,7 +68,7 @@ namespace Server.Items
 			Hue = Utility.RandomColor(0);
 
 			string book = "Book";
-			switch ( Utility.RandomMinMax( 1, 7 ) ) 
+			switch ( Utility.RandomMinMax( 1, 7 ) )
 			{
 				case 1: book = "Manual"; break;
 				case 2: book = "Tome"; break;
@@ -78,7 +78,7 @@ namespace Server.Items
 				case 6: book = "Omnibus"; break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: Name = Name + "'s " + book + " of Bushido"; break;
 				case 1: Name = Name + "'s " + book + " of the Samurai"; break;
@@ -94,13 +94,13 @@ namespace Server.Items
 		public MyBushidoBook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -120,7 +120,7 @@ namespace Server.Items
 			Hue = Utility.RandomColor(0);
 
 			string book = "Book";
-			switch ( Utility.RandomMinMax( 1, 7 ) ) 
+			switch ( Utility.RandomMinMax( 1, 7 ) )
 			{
 				case 1: book = "Manual"; break;
 				case 2: book = "Tome"; break;
@@ -130,7 +130,7 @@ namespace Server.Items
 				case 6: book = "Omnibus"; break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: Name = Name + "'s " + book + " of Knightship"; break;
 				case 1: Name = Name + "'s " + book + " of the Cavalier"; break;
@@ -146,13 +146,13 @@ namespace Server.Items
 		public MyChivalryBook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );

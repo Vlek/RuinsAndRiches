@@ -1,7 +1,7 @@
-using System; 
-using System.Collections.Generic; 
-using Server; 
-using System.Collections; 
+using System;
+using System.Collections.Generic;
+using Server;
+using System.Collections;
 using Server.Targeting;
 using Server.Items;
 using Server.Network;
@@ -10,23 +10,23 @@ using Server.Gumps;
 using Server.Misc;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
-{ 
-	public class LeatherWorker : BaseVendor 
-	{ 
-		private List<SBInfo> m_SBInfos = new List<SBInfo>(); 
-		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } } 
+namespace Server.Mobiles
+{
+	public class LeatherWorker : BaseVendor
+	{
+		private List<SBInfo> m_SBInfos = new List<SBInfo>();
+		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
 
 		public override NpcGuild NpcGuild{ get{ return NpcGuild.TailorsGuild; } }
 
 		[Constructable]
-		public LeatherWorker() : base( "the leather worker" ) 
-		{ 
-		} 
-		public override void InitSBInfo() 
-		{ 
-			m_SBInfos.Add( new SBLeatherArmor() ); 
-			m_SBInfos.Add( new SBStuddedArmor() ); 
+		public LeatherWorker() : base( "the leather worker" )
+		{
+		}
+		public override void InitSBInfo()
+		{
+			m_SBInfos.Add( new SBLeatherArmor() );
+			m_SBInfos.Add( new SBStuddedArmor() );
 			m_SBInfos.Add( new RSLeatherMain() );
 
 			if ( Worlds.IsCrypt( this.Location, this.Map ) )
@@ -38,8 +38,8 @@ namespace Server.Mobiles
 			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
 				m_SBInfos.Add( new RSLeatherSea() );
 
-			m_SBInfos.Add( new SBLeatherWorker() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() );  
+			m_SBInfos.Add( new SBLeatherWorker() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		///////////////////////////////////////////////////////////////////////////
@@ -47,7 +47,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -58,7 +58,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -70,11 +70,11 @@ namespace Server.Mobiles
             }
         }
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		private class FixEntry : ContextMenuEntry
 		{
@@ -303,7 +303,7 @@ namespace Server.Mobiles
                         from.SendMessage("You do not have enough gold.");
                     }
                 }
-                else if ( (targeted is BaseWeapon && from.Backpack != null) && ( targeted is BaseWhip || targeted is LevelPugilistGloves || targeted is LevelThrowingGloves || targeted is GiftPugilistGloves || targeted is GiftThrowingGloves || targeted is ThrowingGloves || targeted is PugilistGlove || targeted is PugilistGloves || targeted is PugilistMits ) ) 
+                else if ( (targeted is BaseWeapon && from.Backpack != null) && ( targeted is BaseWhip || targeted is LevelPugilistGloves || targeted is LevelThrowingGloves || targeted is GiftPugilistGloves || targeted is GiftThrowingGloves || targeted is ThrowingGloves || targeted is PugilistGlove || targeted is PugilistGloves || targeted is PugilistMits ) )
                 {
                     BaseWeapon ba = targeted as BaseWeapon;
                     Container pack = from.Backpack;
@@ -342,22 +342,22 @@ namespace Server.Mobiles
             }
         }
 
-		public LeatherWorker( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public LeatherWorker( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 
-			writer.Write( (int) 0 ); // version 
-		} 
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 
-			int version = reader.ReadInt(); 
-		} 
-	} 
-} 
+			int version = reader.ReadInt();
+		}
+	}
+}

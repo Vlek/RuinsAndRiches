@@ -30,8 +30,8 @@ namespace Server.Mobiles
 			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
 				m_SBInfos.Add( new RSOreSea() );
 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
-			m_SBInfos.Add( new SBGemArmor() ); 
+			m_SBInfos.Add( new SBBuyArtifacts() );
+			m_SBInfos.Add( new SBGemArmor() );
 		}
 
 		public override void InitOutfit()

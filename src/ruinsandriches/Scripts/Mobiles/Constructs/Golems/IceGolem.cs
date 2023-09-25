@@ -1,18 +1,18 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
+using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a golem corpse" )] 
-	public class IceGolem : BaseCreature 
+	[CorpseName( "a golem corpse" )]
+	public class IceGolem : BaseCreature
 	{
-		[Constructable] 
-		public IceGolem() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public IceGolem() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			Name = "an ice golem";
 			Hue = 0x480;
 			Body = 0x190;
@@ -80,7 +80,7 @@ namespace Server.Mobiles
 
 		public override void OnDeath( Container c )
 		{
-			base.OnDeath( c );		
+			base.OnDeath( c );
 			RareMetals stones = new RareMetals( Utility.RandomMinMax( 5, 10 ), "mystical ice stones" );
    			c.DropItem(stones);
 		}
@@ -94,22 +94,22 @@ namespace Server.Mobiles
 		public override bool ShowFameTitle{ get{ return false; } }
 		public override bool AlwaysAttackable{ get{ return true; } }
 
-		public IceGolem( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-
-			writer.Write( (int) 0 ); // version 
+		public IceGolem( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+	}
 }

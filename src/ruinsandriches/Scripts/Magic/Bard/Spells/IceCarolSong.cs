@@ -24,7 +24,7 @@ namespace Server.Spells.Song
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
 		public override double RequiredSkill{ get{ return 50.0; } }
 		public override int RequiredMana{ get{ return 12; } }
-		
+
 		public IceCarolSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
@@ -45,11 +45,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
 			if( CheckSequence() )
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
@@ -61,19 +61,19 @@ namespace Server.Spells.Song
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
-					TimeSpan duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster ) * 2) ); 
+
+					TimeSpan duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster ) * 2) );
                     int amount = Server.Misc.MyServerSettings.PlayerLevelMod( (int)(MusicSkill( Caster ) / 16), Caster );
-	
+
 					m.SendMessage( "Your resistance to cold has increased." );
 					ResistanceMod mod1 = new ResistanceMod( ResistanceType.Cold, + amount );
-						
+
 					m.AddResistanceMod( mod1 );
-						
+
 					m.FixedParticles( 0x373A, 10, 15, 5012, 0x480, 3, EffectLayer.Waist );
-						
+
 					new ExpireTimer( m, mod1, duration ).Start();
-					
+
 				}
 			}
 
@@ -96,7 +96,7 @@ namespace Server.Spells.Song
 			{
 				PlayerMobile dpm = m_Mobile as PlayerMobile;
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

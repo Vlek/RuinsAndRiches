@@ -38,7 +38,7 @@ namespace Server.Mobiles
 			Karma = -800;
 
 			VirtualArmor = 20;
-			
+
 			switch ( Utility.Random( 10 ))
 			{
 				case 0: PackItem( new LeftArm() ); break;

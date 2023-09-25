@@ -14,28 +14,28 @@ namespace Server.Spells.Undead
 		public override double RequiredSkill{ get{ return 75.0; } }
 		public override int RequiredMana{ get{ return 0; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
-		
+
 		public HellsBrandSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-		
+
 		public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-		
+
 		public override bool CheckCast()
 		{
 			if ( !base.CheckCast() )
 				return false;
-			
+
 			return SpellHelper.CheckTravel( Caster, TravelCheckType.Mark );
 		}
-		
+
 		public void Target( RecallRune rune )
 		{
 			Region reg = Region.Find( Caster.Location, Caster.Map );
-			
+
 			if ( !Caster.CanSee( rune ) )
 			{
 				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
@@ -65,19 +65,19 @@ namespace Server.Spells.Undead
 				Caster.FixedParticles( 0x376A, 9, 32, 0x13AF, EffectLayer.Waist );
 				Caster.PlaySound( 0x5CF );
 			}
-			
+
 			FinishSequence();
 		}
-		
+
 		private class InternalTarget : Target
 		{
 			private HellsBrandSpell m_Owner;
-			
+
 			public InternalTarget( HellsBrandSpell owner ) : base( 12, false, TargetFlags.None )
 			{
 				m_Owner = owner;
 			}
-			
+
 			protected override void OnTarget( Mobile from, object o )
 			{
 				if ( o is RecallRune )
@@ -89,7 +89,7 @@ namespace Server.Spells.Undead
 					from.Send( new MessageLocalized( from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 501797, from.Name, "" ) ); // I cannot mark that object.
 				}
 			}
-			
+
 			protected override void OnTargetFinish( Mobile from )
 			{
 				m_Owner.FinishSequence();

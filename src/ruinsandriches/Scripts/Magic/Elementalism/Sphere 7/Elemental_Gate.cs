@@ -230,7 +230,7 @@ namespace Server.Spells.Elementalism
 					from.Send( new MessageLocalized( from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 501030, from.Name, "" ) ); // I can not gate travel from that object.
 				}
 			}
-			
+
 			protected override void OnNonlocalTarget( Mobile from, object o )
 			{
 			}

@@ -8,7 +8,7 @@ namespace Server.Items
 	{
 		public override int LitItemID{ get { return 0x24C9; } }
 		public override int UnlitItemID{ get { return 0x24CA; } }
-		
+
 		[Constructable]
 		public RoundPaperLantern() : base( 0x24CA )
 		{

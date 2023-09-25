@@ -175,7 +175,7 @@ namespace Server.Gumps
 		private static int[] m_FoundationNumbers = (Core.ML ? new int[]
 			{
 				20, 189, 765, 65, 101, 0x2DF7, 0x2DFB, 0x3672, 0x3676
-			}: 
+			}:
 			new int[]
 			{
 				20, 189, 765, 65, 101
@@ -190,7 +190,7 @@ namespace Server.Gumps
 				660, 666, 672, 898, 970,
 				974, 982
 			};
-		
+
 		private static List<int> _HouseSigns = new List<int>();
 
 		public HouseGumpAOS( HouseGumpPageAOS page, Mobile from, BaseHouse house ) : base( 50, 40 )
@@ -278,7 +278,7 @@ namespace Server.Gumps
 			{
 				case HouseGumpPageAOS.Information:
 				{
-					AddHtmlLocalized( 20, 130, 200, 20, 1011242, LabelColor, false, false ); // Owned By: 
+					AddHtmlLocalized( 20, 130, 200, 20, 1011242, LabelColor, false, false ); // Owned By:
 					AddLabel( 210, 130, LabelHue, GetOwnerName() );
 
 					AddHtmlLocalized( 20, 170, 380, 20, 1018032, SelectedColor, false, false ); // This house is properly placed.
@@ -315,7 +315,7 @@ namespace Server.Gumps
 					AddHtmlLocalized( 20, 330, 200, 20, 1061793, SelectedColor, false, false ); // House Value
 					AddLabel( 250, 330, LabelHue, house.Price.ToString() );
 
-					AddHtmlLocalized( 20, 360, 300, 20, 1011241, SelectedColor, false, false ); // Number of visits this building has had: 
+					AddHtmlLocalized( 20, 360, 300, 20, 1011241, SelectedColor, false, false ); // Number of visits this building has had:
 					AddLabel( 350, 360, LabelHue, house.Visits.ToString() );
 
 					break;
@@ -501,7 +501,7 @@ namespace Server.Gumps
 				case HouseGumpPageAOS.ChangeSign:
 				{
 					int index = 0;
-					
+
 					if ( _HouseSigns.Count == 0 )
 					{
 						// Add standard signs
@@ -509,13 +509,13 @@ namespace Server.Gumps
 						{
 							_HouseSigns.Add( 2980 + ( i * 2 ) );
 						}
-				
+
 						// Add library, beekeeper, and necromancer signs ( ML )
 						_HouseSigns.Add( 2966 );
 						_HouseSigns.Add( 3140 );
 						_HouseSigns.Add( 2811 );
 					}
-					
+
 					int signsPerPage = Core.ML ? 24 : 18;
 					int totalSigns = Core.ML ? 57 : 54;
 					int pages = (int) Math.Ceiling( (double) totalSigns / signsPerPage );
@@ -1233,11 +1233,11 @@ namespace Server.Gumps
 						{
 							if ( isOwner && m_House.MovingCrate == null && m_House.InternalizedVendors.Count == 0 )
 							{
-								if( !Guilds.Guild.NewGuildSystem && m_House.FindGuildstone() != null ) 
+								if( !Guilds.Guild.NewGuildSystem && m_House.FindGuildstone() != null )
 								{
 									from.SendLocalizedMessage( 501389 ); // You cannot redeed a house with a guildstone inside.
 								}
-								else 
+								else
 								{
 									from.CloseGump( typeof( HouseDemolishGump ) );
 									from.SendGump( new HouseDemolishGump( from, m_House ) );
@@ -1300,7 +1300,7 @@ namespace Server.Gumps
 								case 5: newType = FoundationType.ElvenGrey; break;
 								case 6: newType = FoundationType.ElvenNatural; break;
 								case 7: newType = FoundationType.Crystal; break;
-								case 8: newType = FoundationType.Shadow; break; 
+								case 8: newType = FoundationType.Shadow; break;
 								default: return;
 							}
 						}

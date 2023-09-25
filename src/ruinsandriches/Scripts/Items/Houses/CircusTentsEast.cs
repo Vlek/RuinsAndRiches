@@ -211,20 +211,20 @@ namespace Server.Items
 			TentFound = 1;
 		}
 
-		public class MyCircusTentMenu : ContextMenuEntry 
-		{ 
-			private MyCircusTentEastAddonDeed i_Tent; 
-			private Mobile m_From; 
+		public class MyCircusTentMenu : ContextMenuEntry
+		{
+			private MyCircusTentEastAddonDeed i_Tent;
+			private Mobile m_From;
 
-			public MyCircusTentMenu( Mobile from, MyCircusTentEastAddonDeed tent ) : base( 5109, 1 ) 
-			{ 
-				m_From = from; 
-				i_Tent = tent; 
-			} 
+			public MyCircusTentMenu( Mobile from, MyCircusTentEastAddonDeed tent ) : base( 5109, 1 )
+			{
+				m_From = from;
+				i_Tent = tent;
+			}
 
-			public override void OnClick() 
-			{          
-				if( i_Tent.IsChildOf( m_From.Backpack ) ) 
+			public override void OnClick()
+			{
+				if( i_Tent.IsChildOf( m_From.Backpack ) )
 				{
 					int color1 = i_Tent.TentColor1;
 					int color2 = i_Tent.TentColor2;
@@ -233,15 +233,15 @@ namespace Server.Items
 					i_Tent.Hue = color2;
 					m_From.PlaySound( 0x55 );
 					m_From.SendMessage( "You swap the primary and secondary colors." );
-				} 
-				else 
+				}
+				else
 				{
 					m_From.SendMessage( "This must be in your backpack to swap colors." );
-				} 
-			} 
-		} 
+				}
+			}
+		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 
@@ -259,7 +259,7 @@ namespace Server.Items
 
 			list.Add( 1070722, "Can Be Dyed Different Colors");
 			list.Add( 1049644, "Requires a Minimum 9x9 Plot of Land");
-        } 
+        }
 
 		public override void Serialize( GenericWriter writer )
 		{

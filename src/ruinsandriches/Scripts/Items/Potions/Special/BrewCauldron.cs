@@ -2,9 +2,9 @@ using System;
 using Server;
 using Server.Mobiles;
 
-namespace Server.Items 
-{ 
-	public class BrewCauldron : Item 
+namespace Server.Items
+{
+	public class BrewCauldron : Item
 	{
 		private int m_Pool;
 		private int m_Uses;
@@ -28,8 +28,8 @@ namespace Server.Items
 
 		public virtual TimeSpan DecayDelay{ get{ return TimeSpan.FromMinutes( 30.0 ); } } // HOW LONG UNTIL THE POOL DECAYS IN MINUTES
 
-		[Constructable] 
-		public BrewCauldron() : base( 0x5711 ) 
+		[Constructable]
+		public BrewCauldron() : base( 0x5711 )
 		{
 			int potionHue = 0;
 			string potionName = "";
@@ -37,7 +37,7 @@ namespace Server.Items
 			m_Pool = Utility.Random( 30 );
 			m_Uses = Utility.RandomMinMax( 1, 10 );
 
-			switch ( m_Pool ) 
+			switch ( m_Pool )
 			{
 				case 0: potionHue = 1109; potionName = "Cauldron of Nightsight Liquid"; break;
 				case 1: potionHue = 45; potionName = "Cauldron of Lesser Cure Liquid"; break;
@@ -134,8 +134,8 @@ namespace Server.Items
 
 						if ( this.m_Uses < 1 )
 						{
-							if ( ItemID >= 0x5711 && ItemID <= 0x5717 ){ ItemID = 0x5710; } 
-							else if ( ItemID >= 0x5761 && ItemID <= 0x5764 ){ ItemID = 0x5760; } 
+							if ( ItemID >= 0x5711 && ItemID <= 0x5717 ){ ItemID = 0x5710; }
+							else if ( ItemID >= 0x5761 && ItemID <= 0x5764 ){ ItemID = 0x5760; }
 							else if ( ItemID >= 0x5766 && ItemID <= 0x5769 ){ ItemID = 0x5765; }
 							Name = "Cauldron";
 						}
@@ -153,10 +153,10 @@ namespace Server.Items
 		{
 			if ( ItemID == 0x5711 ){ Z=Z+2; }
 			base.OnAfterSpawn();
-		}		
+		}
 
-		public BrewCauldron( Serial serial ) : base( serial ) 
-		{ 
+		public BrewCauldron( Serial serial ) : base( serial )
+		{
 		}
 
 		public virtual void RefreshDecay( bool setDecayTime )

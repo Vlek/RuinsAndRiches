@@ -8,7 +8,7 @@ namespace Knives.Chat3
 {
     public enum OnlineStatus { Online, Away, Busy, Hidden }
     public enum Skin { Three, Two, One }
-    
+
     public class Data
     {
         #region Statics

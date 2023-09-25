@@ -1451,7 +1451,7 @@ namespace Server.Misc
 			int tome = Utility.RandomMinMax( 0, 6 );
 				if ( caps > 0 ){ Utility.RandomMinMax( 7, 13 ); }
 
-			switch ( tome ) 
+			switch ( tome )
 			{
 				case 0 : book = "book"; break;
 				case 1 : book = "lexicon"; break;
@@ -1501,7 +1501,7 @@ namespace Server.Misc
 			string[] vName8 = new string[] {"Search", "Quest", "Curse", "Magic", "Mystery", "Power", "Destruction", "Murder", "Desire", "Nature", "Legend", "Myth", "Lies", "Location"};
 				string sName8 = vName8[Utility.RandomMinMax( 0, (vName8.Length-1) )];
 
-			switch ( Utility.RandomMinMax( 0, 10 ) ) 
+			switch ( Utility.RandomMinMax( 0, 10 ) )
 			{
 				case 0: bookTitle = "The " + sName1 + " " + sName2 + " of the " + sName4; break;
 				case 1: bookTitle = "The " + sName2 + " of the " + sName1 + " " + sName4; break;
@@ -1548,7 +1548,7 @@ namespace Server.Misc
 			string[] vName8 = new string[] {"Search", "Quest", "Curse", "Magic", "Mystery", "Power", "Destruction", "Murder", "Desire", "Nature", "Legend", "Myth", "Lies", "Location"};
 				string sName8 = vName8[Utility.RandomMinMax( 0, (vName8.Length-1) )];
 
-			switch ( Utility.RandomMinMax( 0, 10 ) ) 
+			switch ( Utility.RandomMinMax( 0, 10 ) )
 			{
 				case 0: bookTitle = "the " + sName1 + " " + sName2 + " of the " + sName4; break;
 				case 1: bookTitle = "the " + sName2 + " of the " + sName1 + " " + sName4; break;

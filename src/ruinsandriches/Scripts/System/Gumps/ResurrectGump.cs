@@ -55,7 +55,7 @@ namespace Server.Gumps
 
 		public ResurrectGump( Mobile owner, Mobile healer, ResurrectMessage msg, bool fromSacrifice, double hitsScalar ): base( 50, 50 )
 		{
-			owner.SendSound( 0x0F8 ); 
+			owner.SendSound( 0x0F8 );
 			string color = "#b7cbda";
 
 			m_Healer = healer;

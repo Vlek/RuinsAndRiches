@@ -10,19 +10,19 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Uses { get { return i_Uses; } set { i_Uses = value; InvalidateProperties(); } }
 
-		[Constructable] 
+		[Constructable]
 		public ConsecratedSharpeningStone() : this( 5 )
 		{
 		}
 
-		[Constructable] 
-		public ConsecratedSharpeningStone( int uses ) : base( 0x1F14 ) 
-		{ 
+		[Constructable]
+		public ConsecratedSharpeningStone( int uses ) : base( 0x1F14 )
+		{
 			Weight = 1.0;
 			i_Uses = uses;
 			Hue = 0x38C;
 			Name = "Consecrated Sharpening Stone";
-		} 
+		}
 
 		public override void GetProperties( ObjectPropertyList list )
 		{
@@ -30,7 +30,7 @@ namespace Server.Items
 
 			list.Add( 1060584, i_Uses.ToString() ); // uses remaining: ~1_val~
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( IsChildOf( from.Backpack ) )

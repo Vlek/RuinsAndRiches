@@ -30,7 +30,7 @@ namespace Server.Mobiles
 
 			from.SendLocalizedMessage( 500452 ); // You place the gathered wool into your backpack.
 
-			int amount = 5; 
+			int amount = 5;
 
 			if ( Worlds.GetMyWorld( from.Map, from.Location, from.X, from.Y ) == "the Isles of Dread" )
 			{

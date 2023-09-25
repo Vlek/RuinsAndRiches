@@ -21,7 +21,7 @@ namespace Server.Items
 		{
 			public WantedMangarGump( Mobile from ): base( 50, 50 )
 			{
-				from.SendSound( 0x59 ); 
+				from.SendSound( 0x59 );
 				string color = "#a2a2cb";
 
 				this.Closable=true;
@@ -51,7 +51,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x59 ); 
+				from.SendSound( 0x59 );
 			}
 		}
 

@@ -34,7 +34,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
             if ( owner != null ){ list.Add( 1049644, "Belongs to " + owner.Name + ""); }
-        } 
+        }
 
 		public OrbOfTheAbyss( Serial serial ) : base( serial )
 		{

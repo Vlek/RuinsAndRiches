@@ -3,14 +3,14 @@ using Server.Network;
 using Server.Gumps;
 using Server.Multis;
 using System.Collections.Generic;
-using Server.ContextMenus; 
+using Server.ContextMenus;
 
 namespace Server.Items
 {
 	public class TowerLantern : BaseLight, ISecurable
 	{
 		public override int LitItemID{ get { return 0x24BF; } }
-		
+
 		public override int UnlitItemID{ get { return 0x24C0; } }
 
 		private SecureLevel m_Level;

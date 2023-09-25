@@ -59,7 +59,7 @@ namespace Server.Items
                 return Server.Misc.MyServerSettings.SpecialWeaponAbilSkill()+30;
             else if ( weapon != null && weapon.FifthAbility == this )
                 return Server.Misc.MyServerSettings.SpecialWeaponAbilSkill()+40;
-           
+
             return 200.0;
 		}
 
@@ -87,7 +87,7 @@ namespace Server.Items
 			scalar -= (double)lmc / 100;
 			mana = (int)(mana * scalar);
 
-			// using a special move within 3 seconds of the previous special move costs double mana 
+			// using a special move within 3 seconds of the previous special move costs double mana
 			if ( GetContext( from ) != null )
 				mana *= 2;
 
@@ -187,7 +187,7 @@ namespace Server.Items
 				from.SendLocalizedMessage( 1063456 ); // You must upgrade to Samurai Empire in order to use that ability.
 				return false;
 			}
-			
+
 			if ( Spells.Bushido.HonorableExecution.IsUnderPenalty( from ) || Spells.Ninjitsu.AnimalForm.UnderTransformation( from ) )
 			{
 				from.SendLocalizedMessage( 1063024 ); // You cannot perform this special move right now.
@@ -408,7 +408,7 @@ namespace Server.Items
 			m_Table.Remove( m );
 
 			CustomWeaponAbilities.Check(m);
-				   
+
 			if ( Core.AOS && m.NetState != null )
 				m.Send( ClearWeaponAbility.Instance );
 		}

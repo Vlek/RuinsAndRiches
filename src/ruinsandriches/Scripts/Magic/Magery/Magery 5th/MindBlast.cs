@@ -72,7 +72,7 @@ namespace Server.Spells.Fifth
 					SpellHelper.CheckReflect( (int)this.Circle, ref from, ref target );
 
 					int damage = (int)((Caster.Skills[SkillName.Magery].Value + Caster.Int) / 5);
-					
+
 					if ( damage > 60 )
 						damage = 60;
 
@@ -110,11 +110,11 @@ namespace Server.Spells.Fifth
 				if ( highestStat > 150 )
 					highestStat = 150;
 
-				if ( lowestStat > 150 ) 
+				if ( lowestStat > 150 )
 					lowestStat = 150;
 
 				double damage = GetDamageScalar(m)*(highestStat - lowestStat) / 4;//less damage
-				
+
 				if ( damage > 45 )
 					damage = 45;
 

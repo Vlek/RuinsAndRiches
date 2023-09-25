@@ -247,21 +247,21 @@ namespace Server.Items
 			EnchantSlayer1 = (SlayerName)reader.ReadInt();
 			EnchantSlayer2 = (SlayerName)reader.ReadInt();
 
-			RunTime thisTimer = new RunTime( this ); 
+			RunTime thisTimer = new RunTime( this );
 			thisTimer.Start();
 		}
 
-		public class RunTime : Timer 
-		{ 
+		public class RunTime : Timer
+		{
 			public RunTime( Item task ) : base( TimeSpan.FromSeconds( 10.0 ) )
-			{ 
-				Priority = TimerPriority.OneSecond; 
-			} 
+			{
+				Priority = TimerPriority.OneSecond;
+			}
 
-			protected override void OnTick() 
+			protected override void OnTick()
 			{
 				Server.Spells.HolyMan.EnchantSpell.EndEffects( null );
-			} 
+			}
 		}
 
 		public Mobile EnchantOwner;

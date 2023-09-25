@@ -27,8 +27,8 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBJewel() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBJewel() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		///////////////////////////////////////////////////////////////////////////

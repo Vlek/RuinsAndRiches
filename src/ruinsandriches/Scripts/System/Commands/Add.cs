@@ -292,7 +292,7 @@ namespace Server.Commands
 						IEntity built = Build( from, ctor, values, props, realProps, ref sendError );
 
 						sb.AppendFormat( "0x{0:X}; ", built.Serial.Value );
-	
+
 						if ( built is Item ) {
 							Container pack = packs[i];
 							pack.DropItem( (Item)built );

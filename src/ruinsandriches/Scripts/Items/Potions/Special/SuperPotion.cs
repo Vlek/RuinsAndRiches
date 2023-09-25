@@ -28,10 +28,10 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-	  
+
 		public override void Drink( Mobile m )
 		{
-			if ( m.InRange( this.GetWorldLocation(), 1 ) ) 
+			if ( m.InRange( this.GetWorldLocation(), 1 ) )
 			{
 				string modName = m.Serial.ToString();
 				StatMod smod = m.GetStatMod( "Str" );
@@ -53,11 +53,11 @@ namespace Server.Items
 					this.Consume();
 					m.SendMessage( "You feel much more superior!" );
 				}
-			} 
-			else 
-			{ 
-				m.LocalOverheadMessage( MessageType.Regular, 906, 1019045 ); // I can't reach that. 
-			} 
+			}
+			else
+			{
+				m.LocalOverheadMessage( MessageType.Regular, 906, 1019045 ); // I can't reach that.
+			}
 		}
 	}
 }

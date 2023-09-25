@@ -35,7 +35,7 @@ namespace Server.Items
 		Gloves,
 		Helmet,
 		Arms,
-		Legs, 
+		Legs,
 		Chest,
 		Shield
 	}

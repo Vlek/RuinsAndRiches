@@ -1,15 +1,15 @@
 using System;
 using Server;
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
 using Server.Network;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class BombWorshipper : BaseCreature 
+	public class BombWorshipper : BaseCreature
 	{
 		public override int BreathPhysicalDamage{ get{ return 30; } }
 		public override int BreathFireDamage{ get{ return 30; } }
@@ -24,8 +24,8 @@ namespace Server.Mobiles
 		public override int BreathEffectItemID{ get{ return 0x28EF; } }
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 0 ); }
 
-		[Constructable] 
-		public BombWorshipper() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public BombWorshipper() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = 0xB79;
@@ -33,14 +33,14 @@ namespace Server.Mobiles
 			HairItemID = 0;
 			FacialHairItemID = 0;
 
-			if ( Female = Utility.RandomBool() ) 
+			if ( Female = Utility.RandomBool() )
 			{
-				Body = 0x191; 
+				Body = 0x191;
 				Name = NameList.RandomName( "dark_elf_prefix_male" ) + NameList.RandomName( "dark_elf_suffix_female" );
-			} 
-			else 
-			{ 
-				Body = 0x190; 
+			}
+			else
+			{
+				Body = 0x190;
 				Name = NameList.RandomName( "dark_elf_prefix_female" ) + NameList.RandomName( "dark_elf_suffix_male" );
 			}
 
@@ -154,20 +154,20 @@ namespace Server.Mobiles
 			Server.Misc.IntelligentAction.CryOut( this );
 		}
 
-		public BombWorshipper( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public BombWorshipper( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }

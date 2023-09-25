@@ -72,7 +72,7 @@ namespace Server.Items
 		{
 			if ( !Movable )
 				return;
-			
+
 			if ( from.InRange( this.GetWorldLocation(), 2 ) )
 			{
 				from.SendLocalizedMessage( 501971 ); // Select the forge on which to smelt the ore, or another pile of ore with which to combine it.
@@ -103,7 +103,7 @@ namespace Server.Items
 					from.SendLocalizedMessage( 501976 ); // The ore is too far away.
 					return;
 				}
-				
+
 				#region Combine Ore
 				if ( targeted is BaseOre )
 				{
@@ -127,7 +127,7 @@ namespace Server.Items
 						worth *= 8;
 					else if ( ore.ItemID == 0x19B7 )
 						worth *= 2;
-					else 
+					else
 						worth *= 4;
 					int sourceWorth = m_Ore.Amount;
 					if ( m_Ore.ItemID == 0x19B9 )
@@ -163,7 +163,7 @@ namespace Server.Items
 						return;
 					}
 					else if ( ore.RootParent is Mobile && (plusWeight + ((Mobile)ore.RootParent).Backpack.TotalWeight) > ((Mobile)ore.RootParent).Backpack.MaxWeight )
-					{ 
+					{
 						from.SendLocalizedMessage( 501978 ); // The weight is too great to combine in a container.
 						return;
 					}
@@ -183,7 +183,7 @@ namespace Server.Items
 					{
 						ore.Amount = worth / 4;
 						m_Ore.Delete();
-					}	
+					}
 					return;
 				}
 				#endregion
@@ -212,13 +212,13 @@ namespace Server.Items
 
 					double minSkill = difficulty - 25.0;
 					double maxSkill = difficulty + 25.0;
-					
+
 					if ( difficulty > 50.0 && difficulty > from.Skills[SkillName.Mining].Value )
 					{
 						from.SendLocalizedMessage( 501986 ); // You have no idea how to smelt this strange ore!
 						return;
 					}
-					
+
 					if ( m_Ore.Amount <= 1 && m_Ore.ItemID == 0x19B7 )
 					{
 						from.SendLocalizedMessage( 501987 ); // There is not enough metal-bearing ore in this pile to make an ingot.
@@ -238,7 +238,7 @@ namespace Server.Items
 								amount = 30000;
 
 							BaseIngot ingot = m_Ore.GetIngot();
-							
+
 							if ( m_Ore.ItemID == 0x19B7 )
 							{
 								if ( m_Ore.Amount % 2 == 0 )
@@ -252,13 +252,13 @@ namespace Server.Items
 									m_Ore.Amount = 1;
 								}
 							}
-								
+
 							else if ( m_Ore.ItemID == 0x19B9 )
 							{
 								amount *= 2;
 								m_Ore.Delete();
 							}
-							
+
 							else
 							{
 								amount /= 1;
@@ -293,7 +293,7 @@ namespace Server.Items
 				}
 			}
 
-      protected override void OnNonlocalTarget( Mobile from, Object targeted ) 
+      protected override void OnNonlocalTarget( Mobile from, Object targeted )
       {
         OnTarget(from, targeted);
       }

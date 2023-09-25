@@ -12,15 +12,15 @@ namespace Server.Misc
 	/**
 	 * This file requires to be saved in a Unicode
 	 * compatible format.
-	 * 
+	 *
 	 * Warning: if you change String.Format methods,
 	 * please note that the following character
 	 * is suggested before any left-to-right text
 	 * in order to prevent undesired formatting
 	 * resulting from mixing LR and RL text: ‎
-	 * 
+	 *
 	 * Use this one if you need to force RL: ‏
-	 * 
+	 *
 	 * If you do not see the above chars, please
 	 * enable showing of unicode control chars
 	 **/
@@ -77,7 +77,7 @@ namespace Server.Misc
 			}
 		}
 
-		private static InternationalCode[] InternationalCodes = 
+		private static InternationalCode[] InternationalCodes =
 			{
 				new InternationalCode( "ARA", "Arabic", "Saudi Arabia", "العربية", "السعودية" ),
 				new InternationalCode( "ARI", "Arabic", "Iraq", "العربية", "العراق" ),

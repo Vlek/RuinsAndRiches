@@ -408,7 +408,7 @@ namespace Server.Network
 					byte layer = pvSrc.ReadByte();
 					Serial serial = pvSrc.ReadInt32();
 					int amount = pvSrc.ReadInt16();
-				
+
 					buyList.Add( new BuyItemResponse( serial, amount ) );
 				}
 
@@ -2216,7 +2216,7 @@ namespace Server.Network
 
 			byte raceID = (byte)(genderRace < 4 ? 0 : ((genderRace / 2) - 1));
 			race = Race.Races[raceID];
-		
+
 			if( race == null )
 				race = Race.DefaultRace;
 
@@ -2308,7 +2308,7 @@ namespace Server.Network
 		private static Dictionary<int, AuthIDPersistence> m_AuthIDWindow = new Dictionary<int, AuthIDPersistence>( m_AuthIDWindowSize );
 
 		private static int GenerateAuthID( NetState state )
-		{			
+		{
 			if ( m_AuthIDWindow.Count == m_AuthIDWindowSize ) {
 				int oldestID = 0;
 				DateTime oldest = DateTime.MaxValue;
@@ -2322,7 +2322,7 @@ namespace Server.Network
 
 				m_AuthIDWindow.Remove( oldestID );
 			}
-			
+
 			int authID;
 
 			do {
@@ -2333,7 +2333,7 @@ namespace Server.Network
 			} while ( m_AuthIDWindow.ContainsKey( authID ) );
 
 			m_AuthIDWindow[authID] = new AuthIDPersistence( state.Version );
-			
+
 			return authID;
 		}
 
@@ -2359,7 +2359,7 @@ namespace Server.Network
 				state.Dispose();
 				return;
 			}
-			
+
 			if ( state.m_AuthID != 0 && authID != state.m_AuthID )
 			{
 				Console.WriteLine( "Login: {0}: Invalid client detected, disconnecting", state );

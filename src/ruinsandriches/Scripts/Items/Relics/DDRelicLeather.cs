@@ -6,7 +6,7 @@ namespace Server.Items
 	public class DDRelicLeather : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -45,7 +45,7 @@ namespace Server.Items
 			}
 
 			string sType = "animal";
-			switch ( Utility.RandomMinMax( 0, 20 ) ) 
+			switch ( Utility.RandomMinMax( 0, 20 ) )
 			{
 				case 0:	sType = "deer";	break;
 				case 1:	sType = "wolf";	break;

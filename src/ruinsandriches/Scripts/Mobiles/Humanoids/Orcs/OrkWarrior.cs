@@ -1,30 +1,30 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
+using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "an orcish corpse" )] 
-	public class OrkWarrior : BaseCreature 
+	[CorpseName( "an orcish corpse" )]
+	public class OrkWarrior : BaseCreature
 	{
-		[Constructable] 
-		public OrkWarrior() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public OrkWarrior() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 
 			if ( this.Female = Utility.RandomBool() )
 			{
-				Body = 606; 
+				Body = 606;
 				Name = NameList.RandomName( "ork_female" );
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				Body = 605; 
+			}
+			else
+			{
+				Body = 605;
 				Name = NameList.RandomName( "ork_male" );
 				Utility.AssignRandomHair( this );
 				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
@@ -89,22 +89,22 @@ namespace Server.Mobiles
 			Server.Misc.MorphingTime.CheckMorph( this );
 		}
 
-		public OrkWarrior( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-
-			writer.Write( (int) 0 ); // version 
+		public OrkWarrior( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+	}
 }

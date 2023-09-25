@@ -9,7 +9,7 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 160; } }
 
 		public override int LabelNumber{ get{ return 1075037; } } // Helm of Swiftness
-		
+
 		public override int BasePhysicalResistance{ get{ return 6; } }
 		public override int BaseFireResistance{ get{ return 5; } }
 		public override int BaseColdResistance{ get{ return 6; } }

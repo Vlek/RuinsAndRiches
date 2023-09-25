@@ -71,7 +71,7 @@ namespace Server.Items
 	public class DeathlyMask : MagicHat
 	{
 		public Mobile owner;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public Mobile Owner
 		{
@@ -80,7 +80,7 @@ namespace Server.Items
 		}
 
 		public double lasts;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public double Lasts
 		{
@@ -101,10 +101,10 @@ namespace Server.Items
 			Name = "mask of death";
 			this.owner = from;
 			this.lasts = time;
-			Weight = 1.0; 
-			LootType = LootType.Blessed;						
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this, lasts ); 
-			thisTimer.Start(); 
+			Weight = 1.0;
+			LootType = LootType.Blessed;
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this, lasts );
+			thisTimer.Start();
 		}
 
 		public DeathlyMask( Serial serial ) : base( serial )
@@ -139,20 +139,20 @@ namespace Server.Items
 			int version = reader.ReadInt();
 			owner = reader.ReadMobile();
 			lasts = reader.ReadDouble();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item, Double lasts ) : base( TimeSpan.FromSeconds( lasts ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item, Double lasts ) : base( TimeSpan.FromSeconds( lasts ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					DeathlyMask masks = (DeathlyMask)i_item;
@@ -161,7 +161,7 @@ namespace Server.Items
 					from.PlaySound( 0x1F0 );
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 }

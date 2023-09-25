@@ -8,7 +8,7 @@ namespace Server.Items
 		public int RelicGoldValue;
 		public int RelicFlipID1;
 		public int RelicFlipID2;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -48,7 +48,7 @@ namespace Server.Items
 				case 17:sLook = "a unique";	break;
 				case 18:sLook = "an unusual";	break;
 			}
-			
+
 			string sDecon = "decorative";
 			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
@@ -57,7 +57,7 @@ namespace Server.Items
 				case 2:	sDecon = "ornamental";		break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 1 ) ) 
+			switch ( Utility.RandomMinMax( 0, 1 ) )
 			{
 				case 0: ItemID = 0x41FD; RelicFlipID1 = 0x41FD; RelicFlipID2 = 0x41FC; Name = sLook + ", " + sDecon + " harp"; break;
 				case 1: ItemID = 0x420C; RelicFlipID1 = 0x420C; RelicFlipID2 = 0x420D; Name = sLook + ", " + sDecon + " lute"; break;

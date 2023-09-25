@@ -14,7 +14,7 @@ namespace Server.Mobiles
 		[Constructable]
 		public Miller() : base( "the miller" )
 		{
-	
+
 		}
 
 		public override void InitSBInfo()

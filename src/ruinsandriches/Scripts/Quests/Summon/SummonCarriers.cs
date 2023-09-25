@@ -367,7 +367,7 @@ namespace Server.Misc
 			}
 			else if ( reg.IsPartOf( "the Ancient Prison" ) && m is DeadWizard && Server.Misc.SummonQuests.IsInLocation( b.Home.X, b.Home.Y, m.Map, 1928, 569, Map.SerpentIsland ) )
 			{
-				m.Body = 0x190; 
+				m.Body = 0x190;
 				m.EmoteHue = 123;
 				m.Name = "Saramak";
 				m.Title = "the forgotten prisoner";
@@ -406,9 +406,9 @@ namespace Server.Misc
 			}
 			else if ( reg.IsPartOf( "Dungeon Ankh" ) && m is DeadWizard && Server.Misc.SummonQuests.IsInLocation( b.Home.X, b.Home.Y, m.Map, 2044, 174, Map.SerpentIsland ) )
 			{
-				m.Body = 0x191; 
+				m.Body = 0x191;
 				m.EmoteHue = 123;
-				m.Name = NameList.RandomName( "female" ); 
+				m.Name = NameList.RandomName( "female" );
 				m.Title = "the dutchess of virtue";
 
 				Item dress = new SummonItems();
@@ -593,7 +593,7 @@ namespace Server.Misc
 			else if ( reg.IsPartOf( "the Dungeon of the Lich King" ) && m is Demon && Server.Misc.SummonQuests.IsInLocation( b.Home.X, b.Home.Y, m.Map, 342, 2179, Map.SavagedEmpire ) )
 			{
 				m.EmoteHue = 123;
-				m.Body = 9; 
+				m.Body = 9;
 				m.Name = "Permaxumus";
 				m.Title = "the ruler of the dark circle";
 				m.Hue = 0xA3A;
@@ -607,7 +607,7 @@ namespace Server.Misc
 					circb.Hue = 0;
 					b.PackItem( circb );
 			}
-			else if ( reg.IsPartOf( "the Forgotten Halls" ) && m is AncientLich && Server.Misc.SummonQuests.IsInLocation( b.Home.X, b.Home.Y, m.Map, 56, 3245, Map.SavagedEmpire ) ) // Shadow Lich already mutated 
+			else if ( reg.IsPartOf( "the Forgotten Halls" ) && m is AncientLich && Server.Misc.SummonQuests.IsInLocation( b.Home.X, b.Home.Y, m.Map, 56, 3245, Map.SavagedEmpire ) ) // Shadow Lich already mutated
 			{
 				m.EmoteHue = 123;
 				m.Name = "Ulmarek";
@@ -642,7 +642,7 @@ namespace Server.Misc
 					tablet.Hue = 0xB8B;
 					b.PackItem( tablet );
 			}
-			else if ( reg.IsPartOf( "Dungeon Rock" ) && m is GargoyleOnyx && Server.Misc.SummonQuests.IsInLocation( b.Home.X, b.Home.Y, m.Map, 645, 2193, Map.SavagedEmpire ) ) // Obsidian Gargoyle? 
+			else if ( reg.IsPartOf( "Dungeon Rock" ) && m is GargoyleOnyx && Server.Misc.SummonQuests.IsInLocation( b.Home.X, b.Home.Y, m.Map, 645, 2193, Map.SavagedEmpire ) ) // Obsidian Gargoyle?
 			{
 				m.EmoteHue = 123;
 				m.Name = NameList.RandomName( "gargoyle name" );
@@ -716,7 +716,7 @@ namespace Server.Misc
 			{
 				m.EmoteHue = 123;
 				m.Name = "Azerok";
-				m.Body = 0x190; 
+				m.Body = 0x190;
 				m.Title = "of the Deathly Veil";
 
 				Item skullazerok = new SummonItems();

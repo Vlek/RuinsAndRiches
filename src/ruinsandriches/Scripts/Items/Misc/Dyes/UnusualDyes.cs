@@ -11,7 +11,7 @@ namespace Server.Items
 	public class UnusualDyes : Item
 	{
 		public int DyeColor;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Dye_Color { get { return DyeColor; } set { DyeColor = value; InvalidateProperties(); } }
 

@@ -47,7 +47,7 @@ namespace Server.Mobiles
 
 			AddItem( new Boots( Utility.RandomNeutralHue() ) );
 			AddItem( new FancyShirt( Utility.RandomColor(0) ));
-			
+
 			switch ( Utility.Random( 5 ))
 			{
 				case 0: AddItem( new FeatheredHat( Utility.RandomColor(0) ) ); break;
@@ -153,18 +153,18 @@ namespace Server.Mobiles
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			if ( !from.Blessed )
-				list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+				list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -175,7 +175,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )

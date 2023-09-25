@@ -71,7 +71,7 @@ namespace Server.Items
 			}
 
 			string sMade = "Made of colored stone";
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: Hue = Utility.RandomColor(0); break;
 				case 1: Hue = Utility.RandomColor(0); break;
@@ -121,7 +121,7 @@ namespace Server.Items
 
 			Name = sLook + " tablet " + sMade;
 
-			switch ( Utility.RandomMinMax( 0, 4 ) ) 
+			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 0: ItemID = 0xED7; RelicFlipID1 = 0xED7; RelicFlipID2 = 0xED8; break;
 				case 1: ItemID = 0x1165; RelicFlipID1 = 0x1165; RelicFlipID2 = 0x1166; break;
@@ -222,7 +222,7 @@ namespace Server.Items
 			{
 				if ( this.ItemID == RelicFlipID1 ){ this.ItemID = RelicFlipID2; } else { this.ItemID = RelicFlipID1; }
 			}
-			else if ( !IsChildOf( e.Backpack ) ) 
+			else if ( !IsChildOf( e.Backpack ) )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

@@ -27,7 +27,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "For Adventurers To Drink in Your Home");
             list.Add( 1049644, "Use the Table to Configure it");
-        } 
+        }
 
 		public override void OnDoubleClick( Mobile from )
 		{
@@ -299,7 +299,7 @@ namespace Server.Items
 
         public TavernGump( Mobile from, TavernTable table ): base( 50, 50 )
         {
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#b9afa8";
 
             m_Table = table;

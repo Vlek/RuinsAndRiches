@@ -14,7 +14,7 @@ namespace Server.Engines.Craft
         {
             get { return 0; }
         }
- 
+
         public override string GumpTitleString
         {
             get { return "<BASEFONT Color=#FBFBFB><CENTER>WAND CRAFTING MENU</CENTER></BASEFONT>"; }

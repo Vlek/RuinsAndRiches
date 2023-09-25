@@ -1,28 +1,28 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.Misc; 
-using Server.Network; 
-using Server.Mobiles; 
-using Server.Multis; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.Misc;
+using Server.Network;
+using Server.Mobiles;
+using Server.Multis;
 using Server.Gumps;
 using Server.Targeting;
 using Server.ContextMenus;
 using System.Collections.Generic;
 
-namespace Server.Items 
-{ 
+namespace Server.Items
+{
 	public class StableStone : Item
-	{ 
-		[Constructable] 
-		public StableStone() : base( 0x14E7 ) 
-		{ 
-			Name = "hitching post"; 
+	{
+		[Constructable]
+		public StableStone() : base( 0x14E7 )
+		{
+			Name = "hitching post";
 			Weight = 20.0;
-		} 
+		}
 
-		public StableStone( Serial serial ) : base( serial ) 
-		{ 
+		public StableStone( Serial serial ) : base( serial )
+		{
 		}
 
 		private class StableEntry : ContextMenuEntry
@@ -46,7 +46,7 @@ namespace Server.Items
 		{
 			private StableStone m_Trainer;
 			private Mobile m_From;
-			
+
 			public ClaimingGumpEntry( StableStone trainer, Mobile from ) : base( 6165, 3 )
 			{
 				m_Trainer = trainer;
@@ -57,7 +57,7 @@ namespace Server.Items
 			{
 			    if( !( m_From is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_From;
 				{
 					m_Trainer.BeginClaimList( m_From );
@@ -88,7 +88,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Stable Your Pets At Your Home");
 			list.Add( 1049644, "For Grandmasters In Camping");
-        } 
+        }
 
 		private class StableTarget : Target
 		{
@@ -201,7 +201,7 @@ namespace Server.Items
 
 			public ClaimListGump( StableStone trainer, Mobile from, ArrayList list ) : base( 50, 50 )
 			{
-				from.SendSound( 0x0EB ); 
+				from.SendSound( 0x0EB );
 				string color = "#bfad7d";
 
 				m_Trainer = trainer;
@@ -238,14 +238,14 @@ namespace Server.Items
 
 			public override void OnResponse( NetState sender, RelayInfo info )
 			{
-				m_From.SendSound( 0x0F2 ); 
+				m_From.SendSound( 0x0F2 );
 				int index = info.ButtonID - 1;
 
 				if ( index >= 0 && index < m_List.Count )
 					m_Trainer.EndClaimList( m_From, m_List[index] as BaseCreature );
 			}
 		}
-		
+
 		public void BeginClaimList( Mobile from )
 		{
 			if ( Deleted || !from.CheckAlive() )
@@ -304,8 +304,8 @@ namespace Server.Items
 				from.SendMessage ( "That Pet remained in the stables because you have too many followers");
 			}
 		}
-      	
-		public override bool HandlesOnSpeech{ get{ return true; } } 
+
+		public override bool HandlesOnSpeech{ get{ return true; } }
 
 		public override void OnSpeech( SpeechEventArgs e )
 		{
@@ -358,7 +358,7 @@ namespace Server.Items
 
 			bool claimed = false;
 			int stabled = 0;
-			
+
 			bool claimByName = ( petName != null );
 
 			for ( int i = 0; i < from.Stabled.Count; ++i )
@@ -425,16 +425,16 @@ namespace Server.Items
 				pet.Loyalty = BaseCreature.MaxLoyalty; // Wonderfully Happy
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-   	} 
-} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+   	}
+}

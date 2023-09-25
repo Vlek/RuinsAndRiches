@@ -68,7 +68,7 @@ namespace Server.Spells.Research
 					case 25: item = new SpoolOfThread(); item.Amount = Utility.RandomMinMax( 1, 5 ); msg = "You conjure some thread."; break;
 					case 26: item = new TenFootPole(); msg = "You conjure a ten foot pole."; break;
 					case 27: item = new Torch(); msg = "You conjure a torch."; break;
-					case 28: item = new Waterskin(); msg = "You conjure a waterskin."; 
+					case 28: item = new Waterskin(); msg = "You conjure a waterskin.";
 						if ( Server.Items.BaseRace.BloodDrinker( Caster.RaceID ) ){ item = new BloodyDrink(); item.Amount = Utility.RandomMinMax( 1, 5 ); msg = "You conjure fresh blood."; }
 						else if ( Server.Items.BaseRace.BrainEater( Caster.RaceID ) ){ item = new FreshBrain(); item.Amount = Utility.RandomMinMax( 1, 5 ); msg = "You conjure fresh brains."; }
 					break;

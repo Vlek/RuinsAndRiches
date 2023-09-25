@@ -31,15 +31,15 @@ namespace Server.Gumps
 			AddImageTiled( 10, 40, 400, 200, 0xA40 );
 			AddAlphaRegion( 10, 40, 400, 200 );
 
-			/* You are attempting to resize your house. You will be refunded the house's 
-			value directly to your bank box. All items in the house will *remain behind* 
-			and can be *freely picked up by anyone*. Once the house is demolished, however, 
-			only this account will be able to place on the land for one hour. This *will* 
-			circumvent the normal 7-day waiting period (if it applies to you). This action 
-			will not un-condemn any other houses on your account. If you have other, 
-			grandfathered houses, this action *WILL* condemn them. Are you sure you wish 
+			/* You are attempting to resize your house. You will be refunded the house's
+			value directly to your bank box. All items in the house will *remain behind*
+			and can be *freely picked up by anyone*. Once the house is demolished, however,
+			only this account will be able to place on the land for one hour. This *will*
+			circumvent the normal 7-day waiting period (if it applies to you). This action
+			will not un-condemn any other houses on your account. If you have other,
+			grandfathered houses, this action *WILL* condemn them. Are you sure you wish
 			to continue?*/
-			AddHtmlLocalized( 10, 40, 400, 200, 1080196, 0x7F00, false, true ); 
+			AddHtmlLocalized( 10, 40, 400, 200, 1080196, 0x7F00, false, true );
 
 			AddImageTiled( 10, 250, 400, 20, 0xA40 );
 			AddAlphaRegion( 10, 250, 400, 20 );

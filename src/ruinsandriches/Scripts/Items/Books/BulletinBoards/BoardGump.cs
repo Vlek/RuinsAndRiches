@@ -10,7 +10,7 @@ using Server.Commands.Generic;
 using Server.Prompts;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
 	public class BoardGump : Gump
 	{
@@ -31,7 +31,7 @@ namespace Server.Gumps
 			AddButton(609, 8, 4017, 4017, 0, GumpButtonType.Reply, 0);
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
 			Mobile from = state.Mobile;
 			from.SendSound( 0x59 );

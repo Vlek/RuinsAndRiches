@@ -1013,57 +1013,57 @@ namespace Server.Items
 			}
 		}
 
-		public class PourMenu : ContextMenuEntry 
-		{ 
-			private BaseBeverage i_Beverage; 
-			private Mobile m_From; 
+		public class PourMenu : ContextMenuEntry
+		{
+			private BaseBeverage i_Beverage;
+			private Mobile m_From;
 
-			public PourMenu( Mobile from, BaseBeverage drink ) : base( 6250, 1 ) 
-			{ 
-				m_From = from; 
-				i_Beverage = drink; 
-			} 
+			public PourMenu( Mobile from, BaseBeverage drink ) : base( 6250, 1 )
+			{
+				m_From = from;
+				i_Beverage = drink;
+			}
 
-			public override void OnClick() 
-			{          
-				if( i_Beverage.IsChildOf( m_From.Backpack ) ) 
-				{ 
+			public override void OnClick()
+			{
+				if( i_Beverage.IsChildOf( m_From.Backpack ) )
+				{
 					m_From.BeginTarget( -1, true, TargetFlags.None, new TargetCallback( i_Beverage.Pour_OnTarget ) );
 					m_From.SendLocalizedMessage( 1010086 ); // What do you want to use this on?
-				} 
-				else 
+				}
+				else
 				{
 					m_From.SendMessage( "This must be in your backpack to use." );
-				} 
-			} 
-		} 
+				}
+			}
+		}
 
-		public class FillMenu : ContextMenuEntry 
-		{ 
-			private BaseBeverage i_Beverage; 
-			private Mobile m_From; 
+		public class FillMenu : ContextMenuEntry
+		{
+			private BaseBeverage i_Beverage;
+			private Mobile m_From;
 
-			public FillMenu( Mobile from, BaseBeverage drink ) : base( 6255, 1 ) 
-			{ 
-				m_From = from; 
-				i_Beverage = drink; 
-			} 
+			public FillMenu( Mobile from, BaseBeverage drink ) : base( 6255, 1 )
+			{
+				m_From = from;
+				i_Beverage = drink;
+			}
 
-			public override void OnClick() 
-			{          
-				if( i_Beverage.IsChildOf( m_From.Backpack ) ) 
-				{ 
+			public override void OnClick()
+			{
+				if( i_Beverage.IsChildOf( m_From.Backpack ) )
+				{
 					m_From.BeginTarget( -1, true, TargetFlags.None, new TargetCallback( i_Beverage.Fill_OnTarget ) );
 					m_From.SendLocalizedMessage( 500837 ); // Fill from what?
-				} 
-				else 
+				}
+				else
 				{
 					m_From.SendMessage( "This must be in your backpack to use." );
-				} 
-			} 
-		} 
+				}
+			}
+		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 

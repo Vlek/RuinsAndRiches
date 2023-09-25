@@ -143,7 +143,7 @@ namespace Server.Items
 
 			BankBox box = from.FindBankNoCreate();
 			CommodityDeedBox cox = CommodityDeedBox.Find( this );
-			
+
 			// Veteran Rewards mods
 			if ( m_Commodity != null )
 			{
@@ -233,7 +233,7 @@ namespace Server.Items
 					CommodityDeedBox cox = CommodityDeedBox.Find( m_Deed );
 
 					// Veteran Rewards mods
-					if ( box != null && m_Deed.IsChildOf( box ) && ((Item)targeted).IsChildOf( box ) || 
+					if ( box != null && m_Deed.IsChildOf( box ) && ((Item)targeted).IsChildOf( box ) ||
 						cox != null && cox.IsSecure && ((Item)targeted).IsChildOf( cox ) )
 					{
 						if ( m_Deed.SetCommodity( (Item) targeted ) )

@@ -131,12 +131,12 @@ namespace Server.Items
 
 		private static Type[] m_RuneMagic = new Type[]
 			{
-				typeof( RuneJournal ),		typeof( Runebook ),		typeof( RuneBag ),		typeof( RecallRune), 
-				typeof( An ),				typeof( Bet ),			typeof( Corp ),			typeof( Des ),			typeof( Ex ),		
-				typeof( Flam ),				typeof( Grav ),			typeof( Hur ),			typeof( In ),			typeof( Jux ),			typeof( Kal ),		
-				typeof( Lor ),				typeof( Mani ),			typeof( Nox ),			typeof( Ort ),			typeof( Por ),			typeof( Quas ),		
-				typeof( Rel ),				typeof( Sanct ),		typeof( Tym ),			typeof( Uus ),			typeof( Vas ),			typeof( Wis ),		
-				typeof( Xen ),				typeof( Ylem ),			typeof( Zu )	
+				typeof( RuneJournal ),		typeof( Runebook ),		typeof( RuneBag ),		typeof( RecallRune),
+				typeof( An ),				typeof( Bet ),			typeof( Corp ),			typeof( Des ),			typeof( Ex ),
+				typeof( Flam ),				typeof( Grav ),			typeof( Hur ),			typeof( In ),			typeof( Jux ),			typeof( Kal ),
+				typeof( Lor ),				typeof( Mani ),			typeof( Nox ),			typeof( Ort ),			typeof( Por ),			typeof( Quas ),
+				typeof( Rel ),				typeof( Sanct ),		typeof( Tym ),			typeof( Uus ),			typeof( Vas ),			typeof( Wis ),
+				typeof( Xen ),				typeof( Ylem ),			typeof( Zu )
 			};
 
 		public static Type[] RuneMagic{ get{ return m_RuneMagic; } }
@@ -158,8 +158,8 @@ namespace Server.Items
 				typeof( BlueBook ),					typeof( BlueBook ),							typeof( BlueBook ),
 				typeof( BlueBook ),					typeof( BlueBook ),							typeof( BlueBook ),
 				typeof( BlueBook ),					typeof( BlueBook ),							typeof( BlueBook ),
-				typeof( WorldMapLodor ),			typeof( WorldMapSosaria ),					typeof( WorldMapBottle ),	
-				typeof( WorldMapSerpent ),			typeof( WorldMapUmber ),					typeof( AlchemicalElixirs ), 
+				typeof( WorldMapLodor ),			typeof( WorldMapSosaria ),					typeof( WorldMapBottle ),
+				typeof( WorldMapSerpent ),			typeof( WorldMapUmber ),					typeof( AlchemicalElixirs ),
 				typeof( WorldMapAmbrosia ),			typeof( WorldMapIslesOfDread ),				typeof( WorldMapSavage ),
 				typeof( RuneJournal ),				typeof( MapRanger ),						typeof( GoldenRangers ),
 				typeof( BookDruidBrewing ),			typeof( BookWitchBrewing ),					typeof( LearnWoodBook ),
@@ -192,7 +192,7 @@ namespace Server.Items
 				typeof( SewingKit ),			typeof( Trumpet ),
 				typeof( SmithHammer ),			typeof( Skillet ),				typeof( RecallRune ),
 				typeof( GraveShovel ),			typeof( DruidCauldron ),		typeof( WitchCauldron ),
-				typeof( LumberAxe ),			typeof( InteriorDecorator ),	typeof( HousePlacementTool ), 
+				typeof( LumberAxe ),			typeof( InteriorDecorator ),	typeof( HousePlacementTool ),
 				typeof( SmallTent ),			typeof( CampersTent ),			typeof( TenFootPole ),
 				typeof( Drums ),				typeof( LapHarp ),				typeof( Lute ),
 				typeof( Tambourine ),			typeof( BambooFlute ),			typeof( PolishBoneBrush ),
@@ -210,16 +210,16 @@ namespace Server.Items
 
 		private static Type[] m_DungeonRareTypes = new Type[]
 			{
-				typeof( MagicJewelryRing ),		typeof( MagicJewelryNecklace ),			typeof( MagicJewelryEarrings ),	
-				typeof( MagicJewelryBracelet ),	typeof( SkeletonsKey ),					typeof( PaintCanvas ),				
+				typeof( MagicJewelryRing ),		typeof( MagicJewelryNecklace ),			typeof( MagicJewelryEarrings ),
+				typeof( MagicJewelryBracelet ),	typeof( SkeletonsKey ),					typeof( PaintCanvas ),
 				typeof( HeavySharpeningStone ),	typeof( ConsecratedSharpeningStone ),	typeof( MyCircusTentEastAddonDeed ),
 				typeof( ManyArrows100 ),		typeof( ManyBolts100 ),					typeof( MyTentSouthAddonDeed ),
 				typeof( RoughSharpeningStone ),	typeof( DenseSharpeningStone ),			typeof( ElementalSharpeningStone ),
 				typeof( Runebook ),				typeof( Sand ),							typeof( MagicalDyes ),
-				typeof( UnknownKeg ),			typeof( ArtifactManual ),				typeof( light_dragon_brazier ), 
+				typeof( UnknownKeg ),			typeof( ArtifactManual ),				typeof( light_dragon_brazier ),
 				typeof( CrystallineJar ),		typeof( TrophyBase ),					typeof( DockingLantern ),
 				typeof( MagicScissors ), 		typeof( InvulnerabilityPotion ),		typeof( MoonStone ),
-				typeof( BoatBuild ),			typeof( TrapKit ),						typeof( MalletStake ), 
+				typeof( BoatBuild ),			typeof( TrapKit ),						typeof( MalletStake ),
 				typeof( MySpellbook ),			typeof( MyNecromancerSpellbook ),		typeof( MySongbook ),
 				typeof( MyPaladinbook ),		typeof( MySamuraibook ),				typeof( MyNinjabook ),
 				typeof( CandleLarge ),			typeof( Candelabra ),					typeof( CandelabraStand ),
@@ -265,8 +265,8 @@ namespace Server.Items
 				typeof( SpoonRight ),			typeof( Knife ),				typeof( KnifeLeft ),
 				typeof( KnifeRight ),			typeof( Plate ),				typeof( Jug ),
 				typeof( CeramicMug ),			typeof( PewterMug ),			typeof( Goblet ),
-				typeof( GlassMug ),				typeof( Pitcher ),				typeof( BlueBook ), 
-				typeof( Candle ),				typeof( CandleLarge ),			typeof( CandleLong ), 
+				typeof( GlassMug ),				typeof( Pitcher ),				typeof( BlueBook ),
+				typeof( Candle ),				typeof( CandleLarge ),			typeof( CandleLong ),
 				typeof( CandleShort ),			typeof( CandleSkull ),			typeof( BlueBook ),			typeof( Pillows ),
 				typeof( Brazier ),				typeof( BrazierTall ),			typeof( WallTorch ),		typeof( ColoredWallTorch )
 			};
@@ -282,11 +282,11 @@ namespace Server.Items
 
 		private static Type[] m_DungeonOrientTypes = new Type[]
 			{
-				typeof( WhiteHangingLantern ),	typeof( ShojiLantern ),			typeof( RoundPaperLantern ),				
-				typeof( RedHangingLantern ),	typeof( PaperLantern ),			typeof( TowerLantern ),				
-				typeof( OrigamiPaper ),			typeof( WindChimes ),			typeof( FancyWindChimes ),				
-				typeof( BambooScreen ),			typeof( ShojiScreen ),			typeof( OrientBasket1 ),				
-				typeof( OrientBasket2 ),		typeof( OrientBasket3 ),		typeof( OrientBasket4 ),				
+				typeof( WhiteHangingLantern ),	typeof( ShojiLantern ),			typeof( RoundPaperLantern ),
+				typeof( RedHangingLantern ),	typeof( PaperLantern ),			typeof( TowerLantern ),
+				typeof( OrigamiPaper ),			typeof( WindChimes ),			typeof( FancyWindChimes ),
+				typeof( BambooScreen ),			typeof( ShojiScreen ),			typeof( OrientBasket1 ),
+				typeof( OrientBasket2 ),		typeof( OrientBasket3 ),		typeof( OrientBasket4 ),
 				typeof( OrientBasket5 ),		typeof( OrientalItems )
 			};
 
@@ -301,14 +301,14 @@ namespace Server.Items
 
 		private static Type[] m_DungeonEvilTypes = new Type[]
 			{
-				typeof( GuillotineDeed ),					typeof( IronMaidenDeed ),			typeof( ScarecrowDeed ),	
-				typeof( WoodenCoffinDeed ),					typeof( UnsettlingPortraitDeed ),	typeof( BoneCouchDeed ),	
-				typeof( AwesomeDisturbingPortraitDeed ),	typeof( BoneTableDeed ),			typeof( BoneThroneDeed ),	
-				typeof( CreepyPortraitDeed ),				typeof( DisturbingPortraitDeed ),	typeof( HaunterMirrorDeed ),	
-				typeof( SacrificialAltarDeed ),				typeof( BedOfNailsDeed ),			typeof( ESpikeColumnDeed ),	
-				typeof( ESpikePostEastDeed ),				typeof( ESpikePostSouthDeed ),		typeof( EObsidianPillarDeed ),	
-				typeof( EObsidianRockDeed ),				typeof( EShadowAltarDeed ),			typeof( EShadowBannerDeed ),	
-				typeof( EShadowFirePitDeed ),				typeof( EShadowFirePitCrossDeed ),	typeof( EShadowPillarDeed ),	
+				typeof( GuillotineDeed ),					typeof( IronMaidenDeed ),			typeof( ScarecrowDeed ),
+				typeof( WoodenCoffinDeed ),					typeof( UnsettlingPortraitDeed ),	typeof( BoneCouchDeed ),
+				typeof( AwesomeDisturbingPortraitDeed ),	typeof( BoneTableDeed ),			typeof( BoneThroneDeed ),
+				typeof( CreepyPortraitDeed ),				typeof( DisturbingPortraitDeed ),	typeof( HaunterMirrorDeed ),
+				typeof( SacrificialAltarDeed ),				typeof( BedOfNailsDeed ),			typeof( ESpikeColumnDeed ),
+				typeof( ESpikePostEastDeed ),				typeof( ESpikePostSouthDeed ),		typeof( EObsidianPillarDeed ),
+				typeof( EObsidianRockDeed ),				typeof( EShadowAltarDeed ),			typeof( EShadowBannerDeed ),
+				typeof( EShadowFirePitDeed ),				typeof( EShadowFirePitCrossDeed ),	typeof( EShadowPillarDeed ),
 				typeof( BloodyPentagramDeed ),				typeof( EvilItems ),				typeof( EvilItems ),
 				typeof( EvilItems ),						typeof( EvilItems ),				typeof( EvilItems ),
 				typeof( BrokenArmoire ),					typeof( BrokenBookcase ),			typeof( BrokenDrawer ),
@@ -354,34 +354,34 @@ namespace Server.Items
 
 		private static Type[] m_SpaceJunkTypes = new Type[]
 			{
-				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ), 
-				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ), 
-				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ), 
-				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ), 
-				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ), 
-				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ), 
-				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ), 
-				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ), 
+				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ),
+				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ),
+				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ),
+				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ),
+				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ),
+				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ),
+				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ),
+				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ),
 				typeof( SpaceJunkY ), 			typeof( SpaceJunkZ ),
 
-				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ), 
-				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ), 
-				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ), 
-				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ), 
-				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ), 
-				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ), 
-				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ), 
-				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ), 
+				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ),
+				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ),
+				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ),
+				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ),
+				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ),
+				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ),
+				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ),
+				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ),
 				typeof( SpaceJunkY ), 			typeof( SpaceJunkZ ),
 
-				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ), 
-				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ), 
-				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ), 
-				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ), 
-				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ), 
-				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ), 
-				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ), 
-				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ), 
+				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ),
+				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ),
+				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ),
+				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ),
+				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ),
+				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ),
+				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ),
+				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ),
 				typeof( SpaceJunkY ), 			typeof( SpaceJunkZ ),
 
 				typeof( ChickenLeg ), 			typeof( Ribs ), 					typeof( RomulanAle ),
@@ -425,24 +425,24 @@ namespace Server.Items
 
 		private static Type[] m_SpaceBagTypes = new Type[]
 			{
-				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ), 
-				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ), 
-				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ), 
-				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ), 
-				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ), 
-				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ), 
-				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ), 
-				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ), 
+				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ),
+				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ),
+				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ),
+				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ),
+				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ),
+				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ),
+				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ),
+				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ),
 				typeof( SpaceJunkY ), 			typeof( SpaceJunkZ ),
 
-				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ), 
-				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ), 
-				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ), 
-				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ), 
-				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ), 
-				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ), 
-				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ), 
-				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ), 
+				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ),
+				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ),
+				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ),
+				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ),
+				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ),
+				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ),
+				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ),
+				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ),
 				typeof( SpaceJunkY ), 			typeof( SpaceJunkZ ),
 
 				typeof( RobotBatteries ),		typeof( RobotSheetMetal ),			typeof( RobotOil ),
@@ -461,14 +461,14 @@ namespace Server.Items
 
 		private static Type[] m_SpaceCrashTypes = new Type[]
 			{
-				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ), 
-				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ), 
-				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ), 
-				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ), 
-				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ), 
-				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ), 
-				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ), 
-				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ), 
+				typeof( SpaceJunkA ), 			typeof( SpaceJunkB ), 				typeof( SpaceJunkC ),
+				typeof( SpaceJunkD ), 			typeof( SpaceJunkE ), 				typeof( SpaceJunkF ),
+				typeof( SpaceJunkG ), 			typeof( SpaceJunkH ), 				typeof( SpaceJunkI ),
+				typeof( SpaceJunkJ ), 			typeof( SpaceJunkK ), 				typeof( SpaceJunkL ),
+				typeof( SpaceJunkM ), 			typeof( SpaceJunkN ), 				typeof( SpaceJunkO ),
+				typeof( SpaceJunkP ), 			typeof( SpaceJunkQ ), 				typeof( SpaceJunkR ),
+				typeof( SpaceJunkS ), 			typeof( SpaceJunkT ), 				typeof( SpaceJunkU ),
+				typeof( SpaceJunkV ), 			typeof( SpaceJunkW ), 				typeof( SpaceJunkX ),
 				typeof( SpaceJunkY ), 			typeof( SpaceJunkZ ),
 
 				typeof( RomulanAle ),			typeof( PlasmaTorch ),

@@ -293,7 +293,7 @@ namespace Server.Items
 		public void InternalDoEffect( object trigger )
 		{
 			IEntity from = m_Source, to = m_Target;
-			
+
 			if ( from == null )
 				from = (IEntity)trigger;
 

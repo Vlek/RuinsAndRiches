@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateMinotaur : BasePirate 
+	public class PirateMinotaur : BasePirate
 	{
 		public override int BreathPhysicalDamage{ get{ return 0; } }
 		public override int BreathFireDamage{ get{ if ( YellHue < 2 ){ return 100; } else { return 0; } } }
@@ -24,7 +24,7 @@ namespace Server.Mobiles
 		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 2 ); }
 		public override double BreathDamageScalar{ get{ return 0.4; } }
 
-		[Constructable] 
+		[Constructable]
 		public PirateMinotaur()
 		{
 			Name = NameList.RandomName( "centaur" );

@@ -133,7 +133,7 @@ namespace Server.Engines.Plants
 		{
 			switch ( Utility.Random( 4 ) )
 			{
-				case 0:	return PlantType.CypressTwisted; 
+				case 0:	return PlantType.CypressTwisted;
 				case 1: return PlantType.HedgeShort;
 				case 2: return PlantType.JuniperBush;
 				default: return PlantType.SnowdropPatch;
@@ -169,10 +169,10 @@ namespace Server.Engines.Plants
 			 *  chances_of_uncommon = chances_of_common * increaseRatio
 			 *  chances_of_rare = chances_of_uncommon * increaseRatio
 			 *  ...
-			 * 
+			 *
 			 * If increaseRatio < 1 -> rare plants are actually rarer than the others
 			 * If increaseRatio > 1 -> rare plants are actually more common than the others (it might be the case with certain monsters)
-			 * 
+			 *
 			 * If a plant type (common, uncommon, ...) has 2 different colors, they have the same chances:
 			 *  chances_of_green_common = chances_of_pink_common = chances_of_common / 2
 			 *  ...

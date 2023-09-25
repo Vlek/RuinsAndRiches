@@ -15,7 +15,7 @@ using Server.Misc;
 using Server.Items;
 using System.Globalization;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class WealthBar : Gump
     {
@@ -111,7 +111,7 @@ namespace Server.Gumps
 			if ( info.ButtonID != 1 )
 				from.SendGump( new WealthBar( from ) );
 			else
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 		}
     }
 }

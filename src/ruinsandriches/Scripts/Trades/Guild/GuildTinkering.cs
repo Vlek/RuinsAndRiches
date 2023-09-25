@@ -71,16 +71,16 @@ namespace Server.Items
 			}
         }
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from ) );
-		} 
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public SpeechGumpEntry( Mobile from ) : base( 6121, 3 )
 			{
 				m_Mobile = from;
@@ -90,7 +90,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -115,15 +115,15 @@ namespace Server.Items
 				{
 					from.SendMessage( "You cannot enhance legendary artefacts!" );
 				}
-				else if ( item is BaseJewel && 
-							!(MaterialInfo.IsMagicTorch(item)) && 
-							!(MaterialInfo.IsMagicTalisman(item)) && 
-							!(MaterialInfo.IsMagicCandle(item)) && 
-							!(item is MagicRobe) && 
-							!(item is MagicHat) && 
-							!(item is MagicCloak) && 
-							!(item is MagicBoots) && 
-							!(MaterialInfo.IsMagicBelt(item)) && 
+				else if ( item is BaseJewel &&
+							!(MaterialInfo.IsMagicTorch(item)) &&
+							!(MaterialInfo.IsMagicTalisman(item)) &&
+							!(MaterialInfo.IsMagicCandle(item)) &&
+							!(item is MagicRobe) &&
+							!(item is MagicHat) &&
+							!(item is MagicCloak) &&
+							!(item is MagicBoots) &&
+							!(MaterialInfo.IsMagicBelt(item)) &&
 							!(MaterialInfo.IsMagicSash(item)) )
 				{
 					GuildCraftingProcess process = new GuildCraftingProcess(from, (Item)obj);
@@ -135,7 +135,7 @@ namespace Server.Items
 				}
             }
         }
-        
+
         public override void Serialize(GenericWriter writer)
 		{
 			base.Serialize( writer );

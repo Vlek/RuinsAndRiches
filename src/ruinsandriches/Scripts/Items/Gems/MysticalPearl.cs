@@ -64,12 +64,12 @@ namespace Server.Items
 					{
 						from.SendMessage( "You can only use this pearl on items in your pack." );
 					}
-					else if 
-					( 
-						iPearl is BaseNecklace || 
-						iPearl is BaseEarrings || 
-						iPearl is BaseBracelet || 
-						iPearl is MagicJewelryCirclet || 
+					else if
+					(
+						iPearl is BaseNecklace ||
+						iPearl is BaseEarrings ||
+						iPearl is BaseBracelet ||
+						iPearl is MagicJewelryCirclet ||
 						( iPearl is BaseRing && Server.Misc.MaterialInfo.IsJewelryRing( iPearl ) )
 					)
 					{

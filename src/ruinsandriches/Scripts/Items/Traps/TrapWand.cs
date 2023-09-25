@@ -9,7 +9,7 @@ using Server.Network;
 using Server.Multis;
 using System.Collections;
 
-namespace Server.Items 
+namespace Server.Items
 {
 	public class TrapWand : Item
 	{
@@ -19,7 +19,7 @@ namespace Server.Items
 		public int Wand_Power { get { return WandPower; } set { WandPower = value; InvalidateProperties(); } }
 
 		public Mobile owner;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public Mobile Owner
 		{
@@ -31,7 +31,7 @@ namespace Server.Items
 		public TrapWand() : this( null )
 		{
 		}
-		
+
 		[Constructable]
 		public TrapWand( Mobile from ) : base( 0x4FD6 )
 		{
@@ -61,43 +61,43 @@ namespace Server.Items
 			else
 			{
 				this.Name = "orb of trap finding";
-			}		
+			}
 		}
 
 		public TrapWand( Serial serial ) : base( serial )
-		{ 
-		} 
-		
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
 			writer.Write( (Mobile)owner);
             writer.Write( WandPower );
 			RenameWand();
-		} 
-		
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			owner = reader.ReadMobile();
             WandPower = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 			RenameWand();
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 30.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 30.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					TrapWand wands = (TrapWand)i_item;
@@ -106,7 +106,7 @@ namespace Server.Items
 					from.PlaySound( 0x1F0 );
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 }

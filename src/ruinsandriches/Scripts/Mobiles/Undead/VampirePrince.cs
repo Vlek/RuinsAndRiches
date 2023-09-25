@@ -4,10 +4,10 @@ using Server.Misc;
 using Server.Items;
 using System.Collections;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a vampire corpse" )] 
-	public class VampirePrince : BaseCreature 
+namespace Server.Mobiles
+{
+	[CorpseName( "a vampire corpse" )]
+	public class VampirePrince : BaseCreature
 	{
 		private bool m_TrueForm;
 
@@ -16,9 +16,9 @@ namespace Server.Mobiles
 			return WeaponAbility.BleedAttack;
 		}
 
-		[Constructable] 
-		public VampirePrince() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public VampirePrince() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			Name = NameList.RandomName( "vampire" );
 			Title = "the vampire baron";
 			Body = Utility.RandomList( 125, 126 );
@@ -208,23 +208,23 @@ namespace Server.Mobiles
 
 			SetHits( 180, 200 );
 
-			Say("Arrrrrgh!"); 
+			Say("Arrrrrgh!");
 		}
 
-		public VampirePrince( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public VampirePrince( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 );
-			writer.Write( m_TrueForm );	
-		} 
+			writer.Write( m_TrueForm );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			switch ( version )
 			{
@@ -234,6 +234,6 @@ namespace Server.Mobiles
 					break;
 				}
 			}
-		} 
-	} 
+		}
+	}
 }

@@ -29,7 +29,7 @@ namespace Server.Items
 			Amount = amount;
 		}
 
-		
+
 
 		public override void OnDoubleClick( Mobile from )
 		{

@@ -11,7 +11,7 @@ namespace Server.Items
 {
 	public class Bandage : Item, IDyable
 	{
-		public static int Range = ( Server.Misc.MyServerSettings.FriendsAvoidHeels() ? 5 : 2 ); 
+		public static int Range = ( Server.Misc.MyServerSettings.FriendsAvoidHeels() ? 5 : 2 );
 
 		public override int Hue{ get { return 0; } }
 
@@ -572,7 +572,7 @@ namespace Server.Items
 					else if ( Core.AOS )
 					{
 						if (dex < 204)
-						{		
+						{
 							seconds = 3.2-(Math.Sin((double)dex/130)*2.5) + resDelay;
 						}
 						else
@@ -596,7 +596,7 @@ namespace Server.Items
 				if ( context != null )
 					context.StopHeal();
 				seconds *= 1000;
-				
+
 				context = new BandageContext( healer, patient, TimeSpan.FromMilliseconds( seconds ) );
 
 				m_Table[healer] = context;
@@ -604,7 +604,7 @@ namespace Server.Items
 				if ( !onSelf )
 					patient.SendLocalizedMessage( 1008078, false, healer.Name ); //  : Attempting to heal you.
 
-				
+
 				healer.SendLocalizedMessage( 500956 ); // You begin applying the bandages.
 				healer.LocalOverheadMessage( MessageType.Regular, 1150, 500956 );
 

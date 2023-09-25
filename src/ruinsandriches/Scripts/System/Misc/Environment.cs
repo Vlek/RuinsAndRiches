@@ -51,7 +51,7 @@ namespace Server.Items
 			base.Deserialize(reader);
 			int version = reader.ReadInt();
 		}
-	}	
+	}
 
     public class ComputerConsole : Item
 	{
@@ -98,7 +98,7 @@ namespace Server.Items
 			base.Deserialize(reader);
 			int version = reader.ReadInt();
 		}
-	}	
+	}
 
     public class Hologram : Item
 	{
@@ -146,7 +146,7 @@ namespace Server.Items
 			base.Deserialize(reader);
 			int version = reader.ReadInt();
 		}
-	}	
+	}
 
     public class LightningCracksFar : Item
 	{
@@ -196,7 +196,7 @@ namespace Server.Items
 			base.Deserialize(reader);
 			int version = reader.ReadInt();
 		}
-	}	
+	}
 
     public class LightningCracks : Item
 	{
@@ -246,7 +246,7 @@ namespace Server.Items
 			base.Deserialize(reader);
 			int version = reader.ReadInt();
 		}
-	}	
+	}
 
     public class SoundWindBlowing : Item
 	{
@@ -294,7 +294,7 @@ namespace Server.Items
 			base.Deserialize(reader);
 			int version = reader.ReadInt();
 		}
-	}	
+	}
 
     public class Electrical : Item
 	{
@@ -341,7 +341,7 @@ namespace Server.Items
 			base.Deserialize(reader);
 			int version = reader.ReadInt();
 		}
-	}	
+	}
 
     public class RavendarkStorm : Item
 	{

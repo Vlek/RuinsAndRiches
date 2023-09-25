@@ -118,11 +118,11 @@ namespace Server.Misc
 				 || item is DDRelicTablet
 				 || item is DDRelicVase
 				 || item is DDRelicWeapon
-				 || item is DDRelicLeather 
-				 || item is DDRelicGrave 
-				 || item is HighSeasRelic 
-				 || item is EmptyCanopicJar 
-				 || item is StatueGygaxAddonDeed 
+				 || item is DDRelicLeather
+				 || item is DDRelicGrave
+				 || item is HighSeasRelic
+				 || item is EmptyCanopicJar
+				 || item is StatueGygaxAddonDeed
 				)
 				{ return true; }
 

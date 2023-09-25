@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -177,9 +177,9 @@ namespace Server.Items
 				AddHtml( 365, 231, 295, 20, @"<BODY><BASEFONT Color=" + color + ">Vertical Belt Pouch</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				if ( m_Pouch.IsChildOf( from.Backpack ) )
 				{
@@ -328,7 +328,7 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				if ( m_Pouch.IsChildOf( from.Backpack ) )
@@ -452,50 +452,50 @@ namespace Server.Items
 		public static bool isWitchery( Item item )
 		{
 			if (
-				item is BookWitchBrewing || 
-				item is WitchCauldron || 
-				item is Jar || 
-				item is BatWing || 
-				item is DaemonBlood || 
-				item is PigIron || 
-				item is NoxCrystal || 
-				item is GraveDust || 
-				item is BlackPearl || 
-				item is Bloodmoss || 
-				item is Brimstone || 
-				item is EyeOfToad || 
-				item is GargoyleEar || 
-				item is BeetleShell || 
-				item is MoonCrystal || 
-				item is PixieSkull || 
-				item is RedLotus || 
-				item is SilverWidow || 
-				item is SwampBerries || 
-				item is BitterRoot || 
-				item is BlackSand || 
-				item is BloodRose || 
-				item is DriedToad || 
-				item is Maggot || 
-				item is MummyWrap || 
-				item is VioletFungus || 
-				item is WerewolfClaw || 
-				item is Wolfsbane || 
-				item is UndeadEyesScroll || 
-				item is NecroUnlockScroll || 
-				item is NecroPoisonScroll || 
-				item is PhantasmScroll || 
-				item is RetchedAirScroll || 
-				item is ManaLeechScroll || 
-				item is WallOfSpikesScroll || 
-				item is NecroCurePoisonScroll || 
-				item is BloodPactScroll || 
-				item is SpectreShadowScroll || 
-				item is GhostPhaseScroll || 
-				item is HellsGateScroll || 
-				item is GhostlyImagesScroll || 
-				item is HellsBrandScroll || 
-				item is GraveyardGatewayScroll || 
-				item is VampireGiftScroll 
+				item is BookWitchBrewing ||
+				item is WitchCauldron ||
+				item is Jar ||
+				item is BatWing ||
+				item is DaemonBlood ||
+				item is PigIron ||
+				item is NoxCrystal ||
+				item is GraveDust ||
+				item is BlackPearl ||
+				item is Bloodmoss ||
+				item is Brimstone ||
+				item is EyeOfToad ||
+				item is GargoyleEar ||
+				item is BeetleShell ||
+				item is MoonCrystal ||
+				item is PixieSkull ||
+				item is RedLotus ||
+				item is SilverWidow ||
+				item is SwampBerries ||
+				item is BitterRoot ||
+				item is BlackSand ||
+				item is BloodRose ||
+				item is DriedToad ||
+				item is Maggot ||
+				item is MummyWrap ||
+				item is VioletFungus ||
+				item is WerewolfClaw ||
+				item is Wolfsbane ||
+				item is UndeadEyesScroll ||
+				item is NecroUnlockScroll ||
+				item is NecroPoisonScroll ||
+				item is PhantasmScroll ||
+				item is RetchedAirScroll ||
+				item is ManaLeechScroll ||
+				item is WallOfSpikesScroll ||
+				item is NecroCurePoisonScroll ||
+				item is BloodPactScroll ||
+				item is SpectreShadowScroll ||
+				item is GhostPhaseScroll ||
+				item is HellsGateScroll ||
+				item is GhostlyImagesScroll ||
+				item is HellsBrandScroll ||
+				item is GraveyardGatewayScroll ||
+				item is VampireGiftScroll
 			){ return true; }
 			return false;
 		}
@@ -528,33 +528,33 @@ namespace Server.Items
 			return weight;
         }
 
-		public class BagWindow : ContextMenuEntry 
-		{ 
-			private WitchPouch witchBag; 
-			private Mobile m_From; 
+		public class BagWindow : ContextMenuEntry
+		{
+			private WitchPouch witchBag;
+			private Mobile m_From;
 
-			public BagWindow( Mobile from, WitchPouch bag ) : base( 6172, 1 ) 
-			{ 
-				m_From = from; 
-				witchBag = bag; 
-			} 
+			public BagWindow( Mobile from, WitchPouch bag ) : base( 6172, 1 )
+			{
+				m_From = from;
+				witchBag = bag;
+			}
 
-			public override void OnClick() 
-			{          
-				if( witchBag.IsChildOf( m_From.Backpack ) ) 
-				{ 
+			public override void OnClick()
+			{
+				if( witchBag.IsChildOf( m_From.Backpack ) )
+				{
 					m_From.CloseGump( typeof( WitchBag ) );
 					m_From.SendGump( new WitchBag( m_From, witchBag ) );
 					m_From.PlaySound( 0x48 );
-				} 
-				else 
+				}
+				else
 				{
 					m_From.SendMessage( "This must be in your backpack to organize." );
-				} 
-			} 
-		} 
+				}
+			}
+		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 

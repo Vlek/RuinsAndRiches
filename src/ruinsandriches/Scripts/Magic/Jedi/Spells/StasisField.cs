@@ -51,7 +51,7 @@ namespace Server.Spells.Jedi
 				double duration;
 
 				int secs = (int)((GetJediDamage( Caster )/25) - (GetResistSkill( m ) / 10) + (Caster.Skills[SkillName.Psychology].Value / 2) );
-				
+
 				if( !Core.SE )
 					secs += 2;
 

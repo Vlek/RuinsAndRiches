@@ -47,7 +47,7 @@ namespace Server.Items
 
 			if ( dist < 200 )
 				dist = 200;
-			
+
 			if ( size < 200 )
 				size = 200;
 			else if ( size > 400 )

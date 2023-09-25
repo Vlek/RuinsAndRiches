@@ -35,7 +35,7 @@ namespace Server.Mobiles
 			SBInfos.Add( new SBSpearForkWeapon() );
 			SBInfos.Add( new SBStavesWeapon() );
 			SBInfos.Add( new SBSwordWeapon() );
-			SBInfos.Add( new SBGemArmor() ); 
+			SBInfos.Add( new SBGemArmor() );
 			SBInfos.Add( new SBBuyArtifacts() );
 			SBInfos.Add( new SBWarriorGuild() );
 		}

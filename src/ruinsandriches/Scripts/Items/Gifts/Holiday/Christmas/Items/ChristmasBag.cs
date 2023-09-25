@@ -16,7 +16,7 @@ namespace Server.Items
 			get{ return m_Uses; }
 			set{ m_Uses = value; InvalidateProperties(); }
 		}
-		
+
 		public override int DefaultGumpID{ get{ return 0x3D; } }
 		public override int DefaultDropSound{ get{ return 0x48; } }
 
@@ -31,16 +31,16 @@ namespace Server.Items
 			Weight = 2.0;
 			Name = "a Christmas Goodie bag";
 			Hue = 1153;
-			
+
 			Uses = 30;
-			
+
 			AddItem( new ChristmasBook() );
 		}
 
 		public ChristmasBag( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void AddNameProperties( ObjectPropertyList list )
  		{
  			base.AddNameProperties( list );
@@ -61,7 +61,7 @@ namespace Server.Items
 			base.Serialize( writer );
 
 			writer.Write( (int) 0 ); // version
-			
+
 			writer.Write( (int) m_Uses );
 		}
 
@@ -70,7 +70,7 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			
+
 			switch ( version )
 			{
 				case 0:
@@ -81,18 +81,18 @@ namespace Server.Items
 				}
 			}
 		}
-		
+
 		public bool ConsumeUse( Mobile from )
 		{
 			--Uses;
-			
+
 			if ( Uses == 0 )
 			{
 				from.SendMessage( "This bag cannot receive any more goodies!" );
-				
+
 				return false;
 			}
-			
+
 			return true;
 		}
 	}

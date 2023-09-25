@@ -102,7 +102,7 @@ namespace Server.SkillHandlers
 			Mobile targ = info.m_Creature;
 			bool ends = false;
 
-			// According to uoherald bard must remain alive, visible, and 
+			// According to uoherald bard must remain alive, visible, and
 			// within range of the target or the effect ends in 15 seconds.
 			if ( !targ.Alive || targ.Deleted || !from.Alive || from.Hidden )
 				ends = true;

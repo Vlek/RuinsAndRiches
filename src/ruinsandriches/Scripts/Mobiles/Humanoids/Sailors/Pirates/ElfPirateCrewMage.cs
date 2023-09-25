@@ -7,11 +7,11 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a pirate corpse" )] 
-	public class ElfPirateCrewMage : BaseCreature 
-	{ 
-		[Constructable] 
-		public ElfPirateCrewMage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+	[CorpseName( "a pirate corpse" )]
+	public class ElfPirateCrewMage : BaseCreature
+	{
+		[Constructable]
+		public ElfPirateCrewMage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = 1316;
@@ -49,7 +49,7 @@ namespace Server.Mobiles
 			{
 				AddItem( new ElvenBoots( 0x6F8 ) );
 				Item armor = new LeatherChest(); armor.Hue = 0x6F8; AddItem( armor );
-				AddItem( new FancyShirt( 0 ) );	
+				AddItem( new FancyShirt( 0 ) );
 				AddItem( new Cloak( 0x6F8 ) );
 
 				switch ( Utility.Random( 2 ))
@@ -106,20 +106,20 @@ namespace Server.Mobiles
 		public override bool ShowFameTitle{ get{ return false; } }
 		public override bool AlwaysAttackable{ get{ return true; } }
 
-		public ElfPirateCrewMage( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public ElfPirateCrewMage( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

@@ -141,7 +141,7 @@ namespace Server.Misc
 				int cappedPoints = AosAttributes.GetValue( from, AosAttribute.RegenMana );
 
 				if ( CheckTransform( from, typeof( VampiricEmbraceSpell ) ) )
-					cappedPoints += Server.Misc.MyServerSettings.PlayerLevelMod( 6, from ); // cappedPoints += 3;  
+					cappedPoints += Server.Misc.MyServerSettings.PlayerLevelMod( 6, from ); // cappedPoints += 3;
 				else if ( CheckTransform( from, typeof( LichFormSpell ) ) )
 					cappedPoints += Server.Misc.MyServerSettings.PlayerLevelMod( 26, from ); // cappedPoints += 13;
 

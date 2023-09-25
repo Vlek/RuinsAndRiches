@@ -64,7 +64,7 @@ namespace Server.Items
 				from.SendMessage( "You will need to get closer to identify that." );
 				return;
 			}
-			else if ( !IsChildOf( from.Backpack ) && Server.Misc.MyServerSettings.IdentifyItemsOnlyInPack() ) 
+			else if ( !IsChildOf( from.Backpack ) && Server.Misc.MyServerSettings.IdentifyItemsOnlyInPack() )
 			{
 				from.SendMessage( "This must be in your backpack to identify." );
 				return;
@@ -97,10 +97,10 @@ namespace Server.Items
 					{
 						from.PlaySound( from.Female ? 813 : 1087 );
 						from.Say( "*vomits*" );
-						if ( !from.Mounted ) 
-							from.Animate( 32, 5, 1, true, false, 0 );                     
-						Vomit puke = new Vomit(); 
-						puke.Map = from.Map; 
+						if ( !from.Mounted )
+							from.Animate( 32, 5, 1, true, false, 0 );
+						Vomit puke = new Vomit();
+						puke.Map = from.Map;
 						puke.Location = from.Location;
 						from.SendMessage("Making you sick to your stomach, you toss it out.");
 					}

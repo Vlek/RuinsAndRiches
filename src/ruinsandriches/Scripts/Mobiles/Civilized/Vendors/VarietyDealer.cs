@@ -27,17 +27,17 @@ namespace Server.Mobiles
 
 		///////////////////////////////////////////////////////////////////////////
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -48,7 +48,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -59,7 +59,7 @@ namespace Server.Mobiles
 				}
             }
         }
-		
+
 		///////////////////////////////////////////////////////////////////////////
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
@@ -70,24 +70,24 @@ namespace Server.Mobiles
 
 				if ( dropped.Amount == 500 && Server.Items.MuseumBook.IsEnabled() )
 				{
-					if (	Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Sosaria" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Lodoria" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Island of Umber Veil" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Ambrosia" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Serpent Island" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Isles of Dread" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Savaged Empire" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Bottle World of Kuldar" ) && 
+					if (	Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Sosaria" ) &&
+							Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Lodoria" ) &&
+							Server.Misc.PlayerSettings.GetDiscovered( from, "the Island of Umber Veil" ) &&
+							Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Ambrosia" ) &&
+							Server.Misc.PlayerSettings.GetDiscovered( from, "the Serpent Island" ) &&
+							Server.Misc.PlayerSettings.GetDiscovered( from, "the Isles of Dread" ) &&
+							Server.Misc.PlayerSettings.GetDiscovered( from, "the Savaged Empire" ) &&
+							Server.Misc.PlayerSettings.GetDiscovered( from, "the Bottle World of Kuldar" ) &&
 							Server.Misc.PlayerSettings.GetDiscovered( from, "the Underworld" )
 					)
 					{
 						if ( AlreadyHasBook( from ) )
 						{
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Here. I see you already have a book." ) ); 
+							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Here. I see you already have a book." ) );
 						}
 						else if ( PlayerSettings.GetKeys( from, "Antiques" ) )
 						{
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Thank you, but you already done that for me." ) ); 
+							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Thank you, but you already done that for me." ) );
 						}
 						else
 						{
@@ -95,7 +95,7 @@ namespace Server.Mobiles
 							from.PlaySound( 0x2E6 );
 							book.ArtOwner = from;
 							from.AddToBackpack( book );
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with the search." ) ); 
+							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with the search." ) );
 							PlayerSettings.SetKeys( from, "Antiques", true );
 							dropped.Delete();
 						}
@@ -198,8 +198,8 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBVarietyDealer() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBVarietyDealer() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public VarietyDealer( Serial serial ) : base( serial )

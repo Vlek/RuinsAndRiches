@@ -3,7 +3,7 @@ using Server;
 using Server.Network;
 using Server.Gumps;
 
-namespace Server.Items 
+namespace Server.Items
 {
 	[Flipable( 0x12AB, 0x12AC )]
 	public class TarotDeck : Item
@@ -92,24 +92,24 @@ namespace Server.Items
 		{
 			Name = "tarot deck";
 		}
-		
-		public TarotDeck( Serial serial ) : base( serial ) 
-		{ 
+
+		public TarotDeck( Serial serial ) : base( serial )
+		{
 		}
-	
-		public override void Serialize( GenericWriter writer ) 
+
+		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-	
-		public override void Deserialize(GenericReader reader) 
-		{ 
+
+		public override void Deserialize(GenericReader reader)
+		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-	
-		public override void OnDoubleClick( Mobile from ) 
+
+		public override void OnDoubleClick( Mobile from )
 		{
 			from.CloseGump( typeof( TarotGump ) );
 			int MyFortune = Utility.Random( 22 );
@@ -146,7 +146,7 @@ namespace Server.Items
 					break;
 			}
 		}
-		
+
 		public override void OnAdded(object target)
 		{
 			switch ( ((Item)this).ItemID )
@@ -158,7 +158,7 @@ namespace Server.Items
 			}
 		}
 	}
-	
+
 	[Flipable( 0x12AB, 0x12AC )]
 	public class DecoTarotDeck : Item
 	{
@@ -167,24 +167,24 @@ namespace Server.Items
 		{
 			Name = "tarot deck";
 		}
-		
-		public DecoTarotDeck( Serial serial ) : base( serial ) 
-		{ 
+
+		public DecoTarotDeck( Serial serial ) : base( serial )
+		{
 		}
-	
-		public override void Serialize( GenericWriter writer ) 
+
+		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-	
-		public override void Deserialize(GenericReader reader) 
-		{ 
+
+		public override void Deserialize(GenericReader reader)
+		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-	
-		public override void OnDoubleClick( Mobile from ) 
+
+		public override void OnDoubleClick( Mobile from )
 		{
 			switch ( ((Item)this).ItemID )
 			{

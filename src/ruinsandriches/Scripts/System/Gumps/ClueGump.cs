@@ -14,7 +14,7 @@ namespace Server.Gumps
 	{
 		public ClueGump( Mobile from, string text, string title ) : base( 50, 50 )
 		{
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#b7765d";
 
             this.Closable=true;
@@ -33,7 +33,7 @@ namespace Server.Gumps
         public override void OnResponse(NetState state, RelayInfo info)
         {
 			Mobile from = state.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
         }
 	}
 }

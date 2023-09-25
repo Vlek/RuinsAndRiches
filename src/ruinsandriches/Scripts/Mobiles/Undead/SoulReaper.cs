@@ -1,28 +1,28 @@
 using System;
 using Server;
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
 using Server.Network;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
 	[CorpseName( "a deathly corpse" )]
-	public class SoulReaper : BaseCreature 
+	public class SoulReaper : BaseCreature
 	{
 		public override WeaponAbility GetWeaponAbility()
 		{
 			return WeaponAbility.BleedAttack;
 		}
 
-		[Constructable] 
-		public SoulReaper() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public SoulReaper() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Name = "a soul reaper";
 			Hue = 0x47E;
-			Body = 0x190; 
+			Body = 0x190;
 			BaseSoundID = 0x48D;
 
 			Item hands = new WornHumanDeco();
@@ -100,20 +100,20 @@ namespace Server.Mobiles
 		public override bool ShowFameTitle{ get{ return false; } }
 		public override bool AlwaysAttackable{ get{ return true; } }
 
-		public SoulReaper( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public SoulReaper( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
 }

@@ -35,7 +35,7 @@ namespace Server.Items
 		public SavageChest( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
@@ -44,7 +44,7 @@ namespace Server.Items
 			if ( Weight == 1.0 )
 				Weight = 6.0;
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

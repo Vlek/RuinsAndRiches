@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Network;
 using System.Collections;
 using System.Globalization;
@@ -138,7 +138,7 @@ namespace Server.Items
 
 			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				Container pack = from.Backpack;
 				from.SendSound( 0x55 );
 

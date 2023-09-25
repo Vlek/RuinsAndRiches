@@ -69,7 +69,7 @@ namespace Server.Items
 		[Constructable]
 		public SpinedSewingKit() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public SpinedSewingKit( int uses ) : base( CraftResource.SpinedLeather )
@@ -104,7 +104,7 @@ namespace Server.Items
 		[Constructable]
 		public BarbedSewingKit() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public BarbedSewingKit( int uses ) : base( CraftResource.BarbedLeather )
@@ -139,7 +139,7 @@ namespace Server.Items
 		[Constructable]
 		public HornedSewingKit() : this( 50 )
 		{
-		}		
+		}
 
 		[Constructable]
 		public HornedSewingKit( int uses ) : base( CraftResource.HornedLeather )

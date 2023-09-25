@@ -28,7 +28,7 @@ namespace Server.Items
 			if (! from.InRange( this.GetWorldLocation(), 1 ))
 			{
 				from.LocalOverheadMessage( MessageType.Regular, 906, 1019045 ); // I can't reach that.
-			}	
+			}
 		}
 
 		public override void Serialize( GenericWriter writer )

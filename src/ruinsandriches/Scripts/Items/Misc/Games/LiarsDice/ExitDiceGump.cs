@@ -7,7 +7,7 @@ using Server.LiarsDice;
 using System.Collections.Generic;
 
 namespace Server.Gumps
-{ 
+{
     public class ExitDiceGump : Gump
     {
 		private const int LEFT_BAR=25;
@@ -27,12 +27,12 @@ namespace Server.Gumps
 			AddButton(LEFT_BAR, 110, 4005, 4006, 1, GumpButtonType.Reply, 3);
 			this.AddLabel(LEFT_BAR + 95, 85, 32, @"Yes");
 			AddButton(LEFT_BAR +95, 110, 4017, 4018, 2, GumpButtonType.Reply, 3);
-    	}  
+    	}
 		public override void OnResponse( NetState state, RelayInfo info ){
-			int btd = info.ButtonID;			
+			int btd = info.ButtonID;
 			if(info.ButtonID == 1 ){
 				ds.AddStatusGump(state.Mobile);
-				state.Mobile.SendMessage( "You decided not to exit Liars Dice!");				
+				state.Mobile.SendMessage( "You decided not to exit Liars Dice!");
 			}else if(info.ButtonID == 2){
 				state.Mobile.SendMessage( "You exited Liars Dice!");
 				ds.RemovePlayer(state.Mobile,true);
@@ -40,6 +40,6 @@ namespace Server.Gumps
 			else{
 				state.Mobile.SendMessage( "Illegal option selected");
 			}
-		}    
-    }    
+		}
+    }
 }

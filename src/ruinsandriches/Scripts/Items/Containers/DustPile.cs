@@ -10,7 +10,7 @@ namespace Server.Items
 		public DustPile() : base( 0x573D )
 		{
             Hue = 2955;
-            Weight = 0.5; 
+            Weight = 0.5;
             Stackable = false;
         }
 

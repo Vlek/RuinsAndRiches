@@ -86,7 +86,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;
@@ -119,7 +119,7 @@ namespace Server.Items
 					double difficulty = 50.0;
 					double minSkill = difficulty - 25.0;
 					double maxSkill = difficulty + 25.0;
-					
+
 					if ( difficulty > from.Skills[SkillName.Mining].Value )
 					{
 						from.SendMessage("You have no idea how to smelt this item!");

@@ -119,7 +119,7 @@ namespace Server.Items
 					return false;
 				}
 			}
-			else 
+			else
 			{
 				return false;
 			}

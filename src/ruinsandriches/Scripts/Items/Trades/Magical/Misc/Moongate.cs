@@ -166,7 +166,7 @@ namespace Server.Items
 
 			writer.Write( m_Target );
 			writer.Write( m_TargetMap );
-			
+
 			// Version 1
 			writer.Write( m_bDispellable );
 		}

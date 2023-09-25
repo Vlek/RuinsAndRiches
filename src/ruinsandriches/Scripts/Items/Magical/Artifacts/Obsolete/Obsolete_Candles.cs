@@ -21,7 +21,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public CandleCold( Serial serial ) : base( serial )
 		{
@@ -58,7 +58,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public CandleFire( Serial serial ) : base( serial )
 		{
@@ -95,7 +95,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public CandlePoison( Serial serial ) : base( serial )
 		{
@@ -132,7 +132,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public CandleEnergy( Serial serial ) : base( serial )
 		{
@@ -171,7 +171,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public CandleWizard( Serial serial ) : base( serial )
 		{
@@ -210,7 +210,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact");
-        } 
+        }
 
 		public CandleNecromancer( Serial serial ) : base( serial )
 		{

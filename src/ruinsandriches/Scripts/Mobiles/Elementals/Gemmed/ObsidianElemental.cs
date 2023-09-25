@@ -103,7 +103,7 @@ namespace Server.Items
 	public class ObsidianStone : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -120,7 +120,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Worth " + RelicGoldValue + " Gold To A Stone Crafter");
-        } 
+        }
 
 		public ObsidianStone(Serial serial) : base(serial)
 		{

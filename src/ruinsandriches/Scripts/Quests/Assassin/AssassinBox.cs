@@ -44,7 +44,7 @@ namespace Server.Items
 				from.AddToBackpack ( dropped );
 			}
 			return true;
-		}			
+		}
 
 		public BoxOfAtonement( Serial serial ) : base( serial )
 		{

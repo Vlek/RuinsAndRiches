@@ -21,7 +21,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 
 			list.Add( 1049644, "Banishes demons and undead from the realm");
-        } 
+        }
 
 		public ExorcismScroll( Serial serial ) : base( serial )
 		{

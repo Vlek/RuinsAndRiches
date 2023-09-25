@@ -108,7 +108,7 @@ namespace Server.Guilds
 
 		#endregion
 
-		private static InfoField<PlayerMobile>[] m_Fields = 
+		private static InfoField<PlayerMobile>[] m_Fields =
 			new InfoField<PlayerMobile>[]
 			{
 				new InfoField<PlayerMobile>( 1062955, 130, GuildRosterGump.NameComparer.Instance	),	//Name
@@ -154,7 +154,7 @@ namespace Server.Guilds
 
 			defs[0] = name;
 			defs[1] = pm.GuildRank.Name;
-			defs[2] = (pm.NetState != null) ? new TextDefinition( 1063015 ): new TextDefinition( pm.LastOnline.ToString( "yyyy-MM-dd" ) ); 
+			defs[2] = (pm.NetState != null) ? new TextDefinition( 1063015 ): new TextDefinition( pm.LastOnline.ToString( "yyyy-MM-dd" ) );
 			defs[3] = (pm.GuildTitle == null) ? "" : pm.GuildTitle;
 
 			return defs;

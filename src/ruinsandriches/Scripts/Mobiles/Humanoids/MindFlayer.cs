@@ -1,26 +1,26 @@
-using System; 
+using System;
 using Server;
 using Server.Items;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a mind flayer corpse" )] 
-	public class MindFlayer : BaseCreature 
-	{ 
-		[Constructable] 
-		public MindFlayer() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+namespace Server.Mobiles
+{
+	[CorpseName( "a mind flayer corpse" )]
+	public class MindFlayer : BaseCreature
+	{
+		[Constructable]
+		public MindFlayer() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			Name = "a mind flayer";
 			Body = 786;
 			BaseSoundID = 898;
 
-			switch ( Utility.RandomMinMax( 0, 2 ) ) 
+			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
 				case 1 :	Name = "an illithid";		Body = 463;		break;
 				case 2 :	Name = "a mind flayer";		Body = 442;		break;
 			}
 
-			PackItem( new Robe( Utility.RandomMetalHue() ) ); 
+			PackItem( new Robe( Utility.RandomMetalHue() ) );
 
 			SetStr( 81, 105 );
 			SetDex( 191, 215 );
@@ -130,20 +130,20 @@ namespace Server.Mobiles
 			DoSpecialAbility( defender );
 		}
 
-		public MindFlayer( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public MindFlayer( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

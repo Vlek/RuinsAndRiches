@@ -41,7 +41,7 @@ namespace Server.Items
 			Weight = 10;
 			ItemID = Utility.RandomList( 0x02C1, 0x02C2, 0x02C3, 0x02C4 );
 
-			if ( !IsEnabled() ){ Visible = false; } 
+			if ( !IsEnabled() ){ Visible = false; }
 		}
 
 		public void DoBasementDoor( Mobile m )
@@ -118,11 +118,11 @@ namespace Server.Items
         {
             base.GetContextMenuEntries(from, list);
             SetSecureLevelEntry.AddTo(from, this, list);
-        }      
+        }
 
 		public override void GetProperties( ObjectPropertyList list )
 		{
-			base.GetProperties( list );		
+			base.GetProperties( list );
 		}
 
 		public override void OnSingleClick( Mobile from )

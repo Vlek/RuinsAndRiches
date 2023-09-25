@@ -8,7 +8,7 @@ using Server.Misc;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
-using Server; 
+using Server;
 using System.Collections.Generic;
 using System.Collections;
 using System;
@@ -196,7 +196,7 @@ namespace Server.Misc
 				case 5: wTitle = "Prince"; break;
 			}
 
-			if ( Utility.RandomMinMax( 0, 2 ) == 2 ) 
+			if ( Utility.RandomMinMax( 0, 2 ) == 2 )
 			{
 				wName = NameList.RandomName( "female" );
 				wPron = "she";
@@ -210,15 +210,15 @@ namespace Server.Misc
 					case 4: wTitle = "Queen"; break;
 					case 5: wTitle = "Princess"; break;
 				}
-			} 
+			}
 
 			((PlayerMobile)m).CharacterWanted = m.Name + " is wanted for the murder of " + wTitle + " " + wName + ". The " + wTitle + " was attacked while " + wPron + " was visting " + RandomThings.GetRandomCity() + ". Citizens stated they seen " + m.Name + " leaving the area with a blood covered " + Server.Misc.RandomThings.GetRandomWeapon() + ". The guard captain " + QuestCharacters.ParchmentWriter() + " warns all citizen to be on the lookout for " + m.Name + " as they escaped their jail cell in Britain.";
 			int words = Utility.RandomMinMax( 1, 3 );
-			if ( words == 2 ) 
+			if ( words == 2 )
 			{
 				((PlayerMobile)m).CharacterWanted = m.Name + " is wanted for the murder of " + wTitle + " " + wName + ". The " + wTitle + " was attacked while " + wPron + " was visting " + RandomThings.GetRandomCity() + ". " + m.Name + " also stole " + Server.Misc.QuestCharacters.QuestItems( true ) + " that the " + wTitle + " had with them. The guard captain " + QuestCharacters.ParchmentWriter() + " warns all citizen to be on the lookout for " + m.Name + " as they escaped their jail cell in Britain.";
 			}
-			else if ( words == 3 ) 
+			else if ( words == 3 )
 			{
 				((PlayerMobile)m).CharacterWanted = m.Name + " is wanted for the murder of " + wTitle + " " + wName + ". The " + wTitle + " was assassinated by orders from a group calling themselves " + RandomThings.GetRandomSociety() + ". " + m.Name + " was hired by them to carry out the deed, but their motivations remain unclear. The guard captain " + QuestCharacters.ParchmentWriter() + " warns all citizen to be on the lookout for " + m.Name + " as they escaped their jail cell in Britain.";
 			}
@@ -245,7 +245,7 @@ namespace Server.Misc
 		{
 			PlayerSettings.MarkQuestInfo( m );
 
-			string goal = ((PlayerMobile)m).StandardQuest;	
+			string goal = ((PlayerMobile)m).StandardQuest;
 
 			if ( quest == "StandardQuest" ){ goal = ((PlayerMobile)m).StandardQuest; }
 			else if ( quest == "FishingQuest" ){ goal = ((PlayerMobile)m).FishingQuest; }
@@ -294,7 +294,7 @@ namespace Server.Misc
 		{
 			PlayerSettings.MarkQuestInfo( m );
 
-			string goal = ((PlayerMobile)m).StandardQuest;	
+			string goal = ((PlayerMobile)m).StandardQuest;
 
 			if ( quest == "StandardQuest" ){ goal = ((PlayerMobile)m).StandardQuest; }
 			else if ( quest == "FishingQuest" ){ goal = ((PlayerMobile)m).FishingQuest; }
@@ -434,7 +434,7 @@ namespace Server.Misc
 		public static bool GetReagentConfig( Mobile m, int row ) // ---------------------------------------------------------------------------------------
 		{
 			bool isSET = false;
-						
+
 			if ( m != null && m is PlayerMobile )
 			{
 				string keys = ValReagentConfig( m );
@@ -451,7 +451,7 @@ namespace Server.Misc
 					}
 				}
 			}
-		
+
 			return isSET;
 		}
 
@@ -476,7 +476,7 @@ namespace Server.Misc
 							records--;
 
 							string sets = "1";
-							if ( keyset != "1" ){ sets = "0"; } 
+							if ( keyset != "1" ){ sets = "0"; }
 
 							if ( nEntry == key && sets == "1" ){ entry = entry + "0#"; }
 							else if ( nEntry == key && sets == "0" ){ entry = entry + "1#"; }
@@ -515,7 +515,7 @@ namespace Server.Misc
 		public static bool GetQuickConfig( Mobile m, int row ) // ---------------------------------------------------------------------------------------
 		{
 			bool isSET = false;
-						
+
 			if ( m != null && m is PlayerMobile )
 			{
 				string keys = ValQuickConfig( m );
@@ -532,7 +532,7 @@ namespace Server.Misc
 					}
 				}
 			}
-		
+
 			return isSET;
 		}
 
@@ -556,7 +556,7 @@ namespace Server.Misc
 						{
 							records--;
 							string sets = "1";
-							if ( keyset != "1" ){ sets = "0"; } 
+							if ( keyset != "1" ){ sets = "0"; }
 
 							if ( nEntry == key && sets == "1" ){ entry = entry + "0#"; }
 							else if ( nEntry == key && sets == "0" ){ entry = entry + "1#"; }
@@ -595,7 +595,7 @@ namespace Server.Misc
 		public static bool GetLibraryConfig( Mobile m, int row ) // ---------------------------------------------------------------------------------------
 		{
 			bool isSET = false;
-						
+
 			if ( m != null && m is PlayerMobile )
 			{
 				string keys = ValLibraryConfig( m );
@@ -612,7 +612,7 @@ namespace Server.Misc
 					}
 				}
 			}
-		
+
 			return isSET;
 		}
 		public static void SetLibraryConfig( Mobile m, int key ) // --------------------------------------------------------------------------
@@ -635,7 +635,7 @@ namespace Server.Misc
 						{
 							records--;
 							string sets = "1";
-							if ( keyset != "1" ){ sets = "0"; } 
+							if ( keyset != "1" ){ sets = "0"; }
 
 							if ( nEntry == key && sets == "1" ){ entry = entry + "0#"; }
 							else if ( nEntry == key && sets == "0" ){ entry = entry + "1#"; }
@@ -675,7 +675,7 @@ namespace Server.Misc
 		public static bool GetChatConfig( Mobile m, int row ) // ---------------------------------------------------------------------------------------
 		{
 			bool isSET = false;
-						
+
 			if ( m != null && m is PlayerMobile )
 			{
 				string keys = ValChatConfig( m );
@@ -692,7 +692,7 @@ namespace Server.Misc
 					}
 				}
 			}
-		
+
 			return isSET;
 		}
 		public static void SetChatConfig( Mobile m, int key ) // --------------------------------------------------------------------------
@@ -715,7 +715,7 @@ namespace Server.Misc
 						{
 							records--;
 							string sets = "1";
-							if ( keyset != "1" ){ sets = "0"; } 
+							if ( keyset != "1" ){ sets = "0"; }
 
 							if ( nEntry == key && sets == "1" ){ entry = entry + "0#"; }
 							else if ( nEntry == key && sets == "0" ){ entry = entry + "1#"; }
@@ -739,11 +739,11 @@ namespace Server.Misc
 		public static bool GetKeys( Mobile m, string key ) // ---------------------------------------------------------------------------------------
 		{
 			bool HaveIt = false;
-						
+
 			if ( m != null && m is PlayerMobile )
 			{
 				SetKeys( m, "none", false );
-			
+
 				string keys = ((PlayerMobile)m).CharacterKeys;
 
 				if ( keys.Length > 0 )
@@ -770,7 +770,7 @@ namespace Server.Misc
 					}
 				}
 			}
-		
+
 			return HaveIt;
 		}
 
@@ -792,7 +792,7 @@ namespace Server.Misc
 					foreach ( string keyset in discoveries )
 					{
 						string sets = "1";
-						if ( keyset != "1" ){ sets = "0"; } 
+						if ( keyset != "1" ){ sets = "0"; }
 						if ( nEntry == 1 && key == "UndermountainKey" ){ entry = entry + "1#"; }
 						else if ( nEntry == 2 && key == "BlackKnightKey" ){ entry = entry + "1#"; }
 						else if ( nEntry == 3 && key == "RangerOutpost" ){ entry = entry + "1#"; }
@@ -1132,16 +1132,16 @@ namespace Server.Misc
 					{
 						foreach( Item i in box.Items )
 						{
-							if ( i is Elemental_Armor_Scroll || i is Elemental_Bolt_Scroll || i is Elemental_Mend_Scroll || 
-							i is Elemental_Sanctuary_Scroll || i is Elemental_Pain_Scroll || i is Elemental_Protection_Scroll || 
-							i is Elemental_Purge_Scroll || i is Elemental_Steed_Scroll || i is Elemental_Call_Scroll || 
-							i is Elemental_Force_Scroll || i is Elemental_Wall_Scroll || i is Elemental_Warp_Scroll || 
-							i is Elemental_Field_Scroll || i is Elemental_Restoration_Scroll || i is Elemental_Strike_Scroll || 
-							i is Elemental_Void_Scroll || i is Elemental_Blast_Scroll || i is Elemental_Echo_Scroll || 
-							i is Elemental_Fiend_Scroll || i is Elemental_Hold_Scroll || i is Elemental_Barrage_Scroll || 
-							i is Elemental_Rune_Scroll || i is Elemental_Storm_Scroll || i is Elemental_Summon_Scroll || 
-							i is Elemental_Devastation_Scroll || i is Elemental_Fall_Scroll || i is Elemental_Gate_Scroll || 
-							i is Elemental_Havoc_Scroll || i is Elemental_Apocalypse_Scroll || i is Elemental_Lord_Scroll || 
+							if ( i is Elemental_Armor_Scroll || i is Elemental_Bolt_Scroll || i is Elemental_Mend_Scroll ||
+							i is Elemental_Sanctuary_Scroll || i is Elemental_Pain_Scroll || i is Elemental_Protection_Scroll ||
+							i is Elemental_Purge_Scroll || i is Elemental_Steed_Scroll || i is Elemental_Call_Scroll ||
+							i is Elemental_Force_Scroll || i is Elemental_Wall_Scroll || i is Elemental_Warp_Scroll ||
+							i is Elemental_Field_Scroll || i is Elemental_Restoration_Scroll || i is Elemental_Strike_Scroll ||
+							i is Elemental_Void_Scroll || i is Elemental_Blast_Scroll || i is Elemental_Echo_Scroll ||
+							i is Elemental_Fiend_Scroll || i is Elemental_Hold_Scroll || i is Elemental_Barrage_Scroll ||
+							i is Elemental_Rune_Scroll || i is Elemental_Storm_Scroll || i is Elemental_Summon_Scroll ||
+							i is Elemental_Devastation_Scroll || i is Elemental_Fall_Scroll || i is Elemental_Gate_Scroll ||
+							i is Elemental_Havoc_Scroll || i is Elemental_Apocalypse_Scroll || i is Elemental_Lord_Scroll ||
 							i is Elemental_Soul_Scroll || i is Elemental_Spirit_Scroll )
 							{ belongings.Add(i); foundScrolls = 1; }
 						}
@@ -1157,21 +1157,21 @@ namespace Server.Misc
 					{
 						foreach( Item i in box.Items )
 						{
-							if ( i is ReactiveArmorScroll || i is ClumsyScroll || i is CreateFoodScroll || i is FeeblemindScroll || 
-							 i is HealScroll || i is MagicArrowScroll || i is NightSightScroll || i is WeakenScroll || 
-							 i is AgilityScroll || i is CunningScroll || i is CureScroll || i is HarmScroll || 
-							 i is MagicTrapScroll || i is MagicUnTrapScroll || i is ProtectionScroll || i is StrengthScroll || 
-							 i is BlessScroll || i is FireballScroll || i is MagicLockScroll || i is PoisonScroll || 
-							 i is TelekinisisScroll || i is TeleportScroll || i is UnlockScroll || i is WallOfStoneScroll || 
-							 i is ArchCureScroll || i is ArchProtectionScroll || i is CurseScroll || i is FireFieldScroll || 
-							 i is GreaterHealScroll || i is LightningScroll || i is ManaDrainScroll || i is RecallScroll || 
-							 i is BladeSpiritsScroll || i is DispelFieldScroll || i is IncognitoScroll || i is MagicReflectScroll || 
-							 i is MindBlastScroll || i is ParalyzeScroll || i is PoisonFieldScroll || i is SummonCreatureScroll || 
-							 i is DispelScroll || i is EnergyBoltScroll || i is ExplosionScroll || i is InvisibilityScroll || 
-							 i is MarkScroll || i is MassCurseScroll || i is ParalyzeFieldScroll || i is RevealScroll || 
-							 i is ChainLightningScroll || i is EnergyFieldScroll || i is FlamestrikeScroll || i is GateTravelScroll || 
-							 i is ManaVampireScroll || i is MassDispelScroll || i is MeteorSwarmScroll || i is PolymorphScroll || 
-							 i is EarthquakeScroll || i is EnergyVortexScroll || i is ResurrectionScroll || i is SummonAirElementalScroll || 
+							if ( i is ReactiveArmorScroll || i is ClumsyScroll || i is CreateFoodScroll || i is FeeblemindScroll ||
+							 i is HealScroll || i is MagicArrowScroll || i is NightSightScroll || i is WeakenScroll ||
+							 i is AgilityScroll || i is CunningScroll || i is CureScroll || i is HarmScroll ||
+							 i is MagicTrapScroll || i is MagicUnTrapScroll || i is ProtectionScroll || i is StrengthScroll ||
+							 i is BlessScroll || i is FireballScroll || i is MagicLockScroll || i is PoisonScroll ||
+							 i is TelekinisisScroll || i is TeleportScroll || i is UnlockScroll || i is WallOfStoneScroll ||
+							 i is ArchCureScroll || i is ArchProtectionScroll || i is CurseScroll || i is FireFieldScroll ||
+							 i is GreaterHealScroll || i is LightningScroll || i is ManaDrainScroll || i is RecallScroll ||
+							 i is BladeSpiritsScroll || i is DispelFieldScroll || i is IncognitoScroll || i is MagicReflectScroll ||
+							 i is MindBlastScroll || i is ParalyzeScroll || i is PoisonFieldScroll || i is SummonCreatureScroll ||
+							 i is DispelScroll || i is EnergyBoltScroll || i is ExplosionScroll || i is InvisibilityScroll ||
+							 i is MarkScroll || i is MassCurseScroll || i is ParalyzeFieldScroll || i is RevealScroll ||
+							 i is ChainLightningScroll || i is EnergyFieldScroll || i is FlamestrikeScroll || i is GateTravelScroll ||
+							 i is ManaVampireScroll || i is MassDispelScroll || i is MeteorSwarmScroll || i is PolymorphScroll ||
+							 i is EarthquakeScroll || i is EnergyVortexScroll || i is ResurrectionScroll || i is SummonAirElementalScroll ||
 							 i is SummonDaemonScroll || i is SummonEarthElementalScroll || i is SummonFireElementalScroll || i is SummonWaterElementalScroll )
 							{ belongings.Add(i); foundScrolls = 1; }
 						}
@@ -1180,10 +1180,10 @@ namespace Server.Misc
 					{
 						foreach( Item i in box.Items )
 						{
-							if ( i is AnimateDeadScroll || i is BloodOathScroll || i is CorpseSkinScroll || i is CurseWeaponScroll || 
-							 i is EvilOmenScroll || i is HorrificBeastScroll || i is LichFormScroll || i is MindRotScroll || 
-							 i is PainSpikeScroll || i is PoisonStrikeScroll || i is StrangleScroll || i is SummonFamiliarScroll || 
-							 i is VampiricEmbraceScroll || i is VengefulSpiritScroll || i is WitherScroll || i is WraithFormScroll || 
+							if ( i is AnimateDeadScroll || i is BloodOathScroll || i is CorpseSkinScroll || i is CurseWeaponScroll ||
+							 i is EvilOmenScroll || i is HorrificBeastScroll || i is LichFormScroll || i is MindRotScroll ||
+							 i is PainSpikeScroll || i is PoisonStrikeScroll || i is StrangleScroll || i is SummonFamiliarScroll ||
+							 i is VampiricEmbraceScroll || i is VengefulSpiritScroll || i is WitherScroll || i is WraithFormScroll ||
 							 i is ExorcismScroll )
 							{ belongings.Add(i); foundScrolls = 1; }
 						}

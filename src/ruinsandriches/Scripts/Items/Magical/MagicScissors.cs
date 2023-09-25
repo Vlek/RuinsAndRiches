@@ -24,7 +24,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Changes the Appearance of Clothes");
             list.Add( 1049644, "Belts, Boots, Cloaks, Hats, and Robes");
-        } 
+        }
 
 		public override void OnDoubleClick( Mobile from )
 		{
@@ -69,21 +69,21 @@ namespace Server.Items
 					{
 						from.SendMessage( "This cannot be used on artifacts!" );
 					}
-					else if ( iWear is BaseArmor && ( 
-						iWear.ItemID == 0x1451 || 
-						iWear.ItemID == 0x1456 || 
-						iWear.ItemID == 0x49C1 || 
-						iWear.ItemID == 0x1452 || 
-						iWear.ItemID == 0x1457 || 
-						iWear.ItemID == 0x49C2 || 
-						iWear.ItemID == 0x144e || 
-						iWear.ItemID == 0x1453 || 
-						iWear.ItemID == 0x4988 || 
-						iWear.ItemID == 0x144f || 
-						iWear.ItemID == 0x1454 || 
-						iWear.ItemID == 0x498F || 
-						iWear.ItemID == 0x1450 || 
-						iWear.ItemID == 0x1455 || 
+					else if ( iWear is BaseArmor && (
+						iWear.ItemID == 0x1451 ||
+						iWear.ItemID == 0x1456 ||
+						iWear.ItemID == 0x49C1 ||
+						iWear.ItemID == 0x1452 ||
+						iWear.ItemID == 0x1457 ||
+						iWear.ItemID == 0x49C2 ||
+						iWear.ItemID == 0x144e ||
+						iWear.ItemID == 0x1453 ||
+						iWear.ItemID == 0x4988 ||
+						iWear.ItemID == 0x144f ||
+						iWear.ItemID == 0x1454 ||
+						iWear.ItemID == 0x498F ||
+						iWear.ItemID == 0x1450 ||
+						iWear.ItemID == 0x1455 ||
 						iWear.ItemID == 0x499D
 					) )
 					{
@@ -98,10 +98,10 @@ namespace Server.Items
 						else if ( iWear.ItemID == 0x1450 || iWear.ItemID == 0x1455 ){ DoEffects = true; iWear.ItemID = 0x499D; OldName = "bone gloves"; NewName = "bone gloves"; }
 						else if ( iWear.ItemID == 0x499D ){ DoEffects = true; iWear.ItemID = 0x1450; OldName = "bone gloves"; NewName = "bone gloves"; }
 					}
-					else if ( iWear is BaseArmor && ( 
-						iWear.ItemID == 0x13CC || 
-						iWear.ItemID == 0x13d3 || 
-						iWear.ItemID == 0x264F || 
+					else if ( iWear is BaseArmor && (
+						iWear.ItemID == 0x13CC ||
+						iWear.ItemID == 0x13d3 ||
+						iWear.ItemID == 0x264F ||
 						iWear.ItemID == 0x2650
 					) )
 					{
@@ -109,29 +109,29 @@ namespace Server.Items
 						else if ( iWear.ItemID == 0x264F ){ DoEffects = true; iWear.ItemID = 0x2650; OldName = "leather tunic"; NewName = "leather tunic"; }
 						else if ( iWear.ItemID == 0x2650 ){ DoEffects = true; iWear.ItemID = 0x13CC; OldName = "leather tunic"; NewName = "leather tunic"; }
 					}
-					else if (	iWear is BaseClothing || 
-								iWear is BaseGiftClothing || 
-								iWear is BaseLevelClothing || 
-								iWear is LevelBelt || 
-								iWear is GiftBelt || 
-								iWear is LeatherCloak || 
-								iWear is LeatherCap || 
-								iWear is LeatherRobe || 
-								iWear is ShinobiRobe || 
-								iWear is ShinobiCowl || 
-								iWear is ShinobiHood || 
-								iWear is ShinobiMask || 
-								iWear is LeatherSandals || 
-								iWear is LeatherShoes || 
-								iWear is LeatherBoots || 
-								iWear is HikingBoots || 
-								iWear is LeatherThighBoots || 
-								iWear is LeatherSoftBoots || 
-								iWear is LevelLeatherCap || 
-								iWear is GiftLeatherCap || 
-								iWear is MagicBelt || 
-								iWear is MagicBoots || 
-								iWear is MagicHat || 
+					else if (	iWear is BaseClothing ||
+								iWear is BaseGiftClothing ||
+								iWear is BaseLevelClothing ||
+								iWear is LevelBelt ||
+								iWear is GiftBelt ||
+								iWear is LeatherCloak ||
+								iWear is LeatherCap ||
+								iWear is LeatherRobe ||
+								iWear is ShinobiRobe ||
+								iWear is ShinobiCowl ||
+								iWear is ShinobiHood ||
+								iWear is ShinobiMask ||
+								iWear is LeatherSandals ||
+								iWear is LeatherShoes ||
+								iWear is LeatherBoots ||
+								iWear is HikingBoots ||
+								iWear is LeatherThighBoots ||
+								iWear is LeatherSoftBoots ||
+								iWear is LevelLeatherCap ||
+								iWear is GiftLeatherCap ||
+								iWear is MagicBelt ||
+								iWear is MagicBoots ||
+								iWear is MagicHat ||
 								iWear is MagicRobe )
 					{
 						if ( iWear is BaseClothing && iWear.Layer == Layer.MiddleTorso && iWear is BaseOuterTorso && ( iWear.ItemID == 0x1541 || iWear.ItemID == 0x0409 ) )
@@ -263,18 +263,18 @@ namespace Server.Items
 						else if ( iWear.ItemID == 0x2650 ){ DoEffects = true; iWear.ItemID = 0x13CC; OldName = "leather tunic"; NewName = "leather tunic"; }
 						else if ( iWear.ItemID == 0x13CC ){ DoEffects = true; iWear.ItemID = 0x64BD; OldName = "leather tunic"; NewName = "oniwaban tunic"; }
 
-						if (	iWear is LeatherCloak || 
-								iWear is LeatherCap || 
-								iWear is LeatherRobe || 
-								iWear is LeatherSandals || 
-								iWear is ShinobiRobe || 
-								iWear is ShinobiMask || 
-								iWear is ShinobiHood || 
-								iWear is ShinobiCowl || 
-								iWear is LeatherShoes || 
-								iWear is HikingBoots || 
-								iWear is LeatherBoots || 
-								iWear is LeatherThighBoots || 
+						if (	iWear is LeatherCloak ||
+								iWear is LeatherCap ||
+								iWear is LeatherRobe ||
+								iWear is LeatherSandals ||
+								iWear is ShinobiRobe ||
+								iWear is ShinobiMask ||
+								iWear is ShinobiHood ||
+								iWear is ShinobiCowl ||
+								iWear is LeatherShoes ||
+								iWear is HikingBoots ||
+								iWear is LeatherBoots ||
+								iWear is LeatherThighBoots ||
 								iWear is LeatherSoftBoots )
 						{
 							NewName = "leather " + NewName;

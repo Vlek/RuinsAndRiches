@@ -127,11 +127,11 @@ namespace Server.Mobiles
 				return false;
 			}
 			else if ( this is Warhorse && (
-				from.Skills[SkillName.Tactics].Base < 100 && 
-				from.Skills[SkillName.Swords].Base < 100 && 
-				from.Skills[SkillName.Bludgeoning].Base < 100 && 
-				from.Skills[SkillName.Marksmanship].Base < 100 && 
-				from.Skills[SkillName.Fencing].Base < 100 
+				from.Skills[SkillName.Tactics].Base < 100 &&
+				from.Skills[SkillName.Swords].Base < 100 &&
+				from.Skills[SkillName.Bludgeoning].Base < 100 &&
+				from.Skills[SkillName.Marksmanship].Base < 100 &&
+				from.Skills[SkillName.Fencing].Base < 100
 			))
 			{
 				from.SendMessage("Only grandmaster warriors may ride this warhorse.");

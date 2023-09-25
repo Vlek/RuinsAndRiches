@@ -199,7 +199,7 @@ namespace Server.Misc
 			if ( category == "necro" )
 			{
 				sEvil = " Evil";
-				switch ( Utility.RandomMinMax( 0, 7 ) ) 
+				switch ( Utility.RandomMinMax( 0, 7 ) )
 				{
 					case 0: sEvil = " Evil";		break;
 					case 1: sEvil = " Vile";		break;
@@ -214,7 +214,7 @@ namespace Server.Misc
 			else
 			{
 				sCat = " Wizardry";
-				switch ( Utility.RandomMinMax( 0, 7 ) ) 
+				switch ( Utility.RandomMinMax( 0, 7 ) )
 				{
 					case 0: sCat = " Wizardry";		break;
 					case 1: sCat = " Spells";		break;

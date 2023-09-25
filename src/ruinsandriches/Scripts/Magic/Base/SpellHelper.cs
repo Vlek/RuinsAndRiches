@@ -108,12 +108,12 @@ namespace Server.Spells
 		{
 			return CheckMulti( p, map, true, 0);
 		}
-		
+
 		public static bool CheckMulti(Point3D p, Map map, bool houses)
 		{
 			return CheckMulti(p, map, houses, 0);
 		}
-		
+
 		public static bool CheckMulti( Point3D p, Map map, bool houses, int housingrange )
 		{
 			if( map == null || map == Map.Internal )
@@ -137,7 +137,7 @@ namespace Server.Spells
 					return true;
 				}
 			}
-			
+
 			return false;
 		}
 
@@ -209,17 +209,17 @@ namespace Server.Spells
 
 			return false;
 		}
-		
+
 		public static bool CanRevealCaster( Mobile m )
 		{
 			if ( m is BaseCreature )
 			{
 				BaseCreature c = (BaseCreature)m;
-						
+
 				if ( !c.Controlled )
 					return true;
 			}
-			
+
 			return false;
 		}
 

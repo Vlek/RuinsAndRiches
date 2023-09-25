@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -234,9 +234,9 @@ namespace Server.Items
 				return button;
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				if ( m_Pouch.IsChildOf( from.Backpack ) )
 				{
@@ -459,7 +459,7 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				if ( m_Pouch.IsChildOf( from.Backpack ) )
@@ -739,38 +739,38 @@ namespace Server.Items
 		public bool isAlchemy( Item item )
 		{
 			if (
-				item is AgilityPotion || 
-				item is GreaterAgilityPotion || 
-				item is ConflagrationPotion || 
-				item is GreaterConflagrationPotion || 
-				item is ConfusionBlastPotion || 
-				item is GreaterConfusionBlastPotion || 
-				item is LesserCurePotion || 
-				item is CurePotion || 
-				item is GreaterCurePotion || 
-				item is LesserExplosionPotion || 
-				item is ExplosionPotion || 
-				item is GreaterExplosionPotion || 
-				item is FrostbitePotion || 
-				item is GreaterFrostbitePotion || 
-				item is LesserHealPotion || 
-				item is HealPotion || 
-				item is GreaterHealPotion || 
-				item is LesserInvisibilityPotion || 
-				item is InvisibilityPotion || 
-				item is GreaterInvisibilityPotion || 
-				item is InvulnerabilityPotion || 
-				item is LesserManaPotion || 
-				item is ManaPotion || 
-				item is GreaterManaPotion || 
-				item is NightSightPotion || 
-				item is RefreshPotion || 
-				item is TotalRefreshPotion || 
-				item is LesserRejuvenatePotion || 
-				item is RejuvenatePotion || 
-				item is GreaterRejuvenatePotion || 
-				item is StrengthPotion || 
-				item is GreaterStrengthPotion 
+				item is AgilityPotion ||
+				item is GreaterAgilityPotion ||
+				item is ConflagrationPotion ||
+				item is GreaterConflagrationPotion ||
+				item is ConfusionBlastPotion ||
+				item is GreaterConfusionBlastPotion ||
+				item is LesserCurePotion ||
+				item is CurePotion ||
+				item is GreaterCurePotion ||
+				item is LesserExplosionPotion ||
+				item is ExplosionPotion ||
+				item is GreaterExplosionPotion ||
+				item is FrostbitePotion ||
+				item is GreaterFrostbitePotion ||
+				item is LesserHealPotion ||
+				item is HealPotion ||
+				item is GreaterHealPotion ||
+				item is LesserInvisibilityPotion ||
+				item is InvisibilityPotion ||
+				item is GreaterInvisibilityPotion ||
+				item is InvulnerabilityPotion ||
+				item is LesserManaPotion ||
+				item is ManaPotion ||
+				item is GreaterManaPotion ||
+				item is NightSightPotion ||
+				item is RefreshPotion ||
+				item is TotalRefreshPotion ||
+				item is LesserRejuvenatePotion ||
+				item is RejuvenatePotion ||
+				item is GreaterRejuvenatePotion ||
+				item is StrengthPotion ||
+				item is GreaterStrengthPotion
 			){ return true; }
 			return false;
 		}
@@ -803,33 +803,33 @@ namespace Server.Items
 			return weight;
         }
 
-		public class BagWindow : ContextMenuEntry 
-		{ 
-			private AlchemistPouch AlchemistBag; 
-			private Mobile m_From; 
+		public class BagWindow : ContextMenuEntry
+		{
+			private AlchemistPouch AlchemistBag;
+			private Mobile m_From;
 
-			public BagWindow( Mobile from, AlchemistPouch bag ) : base( 6172, 1 ) 
-			{ 
-				m_From = from; 
-				AlchemistBag = bag; 
-			} 
+			public BagWindow( Mobile from, AlchemistPouch bag ) : base( 6172, 1 )
+			{
+				m_From = from;
+				AlchemistBag = bag;
+			}
 
-			public override void OnClick() 
-			{          
-				if( AlchemistBag.IsChildOf( m_From.Backpack ) ) 
-				{ 
+			public override void OnClick()
+			{
+				if( AlchemistBag.IsChildOf( m_From.Backpack ) )
+				{
 					m_From.CloseGump( typeof( AlchemistBag ) );
 					m_From.SendGump( new AlchemistBag( m_From, AlchemistBag ) );
 					m_From.PlaySound( 0x48 );
-				} 
-				else 
+				}
+				else
 				{
 					m_From.SendMessage( "This must be in your backpack to organize." );
-				} 
-			} 
-		} 
+				}
+			}
+		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 

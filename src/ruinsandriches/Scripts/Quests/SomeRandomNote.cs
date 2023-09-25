@@ -69,7 +69,7 @@ namespace Server.Items
 
 			ItemID = Utility.RandomList( 0xE34, 0x14ED, 0x14EE, 0x14EF, 0x14F0 );
 
-			ScrollTrue = 1; 
+			ScrollTrue = 1;
 			string written = "truth";
 			if ( 1 == Utility.RandomMinMax( 0, 1 ) ){ written = "lies"; ScrollTrue = 0; }
 
@@ -125,7 +125,7 @@ namespace Server.Items
 					case 41:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>I am alive and well and am in " + RandomThings.GetRandomCity() + " recovering from my wounds. The seas were rough and I should not have taken such a small boat out that far. " + RandomThings.GetRandomShipName( "", 0 ) + " was in sight so I flagged them for help which they did. Sadly, I lost our boat as Captain " + QuestCharacters.QuestGiver() + " decided to sell it to some " + RandomThings.GetRandomJob() + " for " + Utility.RandomMinMax( 9, 20 ) + "0 gold. They said it was part of my payment for coming on board. I plan to sail off with them to try and earn enough gold to buy a new boat. I will write again soon.<br><br> - " + QuestCharacters.QuestGiver() + ""; break;
 					case 42:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>The academy is going to be expanding their alchemical research into mixtures that are not commonly brewed by alchemists. These potions will allow us to turn any mundane item into something quite powerful. In order to do this, the sages tell of a tome we need, where ancient recipes may be learned. I need you to go to " + RandomThings.MadeUpDungeon() + " and make your way to the deepest part. If the sage is correct, you will find the book we need. When you acquire it, meet me in " + RandomThings.GetRandomCity() + ". There is much more to be done.<br><br> - " + QuestCharacters.QuestGiver() + ""; break;
 					case 43:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>That " + skull + " skull we found was worth the trouble. Although fragile, it did discover one interesting thing. There was a large gem resting within it. This may be the source of power of the " + skull + ", but that jeweler paid handsomely for it. Meet me in " + RandomThings.GetRandomCity() + " where I will buy you an ale and we will split the gold.<br><br> - " + QuestCharacters.ParchmentWriter() + ""; break;
-					case 44:	
+					case 44:
 						string thing = "book";
 						switch ( Utility.RandomMinMax( 0, 3 ) )
 						{
@@ -148,7 +148,7 @@ namespace Server.Items
 						ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>I saved the " + (Utility.RandomMinMax( 10, 49 )*10) + " gold needed to purchase a research pack from that " + researcher + " in " + RandomThings.MadeUpCity() + ". I started doing some research to learn I need to find a sphere of power in " + RandomThings.MadeUpDungeon() + ". Could you gather our friends and meet me there when the moon is at half? I would feel better if I had comrades to fight off the dangers within.<br><br> - " + QuestCharacters.ParchmentWriter() + ""; break;
 					case 47:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>I found a way to make use of this orb of the abyss you found. If you do not want it to interfere with your trinket, then you could take it to a blacksmith and they will forge it into a piece of armor you can wear instead. Once you do that, we can head into the Underworld and search for the fabled Titans we have read about.<br><br> - " + QuestCharacters.ParchmentWriter(); break;
 					case 48:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>I learned the secrets of this mysterious dragon skull we found in " + RandomThings.MadeUpDungeon() + ". It is the essence of a dracolich, but we need to remove the dark aura that conceals its true power. We need to head to " + RandomThings.MadeUpDungeon() + " and find the bloody pentagram of the great demon. If we use the skull within the pentagram, the aura will be removed and we can then pursue our goal on reanimating the creature to do our bidding.<br><br> - " + QuestCharacters.ParchmentWriter(); break;
-					case 49:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>A sailor in " + RandomThings.GetRandomCity() + " told me a tale of Neptune building twin serpent pillars out on the sea. One set I found in Sosaria, while another is said to exist in the Serpent Island. If one could learn the secrets of these pillars, then they can travel to another world by stepping between them. If Neptune did in fact build these gateways, then perhaps his castle hold the clue I need to use them. If I find them, we will assemble the crew and have the winds take us there. It may be the shipping route we need to trade with the gargoyles."; break;		
+					case 49:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>A sailor in " + RandomThings.GetRandomCity() + " told me a tale of Neptune building twin serpent pillars out on the sea. One set I found in Sosaria, while another is said to exist in the Serpent Island. If one could learn the secrets of these pillars, then they can travel to another world by stepping between them. If Neptune did in fact build these gateways, then perhaps his castle hold the clue I need to use them. If I find them, we will assemble the crew and have the winds take us there. It may be the shipping route we need to trade with the gargoyles."; break;
 				}
 			}
 			else
@@ -165,11 +165,11 @@ namespace Server.Items
 					case 8:		ScrollMessage = QuestCharacters.RandomWords() + ",<br><br>I am writing to tell you that your brother has perished while in " + QuestCharacters.SomePlace( "random" ) + ". Many creatures are deadly for sure, but some others can surprise you if you are not careful. It seemed to be a small tornado, but it was a ravaging air elemental some wizard decided to unleash on the land. If he would have brought that sword for slaying such creatures, his armor would not have been blown from his skin which caused his demise. So you don't make the same mistakes as your brother, just remember that using weapons that are particularly good at slaying certain creatures will protect you from the strange things they may do to men in battle. I will be back in " + RandomThings.GetRandomCity() + " soon."; break;
 					case 9:		ScrollMessage = "The staff of five is sought by those alive. Where time awaits, four pieces are fate. The fifth though forgotten, lays waiting on bottle's bottom."; break;
 					case 10:	ScrollMessage = QuestCharacters.RandomWords() + ",<br><br>I had to flee from " + RandomThings.GetRandomCity() + " today as I could not risk being seen by the guards. The death of the " + RandomThings.GetRandomJob() + " was of my doing, but it is not what the townsfolk are whispering about. They wronged someone with powerful allies, and as such sought out the Assassins Guild to deal with the problem. I was who they sent to perform the task. Although things may seem grim, the Guild is able to make the right people forget about my involvement and look the other way in the matter. I know you thought I was just a simple " + RandomThings.GetRandomJob() + ", but I have been under the service of the Guild for many years. We have a safe haven for our group on a island off the east coase of Sosaria. It is hard to find since it rests within a mountain valley, but a cave can be found that leads you to it. If I do not see you before the next half moon, I will meet you in " + RandomThings.GetRandomCity() + " before the moon is full. Travel safe.<br><br>- " + QuestCharacters.RandomWords(); break;
-					case 11:	ScrollMessage = "The ..aff of f... p..ts can only be as..mb.ed on the mo.. near t.e co.. and o.ly if  'Ultimum Potentiae' is spo..n while on the th...e of s..ne."; break;	
+					case 11:	ScrollMessage = "The ..aff of f... p..ts can only be as..mb.ed on the mo.. near t.e co.. and o.ly if  'Ultimum Potentiae' is spo..n while on the th...e of s..ne."; break;
 					case 12:	ScrollMessage = QuestCharacters.RandomWords() + ", I finally learned how we can get the " + GetSpecialItem( relic, 1 ) + ". We need to assemble the others and meet at " + GetSpecialItem( relic, 0 ) + "."; break;
 					case 13:	ScrollMessage = QuestCharacters.RandomWords() + ", we need to go to " + GetSpecialItem( relic, 0 ) + " if we are going to obtain the " + GetSpecialItem( relic, 1 ) + " for " + QuestCharacters.RandomWords() + "."; break;
 					case 14:	ScrollMessage = "The " + RandomThings.GetRandomJob() + " in " + RandomThings.GetRandomCity() + " told me that we can probably get the " + GetSpecialItem( relic, 1 ) + " if we search " + GetSpecialItem( relic, 0 ) + ". I will meet you in " + RandomThings.GetRandomCity() + " and we will go there together."; break;
-					case 15:	
+					case 15:
 							ScrollMessage = "The " + RandomThings.GetRandomJob() + " in " + RandomThings.GetRandomCity() + " said that the assassins guild would pay a good price for some golden serpent venom, as it could be used as a lethal poison.";
 							if ( Utility.RandomMinMax( 1, 2 ) == 1 ){ ScrollMessage = "The " + RandomThings.GetRandomJob() + " in " + RandomThings.GetRandomCity() + " said that the assassins guild would pay a good price for some silver serpent venom, as it could be used as a deadly poison."; }
 						break;
@@ -199,7 +199,7 @@ namespace Server.Items
 					case 39:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>If you find this note, it means that I met my demise. A witch in Ravendark is said to have a book that contains the secrets of the skull gate. That one can travel to another world by stepping within it. I did not seek this book as my patience was lacking, and my confidence was strong. As soon as I stepped through it, I went nowhere. I instead was inflicted with some kind of magical poison. Now I lie here, trying to...wait...for ...the... ...poison...to... ... ...wear......"; break;
 					case 40:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>I have been out searching for the reagents we need to create those potions for our friend, but I find that I cannot carry as much as I would like. I don't want to handle a pack animal, but you could still help. Go to " + RandomThings.GetRandomCity() + " and see if you can get me an alchemy rucksack. They are special bags that helps one carry more alchemical crafting items. They do cost much gold, but as soon as you get one meet me at my camp near " + RandomThings.MadeUpDungeon() + ".<br><br> - " + QuestCharacters.QuestGiver() + ""; break;
 					case 41:	ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>I am alive and well and am in " + RandomThings.GetRandomCity() + " recovering from my wounds. The seas were rough and I should not have taken such a small boat out that far. " + RandomThings.GetRandomShipName( "", 0 ) + " was in sight so I flagged them for help which they did. Sadly, I lost our boat as Captain " + QuestCharacters.QuestGiver() + " decided to use an axe and chop it up for the boards to use. They said it was part of my payment for coming on board. They said that a good carpenter can get much of the boards from a boat, but a sailor gets the best wood from it. I plan to sail off with them to try and earn enough gold to buy a new boat. I will write again soon.<br><br> - " + QuestCharacters.QuestGiver() + ""; break;
-					case 42:	
+					case 42:
 						switch ( Utility.Random( 2 ) )
 						{
 							case 0: ScrollMessage = "" + QuestCharacters.ParchmentWriter() + ",<br><br>The academy has told me that there is alchemical research into mixtures that are not commonly brewed by alchemists. These mixtures allows us to create potions that, when poured out, will unleash a liquid that can help vanquish any foes we may face on our journey. In order to do this, we need a book called Alchemical Mixtures. I need you to go to " + RandomThings.GetRandomCity() + " and see if you can acquire one of these books. Bring it to my laboratory when you found it and we will get to work.<br><br> - " + QuestCharacters.QuestGiver() + ""; break;
@@ -244,9 +244,9 @@ namespace Server.Items
 				AddHtml( 45, 78, 386, 218, @"<BODY><BASEFONT Color=#d9c781>" + sText + "</BASEFONT></BODY>", (bool)false, (bool)true);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.PlaySound( 0x249 );
 			}
 		}
@@ -334,7 +334,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) ) 
+			if ( !IsChildOf( e.Backpack ) )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

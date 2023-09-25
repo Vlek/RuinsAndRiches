@@ -13,7 +13,7 @@ namespace Server.Items
 		{
 			Name = "Book Of Knowledge";
 			Hue = 0xAFF;
-			
+
 			Attributes.SpellDamage = 25;
 			Attributes.LowerManaCost = 5;
 			Attributes.LowerRegCost = 5;
@@ -43,7 +43,6 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-		
+
 	}
 }
-

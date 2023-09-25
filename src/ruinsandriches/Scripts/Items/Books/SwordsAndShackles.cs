@@ -149,9 +149,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				if ( info.ButtonID > 0 || info.ButtonID < 0 )
 				{
 					from.SendGump( new SwordsAndShacklesGump( from, info.ButtonID ) );

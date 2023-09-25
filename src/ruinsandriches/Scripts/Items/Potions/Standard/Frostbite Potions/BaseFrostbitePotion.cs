@@ -34,7 +34,7 @@ namespace Server.Items
 			}
 			else if ( !from.Region.AllowHarmful( from, from ) )
 			{
-				from.SendMessage( "That doesn't feel like a good idea." ); 
+				from.SendMessage( "That doesn't feel like a good idea." );
 				return;
 			}
 
@@ -87,7 +87,7 @@ namespace Server.Items
 				return;
 
 			Consume();
-			
+
 			// Check if any other players are using this potion
 			for ( int i = 0; i < m_Users.Count; i ++ )
 			{
@@ -122,7 +122,7 @@ namespace Server.Items
 			if ( timer != null )
 				timer.Stop();
 
-			m_Delay[ m ] = Timer.DelayCall( TimeSpan.FromSeconds( 30 ), new TimerStateCallback( EndDelay_Callback ), m );	
+			m_Delay[ m ] = Timer.DelayCall( TimeSpan.FromSeconds( 30 ), new TimerStateCallback( EndDelay_Callback ), m );
 		}
 
 		public static int GetDelay( Mobile m )
@@ -171,7 +171,7 @@ namespace Server.Items
 			{
 				if ( m_Potion.Deleted || m_Potion.Map == Map.Internal )
 					return;
-					
+
 				IPoint3D p = targeted as IPoint3D;
 
 				if ( p == null || from.Map == null )
@@ -274,7 +274,7 @@ namespace Server.Items
 				base.Deserialize( reader );
 
 				int version = reader.ReadInt();
-				
+
 				m_From = reader.ReadMobile();
 				m_End = reader.ReadDateTime();
 				m_MinDamage = reader.ReadInt();
@@ -326,7 +326,7 @@ namespace Server.Items
 
 					if ( m_Item.Map == null || from == null )
 						return;
-					
+
 					List<Mobile> mobiles = new List<Mobile>();
 
 					foreach( Mobile mobile in m_Item.GetMobilesInRange( 0 ) )
@@ -335,15 +335,15 @@ namespace Server.Items
 					for( int i = 0; i < mobiles.Count; i++ )
 					{
 						Mobile m = mobiles[i];
-						
+
 						if ( (m.Z + 16) > m_Item.Z && (m_Item.Z + 12) > m.Z && (!Core.AOS || m != from) && SpellHelper.ValidIndirectTarget( from, m ) && from.CanBeHarmful( m, false ) )
 						{
 							if ( from != null )
 								from.DoHarmful( m );
-							
+
 							AOS.Damage( m, from, m_Item.GetDamage(), 0, 0, 100, 0, 0 );
 							m.PlaySound( 0x108 );
-						}              
+						}
 					}
 				}
 			}

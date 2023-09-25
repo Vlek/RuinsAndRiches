@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -81,7 +81,7 @@ namespace Server.Items
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			Container pack = from.Backpack;
 			int iAmount = 0;
 			string sEnd = ".";
@@ -379,12 +379,12 @@ namespace Server.Items
 				reg = Region.Find( target.Location, target.Map );
 				string tWorld = Worlds.GetMyWorld( target.Map, target.Location, target.X, target.Y );
 
-				if (	tWorld == "the Land of Sosaria" || 
-						tWorld == "the Land of Lodoria" || 
-						tWorld == "the Serpent Island" || 
-						tWorld == "the Isles of Dread" || 
-						tWorld == "the Savaged Empire" || 
-						tWorld == "the Island of Umber Veil" || 
+				if (	tWorld == "the Land of Sosaria" ||
+						tWorld == "the Land of Lodoria" ||
+						tWorld == "the Serpent Island" ||
+						tWorld == "the Isles of Dread" ||
+						tWorld == "the Savaged Empire" ||
+						tWorld == "the Island of Umber Veil" ||
 						tWorld == "the Bottle World of Kuldar" )
 				{
 					if ( ( target is Tinker || target is TinkerGuildmaster ) && reg.IsPartOf( typeof( VillageRegion ) ))
@@ -551,9 +551,9 @@ namespace Server.Items
 				AddHtml( 265, x, 55, 20, @"<BODY><BASEFONT Color=" + color + ">" + gBook.HaveSprings.ToString() + "</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.PlaySound( 0x55 );
 			}
 		}

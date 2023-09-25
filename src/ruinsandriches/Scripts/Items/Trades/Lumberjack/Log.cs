@@ -73,7 +73,7 @@ namespace Server.Items
 		{
 			if ( !Movable )
 				return;
-			
+
 			if ( RootParent is BaseCreature )
 			{
 				from.SendLocalizedMessage( 500447 ); // That is not accessible
@@ -105,7 +105,7 @@ namespace Server.Items
 				{
 					Item saw = (Item)obj;
 
-					if ( saw.Name == "saw mill" && 
+					if ( saw.Name == "saw mill" &&
 						( saw.ItemID == 1928 || saw.ItemID == 4525 || saw.ItemID == 7130 || saw.ItemID == 4530 || saw.ItemID == 7127 )
 					   )
 						return true;
@@ -152,7 +152,7 @@ namespace Server.Items
 
 					double minSkill = difficulty - 25.0;
 					double maxSkill = difficulty + 25.0;
-					
+
 					if ( difficulty > 50.0 && difficulty > from.Skills[SkillName.Lumberjacking].Value )
 					{
 						from.SendMessage( "You have no idea how to best cut this type of wood!" );

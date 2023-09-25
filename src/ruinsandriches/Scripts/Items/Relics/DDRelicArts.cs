@@ -6,7 +6,7 @@ namespace Server.Items
 	public class DDRelicArts : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -18,7 +18,7 @@ namespace Server.Items
 			RelicGoldValue = Server.Misc.RelicItems.RelicValue();
 
 			string sType = "";
-			switch ( Utility.RandomMinMax( 0, 2 ) ) 
+			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
 				case 0: ItemID = Utility.RandomList( 0x9CB, 0x9B3, 0x9BF, 0x9CB ); sType = " goblet"; Weight = 5; break;
 				case 1: ItemID = Utility.RandomList( 0x42BE, 0x15F8, 0x15FD, 0x1603, 0x1604 ); sType = " bowl"; Weight = 20; break;

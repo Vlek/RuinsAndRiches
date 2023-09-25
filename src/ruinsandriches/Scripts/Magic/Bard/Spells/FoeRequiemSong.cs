@@ -15,16 +15,16 @@ namespace Server.Spells.Song
 				//212,9041
 				-1
 			);
-		
+
 		public FoeRequiemSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
-		
+
 		private SongBook m_Book;
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2 ); } }
 		public override double RequiredSkill{ get{ return 80.0; } }
 		public override int RequiredMana{ get{ return 30; } }
-		
+
 		public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
@@ -66,7 +66,7 @@ namespace Server.Spells.Song
 				else if ( CheckHSequence( m ) )
 				{
 					sings = true;
-			
+
 					m_Book = (SongBook)book;
 					if (m_Book.Instrument == null || !(Caster.InRange(m_Book.Instrument.GetWorldLocation(), 1)))
 					{
@@ -101,7 +101,7 @@ namespace Server.Spells.Song
 				FinishSequence();
 			}
 		}
-		
+
 		private class InternalTarget : Target
 		{
 			private FoeRequiemSong m_Owner;

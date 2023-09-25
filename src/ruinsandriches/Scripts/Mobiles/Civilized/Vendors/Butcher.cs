@@ -1,25 +1,25 @@
-using System; 
-using System.Collections.Generic; 
-using Server; 
+using System;
+using System.Collections.Generic;
+using Server;
 
-namespace Server.Mobiles 
-{ 
-	public class Butcher : BaseVendor 
-	{ 
-		private List<SBInfo> m_SBInfos = new List<SBInfo>(); 
-		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } } 
+namespace Server.Mobiles
+{
+	public class Butcher : BaseVendor
+	{
+		private List<SBInfo> m_SBInfos = new List<SBInfo>();
+		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
 
 		public override NpcGuild NpcGuild{ get{ return NpcGuild.CulinariansGuild; } }
 
 		[Constructable]
-		public Butcher() : base( "the butcher" ) 
-		{ 
+		public Butcher() : base( "the butcher" )
+		{
 			SetSkill( SkillName.Anatomy, 45.0, 68.0 );
-		} 
+		}
 
-		public override void InitSBInfo() 
-		{ 
-			m_SBInfos.Add( new SBButcher() ); 
+		public override void InitSBInfo()
+		{
+			m_SBInfos.Add( new SBButcher() );
 		}
 
 		public override void InitOutfit()
@@ -30,22 +30,22 @@ namespace Server.Mobiles
 			else { AddItem( new Server.Items.ButcherKnife() ); }
 		}
 
-		public Butcher( Serial serial ) : base( serial ) 
-		{ 
+		public Butcher( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 
-			writer.Write( (int) 0 ); // version 
-		} 
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+			int version = reader.ReadInt();
+		}
+	}
 }

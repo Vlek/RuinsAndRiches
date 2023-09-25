@@ -29,10 +29,10 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			SBInfos.Add( new SBMageGuild() ); 
+			SBInfos.Add( new SBMageGuild() );
 			SBInfos.Add( new RSScrolls() );
 			SBInfos.Add( new SBRuneCasting() );
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBBuyArtifacts() );
 			SBInfos.Add( new SBElfWizard() );
 			SBInfos.Add( new SBPaganReagents() );
 		}

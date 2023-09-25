@@ -15,7 +15,7 @@ namespace Server.Items
 		public MagicArrowScroll( int amount ) : base( 4, 0x1F32, amount )
 		{
 		}
-		
+
 		public MagicArrowScroll( Serial serial ) : base( serial )
 		{
 		}
@@ -34,6 +34,6 @@ namespace Server.Items
 			int version = reader.ReadInt();
 		}
 
-		
+
 	}
 }

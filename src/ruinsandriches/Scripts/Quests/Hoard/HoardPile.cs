@@ -16,7 +16,7 @@ namespace Server.Items
 		public int Uses { get{ return m_Uses; } set{ m_Uses = value; InvalidateProperties(); } }
 
 		public string HoardName;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Hoard_Name { get { return HoardName; } set { HoardName = value; InvalidateProperties(); } }
 
@@ -138,14 +138,14 @@ namespace Server.Items
 						break;
 					case 6:
 						int scroll = Utility.RandomMinMax(1,5);
-						if ( scroll > 2 ) { item = Loot.RandomScroll( 47, 63, SpellbookType.Regular ); } 
-						else if ( scroll == 2 ) { item = Loot.RandomScroll( 20, 31, SpellbookType.Elementalism ); } 
+						if ( scroll > 2 ) { item = Loot.RandomScroll( 47, 63, SpellbookType.Regular ); }
+						else if ( scroll == 2 ) { item = Loot.RandomScroll( 20, 31, SpellbookType.Elementalism ); }
 						else { item = Loot.RandomScroll( 0, 17, SpellbookType.Necromancer ); }
 						break;
 					case 7:
 						int luckMod = from.Luck; if ( luckMod > 2000 ){ luckMod = 2000; }
 
-						if (	(Region.Find( from.Location, from.Map )).IsPartOf( "the Ancient Crash Site" ) || 
+						if (	(Region.Find( from.Location, from.Map )).IsPartOf( "the Ancient Crash Site" ) ||
 								(Region.Find( from.Location, from.Map )).IsPartOf( "the Ancient Sky Ship" ) )
 						{
 							item = new DDXormite( ( luckMod + Utility.RandomMinMax( 333, 666 ) ) );
@@ -225,7 +225,7 @@ namespace Server.Items
 							Server.Misc.MorphingTime.MakeOrientalItem( item, from );
 							item.Name = LootPackEntry.MagicItemName( item, from, Region.Find( from.Location, from.Map ) );
 						}
-						else 
+						else
 						{
 							string newName = "odd alien";
 							switch( Utility.RandomMinMax( 0, 6 ) )
@@ -322,7 +322,7 @@ namespace Server.Items
 				}
 
 				if ( item != null )
-				{ 
+				{
 					if ( Worlds.IsOnSpaceship( from.Location, from.Map ) ){ Server.Misc.MorphingTime.MakeSpaceAceItem( item, from ); }
 
 					if ( item is Container ){ item.MoveToWorld( from.Location, from.Map ); }

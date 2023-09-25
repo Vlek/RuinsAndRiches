@@ -6,7 +6,7 @@ namespace Server.Items
 	public class ElvenQuiver : BaseQuiver
 	{
 		public override int LabelNumber{ get{ return 1032657; } } // elven quiver
-		
+
 		[Constructable]
 		public ElvenQuiver() : base()
 		{

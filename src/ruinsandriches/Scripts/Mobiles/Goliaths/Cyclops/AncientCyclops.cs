@@ -94,7 +94,7 @@ namespace Server.Mobiles
 		public override int TreasureMapLevel{ get{ return 5; } }
 		public override int Hides{ get{ return 24; } }
 		public override HideType HideType{ get{ return HideType.Goliath; } }
-		
+
 		public AncientCyclops( Serial serial ) : base( serial )
 		{
 		}

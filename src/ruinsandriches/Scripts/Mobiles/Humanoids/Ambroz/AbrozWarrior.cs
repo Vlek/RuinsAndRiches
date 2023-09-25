@@ -42,7 +42,7 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 95.1, 105.0 );
 			SetSkill( SkillName.FistFighting, 97.6, 107.5 );
 
-			Fame = 4200;	
+			Fame = 4200;
 			Karma = -4200;
 
 			PackItem( new GreenGourd() );
@@ -81,7 +81,7 @@ namespace Server.Mobiles
 
 		// TODO: Throwing Dagger
 
-		public override void OnGaveMeleeAttack( Mobile defender ) 
+		public override void OnGaveMeleeAttack( Mobile defender )
 		{
 			base.OnGaveMeleeAttack( defender );
 
@@ -99,7 +99,7 @@ namespace Server.Mobiles
 				defender.Paralyze( TimeSpan.FromSeconds( 4.0 ) );
  			}
 		}
-		
+
 		public AbrozWarrior( Serial serial ) : base( serial )
 		{
 		}

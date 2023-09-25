@@ -309,7 +309,7 @@ namespace Knives.TownHouses
             AddButton(width / 2 - 50, y + 3, 0x2716, "ClearAll", new GumpCallback(ClearAll));
             AddButton(width / 2 + 40, y + 3, 0x2716, "ClearAll", new GumpCallback(ClearAll));
 
-			string helptext = String.Format( "   Setup begins with defining the area you wish to sell or rent.  " + 
+			string helptext = String.Format( "   Setup begins with defining the area you wish to sell or rent.  " +
 				"You can add as many boxes as you wish, and each time the preview will extend to show what " +
 				"you've selected so far.  If you feel like starting over, just clear them away!  You must have " +
 				"at least one block defined before continuing to the next step." );
@@ -344,7 +344,7 @@ namespace Knives.TownHouses
             AddButton(width / 2 - 80, y + 3, 0x2716, "Top Floor", new GumpCallback(MaxZSelect));
             AddButton(width / 2 + 70, y + 3, 0x2716, "Top Floor", new GumpCallback(MaxZSelect));
 
-			string helptext = String.Format( "   Now you will need to target the floors you wish to sell.  " + 
+			string helptext = String.Format( "   Now you will need to target the floors you wish to sell.  " +
 				"If you only want one floor, you can skip targeting the top floor.  Everything within the base " +
 				"and highest floor will come with the home, and the more floors, the higher the cost later on.");
 
@@ -377,7 +377,7 @@ namespace Knives.TownHouses
             AddButton(width / 2 - 60, y + 3, 0x2716, "Sign Loc", new GumpCallback(SignLocSelect));
             AddButton(width / 2 + 50, y + 3, 0x2716, "Sign Loc", new GumpCallback(SignLocSelect));
 
-			string helptext = String.Format( "   With this sign, the owner will have the same home owning rights " + 
+			string helptext = String.Format( "   With this sign, the owner will have the same home owning rights " +
 				"as custom or classic homes.  If they use the sign to demolish the home, it will automatically " +
 				"return to sale or rent.  The sign players will use to purchase the home will appear in the same " +
 				"spot, slightly below the normal house sign." );
@@ -447,7 +447,7 @@ namespace Knives.TownHouses
 			AddTextField( width/2+20, y, 50, 20, 0x480, 0xBBC, "Lockdowns", c_Sign.Locks.ToString() );
             AddButton(width / 2 - 5, y + 3, 0x2716, "Lockdowns", new GumpCallback(Lockdowns));
 
-			string helptext = String.Format( "   With this step you'll set the amount of storage for the home, or let " + 
+			string helptext = String.Format( "   With this step you'll set the amount of storage for the home, or let " +
 				"the system do so for you using the Suggest button.  In general, players get half the number of lockdowns " +
 				"as secure storage." );
 
@@ -488,13 +488,13 @@ namespace Knives.TownHouses
                 AddButton(width / 2 + 90, y, c_Sign.LeaveItems ? 0xD3 : 0xD2, "LeaveItems", new GumpCallback(LeaveItems));
             }
 
-			string helptext = String.Format( "   By default, the system will delete all items non-static items already " + 
+			string helptext = String.Format( "   By default, the system will delete all items non-static items already " +
 				"in the home at the time of purchase.  These items are commonly referred to as Decoration Items. " +
 				"They do not include home addons, like forges and the like.  They do include containers.  You can " +
 				"allow players to keep these items by saying so here, and you may also charge them to do so!");
 
 			AddHtml( 10, y+=35, width-20, 160, helptext, false, false );
-            
+
             y+=160;
 
 			AddHtml( 30, y+=15, 80, "Previous");
@@ -531,7 +531,7 @@ namespace Knives.TownHouses
                 }
 			}
 
-			string helptext = String.Format( "   Getting closer to completing the setup!  Now you get to specify whether " + 
+			string helptext = String.Format( "   Getting closer to completing the setup!  Now you get to specify whether " +
 				"this is a purchase or rental property.  Simply use the arrows until you have the setting you desire.  For " +
 				"rental property, you can also make the purchase non-recuring, meaning after the time is up the player " +
 				"gets the boot!  With recurring, if they have the money available they can continue to rent.  You can " +
@@ -572,7 +572,7 @@ namespace Knives.TownHouses
                 AddButton(width / 2 + 40, y + 3, 0x2716, "Suggest", new GumpCallback(SuggestPrice));
 			}
 
-			string helptext = String.Format( "   Now you get to set the price for the home.  Remember, if this is a " + 
+			string helptext = String.Format( "   Now you get to set the price for the home.  Remember, if this is a " +
 				"rental home, the system will charge them this amount for every period!  Luckily the Suggestion " +
 				"takes this into account.  If you don't feel like guessing, let the system suggest a price for you.  " +
 				"You can also give the home away with the Free option." );
@@ -613,7 +613,7 @@ namespace Knives.TownHouses
             AddTextField(width / 2 + 20, y, 60, 20, 0x480, 0xBBC, "MaxTotalSkill", c_Sign.MaxTotalSkill.ToString());
             AddButton(width / 2 - 5, y + 5, 0x2716, "Skill", new GumpCallback(Skill));
 
-			string helptext = String.Format( "   These settings are all optional.  If you want to restrict who can own " + 
+			string helptext = String.Format( "   These settings are all optional.  If you want to restrict who can own " +
 				"this home by their skills, here's the place.  You can specify by the skill name and value, or by " +
 				"player's total skills." );
 
@@ -696,7 +696,7 @@ namespace Knives.TownHouses
             AddButton(width / 2 - 110, y, c_Sign.NoBanning ? 0xD3 : 0xD2, "NoBan", new GumpCallback(NoBan));
             AddButton(width / 2 + 90, y, c_Sign.NoBanning ? 0xD3 : 0xD2, "NoBan", new GumpCallback(NoBan));
 
-            string helptext = String.Format("   Another page of optional options!  Sometimes houses have features you don't want players using.  " + 
+            string helptext = String.Format("   Another page of optional options!  Sometimes houses have features you don't want players using.  " +
                 "So here you can force homes to be private or public.  You can also prevent trading of the home.  Lastly, you can remove their ability to ban players.");
 
             AddHtml(10, y += 35, width - 20, 180, helptext, false, false);
@@ -716,7 +716,7 @@ namespace Knives.TownHouses
 			}
 			catch
 			{
-				Owner.SendMessage( "You provided an invalid skill name." );	
+				Owner.SendMessage( "You provided an invalid skill name." );
 				return false;
 			}
 		}

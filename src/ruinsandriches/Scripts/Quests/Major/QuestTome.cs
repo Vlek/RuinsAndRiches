@@ -8,7 +8,7 @@ using Server.Mobiles;
 using Server.Accounting;
 using System.Collections.Generic;
 using System.Collections;
-using Server.Regions; 
+using Server.Regions;
 using System.Globalization;
 
 namespace Server.Items
@@ -308,7 +308,7 @@ namespace Server.Items
 				string locat = m_Book.QuestTomeLocateGood;
 				string world = m_Book.QuestTomeWorldGood;
 				string names = m_Book.QuestTomeNPCGood;
-						
+
 				if ( ((PlayerMobile)from).KarmaLocked ) // THEY ARE ON AN EVIL PATH
 				{
 					color = "#cfa495";
@@ -359,9 +359,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				if ( info.ButtonID == 1 ){ from.SendGump( new QuestTomeGump( m_Book, from, 1 ) ); }
 				else if ( info.ButtonID == 2 ){ from.SendGump( new QuestTomeGump( m_Book, from, 0 ) ); }

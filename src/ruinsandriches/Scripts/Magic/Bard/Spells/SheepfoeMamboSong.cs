@@ -13,7 +13,7 @@ namespace Server.Spells.Song
 {
 	public class SheepfoeMamboSong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Shepherd's Dance", "*plays a shepherd's dance*",
 				//SpellCircle.First,
@@ -25,7 +25,7 @@ namespace Server.Spells.Song
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2 ); } }
 		public override double RequiredSkill{ get{ return 60.0; } }
 		public override int RequiredMana{ get{ return 20; } }
-		
+
 		public SheepfoeMamboSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
@@ -46,11 +46,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
 			if( CheckSequence() )
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
@@ -65,13 +65,13 @@ namespace Server.Spells.Song
 
                     int amount = Server.Misc.MyServerSettings.PlayerLevelMod( (int)(MusicSkill( Caster ) / 16), Caster );
 					string dex = "dex";
-						
+
 					double duration = (double)(MusicSkill( Caster ) * 2);
-						
+
 					StatMod mod = new StatMod( StatType.Dex, dex, + amount, TimeSpan.FromSeconds( duration ) );
-						
+
 					m.AddStatMod( mod );
-						
+
 					m.FixedParticles( 0x375A, 10, 15, 5017, 0x224, 3, EffectLayer.Waist );
 				}
 			}

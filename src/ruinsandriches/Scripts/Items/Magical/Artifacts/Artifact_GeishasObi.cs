@@ -10,8 +10,8 @@ namespace Server.Items
 		public override int InitMinHits{ get{ return 80; } }
 		public override int InitMaxHits{ get{ return 160; } }
 
-		public override int BasePhysicalResistance{ get{ return 5; } } 
-      
+		public override int BasePhysicalResistance{ get{ return 5; } }
+
 		[Constructable]
 		public Artifact_GeishasObi()
 		{

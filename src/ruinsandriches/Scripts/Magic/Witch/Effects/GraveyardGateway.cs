@@ -91,7 +91,7 @@ namespace Server.Spells.Undead
 			}
 			else if ( CheckSequence() )
 			{
-				Caster.SendMessage( "You open a black gate to another location." ); 
+				Caster.SendMessage( "You open a black gate to another location." );
 
 				Effects.PlaySound( Caster.Location, Caster.Map, 0x653 );
 				InternalItem firstGate = new InternalItem( loc, map, Server.Items.BasePotion.EnhancePotions( Caster ) );
@@ -199,7 +199,7 @@ namespace Server.Spells.Undead
 					from.Send( new MessageLocalized( from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 501030, from.Name, "" ) ); // I can not gate travel from that object.
 				}
 			}
-			
+
 			protected override void OnNonlocalTarget( Mobile from, object o )
 			{
 			}

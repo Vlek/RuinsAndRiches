@@ -67,7 +67,7 @@ namespace Server.Regions
 			m.SendMessage( "That does not seem to work here." );
 			return false;
 		}
-		
+
 		public override void OnEnter( Mobile m )
 		{
 			if ( m is PlayerMobile )
@@ -83,7 +83,7 @@ namespace Server.Regions
 					m.SendGump( new MonsterGump( m ) );
 			}
 		}
-		
+
 		public override void OnExit( Mobile m )
 		{
 			if ( m is PlayerMobile )

@@ -71,7 +71,7 @@ namespace Server.Items
 
 			from.CloseGump( typeof( InternalGump ) );
 			from.SendGump( new InternalGump( this ) );
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 		}
 
 		public static bool InHouse( Mobile from )
@@ -177,7 +177,7 @@ namespace Server.Items
 
 			public override void OnResponse( NetState sender, RelayInfo info )
 			{
-				Mobile from = sender.Mobile; 
+				Mobile from = sender.Mobile;
 
 				if ( info.ButtonID == 99 )
 				{
@@ -986,8 +986,8 @@ namespace Server.Items
 					else if ( item.ItemID == 0x33B4 ){ item.ItemID = 0x33B3; } //mounted skeletal dragon
 					else if ( item.ItemID == 0x33B5 ){ item.ItemID = 0x33B6; } //mounted wyvern
 					else if ( item.ItemID == 0x33B6 ){ item.ItemID = 0x33B5; } //mounted wyvern
-					else if ( item.ItemID == 0x33B9 ){ item.ItemID = 0x33BA; } //mounted alien 
-					else if ( item.ItemID == 0x33BA ){ item.ItemID = 0x33B9; } //mounted alien 
+					else if ( item.ItemID == 0x33B9 ){ item.ItemID = 0x33BA; } //mounted alien
+					else if ( item.ItemID == 0x33BA ){ item.ItemID = 0x33B9; } //mounted alien
 					else if ( item.ItemID == 0x33CB ){ item.ItemID = 0x33CC; } //mounted dragon abysmal
 					else if ( item.ItemID == 0x33CC ){ item.ItemID = 0x33CB; } //mounted dragon abysmal
 					else if ( item.ItemID == 0x33D1 ){ item.ItemID = 0x33D2; } //mounted dragon amber
@@ -1016,22 +1016,22 @@ namespace Server.Items
 					else if ( item.ItemID == 0x33CA ){ item.ItemID = 0x33C9; } //mounted dragon stygian
 					else if ( item.ItemID == 0x33CD ){ item.ItemID = 0x33CE; } //mounted dragon vampiric
 					else if ( item.ItemID == 0x33CE ){ item.ItemID = 0x33CD; } //mounted dragon vampiric
-					else if ( item.ItemID == 0x33DB ){ item.ItemID = 0x33DC; } //mounted hell beast 
-					else if ( item.ItemID == 0x33DC ){ item.ItemID = 0x33DB; } //mounted hell beast 
-					else if ( item.ItemID == 0x33DD ){ item.ItemID = 0x33DE; } //mounted hippogriff 
-					else if ( item.ItemID == 0x33DE ){ item.ItemID = 0x33DD; } //mounted hippogriff 
-					else if ( item.ItemID == 0x33BD ){ item.ItemID = 0x33BE; } //mounted lion 
-					else if ( item.ItemID == 0x33BE ){ item.ItemID = 0x33BD; } //mounted lion 
-					else if ( item.ItemID == 0x33B7 ){ item.ItemID = 0x33B8; } //mounted styguana 
-					else if ( item.ItemID == 0x33B8 ){ item.ItemID = 0x33B7; } //mounted styguana 
-					else if ( item.ItemID == 0x33BB ){ item.ItemID = 0x33BC; } //mounted watcher 
-					else if ( item.ItemID == 0x33BC ){ item.ItemID = 0x33BB; } //mounted watcher 
-					else if ( item.ItemID == 0x33DF ){ item.ItemID = 0x33E0; } //mounted walrus 
-					else if ( item.ItemID == 0x33E0 ){ item.ItemID = 0x33DF; } //mounted walrus 
-					else if ( item.ItemID == 0x33E1 ){ item.ItemID = 0x33E2; } //mounted ogre 
-					else if ( item.ItemID == 0x33E2 ){ item.ItemID = 0x33E1; } //mounted ogre 
-					else if ( item.ItemID == 0x33E3 ){ item.ItemID = 0x33E4; } //mounted trollbear 
-					else if ( item.ItemID == 0x33E4 ){ item.ItemID = 0x33E3; } //mounted trollbear 
+					else if ( item.ItemID == 0x33DB ){ item.ItemID = 0x33DC; } //mounted hell beast
+					else if ( item.ItemID == 0x33DC ){ item.ItemID = 0x33DB; } //mounted hell beast
+					else if ( item.ItemID == 0x33DD ){ item.ItemID = 0x33DE; } //mounted hippogriff
+					else if ( item.ItemID == 0x33DE ){ item.ItemID = 0x33DD; } //mounted hippogriff
+					else if ( item.ItemID == 0x33BD ){ item.ItemID = 0x33BE; } //mounted lion
+					else if ( item.ItemID == 0x33BE ){ item.ItemID = 0x33BD; } //mounted lion
+					else if ( item.ItemID == 0x33B7 ){ item.ItemID = 0x33B8; } //mounted styguana
+					else if ( item.ItemID == 0x33B8 ){ item.ItemID = 0x33B7; } //mounted styguana
+					else if ( item.ItemID == 0x33BB ){ item.ItemID = 0x33BC; } //mounted watcher
+					else if ( item.ItemID == 0x33BC ){ item.ItemID = 0x33BB; } //mounted watcher
+					else if ( item.ItemID == 0x33DF ){ item.ItemID = 0x33E0; } //mounted walrus
+					else if ( item.ItemID == 0x33E0 ){ item.ItemID = 0x33DF; } //mounted walrus
+					else if ( item.ItemID == 0x33E1 ){ item.ItemID = 0x33E2; } //mounted ogre
+					else if ( item.ItemID == 0x33E2 ){ item.ItemID = 0x33E1; } //mounted ogre
+					else if ( item.ItemID == 0x33E3 ){ item.ItemID = 0x33E4; } //mounted trollbear
+					else if ( item.ItemID == 0x33E4 ){ item.ItemID = 0x33E3; } //mounted trollbear
 					else if ( item.ItemID == 0x3E20 ){ item.ItemID = 0x3E21; }
 					else if ( item.ItemID == 0x3E7 ){ item.ItemID = 0xC2C; }
 					else if ( item.ItemID == 0x3E8 ){ item.ItemID = 0xEA0; }

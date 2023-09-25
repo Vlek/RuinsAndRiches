@@ -21,7 +21,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1049644, "Dye To Color The Ribbon");
-        } 
+        }
 
 		public override void Serialize(GenericWriter writer)
 		{
@@ -55,7 +55,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1049644, "Dye To Color The Ribbon");
-        } 
+        }
 
 		public override void Serialize(GenericWriter writer)
 		{

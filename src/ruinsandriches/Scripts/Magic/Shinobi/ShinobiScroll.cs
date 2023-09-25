@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -93,7 +93,7 @@ namespace Server.Items
 					from.SendMessage( "This is not your scroll!" );
 					return;
 				}
-				else if ( !IsChildOf( from.Backpack ) ) 
+				else if ( !IsChildOf( from.Backpack ) )
 				{
 					from.SendMessage( "This must be in your backpack to read." );
 					return;
@@ -142,7 +142,7 @@ namespace Server.Items
 
             list.Add( 1049644, "" + skills + " Abilities");
 			if ( owner != null ){ list.Add( 1070722, "Belongs to " + owner.Name + "" ); }
-        } 
+        }
 
 		public static bool GetShinobi( Mobile m, int skill )
 		{
@@ -273,7 +273,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "the Ancient Pyramid"; }
 				else if ( type == "where2" ){	str = "Dungeon Covetous"; }
 				else
-				{ 
+				{
 					str = "This increases the running speed of the Ninja for about 10-25 minutes, making them run as fast as a cheetah. This power cannot be called upon within certain areas and will often cease to function when entering those areas.";
 				}
 			}
@@ -289,7 +289,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "Dungeon Clues"; }
 				else if ( type == "where2" ){	str = "the Lodoria Catacombs"; }
 				else
-				{ 
+				{
 					str = "The ninja can disguise themselves, where others would not recognize them and some guards may look the other way.";
 				}
 			}
@@ -305,7 +305,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "Dardin's Pit"; }
 				else if ( type == "where2" ){	str = "Dungeon Deceit"; }
 				else
-				{ 
+				{
 					str = "The eyes of the ninja are focused where they can perhaps spot hidden creatures, traps, or treasure.";
 				}
 			}
@@ -321,7 +321,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "Dungeon Doom"; }
 				else if ( type == "where2" ){	str = "Dungeon Despise"; }
 				else
-				{ 
+				{
 					str = "Some of the more minor locks can be manipulated with this ability, but not all of them as master thieves can.";
 				}
 			}
@@ -337,7 +337,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "the Fires of Hell"; }
 				else if ( type == "where2" ){	str = "the City of Embers"; }
 				else
-				{ 
+				{
 					str = "If held in place by things such as paralysis magic, spider webbing, or nets the ninja can attempt to free themselves from such holds and escape.";
 				}
 			}
@@ -353,7 +353,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "the Mines of Morinia"; }
 				else if ( type == "where2" ){	str = "Dungeon Hythloth"; }
 				else
-				{ 
+				{
 					str = "Allows the ninja to leap toward or away from a location very quickly.";
 				}
 			}
@@ -369,7 +369,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "the Perinian Depths"; }
 				else if ( type == "where2" ){	str = "the Ice Fiend Lair"; }
 				else
-				{ 
+				{
 					str = "Summons a shuriken out of thin air and hurdles it toward your opponent, causing much damage from afar.";
 				}
 			}
@@ -385,7 +385,7 @@ namespace Server.Items
 				else if ( type == "where1" ){	str = "the Dungeon of Time Awaits"; }
 				else if ( type == "where2" ){	str = "Dungeon Shame"; }
 				else
-				{ 
+				{
 					str = "Calls forth a mystical tiger from the realm of Durama to fight with the ninja during their journey.";
 				}
 			}
@@ -457,7 +457,7 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 
@@ -512,9 +512,9 @@ namespace Server.Items
 				if ( scroll.TigerStrength > 0 ){ 	line = line+50; AddButton(line, 2, 10878, 10878, 297, GumpButtonType.Reply, 0); }
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				DoShinobi( from, info.ButtonID );
 				from.CloseGump( typeof( ShinobiRow ) );
 				if ( mScroll.owner == from )
@@ -548,9 +548,9 @@ namespace Server.Items
 				if ( scroll.TigerStrength > 0 ){ 	line = line+50; AddButton(2, line, 10878, 10878, 297, GumpButtonType.Reply, 0); }
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				DoShinobi( from, info.ButtonID );
 				from.CloseGump( typeof( ShinobiColumn ) );
 				if ( mScroll.owner == from )

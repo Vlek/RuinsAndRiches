@@ -20,21 +20,21 @@ namespace Server.Items
 		{
 			Hue = 1153;
 			Name = "Christmas Robe";
-			
+
 			OrigHue = 33770;
 		}
 
 		public ChristmasRobe( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override bool OnEquip( Mobile from )
 		{
 			from.SendMessage( "You put on your Christmas Robe." );
-			
+
 			m_OrigHue = from.Hue;
 			from.Hue = 0x4001;
-				
+
 			return true;
 		}
 
@@ -43,9 +43,9 @@ namespace Server.Items
 			if ( parent is Mobile )
 			{
 				Mobile from = ( Mobile ) parent;
-				
+
 				from.Hue = m_OrigHue;
-				
+
 				from.SendMessage( "You remove your Christmas Robe." );
 			}
 
@@ -56,7 +56,7 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 			writer.Write( ( int ) 0 );
-			
+
 			writer.WriteEncodedInt( (int) m_OrigHue );
 		}
 
@@ -64,7 +64,7 @@ namespace Server.Items
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
-			
+
 			switch ( version )
 			{
 				case 0:

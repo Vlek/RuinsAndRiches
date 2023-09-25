@@ -107,7 +107,7 @@ namespace Server.Mobiles
 				ControlSlots = 3;
 
 				PackItem( new SeaSalt( Utility.RandomMinMax(3,9) ) );
-				PackItem( new WaterFlask() ); 
+				PackItem( new WaterFlask() );
 			}
 		}
 

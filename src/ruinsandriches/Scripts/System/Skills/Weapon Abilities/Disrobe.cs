@@ -21,7 +21,7 @@ namespace Server.Items
 				return;
 
 			ClearCurrentAbility( attacker );
-			Item toDisrobe = defender.FindItemOnLayer(Layer.InnerTorso);			
+			Item toDisrobe = defender.FindItemOnLayer(Layer.InnerTorso);
 
 			if ( toDisrobe == null || !toDisrobe.Movable )
 				toDisrobe = defender.FindItemOnLayer( Layer.OuterTorso );

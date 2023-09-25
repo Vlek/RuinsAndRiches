@@ -27,7 +27,7 @@ namespace Server.Spells.Herbalist
         {
             Caster.Target = new InternalTarget( this );
         }
- 
+
         public void Target( Mobile m )
         {
             if ( !Caster.CanSee( m ) )
@@ -83,10 +83,10 @@ namespace Server.Spells.Herbalist
             else if ( m is PlayerMobile && CheckBSequence( m, true ) )
             {
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x5C9 );
                 m.FixedEffect( 0x54F4, 10, 16, 0, 0 );
- 
+
                 m.CloseGump( typeof( ResurrectGump ) );
                 m.SendGump( new ResurrectGump( m, Caster ) );
             }
@@ -95,7 +95,7 @@ namespace Server.Spells.Herbalist
 				BaseCreature pet = (BaseCreature)m;
 				Mobile master = pet.GetMaster();
                 SpellHelper.Turn( Caster, m );
- 
+
                 m.PlaySound( 0x5C9 );
                 m.FixedEffect( 0x54F4, 10, 16, 0, 0 );
 
@@ -177,16 +177,16 @@ namespace Server.Spells.Herbalist
 			}
             FinishSequence();
 		}
- 
+
         private class InternalTarget : Target
         {
             private RestorativeSoilSpell m_Owner;
- 
+
             public InternalTarget( RestorativeSoilSpell owner ) : base( 1, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )
@@ -198,7 +198,7 @@ namespace Server.Spells.Herbalist
                     m_Owner.ItemTarget( (Item)o );
                 }
             }
- 
+
             protected override void OnTargetFinish( Mobile from )
             {
                 m_Owner.FinishSequence();

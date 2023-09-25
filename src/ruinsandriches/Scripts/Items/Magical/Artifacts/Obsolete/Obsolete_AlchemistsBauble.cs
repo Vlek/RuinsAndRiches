@@ -22,7 +22,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Artefact" );
         }
-		
+
 		public AlchemistsBauble( Serial serial ) : base( serial )
 		{
 		}
@@ -32,7 +32,7 @@ namespace Server.Items
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

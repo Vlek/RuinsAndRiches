@@ -75,7 +75,7 @@ namespace Server.Spells.Sixth
 
 					m.FixedParticles( 0x374A, 10, 15, 5028, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 0 ), 0, EffectLayer.Waist );
 					m.PlaySound( 0x1FB );
-					
+
 					HarmfulSpell( m );
 				}
 			}

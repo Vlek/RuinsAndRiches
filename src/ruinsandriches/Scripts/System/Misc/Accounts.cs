@@ -63,7 +63,7 @@ namespace Server
 		{
 			EventSink.SocketConnect += new SocketConnectEventHandler( EventSink_SocketConnect );
 		}
-			
+
 		private static void EventSink_SocketConnect( SocketConnectEventArgs e )
 		{
 			try
@@ -82,7 +82,7 @@ namespace Server
 
 					using ( StreamWriter op = new StreamWriter( "ipLimits.log", true ) )
 						op.WriteLine( "{0}\tPast IP limit threshold\t{1}", ip, DateTime.Now );
-	
+
 					e.AllowConnection = false;
 					return;
 				}
@@ -511,7 +511,7 @@ namespace Server.Misc
 
 				return m_IPTable;
 			}
-		}	
+		}
 
 		private static Account CreateAccount( NetState state, string un, string pw )
 		{
@@ -565,7 +565,7 @@ namespace Server.Misc
 
 			if ( acct == null )
 			{
-				if ( AutoAccountCreation() && un.Trim().Length > 0 )	//To prevent someone from making an account of just '' or a bunch of meaningless spaces 
+				if ( AutoAccountCreation() && un.Trim().Length > 0 )	//To prevent someone from making an account of just '' or a bunch of meaningless spaces
 				{
 					e.State.Account = acct = CreateAccount( e.State, un, pw );
 					e.Accepted = acct == null ? false : acct.CheckAccess( e.State );
@@ -701,7 +701,7 @@ namespace Server.Accounting
 		{
 			m_Accounts[a.Username] = a;
 		}
-		
+
 		public static void Remove( string username )
 		{
 			m_Accounts.Remove( username );
@@ -1345,7 +1345,7 @@ namespace Server.Accounting
 		public Account( string username, string password )
 		{
 			m_Username = username;
-			
+
 			SetPassword( password );
 
 			m_AccessLevel = AccessLevel.Player;
@@ -2361,7 +2361,7 @@ namespace Server.Misc
 		public static bool SocketBlock = true; // true to block at connection, false to block at login request
 
 		public static int MaxAddresses = 10;
-		
+
 		public static IPAddress[] Exemptions = new IPAddress[]	//For hosting services where there are cases where IPs can be proxied
 		{
 			//IPAddress.Parse( "127.0.0.1" ),

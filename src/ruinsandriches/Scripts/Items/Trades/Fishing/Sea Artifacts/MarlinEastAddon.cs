@@ -7,9 +7,9 @@ namespace Server.Items
 	public class MarlinEastAddon : BaseAddon
 	{
         private static int[,] m_AddOnSimpleComponents = new int[,] {
-			  {17644, 0, 0, 0}, {17645, 0, 1, 0}, {17646, 0, -1, 0}// 1	2	3	
+			  {17644, 0, 0, 0}, {17645, 0, 1, 0}, {17646, 0, -1, 0}// 1	2	3
 		};
-    
+
 		public override BaseAddonDeed Deed
 		{
 			get

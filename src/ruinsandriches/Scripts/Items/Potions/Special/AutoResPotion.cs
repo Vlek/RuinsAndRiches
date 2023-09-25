@@ -12,7 +12,7 @@ namespace Server.Items
     public class AutoResPotion : Item
     {
 		private static Dictionary<Mobile, AutoResPotion> m_ResList;
-		
+
         private int m_Charges;
 
         [CommandProperty( AccessLevel.GameMaster )]
@@ -27,18 +27,18 @@ namespace Server.Items
 
         [CommandProperty(AccessLevel.GameMaster)]
         public TimeSpan Delay { get { return m_Delay; } set { m_Delay = value; } }
-	
+
         public static void Initialize()
         {
             EventSink.PlayerDeath += new PlayerDeathEventHandler(EventSink_Death);
         }
-		
+
         [Constructable]
         public AutoResPotion() : this( 1 )
         { }
 
         [Constructable]
-        public AutoResPotion(int charges) : base(0x0E0F) 
+        public AutoResPotion(int charges) : base(0x0E0F)
         {
             m_Charges = charges;
             Name = "Potion Of Rebirth";
@@ -50,7 +50,7 @@ namespace Server.Items
         public AutoResPotion(Serial serial): base(serial)
         {
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if(!from.Alive)
@@ -59,7 +59,7 @@ namespace Server.Items
 			if(m_ResList == null)
 				m_ResList = new Dictionary<Mobile, AutoResPotion>();
 
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;
@@ -77,7 +77,7 @@ namespace Server.Items
 			else
 				from.SendMessage("The spirits watch you already.");
 		}
-		
+
 		private static void EventSink_Death(PlayerDeathEventArgs e)
         {
             PlayerMobile owner = e.Mobile as PlayerMobile;
@@ -86,7 +86,7 @@ namespace Server.Items
             {
                 if (owner.Alive)
                     return;
-				
+
 				if(m_ResList != null && m_ResList.ContainsKey(owner))
 				{
 					AutoResPotion arp = m_ResList[owner];
@@ -129,14 +129,14 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Drink Anytime Before Death");
             list.Add( 1049644, "You Will Resurrect 30 Seconds Later");
-        } 
+        }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write( (int) 0 ); // version
             writer.Write( (TimeSpan) m_Delay );
-            writer.Write( (int) m_Charges );            
+            writer.Write( (int) m_Charges );
         }
 
         public override void Deserialize(GenericReader reader)
@@ -145,7 +145,7 @@ namespace Server.Items
             int version = reader.ReadInt();
             switch (version)
             {
-                case 0: 
+                case 0:
                 {
 					m_Delay = reader.ReadTimeSpan();
 					m_Charges = reader.ReadInt();

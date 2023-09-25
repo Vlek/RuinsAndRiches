@@ -11,7 +11,7 @@ namespace Server.Gumps
 
 		public ConfirmReleaseGump( Mobile from, BaseCreature pet ) : base( 50, 50 )
 		{
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			string color = "#d3aeae";
 
 			m_From = from;
@@ -31,7 +31,7 @@ namespace Server.Gumps
 
 		public override void OnResponse( Server.Network.NetState sender, RelayInfo info )
 		{
-			m_From.SendSound( 0x4A ); 
+			m_From.SendSound( 0x4A );
 			if ( info.ButtonID == 2 )
 			{
 				if ( !m_Pet.Deleted && m_Pet.Controlled && m_From == m_Pet.ControlMaster && m_From.CheckAlive() /*&& m_Pet.CheckControlChance( m_From )*/ )

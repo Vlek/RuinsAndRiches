@@ -6,7 +6,7 @@ namespace Server.Items
 	public class DDRelicJewels : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -18,7 +18,7 @@ namespace Server.Items
 			Hue = Utility.RandomColor(0);
 
 			string sType = "";
-			switch ( Utility.RandomMinMax( 0, 8 ) ) 
+			switch ( Utility.RandomMinMax( 0, 8 ) )
 			{
 				case 0: ItemID = 0x4210; sType = "necklace"; break;
 				case 1: ItemID = 0x4210; sType = "amulet"; break;

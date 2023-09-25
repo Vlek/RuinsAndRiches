@@ -8,7 +8,7 @@ namespace Server.Items
 		public int RelicGoldValue;
 		public int RelicFlipID1;
 		public int RelicFlipID2;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -48,7 +48,7 @@ namespace Server.Items
 				case 17:sLook = "a unique";	break;
 				case 18:sLook = "an unusual";	break;
 			}
-			
+
 			string sDecon = "";
 			switch ( Utility.RandomMinMax( 0, 5 ) )
 			{
@@ -58,7 +58,7 @@ namespace Server.Items
 			}
 
 			string sType = "shield";
-			switch ( Utility.RandomMinMax( 0, 14 ) ) 
+			switch ( Utility.RandomMinMax( 0, 14 ) )
 			{
 				case 0: ItemID = 0x156C; RelicFlipID1 = 0x156C; RelicFlipID2 = 0x156D;		break;
 				case 1: ItemID = 0x156E; RelicFlipID1 = 0x156E; RelicFlipID2 = 0x156F;		break;
@@ -77,7 +77,7 @@ namespace Server.Items
 				case 14: ItemID = 0x1512; RelicFlipID1 = 0x1512; RelicFlipID2 = 0x151A;	sType = "suit of armor";	Weight = 60; break;
 			}
 
-			Name = sLook + sDecon + " " + sType; 
+			Name = sLook + sDecon + " " + sType;
 		}
 
 		public override void OnDoubleClick( Mobile from )

@@ -100,7 +100,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Charges: " + m_Charges.ToString() );
             if ( m_PetName != "" && m_PetName != null ){ list.Add( 1049644, "Pet: " + m_PetName ); }
-        } 
+        }
 
 		private delegate void BallCallback( Mobile from );
 
@@ -271,7 +271,7 @@ namespace Server.Items
 
 		}
 
-		
+
 		public void SummonPet( Mobile from )
 		{
 			BaseCreature pet = this.Pet;

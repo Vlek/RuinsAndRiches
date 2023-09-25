@@ -29,8 +29,8 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
 		}
 
 		public override bool BleedImmune{ get{ return true; } }
@@ -77,7 +77,7 @@ namespace Server.Mobiles
 			if ( Server.Misc.Worlds.isOrientalRegion( this ) )
 			{
 				string jMove = "a monkey";
-				switch ( Utility.Random( 8 ))		   
+				switch ( Utility.Random( 8 ))
 				{
 					case 1: jMove = "a ferret"; break;
 					case 2: jMove = "a butterfly"; break;
@@ -89,7 +89,7 @@ namespace Server.Mobiles
 				};
 
 				string jHit = "a tiger";
-				switch ( Utility.Random( 8 ))		   
+				switch ( Utility.Random( 8 ))
 				{
 					case 1: jHit = "a lion"; break;
 					case 2: jHit = "a bear"; break;
@@ -100,7 +100,7 @@ namespace Server.Mobiles
 					case 7: jHit = "a bee"; break;
 				};
 
-				switch ( Utility.Random( 60 ))		   
+				switch ( Utility.Random( 60 ))
 				{
 					case 0: Say("You have improved" + name + "."); break;
 					case 1: Say("You will need to be more graceful than that" + name + "."); break;
@@ -118,7 +118,7 @@ namespace Server.Mobiles
 			else
 			{
 				string ale = "ale";
-				switch ( Utility.Random( 6 ))		   
+				switch ( Utility.Random( 6 ))
 				{
 					case 1: ale = "wine"; break;
 					case 2: ale = "grog"; break;
@@ -127,7 +127,7 @@ namespace Server.Mobiles
 					case 5: ale = "cider"; break;
 				};
 
-				switch ( Utility.Random( 60 ))		   
+				switch ( Utility.Random( 60 ))
 				{
 					case 0: Say("You have improved" + name + "."); break;
 					case 1: Say("You will need to be quicker than that" + name + "."); break;

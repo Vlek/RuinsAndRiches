@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Server;
 using Server.Engines.BulkOrders;
 using System.Collections;
-using Server.Targeting; 
-using Server.Items; 
+using Server.Targeting;
+using Server.Items;
 using Server.Network;
 using Server.ContextMenus;
 using Server.Gumps;
@@ -34,7 +34,7 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBBlacksmith() ); 
+			m_SBInfos.Add( new SBBlacksmith() );
 			m_SBInfos.Add( new SBAxeWeapon() );
 			m_SBInfos.Add( new SBKnifeWeapon() );
 			m_SBInfos.Add( new SBMaceWeapon() );
@@ -59,8 +59,8 @@ namespace Server.Mobiles
 			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
 				m_SBInfos.Add( new RSIngotsSea() );
 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
-			m_SBInfos.Add( new SBGemArmor() ); 
+			m_SBInfos.Add( new SBBuyArtifacts() );
+			m_SBInfos.Add( new SBGemArmor() );
 
 			if ( Region.IsPartOf( "the Enchanted Pass" ) )
 				m_SBInfos.Add( new SBGodlySmithing() );
@@ -75,17 +75,17 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -96,7 +96,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )

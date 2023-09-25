@@ -17,7 +17,7 @@ namespace Server
 				EventSink.ClientVersionReceived += new ClientVersionReceivedHandler( delegate( ClientVersionReceivedArgs args )
 				{
 					PlayerMobile pm = args.State.Mobile as PlayerMobile;
-					
+
 					if( pm != null )
 						Timer.DelayCall( TimeSpan.Zero, pm.ResendBuffs );
 				} );

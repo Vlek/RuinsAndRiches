@@ -7,7 +7,7 @@ using Server.LiarsDice;
 using System.Collections.Generic;
 
 namespace Server.Gumps
-{  
+{
     public class CallBluffGump : Gump
     {
 		private const int LEFT_BAR=25;
@@ -38,9 +38,9 @@ namespace Server.Gumps
 		}
 		private void AddInformation(int bluffedRoll){
 			this.DisplayDiceCombo(LEFT_BAR,50,Dice1Values[bluffedRoll],Dice2Values[bluffedRoll]);
-		
+
 		}
-		/** 
+		/**
 			Displays a dice combo
 		*/
 		private void DisplayDiceCombo(int x, int y,    int first_die, int second_die){
@@ -52,15 +52,15 @@ namespace Server.Gumps
         	}
         	AddImageTiled(x, y, 21, 21, 11280 + (first_die-1));
         	AddImageTiled(x+30, y, 21, 21, 11280 + (second_die-1));
-        }   
+        }
 		public override void OnResponse( NetState state, RelayInfo info ){
-			int btd = info.ButtonID;			
+			int btd = info.ButtonID;
 			if(info.ButtonID == 2 || info.ButtonID == 3 ){
-				ds.UpdateGameChannel(state.Mobile,btd);				
+				ds.UpdateGameChannel(state.Mobile,btd);
 			}
 			else{
 				state.Mobile.SendMessage( "Illegal option selected");
 			}
-		}    
-    }    
+		}
+    }
 }

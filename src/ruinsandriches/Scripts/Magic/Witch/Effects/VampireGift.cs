@@ -19,12 +19,12 @@ namespace Server.Spells.Undead
         public VampireGiftSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
         {
         }
- 
+
         public override void OnCast()
         {
             Caster.Target = new InternalTarget( this );
         }
- 
+
         public void Target( Mobile m )
         {
             if ( !Caster.CanSee( m ) )
@@ -81,11 +81,11 @@ namespace Server.Spells.Undead
             else if ( m is PlayerMobile && CheckBSequence( m, true ) )
             {
                 SpellHelper.Turn( Caster, m );
- 
+
 				m.PlaySound( 0x175 );
 				m.FixedParticles( 0x375A, 1, 17, 9919, 33, 7, EffectLayer.Waist );
 				m.FixedParticles( 0x3728, 1, 13, 9502, 33, 7, (EffectLayer)255 );
- 
+
                 m.CloseGump( typeof( ResurrectGump ) );
                 m.SendGump( new ResurrectGump( m, Caster ) );
             }
@@ -94,7 +94,7 @@ namespace Server.Spells.Undead
 				BaseCreature pet = (BaseCreature)m;
 				Mobile master = pet.GetMaster();
                 SpellHelper.Turn( Caster, m );
- 
+
 				m.PlaySound( 0x175 );
 				m.FixedParticles( 0x375A, 1, 17, 9919, 33, 7, EffectLayer.Waist );
 				m.FixedParticles( 0x3728, 1, 13, 9502, 33, 7, (EffectLayer)255 );
@@ -177,16 +177,16 @@ namespace Server.Spells.Undead
 			}
             FinishSequence();
 		}
- 
+
         private class InternalTarget : Target
         {
             private VampireGiftSpell m_Owner;
- 
+
             public InternalTarget( VampireGiftSpell owner ) : base( 1, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )
@@ -198,7 +198,7 @@ namespace Server.Spells.Undead
                     m_Owner.ItemTarget( (Item)o );
                 }
             }
- 
+
             protected override void OnTargetFinish( Mobile from )
             {
                 m_Owner.FinishSequence();

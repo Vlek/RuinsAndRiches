@@ -20,7 +20,7 @@ namespace Server.Items
 				from.SendMessage( "You don't find this really useful." );
 				return;
 			}
-			else if ( !IsChildOf( from.Backpack ) ) 
+			else if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;

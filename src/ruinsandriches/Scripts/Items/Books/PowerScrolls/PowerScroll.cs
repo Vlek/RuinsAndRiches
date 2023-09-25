@@ -20,7 +20,7 @@ namespace Server.Items
 		}
 
 		public override string GetName()
-		{			
+		{
 			return Name;
 		}
 
@@ -69,11 +69,11 @@ namespace Server.Items
 				SkillName.Ninjitsu,
 				SkillName.Bushido
 			};
-		
+
 		private static List<SkillName> _Skills = new List<SkillName>();
 
 		public static List<SkillName> Skills
-		{ 
+		{
 			get
 			{
 				if ( _Skills.Count == 0 )
@@ -91,14 +91,14 @@ namespace Server.Items
 					}
 				}
 				return _Skills;
-			} 
+			}
 		}
 
 		public static PowerScroll CreateRandom( int min, int max )
 		{
 			min /= 5;
 			max /= 5;
-			
+
 			return new PowerScroll( Skills[Utility.Random( Skills.Count )], 100 + ( Utility.RandomMinMax( min, max ) * 5 ) );
 		}
 
@@ -106,7 +106,7 @@ namespace Server.Items
 		{
 			min /= 5;
 			max /= 5;
-			
+
 			SkillName skillName;
 
 			do
@@ -120,7 +120,7 @@ namespace Server.Items
 		public PowerScroll() : this( SkillName.Alchemy, 0.0 )
 		{
 		}
-		
+
 		[Constructable]
 		public PowerScroll( SkillName skill, double value ) : base( skill, value )
 		{
@@ -169,12 +169,12 @@ namespace Server.Items
 		{
 			if ( !base.CanUse( from ) )
 				return false;
-			
+
 			Skill skill = from.Skills[Skill];
 
 			if ( skill == null )
 				return false;
-			
+
 			if ( skill.Cap >= Value )
 			{
 				from.SendLocalizedMessage( 1049511, GetNameLocalized() ); // Your ~1_type~ is too high for this power scroll.
@@ -182,17 +182,17 @@ namespace Server.Items
 			}
 
 			if ( (
-				( Skill == SkillName.FistFighting ) || 
-				( Skill == SkillName.Bushido ) || 
-				( Skill == SkillName.Swords ) || 
-				( Skill == SkillName.Lumberjacking ) || 
-				( Skill == SkillName.Mining ) || 
-				( Skill == SkillName.Blacksmith ) || 
-				( Skill == SkillName.Carpentry ) || 
-				( Skill == SkillName.Bowcraft ) || 
-				( Skill == SkillName.Bludgeoning ) || 
-				( Skill == SkillName.Tactics ) || 
-				( Skill == SkillName.Parry ) || 
+				( Skill == SkillName.FistFighting ) ||
+				( Skill == SkillName.Bushido ) ||
+				( Skill == SkillName.Swords ) ||
+				( Skill == SkillName.Lumberjacking ) ||
+				( Skill == SkillName.Mining ) ||
+				( Skill == SkillName.Blacksmith ) ||
+				( Skill == SkillName.Carpentry ) ||
+				( Skill == SkillName.Bowcraft ) ||
+				( Skill == SkillName.Bludgeoning ) ||
+				( Skill == SkillName.Tactics ) ||
+				( Skill == SkillName.Parry ) ||
 				( Skill == SkillName.Fencing )
 				) && ( !from.Region.IsPartOf( "Shrine of Strength" ) ) )
 			{
@@ -201,19 +201,19 @@ namespace Server.Items
 			}
 
 			if ( (
-				( Skill == SkillName.Magery ) || 
-				( Skill == SkillName.Elementalism ) || 
-				( Skill == SkillName.MagicResist ) || 
-				( Skill == SkillName.Meditation ) || 
-				( Skill == SkillName.Necromancy ) || 
-				( Skill == SkillName.ArmsLore ) || 
-				( Skill == SkillName.Cartography ) || 
-				( Skill == SkillName.Cooking ) || 
-				( Skill == SkillName.Psychology ) || 
-				( Skill == SkillName.Anatomy ) || 
-				( Skill == SkillName.Alchemy ) || 
-				( Skill == SkillName.Tailoring ) || 
-				( Skill == SkillName.Tinkering ) || 
+				( Skill == SkillName.Magery ) ||
+				( Skill == SkillName.Elementalism ) ||
+				( Skill == SkillName.MagicResist ) ||
+				( Skill == SkillName.Meditation ) ||
+				( Skill == SkillName.Necromancy ) ||
+				( Skill == SkillName.ArmsLore ) ||
+				( Skill == SkillName.Cartography ) ||
+				( Skill == SkillName.Cooking ) ||
+				( Skill == SkillName.Psychology ) ||
+				( Skill == SkillName.Anatomy ) ||
+				( Skill == SkillName.Alchemy ) ||
+				( Skill == SkillName.Tailoring ) ||
+				( Skill == SkillName.Tinkering ) ||
 				( Skill == SkillName.Inscribe )
 				) && ( !from.Region.IsPartOf( "Shrine of Intelligence" ) ) )
 			{
@@ -222,17 +222,17 @@ namespace Server.Items
 			}
 
 			if ( (
-				( Skill == SkillName.Discordance ) || 
-				( Skill == SkillName.Provocation ) || 
-				( Skill == SkillName.Musicianship ) || 
-				( Skill == SkillName.Marksmanship ) || 
-				( Skill == SkillName.Hiding ) || 
-				( Skill == SkillName.Stealing ) || 
-				( Skill == SkillName.Stealth ) || 
-				( Skill == SkillName.RemoveTrap ) || 
-				( Skill == SkillName.Snooping ) || 
-				( Skill == SkillName.Searching ) || 
-				( Skill == SkillName.Ninjitsu ) || 
+				( Skill == SkillName.Discordance ) ||
+				( Skill == SkillName.Provocation ) ||
+				( Skill == SkillName.Musicianship ) ||
+				( Skill == SkillName.Marksmanship ) ||
+				( Skill == SkillName.Hiding ) ||
+				( Skill == SkillName.Stealing ) ||
+				( Skill == SkillName.Stealth ) ||
+				( Skill == SkillName.RemoveTrap ) ||
+				( Skill == SkillName.Snooping ) ||
+				( Skill == SkillName.Searching ) ||
+				( Skill == SkillName.Ninjitsu ) ||
 				( Skill == SkillName.Lockpicking )
 				) && ( !from.Region.IsPartOf( "Shrine of Dexterity" ) ) )
 			{
@@ -241,17 +241,17 @@ namespace Server.Items
 			}
 
 			if ( (
-				( Skill == SkillName.Spiritualism ) || 
-				( Skill == SkillName.Knightship ) || 
-				( Skill == SkillName.Peacemaking ) || 
-				( Skill == SkillName.Tracking ) || 
-				( Skill == SkillName.Veterinary ) || 
-				( Skill == SkillName.Druidism ) || 
-				( Skill == SkillName.Herding ) || 
-				( Skill == SkillName.Taming ) || 
-				( Skill == SkillName.Poisoning ) || 
-				( Skill == SkillName.Focus ) || 
-				( Skill == SkillName.Seafaring ) || 
+				( Skill == SkillName.Spiritualism ) ||
+				( Skill == SkillName.Knightship ) ||
+				( Skill == SkillName.Peacemaking ) ||
+				( Skill == SkillName.Tracking ) ||
+				( Skill == SkillName.Veterinary ) ||
+				( Skill == SkillName.Druidism ) ||
+				( Skill == SkillName.Herding ) ||
+				( Skill == SkillName.Taming ) ||
+				( Skill == SkillName.Poisoning ) ||
+				( Skill == SkillName.Focus ) ||
+				( Skill == SkillName.Seafaring ) ||
 				( Skill == SkillName.Healing )
 				) && ( !from.Region.IsPartOf( "Shrine of Wisdom" ) ) )
 			{
@@ -266,7 +266,7 @@ namespace Server.Items
 		{
 			if ( !CanUse( from ) )
 				return;
-			
+
 			from.SendLocalizedMessage( 1049513, GetNameLocalized() ); // You feel a surge of magic as the scroll enhances your ~1_type~!
 
 			from.Skills[Skill].Cap = Value;
@@ -594,260 +594,260 @@ namespace Server.Items
 
 		public int GetPower()
 		{
-			if ( 
-			this is DJ_SW_Alchemy || 
-			this is DJ_SW_Anatomy || 
-			this is DJ_SW_AnimalLore || 
-			this is DJ_SW_AnimalTaming || 
-			this is DJ_SW_Archery || 
-			this is DJ_SW_ArmsLore || 
-			this is DJ_SW_Blacksmith || 
-			this is DJ_SW_Bushido || 
-			this is DJ_SW_Carpentry || 
-			this is DJ_SW_Cartography || 
-			this is DJ_SW_Chivalry || 
-			this is DJ_SW_Cooking || 
-			this is DJ_SW_DetectHidden || 
-			this is DJ_SW_Discordance || 
-			this is DJ_SW_EvalInt || 
-			this is DJ_SW_Fencing || 
-			this is DJ_SW_Fishing || 
-			this is DJ_SW_Fletching || 
-			this is DJ_SW_Focus || 
-			this is DJ_SW_Healing || 
-			this is DJ_SW_Hiding || 
-			this is DJ_SW_Inscribe || 
-			this is DJ_SW_Lockpicking || 
-			this is DJ_SW_Lumberjacking || 
-			this is DJ_SW_Macing || 
-			this is DJ_SW_Magery || 
-			this is DJ_SW_MagicResist || 
-			this is DJ_SW_Meditation || 
-			this is DJ_SW_Mining || 
-			this is DJ_SW_Musicianship || 
-			this is DJ_SW_Necromancy || 
-			this is DJ_SW_Ninjitsu || 
-			this is DJ_SW_Parry || 
-			this is DJ_SW_Peacemaking || 
-			this is DJ_SW_Poisoning || 
-			this is DJ_SW_Provocation || 
-			this is DJ_SW_RemoveTrap || 
-			this is DJ_SW_Snooping || 
-			this is DJ_SW_Elementalism || 
-			this is DJ_SW_SpiritSpeak || 
-			this is DJ_SW_Stealing || 
-			this is DJ_SW_Stealth || 
-			this is DJ_SW_Swords || 
-			this is DJ_SW_Tactics || 
-			this is DJ_SW_Tailoring || 
-			this is DJ_SW_Tinkering || 
-			this is DJ_SW_Tracking || 
-			this is DJ_SW_Veterinary || 
-			this is DJ_SW_Wrestling || 
+			if (
+			this is DJ_SW_Alchemy ||
+			this is DJ_SW_Anatomy ||
+			this is DJ_SW_AnimalLore ||
+			this is DJ_SW_AnimalTaming ||
+			this is DJ_SW_Archery ||
+			this is DJ_SW_ArmsLore ||
+			this is DJ_SW_Blacksmith ||
+			this is DJ_SW_Bushido ||
+			this is DJ_SW_Carpentry ||
+			this is DJ_SW_Cartography ||
+			this is DJ_SW_Chivalry ||
+			this is DJ_SW_Cooking ||
+			this is DJ_SW_DetectHidden ||
+			this is DJ_SW_Discordance ||
+			this is DJ_SW_EvalInt ||
+			this is DJ_SW_Fencing ||
+			this is DJ_SW_Fishing ||
+			this is DJ_SW_Fletching ||
+			this is DJ_SW_Focus ||
+			this is DJ_SW_Healing ||
+			this is DJ_SW_Hiding ||
+			this is DJ_SW_Inscribe ||
+			this is DJ_SW_Lockpicking ||
+			this is DJ_SW_Lumberjacking ||
+			this is DJ_SW_Macing ||
+			this is DJ_SW_Magery ||
+			this is DJ_SW_MagicResist ||
+			this is DJ_SW_Meditation ||
+			this is DJ_SW_Mining ||
+			this is DJ_SW_Musicianship ||
+			this is DJ_SW_Necromancy ||
+			this is DJ_SW_Ninjitsu ||
+			this is DJ_SW_Parry ||
+			this is DJ_SW_Peacemaking ||
+			this is DJ_SW_Poisoning ||
+			this is DJ_SW_Provocation ||
+			this is DJ_SW_RemoveTrap ||
+			this is DJ_SW_Snooping ||
+			this is DJ_SW_Elementalism ||
+			this is DJ_SW_SpiritSpeak ||
+			this is DJ_SW_Stealing ||
+			this is DJ_SW_Stealth ||
+			this is DJ_SW_Swords ||
+			this is DJ_SW_Tactics ||
+			this is DJ_SW_Tailoring ||
+			this is DJ_SW_Tinkering ||
+			this is DJ_SW_Tracking ||
+			this is DJ_SW_Veterinary ||
+			this is DJ_SW_Wrestling ||
 			this is DJ_SW_Herding ){ return 105; }
-			else if ( 
-			this is DJ_SE_Alchemy || 
-			this is DJ_SE_Anatomy || 
-			this is DJ_SE_AnimalLore || 
-			this is DJ_SE_AnimalTaming || 
-			this is DJ_SE_Archery || 
-			this is DJ_SE_ArmsLore || 
-			this is DJ_SE_Blacksmith || 
-			this is DJ_SE_Bushido || 
-			this is DJ_SE_Carpentry || 
-			this is DJ_SE_Cartography || 
-			this is DJ_SE_Chivalry || 
-			this is DJ_SE_Cooking || 
-			this is DJ_SE_DetectHidden || 
-			this is DJ_SE_Discordance || 
-			this is DJ_SE_EvalInt || 
-			this is DJ_SE_Fencing || 
-			this is DJ_SE_Fishing || 
-			this is DJ_SE_Fletching || 
-			this is DJ_SE_Focus || 
-			this is DJ_SE_Healing || 
-			this is DJ_SE_Hiding || 
-			this is DJ_SE_Inscribe || 
-			this is DJ_SE_Lockpicking || 
-			this is DJ_SE_Lumberjacking || 
-			this is DJ_SE_Macing || 
-			this is DJ_SE_Magery || 
-			this is DJ_SE_MagicResist || 
-			this is DJ_SE_Meditation || 
-			this is DJ_SE_Mining || 
-			this is DJ_SE_Musicianship || 
-			this is DJ_SE_Necromancy || 
-			this is DJ_SE_Ninjitsu || 
-			this is DJ_SE_Parry || 
-			this is DJ_SE_Peacemaking || 
-			this is DJ_SE_Poisoning || 
-			this is DJ_SE_Provocation || 
-			this is DJ_SE_RemoveTrap || 
-			this is DJ_SE_Snooping || 
-			this is DJ_SE_Elementalism || 
-			this is DJ_SE_SpiritSpeak || 
-			this is DJ_SE_Stealing || 
-			this is DJ_SE_Stealth || 
-			this is DJ_SE_Swords || 
-			this is DJ_SE_Tactics || 
-			this is DJ_SE_Tailoring || 
-			this is DJ_SE_Tinkering || 
-			this is DJ_SE_Tracking || 
-			this is DJ_SE_Veterinary || 
-			this is DJ_SE_Wrestling || 
+			else if (
+			this is DJ_SE_Alchemy ||
+			this is DJ_SE_Anatomy ||
+			this is DJ_SE_AnimalLore ||
+			this is DJ_SE_AnimalTaming ||
+			this is DJ_SE_Archery ||
+			this is DJ_SE_ArmsLore ||
+			this is DJ_SE_Blacksmith ||
+			this is DJ_SE_Bushido ||
+			this is DJ_SE_Carpentry ||
+			this is DJ_SE_Cartography ||
+			this is DJ_SE_Chivalry ||
+			this is DJ_SE_Cooking ||
+			this is DJ_SE_DetectHidden ||
+			this is DJ_SE_Discordance ||
+			this is DJ_SE_EvalInt ||
+			this is DJ_SE_Fencing ||
+			this is DJ_SE_Fishing ||
+			this is DJ_SE_Fletching ||
+			this is DJ_SE_Focus ||
+			this is DJ_SE_Healing ||
+			this is DJ_SE_Hiding ||
+			this is DJ_SE_Inscribe ||
+			this is DJ_SE_Lockpicking ||
+			this is DJ_SE_Lumberjacking ||
+			this is DJ_SE_Macing ||
+			this is DJ_SE_Magery ||
+			this is DJ_SE_MagicResist ||
+			this is DJ_SE_Meditation ||
+			this is DJ_SE_Mining ||
+			this is DJ_SE_Musicianship ||
+			this is DJ_SE_Necromancy ||
+			this is DJ_SE_Ninjitsu ||
+			this is DJ_SE_Parry ||
+			this is DJ_SE_Peacemaking ||
+			this is DJ_SE_Poisoning ||
+			this is DJ_SE_Provocation ||
+			this is DJ_SE_RemoveTrap ||
+			this is DJ_SE_Snooping ||
+			this is DJ_SE_Elementalism ||
+			this is DJ_SE_SpiritSpeak ||
+			this is DJ_SE_Stealing ||
+			this is DJ_SE_Stealth ||
+			this is DJ_SE_Swords ||
+			this is DJ_SE_Tactics ||
+			this is DJ_SE_Tailoring ||
+			this is DJ_SE_Tinkering ||
+			this is DJ_SE_Tracking ||
+			this is DJ_SE_Veterinary ||
+			this is DJ_SE_Wrestling ||
 			this is DJ_SE_Herding ){ return 110; }
-			else if ( 
-			this is DJ_SM_Alchemy || 
-			this is DJ_SM_Anatomy || 
-			this is DJ_SM_AnimalLore || 
-			this is DJ_SM_AnimalTaming || 
-			this is DJ_SM_Archery || 
-			this is DJ_SM_ArmsLore || 
-			this is DJ_SM_Blacksmith || 
-			this is DJ_SM_Bushido || 
-			this is DJ_SM_Carpentry || 
-			this is DJ_SM_Cartography || 
-			this is DJ_SM_Chivalry || 
-			this is DJ_SM_Cooking || 
-			this is DJ_SM_DetectHidden || 
-			this is DJ_SM_Discordance || 
-			this is DJ_SM_EvalInt || 
-			this is DJ_SM_Fencing || 
-			this is DJ_SM_Focus || 
-			this is DJ_SM_Fishing || 
-			this is DJ_SM_Fletching || 
-			this is DJ_SM_Healing || 
-			this is DJ_SM_Hiding || 
-			this is DJ_SM_Inscribe || 
-			this is DJ_SM_Lockpicking || 
-			this is DJ_SM_Lumberjacking || 
-			this is DJ_SM_Macing || 
-			this is DJ_SM_Magery || 
-			this is DJ_SM_MagicResist || 
-			this is DJ_SM_Meditation || 
-			this is DJ_SM_Mining || 
-			this is DJ_SM_Musicianship || 
-			this is DJ_SM_Necromancy || 
-			this is DJ_SM_Ninjitsu || 
-			this is DJ_SM_Parry || 
-			this is DJ_SM_Peacemaking || 
-			this is DJ_SM_Poisoning || 
-			this is DJ_SM_Provocation || 
-			this is DJ_SM_RemoveTrap || 
-			this is DJ_SM_Snooping || 
-			this is DJ_SM_Elementalism || 
-			this is DJ_SM_SpiritSpeak || 
-			this is DJ_SM_Stealing || 
-			this is DJ_SM_Stealth || 
-			this is DJ_SM_Swords || 
-			this is DJ_SM_Tactics || 
-			this is DJ_SM_Tailoring || 
-			this is DJ_SM_Tinkering || 
-			this is DJ_SM_Tracking || 
-			this is DJ_SM_Veterinary || 
-			this is DJ_SM_Wrestling || 
+			else if (
+			this is DJ_SM_Alchemy ||
+			this is DJ_SM_Anatomy ||
+			this is DJ_SM_AnimalLore ||
+			this is DJ_SM_AnimalTaming ||
+			this is DJ_SM_Archery ||
+			this is DJ_SM_ArmsLore ||
+			this is DJ_SM_Blacksmith ||
+			this is DJ_SM_Bushido ||
+			this is DJ_SM_Carpentry ||
+			this is DJ_SM_Cartography ||
+			this is DJ_SM_Chivalry ||
+			this is DJ_SM_Cooking ||
+			this is DJ_SM_DetectHidden ||
+			this is DJ_SM_Discordance ||
+			this is DJ_SM_EvalInt ||
+			this is DJ_SM_Fencing ||
+			this is DJ_SM_Focus ||
+			this is DJ_SM_Fishing ||
+			this is DJ_SM_Fletching ||
+			this is DJ_SM_Healing ||
+			this is DJ_SM_Hiding ||
+			this is DJ_SM_Inscribe ||
+			this is DJ_SM_Lockpicking ||
+			this is DJ_SM_Lumberjacking ||
+			this is DJ_SM_Macing ||
+			this is DJ_SM_Magery ||
+			this is DJ_SM_MagicResist ||
+			this is DJ_SM_Meditation ||
+			this is DJ_SM_Mining ||
+			this is DJ_SM_Musicianship ||
+			this is DJ_SM_Necromancy ||
+			this is DJ_SM_Ninjitsu ||
+			this is DJ_SM_Parry ||
+			this is DJ_SM_Peacemaking ||
+			this is DJ_SM_Poisoning ||
+			this is DJ_SM_Provocation ||
+			this is DJ_SM_RemoveTrap ||
+			this is DJ_SM_Snooping ||
+			this is DJ_SM_Elementalism ||
+			this is DJ_SM_SpiritSpeak ||
+			this is DJ_SM_Stealing ||
+			this is DJ_SM_Stealth ||
+			this is DJ_SM_Swords ||
+			this is DJ_SM_Tactics ||
+			this is DJ_SM_Tailoring ||
+			this is DJ_SM_Tinkering ||
+			this is DJ_SM_Tracking ||
+			this is DJ_SM_Veterinary ||
+			this is DJ_SM_Wrestling ||
 			this is DJ_SM_Herding ){ return 115; }
-			else if ( 
-			this is DJ_SL_Alchemy || 
-			this is DJ_SL_Anatomy || 
-			this is DJ_SL_AnimalLore || 
-			this is DJ_SL_AnimalTaming || 
-			this is DJ_SL_Archery || 
-			this is DJ_SL_ArmsLore || 
-			this is DJ_SL_Blacksmith || 
-			this is DJ_SL_Bushido || 
-			this is DJ_SL_Carpentry || 
-			this is DJ_SL_Cartography || 
-			this is DJ_SL_Chivalry || 
-			this is DJ_SL_Cooking || 
-			this is DJ_SL_DetectHidden || 
-			this is DJ_SL_Discordance || 
-			this is DJ_SL_EvalInt || 
-			this is DJ_SL_Fencing || 
-			this is DJ_SL_Fishing || 
-			this is DJ_SL_Fletching || 
-			this is DJ_SL_Focus || 
-			this is DJ_SL_Healing || 
-			this is DJ_SL_Hiding || 
-			this is DJ_SL_Inscribe || 
-			this is DJ_SL_Lockpicking || 
-			this is DJ_SL_Lumberjacking || 
-			this is DJ_SL_Macing || 
-			this is DJ_SL_Magery || 
-			this is DJ_SL_MagicResist || 
-			this is DJ_SL_Meditation || 
-			this is DJ_SL_Mining || 
-			this is DJ_SL_Musicianship || 
-			this is DJ_SL_Necromancy || 
-			this is DJ_SL_Ninjitsu || 
-			this is DJ_SL_Parry || 
-			this is DJ_SL_Peacemaking || 
-			this is DJ_SL_Poisoning || 
-			this is DJ_SL_Provocation || 
-			this is DJ_SL_RemoveTrap || 
-			this is DJ_SL_Snooping || 
-			this is DJ_SL_Elementalism || 
-			this is DJ_SL_SpiritSpeak || 
-			this is DJ_SL_Stealing || 
-			this is DJ_SL_Stealth || 
-			this is DJ_SL_Swords || 
-			this is DJ_SL_Tactics || 
-			this is DJ_SL_Tailoring || 
-			this is DJ_SL_Tinkering || 
-			this is DJ_SL_Tracking || 
-			this is DJ_SL_Veterinary || 
-			this is DJ_SL_Wrestling || 
+			else if (
+			this is DJ_SL_Alchemy ||
+			this is DJ_SL_Anatomy ||
+			this is DJ_SL_AnimalLore ||
+			this is DJ_SL_AnimalTaming ||
+			this is DJ_SL_Archery ||
+			this is DJ_SL_ArmsLore ||
+			this is DJ_SL_Blacksmith ||
+			this is DJ_SL_Bushido ||
+			this is DJ_SL_Carpentry ||
+			this is DJ_SL_Cartography ||
+			this is DJ_SL_Chivalry ||
+			this is DJ_SL_Cooking ||
+			this is DJ_SL_DetectHidden ||
+			this is DJ_SL_Discordance ||
+			this is DJ_SL_EvalInt ||
+			this is DJ_SL_Fencing ||
+			this is DJ_SL_Fishing ||
+			this is DJ_SL_Fletching ||
+			this is DJ_SL_Focus ||
+			this is DJ_SL_Healing ||
+			this is DJ_SL_Hiding ||
+			this is DJ_SL_Inscribe ||
+			this is DJ_SL_Lockpicking ||
+			this is DJ_SL_Lumberjacking ||
+			this is DJ_SL_Macing ||
+			this is DJ_SL_Magery ||
+			this is DJ_SL_MagicResist ||
+			this is DJ_SL_Meditation ||
+			this is DJ_SL_Mining ||
+			this is DJ_SL_Musicianship ||
+			this is DJ_SL_Necromancy ||
+			this is DJ_SL_Ninjitsu ||
+			this is DJ_SL_Parry ||
+			this is DJ_SL_Peacemaking ||
+			this is DJ_SL_Poisoning ||
+			this is DJ_SL_Provocation ||
+			this is DJ_SL_RemoveTrap ||
+			this is DJ_SL_Snooping ||
+			this is DJ_SL_Elementalism ||
+			this is DJ_SL_SpiritSpeak ||
+			this is DJ_SL_Stealing ||
+			this is DJ_SL_Stealth ||
+			this is DJ_SL_Swords ||
+			this is DJ_SL_Tactics ||
+			this is DJ_SL_Tailoring ||
+			this is DJ_SL_Tinkering ||
+			this is DJ_SL_Tracking ||
+			this is DJ_SL_Veterinary ||
+			this is DJ_SL_Wrestling ||
 			this is DJ_SL_Herding ){ return 120; }
-			else if ( 
-			this is DJ_SP_Alchemy || 
-			this is DJ_SP_Anatomy || 
-			this is DJ_SP_AnimalLore || 
-			this is DJ_SP_AnimalTaming || 
-			this is DJ_SP_Archery || 
-			this is DJ_SP_ArmsLore || 
-			this is DJ_SP_Blacksmith || 
-			this is DJ_SP_Bushido || 
-			this is DJ_SP_Carpentry || 
-			this is DJ_SP_Cartography || 
-			this is DJ_SP_Chivalry || 
-			this is DJ_SP_Cooking || 
-			this is DJ_SP_DetectHidden || 
-			this is DJ_SP_Discordance || 
-			this is DJ_SP_EvalInt || 
-			this is DJ_SP_Fencing || 
-			this is DJ_SP_Fishing || 
-			this is DJ_SP_Fletching || 
-			this is DJ_SP_Focus || 
-			this is DJ_SP_Healing || 
-			this is DJ_SP_Hiding || 
-			this is DJ_SP_Inscribe || 
-			this is DJ_SP_Lockpicking || 
-			this is DJ_SP_Lumberjacking || 
-			this is DJ_SP_Macing || 
-			this is DJ_SP_Magery || 
-			this is DJ_SP_MagicResist || 
-			this is DJ_SP_Meditation || 
-			this is DJ_SP_Mining || 
-			this is DJ_SP_Musicianship || 
-			this is DJ_SP_Necromancy || 
-			this is DJ_SP_Ninjitsu || 
-			this is DJ_SP_Parry || 
-			this is DJ_SP_Peacemaking || 
-			this is DJ_SP_Poisoning || 
-			this is DJ_SP_Provocation || 
-			this is DJ_SP_RemoveTrap || 
-			this is DJ_SP_Snooping || 
-			this is DJ_SP_Elementalism || 
-			this is DJ_SP_SpiritSpeak || 
-			this is DJ_SP_Stealing || 
-			this is DJ_SP_Stealth || 
-			this is DJ_SP_Swords || 
-			this is DJ_SP_Tactics || 
-			this is DJ_SP_Tailoring || 
-			this is DJ_SP_Tinkering || 
-			this is DJ_SP_Tracking || 
-			this is DJ_SP_Veterinary || 
-			this is DJ_SP_Wrestling || 
+			else if (
+			this is DJ_SP_Alchemy ||
+			this is DJ_SP_Anatomy ||
+			this is DJ_SP_AnimalLore ||
+			this is DJ_SP_AnimalTaming ||
+			this is DJ_SP_Archery ||
+			this is DJ_SP_ArmsLore ||
+			this is DJ_SP_Blacksmith ||
+			this is DJ_SP_Bushido ||
+			this is DJ_SP_Carpentry ||
+			this is DJ_SP_Cartography ||
+			this is DJ_SP_Chivalry ||
+			this is DJ_SP_Cooking ||
+			this is DJ_SP_DetectHidden ||
+			this is DJ_SP_Discordance ||
+			this is DJ_SP_EvalInt ||
+			this is DJ_SP_Fencing ||
+			this is DJ_SP_Fishing ||
+			this is DJ_SP_Fletching ||
+			this is DJ_SP_Focus ||
+			this is DJ_SP_Healing ||
+			this is DJ_SP_Hiding ||
+			this is DJ_SP_Inscribe ||
+			this is DJ_SP_Lockpicking ||
+			this is DJ_SP_Lumberjacking ||
+			this is DJ_SP_Macing ||
+			this is DJ_SP_Magery ||
+			this is DJ_SP_MagicResist ||
+			this is DJ_SP_Meditation ||
+			this is DJ_SP_Mining ||
+			this is DJ_SP_Musicianship ||
+			this is DJ_SP_Necromancy ||
+			this is DJ_SP_Ninjitsu ||
+			this is DJ_SP_Parry ||
+			this is DJ_SP_Peacemaking ||
+			this is DJ_SP_Poisoning ||
+			this is DJ_SP_Provocation ||
+			this is DJ_SP_RemoveTrap ||
+			this is DJ_SP_Snooping ||
+			this is DJ_SP_Elementalism ||
+			this is DJ_SP_SpiritSpeak ||
+			this is DJ_SP_Stealing ||
+			this is DJ_SP_Stealth ||
+			this is DJ_SP_Swords ||
+			this is DJ_SP_Tactics ||
+			this is DJ_SP_Tailoring ||
+			this is DJ_SP_Tinkering ||
+			this is DJ_SP_Tracking ||
+			this is DJ_SP_Veterinary ||
+			this is DJ_SP_Wrestling ||
 			this is DJ_SP_Herding ){ return 125; }
 
 			return 0;

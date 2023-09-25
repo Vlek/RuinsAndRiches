@@ -14,7 +14,7 @@ namespace Server.Guilds
 
 		public CreateGuildGump( PlayerMobile pm, string guildName, string guildAbbrev ) : base( 50, 50 )
 		{
-			pm.SendSound( 0x4A ); 
+			pm.SendSound( 0x4A );
 			string color = "#c3c3c3";
 
 			pm.CloseGump( typeof( CreateGuildGump ) );
@@ -51,7 +51,7 @@ namespace Server.Guilds
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			PlayerMobile pm = sender.Mobile as PlayerMobile;
-			pm.SendSound( 0x4A ); 
+			pm.SendSound( 0x4A );
 
 			if( pm == null || pm.Guild != null )
 				return;		//Sanity

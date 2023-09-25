@@ -72,7 +72,7 @@ namespace Server.Items
 				AddHtml( 192, 47, 400, 467, @"<BODY><BASEFONT Color=" + color + ">There are various types of hides you may acquire from skinning creatures throughout the land. For some examples - snakes have serpent hides, lizardmen have lizard hides, sea serpents have deep sea hides, polar bears have frozen hides, lava lizards have volcanic hides, dragons have draconic hides, zombies have necrotic hides, demons have hellish hides, and giants have goliath hides. Each type of hide is different in color, but also has various levels of protection when creating clothing with it.<br><br>The many types of leather are listed here, starting up and then going down to higher quality leather. Making a tunic out of draconic leather will be a much better tunic than one made of lizard leather, for example. <br><br>A tailor would need a certain skill level to work with each of these types of leather. Hides can be obtained from skinning certain creatures by double clickin a bladed weapon and then targeting a corpse. These hides can then be cut with scissors and made into sheets of leather. Then a sewing kit can be used to craft the leather into various armor and bags.</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				from.SendSound( 0x249 );
@@ -81,7 +81,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile e )
 		{
-			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 ) 
+			if ( !IsChildOf( e.Backpack ) && this.Weight != -50.0 )
 			{
 				e.SendMessage( "This must be in your backpack to read." );
 			}

@@ -181,7 +181,7 @@ namespace Server
             Mobile m = args.Mobile;
 			LoggingFunctions.LogAccess( m, "logout" );
         }
-		
+
         public static void OnDeath(PlayerDeathEventArgs args)
         {
             Mobile m = args.Mobile;

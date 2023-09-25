@@ -196,7 +196,7 @@ namespace Server.SkillHandlers
 						}
 					}
 				}
-				else 
+				else
 				{
 					from.SendLocalizedMessage( 1049528 ); // You cannot calm that!
 				}

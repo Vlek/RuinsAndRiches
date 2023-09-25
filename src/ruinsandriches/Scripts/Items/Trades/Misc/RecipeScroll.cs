@@ -29,7 +29,7 @@ namespace Server.Items
 				return null;
 			}
 		}
-	
+
 
 		public override void GetProperties( ObjectPropertyList list )
 		{
@@ -92,7 +92,7 @@ namespace Server.Items
 				{
 					pm.SendLocalizedMessage( 1073427 ); // You already know this recipe.
 				}
-				
+
 			}
 		}
 

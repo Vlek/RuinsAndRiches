@@ -13,7 +13,7 @@ namespace Server.Spells.Song
 {
 	public class ArmysPaeonSong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 			"Army's Paeon", "*plays an army's paeon*",
 			//SpellCircle.First,
@@ -21,17 +21,17 @@ namespace Server.Spells.Song
 			//9041
 			-1
 			);
-	
+
 		private SongBook m_Book;
 		//public override double CastDelay{ get{ return 3; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
 		public override double RequiredSkill{ get{ return 55.0; } }
 		public override int RequiredMana{ get{ return 15; } }
-		
+
 		public ArmysPaeonSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
-       
+
 		public override void OnCast()
         {
             //get songbook instrument
@@ -48,11 +48,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
 			if( CheckSequence() )
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
@@ -64,8 +64,8 @@ namespace Server.Spells.Song
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
-					TimeSpan duration = TimeSpan.FromSeconds( Caster.Skills[SkillName.Musicianship].Value * 0.5 ); 
+
+					TimeSpan duration = TimeSpan.FromSeconds( Caster.Skills[SkillName.Musicianship].Value * 0.5 );
 					int rounds = (int)( Caster.Skills[SkillName.Musicianship].Value * .16 );
 					/////
                     double allvalue = Caster.Skills[SkillName.Musicianship].Value + Caster.Skills[SkillName.Provocation].Value + Caster.Skills[SkillName.Discordance].Value + Caster.Skills[SkillName.Peacemaking].Value;
@@ -87,14 +87,14 @@ namespace Server.Spells.Song
                     //10 hits
                     else
                     { new ExpireTimer(m, 0, rounds, TimeSpan.FromSeconds(2)).Start(); }
-                    //not required, just in case the else if dont cover it all, same as first if 
+                    //not required, just in case the else if dont cover it all, same as first if
 
                     /////
 					//new ExpireTimer( m, 0, rounds, TimeSpan.FromSeconds( 2 ) ).Start();
-						
+
 					m.FixedParticles( 0x376A, 9, 32, 5030, 0x21, 3, EffectLayer.Waist );
 //					m.PlaySound( 0x1F2 );
-					
+
 				}
 			}
 
@@ -115,16 +115,16 @@ namespace Server.Spells.Song
 				m_Round = round;
 				m_Totalrounds = totalrounds;
 			}
-			
+
 			protected override void OnTick()
 			{
 				if ( m_Mobile != null )
-				{					
+				{
 					m_Mobile.Hits += Server.Misc.MyServerSettings.PlayerLevelMod( 6, m_Mobile );
-					
+
 					if ( m_Round >= m_Totalrounds )
 					{
-						m_Mobile.SendMessage( "The effect of the army's paeon wears off." );	
+						m_Mobile.SendMessage( "The effect of the army's paeon wears off." );
 					}
 					else
 					{

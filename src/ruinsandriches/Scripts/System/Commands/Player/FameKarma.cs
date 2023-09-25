@@ -14,7 +14,7 @@ namespace Server.Gumps
         {
 			m_Origin = origin;
 			string color = "#e87373";
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			this.Closable=true;
 			this.Disposable=true;
@@ -124,7 +124,7 @@ namespace Server.Gumps
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 			if ( m_Origin > 0 ){ from.SendGump( new Server.Engines.Help.HelpGump( from, 1 ) ); }
 		}
     }

@@ -118,11 +118,11 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, JarContents);
 			list.Add( 1049644, "Can Make A Keg Of " + JarPotion);
-        } 
+        }
 
         public override void OnDoubleClick(Mobile from)
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;

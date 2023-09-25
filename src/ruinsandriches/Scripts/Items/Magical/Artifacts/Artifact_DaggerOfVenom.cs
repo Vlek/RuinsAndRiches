@@ -25,7 +25,7 @@ namespace Server.Items
 		{
 			base.OnHit( attacker, defender, damageBonus );
 
-			switch ( Utility.RandomMinMax( 0, 12 ) ) 
+			switch ( Utility.RandomMinMax( 0, 12 ) )
 			{
 				case 0: defender.ApplyPoison( attacker, Poison.Lesser ); Misc.Titles.AwardKarma( attacker, -50, true ); break;
 				case 1: defender.ApplyPoison( attacker, Poison.Regular ); Misc.Titles.AwardKarma( attacker, -60, true ); break;

@@ -15,7 +15,7 @@ namespace Server.Spells.Undead
 		public override int RequiredMana{ get{ return 0; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
 
-		
+
 		public RetchedAirSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}

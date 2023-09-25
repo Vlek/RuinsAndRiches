@@ -30,8 +30,8 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			SBInfos.Add( new SBThiefGuild() ); 
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBThiefGuild() );
+			SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public override void InitOutfit()

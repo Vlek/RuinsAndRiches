@@ -43,7 +43,7 @@ namespace Server.Spells.Research
 			}
 			else if ( Server.Misc.Worlds.NoApocalypse( Caster.Location, Caster.Map ) )
 			{
-				Caster.SendMessage( "You don't think it is wise to cast this here." ); 
+				Caster.SendMessage( "You don't think it is wise to cast this here." );
 				return;
 			}
 			else if ( SpellHelper.CheckTown( p, Caster ) && CheckSequence() )
@@ -86,7 +86,7 @@ namespace Server.Spells.Research
 				{
 					if ( targets.Count > 2 )
 						damage = (damage * 2) / targets.Count;
-						
+
 					double toDeal;
 					for ( int i = 0; i < targets.Count; ++i )
 					{

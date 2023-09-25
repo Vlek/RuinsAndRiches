@@ -5,7 +5,7 @@ namespace Server.Items
 	public abstract class Hair : Item
 	{
 		/*
-		
+
 		public static Hair GetRandomHair( bool female )
 		{
 			return GetRandomHair( female, Utility.RandomHairHue() );

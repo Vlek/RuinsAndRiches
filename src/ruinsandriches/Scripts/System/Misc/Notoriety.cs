@@ -68,7 +68,7 @@ namespace Server.Misc
 					return false;
 			}
 			#endregion
-			
+
 
 			if( map != null && (map.Rules & MapRules.BeneficialRestrictions) == 0 )
 				return true; // In felucca, anything goes

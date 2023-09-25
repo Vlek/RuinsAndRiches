@@ -8,7 +8,7 @@ namespace Server.Spells.Elementalism
 	public class Elemental_Fiend_Spell : ElementalSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
-				"Elemental Fiend", "Diavol", 
+				"Elemental Fiend", "Diavol",
 				266,
 				9040,
 				false

@@ -38,10 +38,10 @@ namespace Server.Items
 				target.Say( "Poison!");
 
 				target.PlaySound( target.Female ? 813 : 1087 );
-				if ( !target.Mounted ) 
-					target.Animate( 32, 5, 1, true, false, 0 );                     
-				Puke puke = new Puke(); 
-				puke.Map = target.Map; 
+				if ( !target.Mounted )
+					target.Animate( 32, 5, 1, true, false, 0 );
+				Puke puke = new Puke();
+				puke.Map = target.Map;
 				puke.Location = target.Location;
 
 				this.Delete();
@@ -70,7 +70,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;

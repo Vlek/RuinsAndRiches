@@ -166,7 +166,7 @@ namespace Server.Items
 							if ( m_Key.ItemID == 0x1007 ){ from.AddToBackpack( new Jar() ); } else { from.AddToBackpack( new Bottle() ); }
 							m_Key.Consume();
 						}
-						else if ( ( cont3.TrapType != TrapType.None ) && ( cont3.TrapLevel > 0 ) ) 
+						else if ( ( cont3.TrapType != TrapType.None ) && ( cont3.TrapLevel > 0 ) )
 						{
 							if ( o is TrapableContainer )
 							{
@@ -187,7 +187,7 @@ namespace Server.Items
 							if ( m_Key.ItemID == 0x1007 ){ from.AddToBackpack( new Jar() ); } else { from.AddToBackpack( new Bottle() ); }
 							m_Key.Consume();
 						}
-						else 
+						else
 						{
 							from.SendMessage( "The acid seems to have done nothing to the mechanism inside." );
 							m_Key.Consume();

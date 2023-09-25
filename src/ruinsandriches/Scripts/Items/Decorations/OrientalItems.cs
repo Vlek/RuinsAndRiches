@@ -11,7 +11,7 @@ namespace Server.Items
 			Weight = 2;
 			Name = "zen rock garden";
 
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: ItemID = Utility.RandomList( 0x24E3, 0x24E4, 0x24E5 ); Name = "zen rock garden"; Weight = 10; break;
 				case 1: ItemID = Utility.RandomList( 0x24E6, 0x24E7 ); Name = "tea set"; break;

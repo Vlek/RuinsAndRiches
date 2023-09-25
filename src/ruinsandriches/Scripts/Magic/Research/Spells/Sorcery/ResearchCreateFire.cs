@@ -97,7 +97,7 @@ namespace Server.Items
 		}
 
 		public Mobile owner;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public Mobile Owner
 		{
@@ -106,7 +106,7 @@ namespace Server.Items
 		}
 
 		public double lasts;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public double Lasts
 		{
@@ -115,7 +115,7 @@ namespace Server.Items
 		}
 
 		public int damage;
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Damage
 		{
@@ -138,8 +138,8 @@ namespace Server.Items
 			this.owner = from;
 			this.lasts = time;
 			this.damage = damage;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this, lasts ); 
-			thisTimer.Start(); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this, lasts );
+			thisTimer.Start();
 		}
 
 		public MagicalFire( Serial serial ) : base( serial )
@@ -162,26 +162,25 @@ namespace Server.Items
 			owner = reader.ReadMobile();
 			lasts = reader.ReadDouble();
 			damage = reader.ReadInt();
-			this.Delete(); // none when the world starts 
+			this.Delete(); // none when the world starts
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item, Double lasts ) : base( TimeSpan.FromSeconds( lasts ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item, Double lasts ) : base( TimeSpan.FromSeconds( lasts ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					i_item.Delete();
 				}
-			} 
+			}
 		}
-	}	
+	}
 }
-

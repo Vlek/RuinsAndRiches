@@ -18,7 +18,7 @@ using Server.Spells.Seventh;
 using Server.Spells.Eighth;
 using Server.Spells.Necromancy;
 using Server.Spells.Chivalry;
-using Server.Spells.DeathKnight; 
+using Server.Spells.DeathKnight;
 using Server.Spells.Song;
 using Server.Spells.HolyMan;
 using Server.Spells.Mystic;
@@ -26,7 +26,7 @@ using Server.Spells.Elementalism;
 using Server.Prompts;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsMage1 : Gump
     {
@@ -54,7 +54,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsMage1 ) );
 			from.SendGump( new SpellBarsMage1( from ) );
         }
-   
+
         public SpellBarsMage1 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -132,11 +132,11 @@ namespace Server.Gumps
 				if ( HasSpell( from, 61 ) && ToolBarUpdates.GetToolBarSetting( from, 62, "SetupBarsMage1" ) == 1){this.AddButton(5, dby, 2301, 2301, 61, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Earth Elemental"); } }
 				if ( HasSpell( from, 62 ) && ToolBarUpdates.GetToolBarSetting( from, 63, "SetupBarsMage1" ) == 1){this.AddButton(5, dby, 2302, 2302, 62, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Fire Elemental"); } }
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage1" ) == 1){this.AddButton(5, dby, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Water Elemental"); } }
-			}			
-			else			
-			{			
-				this.AddImage(0, 0, 2234, 0);		
-				int dby = 50;		
+			}
+			else
+			{
+				this.AddImage(0, 0, 2234, 0);
+				int dby = 50;
 				if ( HasSpell( from, 0 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsMage1" ) == 1){this.AddButton(dby, 5, 2240, 2240, 99, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 1 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsMage1" ) == 1){this.AddButton(dby, 5, 2241, 2241, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 2 ) && ToolBarUpdates.GetToolBarSetting( from, 3, "SetupBarsMage1" ) == 1){this.AddButton(dby, 5, 2242, 2242, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -203,14 +203,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage1" ) == 1){this.AddButton(dby, 5, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsMage1 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 99: { if ( HasSpell( from, 0 ) ) { new ClumsySpell( from, null ).Cast(); from.SendGump( new SpellBarsMage1( from ) ); } break; }
@@ -290,7 +290,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsMage2 : Gump
     {
@@ -318,7 +318,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsMage2 ) );
 			from.SendGump( new SpellBarsMage2( from ) );
         }
-   
+
         public SpellBarsMage2 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -396,11 +396,11 @@ namespace Server.Gumps
 				if ( HasSpell( from, 61 ) && ToolBarUpdates.GetToolBarSetting( from, 62, "SetupBarsMage2" ) == 1){this.AddButton(5, dby, 2301, 2301, 61, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Earth Elemental"); } }
 				if ( HasSpell( from, 62 ) && ToolBarUpdates.GetToolBarSetting( from, 63, "SetupBarsMage2" ) == 1){this.AddButton(5, dby, 2302, 2302, 62, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Fire Elemental"); } }
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage2" ) == 1){this.AddButton(5, dby, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Water Elemental"); } }
-			}			
-			else			
-			{			
-				this.AddImage(0, 0, 2234, 0);		
-				int dby = 50;		
+			}
+			else
+			{
+				this.AddImage(0, 0, 2234, 0);
+				int dby = 50;
 				if ( HasSpell( from, 0 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsMage2" ) == 1){this.AddButton(dby, 5, 2240, 2240, 99, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 1 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsMage2" ) == 1){this.AddButton(dby, 5, 2241, 2241, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 2 ) && ToolBarUpdates.GetToolBarSetting( from, 3, "SetupBarsMage2" ) == 1){this.AddButton(dby, 5, 2242, 2242, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -467,14 +467,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage2" ) == 1){this.AddButton(dby, 5, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsMage2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 99: { if ( HasSpell( from, 0 ) ) { new ClumsySpell( from, null ).Cast(); from.SendGump( new SpellBarsMage2( from ) ); } break; }
@@ -554,7 +554,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsMage3 : Gump
     {
@@ -582,7 +582,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsMage3 ) );
 			from.SendGump( new SpellBarsMage3( from ) );
         }
-   
+
         public SpellBarsMage3 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -660,11 +660,11 @@ namespace Server.Gumps
 				if ( HasSpell( from, 61 ) && ToolBarUpdates.GetToolBarSetting( from, 62, "SetupBarsMage3" ) == 1){this.AddButton(5, dby, 2301, 2301, 61, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage3" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Earth Elemental"); } }
 				if ( HasSpell( from, 62 ) && ToolBarUpdates.GetToolBarSetting( from, 63, "SetupBarsMage3" ) == 1){this.AddButton(5, dby, 2302, 2302, 62, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage3" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Fire Elemental"); } }
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage3" ) == 1){this.AddButton(5, dby, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage3" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Water Elemental"); } }
-			}			
-			else			
-			{			
-				this.AddImage(0, 0, 2234, 0);		
-				int dby = 50;		
+			}
+			else
+			{
+				this.AddImage(0, 0, 2234, 0);
+				int dby = 50;
 				if ( HasSpell( from, 0 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsMage3" ) == 1){this.AddButton(dby, 5, 2240, 2240, 99, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 1 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsMage3" ) == 1){this.AddButton(dby, 5, 2241, 2241, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 2 ) && ToolBarUpdates.GetToolBarSetting( from, 3, "SetupBarsMage3" ) == 1){this.AddButton(dby, 5, 2242, 2242, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -731,14 +731,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage3" ) == 1){this.AddButton(dby, 5, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsMage3 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 99: { if ( HasSpell( from, 0 ) ) { new ClumsySpell( from, null ).Cast(); from.SendGump( new SpellBarsMage3( from ) ); } break; }
@@ -818,7 +818,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsMage4 : Gump
     {
@@ -846,7 +846,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsMage4 ) );
 			from.SendGump( new SpellBarsMage4( from ) );
         }
-   
+
         public SpellBarsMage4 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -924,11 +924,11 @@ namespace Server.Gumps
 				if ( HasSpell( from, 61 ) && ToolBarUpdates.GetToolBarSetting( from, 62, "SetupBarsMage4" ) == 1){this.AddButton(5, dby, 2301, 2301, 61, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage4" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Earth Elemental"); } }
 				if ( HasSpell( from, 62 ) && ToolBarUpdates.GetToolBarSetting( from, 63, "SetupBarsMage4" ) == 1){this.AddButton(5, dby, 2302, 2302, 62, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage4" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Fire Elemental"); } }
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage4" ) == 1){this.AddButton(5, dby, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 65, "SetupBarsMage4" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Water Elemental"); } }
-			}			
-			else			
-			{			
-				this.AddImage(0, 0, 2234, 0);		
-				int dby = 50;		
+			}
+			else
+			{
+				this.AddImage(0, 0, 2234, 0);
+				int dby = 50;
 				if ( HasSpell( from, 0 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsMage4" ) == 1){this.AddButton(dby, 5, 2240, 2240, 99, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 1 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsMage4" ) == 1){this.AddButton(dby, 5, 2241, 2241, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 2 ) && ToolBarUpdates.GetToolBarSetting( from, 3, "SetupBarsMage4" ) == 1){this.AddButton(dby, 5, 2242, 2242, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -995,14 +995,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 63 ) && ToolBarUpdates.GetToolBarSetting( from, 64, "SetupBarsMage4" ) == 1){this.AddButton(dby, 5, 2303, 2303, 63, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsMage4 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 99: { if ( HasSpell( from, 0 ) ) { new ClumsySpell( from, null ).Cast(); from.SendGump( new SpellBarsMage4( from ) ); } break; }
@@ -1082,7 +1082,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsElement1 : Gump
     {
@@ -1110,7 +1110,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsElement1 ) );
 			from.SendGump( new SpellBarsElement1( from ) );
         }
-   
+
         public SpellBarsElement1 ( Mobile from ) : base ( 50,50 )
         {
 			int elly = 11141;
@@ -1165,11 +1165,11 @@ namespace Server.Gumps
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 30, "SetupBarsElly1" ) == 1){this.AddButton(5, dby, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 29, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 33, "SetupBarsElly1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"" + ElementalSpell.CommonInfo( casp, 1 ) + ""); } }
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 31, "SetupBarsElly1" ) == 1){this.AddButton(5, dby, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 30, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 33, "SetupBarsElly1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"" + ElementalSpell.CommonInfo( casp, 1 ) + ""); } }
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 32, "SetupBarsElly1" ) == 1){this.AddButton(5, dby, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 31, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 33, "SetupBarsElly1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"" + ElementalSpell.CommonInfo( casp, 1 ) + ""); } }
-			}			
-			else			
-			{			
-				this.AddImage(0, 0, elly, 0);		
-				int dby = 50;		
+			}
+			else
+			{
+				this.AddImage(0, 0, elly, 0);
+				int dby = 50;
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsElly1" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 99, GumpButtonType.Reply, 1); dby = dby + 45;}
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsElly1" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 3, "SetupBarsElly1" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -1204,14 +1204,14 @@ namespace Server.Gumps
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 32, "SetupBarsElly1" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 31, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsElement1 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 99: { if ( HasSpell( from, 300 ) ) { new Elemental_Armor_Spell( from, null ).Cast(); from.SendGump( new SpellBarsElement1( from ) ); } break; }
@@ -1259,7 +1259,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsElement2 : Gump
     {
@@ -1287,7 +1287,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsElement2 ) );
 			from.SendGump( new SpellBarsElement2( from ) );
         }
-   
+
         public SpellBarsElement2 ( Mobile from ) : base ( 50,50 )
         {
 			int elly = 11141;
@@ -1342,11 +1342,11 @@ namespace Server.Gumps
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 30, "SetupBarsElly2" ) == 1){this.AddButton(5, dby, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 29, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 33, "SetupBarsElly2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"" + ElementalSpell.CommonInfo( casp, 1 ) + ""); } }
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 31, "SetupBarsElly2" ) == 1){this.AddButton(5, dby, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 30, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 33, "SetupBarsElly2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"" + ElementalSpell.CommonInfo( casp, 1 ) + ""); } }
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 32, "SetupBarsElly2" ) == 1){this.AddButton(5, dby, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 31, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 33, "SetupBarsElly2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"" + ElementalSpell.CommonInfo( casp, 1 ) + ""); } }
-			}			
-			else			
-			{			
-				this.AddImage(0, 0, elly, 0);		
-				int dby = 50;		
+			}
+			else
+			{
+				this.AddImage(0, 0, elly, 0);
+				int dby = 50;
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsElly2" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 99, GumpButtonType.Reply, 1); dby = dby + 45;}
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsElly2" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 3, "SetupBarsElly2" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -1381,14 +1381,14 @@ namespace Server.Gumps
 				casp++; if ( HasSpell( from, casp ) && ToolBarUpdates.GetToolBarSetting( from, 32, "SetupBarsElly2" ) == 1){this.AddButton(dby, 5, ElementalSpell.SpellIcon( book, casp ), ElementalSpell.SpellIcon( book, casp ), 31, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsElement2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 99: { if ( HasSpell( from, 300 ) ) { new Elemental_Armor_Spell( from, null ).Cast(); from.SendGump( new SpellBarsElement2( from ) ); } break; }
@@ -1436,7 +1436,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsNecro1 : Gump
     {
@@ -1464,7 +1464,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsNecro1 ) );
 			from.SendGump( new SpellBarsNecro1( from ) );
         }
-   
+
         public SpellBarsNecro1 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -1496,10 +1496,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 115 ) && ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsNecro1" ) == 1){this.AddButton(5, dby, 20495,20495, 16, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsNecro1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Wraith Form"); } }
 				if ( HasSpell( from, 116 ) && ToolBarUpdates.GetToolBarSetting( from, 17, "SetupBarsNecro1" ) == 1){this.AddButton(5, dby, 20496,20496, 17, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsNecro1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Exorcism"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11011, 0);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11011, 0);
+				int dby = 50;
 
 				if ( HasSpell( from, 100 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsNecro1" ) == 1){this.AddButton(dby, 5, 20480,20480, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 101 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsNecro1" ) == 1){this.AddButton(dby, 5, 20481,20481, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -1520,14 +1520,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 116 ) && ToolBarUpdates.GetToolBarSetting( from, 17, "SetupBarsNecro1" ) == 1){this.AddButton(dby, 5, 20496,20496, 17, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsNecro1 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1: { if ( HasSpell( from, 100 ) ) { new AnimateDeadSpell( from, null ).Cast(); from.SendGump( new SpellBarsNecro1( from ) ); } break; }
@@ -1560,7 +1560,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsNecro2 : Gump
     {
@@ -1588,7 +1588,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsNecro2 ) );
 			from.SendGump( new SpellBarsNecro2( from ) );
         }
-   
+
         public SpellBarsNecro2 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -1620,10 +1620,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 115 ) && ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsNecro2" ) == 1){this.AddButton(5, dby, 20495,20495, 16, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsNecro2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Wraith Form"); } }
 				if ( HasSpell( from, 116 ) && ToolBarUpdates.GetToolBarSetting( from, 17, "SetupBarsNecro2" ) == 1){this.AddButton(5, dby, 20496,20496, 17, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsNecro2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Exorcism"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11011, 0);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11011, 0);
+				int dby = 50;
 
 				if ( HasSpell( from, 100 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsNecro2" ) == 1){this.AddButton(dby, 5, 20480,20480, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 101 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsNecro2" ) == 1){this.AddButton(dby, 5, 20481,20481, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -1644,14 +1644,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 116 ) && ToolBarUpdates.GetToolBarSetting( from, 17, "SetupBarsNecro2" ) == 1){this.AddButton(dby, 5, 20496,20496, 17, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsNecro2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1: { if ( HasSpell( from, 100 ) ) { new AnimateDeadSpell( from, null ).Cast(); from.SendGump( new SpellBarsNecro2( from ) ); } break; }
@@ -1684,7 +1684,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsKnight1 : Gump
     {
@@ -1712,7 +1712,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsKnight1 ) );
 			from.SendGump( new SpellBarsKnight1( from ) );
         }
-   
+
         public SpellBarsKnight1 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -1737,10 +1737,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 208 ) && ToolBarUpdates.GetToolBarSetting( from, 9, "SetupBarsKnight1" ) == 1){this.AddButton(5, dby, 20744,20744, 9, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsKnight1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Remove Curse"); } }
 				if ( HasSpell( from, 209 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsKnight1" ) == 1){this.AddButton(5, dby, 20745,20745, 10, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsKnight1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Sacred Journey"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11012, 0);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11012, 0);
+				int dby = 50;
 
 				if ( HasSpell( from, 200 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsKnight1" ) == 1){this.AddButton(dby, 5, 20736,20736, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 201 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsKnight1" ) == 1){this.AddButton(dby, 5, 20737,20737, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -1754,14 +1754,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 209 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsKnight1" ) == 1){this.AddButton(dby, 5, 20745,20745, 10, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsKnight1 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1 : { if ( HasSpell( from, 200 ) ) { new CleanseByFireSpell( from, null ).Cast(); from.SendGump( new SpellBarsKnight1( from ) ); } break; }
@@ -1787,7 +1787,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsKnight2 : Gump
     {
@@ -1815,7 +1815,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsKnight2 ) );
 			from.SendGump( new SpellBarsKnight2( from ) );
         }
-   
+
         public SpellBarsKnight2 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -1840,10 +1840,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 208 ) && ToolBarUpdates.GetToolBarSetting( from, 9, "SetupBarsKnight2" ) == 1){this.AddButton(5, dby, 20744,20744, 9, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsKnight2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Remove Curse"); } }
 				if ( HasSpell( from, 209 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsKnight2" ) == 1){this.AddButton(5, dby, 20745,20745, 10, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsKnight2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Sacred Journey"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11012, 0);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11012, 0);
+				int dby = 50;
 
 				if ( HasSpell( from, 200 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsKnight2" ) == 1){this.AddButton(dby, 5, 20736,20736, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 201 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsKnight2" ) == 1){this.AddButton(dby, 5, 20737,20737, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -1857,14 +1857,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 209 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsKnight2" ) == 1){this.AddButton(dby, 5, 20745,20745, 10, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsKnight2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1 : { if ( HasSpell( from, 200 ) ) { new CleanseByFireSpell( from, null ).Cast(); from.SendGump( new SpellBarsKnight2( from ) ); } break; }
@@ -1890,7 +1890,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsBard1 : Gump
     {
@@ -1918,7 +1918,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsBard1 ) );
 			from.SendGump( new SpellBarsBard1( from ) );
         }
-   
+
         public SpellBarsBard1 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -1949,10 +1949,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 365 ) && ToolBarUpdates.GetToolBarSetting( from, 15, "SetupBarsBard1" ) == 1){this.AddButton(5, dby, 1043,1043, 15, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsBard1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Shepherd's Dance"); } }
 				if ( HasSpell( from, 366 ) && ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsBard1" ) == 1){this.AddButton(5, dby, 1044,1044, 16, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsBard1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Sinewy Etude"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11056, 0);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11056, 0);
+				int dby = 50;
 
 				if ( HasSpell( from, 351 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsBard1" ) == 1){this.AddButton(dby, 5, 1028,1028, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 352 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsBard1" ) == 1){this.AddButton(dby, 5, 1029,1029, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -1972,14 +1972,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 366 ) && ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsBard1" ) == 1){this.AddButton(dby, 5, 1044,1044, 16, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsBard1 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1: { if ( HasSpell( from, 351 ) ) { new ArmysPaeonSong( from, null ).Cast(); from.SendGump( new SpellBarsBard1( from ) ); } break; }
@@ -2011,7 +2011,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsBard2 : Gump
     {
@@ -2039,7 +2039,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsBard2 ) );
 			from.SendGump( new SpellBarsBard2( from ) );
         }
-   
+
         public SpellBarsBard2 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -2070,10 +2070,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 365 ) && ToolBarUpdates.GetToolBarSetting( from, 15, "SetupBarsBard2" ) == 1){this.AddButton(5, dby, 1043,1043, 15, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsBard2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Shepherd's Dance"); } }
 				if ( HasSpell( from, 366 ) && ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsBard2" ) == 1){this.AddButton(5, dby, 1044,1044, 16, GumpButtonType.Reply, 1); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 18, "SetupBarsBard2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Sinewy Etude"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11056, 0);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11056, 0);
+				int dby = 50;
 
 				if ( HasSpell( from, 351 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsBard2" ) == 1){this.AddButton(dby, 5, 1028,1028, 1, GumpButtonType.Reply, 1); dby = dby + 45;}
 				if ( HasSpell( from, 352 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsBard2" ) == 1){this.AddButton(dby, 5, 1029,1029, 2, GumpButtonType.Reply, 1); dby = dby + 45;}
@@ -2093,14 +2093,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 366 ) && ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsBard2" ) == 1){this.AddButton(dby, 5, 1044,1044, 16, GumpButtonType.Reply, 1); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsBard2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1: { if ( HasSpell( from, 351 ) ) { new ArmysPaeonSong( from, null ).Cast(); from.SendGump( new SpellBarsBard2( from ) ); } break; }
@@ -2132,7 +2132,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsDeath1 : Gump
     {
@@ -2169,7 +2169,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsDeath1 ) );
 			from.SendGump( new SpellBarsDeath1( from ) );
         }
-   
+
         public SpellBarsDeath1 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -2198,10 +2198,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 762 ) && ToolBarUpdates.GetToolBarSetting( from, 13, "SetupBarsDeath1" ) == 1){this.AddButton(5, dby, 0x500C,0x500C, 13, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x500C, 2405); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsDeath1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Succubus Skin"); } }
 				if ( HasSpell( from, 763 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsDeath1" ) == 1){this.AddButton(5, dby, 0x2E,0x2E, 14, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x2E, 2405); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsDeath1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Wrath"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11013, 2405);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11013, 2405);
+				int dby = 50;
 
 				if ( HasSpell( from, 750 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsDeath1" ) == 1){this.AddButton(dby, 5, 0x5010,0x5010, 1, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x5010, 2405); dby = dby + 45;}
 				if ( HasSpell( from, 751 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsDeath1" ) == 1){this.AddButton(dby, 5, 0x5009,0x5009, 2, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x5009, 2405); dby = dby + 45;}
@@ -2219,14 +2219,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 763 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsDeath1" ) == 1){this.AddButton(dby, 5, 0x2E,0x2E, 14, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x2E, 2405); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsDeath2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 
@@ -2257,7 +2257,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsDeath2 : Gump
     {
@@ -2294,7 +2294,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsDeath2 ) );
 			from.SendGump( new SpellBarsDeath2( from ) );
         }
-   
+
         public SpellBarsDeath2 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -2323,10 +2323,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 762 ) && ToolBarUpdates.GetToolBarSetting( from, 13, "SetupBarsDeath2" ) == 1){this.AddButton(5, dby, 0x500C,0x500C, 13, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x500C, 2405); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsDeath2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Succubus Skin"); } }
 				if ( HasSpell( from, 763 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsDeath2" ) == 1){this.AddButton(5, dby, 0x2E,0x2E, 14, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x2E, 2405); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsDeath2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Wrath"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 11013, 2405);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 11013, 2405);
+				int dby = 50;
 
 				if ( HasSpell( from, 750 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsDeath2" ) == 1){this.AddButton(dby, 5, 0x5010,0x5010, 1, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x5010, 2405); dby = dby + 45;}
 				if ( HasSpell( from, 751 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsDeath2" ) == 1){this.AddButton(dby, 5, 0x5009,0x5009, 2, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x5009, 2405); dby = dby + 45;}
@@ -2344,14 +2344,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 763 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsDeath2" ) == 1){this.AddButton(dby, 5, 0x2E,0x2E, 14, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x2E, 2405); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsDeath2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 
@@ -2382,7 +2382,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsPriest1 : Gump
     {
@@ -2419,7 +2419,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsPriest1 ) );
 			from.SendGump( new SpellBarsPriest1( from ) );
         }
-   
+
         public SpellBarsPriest1 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -2448,10 +2448,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 782 ) && ToolBarUpdates.GetToolBarSetting( from, 13, "SetupBarsPriest1" ) == 1){this.AddButton(5, dby, 0x971,0x971, 13, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x971, 1071); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsPriest1" ) > 0 ){ AddLabel(59, (dby-34), 1071, @"Touch of Life"); } }
 				if ( HasSpell( from, 783 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsPriest1" ) == 1){this.AddButton(5, dby, 0x972,0x972, 14, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x972, 1071); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsPriest1" ) > 0 ){ AddLabel(59, (dby-34), 1071, @"Trial by Fire"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 2420, 1071);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 2420, 1071);
+				int dby = 50;
 
 				if ( HasSpell( from, 770 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsPriest1" ) == 1){this.AddButton(dby, 5, 0x965,0x965, 1, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x965, 1071); dby = dby + 45;}
 				if ( HasSpell( from, 771 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsPriest1" ) == 1){this.AddButton(dby, 5, 0x966,0x966, 2, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x966, 1071); dby = dby + 45;}
@@ -2469,14 +2469,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 783 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsPriest1" ) == 1){this.AddButton(dby, 5, 0x972,0x972, 14, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x972, 1071); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsPriest1 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 
@@ -2507,7 +2507,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsPriest2 : Gump
     {
@@ -2544,7 +2544,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsPriest2 ) );
 			from.SendGump( new SpellBarsPriest2( from ) );
         }
-   
+
         public SpellBarsPriest2 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -2573,10 +2573,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 782 ) && ToolBarUpdates.GetToolBarSetting( from, 13, "SetupBarsPriest2" ) == 1){this.AddButton(5, dby, 0x971,0x971, 13, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x971, 1071); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsPriest2" ) > 0 ){ AddLabel(59, (dby-34), 1071, @"Touch of Life"); } }
 				if ( HasSpell( from, 783 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsPriest2" ) == 1){this.AddButton(5, dby, 0x972,0x972, 14, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x972, 1071); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 16, "SetupBarsPriest2" ) > 0 ){ AddLabel(59, (dby-34), 1071, @"Trial by Fire"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 2420, 1071);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 2420, 1071);
+				int dby = 50;
 
 				if ( HasSpell( from, 770 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsPriest2" ) == 1){this.AddButton(dby, 5, 0x965,0x965, 1, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x965, 1071); dby = dby + 45;}
 				if ( HasSpell( from, 771 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsPriest2" ) == 1){this.AddButton(dby, 5, 0x966,0x966, 2, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x966, 1071); dby = dby + 45;}
@@ -2594,14 +2594,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 783 ) && ToolBarUpdates.GetToolBarSetting( from, 14, "SetupBarsPriest2" ) == 1){this.AddButton(dby, 5, 0x972,0x972, 14, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x972, 1071); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsPriest2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 
@@ -2632,7 +2632,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsMonk1 : Gump
     {
@@ -2660,7 +2660,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsMonk1 ) );
 			from.SendGump( new SpellBarsMonk1( from ) );
         }
-   
+
         public SpellBarsMonk1 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -2685,10 +2685,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 258 ) && ToolBarUpdates.GetToolBarSetting( from, 9, "SetupBarsMonk1" ) == 1){this.AddButton(5, dby, 0x5001,0x5001, 9, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x5001, 2422); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsMonk1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Quivering Palm"); } }
 				if ( HasSpell( from, 259 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsMonk1" ) == 1){this.AddButton(5, dby, 0x19,0x19, 10, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x19, 2422); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsMonk1" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Wind Runner"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 0x973, 2422);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 0x973, 2422);
+				int dby = 50;
 
 				if ( HasSpell( from, 250 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsMonk1" ) == 1){this.AddButton(dby, 5, 0x500E,0x500E, 1, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x500E, 2422); dby = dby + 45;}
 				if ( HasSpell( from, 251 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsMonk1" ) == 1){this.AddButton(dby, 5, 0x410,0x410, 2, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x410, 2422); dby = dby + 45;}
@@ -2702,14 +2702,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 259 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsMonk1" ) == 1){this.AddButton(dby, 5, 0x19,0x19, 10, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x19, 2422); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsMonk1 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1 : { if ( HasSpell( from, 250 ) ) { new AstralProjection( from, null ).Cast(); from.SendGump( new SpellBarsMonk1( from ) ); } break; }
@@ -2735,7 +2735,7 @@ namespace Server.Gumps
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class SpellBarsMonk2 : Gump
     {
@@ -2763,7 +2763,7 @@ namespace Server.Gumps
 			from.CloseGump( typeof( SpellBarsMonk2 ) );
 			from.SendGump( new SpellBarsMonk2( from ) );
         }
-   
+
 		public SpellBarsMonk2 ( Mobile from ) : base ( 50,50 )
         {
 			this.Closable=false;
@@ -2788,10 +2788,10 @@ namespace Server.Gumps
 				if ( HasSpell( from, 258 ) && ToolBarUpdates.GetToolBarSetting( from, 9, "SetupBarsMonk2" ) == 1){this.AddButton(5, dby, 0x5001,0x5001, 9, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x5001, 2422); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsMonk2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Quivering Palm"); } }
 				if ( HasSpell( from, 259 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsMonk2" ) == 1){this.AddButton(5, dby, 0x19,0x19, 10, GumpButtonType.Reply, 1); this.AddImage(5, dby, 0x19, 2422); dby = dby + 45; if ( ToolBarUpdates.GetToolBarSetting( from, 11, "SetupBarsMonk2" ) > 0 ){ AddLabel(59, (dby-34), 0x481, @"Wind Runner"); } }
 			}
-			else			
-			{			
-				this.AddImage(0, 0, 0x973, 2422);		
-				int dby = 50;		
+			else
+			{
+				this.AddImage(0, 0, 0x973, 2422);
+				int dby = 50;
 
 				if ( HasSpell( from, 250 ) && ToolBarUpdates.GetToolBarSetting( from, 1, "SetupBarsMonk2" ) == 1){this.AddButton(dby, 5, 0x500E,0x500E, 1, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x500E, 2422); dby = dby + 45;}
 				if ( HasSpell( from, 251 ) && ToolBarUpdates.GetToolBarSetting( from, 2, "SetupBarsMonk2" ) == 1){this.AddButton(dby, 5, 0x410,0x410, 2, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x410, 2422); dby = dby + 45;}
@@ -2805,14 +2805,14 @@ namespace Server.Gumps
 				if ( HasSpell( from, 259 ) && ToolBarUpdates.GetToolBarSetting( from, 10, "SetupBarsMonk2" ) == 1){this.AddButton(dby, 5, 0x19,0x19, 10, GumpButtonType.Reply, 1); this.AddImage(dby, 5, 0x19, 2422); dby = dby + 45;}
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
 
 			from.CloseGump( typeof( SpellBarsMonk2 ) );
 
-			switch ( info.ButtonID ) 
+			switch ( info.ButtonID )
 			{
 				case 0: { break; }
 				case 1 : { if ( HasSpell( from, 250 ) ) { new AstralProjection( from, null ).Cast(); from.SendGump( new SpellBarsMonk2( from ) ); } break; }

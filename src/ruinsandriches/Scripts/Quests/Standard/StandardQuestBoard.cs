@@ -23,12 +23,12 @@ namespace Server.Items
 			Hue = 0xB26;
 		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new SpeechGumpEntry( from ) );
 			list.Add( new StandardQuestEntry( from ) );
-			list.Add( new StandardQuestComplete( from ) ); 
+			list.Add( new StandardQuestComplete( from ) );
 		}
 
 		public override void OnDoubleClick( Mobile e )
@@ -47,7 +47,7 @@ namespace Server.Items
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public SpeechGumpEntry( Mobile from ) : base( 1024, 3 )
 			{
 				m_Mobile = from;
@@ -57,7 +57,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				m_Mobile.CloseGump( typeof( BoardGump ) );
 				m_Mobile.SendGump( new BoardGump( m_Mobile, "SEEKING BRAVE ADVENTURERS", "The townsfolk are looking for brave adventurers, " + m_Mobile.Name +". Adventurers are given bounties in which they must search for and slay, or items they are to search for and retrieve. Each quest must be completed to get another. If you fail at one quest, the townsfolk will not grant another unless reparations are given. The more famous an adventurer, the better chance to get a high priced bounty or valuable item to find. Of course the more gold for a reward, usually means how difficult the quest may be.<br><br>To get a quest, one must simply ask this bulletin board if any townsfolk wish to 'hire' them. These quests do not send you to a land you have never been, but they may send you to any dungeon in lands you have traveled. If you do not know the location of a particular place, you had better begin your exploration of such areas. Any other details of the quest can be read in the quest log (typing '[quests'). When such a quest is completed, return to any of these bulletin boards and select that you are 'done'. You will be rewarded with some gold and fame. You will gain some karma unless your karma is locked. In that case, you will lose karma instead.", "#e9e9e9", false ) );
             }
@@ -66,7 +66,7 @@ namespace Server.Items
 		public class StandardQuestEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public StandardQuestEntry( Mobile from ) : base( 6120, 12 )
 			{
 				m_Mobile = from;
@@ -108,7 +108,7 @@ namespace Server.Items
 		public class StandardQuestComplete : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
-			
+
 			public StandardQuestComplete( Mobile from ) : base( 548, 12 )
 			{
 				m_Mobile = from;

@@ -109,15 +109,15 @@ namespace Server.Multis
 				from.SendMessage( "You must be near a dock to launch your ship!" );
 			}
 			else if (
-				Server.Misc.Worlds.IsSeaTown( from.Location, from.Map ) || 
-				reg.IsPartOf( typeof( OutDoorBadRegion ) ) || 
-				reg.IsPartOf( typeof( VillageRegion ) ) || 
-				reg.IsPartOf( typeof( BargeDeadRegion ) ) || 
-				reg.IsPartOf( typeof( NecromancerRegion ) ) || 
-				reg.IsPartOf( typeof( DeadRegion ) ) || 
-				reg.IsPartOf( typeof( PirateRegion ) ) || 
-				reg.IsPartOf( typeof( OutDoorRegion ) ) || 
-				reg.IsPartOf( typeof( PublicRegion ) ) || 
+				Server.Misc.Worlds.IsSeaTown( from.Location, from.Map ) ||
+				reg.IsPartOf( typeof( OutDoorBadRegion ) ) ||
+				reg.IsPartOf( typeof( VillageRegion ) ) ||
+				reg.IsPartOf( typeof( BargeDeadRegion ) ) ||
+				reg.IsPartOf( typeof( NecromancerRegion ) ) ||
+				reg.IsPartOf( typeof( DeadRegion ) ) ||
+				reg.IsPartOf( typeof( PirateRegion ) ) ||
+				reg.IsPartOf( typeof( OutDoorRegion ) ) ||
+				reg.IsPartOf( typeof( PublicRegion ) ) ||
 				Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) )
 			{
 				from.LocalOverheadMessage(Network.MessageType.Emote, 0x25, false, phrase_a);
@@ -188,15 +188,15 @@ namespace Server.Multis
 
 				bool CanBuild = false;
 
-				if ( reg.IsPartOf( typeof( OutDoorBadRegion ) ) || 
-					 reg.IsPartOf( typeof( VillageRegion ) ) || 
-					 reg.IsPartOf( typeof( BargeDeadRegion ) ) || 
-					 reg.IsPartOf( typeof( NecromancerRegion ) ) || 
-					 reg.IsPartOf( typeof( DeadRegion ) ) || 
-					 Server.Misc.Worlds.IsSeaTown( from.Location, from.Map ) || 
-					 reg.IsPartOf( typeof( PirateRegion ) ) || 
-					 reg.IsPartOf( typeof( OutDoorRegion ) ) || 
-					 reg.IsPartOf( typeof( PublicRegion ) ) || 
+				if ( reg.IsPartOf( typeof( OutDoorBadRegion ) ) ||
+					 reg.IsPartOf( typeof( VillageRegion ) ) ||
+					 reg.IsPartOf( typeof( BargeDeadRegion ) ) ||
+					 reg.IsPartOf( typeof( NecromancerRegion ) ) ||
+					 reg.IsPartOf( typeof( DeadRegion ) ) ||
+					 Server.Misc.Worlds.IsSeaTown( from.Location, from.Map ) ||
+					 reg.IsPartOf( typeof( PirateRegion ) ) ||
+					 reg.IsPartOf( typeof( OutDoorRegion ) ) ||
+					 reg.IsPartOf( typeof( PublicRegion ) ) ||
 					 Server.Misc.Worlds.IsMainRegion( Server.Misc.Worlds.GetRegionName( from.Map, from.Location ) ) ){ CanBuild = true; }
 
 				if ( !DockSearch.NearDock(from) && !BaseBoat.isCarpet( boat ) )

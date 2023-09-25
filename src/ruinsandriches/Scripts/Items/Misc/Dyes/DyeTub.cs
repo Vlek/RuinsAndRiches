@@ -62,7 +62,7 @@ namespace Server.Items
 			base.Serialize( writer );
 
 			writer.Write( (int) 1 ); // version
-			
+
 			writer.Write( (int)m_SecureLevel );
 			writer.Write( (bool) m_Redyable );
 			writer.Write( (int) m_DyedHue );
@@ -120,7 +120,7 @@ namespace Server.Items
 				}
 			}
 		}
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public SecureLevel Level
 		{
@@ -134,13 +134,13 @@ namespace Server.Items
 			}
 		}
 
-		[Constructable] 
+		[Constructable]
 		public DyeTub() : base( 0xFAB )
 		{
 			Weight = 10.0;
 			m_Redyable = true;
 		}
-		
+
 		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
@@ -246,38 +246,38 @@ namespace Server.Items
 							from.PlaySound( 0x23E );
 						}
 					}
-					else if (	item is ILevelable || 
-								item is IGiftable || 
-								item is SmallHollowBook || 
-								item is LargeHollowBook || 
-								item is RibbonTree || 
-								item is RibbonTreeSmall || 
-								item is DragonOrbStatue || 
-								item is BaseBoatDeed || 
-								item is HouseDeed || 
-								item is HousePlacementTool || 
-								item is BaseDockedBoat || 
-								item is MagicCloak || 
-								item is MagicHat || 
-								item is Pillows || 
-								item is ResearchBag || 
-								item is ColoredWallTorch || 
-								item is MagicPigment || 
-								item is BaseQuiver || 
-								item is MagicBelt || 
-								item is MagicSash || 
-								item is MagicBoots || 
-								item is MagicRobe || 
-								item is HairDyeBottle || 
-								item is HairDyePotion || 
-								item is ThrowingGloves || 
-								item is BagOfTricks || 
-								item is LevelPugilistGloves || 
-								item is LevelThrowingGloves || 
-								item is GiftPugilistGloves || 
-								item is GiftThrowingGloves || 
-								item is BaseWhip || 
-								item is PugilistGlove || 
+					else if (	item is ILevelable ||
+								item is IGiftable ||
+								item is SmallHollowBook ||
+								item is LargeHollowBook ||
+								item is RibbonTree ||
+								item is RibbonTreeSmall ||
+								item is DragonOrbStatue ||
+								item is BaseBoatDeed ||
+								item is HouseDeed ||
+								item is HousePlacementTool ||
+								item is BaseDockedBoat ||
+								item is MagicCloak ||
+								item is MagicHat ||
+								item is Pillows ||
+								item is ResearchBag ||
+								item is ColoredWallTorch ||
+								item is MagicPigment ||
+								item is BaseQuiver ||
+								item is MagicBelt ||
+								item is MagicSash ||
+								item is MagicBoots ||
+								item is MagicRobe ||
+								item is HairDyeBottle ||
+								item is HairDyePotion ||
+								item is ThrowingGloves ||
+								item is BagOfTricks ||
+								item is LevelPugilistGloves ||
+								item is LevelThrowingGloves ||
+								item is GiftPugilistGloves ||
+								item is GiftThrowingGloves ||
+								item is BaseWhip ||
+								item is PugilistGlove ||
 								item is PugilistGloves )
 					{
 						if ( !from.InRange( m_Tub.GetWorldLocation(), 1 ) || !from.InRange( item.GetWorldLocation(), 1 ) )

@@ -122,13 +122,13 @@ namespace Server.RemoteAdmin
 		{
 			Timer.DelayCall( TimeSpan.FromSeconds( 15.0 ), new TimerStateCallback( Disconnect ), state );
 		}
-		
+
 		private static void Disconnect( object state )
 		{
 			m_Auth.Remove( state );
 			((NetState)state).Dispose();
 		}
-		
+
 		public static void Authenticate( NetState state, PacketReader pvSrc )
 		{
 			string user = pvSrc.ReadString( 30 );
@@ -156,7 +156,7 @@ namespace Server.RemoteAdmin
 			else if ( a.AccessLevel < AccessLevel.Administrator || a.Banned )
 			{
 				Console.WriteLine( "ADMIN: Account '{0}' does not have admin access. Connection Denied.", user );
-				state.Send( new Login( LoginResponse.NoAccess ) ); 
+				state.Send( new Login( LoginResponse.NoAccess ) );
 				DelayedDisconnect( state );
 			}
 			else
@@ -218,7 +218,7 @@ namespace Server.RemoteAdmin
 			}
 		}
 	}
-	
+
 	public class EventTextWriter : System.IO.TextWriter
 	{
 		public delegate void OnConsoleChar( char ch );
@@ -378,7 +378,7 @@ namespace Server.RemoteAdmin
 		}
 
 		private static void UpdateAccount( NetState state, PacketReader pvSrc )
-		{ 
+		{
 			string username = pvSrc.ReadString();
 			string pass = pvSrc.ReadString();
 
@@ -399,7 +399,7 @@ namespace Server.RemoteAdmin
 				pvSrc.ReadInt16();//skip both
 				state.Send( new MessageBoxMessage( "Warning: When editing your own account, account status and accesslevel cannot be changed.", "Editing Own Account" ) );
 			}
-			
+
 			ArrayList list = new ArrayList();
 			ushort length = pvSrc.ReadUInt16();
 			bool invalid = false;
@@ -411,7 +411,7 @@ namespace Server.RemoteAdmin
 				else
 					invalid = true;
 			}
-			
+
 			if ( list.Count > 0 )
 				a.IPRestrictions = (string[])list.ToArray( typeof( string ) );
 			else
@@ -444,7 +444,7 @@ namespace Server.RemoteAdmin
 			m_Stream.Write( CompData, 0, CDLen );
 		}
 	}
-	
+
 	public sealed class Login : Packet
 	{
 		public Login( LoginResponse resp ) : base( 0x02, 2 )
@@ -515,7 +515,7 @@ namespace Server.RemoteAdmin
 			EnsureCapacity( 1 + 2 + 2 );
 
 			m_Stream.Write( (byte)results.Count );
-			
+
 			foreach ( Account a in results )
 			{
 				m_Stream.WriteAsciiNull( a.Username );
@@ -529,7 +529,7 @@ namespace Server.RemoteAdmin
 				m_Stream.Write( (byte)a.AccessLevel );
 				m_Stream.Write( a.Banned );
 				unchecked { m_Stream.Write( (uint)a.LastLogin.Ticks ); }
-				
+
 				m_Stream.Write( (ushort)a.LoginIPs.Length );
 				for (int i=0;i<a.LoginIPs.Length;i++)
 					m_Stream.WriteAsciiNull( a.LoginIPs[i].ToString() );

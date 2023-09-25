@@ -4,7 +4,7 @@ using Server.Items;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
-using System.Collections; 
+using System.Collections;
 using System.Collections.Generic;
 using Server.ContextMenus;
 
@@ -65,9 +65,9 @@ namespace Server.Spells.Research
 	}
 }
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "an elemental corpse" )] 
+	[CorpseName( "an elemental corpse" )]
 	public class AerialServant : BaseCreature
 	{
 		private DateTime m_NextTalking;
@@ -81,7 +81,7 @@ namespace Server.Mobiles
 			}
 		}
 
-		[Constructable] 
+		[Constructable]
 		public AerialServant( ) : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			m_NextTalking = (DateTime.Now + TimeSpan.FromSeconds( 60 ));
@@ -120,25 +120,25 @@ namespace Server.Mobiles
 		public override bool IsBondable{ get{ return false; } }
 		public override bool CanBeRenamedBy( Mobile from ){ return true; }
 
-		public AerialServant( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public AerialServant( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
 			Loyalty = 100;
-		} 
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 
-			LeaveNowTimer thisTimer = new LeaveNowTimer( this ); 
-			thisTimer.Start(); 
-		} 
+			LeaveNowTimer thisTimer = new LeaveNowTimer( this );
+			thisTimer.Start();
+		}
 
 		public override bool IsSnoop( Mobile from )
 		{

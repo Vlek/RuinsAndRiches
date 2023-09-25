@@ -90,7 +90,7 @@ namespace Server.Items
 		public override void OnDoubleClick( Mobile from )
 		{
 			from.Direction = from.GetDirectionTo( GetWorldLocation() );
-      		from.Animate( 12, 5, 1, true, false, 0 );   
+      		from.Animate( 12, 5, 1, true, false, 0 );
 			Effects.SendLocationEffect( this.Location, this.Map, 0x352D, 16, 4 );
 			Effects.PlaySound( this.Location, this.Map, 0x364 );
 		}

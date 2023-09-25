@@ -98,7 +98,7 @@ namespace Server.Spells.Syth
 					Effects.SendLocationParticles(EffectItem.Create(item.Location, item.Map, EffectItem.DefaultDuration), 0x376A, 9, 32, 0, 0, 5022, 0);
 					Effects.PlaySound(item.Location, item.Map, 0x1F5);
 					Caster.AddToBackpack( item );
-					Caster.SendMessage( "You move the object to within your grasp and place it in your backpack."); 
+					Caster.SendMessage( "You move the object to within your grasp and place it in your backpack.");
 					DrainCrystals( Caster, RequiredTithing );
 				}
 			}
@@ -123,7 +123,7 @@ namespace Server.Spells.Syth
                     else if (o is Item)
                     this.m_Owner.Target((Item)o);
                 else
-					from.SendMessage( "This power will not work on that!"); 
+					from.SendMessage( "This power will not work on that!");
             }
 
             protected override void OnTargetFinish(Mobile from)

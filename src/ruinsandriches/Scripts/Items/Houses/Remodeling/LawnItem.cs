@@ -207,7 +207,7 @@ namespace Server.Items
                 FindHouseOfPlacer();
                 if ( House == null || !Server.Misc.MyServerSettings.LawnsAllowed() )
                 {
-                    Refund( Placer );                    
+                    Refund( Placer );
                 }
             }
         }

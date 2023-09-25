@@ -50,7 +50,7 @@ namespace Server.Mobiles
 				Karma = -12500;
 
 				VirtualArmor = 60;
-				PackItem( new DaemonBlood(Utility.RandomMinMax(4,12)) ); 
+				PackItem( new DaemonBlood(Utility.RandomMinMax(4,12)) );
 			}
 			else
 			{
@@ -89,8 +89,8 @@ namespace Server.Mobiles
 				Karma = -10500;
 
 				VirtualArmor = 50;
-				PackItem( new WaterFlask() ); 
-				PackItem( new DaemonBlood(Utility.RandomMinMax(1,5)) ); 
+				PackItem( new WaterFlask() );
+				PackItem( new DaemonBlood(Utility.RandomMinMax(1,5)) );
 			}
 		}
 

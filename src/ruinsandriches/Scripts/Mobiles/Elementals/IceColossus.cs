@@ -66,10 +66,10 @@ namespace Server.Mobiles
 			AddLoot( LootPack.Rich, 3 );
 			AddLoot( LootPack.Gems, 2 );
 		}
-		
+
 		public override void OnDeath( Container c )
 		{
-			base.OnDeath( c );		
+			base.OnDeath( c );
 			RareMetals stones = new RareMetals( Utility.RandomMinMax( 10, 25 ), "mystical ice stones" );
    			c.DropItem(stones);
 		}

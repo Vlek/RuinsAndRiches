@@ -16,13 +16,13 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			SBInfos.Add( new SBTailorGuild() ); 
-			SBInfos.Add( new RSCloth() ); 
-			SBInfos.Add( new SBLeatherArmor() ); 
-			SBInfos.Add( new SBStuddedArmor() ); 
-			SBInfos.Add( new SBLeatherWorker() ); 
+			SBInfos.Add( new SBTailorGuild() );
+			SBInfos.Add( new RSCloth() );
+			SBInfos.Add( new SBLeatherArmor() );
+			SBInfos.Add( new SBStuddedArmor() );
+			SBInfos.Add( new SBLeatherWorker() );
 			SBInfos.Add( new SBFurtrader() );
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public TailorGuildmaster( Serial serial ) : base( serial )

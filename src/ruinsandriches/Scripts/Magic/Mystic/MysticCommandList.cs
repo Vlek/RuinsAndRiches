@@ -60,7 +60,7 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 250 ) )
 					{
-					new AstralProjection( e.Mobile, null ).Cast(); 
+					new AstralProjection( e.Mobile, null ).Cast();
 					}
 				else
 					{
@@ -73,18 +73,18 @@ namespace Server.Scripts.Commands
 		public static void AstralTravel_OnCommand( CommandEventArgs e )
 		{
 				Mobile from = e.Mobile;
-			
+
          			if ( !Multis.DesignContext.Check( e.Mobile ) )
             				return; // They are customizing
 
 				if ( HasSpell( from, 251 ) )
 					{
-					new AstralTravel( e.Mobile, null ).Cast(); 
+					new AstralTravel( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -99,12 +99,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 252 ) )
 					{
-					new CreateRobe( e.Mobile, null ).Cast(); 
+					new CreateRobe( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -119,12 +119,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 253 ) )
 					{
-					new GentleTouch( e.Mobile, null ).Cast(); 
+					new GentleTouch( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -139,12 +139,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 254 ) )
 					{
-					new Leap( e.Mobile, null ).Cast(); 
+					new Leap( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -159,12 +159,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 255 ) )
 					{
-					new  PsionicBlast( e.Mobile, null ).Cast(); 
+					new  PsionicBlast( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -179,12 +179,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 256 ) )
 					{
-					new PsychicWall( e.Mobile, null ).Cast(); 
+					new PsychicWall( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -199,12 +199,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 257 ) )
 					{
-					new PurityOfBody( e.Mobile, null ).Cast(); 
+					new PurityOfBody( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -219,12 +219,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 258 ) )
 					{
-					new QuiveringPalm( e.Mobile, null ).Cast(); 
+					new QuiveringPalm( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 
@@ -239,12 +239,12 @@ namespace Server.Scripts.Commands
 
 				if ( HasSpell( from, 259 ) )
 					{
-					new WindRunner( e.Mobile, null ).Cast(); 
+					new WindRunner( e.Mobile, null ).Cast();
 					}
 				else
 					{
 									from.SendLocalizedMessage( 500015 ); // You do not have that spell!
-					} 			
+					}
 
 		}
 	}

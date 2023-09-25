@@ -8,7 +8,7 @@ using Server.Commands;
 using Server.Commands.Generic;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     class Musical
     {

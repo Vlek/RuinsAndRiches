@@ -247,10 +247,10 @@ namespace Server.Items
             {
                 return 242;
             }
-            else if ( itemID == 1679 || itemID == 1680 || itemID == 1677 || itemID == 1678 || itemID == 1671 || itemID == 1672 || itemID == 1669 || itemID == 1670 || 
-				itemID == 8183 || itemID == 8184 || itemID == 8181 || itemID == 8182 || itemID == 8175 || itemID == 8176 || itemID == 8173 || 
-				itemID == 8174 || itemID == 1743 || itemID == 1744 || itemID == 1741 || itemID == 1742 || itemID == 1735 || itemID == 1736 || 
-				itemID == 1663 || itemID == 1664 || itemID == 1661 || itemID == 1662 || itemID == 1655 || itemID == 1656 || itemID == 1653 || 
+            else if ( itemID == 1679 || itemID == 1680 || itemID == 1677 || itemID == 1678 || itemID == 1671 || itemID == 1672 || itemID == 1669 || itemID == 1670 ||
+				itemID == 8183 || itemID == 8184 || itemID == 8181 || itemID == 8182 || itemID == 8175 || itemID == 8176 || itemID == 8173 ||
+				itemID == 8174 || itemID == 1743 || itemID == 1744 || itemID == 1741 || itemID == 1742 || itemID == 1735 || itemID == 1736 ||
+				itemID == 1663 || itemID == 1664 || itemID == 1661 || itemID == 1662 || itemID == 1655 || itemID == 1656 || itemID == 1653 ||
 				itemID == 1654 || itemID == 1733 || itemID == 1734 )
             {
                 return 243;
@@ -259,9 +259,9 @@ namespace Server.Items
             {
                 return 242;
             }
-            else if ( itemID == 25667 || itemID == 25668 || itemID == 705 || itemID == 708 || itemID == 1701 || itemID == 1702 || itemID == 1703 || itemID == 1704 || itemID == 1711 || itemID == 1712 || itemID == 1709 || itemID == 1710 || 
-				itemID == 1765 || itemID == 1766 || itemID == 1767 || itemID == 1768 || itemID == 1775 || itemID == 1776 || itemID == 1773 || itemID == 1774 || 
-				itemID == 1717 || itemID == 1718 || itemID == 1719 || itemID == 1720 || itemID == 1727 || itemID == 1728 || itemID == 1725 || itemID == 1726 || 
+            else if ( itemID == 25667 || itemID == 25668 || itemID == 705 || itemID == 708 || itemID == 1701 || itemID == 1702 || itemID == 1703 || itemID == 1704 || itemID == 1711 || itemID == 1712 || itemID == 1709 || itemID == 1710 ||
+				itemID == 1765 || itemID == 1766 || itemID == 1767 || itemID == 1768 || itemID == 1775 || itemID == 1776 || itemID == 1773 || itemID == 1774 ||
+				itemID == 1717 || itemID == 1718 || itemID == 1719 || itemID == 1720 || itemID == 1727 || itemID == 1728 || itemID == 1725 || itemID == 1726 ||
 				itemID == 0x6D5 || itemID == 0x6D6 || itemID == 0x6D7 || itemID == 0x6D8 || itemID == 0x6DF || itemID == 0x6E0 || itemID == 0x6DD || itemID == 0x6DE )
             {
                 return 241;
@@ -284,10 +284,10 @@ namespace Server.Items
             {
                 return 235;
             }
-            else if ( itemID == 1679 || itemID == 1680 || itemID == 1677 || itemID == 1678 || itemID == 1671 || itemID == 1672 || itemID == 1669 || itemID == 1670 || 
-				itemID == 8183 || itemID == 8184 || itemID == 8181 || itemID == 8182 || itemID == 8175 || itemID == 8176 || itemID == 8173 || 
-				itemID == 8174 || itemID == 1743 || itemID == 1744 || itemID == 1741 || itemID == 1742 || itemID == 1735 || itemID == 1736 || 
-				itemID == 1663 || itemID == 1664 || itemID == 1661 || itemID == 1662 || itemID == 1655 || itemID == 1656 || itemID == 1653 || 
+            else if ( itemID == 1679 || itemID == 1680 || itemID == 1677 || itemID == 1678 || itemID == 1671 || itemID == 1672 || itemID == 1669 || itemID == 1670 ||
+				itemID == 8183 || itemID == 8184 || itemID == 8181 || itemID == 8182 || itemID == 8175 || itemID == 8176 || itemID == 8173 ||
+				itemID == 8174 || itemID == 1743 || itemID == 1744 || itemID == 1741 || itemID == 1742 || itemID == 1735 || itemID == 1736 ||
+				itemID == 1663 || itemID == 1664 || itemID == 1661 || itemID == 1662 || itemID == 1655 || itemID == 1656 || itemID == 1653 ||
 				itemID == 1654 || itemID == 1733 || itemID == 1734 )
             {
                 return 236;
@@ -296,9 +296,9 @@ namespace Server.Items
             {
                 return 235;
             }
-            else if ( itemID == 25667 || itemID == 25668 || itemID == 705 || itemID == 708 || itemID == 1701 || itemID == 1702 || itemID == 1703 || itemID == 1704 || itemID == 1711 || itemID == 1712 || itemID == 1709 || itemID == 1710 || 
-				itemID == 1765 || itemID == 1766 || itemID == 1767 || itemID == 1768 || itemID == 1775 || itemID == 1776 || itemID == 1773 || itemID == 1774 || 
-				itemID == 1717 || itemID == 1718 || itemID == 1719 || itemID == 1720 || itemID == 1727 || itemID == 1728 || itemID == 1725 || itemID == 1726 || 
+            else if ( itemID == 25667 || itemID == 25668 || itemID == 705 || itemID == 708 || itemID == 1701 || itemID == 1702 || itemID == 1703 || itemID == 1704 || itemID == 1711 || itemID == 1712 || itemID == 1709 || itemID == 1710 ||
+				itemID == 1765 || itemID == 1766 || itemID == 1767 || itemID == 1768 || itemID == 1775 || itemID == 1776 || itemID == 1773 || itemID == 1774 ||
+				itemID == 1717 || itemID == 1718 || itemID == 1719 || itemID == 1720 || itemID == 1727 || itemID == 1728 || itemID == 1725 || itemID == 1726 ||
 				itemID == 0x6D5 || itemID == 0x6D6 || itemID == 0x6D7 || itemID == 0x6D8 || itemID == 0x6DF || itemID == 0x6E0 || itemID == 0x6DD || itemID == 0x6DE )
             {
                 return 234;

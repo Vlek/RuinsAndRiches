@@ -1,10 +1,10 @@
-﻿using System; 
-using System.Net; 
-using Server; 
-using Server.Accounting; 
-using Server.Gumps; 
-using Server.Items; 
-using Server.Mobiles; 
+﻿using System;
+using System.Net;
+using Server;
+using Server.Accounting;
+using Server.Gumps;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Gumps
@@ -55,7 +55,7 @@ namespace Server.Gumps
             AddButton(12, 220, 4005, 4007, 10, GumpButtonType.Reply, 10);
             AddLabel(52, 240, 0, "Spike Post South");
             AddButton(12, 240, 4005, 4007, 11, GumpButtonType.Reply, 11);
-            
+
 }
 
         public override void OnResponse(NetState state, RelayInfo info)
@@ -64,7 +64,7 @@ namespace Server.Gumps
 
             switch (info.ButtonID)
             {
-                case 0: //Close Gump 
+                case 0: //Close Gump
                     {
                         from.CloseGump(typeof(ShadowTokenGump));
                         break;

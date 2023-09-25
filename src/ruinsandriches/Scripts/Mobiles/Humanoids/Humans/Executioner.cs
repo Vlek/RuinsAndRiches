@@ -1,31 +1,31 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
+using Server.Network;
 
-namespace Server.Mobiles 
-{ 
-	public class Executioner : BaseCreature 
-	{ 
-		[Constructable] 
-		public Executioner() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
-			SpeechHue = Utility.RandomTalkHue(); 
-			Title = "the executioner"; 
-			Hue = Utility.RandomSkinColor(); 
+namespace Server.Mobiles
+{
+	public class Executioner : BaseCreature
+	{
+		[Constructable]
+		public Executioner() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
+			SpeechHue = Utility.RandomTalkHue();
+			Title = "the executioner";
+			Hue = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() ) 
-			{ 
-				this.Body = 0x191; 
+			if ( this.Female = Utility.RandomBool() )
+			{
+				this.Body = 0x191;
 				this.Name = NameList.RandomName( "female" );
 				AddItem( new Skirt( 0x497 ) );
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
-				this.Name = NameList.RandomName( "male" ); 
+			}
+			else
+			{
+				this.Body = 0x190;
+				this.Name = NameList.RandomName( "male" );
 				AddItem( new LongPants( 0x497 ) );
 			}
 
@@ -87,20 +87,20 @@ namespace Server.Mobiles
 			Server.Misc.IntelligentAction.CryOut( this );
 		}
 
-		public Executioner( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public Executioner( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

@@ -15,7 +15,7 @@ using Server.Misc;
 using Server.Items;
 using System.Globalization;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class RegBar : Gump
     {
@@ -51,42 +51,42 @@ namespace Server.Gumps
 
 		public RegBar ( Mobile from ) : base ( 85, 85 )
 		{
-			int set1 = 0; 
-			//int set2 = 0; 
-			int set3 = 0; 
-			int set4 = 0; 
-			int set5 = 0; 
-			int set6 = 0; 
-			int set7 = 0; 
-			int set8 = 0; 
-			int set9 = 0; 
-			int set10 = 0; 
-			int set11 = 0; 
-			int set12 = 0; 
-			int set13 = 0; 
-			int set14 = 0; 
-			int set15 = 0; 
-			int set16 = 0; 
-			int set17 = 0; 
-			int set18 = 0; 
-			int set19 = 0; 
-			int set20 = 0; 
-			int set21 = 0; 
-			int set22 = 0; 
-			int set23 = 0; 
-			int set24 = 0; 
-			int set25 = 0; 
-			int set26 = 0; 
-			int set27 = 0; 
-			int set28 = 0; 
-			int set29 = 0; 
-			int set30 = 0; 
-			int set31 = 0; 
-			int set32 = 0; 
-			int set33 = 0; 
-			int set34 = 0; 
-			int set35 = 0; 
-			int set36 = 0; 
+			int set1 = 0;
+			//int set2 = 0;
+			int set3 = 0;
+			int set4 = 0;
+			int set5 = 0;
+			int set6 = 0;
+			int set7 = 0;
+			int set8 = 0;
+			int set9 = 0;
+			int set10 = 0;
+			int set11 = 0;
+			int set12 = 0;
+			int set13 = 0;
+			int set14 = 0;
+			int set15 = 0;
+			int set16 = 0;
+			int set17 = 0;
+			int set18 = 0;
+			int set19 = 0;
+			int set20 = 0;
+			int set21 = 0;
+			int set22 = 0;
+			int set23 = 0;
+			int set24 = 0;
+			int set25 = 0;
+			int set26 = 0;
+			int set27 = 0;
+			int set28 = 0;
+			int set29 = 0;
+			int set30 = 0;
+			int set31 = 0;
+			int set32 = 0;
+			int set33 = 0;
+			int set34 = 0;
+			int set35 = 0;
+			int set36 = 0;
 
             this.Closable=true;
 			this.Disposable=true;
@@ -219,7 +219,7 @@ namespace Server.Gumps
 					{
 						AddHtml( x+35, y+7, 50, 20, @"<BODY><BASEFONT Color=#34ee39>" + RegConfig.rowInfoCat( i, 2, from ) + "</BASEFONT></BODY>", (bool)false, (bool)false);
 					}
-					else 
+					else
 					{
 						if ( q == 0 ){ q = 1; } else { q = 0; }
 
@@ -354,7 +354,7 @@ namespace Server.Gumps
 			}
 
 			string color = "#ddbc4b";
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
             this.Closable=true;
 			this.Disposable=true;

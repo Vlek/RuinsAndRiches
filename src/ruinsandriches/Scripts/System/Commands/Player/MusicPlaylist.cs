@@ -10,7 +10,7 @@ using Server.Commands;
 using Server.Commands.Generic;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class MusicPlaylist : Gump
     {
@@ -68,7 +68,7 @@ namespace Server.Gumps
 				GetLine( line, MySettings );
 			}
 		}
-    
+
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
@@ -76,7 +76,7 @@ namespace Server.Gumps
 			if ( info.ButtonID > 0 && info.ButtonID < 100 ){ MusicPlaylistFunctions.UpdatePlaylist( from, info.ButtonID ); }
 			else if ( info.ButtonID > 100 ){ Server.Misc.MusicPlaylistFunctions.PlayMusicFile( from, (info.ButtonID-100) ); }
 
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			if ( info.ButtonID < 1 && m_Origin > 0 ){ from.SendGump( new Server.Engines.Help.HelpGump( from, 12 ) ); }
 			else if ( info.ButtonID > 0 ){ from.SendGump( new MusicPlaylist( from, m_Origin ) ); }
@@ -187,7 +187,7 @@ namespace Server.Misc
     {
 		public static void UpdatePlaylist( Mobile m, int nChange )
 		{
-			m.SendSound( 0x4A ); 
+			m.SendSound( 0x4A );
 
 			MusicPlaylistFunctions.InitializePlaylist( m );
 
@@ -215,7 +215,7 @@ namespace Server.Misc
 				nLine++;
 			}
 
-			((PlayerMobile)m).MusicPlaylist = newSettings; 
+			((PlayerMobile)m).MusicPlaylist = newSettings;
 		}
 
 		public static void InitializePlaylist( Mobile m )

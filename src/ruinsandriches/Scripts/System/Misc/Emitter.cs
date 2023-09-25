@@ -513,25 +513,25 @@ namespace Server
 			if ( compareTo == null )
 			{
 				/* This gets a little tricky...
-				 * 
+				 *
 				 * There's a scenario where we might be trying to use CompareTo on an interface
 				 * which, while it doesn't explicitly implement CompareTo itself, is said to
 				 * extend IComparable indirectly.  The implementation is implicitly passed off
 				 * to implementers...
-				 * 
+				 *
 				 * interface ISomeInterface : IComparable
 				 * {
 				 *    void SomeMethod();
 				 * }
-				 * 
+				 *
 				 * class SomeClass : ISomeInterface
 				 * {
 				 *    void SomeMethod() { ... }
 				 *    int CompareTo( object other ) { ... }
 				 * }
-				 * 
+				 *
 				 * In this case, calling ISomeInterface.GetMethod( "CompareTo" ) will return null.
-				 * 
+				 *
 				 * Bleh.
 				 */
 
@@ -568,11 +568,11 @@ namespace Server
 			if ( !active.IsValueType )
 			{
 				/* This object is a reference type, so we have to make it behave
-				 * 
+				 *
 				 * null.CompareTo( null ) =  0
 				 * real.CompareTo( null ) = -1
 				 * null.CompareTo( real ) = +1
-				 * 
+				 *
 				 */
 
 				LocalBuilder aValue = AcquireTemp( active );

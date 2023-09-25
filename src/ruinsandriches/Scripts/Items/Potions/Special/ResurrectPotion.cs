@@ -27,7 +27,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Resurrects Others");
-        } 
+        }
 
 		public override void Serialize( GenericWriter writer )
 		{
@@ -40,18 +40,18 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
-	  
+
 	  	public override void Drink( Mobile m )
 		{
-			if ( m.InRange( this.GetWorldLocation(), 1 ) ) 
+			if ( m.InRange( this.GetWorldLocation(), 1 ) )
 			{
 				m.Target = new InternalTarget( m, this );
 				m.SendMessage( "Who would you like to resurrect!" );
-			} 
-			else 
-			{ 
-				m.LocalOverheadMessage( MessageType.Regular, 906, 1019045 ); // I can't reach that. 
-			} 
+			}
+			else
+			{
+				m.LocalOverheadMessage( MessageType.Regular, 906, 1019045 ); // I can't reach that.
+			}
 		}
 
         public void Target( Mobile m, Mobile from, ResurrectPotion potion )
@@ -81,7 +81,7 @@ namespace Server.Items
             {
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16 );
- 
+
                 m.CloseGump( typeof( ResurrectGump ) );
                 m.SendGump( new ResurrectGump( m, from ) );
 
@@ -91,10 +91,10 @@ namespace Server.Items
 			{
 				BaseCreature pet = (BaseCreature)m;
 				Mobile master = pet.GetMaster();
- 
+
                 m.PlaySound( 0x214 );
                 m.FixedEffect( 0x376A, 10, 16 );
- 
+
                 master.CloseGump(typeof(PetResurrectGump));
                 master.SendGump(new PetResurrectGump(master, pet));
 
@@ -177,18 +177,18 @@ namespace Server.Items
 				from.SendMessage("This potion didn't seem to work.");
 			}
 		}
- 
+
         private class InternalTarget : Target
         {
             private Mobile m_Owner;
             private ResurrectPotion m_Potion;
- 
+
             public InternalTarget( Mobile owner, ResurrectPotion potion ) : base( 1, false, TargetFlags.Beneficial )
             {
                 m_Owner = owner;
 				m_Potion = potion;
             }
- 
+
             protected override void OnTarget( Mobile from, object o )
             {
                 if ( o is Mobile )

@@ -30,7 +30,7 @@ namespace Server.Items
 		{
             base.AddNameProperties(list);
 			list.Add( 1070722, "Empties Every 24 Hours");
-        } 
+        }
 
 		public override void Serialize( GenericWriter writer )
 		{

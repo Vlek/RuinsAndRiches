@@ -5,7 +5,7 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a squirrel corpse" )]	
+	[CorpseName( "a squirrel corpse" )]
 	public class Squirrel : BaseCreature
 	{
 		[Constructable]
@@ -35,7 +35,7 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 4.0 );
 			SetSkill( SkillName.FistFighting, 4.0 );
 
-			Tamable = true;	
+			Tamable = true;
 			ControlSlots = 1;
 			MinTameSkill = -21.3;
 

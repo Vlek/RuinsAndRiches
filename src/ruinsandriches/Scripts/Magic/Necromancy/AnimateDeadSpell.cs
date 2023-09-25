@@ -158,7 +158,7 @@ namespace Server.Spells.Necromancy
 						else if ( giant.Slays(bc) ){ ghost = " giant"; }
 						else if ( repond.Slays(bc) )
 						{
-							ghost = ""; 
+							ghost = "";
 						}
 
 						// ZOMBIES //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

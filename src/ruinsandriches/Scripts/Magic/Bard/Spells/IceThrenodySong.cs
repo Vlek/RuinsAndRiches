@@ -9,18 +9,18 @@ namespace Server.Spells.Song
 {
 	public class IceThrenodySong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Ice Threnody", "*plays an ice threnody*",
 				//SpellCircle.First,
 				//212,9041
 				-1
 			);
-		
+
 		public IceThrenodySong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
-		
+
 		private SongBook m_Book;
 		//public override double CastDelay{ get{ return 2; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
@@ -54,7 +54,7 @@ namespace Server.Spells.Song
 			bool sings = false;
 
 			PlayerMobile p = m as PlayerMobile;
-			
+
 			if ( !Caster.CanSee( m ) )
 			{
 				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
@@ -71,7 +71,7 @@ namespace Server.Spells.Song
 
 				Mobile source = Caster;
 				SpellHelper.Turn( source, m );
-				
+
 				m.FixedParticles( 0x374A, 10, 30, 5013, 0x480, 2, EffectLayer.Waist );
 
 				bool IsSlayer = false;
@@ -88,7 +88,7 @@ namespace Server.Spells.Song
 
 				m.SendMessage( "Your resistance to cold has decreased." );
 				ResistanceMod mod1 = new ResistanceMod( ResistanceType.Cold, - amount );
-				
+
 				m.AddResistanceMod( mod1 );
 
 				ExpireTimer timer1 = new ExpireTimer( m, mod1, duration );
@@ -114,7 +114,7 @@ namespace Server.Spells.Song
 			{
 				PlayerMobile p = m_Mobile as PlayerMobile;
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

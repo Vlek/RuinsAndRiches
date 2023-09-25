@@ -20,7 +20,7 @@ namespace Server.Mobiles
 		{
 			SBInfos.Add( new SBStavesWeapon() );
 			SBInfos.Add( new SBCarpenterGuild() );
-			SBInfos.Add( new SBWoodenShields() ); 
+			SBInfos.Add( new SBWoodenShields() );
 
 			SBInfos.Add( new RSBoardsMain() );
 			if ( Worlds.IsCrypt( this.Location, this.Map ) )
@@ -38,7 +38,7 @@ namespace Server.Mobiles
 			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
 				SBInfos.Add( new RSLogsSea() );
 
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public override void InitOutfit()

@@ -35,14 +35,14 @@ namespace Server.Misc
 			string worldLocation = "the Land of Sosaria";
 
 			if ( map == Map.Sosaria && x > 5774 && y > 2694 && x < 6123 && y < 3074 ){ worldLocation = "the Moon of Luna"; }
-			else if ( map == Map.Sosaria && ( reg.IsPartOf( "Moonlight Cavern" ) || 
-												reg.IsPartOf( "The Core of the Moon" ) || 
+			else if ( map == Map.Sosaria && ( reg.IsPartOf( "Moonlight Cavern" ) ||
+												reg.IsPartOf( "The Core of the Moon" ) ||
 												reg.IsPartOf( "The Moon's Core" ) ) ){ worldLocation = "the Moon of Luna"; }
 
 			else if ( map == Map.Sosaria && x > 5125 && y > 3038 && x < 6124 && y < 4093 ){ worldLocation = "the Land of Ambrosia"; }
 			else if ( map == Map.Sosaria && x > 3229 && y > 3870 && x < 3344 && y < 3946 ){ worldLocation = "the Land of Ambrosia"; }
-			else if ( map == Map.Sosaria && ( reg.IsPartOf( "the Dragon's Maw" ) || 
-												reg.IsPartOf( "the Cave of the Zuluu" ) || 
+			else if ( map == Map.Sosaria && ( reg.IsPartOf( "the Dragon's Maw" ) ||
+												reg.IsPartOf( "the Cave of the Zuluu" ) ||
 												reg.IsPartOf( "the Arena of The Zuluu" ) ) ){ worldLocation = "the Land of Ambrosia"; }
 
 			else if ( map == Map.Sosaria && x > 2931 && y > 3675 && x < 2999 && y < 3722 ){ worldLocation = "the Island of Umber Veil"; }
@@ -51,28 +51,28 @@ namespace Server.Misc
 			else if ( map == Map.Sosaria && reg.IsPartOf( "the Tower of Brass" ) ){ worldLocation = "the Island of Umber Veil"; }
 
 			else if ( map == Map.Sosaria && x > 6127 && y > 828 && x < 7168 && y < 2736 ){ worldLocation = "the Bottle World of Kuldar"; }
-			else if ( map == Map.Sosaria && ( reg.IsPartOf( "Highrock Mine" ) || 
-												reg.IsPartOf( "Waterfall Cavern" ) || 
-												reg.IsPartOf( "the Crumbling Cave" ) || 
-												reg.IsPartOf( "Steamfire Cave" ) || 
-												reg.IsPartOf( "the Valley of Dark Druids" ) || 
-												reg.IsPartOf( "Vordo's Castle Grounds" ) || 
-												reg.IsPartOf( "the Kuldara Sewers" ) || 
-												reg.IsPartOf( "the Crypts of Kuldar" ) || 
-												reg.IsPartOf( "Vordo's Castle" ) || 
+			else if ( map == Map.Sosaria && ( reg.IsPartOf( "Highrock Mine" ) ||
+												reg.IsPartOf( "Waterfall Cavern" ) ||
+												reg.IsPartOf( "the Crumbling Cave" ) ||
+												reg.IsPartOf( "Steamfire Cave" ) ||
+												reg.IsPartOf( "the Valley of Dark Druids" ) ||
+												reg.IsPartOf( "Vordo's Castle Grounds" ) ||
+												reg.IsPartOf( "the Kuldara Sewers" ) ||
+												reg.IsPartOf( "the Crypts of Kuldar" ) ||
+												reg.IsPartOf( "Vordo's Castle" ) ||
 												reg.IsPartOf( "Vordo's Dungeon" ) ) ){ worldLocation = "the Bottle World of Kuldar"; }
 
-			else if ( map == Map.Lodor && ( reg.IsPartOf( "Morgaelin's Inferno" ) || 
-												reg.IsPartOf( "the Zealan Tombs" ) || 
-												reg.IsPartOf( "Argentrock Castle" ) || 
-												reg.IsPartOf( "the Daemon's Crag" ) || 
-												reg.IsPartOf( "the Hall of the Mountain King" ) || 
+			else if ( map == Map.Lodor && ( reg.IsPartOf( "Morgaelin's Inferno" ) ||
+												reg.IsPartOf( "the Zealan Tombs" ) ||
+												reg.IsPartOf( "Argentrock Castle" ) ||
+												reg.IsPartOf( "the Daemon's Crag" ) ||
+												reg.IsPartOf( "the Hall of the Mountain King" ) ||
 												reg.IsPartOf( "the Depths of Carthax Lake" ) ) ){ worldLocation = "the Underworld"; }
 
 			else if ( map == Map.Sosaria && reg.IsPartOf( "the Chamber of Corruption" ) ){ worldLocation = "the Underworld"; }
 
-			else if ( map == Map.SavagedEmpire && ( reg.IsPartOf( "the Ancient Crash Site" ) || 
-												reg.IsPartOf( "the Obsidian Fortress" ) || 
+			else if ( map == Map.SavagedEmpire && ( reg.IsPartOf( "the Ancient Crash Site" ) ||
+												reg.IsPartOf( "the Obsidian Fortress" ) ||
 												reg.IsPartOf( "the Ancient Sky Ship" ) ) ){ worldLocation = "the Underworld"; }
 
 			else if ( map == Map.Underworld && ( reg.IsPartOf( "the Glacial Scar" ) ) ){ worldLocation = "the Isles of Dread"; }
@@ -87,10 +87,10 @@ namespace Server.Misc
 			else if ( map == Map.SerpentIsland || reg.IsPartOf( "the Vault of the Black Knight" ) ){ worldLocation = "the Serpent Island"; }
 
 			else if (
-						map == Map.SavagedEmpire && 
-						( reg.IsPartOf( "the Cimmeran Mines" ) || 
-						reg.IsPartOf( "the Ice Queen Fortress" ) || 
-						reg.IsPartOf( "the Scurvy Reef" ) || 
+						map == Map.SavagedEmpire &&
+						( reg.IsPartOf( "the Cimmeran Mines" ) ||
+						reg.IsPartOf( "the Ice Queen Fortress" ) ||
+						reg.IsPartOf( "the Scurvy Reef" ) ||
 						reg.IsPartOf( "the Blood Temple" ) ) ){ worldLocation = "the Isles of Dread"; }
 
 			else if ( map == Map.SavagedEmpire && reg.IsPartOf( "the Forgotten Halls" ) ){ worldLocation = "the Land of Sosaria"; }
@@ -379,26 +379,26 @@ namespace Server.Misc
 		{
 			Region reg = Region.Find( p, map );
 
-			if ( reg is WantedRegion || 
-			reg is SavageRegion || 
-			reg is VillageRegion || 
-			reg is UnderHouseRegion || 
-			reg is UmbraRegion || 
-			reg is TownRegion || 
-			reg is StartRegion || 
-			reg is SkyHomeDwelling || 
-			reg is SafeRegion || 
-			reg is ProtectedRegion || 
-			reg is PublicRegion || 
-			reg is PirateRegion || 
-			reg is BardTownRegion || 
-			reg is DawnRegion || 
-			reg is DungeonHomeRegion || 
-			reg is GargoyleRegion || 
-			reg is GuardedRegion || 
-			reg is HouseRegion || 
-			reg is LunaRegion || 
-			reg is MazeRegion || 
+			if ( reg is WantedRegion ||
+			reg is SavageRegion ||
+			reg is VillageRegion ||
+			reg is UnderHouseRegion ||
+			reg is UmbraRegion ||
+			reg is TownRegion ||
+			reg is StartRegion ||
+			reg is SkyHomeDwelling ||
+			reg is SafeRegion ||
+			reg is ProtectedRegion ||
+			reg is PublicRegion ||
+			reg is PirateRegion ||
+			reg is BardTownRegion ||
+			reg is DawnRegion ||
+			reg is DungeonHomeRegion ||
+			reg is GargoyleRegion ||
+			reg is GuardedRegion ||
+			reg is HouseRegion ||
+			reg is LunaRegion ||
+			reg is MazeRegion ||
 			reg is MoonCore  )
 				return true;
 
@@ -447,14 +447,14 @@ namespace Server.Misc
 
 		public static bool IsMainRegion( string region )
 		{
-			if ( 	region == "the Land of Lodoria" || 
-					region == "the Land of Sosaria" || 
-					region == "the Island of Umber Veil" || 
-					region == "the Land of Ambrosia" || 
-					region == "the Bottle World of Kuldar" || 
-					region == "the Underworld" || 
-					region == "the Serpent Island" || 
-					region == "the Isles of Dread" || 
+			if ( 	region == "the Land of Lodoria" ||
+					region == "the Land of Sosaria" ||
+					region == "the Island of Umber Veil" ||
+					region == "the Land of Ambrosia" ||
+					region == "the Bottle World of Kuldar" ||
+					region == "the Underworld" ||
+					region == "the Serpent Island" ||
+					region == "the Isles of Dread" ||
 					region == "the Savaged Empire" )
 				return true;
 
@@ -512,30 +512,30 @@ namespace Server.Misc
 		public static bool IsCrypt( Point3D p, Map map )
 		{
 			Region reg = Region.Find( p, map );
-			
-			if ( reg.IsPartOf( "the Crypt" ) || 
-				reg.IsPartOf( "the Lodoria Catacombs" ) || 
-				reg.IsPartOf( "the Crypts of Dracula" ) || 
-				reg.IsPartOf( "the Castle of Dracula" ) || 
-				reg.IsPartOf( "the Graveyard" ) || 
-				reg.IsPartOf( "Ravendark Woods" ) || 
-				reg.IsPartOf( "the Island of Dracula" ) || 
-				reg.IsPartOf( "the Village of Ravendark" ) || 
-				reg.IsPartOf( "the Black Magic Guild" ) || 
-				reg.IsPartOf( "the Lodoria Cemetery" ) || 
-				reg.IsPartOf( "the Lost Graveyard" ) || 
-				reg.IsPartOf( "the Mausoleum" ) || 
-				reg.IsPartOf( "the Dark Tombs" ) || 
-				reg.IsPartOf( "the Kuldar Cemetery" ) || 
-				reg.IsPartOf( "the Undercity of Umbra" ) || 
-				reg.IsPartOf( "the Cave of Souls" ) || 
-				reg.IsPartOf( "the Crypts of Kuldar" ) || 
-				reg.IsPartOf( "the Zealan Graveyard" ) || 
-				reg.IsPartOf( "Nightwood Fort" ) || 
-				reg.IsPartOf( "the Zealan Tombs" ) || 
-				reg.IsPartOf( "the Tombs" ) || 
-				reg.IsPartOf( "the Dungeon of the Lich King" ) || 
-				reg.IsPartOf( "the Tomb of Kazibal" ) || 
+
+			if ( reg.IsPartOf( "the Crypt" ) ||
+				reg.IsPartOf( "the Lodoria Catacombs" ) ||
+				reg.IsPartOf( "the Crypts of Dracula" ) ||
+				reg.IsPartOf( "the Castle of Dracula" ) ||
+				reg.IsPartOf( "the Graveyard" ) ||
+				reg.IsPartOf( "Ravendark Woods" ) ||
+				reg.IsPartOf( "the Island of Dracula" ) ||
+				reg.IsPartOf( "the Village of Ravendark" ) ||
+				reg.IsPartOf( "the Black Magic Guild" ) ||
+				reg.IsPartOf( "the Lodoria Cemetery" ) ||
+				reg.IsPartOf( "the Lost Graveyard" ) ||
+				reg.IsPartOf( "the Mausoleum" ) ||
+				reg.IsPartOf( "the Dark Tombs" ) ||
+				reg.IsPartOf( "the Kuldar Cemetery" ) ||
+				reg.IsPartOf( "the Undercity of Umbra" ) ||
+				reg.IsPartOf( "the Cave of Souls" ) ||
+				reg.IsPartOf( "the Crypts of Kuldar" ) ||
+				reg.IsPartOf( "the Zealan Graveyard" ) ||
+				reg.IsPartOf( "Nightwood Fort" ) ||
+				reg.IsPartOf( "the Zealan Tombs" ) ||
+				reg.IsPartOf( "the Tombs" ) ||
+				reg.IsPartOf( "the Dungeon of the Lich King" ) ||
+				reg.IsPartOf( "the Tomb of Kazibal" ) ||
 				reg.IsPartOf( "the Catacombs of Azerok" ) )
 				return true;
 
@@ -546,14 +546,14 @@ namespace Server.Misc
 		{
 			Region reg = Region.Find( p, map );
 
-			if ( reg.IsPartOf( "the Depths of Carthax Lake" ) || 
-			reg.IsPartOf( "the Storm Giant Lair" ) || 
-			reg.IsPartOf( "the Island of the Storm Giant" ) || 
-			reg.IsPartOf( "the Undersea Castle" ) || 
-			reg.IsPartOf( "the Scurvy Reef" ) || 
-			reg.IsPartOf( "the Caverns of Poseidon" ) || 
-			reg.IsPartOf( "the Cavern of the Deep Ones" ) || 
-			Worlds.GetMyWorld( map, p, p.X, p.Y ) == "the World of Atlantis" || 
+			if ( reg.IsPartOf( "the Depths of Carthax Lake" ) ||
+			reg.IsPartOf( "the Storm Giant Lair" ) ||
+			reg.IsPartOf( "the Island of the Storm Giant" ) ||
+			reg.IsPartOf( "the Undersea Castle" ) ||
+			reg.IsPartOf( "the Scurvy Reef" ) ||
+			reg.IsPartOf( "the Caverns of Poseidon" ) ||
+			reg.IsPartOf( "the Cavern of the Deep Ones" ) ||
+			Worlds.GetMyWorld( map, p, p.X, p.Y ) == "the World of Atlantis" ||
 			reg.IsPartOf( "the Flooded Temple" ) )
 				return true;
 
@@ -564,12 +564,12 @@ namespace Server.Misc
 		{
 			Region reg = Region.Find( p, map );
 
-			if ( reg.IsPartOf( "Anchor Rock Docks" ) || 
-			reg.IsPartOf( "Kraken Reef Docks" ) || 
-			reg.IsPartOf( "Savage Sea Docks" ) || 
-			reg.IsPartOf( "the Lankhmar Lighthouse" ) || 
-			reg.IsPartOf( "Serpent Sail Docks" ) || 
-			reg.IsPartOf( "the Forgotten Lighthouse" ) || 
+			if ( reg.IsPartOf( "Anchor Rock Docks" ) ||
+			reg.IsPartOf( "Kraken Reef Docks" ) ||
+			reg.IsPartOf( "Savage Sea Docks" ) ||
+			reg.IsPartOf( "the Lankhmar Lighthouse" ) ||
+			reg.IsPartOf( "Serpent Sail Docks" ) ||
+			reg.IsPartOf( "the Forgotten Lighthouse" ) ||
 			reg.IsPartOf( "the Port" ) )
 				return true;
 
@@ -580,11 +580,11 @@ namespace Server.Misc
 		{
 			Region reg = Region.Find( p, map );
 
-			if ( reg.IsPartOf( "the Fires of Hell" ) || 
-			reg.IsPartOf( "Morgaelin's Inferno" ) || 
-			reg.IsPartOf( "the City of Embers" ) || 
-			reg.IsPartOf( "the Cave of Fire" ) || 
-			reg.IsPartOf( "Steamfire Cave" ) || 
+			if ( reg.IsPartOf( "the Fires of Hell" ) ||
+			reg.IsPartOf( "Morgaelin's Inferno" ) ||
+			reg.IsPartOf( "the City of Embers" ) ||
+			reg.IsPartOf( "the Cave of Fire" ) ||
+			reg.IsPartOf( "Steamfire Cave" ) ||
 			reg.IsPartOf( "the Volcanic Cave" ) )
 				return true;
 
@@ -595,7 +595,7 @@ namespace Server.Misc
 		{
 			Region reg = Region.Find( p, map );
 
-			if ( reg.IsPartOf( "the Ancient Crash Site" ) || 
+			if ( reg.IsPartOf( "the Ancient Crash Site" ) ||
 			reg.IsPartOf( "the Ancient Sky Ship" ) )
 				return true;
 
@@ -606,12 +606,12 @@ namespace Server.Misc
 		{
 			Region reg = Region.Find( p, map );
 
-			if ( reg.IsPartOf( "the Glacial Scar" ) || 
-			reg.IsPartOf( "the Frozen Hells" ) || 
-			reg.IsPartOf( "the Ratmen Cave" ) || 
-			reg.IsPartOf( "the Ice Fiend Lair" ) || 
-			reg.IsPartOf( "the Ice Queen Fortress" ) || 
-			reg.IsPartOf( "the Frozen Dungeon" ) || 
+			if ( reg.IsPartOf( "the Glacial Scar" ) ||
+			reg.IsPartOf( "the Frozen Hells" ) ||
+			reg.IsPartOf( "the Ratmen Cave" ) ||
+			reg.IsPartOf( "the Ice Fiend Lair" ) ||
+			reg.IsPartOf( "the Ice Queen Fortress" ) ||
+			reg.IsPartOf( "the Frozen Dungeon" ) ||
 			reg.IsPartOf( "Frostwall Caverns" ) )
 				return true;
 
@@ -854,17 +854,17 @@ namespace Server.Misc
 			if ( m.Region.IsPartOf( "the Ship's Lower Deck" ) )
 				return false;
 
-			if (	s is GateTravelSpell || 
-						s is MushroomGatewaySpell || 
-						s is UndeadGraveyardGatewaySpell || 
-						s is HellsGateSpell || 
-						s is AstralTravel || 
-						s is ResearchEtherealTravel || 
-						s is NaturesPassageSpell || 
-						s is RecallSpell || 
-						s is TravelSpell || 
-						s is Elemental_Void_Spell || 
-						s is Elemental_Gate_Spell || 
+			if (	s is GateTravelSpell ||
+						s is MushroomGatewaySpell ||
+						s is UndeadGraveyardGatewaySpell ||
+						s is HellsGateSpell ||
+						s is AstralTravel ||
+						s is ResearchEtherealTravel ||
+						s is NaturesPassageSpell ||
+						s is RecallSpell ||
+						s is TravelSpell ||
+						s is Elemental_Void_Spell ||
+						s is Elemental_Gate_Spell ||
 						s is SacredJourneySpell )
 			{
 				return true;
@@ -1477,7 +1477,7 @@ namespace Server.Misc
 
 			if ( m.Map == Map.Atlantis )
 			{
-				indoors = true; 
+				indoors = true;
 			}
 			else if ( m.Map == Map.Sosaria )
 			{
@@ -2344,14 +2344,14 @@ namespace Server.Misc
 		public static bool IsMassSpawnZone( Map map, int x, int y )
 		{
 			if (
-				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.Lodor ) || 
-				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.Sosaria ) || 
-				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.SerpentIsland ) || 
-				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.IslesDread ) || 
-				( x >= 1125 && y >= 298 && x <= 1131 && y <= 305 && map == Map.SavagedEmpire ) || 
-				( x >= 5457 && y >= 3300 && x <= 5459 && y <= 3302 && map == Map.Sosaria ) || 
-				( x >= 608 && y >= 4090 && x <= 704 && y <= 4096 && map == Map.Sosaria ) || 
-				( x >= 6126 && y >= 827 && x <= 6132 && y <= 833 && map == Map.Sosaria ) || 
+				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.Lodor ) ||
+				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.Sosaria ) ||
+				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.SerpentIsland ) ||
+				( x >= 0 && y >= 0 && x <= 6 && y <= 6 && map == Map.IslesDread ) ||
+				( x >= 1125 && y >= 298 && x <= 1131 && y <= 305 && map == Map.SavagedEmpire ) ||
+				( x >= 5457 && y >= 3300 && x <= 5459 && y <= 3302 && map == Map.Sosaria ) ||
+				( x >= 608 && y >= 4090 && x <= 704 && y <= 4096 && map == Map.Sosaria ) ||
+				( x >= 6126 && y >= 827 && x <= 6132 && y <= 833 && map == Map.Sosaria ) ||
 				( x >= 2 && y >= 2 && x <= 5 && y <= 5 && map == Map.Underworld )
 				)
 				return true;
@@ -2430,9 +2430,9 @@ namespace Server.Misc
 			if ( map == Map.Sosaria && category == "forest" )
 			{
 				if (
-					( x >= 2089 && y >= 841 && x <= 2207 && y <= 1001 ) || 
-					( x >= 2162 && y >= 679 && x <= 2358 && y <= 1077 ) || 
-					( x >= 2335 && y >= 660 && x <= 2621 && y <= 1117 ) || 
+					( x >= 2089 && y >= 841 && x <= 2207 && y <= 1001 ) ||
+					( x >= 2162 && y >= 679 && x <= 2358 && y <= 1077 ) ||
+					( x >= 2335 && y >= 660 && x <= 2621 && y <= 1117 ) ||
 					( x >= 2610 && y >= 718 && x <= 2747 && y <= 1025 )
 				)
 					category = "jungle";

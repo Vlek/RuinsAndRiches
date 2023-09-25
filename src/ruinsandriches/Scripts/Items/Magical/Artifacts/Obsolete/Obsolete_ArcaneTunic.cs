@@ -8,7 +8,7 @@ namespace Server.Items
 		public override int InitMinHits{ get{ return 80; } }
 		public override int InitMaxHits{ get{ return 160; } }
 
-		public override int LabelNumber{ get{ return 1061101; } } // Arcane Tunic 
+		public override int LabelNumber{ get{ return 1061101; } } // Arcane Tunic
 
 		[Constructable]
 		public ArcaneTunic()
@@ -39,7 +39,7 @@ namespace Server.Items
 
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

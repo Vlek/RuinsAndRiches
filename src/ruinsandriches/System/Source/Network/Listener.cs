@@ -99,7 +99,7 @@ namespace Server.Network
 					SocketException se = (SocketException)e;
 
 					if ( se.ErrorCode == 10048 ) { // WSAEADDRINUSE
-						Console.WriteLine( "Listener Failed: {0}:{1} (In Use)", ipep.Address, ipep.Port ); 
+						Console.WriteLine( "Listener Failed: {0}:{1} (In Use)", ipep.Address, ipep.Port );
 					}
 					else if ( se.ErrorCode == 10049 ) { // WSAEADDRNOTAVAIL
 						Console.WriteLine( "Listener Failed: {0}:{1} (Unavailable)", ipep.Address, ipep.Port );

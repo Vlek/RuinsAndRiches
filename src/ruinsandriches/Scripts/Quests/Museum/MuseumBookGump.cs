@@ -1,18 +1,18 @@
 using System;
 using Server;
-using System.Collections; 
-using Server.Items; 
-using Server.Misc; 
-using Server.Network; 
-using Server.Regions; 
+using System.Collections;
+using Server.Items;
+using Server.Misc;
+using Server.Network;
+using Server.Regions;
 
-namespace Server.Gumps 
-{ 
-	public class MuseumBookGump : Gump 
+namespace Server.Gumps
+{
+	public class MuseumBookGump : Gump
 	{
-		private MuseumBook m_Book; 
+		private MuseumBook m_Book;
 
-		public MuseumBookGump( Mobile from, MuseumBook book, int page, int lookat ) : base( 50, 50 ) 
+		public MuseumBookGump( Mobile from, MuseumBook book, int page, int lookat ) : base( 50, 50 )
 		{
 			from.SendSound( 0x4A );
 			string plain = "#d1b2a6";
@@ -22,7 +22,7 @@ namespace Server.Gumps
 
 			if ( lookat > 60 || lookat < 1 ){ lookat = 1; }
 
-			m_Book = book; 
+			m_Book = book;
 
             this.Closable=true;
 			this.Disposable=true;
@@ -164,9 +164,9 @@ namespace Server.Gumps
 			}
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 			from.SendSound( 0x4A );
 
 			int turner = MuseumBook.GetNext( m_Book );

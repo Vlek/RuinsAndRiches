@@ -17,7 +17,7 @@ namespace Server.Items
 			SkillBonuses.SetValues( 0, SkillName.Marksmanship, 5 );
 			AccuracyLevel = WeaponAccuracyLevel.Supremely;
 			DamageLevel = WeaponDamageLevel.Vanq;
-			AosElementDamages.Fire = 100; 
+			AosElementDamages.Fire = 100;
 			WeaponAttributes.HitFireball = 100;
 			Server.Misc.Arty.ArtySetup( this, 10, "" );
 		}

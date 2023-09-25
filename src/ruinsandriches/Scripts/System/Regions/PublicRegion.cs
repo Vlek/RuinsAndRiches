@@ -82,19 +82,19 @@ namespace Server.Regions
 			base.OnExit( m );
 			if ( m is PlayerMobile )
 			{
-				if ( 	this.Name == "Xardok's Castle" || 
-						this.Name == "the Chamber of Tyball" || 
-						this.Name == "the Tower of Stoneguard" || 
-						this.Name == "the Basement" || 
-						this.Name == "the Ethereal Void" || 
-						this.Name == "the Tower of Mondain" || 
-						this.Name == "the Crypt of Morphius" || 
-						this.Name == "the Castle of Shadowguard" || 
-						this.Name == "the Guardian's Chamber" || 
-						this.Name == "the Tomb of Lethe" || 
-						this.Name == "Seggallions's Cave" || 
-						this.Name == "Garamon's Castle" || 
-						this.Name == "the Lyceum" || 
+				if ( 	this.Name == "Xardok's Castle" ||
+						this.Name == "the Chamber of Tyball" ||
+						this.Name == "the Tower of Stoneguard" ||
+						this.Name == "the Basement" ||
+						this.Name == "the Ethereal Void" ||
+						this.Name == "the Tower of Mondain" ||
+						this.Name == "the Crypt of Morphius" ||
+						this.Name == "the Castle of Shadowguard" ||
+						this.Name == "the Guardian's Chamber" ||
+						this.Name == "the Tomb of Lethe" ||
+						this.Name == "Seggallions's Cave" ||
+						this.Name == "Garamon's Castle" ||
+						this.Name == "the Lyceum" ||
 						this.Name == "the Druid's Glade" )
 				{
 					LoggingFunctions.LogRegions( m, this.Name, "exit" );

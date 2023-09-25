@@ -486,7 +486,7 @@ namespace Server.Misc
 			RegisterEntry("Gates", 2113, "Wood Light Gate EUE", "wooden gate", 150);
 			RegisterEntry("Gates", 2115, "Wood Light Gate EDE", "wooden gate", 150);
 			RegisterEntry("Gates", 2117, "Wood Light Gate EDW", "wooden gate", 150);
-			RegisterEntry("Gates", 2119, "Wood Light Gate EUW", "wooden gate", 150); 
+			RegisterEntry("Gates", 2119, "Wood Light Gate EUW", "wooden gate", 150);
 
 			int cycle = 0;
 			while ( cycle < 18 )

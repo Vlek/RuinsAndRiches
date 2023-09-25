@@ -1,21 +1,21 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
+using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a pirate corpse" )] 
+	[CorpseName( "a pirate corpse" )]
 
-	public class PirateCaptain : BaseCreature 
+	public class PirateCaptain : BaseCreature
 	{
-		[Constructable] 
-		public PirateCaptain() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
-		{ 
+		[Constructable]
+		public PirateCaptain() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		{
 			SpeechHue = Utility.RandomTalkHue();
-			Hue = Utility.RandomSkinColor(); 
+			Hue = Utility.RandomSkinColor();
 
             if (this.Female = Utility.RandomBool())
             {
@@ -45,14 +45,14 @@ namespace Server.Mobiles
 
             AddItem( new ElvenBoots( 0x83A ) );
             Item armor = new LeatherChest(); armor.Hue = 0x83A; AddItem( armor );
-			AddItem( new FancyShirt( 0 ) );	
+			AddItem( new FancyShirt( 0 ) );
             AddItem( new PirateHat( 0 ) );
 
             switch ( Utility.Random( 2 ))
 			{
 				case 0: AddItem( new LongPants ( 0xBB4 ) ); break;
 				case 1: AddItem( new ShortPants ( 0xBB4 ) ); break;
-			}				
+			}
 
 			SetStr( 386, 400 );
 			SetDex( 151, 165 );
@@ -95,20 +95,20 @@ namespace Server.Mobiles
 		public override bool AlwaysAttackable{ get{ return true; } }
 		public override int TreasureMapLevel{ get{ return Utility.RandomMinMax( 1, 6 ); } }
 
-		public PirateCaptain( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
+		public PirateCaptain( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
+	}
 }

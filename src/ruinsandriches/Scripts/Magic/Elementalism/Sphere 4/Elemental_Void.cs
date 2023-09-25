@@ -192,7 +192,7 @@ namespace Server.Spells.Elementalism
 					from.Send( new MessageLocalized( from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 502357, from.Name, "" ) ); // I can not recall from that object.
 				}
 			}
-			
+
 			protected override void OnNonlocalTarget( Mobile from, object o )
 			{
 			}

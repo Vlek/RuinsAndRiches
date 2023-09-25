@@ -59,7 +59,7 @@ namespace Server.Misc
 				if ( SameArea( from, mSp ) == true )
 				{
 					distchk++;
-					lunargates.Add( mSp ); 
+					lunargates.Add( mSp );
 					if ( HowFar( from.X, from.Y, mSp.X, mSp.Y ) < TheClosest ){ TheClosest = HowFar( from.X, from.Y, mSp.X, mSp.Y ); IsClosest = distchk; }
 				}
 			}

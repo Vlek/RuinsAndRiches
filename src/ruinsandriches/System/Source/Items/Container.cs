@@ -1164,7 +1164,7 @@ namespace Server.Items
 
 		public List<T> FindItemsByType<T>( Predicate<T> predicate ) where T : Item
 		{
-			return FindItemsByType<T>( true, predicate ); 
+			return FindItemsByType<T>( true, predicate );
 		}
 
 		public List<T> FindItemsByType<T>( bool recurse, Predicate<T> predicate ) where T : Item
@@ -1173,7 +1173,7 @@ namespace Server.Items
 				m_FindItemsList.Clear();
 
 			List<T> list = new List<T>();
-			
+
 			RecurseFindItemsByType<T>( this, recurse, list, predicate );
 
 			return list;
@@ -1631,7 +1631,7 @@ namespace Server.Items
 				to.Send( new ContainerDisplayHS( this ) );
 			else
 				to.Send( new ContainerDisplay( this ) );
-			
+
 			if ( ns.ContainerGridLines )
 				to.Send( new ContainerContent6017( to, this ) );
 			else

@@ -211,7 +211,7 @@ namespace Server.Engines.Craft
 				type = craftResource.ItemType;
 				nameString = craftResource.NameString;
 				nameNumber = craftResource.NameNumber;
-				
+
 				// Resource Mutation
 				if ( type == res.ResType && resIndex > -1 )
 				{

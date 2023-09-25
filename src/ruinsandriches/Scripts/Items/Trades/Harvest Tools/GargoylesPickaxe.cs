@@ -25,7 +25,7 @@ namespace Server.Items
 		public override int OldMinDamage{ get{ return 1; } }
 		public override int OldMaxDamage{ get{ return 15; } }
 		public override int OldSpeed{ get{ return 35; } }
-		
+
 		public override int InitMinHits{ get{ return 31; } }
 		public override int InitMaxHits{ get{ return 60; } }
 
@@ -60,7 +60,7 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			
+
 			if ( Hue == 0x973 )
 				Hue = 0x0;
 		}

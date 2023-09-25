@@ -38,7 +38,7 @@ namespace Server.Items
                 foreach (AttributeHandler handler in AttributeHandler.Definitions)
                 {
                     int attr = handler.Upgrade(ItemToUpgrade, true);
-                    
+
                     if (attr > 0)
                         CurrentAttributeCount++;
 

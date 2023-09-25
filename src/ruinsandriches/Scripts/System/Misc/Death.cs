@@ -24,7 +24,7 @@ namespace Server.Gumps
 
 		public ResurrectCostGump( Mobile owner, int healer ) : base( 50, 50 )
 		{
-			owner.SendSound( 0x0F8 ); 
+			owner.SendSound( 0x0F8 );
 			string color = "#b7cbda";
 
 			m_Healer = healer;
@@ -267,7 +267,7 @@ namespace Server.Gumps
 		public override void OnResponse( NetState state, RelayInfo info )
 		{
 			Mobile from = state.Mobile;
-			from.SendSound( 0x0F8 ); 
+			from.SendSound( 0x0F8 );
 
 			from.CloseGump( typeof( ResurrectCostGump ) );
 
@@ -318,10 +318,10 @@ namespace Server.Gumps
 	}
 }
 
-namespace Server 
-{ 
+namespace Server
+{
 	public class AutoRessurection
-	{ 
+	{
 		public static void Initialize()
 		{
 			EventSink.PlayerDeath += new PlayerDeathEventHandler(EventSink_PlayerDeath);
@@ -395,7 +395,7 @@ namespace Server.Gumps
 				case 3:	sGrave = "YOUR LIFE HAS ENDED!";	break;
 			}
 
-			from.SendSound( 0x0F8 ); 
+			from.SendSound( 0x0F8 );
 			string color = "#da3f3f";
 
             this.Closable=true;
@@ -441,7 +441,7 @@ namespace Server.Gumps
 			Mobile from = state.Mobile;
 
 			from.CloseGump( typeof( ResurrectNowGump ) );
-			from.SendSound( 0x0F8 ); 
+			from.SendSound( 0x0F8 );
 
 			if ( info.ButtonID == 1 && !from.Alive )
 			{
@@ -562,7 +562,7 @@ namespace Server.Misc
 				if ( SameArea( from, healer ) == true && WillResurrectMe == true )
 				{
 					distchk++;
-					healers.Add( healer ); 
+					healers.Add( healer );
 					if ( HowFar( from.X, from.Y, healer.X, healer.Y ) < TheClosest ){ TheClosest = HowFar( from.X, from.Y, healer.X, healer.Y ); IsClosest = distchk; }
 				}
 			}
@@ -585,7 +585,7 @@ namespace Server.Misc
 					if ( SameArea( from, mSp ) == true )
 					{
 						distchk++;
-						healers.Add( mSp ); 
+						healers.Add( mSp );
 						if ( HowFar( from.X, from.Y, mSp.X, mSp.Y ) < TheClosest ){ TheClosest = HowFar( from.X, from.Y, mSp.X, mSp.Y ); IsClosest = distchk; }
 					}
 				}

@@ -19,7 +19,7 @@ namespace Server.Mobiles
 		{
 			Name = "a construct";
 			Body = Utility.RandomList( 752, 358 );
-			
+
 			Item ore = new CopperIngot( Utility.RandomMinMax( 13, 21 ) ); ore.Delete();
 
 			double scalar = 1.0;

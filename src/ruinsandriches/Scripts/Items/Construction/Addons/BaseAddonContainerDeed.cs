@@ -11,7 +11,7 @@ namespace Server.Items
 	public abstract class BaseAddonContainerDeed : Item, ICraftable
 	{
 		public abstract BaseAddonContainer Addon{ get; }
-		
+
 		private CraftResource m_Resource;
 
 		[CommandProperty( AccessLevel.GameMaster )]
@@ -24,7 +24,7 @@ namespace Server.Items
 				{
 					m_Resource = value;
 					Hue = CraftResources.GetHue( m_Resource );
-					
+
 					InvalidateProperties();
 				}
 			}
@@ -143,7 +143,7 @@ namespace Server.Items
 						from.SendLocalizedMessage( 500271 ); // You cannot build near the door.
 					else if ( res == AddonFitResult.NoWall )
 						from.SendLocalizedMessage( 500268 ); // This object needs to be mounted on something.
-					
+
 					if ( res == AddonFitResult.Valid )
 					{
 						m_Deed.Delete();

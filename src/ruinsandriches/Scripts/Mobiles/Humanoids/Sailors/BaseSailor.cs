@@ -56,7 +56,7 @@ namespace Server.Mobiles
 			FacialHairHue = HairHue;
 
             AddItem( new ElvenBoots( 0x6F8 ) );
-			AddItem( new FancyShirt( Utility.RandomColor(0) ) );	
+			AddItem( new FancyShirt( Utility.RandomColor(0) ) );
 
             switch ( Utility.Random( 2 ))
 			{
@@ -88,10 +88,10 @@ namespace Server.Mobiles
   			if( boatspawn == false )
   			{
 				Map map = this.Map;
-				
+
   				if ( map == null )
   					return;
-  					
+
 				boat = new TinyBoat();
 				EmoteHue = boat.Serial;
 				Point3D loc = this.Location;
@@ -107,7 +107,7 @@ namespace Server.Mobiles
         	if ( boat == null )
 			{
 				return;
-			} 
+			}
 
 			if ( DateTime.Now >= m_NextPickup && ( this is BoatSailorBard || this is BoatPirateBard || this is ElfBoatSailorBard || this is ElfBoatPirateBard ) )
 			{
@@ -123,7 +123,7 @@ namespace Server.Mobiles
 			}
 			base.OnThink();
 		}
-		
+
 		public override void OnDelete()
 		{
 			Server.Multis.BaseBoat.SinkShip( boat, this );
@@ -137,7 +137,7 @@ namespace Server.Mobiles
 			SunkenShip ShipWreck = Server.Multis.BaseBoat.CreateSunkenShip( this, this.LastKiller );
 			ShipWreck.DropItem( new HarpoonRope( Utility.RandomMinMax( 10, 30 ) ) );
 
-			return base.OnBeforeDeath();   
+			return base.OnBeforeDeath();
 		}
 
 		public BaseSailor( Serial serial ) : base( serial )

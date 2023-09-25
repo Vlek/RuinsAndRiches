@@ -143,7 +143,7 @@ namespace Server.Items
 						if( !item.IsChildOf(from.Backpack) )
 						{
 							from.SendMessage("The item must be in your pack.");
-						}	
+						}
 						else
 						{
 							item.Hue = m_Tub.DyedHue;

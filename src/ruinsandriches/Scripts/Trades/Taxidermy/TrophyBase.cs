@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -32,17 +32,17 @@ namespace Server.Items
             list.Add( 1049644, "Single Click To Use");
         }
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
 			list.Add( new TrophyGump( from, this ) );
-		} 
+		}
 
 		public class TrophyGump : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private TrophyBase m_Trophy;
-			
+
 			public TrophyGump( Mobile from, TrophyBase trophy ) : base( 6132, 3 )
 			{
 				m_Mobile = from;
@@ -53,7 +53,7 @@ namespace Server.Items
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					m_Mobile.SendMessage("What corpse do you want to have mounted?");
@@ -134,19 +134,19 @@ namespace Server.Items
 							int trophyColor = c.Hue;
 							int trophyID = 0;
 
-							if ( ( typeof( AncientWyrm ) == c.Owner.GetType() ) || 
-							( typeof( CaddelliteDragon ) == c.Owner.GetType() ) || 
-							( typeof( DragonKing ) == c.Owner.GetType() ) || 
-							( typeof( SlasherOfVoid ) == c.Owner.GetType() ) || 
-							( typeof( VolcanicDragon ) == c.Owner.GetType() ) || 
-							( typeof( AshDragon ) == c.Owner.GetType() ) || 
-							( typeof( BottleDragon ) == c.Owner.GetType() ) || 
-							( typeof( RadiationDragon ) == c.Owner.GetType() ) || 
-							( typeof( CrystalDragon ) == c.Owner.GetType() ) || 
-							( typeof( VoidDragon ) == c.Owner.GetType() ) || 
-							( typeof( ElderDragon ) == c.Owner.GetType() ) || 
-							( typeof( DeepSeaDragon ) == c.Owner.GetType() ) || 
-							( typeof( ShadowWyrm ) == c.Owner.GetType() ) || 
+							if ( ( typeof( AncientWyrm ) == c.Owner.GetType() ) ||
+							( typeof( CaddelliteDragon ) == c.Owner.GetType() ) ||
+							( typeof( DragonKing ) == c.Owner.GetType() ) ||
+							( typeof( SlasherOfVoid ) == c.Owner.GetType() ) ||
+							( typeof( VolcanicDragon ) == c.Owner.GetType() ) ||
+							( typeof( AshDragon ) == c.Owner.GetType() ) ||
+							( typeof( BottleDragon ) == c.Owner.GetType() ) ||
+							( typeof( RadiationDragon ) == c.Owner.GetType() ) ||
+							( typeof( CrystalDragon ) == c.Owner.GetType() ) ||
+							( typeof( VoidDragon ) == c.Owner.GetType() ) ||
+							( typeof( ElderDragon ) == c.Owner.GetType() ) ||
+							( typeof( DeepSeaDragon ) == c.Owner.GetType() ) ||
+							( typeof( ShadowWyrm ) == c.Owner.GetType() ) ||
 							( typeof( ZombieDragon ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x21FB;
@@ -154,18 +154,18 @@ namespace Server.Items
 								else if (typeof( DragonKing ) == c.Owner.GetType() ){ trophyColor = 0xA65; }
 							}
 							else if ( ( typeof( Dragons ) == c.Owner.GetType() ) ||
-							( typeof( RidingDragon ) == c.Owner.GetType() ) || 
-							( typeof( GemDragon ) == c.Owner.GetType() ) || 
-							( typeof( GhostDragyn ) == c.Owner.GetType() ) || 
-							( typeof( GrayDragon ) == c.Owner.GetType() ) || 
-							( typeof( BlueDragon ) == c.Owner.GetType() ) || 
-							( typeof( MetalDragon ) == c.Owner.GetType() ) || 
-							( typeof( Dragon ) == c.Owner.GetType() ) || 
-							( typeof( StoneDragon ) == c.Owner.GetType() ) || 
-							( typeof( WhiteDragon ) == c.Owner.GetType() ) || 
-							( typeof( BlackDragon ) == c.Owner.GetType() ) || 
-							( typeof( AsianDragon ) == c.Owner.GetType() ) || 
-							( typeof( GreenDragon ) == c.Owner.GetType() ) || 
+							( typeof( RidingDragon ) == c.Owner.GetType() ) ||
+							( typeof( GemDragon ) == c.Owner.GetType() ) ||
+							( typeof( GhostDragyn ) == c.Owner.GetType() ) ||
+							( typeof( GrayDragon ) == c.Owner.GetType() ) ||
+							( typeof( BlueDragon ) == c.Owner.GetType() ) ||
+							( typeof( MetalDragon ) == c.Owner.GetType() ) ||
+							( typeof( Dragon ) == c.Owner.GetType() ) ||
+							( typeof( StoneDragon ) == c.Owner.GetType() ) ||
+							( typeof( WhiteDragon ) == c.Owner.GetType() ) ||
+							( typeof( BlackDragon ) == c.Owner.GetType() ) ||
+							( typeof( AsianDragon ) == c.Owner.GetType() ) ||
+							( typeof( GreenDragon ) == c.Owner.GetType() ) ||
 							( typeof( DragonGolem ) == c.Owner.GetType() ) )
 							{
 								if ( typeof( Dragon ) == c.Owner.GetType() ){ trophyColor = 0x9A2; }
@@ -175,140 +175,140 @@ namespace Server.Items
 							{
 								if ( c.Amount == 12 ){ trophyID = 0x270D; }
 								else if ( c.Amount == 46 ){ trophyID = 0x270D; }
-								else { trophyID = 0x33FD; }	
+								else { trophyID = 0x33FD; }
 							}
-							else if ( ( typeof( NightWyrm ) == c.Owner.GetType() ) || 
-							( typeof( OnyxWyrm ) == c.Owner.GetType() ) || 
-							( typeof( EmeraldWyrm ) == c.Owner.GetType() ) || 
-							( typeof( AmethystWyrm ) == c.Owner.GetType() ) || 
-							( typeof( SapphireWyrm ) == c.Owner.GetType() ) || 
-							( typeof( GarnetWyrm ) == c.Owner.GetType() ) || 
-							( typeof( TopazWyrm ) == c.Owner.GetType() ) || 
-							( typeof( RubyWyrm ) == c.Owner.GetType() ) || 
-							( typeof( SpinelWyrm ) == c.Owner.GetType() ) || 
-							( typeof( QuartzWyrm ) == c.Owner.GetType() ) || 
-							( typeof( JungleWyrm ) == c.Owner.GetType() ) || 
-							( typeof( DesertWyrm ) == c.Owner.GetType() ) || 
-							( typeof( MountainWyrm ) == c.Owner.GetType() ) || 
-							( typeof( IceDragon ) == c.Owner.GetType() ) || 
-							( typeof( LavaDragon ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( NightWyrm ) == c.Owner.GetType() ) ||
+							( typeof( OnyxWyrm ) == c.Owner.GetType() ) ||
+							( typeof( EmeraldWyrm ) == c.Owner.GetType() ) ||
+							( typeof( AmethystWyrm ) == c.Owner.GetType() ) ||
+							( typeof( SapphireWyrm ) == c.Owner.GetType() ) ||
+							( typeof( GarnetWyrm ) == c.Owner.GetType() ) ||
+							( typeof( TopazWyrm ) == c.Owner.GetType() ) ||
+							( typeof( RubyWyrm ) == c.Owner.GetType() ) ||
+							( typeof( SpinelWyrm ) == c.Owner.GetType() ) ||
+							( typeof( QuartzWyrm ) == c.Owner.GetType() ) ||
+							( typeof( JungleWyrm ) == c.Owner.GetType() ) ||
+							( typeof( DesertWyrm ) == c.Owner.GetType() ) ||
+							( typeof( MountainWyrm ) == c.Owner.GetType() ) ||
+							( typeof( IceDragon ) == c.Owner.GetType() ) ||
+							( typeof( LavaDragon ) == c.Owner.GetType() ) ||
 							( typeof( WhiteWyrm ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x393B;
 							}
-							else if ( ( typeof( Lizardman ) == c.Owner.GetType() ) || 
-							( typeof( Reptaur ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Lizardman ) == c.Owner.GetType() ) ||
+							( typeof( Reptaur ) == c.Owner.GetType() ) ||
 							( typeof( LizardmanArcher ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x393F;
 							}
-							else if ( ( typeof( Sakleth ) == c.Owner.GetType() ) || 
-							( typeof( MutantLizardman ) == c.Owner.GetType() ) || 
-							( typeof( Grathek ) == c.Owner.GetType() ) || 
-							( typeof( Sleestax ) == c.Owner.GetType() ) || 
-							( typeof( SaklethArcher ) == c.Owner.GetType() ) || 
-							( typeof( SaklethMage ) == c.Owner.GetType() ) || 
-							( typeof( Reptalar ) == c.Owner.GetType() ) || 
-							( typeof( ReptalarShaman ) == c.Owner.GetType() ) || 
-							( typeof( ReptalarChieftain ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Sakleth ) == c.Owner.GetType() ) ||
+							( typeof( MutantLizardman ) == c.Owner.GetType() ) ||
+							( typeof( Grathek ) == c.Owner.GetType() ) ||
+							( typeof( Sleestax ) == c.Owner.GetType() ) ||
+							( typeof( SaklethArcher ) == c.Owner.GetType() ) ||
+							( typeof( SaklethMage ) == c.Owner.GetType() ) ||
+							( typeof( Reptalar ) == c.Owner.GetType() ) ||
+							( typeof( ReptalarShaman ) == c.Owner.GetType() ) ||
+							( typeof( ReptalarChieftain ) == c.Owner.GetType() ) ||
 							( typeof( SaklethArcher ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x33AB;
 							}
-							else if ( ( typeof( Goblin ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Goblin ) == c.Owner.GetType() ) ||
 							( typeof( GoblinArcher ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x3937;
 							}
-							else if ( ( typeof( Ratman ) == c.Owner.GetType() ) || 
-							( typeof( RatmanMage ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Ratman ) == c.Owner.GetType() ) ||
+							( typeof( RatmanMage ) == c.Owner.GetType() ) ||
 							( typeof( RatmanArcher ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x392B;
 							}
 							else if ( ( typeof( Bugbear ) == c.Owner.GetType() ) ){ trophyID = 0x3935; }
-							else if ( ( typeof( MinotaurCaptain ) == c.Owner.GetType() ) || 
-							( typeof( RottingMinotaur ) == c.Owner.GetType() ) || 
-							( typeof( MutantMinotaur ) == c.Owner.GetType() ) || 
-							( typeof( MinotaurSmall ) == c.Owner.GetType() ) || 
-							( typeof( MinotaurScout ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( MinotaurCaptain ) == c.Owner.GetType() ) ||
+							( typeof( RottingMinotaur ) == c.Owner.GetType() ) ||
+							( typeof( MutantMinotaur ) == c.Owner.GetType() ) ||
+							( typeof( MinotaurSmall ) == c.Owner.GetType() ) ||
+							( typeof( MinotaurScout ) == c.Owner.GetType() ) ||
 							( typeof( Minotaur ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x3944;
 							}
-							else if ( ( typeof( Cyclops ) == c.Owner.GetType() ) || 
-							( typeof( ZornTheBlacksmith ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Cyclops ) == c.Owner.GetType() ) ||
+							( typeof( ZornTheBlacksmith ) == c.Owner.GetType() ) ||
 							( typeof( ShamanicCyclops ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x3931;
 							}
-							else if ( ( typeof( StoneGiant ) == c.Owner.GetType() ) || 
-							( typeof( IceGiant ) == c.Owner.GetType() ) || 
-							( typeof( LavaGiant ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( StoneGiant ) == c.Owner.GetType() ) ||
+							( typeof( IceGiant ) == c.Owner.GetType() ) ||
+							( typeof( LavaGiant ) == c.Owner.GetType() ) ||
 							( typeof( MountainGiant ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x3912;
 							}
 							else if ( typeof( UndeadGiant ) == c.Owner.GetType() ){ trophyID = 0x21F9; }
-							else if ( ( typeof( Titan ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Titan ) == c.Owner.GetType() ) ||
 							( typeof( ElderTitan ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x21F7;
 							}
-							else if ( ( typeof( TundraOgre ) == c.Owner.GetType() ) || 
-							( typeof( OgreMagi ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( TundraOgre ) == c.Owner.GetType() ) ||
+							( typeof( OgreMagi ) == c.Owner.GetType() ) ||
 							( typeof( Ogre ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x33E1;
 							}
-							else if ( ( typeof( Ettin ) == c.Owner.GetType() ) || 
-							( typeof( ArcticEttin ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Ettin ) == c.Owner.GetType() ) ||
+							( typeof( ArcticEttin ) == c.Owner.GetType() ) ||
 							( typeof( AncientEttin ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x393D;
 							}
 							else if ( typeof( EttinShaman ) == c.Owner.GetType() ){ trophyID = 0x33A7; }
-							else if ( ( typeof( HillGiant ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( HillGiant ) == c.Owner.GetType() ) ||
 							( typeof( HillGiantShaman ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x33A9;
 							}
-							else if ( ( typeof( FireGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( Gargoyle ) == c.Owner.GetType() ) || 
-							( typeof( AncientGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( GhostGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( MutantGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( CosmicGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( SpectralGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( ZombieGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( SkeletalGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( GargoyleBones ) == c.Owner.GetType() ) || 
-							( typeof( GargoyleMarble ) == c.Owner.GetType() ) || 
-							( typeof( StygianGargoyle ) == c.Owner.GetType() ) || 
-							( typeof( StygianGargoyleLord ) == c.Owner.GetType() ) || 
-							( typeof( CodexGargoyleA ) == c.Owner.GetType() ) || 
-							( typeof( CodexGargoyleB ) == c.Owner.GetType() ) || 
-							( typeof( GargoyleWarrior ) == c.Owner.GetType() ) || 
-							( typeof( StoneGargoyle ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( FireGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( Gargoyle ) == c.Owner.GetType() ) ||
+							( typeof( AncientGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( GhostGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( MutantGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( CosmicGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( SpectralGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( ZombieGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( SkeletalGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( GargoyleBones ) == c.Owner.GetType() ) ||
+							( typeof( GargoyleMarble ) == c.Owner.GetType() ) ||
+							( typeof( StygianGargoyle ) == c.Owner.GetType() ) ||
+							( typeof( StygianGargoyleLord ) == c.Owner.GetType() ) ||
+							( typeof( CodexGargoyleA ) == c.Owner.GetType() ) ||
+							( typeof( CodexGargoyleB ) == c.Owner.GetType() ) ||
+							( typeof( GargoyleWarrior ) == c.Owner.GetType() ) ||
+							( typeof( StoneGargoyle ) == c.Owner.GetType() ) ||
 							( typeof( ShadowDemon ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x3933;
 							}
-							else if ( ( typeof( GargoyleRuby ) == c.Owner.GetType() ) || 
-							( typeof( GargoyleEmerald ) == c.Owner.GetType() ) || 
-							( typeof( GargoyleAmethyst ) == c.Owner.GetType() ) || 
-							( typeof( GargoyleSapphire ) == c.Owner.GetType() ) || 
-							( typeof( Tarjan ) == c.Owner.GetType() ) || 
-							( typeof( BloodDemigod ) == c.Owner.GetType() ) || 
-							( typeof( Xurtzar ) == c.Owner.GetType() ) || 
-							( typeof( AbysmalDaemon ) == c.Owner.GetType() ) || 
-							( typeof( DeepSeaDevil ) == c.Owner.GetType() ) || 
-							( typeof( Devil ) == c.Owner.GetType() ) || 
-							( typeof( BloodDemon ) == c.Owner.GetType() ) || 
-							( typeof( Demon ) == c.Owner.GetType() ) || 
-							( typeof( FireDemon ) == c.Owner.GetType() ) || 
-							( typeof( Daemonic ) == c.Owner.GetType() ) || 
-							( typeof( DaemonTemplate ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( GargoyleRuby ) == c.Owner.GetType() ) ||
+							( typeof( GargoyleEmerald ) == c.Owner.GetType() ) ||
+							( typeof( GargoyleAmethyst ) == c.Owner.GetType() ) ||
+							( typeof( GargoyleSapphire ) == c.Owner.GetType() ) ||
+							( typeof( Tarjan ) == c.Owner.GetType() ) ||
+							( typeof( BloodDemigod ) == c.Owner.GetType() ) ||
+							( typeof( Xurtzar ) == c.Owner.GetType() ) ||
+							( typeof( AbysmalDaemon ) == c.Owner.GetType() ) ||
+							( typeof( DeepSeaDevil ) == c.Owner.GetType() ) ||
+							( typeof( Devil ) == c.Owner.GetType() ) ||
+							( typeof( BloodDemon ) == c.Owner.GetType() ) ||
+							( typeof( Demon ) == c.Owner.GetType() ) ||
+							( typeof( FireDemon ) == c.Owner.GetType() ) ||
+							( typeof( Daemonic ) == c.Owner.GetType() ) ||
+							( typeof( DaemonTemplate ) == c.Owner.GetType() ) ||
 							( typeof( Daemon ) == c.Owner.GetType() ) )
 							{
 								if (typeof( DeepSeaDevil ) == c.Owner.GetType() ){ trophyColor = 1365; }
@@ -318,45 +318,45 @@ namespace Server.Items
 							else if ( typeof( Balron ) == c.Owner.GetType() ){ trophyID = 0x5681; }
 							else if ( typeof( Archfiend ) == c.Owner.GetType() ){ trophyID = 0x5681; trophyColor = 0xB1E; }
 							else if ( typeof( Fiend ) == c.Owner.GetType() ){ trophyID = 0x567F; trophyColor = 0xB1E; }
-							else if ( ( typeof( GargoyleOnyx ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( GargoyleOnyx ) == c.Owner.GetType() ) ||
 							( typeof( BlackGateDemon ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x392C; trophyColor = 0;
 							}
-							else if ( ( typeof( BrownBear ) == c.Owner.GetType() ) || 
-							( typeof( GrizzlyBearRiding ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( BrownBear ) == c.Owner.GetType() ) ||
+							( typeof( GrizzlyBearRiding ) == c.Owner.GetType() ) ||
 							( typeof( GrizzlyBear ) == c.Owner.GetType() ) )
 							{
-								trophyID = 0x1E67; 
+								trophyID = 0x1E67;
 							}
-							else if ( ( typeof( SabretoothBear ) == c.Owner.GetType() ) || 
-							( typeof( SabretoothBearRiding ) == c.Owner.GetType() ) || 
-							( typeof( DeathBear ) == c.Owner.GetType() ) || 
-							( typeof( DireBear ) == c.Owner.GetType() ) || 
-							( typeof( ElderBrownBear ) == c.Owner.GetType() ) || 
-							( typeof( ElderBrownBearRiding ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( SabretoothBear ) == c.Owner.GetType() ) ||
+							( typeof( SabretoothBearRiding ) == c.Owner.GetType() ) ||
+							( typeof( DeathBear ) == c.Owner.GetType() ) ||
+							( typeof( DireBear ) == c.Owner.GetType() ) ||
+							( typeof( ElderBrownBear ) == c.Owner.GetType() ) ||
+							( typeof( ElderBrownBearRiding ) == c.Owner.GetType() ) ||
 							( typeof( GreatBear ) == c.Owner.GetType() ) )
 							{
-								trophyID = 0x339B; 
+								trophyID = 0x339B;
 							}
 							else if ( typeof( CaveBear ) == c.Owner.GetType() ){ trophyID = 0x339D; }
 							else if ( typeof( CaveBearRiding ) == c.Owner.GetType() ){ trophyID = 0x339D; }
-							else if ( ( typeof( ElderBlackBear ) == c.Owner.GetType() ) || 
-							( typeof( ElderBlackBearRiding ) == c.Owner.GetType() ) || 
-							( typeof( BlackBear ) == c.Owner.GetType() ) || 
-							( typeof( SabreclawCub ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( ElderBlackBear ) == c.Owner.GetType() ) ||
+							( typeof( ElderBlackBearRiding ) == c.Owner.GetType() ) ||
+							( typeof( BlackBear ) == c.Owner.GetType() ) ||
+							( typeof( SabreclawCub ) == c.Owner.GetType() ) ||
 							( typeof( KodiakBear ) == c.Owner.GetType() ) )
 							{
-								trophyID = 0x3399; 
+								trophyID = 0x3399;
 								trophyColor = 0;
 							}
 							else if ( typeof( PolarBear ) == c.Owner.GetType() ){ trophyID = 0x1E6C; trophyColor = 0; }
 							else if ( typeof( ElderPolarBear ) == c.Owner.GetType() ){ trophyID = 0x339F; }
 							else if ( typeof( ElderPolarBearRiding ) == c.Owner.GetType() ){ trophyID = 0x339F; }
-							else if ( ( typeof( OgreLord ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( OgreLord ) == c.Owner.GetType() ) ||
 							( typeof( ArcticOgreLord ) == c.Owner.GetType() ) )
 							{
-								trophyID = 0x3378; 
+								trophyID = 0x3378;
 							}
 							else if ( typeof( Cerberus ) == c.Owner.GetType() ){ trophyID = 0x335A; }
 							else if ( typeof( Drake ) == c.Owner.GetType() ){ trophyID = 0x3368; }
@@ -373,33 +373,33 @@ namespace Server.Items
 							else if ( typeof( StarGiant ) == c.Owner.GetType() ){ trophyColor = 0xB73; trophyID = 0x3374; }
 							else if ( typeof( DemonOfTheSea ) == c.Owner.GetType() ){ trophyID = 0x337D; }
 							else if ( typeof( DragonGhost ) == c.Owner.GetType() ){ trophyID = 0x337F; }
-							else if ( ( typeof( Tiger ) == c.Owner.GetType() ) || 
-							( typeof( SabretoothTiger ) == c.Owner.GetType() ) || 
-							( typeof( SabretoothTigerRiding ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Tiger ) == c.Owner.GetType() ) ||
+							( typeof( SabretoothTiger ) == c.Owner.GetType() ) ||
+							( typeof( SabretoothTigerRiding ) == c.Owner.GetType() ) ||
 							( typeof( TigerRiding ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x3389;
 								trophyColor = 0;
 							}
-							else if ( ( typeof( WhiteTiger ) == c.Owner.GetType() ) || ( typeof( WhiteTigerRiding ) == c.Owner.GetType() ) || ( typeof( PredatorHellCatRiding ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( WhiteTiger ) == c.Owner.GetType() ) || ( typeof( WhiteTigerRiding ) == c.Owner.GetType() ) || ( typeof( PredatorHellCatRiding ) == c.Owner.GetType() ) ||
 							( typeof( PredatorHellCat ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x3389;
 							}
-							else if ( ( typeof( Lion ) == c.Owner.GetType() ) || 
-							( typeof( LionRiding ) == c.Owner.GetType() ) || 
-							( typeof( SnowLion ) == c.Owner.GetType() ) || 
-							( typeof( Manticore ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Lion ) == c.Owner.GetType() ) ||
+							( typeof( LionRiding ) == c.Owner.GetType() ) ||
+							( typeof( SnowLion ) == c.Owner.GetType() ) ||
+							( typeof( Manticore ) == c.Owner.GetType() ) ||
 							( typeof( Chimera ) == c.Owner.GetType() ) )
 							{
-								trophyID = 0x3376; 
+								trophyID = 0x3376;
 							}
 							else if ( typeof( Exodus ) == c.Owner.GetType() ){ trophyID = 0x5681; }
-							else if ( ( typeof( Wyvra ) == c.Owner.GetType() ) || 
-							( typeof( Hydra ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Wyvra ) == c.Owner.GetType() ) ||
+							( typeof( Hydra ) == c.Owner.GetType() ) ||
 							( typeof( EnergyHydra ) == c.Owner.GetType() ) )
 							{
-								trophyID = 0x3372; 
+								trophyID = 0x3372;
 								if ( typeof( Hydra ) == c.Owner.GetType() ){ trophyColor = 0xA5D; }
 							}
 							else if ( typeof( SkeletalDragon ) == c.Owner.GetType() ){ trophyID = 0x33B3; }
@@ -427,8 +427,8 @@ namespace Server.Items
 								trophyID = 0x336C;
 								if (typeof( FireGiant ) == c.Owner.GetType() ){ trophyColor = 0xA93; }
 							}
-							else if ( ( typeof( ZombieGiant ) == c.Owner.GetType() ) || 
-							( typeof( FleshGolem ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( ZombieGiant ) == c.Owner.GetType() ) ||
+							( typeof( FleshGolem ) == c.Owner.GetType() ) ||
 							( typeof( AncientFleshGolem ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x336A;
@@ -437,36 +437,36 @@ namespace Server.Items
 							{
 								trophyID = 0x336E;
 							}
-							else if ( ( typeof( SeaTroll ) == c.Owner.GetType() ) || 
-							( typeof( FrostTroll ) == c.Owner.GetType() ) || 
-							( typeof( FrostTrollShaman ) == c.Owner.GetType() ) || 
-							( typeof( SwampTroll ) == c.Owner.GetType() ) || 
-							( typeof( TrollWitchDoctor ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( SeaTroll ) == c.Owner.GetType() ) ||
+							( typeof( FrostTroll ) == c.Owner.GetType() ) ||
+							( typeof( FrostTrollShaman ) == c.Owner.GetType() ) ||
+							( typeof( SwampTroll ) == c.Owner.GetType() ) ||
+							( typeof( TrollWitchDoctor ) == c.Owner.GetType() ) ||
 							( typeof( Troll ) == c.Owner.GetType() ) )
 							{
-								trophyID = 0x1E6D; 
+								trophyID = 0x1E6D;
 							}
-							else if ( ( typeof( Orc ) == c.Owner.GetType() ) || 
-							( typeof( OrcBomber ) == c.Owner.GetType() ) || 
-							( typeof( OrcCaptain ) == c.Owner.GetType() ) || 
-							( typeof( OrcishLord ) == c.Owner.GetType() ) || 
-							( typeof( OrcishMage ) == c.Owner.GetType() ) || 
-							( typeof( Urk ) == c.Owner.GetType() ) || 
-							( typeof( UrkShaman ) == c.Owner.GetType() ) || 
-							( typeof( Urc ) == c.Owner.GetType() ) || 
-							( typeof( UrcShaman ) == c.Owner.GetType() ) || 
-							( typeof( UrcBowman ) == c.Owner.GetType() ) || 
-							( typeof( OrkMage ) == c.Owner.GetType() ) || 
-							( typeof( OrkMonks ) == c.Owner.GetType() ) || 
-							( typeof( OrkRogue ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Orc ) == c.Owner.GetType() ) ||
+							( typeof( OrcBomber ) == c.Owner.GetType() ) ||
+							( typeof( OrcCaptain ) == c.Owner.GetType() ) ||
+							( typeof( OrcishLord ) == c.Owner.GetType() ) ||
+							( typeof( OrcishMage ) == c.Owner.GetType() ) ||
+							( typeof( Urk ) == c.Owner.GetType() ) ||
+							( typeof( UrkShaman ) == c.Owner.GetType() ) ||
+							( typeof( Urc ) == c.Owner.GetType() ) ||
+							( typeof( UrcShaman ) == c.Owner.GetType() ) ||
+							( typeof( UrcBowman ) == c.Owner.GetType() ) ||
+							( typeof( OrkMage ) == c.Owner.GetType() ) ||
+							( typeof( OrkMonks ) == c.Owner.GetType() ) ||
+							( typeof( OrkRogue ) == c.Owner.GetType() ) ||
 							( typeof( OrkWarrior ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x1E6B; trophyColor = 0;
 							}
 							else if ( typeof( GreatHart ) == c.Owner.GetType() || typeof( Antelope ) == c.Owner.GetType() ){ trophyID = 0x1E68; }
-							else if ( ( typeof( Gorilla ) == c.Owner.GetType() ) || 
-							( typeof( Infected ) == c.Owner.GetType() ) || 
-							( typeof( Gorakong ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Gorilla ) == c.Owner.GetType() ) ||
+							( typeof( Infected ) == c.Owner.GetType() ) ||
+							( typeof( Gorakong ) == c.Owner.GetType() ) ||
 							( typeof( Ape ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x1E6A;
@@ -489,8 +489,8 @@ namespace Server.Items
 							else if ( ( typeof( DarkUnicorn ) == c.Owner.GetType() ) ){ trophyID = 0x335E; }
 							else if ( ( typeof( DarkUnicornRiding ) == c.Owner.GetType() ) ){ trophyID = 0x335E; }
 							else if ( typeof( Nightmare ) == c.Owner.GetType() || typeof( AncientNightmareRiding ) == c.Owner.GetType() || typeof( AncientNightmare ) == c.Owner.GetType() || typeof( Placeron ) == c.Owner.GetType() ){ trophyID = 0x33AD; }
-							else if ( ( typeof( Wyvern ) == c.Owner.GetType() ) || 
-							( typeof( Wyverns ) == c.Owner.GetType() ) || 
+							else if ( ( typeof( Wyvern ) == c.Owner.GetType() ) ||
+							( typeof( Wyverns ) == c.Owner.GetType() ) ||
 							( typeof( Teradactyl ) == c.Owner.GetType() ) )
 							{
 								trophyID = 0x33B5;
@@ -541,7 +541,7 @@ namespace Server.Items
 								c.VisitedByTaxidermist = true;
 								m_Trophy.Delete();
 							}
-							else 
+							else
 							{
 								from.SendMessage("That cannot be mounted as a trophy!");
 								return;

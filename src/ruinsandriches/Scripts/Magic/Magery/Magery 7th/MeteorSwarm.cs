@@ -95,7 +95,7 @@ namespace Server.Spells.Seventh
 						damage = (damage * 2) / targets.Count;
 					else if ( !Core.AOS )
 						damage /= targets.Count;
-						
+
 					double toDeal;
 					for ( int i = 0; i < targets.Count; ++i )
 					{

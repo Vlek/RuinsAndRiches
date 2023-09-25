@@ -95,7 +95,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			if ( Body == 222 ){ AddLoot( LootPack.FilthyRich, 2 ); } else { AddLoot( LootPack.Rich, 2 ); } 
+			if ( Body == 222 ){ AddLoot( LootPack.FilthyRich, 2 ); } else { AddLoot( LootPack.Rich, 2 ); }
 		}
 
 		public override Poison PoisonImmune

@@ -92,7 +92,7 @@ namespace Server.Items
 			if ( from is Citizens )
 			{
 				from.Direction = from.GetDirectionTo( GetWorldLocation() );
-				from.Animate( 230, 5, 1, true, false, 0 );   
+				from.Animate( 230, 5, 1, true, false, 0 );
 				from.PlaySound( Utility.RandomList( 0x02B, 0x047, 0x208 ) );
 			}
 		}

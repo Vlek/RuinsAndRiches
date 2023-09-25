@@ -17,7 +17,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Will Turn A Grandmaster Necromancer's Skin & Hair Ghostly White");
 			list.Add( 1049644, "Double Click To Eat The Dust");
-        } 
+        }
 
         public override void OnDoubleClick(Mobile from)
 		{
@@ -26,7 +26,7 @@ namespace Server.Items
 				from.SendMessage( "You don't find this really useful." );
 				return;
 			}
-			else if ( !IsChildOf( from.Backpack ) ) 
+			else if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to use." );
 				return;

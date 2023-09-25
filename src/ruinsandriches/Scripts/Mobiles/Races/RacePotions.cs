@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -55,7 +55,7 @@ namespace Server.Items
 
 		public class RacePotionsGump : Gump
 		{
-			private int m_Tavern; 
+			private int m_Tavern;
 
 			public RacePotionsGump( Mobile from, int tavern ): base( 50, 50 )
 			{
@@ -271,9 +271,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				from.CloseGump( typeof( GypsyTarotGump ) );
 				from.CloseGump( typeof( WelcomeGump ) );
@@ -283,7 +283,7 @@ namespace Server.Items
 				{
 					from.RaceSection = 0;
 					from.SendGump( new RacePotionsGump( from, m_Tavern ) );
-					from.SendSound( 0x4A ); 
+					from.SendSound( 0x4A );
 				}
 				else if ( info.ButtonID > 6000 && info.ButtonID < 6100 )
 				{
@@ -337,19 +337,19 @@ namespace Server.Items
 
 					from.RaceSection = move+1;
 					from.SendGump( new RacePotionsGump( from, m_Tavern ) );
-					from.SendSound( 0x4A ); 
+					from.SendSound( 0x4A );
 				}
 				else if ( info.ButtonID == 9999 )
 				{
 					from.SendGump( new RacePotionsGump( from, m_Tavern ) );
 					from.SendGump( new CreatureHelpGump( from, m_Tavern ) );
-					from.SendSound( 0x4A ); 
+					from.SendSound( 0x4A );
 				}
 				else if ( info.ButtonID > 0 && info.ButtonID < 180 )
 				{
 					from.RaceSection = info.ButtonID;
 					from.SendGump( new RacePotionsGump( from, m_Tavern ) );
-					from.SendSound( 0x4A ); 
+					from.SendSound( 0x4A );
 				}
 				else if ( info.ButtonID == 1000 )
 				{
@@ -368,7 +368,7 @@ namespace Server.Items
 				{
 					if ( m_Tavern > 0 )
 					{
-						from.SendSound( 0x4A ); 
+						from.SendSound( 0x4A );
 						from.SendGump( new Server.Engines.Help.HelpGump( from, 12 ) );
 					}
 					else

@@ -6,7 +6,7 @@ namespace Server.Items
 	public class DDRelicPainting : Item
 	{
 		public int RelicGoldValue;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -43,7 +43,7 @@ namespace Server.Items
 					case 18:sLook = "an unusual";	break;
 				}
 
-				switch ( Utility.RandomMinMax( 0, 80 ) ) 
+				switch ( Utility.RandomMinMax( 0, 80 ) )
 				{
 					case 0: ItemID = 0x3E20; if ( Utility.RandomMinMax( 1, 2 ) == 1 ){ ItemID = 0x3E21; } break;
 					case 1: ItemID = 0x3E7; if ( Utility.RandomMinMax( 1, 2 ) == 1 ){ ItemID = 0xC2C; } break;
@@ -131,7 +131,7 @@ namespace Server.Items
 				string sPainting = Server.Misc.RandomThings.GetRandomScenePainting();
 				if ( ItemID >= 0x5377 && ItemID <= 0x5390 ){ Hue = Utility.RandomList( 0xABE, 0x4A7, 0x747, 0x96C, 0x7DA, 0x415, 0x908, 0x712, 0x1CD, 0x9C2, 0x843, 0x750, 0xA94, 0x973, 0xA3A ); }
 
-				switch ( Utility.RandomMinMax( 0, 7 ) ) 
+				switch ( Utility.RandomMinMax( 0, 7 ) )
 				{
 					case 0: sPainting = Server.Misc.RandomThings.GetRandomScenePainting(); break;
 					case 1: sPainting = Server.Misc.RandomThings.GetRandomCity(); break;

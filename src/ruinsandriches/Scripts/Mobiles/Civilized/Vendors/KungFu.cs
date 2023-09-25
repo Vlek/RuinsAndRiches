@@ -15,7 +15,7 @@ namespace Server.Mobiles
 	{
 		private List<SBInfo> m_SBInfos = new List<SBInfo>();
 		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
-		
+
 		[Constructable]
 		public KungFu() : base( "the Monk" )
 		{
@@ -30,18 +30,18 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Hiding, 45.0, 68.0 );
 			SetSkill( SkillName.Stealth, 65.0, 88.0 );
 		}
-		
+
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBKungFu() ); 
-			m_SBInfos.Add( new SBSEArmor() ); 
-			m_SBInfos.Add( new SBSELeatherArmor() ); 
-			m_SBInfos.Add( new SBSEBowyer() ); 
-			m_SBInfos.Add( new SBSECarpenter() ); 
-			m_SBInfos.Add( new SBSEWeapons() ); 
-			m_SBInfos.Add( new SBSEHats() ); 
-			m_SBInfos.Add( new SBSECook() ); 
-			m_SBInfos.Add( new SBSEFood() ); 
+			m_SBInfos.Add( new SBKungFu() );
+			m_SBInfos.Add( new SBSEArmor() );
+			m_SBInfos.Add( new SBSELeatherArmor() );
+			m_SBInfos.Add( new SBSEBowyer() );
+			m_SBInfos.Add( new SBSECarpenter() );
+			m_SBInfos.Add( new SBSEWeapons() );
+			m_SBInfos.Add( new SBSEHats() );
+			m_SBInfos.Add( new SBSECook() );
+			m_SBInfos.Add( new SBSEFood() );
 			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
@@ -53,17 +53,17 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -74,7 +74,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )

@@ -99,7 +99,7 @@ namespace Server.Items
 				from.Direction = from.GetDirectionTo( GetWorldLocation() );
 				if ( Utility.RandomMinMax(1,3) == 1 )
 				{
-					from.Animate( 230, 5, 1, true, false, 0 );   
+					from.Animate( 230, 5, 1, true, false, 0 );
 					from.PlaySound( 0x21C );
 				}
 				else if ( from.FindItemOnLayer( Layer.OneHanded ) != null && from.FindItemOnLayer( Layer.OneHanded ) is BaseWeapon )

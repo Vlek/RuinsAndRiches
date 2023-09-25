@@ -1,29 +1,29 @@
-using System; 
-using System.Collections; 
-using Server.Items; 
-using Server.ContextMenus; 
-using Server.Misc; 
-using Server.Network; 
+using System;
+using System.Collections;
+using Server.Items;
+using Server.ContextMenus;
+using Server.Misc;
+using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "an elven corpse" )] 
-	public class ElfBerserker : BaseCreature 
+	[CorpseName( "an elven corpse" )]
+	public class ElfBerserker : BaseCreature
 	{
-		[Constructable] 
-		public ElfBerserker() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		[Constructable]
+		public ElfBerserker() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Race = Race.Elf;
 
-			if ( this.Female = Utility.RandomBool() ) 
-			{ 
-				Body = 606; 
+			if ( this.Female = Utility.RandomBool() )
+			{
+				Body = 606;
 				Name = NameList.RandomName( "dark_elf_prefix_female" ) + NameList.RandomName( "dark_elf_suffix_female" );
-			} 
-			else 
-			{ 
-				Body = 605; 
+			}
+			else
+			{
+				Body = 605;
 				Name = NameList.RandomName( "dark_elf_prefix_male" ) + NameList.RandomName( "dark_elf_suffix_male" );
 			}
 
@@ -86,22 +86,22 @@ namespace Server.Mobiles
 			base.OnAfterSpawn();
 		}
 
-		public ElfBerserker( Serial serial ) : base( serial ) 
-		{ 
-		} 
-
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-
-			writer.Write( (int) 0 ); // version 
+		public ElfBerserker( Serial serial ) : base( serial )
+		{
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 
-			int version = reader.ReadInt(); 
-		} 
-	} 
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+	}
 }

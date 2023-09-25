@@ -48,7 +48,7 @@ namespace Server.Mobiles
 			Fame = 4000;
 			Karma = -4000;
 			PackNecroReg( 6, 8 );
-			
+
 			switch ( Utility.Random( 10 ))
 			{
 				case 0: PackItem( new LeftArm() ); break;

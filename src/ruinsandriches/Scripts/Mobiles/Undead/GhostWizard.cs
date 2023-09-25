@@ -8,10 +8,10 @@ using Server.Misc;
 namespace Server.Mobiles
 {
 	[CorpseName( "a ghostly essence" )]
-	public class GhostWizard : BaseCreature 
-	{ 
-		[Constructable] 
-		public GhostWizard() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+	public class GhostWizard : BaseCreature
+	{
+		[Constructable]
+		public GhostWizard() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			switch( Utility.RandomMinMax( 0, 1 ) )
 			{

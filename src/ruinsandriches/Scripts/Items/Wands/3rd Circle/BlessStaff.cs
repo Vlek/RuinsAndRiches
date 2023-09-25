@@ -10,14 +10,16 @@ namespace Server.Items
 		[Constructable]
 		public BlessMagicStaff() : base( MagicStaffEffect.Charges, 1, 15 )
 		{
-			IntRequirement = 20;			Name = "wand of blessing";
+			IntRequirement = 20;
+			Name = "wand of blessing";
 			SkillBonuses.SetValues( 1, SkillName.Magery, 30 );
 		}
 
 		public override void AddNameProperties( ObjectPropertyList list )
 		{
 			base.AddNameProperties( list );
-			list.Add( 1070722, "3rd Circle of Power" );			list.Add( 1049644, "Requires 20 Intelligence" );
+			list.Add( 1070722, "3rd Circle of Power" );
+			list.Add( 1049644, "Requires 20 Intelligence" );
 		}
 
 		public BlessMagicStaff( Serial serial ) : base( serial )
@@ -36,7 +38,8 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-			if ( IntRequirement != 20 ) { IntRequirement = 20; }
+
+			if ( IntRequirement != 20 ) { IntRequirement = 20; }
 		}
 
 		public override void OnMagicStaffUse( Mobile from )

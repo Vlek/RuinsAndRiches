@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -27,7 +27,7 @@ namespace Server.Items
 		public string CargoContains;
 		public string CargoVendor;
 		public string CargoShip;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Cargo_Value { get { return CargoValue; } set { CargoValue = value; InvalidateProperties(); } }
 
@@ -83,7 +83,7 @@ namespace Server.Items
 
 			public CargoGump( Mobile from, Cargo cargo ): base( 50, 50 )
 			{
-				from.SendSound( 0x2F ); 
+				from.SendSound( 0x2F );
 				string color = "#89afe8";
 				string value = "#d7ba6e";
 				m_Cargo = cargo;
@@ -174,9 +174,9 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 				from.PlaySound( 0x2E );
 
 				if ( info.ButtonID > 0 && m_Cargo.CargoQty > 0 )
@@ -274,7 +274,7 @@ namespace Server.Items
 
 			list.Add( 1070722, obtained);
             list.Add( 1049644, CargoFrom);
-        } 
+        }
 
 		public Cargo(Serial serial) : base(serial)
 		{
@@ -343,7 +343,7 @@ namespace Server.Items
 			else if ( CargoType == 8 ){ CargoVendor = "Jeweler"; ItemID = 0x4F8B; Name = "crate of jeweler kits"; CargoContains = "TinkerTools"; CargoQty = (int)(CargoValue/5); }
 			else if ( CargoType == 9 )
 			{
-				CargoVendor = "Mage"; 
+				CargoVendor = "Mage";
 				ItemID = 0x4F8C;
 				CargoQty = (int)(CargoValue/5);
 				CargoMaterial = Utility.RandomMinMax( 1, 8 );
@@ -367,7 +367,7 @@ namespace Server.Items
 			else if ( CargoType == 15 ){ CargoVendor = "Cook or Baker"; ItemID = 0x4F92; Name = "crate of skillets"; CargoContains = "Skillet"; CargoQty = (int)(CargoValue/5); }
 			else if ( CargoType == 16 )
 			{
-				CargoVendor = "Banker or Minter"; 
+				CargoVendor = "Banker or Minter";
 				ItemID = 0x4F93;
 				Name = "crate of treasure";
 				CargoMaterial = Utility.RandomMinMax( 1, 8 );
@@ -386,7 +386,7 @@ namespace Server.Items
 			}
 			else if ( CargoType == 17 )
 			{
-				CargoVendor = "Bard"; 
+				CargoVendor = "Bard";
 				ItemID = 0x4F94;
 				CargoQty = (int)(CargoValue/21);
 				CargoMaterial = Utility.RandomMinMax( 1, 5 );
@@ -405,7 +405,7 @@ namespace Server.Items
 			else if ( CargoType == 21 ){ CargoVendor = "Healer"; ItemID = 0x4F98; Name = "crate of bandages"; CargoContains = "Bandage"; CargoQty = (int)(CargoValue/5); }
 			else if ( CargoType == 22 )
 			{
-				CargoVendor = "Tavern or Bar Keeper"; 
+				CargoVendor = "Tavern or Bar Keeper";
 				ItemID = 0x4F99;
 				CargoQty = (int)(CargoValue/7);
 				CargoMaterial = Utility.RandomMinMax( 1, 3 );
@@ -418,7 +418,7 @@ namespace Server.Items
 			}
 			else if ( CargoType == 23 )
 			{
-				CargoVendor = "Necromancer or Witch"; 
+				CargoVendor = "Necromancer or Witch";
 				ItemID = 0x4F9A;
 				CargoMaterial = Utility.RandomMinMax( 1, 19 );
 				switch( CargoMaterial )
@@ -447,7 +447,7 @@ namespace Server.Items
 			else if ( CargoType == 24 ){ CargoVendor = "Mapmaker"; ItemID = 0x4F9B; Name = "crate of mapping pens"; CargoContains = "MapmakersPen"; CargoQty = (int)(CargoValue/8); }
 			else if ( CargoType == 25 )
 			{
-				CargoVendor = "Shipwright"; 
+				CargoVendor = "Shipwright";
 				ItemID = 0x4F9C;
 				CargoMaterial = Utility.RandomMinMax( 1, 3 );
 				switch( CargoMaterial )
@@ -460,9 +460,9 @@ namespace Server.Items
 			else if ( CargoType == 26 ){ CargoVendor = "Beekeeper"; ItemID = 0x4F9D; Name = "crate of candles"; CargoContains = "Candle"; CargoQty = (int)(CargoValue/6); }
 			else if ( CargoType == 27 )
 			{
-				CargoVendor = "Weaponsmith or Armorer"; 
+				CargoVendor = "Weaponsmith or Armorer";
 				ItemID = 0x4F9E;
-				Name = "crate of armor and weapons"; 
+				Name = "crate of armor and weapons";
 				string army = "Army";
 				switch( Utility.RandomMinMax( 1, 6 ) )
 				{
@@ -479,7 +479,7 @@ namespace Server.Items
 			else if ( CargoType == 28 )
 			{
 				CargoBox = 2;
-				CargoVendor = "Blacksmith"; 
+				CargoVendor = "Blacksmith";
 				ItemID = 0x50B5;
 				int rare = Utility.RandomMinMax( 1, 8192 );
 				if ( rare <= 1 ){ CargoMaterial = 14; Name = "crate of dwarven ore"; Hue = MaterialInfo.GetMaterialColor( "dwarven", "", 0 ); 					CargoContains = "DwarvenOre"; 		CargoQty = (int)(CargoValue/96); }
@@ -499,7 +499,7 @@ namespace Server.Items
 			}
 			else if ( CargoType == 29 )
 			{
-				CargoVendor = "Bowyer"; 
+				CargoVendor = "Bowyer";
 				CargoMaterial = Utility.RandomMinMax( 1, 4 );
 				switch( CargoMaterial )
 				{
@@ -514,7 +514,7 @@ namespace Server.Items
 			else if ( CargoType == 32 ){ CargoVendor = "Alchemist or Herbalist"; ItemID = 0x5090; Name = "crate of bottles"; CargoContains = "Bottle"; CargoQty = (int)(CargoValue/5); }
 			else if ( CargoType == 33 )
 			{
-				CargoVendor = "Thief or Assassin"; 
+				CargoVendor = "Thief or Assassin";
 				ItemID = 0x50A7;
 				int rare = Utility.RandomMinMax( 1, 16 );
 
@@ -531,7 +531,7 @@ namespace Server.Items
 			else if ( CargoType == 38 )
 			{
 				ItemID = 0x55DF;
-				CargoVendor = "Alchemist or Herbalist"; 
+				CargoVendor = "Alchemist or Herbalist";
 				CargoMaterial = Utility.RandomMinMax( 1, 27 );
 				switch( CargoMaterial )
 				{
@@ -569,7 +569,7 @@ namespace Server.Items
 			else if ( CargoType == 40 ){ CargoVendor = "Healer"; ItemID = 0x5087; Name = "crate of bandages"; if ( Utility.RandomBool() ){ ItemID = 0x50A6; } CargoContains = "Bandage"; CargoQty = (int)(CargoValue/5); }
 			else if ( CargoType == 41 )
 			{
-				CargoVendor = "Alchemist or Herbalist"; 
+				CargoVendor = "Alchemist or Herbalist";
 				CargoQty = (int)(CargoValue/5);
 				CargoMaterial = Utility.RandomMinMax( 1, 20 );
 				switch( CargoMaterial )
@@ -597,8 +597,8 @@ namespace Server.Items
 				}
 			}
 			else if ( CargoType == 42 )
-			{ 
-				CargoVendor = "Cook"; 
+			{
+				CargoVendor = "Cook";
 				CargoQty = (int)(CargoValue/5);
 				CargoMaterial = Utility.RandomMinMax( 1, 4 );
 				switch( CargoMaterial )
@@ -612,7 +612,7 @@ namespace Server.Items
 			else if ( CargoType == 43 ){ CargoVendor = "Scribe"; ItemID = 0x509E; Name = "crate of blank scrolls"; if ( Utility.RandomBool() ){ ItemID = 0x50A5; } CargoContains = "BlankScroll"; CargoQty = (int)(CargoValue/5); }
 			else if ( CargoType == 44 )
 			{
-				CargoVendor = "Baker"; 
+				CargoVendor = "Baker";
 				CargoMaterial = Utility.RandomMinMax( 1, 3 );
 				switch( CargoMaterial )
 				{
@@ -623,7 +623,7 @@ namespace Server.Items
 			}
 			else if ( CargoType == 45 )
 			{
-				CargoVendor = "Farmer"; 
+				CargoVendor = "Farmer";
 				CargoMaterial = Utility.RandomMinMax( 1, 25 );
 				switch( CargoMaterial )
 				{
@@ -668,7 +668,7 @@ namespace Server.Items
 			}
 			else if ( CargoType == 46 )
 			{
-				CargoVendor = "Blacksmith"; 
+				CargoVendor = "Blacksmith";
 				ItemID = 0x5095;
 				int rare = Utility.RandomMinMax( 1, 32768 );
 
@@ -691,7 +691,7 @@ namespace Server.Items
 			}
 			else if ( CargoType == 47 )
 			{
-				CargoVendor = "Leatherworker or Tanner"; 
+				CargoVendor = "Leatherworker or Tanner";
 				ItemID = 0x5093;
 				int rare = Utility.RandomMinMax( 1, 2048 );
 				if ( rare <= 1 ){ CargoMaterial = 12; Name = "crate of alien hides"; Hue = MaterialInfo.GetMaterialColor( "alien", "", 0 );					CargoContains = "AlienHides"; 		CargoQty = (int)(CargoValue/14);	}
@@ -709,7 +709,7 @@ namespace Server.Items
 			}
 			else if ( CargoType == 48 )
 			{
-				CargoVendor = "Carpenter"; 
+				CargoVendor = "Carpenter";
 				int logger = Utility.RandomMinMax( 1, 2 );
 					ItemID = 0x5085;
 					string woods = "boards";
@@ -737,7 +737,7 @@ namespace Server.Items
 			else if ( CargoType == 49 )
 			{
 				CargoBox = 1;
-				CargoVendor = "Blacksmith"; 
+				CargoVendor = "Blacksmith";
 				ItemID = Utility.RandomList( 0x5419, 0x541C, 0x541D );
 					if ( ItemID == 0x5419 ){ CargoBox = 2; }
 				int rare = Utility.RandomMinMax( 1, 128 );
@@ -815,33 +815,33 @@ namespace Server.Items
 		{
 			if ( cargo.CargoVendor == "Alchemist or Herbalist" && ( vendor is AlchemistGuildmaster || vendor is Alchemist || vendor is Herbalist ) ){ return true; }
 			else if ( cargo.CargoVendor == "Art Collector" && vendor is VarietyDealer ){ return true; }
-			else if ( cargo.CargoVendor == "Baker" && vendor is Baker ){ return true; } 
+			else if ( cargo.CargoVendor == "Baker" && vendor is Baker ){ return true; }
 			else if ( cargo.CargoVendor == "Banker or Minter" && ( vendor is Banker || vendor is Minter ) ){ return true; }
-			else if ( cargo.CargoVendor == "Bard" && ( vendor is BardGuildmaster || vendor is Bard ) ){ return true; } 
+			else if ( cargo.CargoVendor == "Bard" && ( vendor is BardGuildmaster || vendor is Bard ) ){ return true; }
 			else if ( cargo.CargoVendor == "Beekeeper" && vendor is Beekeeper ){ return true; }
 			else if ( cargo.CargoVendor == "Blacksmith" && ( vendor is BlacksmithGuildmaster || vendor is Blacksmith ) ){ return true; }
-			else if ( cargo.CargoVendor == "Bowyer" && vendor is Bowyer ){ return true; } 
+			else if ( cargo.CargoVendor == "Bowyer" && vendor is Bowyer ){ return true; }
 			else if ( cargo.CargoVendor == "Butcher" && vendor is Butcher ){ return true; }
-			else if ( cargo.CargoVendor == "Carpenter" && ( vendor is CarpenterGuildmaster || vendor is Carpenter ) ){ return true; } 
+			else if ( cargo.CargoVendor == "Carpenter" && ( vendor is CarpenterGuildmaster || vendor is Carpenter ) ){ return true; }
 			else if ( cargo.CargoVendor == "Cook or Baker" && ( vendor is Cook || vendor is Baker ) ){ return true; }
-			else if ( cargo.CargoVendor == "Cook" && vendor is Cook ){ return true; } 
-			else if ( cargo.CargoVendor == "Farmer" && vendor is Farmer ){ return true; } 
+			else if ( cargo.CargoVendor == "Cook" && vendor is Cook ){ return true; }
+			else if ( cargo.CargoVendor == "Farmer" && vendor is Farmer ){ return true; }
 			else if ( cargo.CargoVendor == "Healer" && ( vendor is HealerGuildmaster || vendor is Healer ) ){ return true; }
 			else if ( cargo.CargoVendor == "Jeweler" && vendor is Jeweler ){ return true; }
-			else if ( cargo.CargoVendor == "Leatherworker or Tanner" && ( vendor is Tanner || vendor is LeatherWorker ) ){ return true; } 
-			else if ( cargo.CargoVendor == "Mage" && ( vendor is MageGuildmaster || vendor is Mage ) ){ return true; } 
+			else if ( cargo.CargoVendor == "Leatherworker or Tanner" && ( vendor is Tanner || vendor is LeatherWorker ) ){ return true; }
+			else if ( cargo.CargoVendor == "Mage" && ( vendor is MageGuildmaster || vendor is Mage ) ){ return true; }
 			else if ( cargo.CargoVendor == "Mapmaker" && ( vendor is CartographersGuildmaster || vendor is Mapmaker ) ){ return true; }
-			else if ( cargo.CargoVendor == "Necromancer or Witch" && ( vendor is NecroMage || vendor is NecromancerGuildmaster || vendor is Necromancer || vendor is Witches ) ){ return true; } 
+			else if ( cargo.CargoVendor == "Necromancer or Witch" && ( vendor is NecroMage || vendor is NecromancerGuildmaster || vendor is Necromancer || vendor is Witches ) ){ return true; }
 			else if ( cargo.CargoVendor == "Provisioner" && vendor is Provisioner ){ return true; }
 			else if ( cargo.CargoVendor == "Sage" && vendor is Sage ){ return true; }
 			else if ( cargo.CargoVendor == "Scribe" && ( vendor is LibrarianGuildmaster || vendor is Scribe ) ){ return true; }
-			else if ( cargo.CargoVendor == "Shipwright" && ( vendor is FisherGuildmaster || vendor is Shipwright ) ){ return true; } 
+			else if ( cargo.CargoVendor == "Shipwright" && ( vendor is FisherGuildmaster || vendor is Shipwright ) ){ return true; }
 			else if ( cargo.CargoVendor == "Stable Worker" && ( vendor is Veterinarian || vendor is Rancher || vendor is AnimalTrainer ) ){ return true; }
 			else if ( cargo.CargoVendor == "Tailor" && ( vendor is TailorGuildmaster || vendor is Tailor ) ){ return true; }
-			else if ( cargo.CargoVendor == "Tavern or Bar Keeper" && ( vendor is Barkeeper || vendor is TavernKeeper ) ){ return true; } 
-			else if ( cargo.CargoVendor == "Thief or Assassin" && ( vendor is AssassinGuildmaster || vendor is Thief || vendor is ThiefGuildmaster ) ){ return true; } 
+			else if ( cargo.CargoVendor == "Tavern or Bar Keeper" && ( vendor is Barkeeper || vendor is TavernKeeper ) ){ return true; }
+			else if ( cargo.CargoVendor == "Thief or Assassin" && ( vendor is AssassinGuildmaster || vendor is Thief || vendor is ThiefGuildmaster ) ){ return true; }
 			else if ( cargo.CargoVendor == "Tinker" && ( vendor is TinkerGuildmaster || vendor is Tinker ) ){ return true; }
-			else if ( cargo.CargoVendor == "Weaponsmith or Armorer" && ( vendor is Armorer || vendor is Weaponsmith ) ){ return true; } 
+			else if ( cargo.CargoVendor == "Weaponsmith or Armorer" && ( vendor is Armorer || vendor is Weaponsmith ) ){ return true; }
 
 			return false;
 		}

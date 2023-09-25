@@ -1,15 +1,15 @@
-using System; 
-using System.Collections; 
-using Server.Misc; 
-using Server.Items; 
-using Server.Mobiles; 
+using System;
+using System.Collections;
+using Server.Misc;
+using Server.Items;
+using Server.Mobiles;
 using Server.Network;
 using System.Collections.Generic;
 using Server.ContextMenus;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	[CorpseName( "a broken machine" )] 
+	[CorpseName( "a broken machine" )]
 	public class GolemFighter : BaseCreature
 	{
 		private bool m_Stunning;
@@ -29,7 +29,7 @@ namespace Server.Mobiles
 			}
 		}
 
-		[Constructable] 
+		[Constructable]
 		public GolemFighter( ) : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.4, 0.8 )
 		{
 			m_NextTalking = (DateTime.Now + TimeSpan.FromSeconds( 60 ));
@@ -56,9 +56,9 @@ namespace Server.Mobiles
 		public override bool IsScaredOfScaryThings{ get{ return false; } }
 		public override bool IsScaryToPets{ get{ return true; } }
 
-		public GolemFighter( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public GolemFighter( Serial serial ) : base( serial )
+		{
+		}
 
 		public override void OnAfterSpawn()
 		{
@@ -116,13 +116,13 @@ namespace Server.Mobiles
 			return false;
 		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 			writer.Write( (int) 0 ); // version
             writer.Write( PorterExodus );
 			Loyalty = 100;
-		} 
+		}
 
 		public override int GetAngerSound()
 		{
@@ -214,14 +214,14 @@ namespace Server.Mobiles
 			base.OnDamage( amount, from, willKill );
 		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			PorterExodus = reader.ReadInt();
 
-			LeaveNowTimer thisTimer = new LeaveNowTimer( this ); 
-			thisTimer.Start(); 
-		} 
+			LeaveNowTimer thisTimer = new LeaveNowTimer( this );
+			thisTimer.Start();
+		}
 	}
 }

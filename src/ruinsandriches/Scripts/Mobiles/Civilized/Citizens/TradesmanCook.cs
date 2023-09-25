@@ -92,7 +92,7 @@ namespace Server.Items
 			if ( from is Citizens )
 			{
 				from.Direction = from.GetDirectionTo( GetWorldLocation() );
-				from.Animate( 230, 5, 1, true, false, 0 ); 
+				from.Animate( 230, 5, 1, true, false, 0 );
 				if ( ItemID == 0x568B ){ ItemID = Utility.RandomList( 0x568C, 0x568D ); from.PlaySound( Utility.RandomList( 0x059, 0x057 ) ); }
 				else if ( ItemID == 0x568C ){ ItemID = 0x568B; from.PlaySound( Utility.RandomList( 0x5CF, 0x5CA, 0x345 ) ); }
 				else if ( ItemID == 0x568D ){ ItemID = 0x568E; from.PlaySound( Utility.RandomList( 0x5CF, 0x5CA, 0x345 ) ); }
@@ -140,7 +140,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( !IsChildOf( from.Backpack ) ) 
+			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendMessage( "This must be in your backpack to open." );
 				return;

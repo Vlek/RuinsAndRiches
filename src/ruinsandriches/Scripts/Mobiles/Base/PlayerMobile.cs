@@ -86,13 +86,13 @@ namespace Server.Mobiles
 	{
 	  /* Begin Captcha Mod */////////////////////////////////////////
 		private DateTime _NextCaptchaTime;
-	 
+
 		public DateTime NextCaptchaTime
 		{
 			get { return _NextCaptchaTime;}
 			set { _NextCaptchaTime = value; }
 		}
-	 
+
 		[CommandProperty(AccessLevel.Seer)]
 		public TimeSpan CaptchaDelay
 		{
@@ -100,7 +100,7 @@ namespace Server.Mobiles
 			{
 				if (DateTime.Now >= _NextCaptchaTime)
 					return TimeSpan.FromSeconds(0);
-	 
+
 				return (_NextCaptchaTime - DateTime.Now);
 			}
 			set { _NextCaptchaTime = DateTime.Now + value; }
@@ -716,7 +716,7 @@ namespace Server.Mobiles
 			else if ( (this.Skills[SkillName.Herding].Base >= 60) && (this.Skills[SkillName.Veterinary].Base >= 60) && (this.Skills[SkillName.Druidism].Base >= 60) && (this.Skills[SkillName.Taming].Base >= 60) )
 			this.FollowersMax = 6;
 
-			else 
+			else
 			this.FollowersMax = 5;
 		}
 
@@ -2305,7 +2305,7 @@ namespace Server.Mobiles
 			if ( Alive && !wasAlive && RaceID < 1 )
 			{
 				Item deathRobe = new DeathRobe();
-				
+
 				if ( !EquipItem( deathRobe ) )
 					deathRobe.Delete();
 			}
@@ -2356,7 +2356,7 @@ namespace Server.Mobiles
 
 		public override bool OnBeforeDeath()
 		{
-			if ( !Server.Misc.MyServerSettings.GuardsSentenceDeath() && 
+			if ( !Server.Misc.MyServerSettings.GuardsSentenceDeath() &&
 				 ( this.LastKiller is TownGuards || ( this.LastKiller is BaseVendor && this.LastKiller.WhisperHue != 999 && !(this.LastKiller is PlayerVendor) && !(this.LastKiller is PlayerBarkeeper) ) )
 				)
 			{
@@ -2404,7 +2404,7 @@ namespace Server.Mobiles
 					sJail = "Cimmeran Prison";
 				}
 
-				this.SendMessage("You have been sent to the " + sJail + "!"); 
+				this.SendMessage("You have been sent to the " + sJail + "!");
 				Server.Mobiles.BaseCreature.TeleportPets( this, p, map );
 				this.MoveToWorld( p, map );
 				LoggingFunctions.LogPrison( this, sJail );
@@ -2419,34 +2419,34 @@ namespace Server.Mobiles
 					if ( c.LootType != LootType.Blessed )
 					{
 						if (
-								Server.Misc.MaterialInfo.IsJewelry( c ) || 
-								Server.Misc.MaterialInfo.IsReagent( c ) || 
-								Server.Misc.MaterialInfo.IsPotion( c ) || 
-								Server.Misc.MaterialInfo.IsBodyPart( c ) || 
-								c.Stackable || 
-								c is BaseTool || 
-								c is BaseHarvestTool || 
-								c is BaseMagicStaff || 
-								c is BaseBeverage || 
-								c is ManyArrows100 || 
-								c is ManyBolts100 || 
-								c is ManyArrows1000 || 
-								c is ManyBolts1000 || 
-								c is Waterskin || 
-								c is DirtyWaterskin || 
-								c is WaterFlask || 
-								c is Bedroll || 
-								c is SmallTent || 
-								c is CampersTent || 
-								c is SkeletonsKey || 
-								c is MasterSkeletonsKey || 
-								c is Scissors || 
-								c is PolishBoneBrush || 
-								c is Torch || 
-								c is Candle || 
-								c is Lantern || 
-								c is DyeTub || 
-								c is Dyes 
+								Server.Misc.MaterialInfo.IsJewelry( c ) ||
+								Server.Misc.MaterialInfo.IsReagent( c ) ||
+								Server.Misc.MaterialInfo.IsPotion( c ) ||
+								Server.Misc.MaterialInfo.IsBodyPart( c ) ||
+								c.Stackable ||
+								c is BaseTool ||
+								c is BaseHarvestTool ||
+								c is BaseMagicStaff ||
+								c is BaseBeverage ||
+								c is ManyArrows100 ||
+								c is ManyBolts100 ||
+								c is ManyArrows1000 ||
+								c is ManyBolts1000 ||
+								c is Waterskin ||
+								c is DirtyWaterskin ||
+								c is WaterFlask ||
+								c is Bedroll ||
+								c is SmallTent ||
+								c is CampersTent ||
+								c is SkeletonsKey ||
+								c is MasterSkeletonsKey ||
+								c is Scissors ||
+								c is PolishBoneBrush ||
+								c is Torch ||
+								c is Candle ||
+								c is Lantern ||
+								c is DyeTub ||
+								c is Dyes
 						)
 						{
 							stuff.Add(c);

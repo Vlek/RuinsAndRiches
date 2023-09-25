@@ -26,18 +26,18 @@ namespace Server.Mobiles
 
 		///////////////////////////////////////////////////////////////////////////
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-			list.Add( new RidingGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+			list.Add( new RidingGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -48,7 +48,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
@@ -66,7 +66,7 @@ namespace Server.Mobiles
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public RidingGumpEntry( Mobile from, Mobile giver ) : base( 6098, 3 )
 			{
 				m_Mobile = from;
@@ -77,7 +77,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( Server.Mobiles.Veterinarian.RidingGump ) ) )
@@ -97,7 +97,7 @@ namespace Server.Mobiles
 				this.Dragable=true;
 				this.Resizable=false;
 
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 				string color = "#c8b67d";
 
 				AddPage(0);
@@ -109,7 +109,7 @@ namespace Server.Mobiles
 				AddHtml( 670, 134, 27, 20, @"<BODY><BASEFONT Color=" + color + "><BIG>*</BIG></BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				from.SendSound( 0x4A );
@@ -144,8 +144,8 @@ namespace Server.Mobiles
 			{
 				m_SBInfos.Add( new SBHumanAnimalTrainer() );
 			}
-			m_SBInfos.Add( new SBVeterinarian() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
+			m_SBInfos.Add( new SBVeterinarian() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public Veterinarian( Serial serial ) : base( serial )

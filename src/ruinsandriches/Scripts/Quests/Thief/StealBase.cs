@@ -103,7 +103,7 @@ namespace Server.Items
 					BoxType = 1;
 					iZ = iZ1;
 					sEtch = "etched";
-					switch ( Utility.RandomMinMax( 0, 19 ) ) 
+					switch ( Utility.RandomMinMax( 0, 19 ) )
 					{
 						case 0: iColor = MaterialInfo.GetMaterialColor( "dull copper", "classic", 0 ); sThing = "dull copper box";	break;
 						case 1: iColor = MaterialInfo.GetMaterialColor( "shadow iron", "classic", 0 ); sThing = "shadow iron box";	break;
@@ -132,7 +132,7 @@ namespace Server.Items
 					BoxType = 2;
 					iZ = iZ1;
 					sEtch = "carved";
-					switch ( Utility.RandomMinMax( 0, 14 ) ) 
+					switch ( Utility.RandomMinMax( 0, 14 ) )
 					{
 						case 0: iColor = 0; 													sThing = "wooden box";			break;
 						case 1: iColor = MaterialInfo.GetMaterialColor( "oak", "", 0 ); 		sThing = "oak wood box";		break;
@@ -156,7 +156,7 @@ namespace Server.Items
 					BoxType = 3;
 					iZ = iZ2;
 					sEtch = "etched";
-					switch ( Utility.RandomMinMax( 0, 10 ) ) 
+					switch ( Utility.RandomMinMax( 0, 10 ) )
 					{
 						case 0: iColor = MaterialInfo.GetMaterialColor( "frozen", "", 0 ); sThing = "frozen leather " + sThing;	break;
 						case 1: iColor = MaterialInfo.GetMaterialColor( "volcanic", "", 0 ); sThing = "volcanic leather " + sThing;	break;
@@ -499,8 +499,8 @@ namespace Server.Items
 			if ( Server.Misc.GetPlayerInfo.LuckyPlayer( (int)( 20 + ( from.Luck / 2 ) ) ) == true )
 			{
 				int scroll = Utility.RandomMinMax(1,5);
-				if ( scroll > 2 ) { i = Loot.RandomScroll( 47, 63, SpellbookType.Regular ); box.DropItem(i); } 
-				else if ( scroll == 2 ) { i = Loot.RandomScroll( 20, 31, SpellbookType.Elementalism ); box.DropItem(i); } 
+				if ( scroll > 2 ) { i = Loot.RandomScroll( 47, 63, SpellbookType.Regular ); box.DropItem(i); }
+				else if ( scroll == 2 ) { i = Loot.RandomScroll( 20, 31, SpellbookType.Elementalism ); box.DropItem(i); }
 				else { i = Loot.RandomScroll( 0, 17, SpellbookType.Necromancer ); box.DropItem(i); }
 			}
 

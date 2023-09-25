@@ -173,7 +173,7 @@ namespace Knives.TownHouses
 		}
 
 		public static int RemainingSecures( BaseHouse house )
-		{ 
+		{
 			if ( house == null )
 				return 0;
 
@@ -183,7 +183,7 @@ namespace Knives.TownHouses
 		}
 
 		public static int RemainingLocks( BaseHouse house )
-		{ 
+		{
 			if ( house == null )
 				return 0;
 

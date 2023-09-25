@@ -321,7 +321,7 @@ namespace Server
 			| ( ( source & 0x0000FF00 ) << 8 )
 			| ( ( source & 0x00FF0000 ) >> 8 )
 			| ( ( source & 0xFF000000 ) >> 0x18 ) ) );
-		} 
+		}
 
 		public static bool TryConvertIPv6toIPv4( ref IPAddress address )
 		{
@@ -1026,7 +1026,7 @@ namespace Server
 
 		public static bool BlockedTile ( int id, string category )
 		{
-			if ( ( category == "water" || category == "any" ) && ( 
+			if ( ( category == "water" || category == "any" ) && (
 				id ==	0x00A8	||
 				id ==	0x00A9	||
 				id ==	0x00AA	||
@@ -1035,7 +1035,7 @@ namespace Server
 				id ==	0x0138
 			)){ return true; }
 
-			if ( ( category == "cave" || category == "any" ) && ( 
+			if ( ( category == "cave" || category == "any" ) && (
 				id ==	0x024A	||
 				id ==	0x024B	||
 				id ==	0x024C	||
@@ -1090,7 +1090,7 @@ namespace Server
 				id ==	0x02CB
 			)){ return true; }
 
-			if ( ( category == "dirt" || category == "any" ) && ( 
+			if ( ( category == "dirt" || category == "any" ) && (
 				id ==	0x008D	||
 				id ==	0x008E	||
 				id ==	0x008F	||
@@ -1220,7 +1220,7 @@ namespace Server
 				id ==	0x0791
 			)){ return true; }
 
-			if ( ( category == "forest" || category == "any" ) && ( 
+			if ( ( category == "forest" || category == "any" ) && (
 				id ==	0x00ED	||
 				id ==	0x00EE	||
 				id ==	0x00EF	||
@@ -1235,7 +1235,7 @@ namespace Server
 				id ==	0x3AF8
 			)){ return true; }
 
-			if ( ( category == "grass" || category == "any" ) && ( 
+			if ( ( category == "grass" || category == "any" ) && (
 				id ==	0x0231	||
 				id ==	0x0232	||
 				id ==	0x0233	||
@@ -1259,7 +1259,7 @@ namespace Server
 				id ==	0x06D9
 			)){ return true; }
 
-			if ( ( category == "jungle" || category == "any" ) && ( 
+			if ( ( category == "jungle" || category == "any" ) && (
 				id ==	0x00EC	||
 				id ==	0x00FC	||
 				id ==	0x00FD	||
@@ -1268,7 +1268,7 @@ namespace Server
 				id ==	0x072A
 			)){ return true; }
 
-			if ( ( category == "rock" || category == "any" ) && ( 
+			if ( ( category == "rock" || category == "any" ) && (
 				id ==	0x00E4	||
 				id ==	0x00E5	||
 				id ==	0x00E6	||
@@ -1525,7 +1525,7 @@ namespace Server
 				id ==	0x3FCF
 			)){ return true; }
 
-			if ( ( category == "sand" || category == "any" ) && ( 
+			if ( ( category == "sand" || category == "any" ) && (
 				id ==	0x001A	||
 				id ==	0x001B	||
 				id ==	0x001C	||
@@ -1590,7 +1590,7 @@ namespace Server
 				id ==	0x01D1
 			)){ return true; }
 
-			if ( ( category == "snow" || category == "any" ) && ( 
+			if ( ( category == "snow" || category == "any" ) && (
 				id ==	0x010C	||
 				id ==	0x010D	||
 				id ==	0x010E	||
@@ -1632,19 +1632,19 @@ namespace Server
 
 		public static bool PassableTile ( int id, string category )
 		{
-			if ( ( category == "cave" || category == "any" ) && ( 
-				id == 	0x0245	 || 
-				id == 	0x0246	 || 
-				id == 	0x0247	 || 
-				id == 	0x0248	 || 
-				id == 	0x0249	 || 
-				id == 	0x063B	 || 
-				id == 	0x063C	 || 
-				id == 	0x063D	 || 
+			if ( ( category == "cave" || category == "any" ) && (
+				id == 	0x0245	 ||
+				id == 	0x0246	 ||
+				id == 	0x0247	 ||
+				id == 	0x0248	 ||
+				id == 	0x0249	 ||
+				id == 	0x063B	 ||
+				id == 	0x063C	 ||
+				id == 	0x063D	 ||
 				id == 	0x063E
 			)){ return true; }
 
-			if ( ( category == "dirt" || category == "any" ) && ( 
+			if ( ( category == "dirt" || category == "any" ) && (
 				id ==	0x0071	||
 				id ==	0x0072	||
 				id ==	0x0073	||
@@ -1831,7 +1831,7 @@ namespace Server
 				id ==	0x06FA
 			)){ return true; }
 
-			if ( ( category == "forest" || category == "any" ) && ( 
+			if ( ( category == "forest" || category == "any" ) && (
 				id ==	0x00C4	||
 				id ==	0x00C5	||
 				id ==	0x00C6	||
@@ -1944,7 +1944,7 @@ namespace Server
 				id ==	0x071C
 			)){ return true; }
 
-			if ( ( category == "grass" || category == "any" ) && ( 
+			if ( ( category == "grass" || category == "any" ) && (
 				id ==	0x0003	||
 				id ==	0x0004	||
 				id ==	0x0005	||
@@ -2056,7 +2056,7 @@ namespace Server
 				id ==	0x06E1
 			)){ return true; }
 
-			if ( ( category == "jungle" || category == "any" ) && ( 
+			if ( ( category == "jungle" || category == "any" ) && (
 				id ==	0x00AC	||
 				id ==	0x00AD	||
 				id ==	0x00AE	||
@@ -2164,7 +2164,7 @@ namespace Server
 				id ==	0x073A
 			)){ return true; }
 
-			if ( ( category == "sand" || category == "any" ) && ( 
+			if ( ( category == "sand" || category == "any" ) && (
 				id ==	0x0016	||
 				id ==	0x0017	||
 				id ==	0x0018	||
@@ -2275,7 +2275,7 @@ namespace Server
 				id ==	0x0672
 			)){ return true; }
 
-			if ( ( category == "snow" || category == "any" ) && ( 
+			if ( ( category == "snow" || category == "any" ) && (
 				id ==	0x011A	||
 				id ==	0x011B	||
 				id ==	0x011C	||
@@ -2353,7 +2353,7 @@ namespace Server
 				id ==	0x0760
 			)){ return true; }
 
-			if ( ( category == "stone" || category == "any" ) && ( 
+			if ( ( category == "stone" || category == "any" ) && (
 				id ==	0x0436	||
 				id ==	0x0437	||
 				id ==	0x0438	||
@@ -2372,7 +2372,7 @@ namespace Server
 				id ==	0x0445
 			)){ return true; }
 
-			if ( ( category == "swamp" || category == "any" ) && ( 
+			if ( ( category == "swamp" || category == "any" ) && (
 				id ==	0x3D65	||
 				id ==	0x3D66	||
 				id ==	0x3D67	||

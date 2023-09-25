@@ -4,7 +4,7 @@ using Server;
 namespace Server.Items
 {
 	[Flipable]
-	public class CandleReligious : BaseLight 
+	public class CandleReligious : BaseLight
 	{
 		public override int LitItemID
 		{
@@ -17,7 +17,7 @@ namespace Server.Items
 					return 0x2371;
 			}
 		}
-		
+
 		public override int UnlitItemID
 		{
 			get
@@ -29,7 +29,7 @@ namespace Server.Items
 					return 0x2373;
 			}
 		}
-		
+
 		[Constructable]
 		public CandleReligious() : base( 0x2370 )
 		{

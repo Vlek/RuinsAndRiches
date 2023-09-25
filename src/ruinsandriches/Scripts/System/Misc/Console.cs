@@ -29,7 +29,7 @@ namespace Server.Misc
         public static void EventSink_ServerStarted()
         {
 			if ( Server.Misc.MyServerSettings.EnableConsole() )
-			{ 
+			{
 				ThreadPool.QueueUserWorkItem(new WaitCallback(ConsoleListen));
 				Console.WriteLine("");
 				Console.WriteLine("Console ready. Type 'help' for command options.");

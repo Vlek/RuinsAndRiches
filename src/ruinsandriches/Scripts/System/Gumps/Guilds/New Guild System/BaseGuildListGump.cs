@@ -16,7 +16,7 @@ namespace Server.Guilds
 		bool m_Ascending;
 		string m_Filter;
 		int m_StartNumber;
-		
+
 		private const int itemsPerPage = 8;
 
 		public BaseGuildListGump( PlayerMobile pm, Guild g, List<T> list, IComparer<T> currentComparer, bool ascending, string filter, int startNumber, InfoField<T>[] fields )
@@ -55,8 +55,8 @@ namespace Server.Guilds
 			m_List.Sort( m_Comparer );
 			m_StartNumber = Math.Max( Math.Min( m_StartNumber, m_List.Count - 1 ), 0 );
 
-			
-			
+
+
 			AddBackground( 130, 75, 385, 30, 0xBB8 );
 			AddTextEntry( 135, 80, 375, 30, 0x481, 1, m_Filter );
 			AddButton( 520, 75, 0x867, 0x868, 5, GumpButtonType.Reply, 0 );	//Filter Button
@@ -85,11 +85,11 @@ namespace Server.Guilds
 				AddButton( 65, 80, 0x15E3, 0x15E7, 6, GumpButtonType.Reply, 0 );	// Back
 
 			if( m_StartNumber + itemsPerPage > m_List.Count )
-				AddButton( 95, 80, 0x15E1, 0x15E5, 0, GumpButtonType.Page, 0 );	
+				AddButton( 95, 80, 0x15E1, 0x15E5, 0, GumpButtonType.Page, 0 );
 			else
 				AddButton( 95, 80, 0x15E1, 0x15E5, 7, GumpButtonType.Reply, 0 );	// Forward
 
-			
+
 			int itemNumber = 0;
 
 			if( m_Ascending )

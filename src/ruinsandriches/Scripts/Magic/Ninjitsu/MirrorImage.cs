@@ -262,7 +262,7 @@ namespace Server.Mobiles
 
 			return true;
 		}
-		
+
 		public override bool CanSearching { get { return false; } }
 	}
 }

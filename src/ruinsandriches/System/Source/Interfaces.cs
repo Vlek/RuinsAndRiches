@@ -30,7 +30,7 @@ namespace Server.Mobiles
 		void OnRiderDamaged( int amount, Mobile from, bool willKill );
 	}
 
-	public interface IMountItem 
+	public interface IMountItem
 	{
 		IMount Mount{ get; }
 	}

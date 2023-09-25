@@ -65,7 +65,7 @@ namespace Server.Items
 				from.SendMessage( "That cannot move so you cannot identify it." );
 				return;
 			}
-			else if ( !IsChildOf( from.Backpack ) && Server.Misc.MyServerSettings.IdentifyItemsOnlyInPack() ) 
+			else if ( !IsChildOf( from.Backpack ) && Server.Misc.MyServerSettings.IdentifyItemsOnlyInPack() )
 			{
 				from.SendMessage( "This must be in your backpack to identify." );
 				return;

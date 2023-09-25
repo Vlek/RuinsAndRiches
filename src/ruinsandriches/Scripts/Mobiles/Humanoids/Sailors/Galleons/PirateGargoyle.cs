@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateGargoyle : BasePirate 
+	public class PirateGargoyle : BasePirate
 	{
 		public override bool ReacquireOnMovement{ get{ return true; } }
 		public override bool HasBreath{ get{ return true; } } // fire breath enabled
 
-		[Constructable] 
+		[Constructable]
 		public PirateGargoyle()
 		{
 			Name = NameList.RandomName( "gargoyle name" );

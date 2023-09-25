@@ -12,7 +12,7 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Server.Scripts.Commands 
+namespace Server.Scripts.Commands
 {
     public class SpawnerCatalog
     {

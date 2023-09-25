@@ -10,19 +10,19 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Uses { get { return i_Uses; } set { i_Uses = value; InvalidateProperties(); } }
 
-		[Constructable] 
+		[Constructable]
 		public ElementalSharpeningStone() : this( 5 )
 		{
 		}
 
-		[Constructable] 
-		public ElementalSharpeningStone( int uses ) : base( 0x1F14 ) 
-		{ 
+		[Constructable]
+		public ElementalSharpeningStone( int uses ) : base( 0x1F14 )
+		{
 			Weight = 1.0;
 			i_Uses = uses;
 			Hue = 0x38C;
 			Name = "Elemental Sharpening Stone";
-		} 
+		}
 
 		public override void OnDoubleClick( Mobile from )
 		{
@@ -39,7 +39,7 @@ namespace Server.Items
 			else
 				from.SendMessage("This must be in your backpack to use.");
 		}
-		
+
         public override void AddNameProperties(ObjectPropertyList list)
 		{
             base.AddNameProperties(list);

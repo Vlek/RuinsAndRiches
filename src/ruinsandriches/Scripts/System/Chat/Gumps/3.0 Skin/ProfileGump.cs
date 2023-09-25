@@ -7,7 +7,7 @@ namespace Knives.Chat3
     public class ProfileGump : GumpPlus
     {
         private Mobile c_Target;
-        
+
         public ProfileGump(Mobile m, Mobile targ)
             : base(m, 100, 100)
         {
@@ -191,7 +191,7 @@ namespace Knives.Chat3
                 Owner.SendMessage(Data.GetData(Owner).SystemC, General.Local(86) + " " + c_Target.Name);
 
                 NewGump();
-              
+
                 return;
             }
 

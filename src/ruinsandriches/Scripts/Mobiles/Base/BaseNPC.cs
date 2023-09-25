@@ -5,11 +5,11 @@ using Server.ContextMenus;
 using Server.Misc;
 using Server.Network;
 
-namespace Server.Mobiles 
-{ 
+namespace Server.Mobiles
+{
 	public class BaseNPC : BaseCreature
 	{
-		[Constructable] 
+		[Constructable]
 		public BaseNPC() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
 		{
 			Blessed = true;
@@ -17,13 +17,13 @@ namespace Server.Mobiles
 			NameHue = 1154;
 			Hue = Utility.RandomSkinColor();
 
-			if ( Female = Utility.RandomBool() ) 
-			{ 
+			if ( Female = Utility.RandomBool() )
+			{
 				this.Body = 0x191;
 				this.Name = NameList.RandomName( "female" );
 			}
-			else 
-			{ 
+			else
+			{
 				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 			}
@@ -39,20 +39,20 @@ namespace Server.Mobiles
 		public override bool Unprovokable { get { return true; } }
 		public override bool Uncalmable{ get{ return true; } }
 
-		public BaseNPC( Serial serial ) : base( serial ) 
-		{ 
-		} 
+		public BaseNPC( Serial serial ) : base( serial )
+		{
+		}
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); // version 
-		} 
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 ); // version
+		}
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-		} 
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+			int version = reader.ReadInt();
+		}
 	}
-}   
+}

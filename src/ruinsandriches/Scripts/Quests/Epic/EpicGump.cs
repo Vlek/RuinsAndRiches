@@ -22,7 +22,7 @@ namespace Server.Gumps
 
 			string myName = talker.Name;
 			string yourName = listener.Name;
-			
+
 			string thisItem = CultureInfo.CurrentCulture.TextInfo.ToTitleCase( Server.Mobiles.EpicCharacter.GetSpecialItemRequirement( listener ) );
 
 			string sInfo = "<br><br>These items can be customized to fit your adventuring style. When you obtain one of these items tribute, single click on the item and select the 'Status' option. A menu will appear that will allow you to spend the points given on whatever attributes you choose. Be careful, as you cannot change an attribute once you select it. Once the points have been used up, the item will remain as it is.";
@@ -321,7 +321,7 @@ namespace Server.Gumps
 		public override void OnResponse( NetState sender, RelayInfo info )
 		{
 			Mobile from = sender.Mobile;
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 		}
     }
 }

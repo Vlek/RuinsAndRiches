@@ -18,7 +18,7 @@ namespace Server.Items
 			Hue = Utility.RandomEvilHue();
 
 			string sEvil = "Evil";
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: sEvil = "Evil";			break;
 				case 1: sEvil = "Vile";			break;
@@ -30,7 +30,7 @@ namespace Server.Items
 				case 7: sEvil = "Nefarious";	break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 3 ) ) 
+			switch ( Utility.RandomMinMax( 0, 3 ) )
 			{
 				case 0: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + sEvil + " Spellbook";			break;
 				case 1: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of " + sEvil + " Spells";		break;
@@ -46,13 +46,13 @@ namespace Server.Items
 		public MyNecromancerSpellbook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -67,7 +67,7 @@ namespace Server.Items
 		{
 			Hue = 0;
 
-			switch ( Utility.RandomMinMax( 0, 3 ) ) 
+			switch ( Utility.RandomMinMax( 0, 3 ) )
 			{
 				case 0: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + " Spellbook";			break;
 				case 1: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of the Elements";	break;
@@ -75,7 +75,7 @@ namespace Server.Items
 				case 3: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of Elementalism";	break;
 			}
 
-			switch ( Utility.Random( 12 ) ) 
+			switch ( Utility.Random( 12 ) )
 			{
 				case 0: this.Content = 0xF;			break;
 				case 1: this.Content = 0xFF;		break;
@@ -93,13 +93,13 @@ namespace Server.Items
 		public MyElementalSpellbook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -114,7 +114,7 @@ namespace Server.Items
 		{
 			Hue = Utility.RandomColor(0);
 
-			switch ( Utility.RandomMinMax( 0, 3 ) ) 
+			switch ( Utility.RandomMinMax( 0, 3 ) )
 			{
 				case 0: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " Spellbook";			break;
 				case 1: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of Spells";		break;
@@ -122,7 +122,7 @@ namespace Server.Items
 				case 3: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of Wizardry";	break;
 			}
 
-			switch ( Utility.Random( 20 ) ) 
+			switch ( Utility.Random( 20 ) )
 			{
 				case 0: this.Content = 0xF;					break;
 				case 1: this.Content = 0xFF;				break;
@@ -148,13 +148,13 @@ namespace Server.Items
 		public MySpellbook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -169,7 +169,7 @@ namespace Server.Items
 		{
 			Hue = Utility.RandomColor(0);
 
-			switch ( Utility.RandomMinMax( 0, 3 ) ) 
+			switch ( Utility.RandomMinMax( 0, 3 ) )
 			{
 				case 0: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "orient" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of the Ninja Arts";	break;
 				case 1: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "orient" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of Ninjitsu";			break;
@@ -183,13 +183,13 @@ namespace Server.Items
 		public MyNinjabook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -207,7 +207,7 @@ namespace Server.Items
 			string Adj = "Bushido";
 				if ( Utility.RandomMinMax( 0, 1 ) == 1 ){ Adj = "Samurai"; }
 
-			switch ( Utility.RandomMinMax( 0, 2 ) ) 
+			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
 				case 0: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "orient" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of the " + Adj + " Code";	break;
 				case 1: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "orient" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of the " + Adj;			break;
@@ -220,13 +220,13 @@ namespace Server.Items
 		public MySamuraibook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -242,7 +242,7 @@ namespace Server.Items
 			Hue = Utility.RandomColor(0);
 
 			string Adj = "Knight";
-			switch ( Utility.RandomMinMax( 0, 3 ) ) 
+			switch ( Utility.RandomMinMax( 0, 3 ) )
 			{
 				case 0: Adj = "Cavalier"; break;
 				case 1: Adj = "Paladin"; break;
@@ -250,7 +250,7 @@ namespace Server.Items
 				case 3: Adj = "Templar"; break;
 			}
 
-			switch ( Utility.RandomMinMax( 0, 2 ) ) 
+			switch ( Utility.RandomMinMax( 0, 2 ) )
 			{
 				case 0: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of the " + Adj + " Code";	break;
 				case 1: this.Name = Server.Misc.RandomThings.GetRandomBelongsTo( "regular" ) + " " + Server.Misc.RandomThings.GetRandomBookType(1) + " of the " + Adj;			break;
@@ -263,13 +263,13 @@ namespace Server.Items
 		public MyPaladinbook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -285,7 +285,7 @@ namespace Server.Items
 			Hue = Utility.RandomColor(0);
 
 			string Adj = "Bard";
-			switch ( Utility.RandomMinMax( 0, 6 ) ) 
+			switch ( Utility.RandomMinMax( 0, 6 ) )
 			{
 				case 0: Adj = "Bard"; break;
 				case 1: Adj = "Minstrel"; break;
@@ -306,13 +306,13 @@ namespace Server.Items
 		public MySongbook( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 			writer.Write( (int) 0 );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
@@ -497,7 +497,7 @@ namespace Server.Misc
 				{
 					if ( chance >= Utility.RandomMinMax( 1, 100 ) )
 					{
-						switch ( Utility.RandomMinMax( 0, 16 ) ) 
+						switch ( Utility.RandomMinMax( 0, 16 ) )
 						{
 							case 0: book.Attributes.BonusDex = Utility.RandomMinMax( 1, 5 ); break;
 							case 1: book.Attributes.BonusHits = Utility.RandomMinMax( 5,20 ); break;
@@ -531,7 +531,7 @@ namespace Server.Misc
 				{
 					if ( chance >= Utility.RandomMinMax( 1, 100 ) )
 					{
-						switch ( Utility.RandomMinMax( 0, 15 ) ) 
+						switch ( Utility.RandomMinMax( 0, 15 ) )
 						{
 							case 0: book.Attributes.BonusDex = Utility.RandomMinMax( 1, 5 ); break;
 							case 1: book.Attributes.BonusHits = Utility.RandomMinMax( 5,20 ); break;

@@ -158,7 +158,7 @@ namespace Server.Items
 							iDye.Delete();
 						}
 						else
-						{ 
+						{
 							iDye.Amount = iDye.Amount - 500;
 						}
 

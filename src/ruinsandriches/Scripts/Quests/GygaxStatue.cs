@@ -25,7 +25,7 @@ namespace Server.Items
 		{
 			public GygaxGump( Mobile from ): base( 50, 50 )
 			{
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 				string color = "#f5dbb1";
 
 				this.Closable=true;
@@ -65,7 +65,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x4A ); 
+				from.SendSound( 0x4A );
 			}
 		}
 
@@ -89,7 +89,7 @@ namespace Server.Items
 			if ( e.Backpack.FindItemByType( typeof ( PlayersHandbook ) ) != null ){ pieces++; }
 			if ( e.Backpack.FindItemByType( typeof ( MonsterManual ) ) != null ){ pieces++; }
 
-			if ( !IsChildOf( e.Backpack ) ) 
+			if ( !IsChildOf( e.Backpack ) )
 			{
 				e.SendMessage( "This must be in your backpack to use." );
 				return;
@@ -151,7 +151,7 @@ namespace Server.Items
 	{
 		public int RelicGoldValue;
 		public int RelicColor;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -233,7 +233,7 @@ namespace Server.Items
 	{
 		public int RelicGoldValue;
 		public int RelicColor;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 

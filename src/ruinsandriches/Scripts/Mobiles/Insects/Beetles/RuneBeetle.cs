@@ -47,11 +47,11 @@ namespace Server.Mobiles
 
 			Fame = 15000;
 			Karma = -15000;
-			
-			
+
+
 			if ( Utility.RandomDouble() < .25 )
 				PackItem( Engines.Plants.Seed.RandomBonsaiSeed() );
-				
+
 			switch ( Utility.Random( 10 ))
 			{
 				case 0: PackItem( new LeftArm() ); break;
@@ -65,7 +65,7 @@ namespace Server.Mobiles
 				case 8: PackItem( new BonePile() ); break;
 				case 9: PackItem( new BonePile() ); break;
 			}
-				
+
 			Tamable = true;
 			ControlSlots = 3;
 			MinTameSkill = 93.9;
@@ -99,7 +99,7 @@ namespace Server.Mobiles
 		{
 			return 0x4E5;
 		}
-		
+
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.FilthyRich, 2 );

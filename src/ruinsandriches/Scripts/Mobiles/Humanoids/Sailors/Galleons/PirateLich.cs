@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateLich : BasePirate 
+	public class PirateLich : BasePirate
 	{
-		[Constructable] 
+		[Constructable]
 		public PirateLich()
 		{
 			Name = NameList.RandomName( "evil mage" );

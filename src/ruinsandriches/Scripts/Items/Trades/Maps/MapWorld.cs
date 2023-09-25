@@ -15,7 +15,7 @@ namespace Server.Items
 	public class MapWorld : Item, ICraftable
 	{
 		public int WorldMap;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int World_Map { get { return WorldMap; } set { WorldMap = value; InvalidateProperties(); } }
 
@@ -406,23 +406,23 @@ namespace Server.Items
 				e.CloseGump( typeof( MapUnderworldGump ) );
 
 				e.PlaySound( 0x249 );
-				if (WorldMap == 1) 
+				if (WorldMap == 1)
 					e.SendGump( new MapSosariaGump( e ) );
-				else if (WorldMap == 2) 
+				else if (WorldMap == 2)
 					e.SendGump( new MapLodoriaGump( e ) );
-				else if (WorldMap == 4) 
+				else if (WorldMap == 4)
 					e.SendGump( new MapSerpentGump( e ) );
-				else if (WorldMap == 5) 
+				else if (WorldMap == 5)
 					e.SendGump( new MapDreadGump( e ) );
-				else if (WorldMap == 6) 
+				else if (WorldMap == 6)
 					e.SendGump( new MapSavageGump( e ) );
-				else if (WorldMap == 7) 
+				else if (WorldMap == 7)
 					e.SendGump( new MapAmbrosiaGump( e ) );
-				else if (WorldMap == 8) 
+				else if (WorldMap == 8)
 					e.SendGump( new MapUmberGump( e ) );
-				else if (WorldMap == 9) 
+				else if (WorldMap == 9)
 					e.SendGump( new MapBottleGump( e ) );
-				else if (WorldMap == 10) 
+				else if (WorldMap == 10)
 					e.SendGump( new MapUnderworldGump( e ) );
 				else
 					e.SendMessage("This map seems to be a bunch of scribbles.");
@@ -442,23 +442,23 @@ namespace Server.Items
             base.GetProperties(list);
             string mDesc = "";
 
-            if (WorldMap == 1) 
+            if (WorldMap == 1)
                 mDesc = "for Sosaria";
-            else if (WorldMap == 2) 
+            else if (WorldMap == 2)
                 mDesc = "for Lodoria";
-            else if (WorldMap == 4) 
+            else if (WorldMap == 4)
                 mDesc = "for the Serpent Island";
-            else if (WorldMap == 5) 
+            else if (WorldMap == 5)
                 mDesc = "for the Isles of Dread";
-            else if (WorldMap == 6) 
+            else if (WorldMap == 6)
                 mDesc = "for the Savaged Empire";
-            else if (WorldMap == 7) 
+            else if (WorldMap == 7)
                 mDesc = "for Ambrosia";
-            else if (WorldMap == 8) 
+            else if (WorldMap == 8)
                 mDesc = "for Umber Veil";
-            else if (WorldMap == 9) 
+            else if (WorldMap == 9)
                 mDesc = "for Kuldar";
-            else if (WorldMap == 10) 
+            else if (WorldMap == 10)
                 mDesc = "for the Underworld";
             else
                 mDesc = "for Nowhere Particular";

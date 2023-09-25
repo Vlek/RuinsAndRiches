@@ -16,7 +16,7 @@ namespace Server.Spells.Herbalist
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 1.0 ); } }
 
 		private static Hashtable m_Table = new Hashtable();
-		
+
 		public WoodlandProtectionSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
@@ -25,11 +25,11 @@ namespace Server.Spells.Herbalist
 		{
 			return ( m_Table[m] != null );
 		}
-		
+
 		public static void RemoveEffect( Mobile m )
 		{
 			object[] mods = (object[])m_Table[m];
-			
+
 			if ( mods != null )
 			{
 				m.RemoveResistanceMod( (ResistanceMod)mods[0] );
@@ -41,14 +41,14 @@ namespace Server.Spells.Herbalist
 			m_Table.Remove( m );
 			m.EndAction( typeof( WoodlandProtectionSpell ) );
 		}
-		
+
 		public override void OnCast()
 		{
 			if ( !Caster.CanBeginAction( typeof( WoodlandProtectionSpell ) ) )
 			{
 				Caster.SendLocalizedMessage( 1005559 );
 			}
-			
+
 			else if ( CheckSequence() )
 			{
 				int MyResist = ((int)(Caster.Skills[DamageSkill].Value) / 5) + ((int)(Server.Items.BasePotion.EnhancePotions( Caster )/5));
@@ -61,9 +61,9 @@ namespace Server.Spells.Herbalist
 					new ResistanceMod( ResistanceType.Poison, MyResist ),
 					new ResistanceMod( ResistanceType.Energy, MyResist )
 				};
-				
+
 				m_Table[Caster] = mods;
-				
+
 				Caster.AddResistanceMod( (ResistanceMod)mods[0] );
 				Caster.AddResistanceMod( (ResistanceMod)mods[1] );
 				Caster.AddResistanceMod( (ResistanceMod)mods[2] );
@@ -84,14 +84,14 @@ namespace Server.Spells.Herbalist
 		{
 			private Mobile m_Owner;
 			private DateTime m_Expire;
-			
+
 			public InternalTimer( Mobile owner, TimeSpan duration ) : base( TimeSpan.Zero, TimeSpan.FromMinutes( 0.1 ) )
 			{
 				m_Owner = owner;
 				m_Expire = DateTime.Now + duration;
-				
+
 			}
-			
+
 			protected override void OnTick()
 			{
 				if ( DateTime.Now >= m_Expire )

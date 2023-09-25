@@ -36,7 +36,7 @@ namespace Server.ContextMenus
 		public override void OnClick()
 		{
 			Owner.From.CloseGump( typeof( GiftGump ) );
-			Owner.From.SendGump( new GiftGump( m_From, m_Item, m_Cat ) ); 
+			Owner.From.SendGump( new GiftGump( m_From, m_Item, m_Cat ) );
 		}
 	}
 }

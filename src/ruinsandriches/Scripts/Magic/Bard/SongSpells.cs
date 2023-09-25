@@ -52,18 +52,18 @@ namespace Server.Misc
 
 namespace Server.Spells.Song
 {
-	public abstract class Song : Spell 
+	public abstract class Song : Spell
 	{
-		public abstract double RequiredSkill{ get; } 
-		public abstract int RequiredMana{ get; } 
+		public abstract double RequiredSkill{ get; }
+		public abstract int RequiredMana{ get; }
 
-		public override SkillName CastSkill{ get{ return SkillName.Musicianship; } } 
-		public override SkillName DamageSkill{ get{ return SkillName.Musicianship; } } 
+		public override SkillName CastSkill{ get{ return SkillName.Musicianship; } }
+		public override SkillName DamageSkill{ get{ return SkillName.Musicianship; } }
 
-		public override bool ClearHandsOnCast{ get{ return false; } } 
+		public override bool ClearHandsOnCast{ get{ return false; } }
 
-		public Song( Mobile caster, Item scroll, SpellInfo info ) : base( caster, scroll, info ) 
-		{ 
+		public Song( Mobile caster, Item scroll, SpellInfo info ) : base( caster, scroll, info )
+		{
 		}
 
 		public static int MusicSkill( Mobile m )
@@ -82,15 +82,15 @@ namespace Server.Spells.Song
 			// 1149722 Your spellsong has ended
 		}
 
-		public override void GetCastSkills( out double min, out double max ) 
-		{ 
-			min = RequiredSkill; 
-			max = RequiredSkill + 30.0; 
-		} 
-
-		public override int GetMana() 
-		{ 
-			return RequiredMana; 
+		public override void GetCastSkills( out double min, out double max )
+		{
+			min = RequiredSkill;
+			max = RequiredSkill + 30.0;
 		}
-	} 
+
+		public override int GetMana()
+		{
+			return RequiredMana;
+		}
+	}
 }

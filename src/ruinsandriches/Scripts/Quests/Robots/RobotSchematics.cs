@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -59,7 +59,7 @@ namespace Server.Items
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			Container pack = from.Backpack;
 			int iAmount = 0;
 			string sEnd = ".";

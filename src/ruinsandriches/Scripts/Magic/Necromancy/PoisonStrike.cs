@@ -58,7 +58,7 @@ namespace Server.Spells.Necromancy
 				nBenefit += (int)(Caster.Skills[SkillName.Poisoning].Value / 4);
 
 				double damage = Utility.RandomMinMax( (Core.ML ? 32 : 36), 40 ) * ((300 + (GetDamageSkill( Caster ) * 9)) / 1000) + nBenefit;
-				
+
 				int sdiBonusPVM = AosAttributes.GetValue( Caster, AosAttribute.SpellDamage );
 					if ( Server.Misc.MyServerSettings.SpellDamageIncreaseVsMonsters() > 0 && sdiBonusPVM > Server.Misc.MyServerSettings.SpellDamageIncreaseVsMonsters() )
 					{
@@ -82,7 +82,7 @@ namespace Server.Spells.Necromancy
 				if( map != null )
 				{
 					List<Mobile> targets = new List<Mobile>();
-			
+
 					if ( Caster.CanBeHarmful(m, false ) )
 						targets.Add( m );
 

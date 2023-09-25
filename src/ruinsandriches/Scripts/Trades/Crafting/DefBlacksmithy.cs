@@ -42,17 +42,17 @@ namespace Server.Engines.Craft
 		private DefBlacksmithy() : base( 1, 1, 1.25 )// base( 1, 2, 1.7 )
 		{
 			/*
-			
+
 			base( MinCraftEffect, MaxCraftEffect, Delay )
-			
+
 			MinCraftEffect	: The minimum number of time the mobile will play the craft effect
 			MaxCraftEffect	: The maximum number of time the mobile will play the craft effect
 			Delay			: The delay between each craft effect
-			
+
 			Example: (3, 6, 1.7) would make the mobile do the PlayCraftEffect override
 			function between 3 and 6 time, with a 1.7 second delay each time.
-			
-			*/ 
+
+			*/
 		}
 
 		private static Type typeofAnvil = typeof( AnvilAttribute );
@@ -210,7 +210,7 @@ namespace Server.Engines.Craft
 					return 1044156; // You create an exceptional quality item and affix your maker's mark.
 				else if ( quality == 2 )
 					return 1044155; // You create an exceptional quality item.
-				else				
+				else
 					return 1044154; // You create the item.
 			}
 		}
@@ -220,7 +220,7 @@ namespace Server.Engines.Craft
 			/*
 			Synthax for a SIMPLE craft item
 			AddCraft( ObjectType, Group, MinSkill, MaxSkill, ResourceType, Amount, Message )
-			
+
 			ObjectType		: The type of the object you want to add to the build list.
 			Group			: The group in wich the object will be showed in the craft menu.
 			MinSkill		: The minimum of skill value
@@ -228,10 +228,10 @@ namespace Server.Engines.Craft
 			ResourceType	: The type of the resource the mobile need to create the item
 			Amount			: The amount of the ResourceType it need to create the item
 			Message			: String or Int for Localized.  The message that will be sent to the mobile, if the specified resource is missing.
-			
+
 			Synthax for a COMPLEXE craft item.  A complexe item is an item that need either more than
 			only one skill, or more than only one resource.
-			
+
 			Coming soon....
 			*/
 
@@ -306,7 +306,7 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( NorseHelm ), "Helmets", 1025134, 37.9, 87.9, typeof( IronIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( PlateHelm ), "Helmets", 1025138, 62.6, 112.6, typeof( IronIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( DreadHelm ), "Helmets", "dread helm", 62.6, 112.6, typeof( IronIngot ), 1044036, 15, 1044037 );
-			
+
 			if( Core.SE )
 			{
 				AddCraft( typeof( ChainHatsuburi ), "Helmets", 1030175, 30.0, 80.0, typeof( IronIngot ), 1044036, 20, 1044037 );
@@ -419,7 +419,7 @@ namespace Server.Engines.Craft
 				AddRes( index, typeof( Cloth ), 1044286, 10, 1044287 );
 
 			#endregion
-			
+
 			// Set the overridable material
 			SetSubRes( typeof( IronIngot ), 1044022 );
 

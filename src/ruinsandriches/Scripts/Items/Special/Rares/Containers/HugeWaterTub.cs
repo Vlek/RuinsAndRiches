@@ -26,7 +26,7 @@ namespace Server.Items
 				else if ( iThirst < 10 )
 					from.SendMessage( "You drink the water and feel less thirsty" );
 				else if ( iThirst < 15 )
-					from.SendMessage( "You drink the water and feel much less thirsty" ); 
+					from.SendMessage( "You drink the water and feel much less thirsty" );
 				else
 					from.SendMessage( "You drink the water and are no longer thirsty" );
 

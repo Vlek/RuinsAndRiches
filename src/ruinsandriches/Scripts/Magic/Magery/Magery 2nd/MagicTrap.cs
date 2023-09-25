@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using Server.Targeting;
 using Server.Network;
 using Server.Items;
@@ -89,7 +89,7 @@ namespace Server.Spells.Second
 				}
 				else if ( !Caster.Region.AllowHarmful( Caster, Caster ) )
 				{
-					Caster.SendMessage( "That doesn't feel like a good idea." ); 
+					Caster.SendMessage( "That doesn't feel like a good idea." );
 					return;
 				}
 				else
@@ -100,8 +100,8 @@ namespace Server.Spells.Second
 					Point3D loc = new Point3D( p.X, p.Y, p.Z );
 
 					int TrapPower = (int)(Caster.Skills[SkillName.Magery].Value/2);
-					SpellTrap mtrap = new SpellTrap( Caster, TrapPower ); 
-					mtrap.Map = Caster.Map; 
+					SpellTrap mtrap = new SpellTrap( Caster, TrapPower );
+					mtrap.Map = Caster.Map;
 					mtrap.Location = loc;
 
 					Effects.SendLocationParticles( EffectItem.Create( loc, Caster.Map, EffectItem.DefaultDuration ), 0x376A, 9, 10, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 0 ), 0, 9502, 0 );

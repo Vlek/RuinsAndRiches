@@ -230,6 +230,6 @@ namespace Server.Items
 			CofferSnooperD = reader.ReadMobile();
 			CofferSnooperE = reader.ReadMobile();
 			CofferTown = reader.ReadString();
-		} 
+		}
 	}
 }

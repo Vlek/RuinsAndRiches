@@ -70,7 +70,7 @@ namespace Server.Items
 				if ( m.Y < this.Y ){ p = new Point3D(this.X, (this.Y+1), this.Z); }
 				else if ( m.Y > this.Y ){ p = new Point3D(this.X, (this.Y-1), this.Z); }
 			}
-			else 
+			else
 			{
 				if ( m.X < this.X ){ p = new Point3D((this.X+1), this.Y, this.Z); }
 				else if ( m.X > this.X ){ p = new Point3D((this.X-1), this.Y, this.Z); }

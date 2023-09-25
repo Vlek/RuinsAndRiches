@@ -81,7 +81,7 @@ namespace Server.Misc
 							}
 						}
 					}
-				
+
 					mob.SendMessage("You exported {0} statics from this facet.", i);
 				}
 				catch(Exception e){ mob.SendMessage(e.Message); }
@@ -148,7 +148,7 @@ namespace Server.Misc
 				Add("DestStart", ((SerpentPillar)item).Destination.Start.ToString());
 				Add("DestEnd", ((SerpentPillar)item).Destination.End.ToString());
 			}
-			else if( item.GetType().IsSubclassOf(typeof(BaseBeverage)) ) 
+			else if( item.GetType().IsSubclassOf(typeof(BaseBeverage)) )
 				Add("Content", ((BaseBeverage)item).Content.ToString());
 			else if( item.GetType().IsSubclassOf(typeof(BaseDoor)) )
 			{
@@ -160,46 +160,46 @@ namespace Server.Misc
 				{
 					Add("Facing", "SouthSW");
 				}
-				else if ( ( item.ItemID == 1663 ) || 
-				( item.ItemID == 1743 ) || 
-				( item.ItemID == 1695 ) || 
-				( item.ItemID == 1711 ) || 
-				( item.ItemID == 1759 ) || 
-				( item.ItemID == 1775 ) || 
-				( item.ItemID == 2115 ) || 
-				( item.ItemID == 2160 ) || 
-				( item.ItemID == 1727 ) || 
-				( item.ItemID == 846 ) || 
-				( item.ItemID == 830 ) || 
-				( item.ItemID == 798 ) || 
-				( item.ItemID == 242 ) || 
-				( item.ItemID == 814 ) || 
-				( item.ItemID == 862 ) || 
-				( item.ItemID == 2134 ) || 
-				( item.ItemID == 2094 ) || 
-				( item.ItemID == 1679 ) || 
+				else if ( ( item.ItemID == 1663 ) ||
+				( item.ItemID == 1743 ) ||
+				( item.ItemID == 1695 ) ||
+				( item.ItemID == 1711 ) ||
+				( item.ItemID == 1759 ) ||
+				( item.ItemID == 1775 ) ||
+				( item.ItemID == 2115 ) ||
+				( item.ItemID == 2160 ) ||
+				( item.ItemID == 1727 ) ||
+				( item.ItemID == 846 ) ||
+				( item.ItemID == 830 ) ||
+				( item.ItemID == 798 ) ||
+				( item.ItemID == 242 ) ||
+				( item.ItemID == 814 ) ||
+				( item.ItemID == 862 ) ||
+				( item.ItemID == 2134 ) ||
+				( item.ItemID == 2094 ) ||
+				( item.ItemID == 1679 ) ||
 				( item.ItemID == 8183 ) )
 				{
 					Add("Facing", "NorthCCW");
 				}
-				else if ( ( item.ItemID == 1661 ) || 
-				( item.ItemID == 1741 ) || 
-				( item.ItemID == 1693 ) || 
-				( item.ItemID == 1709 ) || 
-				( item.ItemID == 1757 ) || 
-				( item.ItemID == 1773 ) || 
-				( item.ItemID == 2113 ) || 
-				( item.ItemID == 2158 ) || 
-				( item.ItemID == 1725 ) || 
-				( item.ItemID == 844 ) || 
-				( item.ItemID == 828 ) || 
-				( item.ItemID == 796 ) || 
-				( item.ItemID == 240 ) || 
-				( item.ItemID == 812 ) || 
-				( item.ItemID == 860 ) || 
-				( item.ItemID == 2132 ) || 
-				( item.ItemID == 2092 ) || 
-				( item.ItemID == 1677 ) || 
+				else if ( ( item.ItemID == 1661 ) ||
+				( item.ItemID == 1741 ) ||
+				( item.ItemID == 1693 ) ||
+				( item.ItemID == 1709 ) ||
+				( item.ItemID == 1757 ) ||
+				( item.ItemID == 1773 ) ||
+				( item.ItemID == 2113 ) ||
+				( item.ItemID == 2158 ) ||
+				( item.ItemID == 1725 ) ||
+				( item.ItemID == 844 ) ||
+				( item.ItemID == 828 ) ||
+				( item.ItemID == 796 ) ||
+				( item.ItemID == 240 ) ||
+				( item.ItemID == 812 ) ||
+				( item.ItemID == 860 ) ||
+				( item.ItemID == 2132 ) ||
+				( item.ItemID == 2092 ) ||
+				( item.ItemID == 1677 ) ||
 				( item.ItemID == 8181 ) )
 				{
 					Add("Facing", "SouthCW");
@@ -384,7 +384,7 @@ namespace Server.Misc
 					break;
 				}
 			}
-			
+
 			return facing;
 		}
 		private static Point3D[] m_Offsets = new Point3D[]

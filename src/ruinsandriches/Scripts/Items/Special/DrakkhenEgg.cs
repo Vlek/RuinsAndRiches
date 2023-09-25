@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ namespace Server.Items
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			int iAmount = 0;
 			string sEnd = ".";
 
@@ -140,7 +140,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x5AA ); 
+				from.SendSound( 0x5AA );
 			}
 		}
 
@@ -172,7 +172,7 @@ namespace Server.Items
 		}
 
 		public override bool OnDragDrop( Mobile from, Item dropped )
-		{          		
+		{
 			int iAmount = 0;
 			string sEnd = ".";
 
@@ -276,7 +276,7 @@ namespace Server.Items
 			public override void OnResponse(NetState state, RelayInfo info)
 			{
 				Mobile from = state.Mobile;
-				from.SendSound( 0x5AA ); 
+				from.SendSound( 0x5AA );
 			}
 		}
 

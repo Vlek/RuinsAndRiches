@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class BasePirate : BaseCreature 
+	public class BasePirate : BaseCreature
 	{
         public BaseBoat ship;
         public bool boatspawn;
@@ -24,7 +24,7 @@ namespace Server.Mobiles
 		public override bool Unprovokable{ get{ return true; } }
 		public override Poison PoisonImmune{ get{ return Poison.Lesser; } }
 
-		[Constructable] 
+		[Constructable]
 		public BasePirate() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			healme = "Heal me mateys!";
@@ -45,7 +45,7 @@ namespace Server.Mobiles
 				if ( this is SailorOrkGuards || this is SailorElfGuards || this is SailorGuards ){ TitleGuards( this ); }
 
 				Map map = Map;
-				
+
   				if ( map == null )
   					return;
 
@@ -54,7 +54,7 @@ namespace Server.Mobiles
 				if ( Server.Multis.BaseBoat.IsNearOtherShip( this ) ){ this.Delete(); }
 				else if ( Worlds.TestShore( Map, X, Y, 15 ) ){ this.Delete(); }
 			}
-		
+
 			base.OnThink();
 
         	if (ship == null)
@@ -64,7 +64,7 @@ namespace Server.Mobiles
 
 			base.OnThink();
 
-  			if ( !crewspawn ) 
+  			if ( !crewspawn )
   			{
 				crewspawn = true;
 				int crew = Utility.RandomMinMax( 9, 12 );
@@ -337,7 +337,7 @@ namespace Server.Mobiles
 			{
 				bc.AddItem( new ElvenBoots( 0x6F8 ) );
 				Item armor = new LeatherChest(); armor.Hue = 0x6F8; bc.AddItem( armor );
-				bc.AddItem( new FancyShirt( 0 ) );	
+				bc.AddItem( new FancyShirt( 0 ) );
 				switch ( Utility.Random( 2 ))
 				{
 					case 0: bc.AddItem( new LongPants ( 0xBB4 ) ); break;
@@ -353,12 +353,12 @@ namespace Server.Mobiles
 			{
 				bc.AddItem( new ElvenBoots( 0x83A ) );
 				Item armor = new LeatherChest(); armor.Hue = 0x83A; bc.AddItem( armor );
-				bc.AddItem( new FancyShirt( 0 ) );	
+				bc.AddItem( new FancyShirt( 0 ) );
 				switch ( Utility.Random( 2 ))
 				{
 					case 0: bc.AddItem( new LongPants ( 0xBB4 ) ); break;
 					case 1: bc.AddItem( new ShortPants ( 0xBB4 ) ); break;
-				}				
+				}
 
 				switch ( Utility.Random( 2 ))
 				{
@@ -398,7 +398,7 @@ namespace Server.Mobiles
 			}
 			else if ( captain is PirateCult )
 			{
-				bc.AddItem( new Robe( 0 ) );	
+				bc.AddItem( new Robe( 0 ) );
 				switch ( Utility.RandomMinMax( 0, 3 ) )
 				{
 					case 0: bc.AddItem( new ClothCowl() ); break;
@@ -770,7 +770,7 @@ namespace Server.Mobiles
 				SunkenShip ShipWreck = Server.Multis.BaseBoat.CreateSunkenShip( this, this.LastKiller );
 				ShipWreck.MoveToWorld( wreck, Map );
 			}
-			else 
+			else
 			{
 				Say( healme );
 				this.Hits = this.HitsMax;
@@ -778,7 +778,7 @@ namespace Server.Mobiles
 				this.PlaySound( 0x202 );
 				return false;
 			}
-			return base.OnBeforeDeath();   
+			return base.OnBeforeDeath();
 		}
 
 		public bool CaptainCanDie()
@@ -835,18 +835,18 @@ namespace Server.Mobiles
 		{
 			if ( m is BaseCreature )
 			{
-				if ( m is BasePirate || 
-					m is BaseSailor || 
-					m is PirateCaptain || 
-					m is PirateCrew || 
-					m is PirateCrewBow || 
-					m is PirateCrewMage || 
-					m is PirateLand || 
-					m is BoatSailorArcher || 
-					m is BoatSailorBard || 
-					m is BoatSailorMage || 
-					( m.Name == "a sailor" && m.EmoteHue > 0 ) || 
-					( m.Name == "a follower" && m.EmoteHue > 0 ) || 
+				if ( m is BasePirate ||
+					m is BaseSailor ||
+					m is PirateCaptain ||
+					m is PirateCrew ||
+					m is PirateCrewBow ||
+					m is PirateCrewMage ||
+					m is PirateLand ||
+					m is BoatSailorArcher ||
+					m is BoatSailorBard ||
+					m is BoatSailorMage ||
+					( m.Name == "a sailor" && m.EmoteHue > 0 ) ||
+					( m.Name == "a follower" && m.EmoteHue > 0 ) ||
 					( m.Name == "a pirate" && m.EmoteHue > 0 ) )
 				{
 					return true;

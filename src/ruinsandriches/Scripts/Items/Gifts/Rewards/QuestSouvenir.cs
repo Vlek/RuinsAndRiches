@@ -20,7 +20,7 @@ namespace Server.Items
 		public Mobile Souvenir_Mobile { get{ return SouvenirMobile; } set{ SouvenirMobile = value; } }
 
 		public string SouvenirOwner;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public string Souvenir_Owner { get { return SouvenirOwner; } set { SouvenirOwner = value; InvalidateProperties(); } }
 
@@ -80,7 +80,7 @@ namespace Server.Items
             base.AddNameProperties(list);
 			list.Add( 1070722, "Souvenir");
             list.Add( 1049644, SouvenirOwner);
-        } 
+        }
 
 		public QuestSouvenir( Serial serial ) : base( serial )
 		{

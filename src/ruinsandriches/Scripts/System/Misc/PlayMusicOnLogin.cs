@@ -33,13 +33,13 @@ namespace Felladrin.Automations
 			{
 				if ( (from.Region).Name == "the Forest" )
 					from.Send(PlayMusic.GetInstance(MusicName.City));
-				else 
+				else
 					from.Send(PlayMusic.GetInstance(toPlay));
 			}
 			else
 				from.Send(PlayMusic.GetInstance(toPlay));
         }
-        
+
         public static MusicName[] MusicList = {
             MusicName.Traveling,
             MusicName.Explore,

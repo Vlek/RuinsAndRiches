@@ -21,7 +21,7 @@ namespace Server.Items
 		{
 			get { return 0.1; }
 		}
-		
+
 		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
 		bool ICommodity.IsDeedable { get { return true; } }
 

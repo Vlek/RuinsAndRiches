@@ -8,7 +8,7 @@ using Server.LiarsDice;
 using System.Collections.Generic;
 
 namespace Server.Gumps
-{ 
+{
     public class NewDiceGameGump : Gump
     {
 		private const int LEFT_BAR=25;
@@ -30,7 +30,7 @@ namespace Server.Gumps
 			AddTextEntry( LEFT_BAR+7, 80, 200, 30, 255, 0, @"");
 			AddButton(LEFT_BAR, 110, 4005, 4006, 1, GumpButtonType.Reply, 3);
 			AddButton(LEFT_BAR +95, 110, 4017, 4018, 2, GumpButtonType.Reply, 3);
-    	}  
+    	}
 		public override void OnResponse( NetState state, RelayInfo info ){
 			int btd = info.ButtonID;
 			Mobile m = state.Mobile;
@@ -38,7 +38,7 @@ namespace Server.Gumps
 				TextRelay entry = info.GetTextEntry(0);
 				//parse out the text entry
 				try{
-					int balance = Banker.GetBalance(m);				
+					int balance = Banker.GetBalance(m);
 					int num = int.Parse(entry.Text);
 					int maxGameBal = ds.getGameBalanceMax();
 					//take out the full amount of bank if applicable
@@ -46,25 +46,25 @@ namespace Server.Gumps
 						num = balance;
 					}
 					//if its over the max size, set num to it
-					
+
 					if(num > maxGameBal){
 						num = maxGameBal;
-						m.SendMessage( "You entered more than the max of " + maxGameBal + " gp. on this table, you are buying in with the max instead."  );	
+						m.SendMessage( "You entered more than the max of " + maxGameBal + " gp. on this table, you are buying in with the max instead."  );
 					}
 					//check if they have minimum game balance
 					if(num >= ds.getGameBalanceMin()){
 						//withdrawl
 						Banker.Withdraw( m, num );
 						ds.AddPlayer(m,num);
-					}					
+					}
 					else{
 						ds.ShowNewGameGump(m);
 						m.SendMessage( "You did not enter a sufficient minimum amount to play,try again." );
 					}
 				}catch{
 					m.Frozen = false;
-					m.SendMessage( "You did not enter a amount of gold to play with, try again." );			
-				}				
+					m.SendMessage( "You did not enter a amount of gold to play with, try again." );
+				}
 			}else if(info.ButtonID == 2){
 				m.Frozen = false;
 				m.SendMessage( "You decided not to play Liars Dice.");
@@ -72,6 +72,6 @@ namespace Server.Gumps
 			else{
 				state.Mobile.SendMessage( "Illegal option selected");
 			}
-		}    
-    }    
+		}
+    }
 }

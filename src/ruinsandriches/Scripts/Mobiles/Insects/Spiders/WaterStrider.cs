@@ -40,7 +40,7 @@ namespace Server.Mobiles
 			Fame = 2175;
 			Karma = -2175;
 
-			VirtualArmor = 36; 
+			VirtualArmor = 36;
 			PackItem( new SpidersSilk( 12 ) );
 			Item Venom = new VenomSack();
 				Venom.Name = "deadly venom sack";

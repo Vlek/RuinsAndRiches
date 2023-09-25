@@ -240,21 +240,21 @@ namespace Server.Items
 			EnchantDmg = reader.ReadInt();
 			EnchantHue = reader.ReadInt();
 
-			RunTime thisTimer = new RunTime( this ); 
+			RunTime thisTimer = new RunTime( this );
 			thisTimer.Start();
 		}
 
-		public class RunTime : Timer 
-		{ 
+		public class RunTime : Timer
+		{
 			public RunTime( Item task ) : base( TimeSpan.FromSeconds( 10.0 ) )
-			{ 
-				Priority = TimerPriority.OneSecond; 
-			} 
+			{
+				Priority = TimerPriority.OneSecond;
+			}
 
-			protected override void OnTick() 
+			protected override void OnTick()
 			{
 				Server.Spells.Research.ResearchEnchant.EndEffects( null );
-			} 
+			}
 		}
 
 		public Mobile EnchantOwner;

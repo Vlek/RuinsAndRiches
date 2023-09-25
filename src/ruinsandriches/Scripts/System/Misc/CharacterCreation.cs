@@ -146,7 +146,7 @@ namespace Server.Misc
 			m_Mobile = newChar;
 
 			newChar.Player = true;
-			newChar.StatCap = 250; 
+			newChar.StatCap = 250;
 			newChar.Skills.Cap = 10000;
 			newChar.AccessLevel = args.Account.AccessLevel;
 			newChar.Female = args.Female;
@@ -319,7 +319,7 @@ namespace Server.Misc
 			else
 				m.Name = name;
 		}
-      
+
 		public static bool CheckDupe( Mobile m, string name )
 		{
 			if( m == null || name == null || name.Length == 0 )

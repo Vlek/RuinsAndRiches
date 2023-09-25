@@ -300,10 +300,10 @@ namespace Server.Multis
 
 					fromSecures += si.Item.TotalItems;
 				}
-				
+
 				fromLockdowns += list.Count;
 			}
-			
+
 
 			fromLockdowns += GetLockdowns();
 
@@ -352,7 +352,7 @@ namespace Server.Multis
 
 			if ( hpe == null )
 				return 0;
-			
+
 			return (int)(hpe.Vendors * BonusStorageScalar);
 		}
 
@@ -791,7 +791,7 @@ namespace Server.Multis
 			List<Item> list = new List<Item>();
 
 			IPooledEnumerable eable = this.Map.GetItemsInBounds( rect );
-			
+
 			foreach ( Item item in eable )
 				if ( item.Movable && IsInside( item ) )
 					list.Add( item );
@@ -1186,22 +1186,22 @@ namespace Server.Multis
 		{
 			if ( m_Sign != null )
 			{
-				if ( IsSouthFacingSight( m_Sign.ItemID ) ){ FlipSignType( itemID ); } 
+				if ( IsSouthFacingSight( m_Sign.ItemID ) ){ FlipSignType( itemID ); }
 				else { m_Sign.ItemID = itemID; }
 			}
 		}
 
 		public static bool IsSouthFacingSight( int itemID )
 		{
-			if ( itemID == 2979 || itemID == 2981 || itemID == 2983 || itemID == 2985 || itemID == 2987 || itemID == 2989 || 
-			itemID == 2991 || itemID == 2993 || itemID == 2995 || itemID == 2997 || itemID == 2999 || itemID == 3001 || 
-			itemID == 3003 || itemID == 3005 || itemID == 3007 || itemID == 3009 || itemID == 3011 || itemID == 3013 || 
-			itemID == 3015 || itemID == 3017 || itemID == 3019 || itemID == 3021 || itemID == 3023 || itemID == 3025 || 
-			itemID == 3027 || itemID == 3029 || itemID == 3031 || itemID == 3033 || itemID == 3035 || itemID == 3037 || 
-			itemID == 3039 || itemID == 3041 || itemID == 3043 || itemID == 3045 || itemID == 3047 || itemID == 3049 || 
-			itemID == 3051 || itemID == 3053 || itemID == 3055 || itemID == 3057 || itemID == 3059 || itemID == 3061 || 
-			itemID == 3063 || itemID == 3065 || itemID == 3067 || itemID == 3069 || itemID == 3071 || itemID == 3073 || 
-			itemID == 3075 || itemID == 3077 || itemID == 3079 || itemID == 3081 || itemID == 3083 || itemID == 3085 || 
+			if ( itemID == 2979 || itemID == 2981 || itemID == 2983 || itemID == 2985 || itemID == 2987 || itemID == 2989 ||
+			itemID == 2991 || itemID == 2993 || itemID == 2995 || itemID == 2997 || itemID == 2999 || itemID == 3001 ||
+			itemID == 3003 || itemID == 3005 || itemID == 3007 || itemID == 3009 || itemID == 3011 || itemID == 3013 ||
+			itemID == 3015 || itemID == 3017 || itemID == 3019 || itemID == 3021 || itemID == 3023 || itemID == 3025 ||
+			itemID == 3027 || itemID == 3029 || itemID == 3031 || itemID == 3033 || itemID == 3035 || itemID == 3037 ||
+			itemID == 3039 || itemID == 3041 || itemID == 3043 || itemID == 3045 || itemID == 3047 || itemID == 3049 ||
+			itemID == 3051 || itemID == 3053 || itemID == 3055 || itemID == 3057 || itemID == 3059 || itemID == 3061 ||
+			itemID == 3063 || itemID == 3065 || itemID == 3067 || itemID == 3069 || itemID == 3071 || itemID == 3073 ||
+			itemID == 3075 || itemID == 3077 || itemID == 3079 || itemID == 3081 || itemID == 3083 || itemID == 3085 ||
 			itemID == 2965 || itemID == 3139 || itemID == 2812 ){ return true; }
 
 			return false;
@@ -1634,7 +1634,7 @@ namespace Server.Multis
 					SetLockdown( item, true );
 					return true;
 				}
-			} 
+			}
 			else if ( m_LockDowns.IndexOf( item ) != -1 )
 			{
 				m.LocalOverheadMessage( MessageType.Regular, 0x3E9, 1005526 ); //That is already locked down
@@ -1747,7 +1747,7 @@ namespace Server.Multis
 
 				if ( m_House == null || m_House.Deleted || !m_House.IsOwner( from ) || !from.CheckAlive() || !to.CheckAlive() )
 					return;
-				
+
 
 				if ( !accepted )
 					return;
@@ -1939,7 +1939,7 @@ namespace Server.Multis
 				m.LocalOverheadMessage( MessageType.Regular, 0x3E9, 1010416 ); // This is not locked down or secured.
 			}
 		}
-		
+
 		public void AddSecure( Mobile m, Item item )
 		{
 			if ( m_Secures == null || !IsOwner( m ) || !IsActive )
@@ -1980,7 +1980,7 @@ namespace Server.Multis
 				}
 				else if ( !IsAosRules && SecureCount >= MaxSecures )
 				{
-					// The maximum number of secure items has been reached : 
+					// The maximum number of secure items has been reached :
 					m.SendLocalizedMessage( 1008142, true, MaxSecures.ToString() );
 				}
 				else if ( IsAosRules ? !CheckAosLockdowns( 1 ) : ((LockDownCount + 125) >= MaxLockDowns) )
@@ -2887,18 +2887,18 @@ namespace Server.Multis
 					if ( m_LockDowns[i] is Item )
 					{
 						Item item = (Item)m_LockDowns[i];
-						
+
 						if ( !(item is Container) )
 							count += item.TotalItems;
 					}
-					
+
 					count++;
 				}
 			}
-			
+
 			return count;
 		}
-		
+
 		public int LockDownCount
 		{
 			get
@@ -3018,7 +3018,7 @@ namespace Server.Multis
 			{
 				List<BaseHouse> list = null;
 				m_Table.TryGetValue( m_Owner, out list );
-				
+
 				if ( list == null )
 					m_Table[m_Owner] = list = new List<BaseHouse>();
 
@@ -3574,7 +3574,7 @@ namespace Server.Multis
 			{
 				return;
 			}
-			else 
+			else
 			{
 				from.SendLocalizedMessage( 1005377 ); //You cannot lock that down
 			}
@@ -3622,8 +3622,8 @@ namespace Server.Multis
 						m_House.AddSecure( from, (Item)targeted );
 					}
 				}
-			} 
-			else 
+			}
+			else
 			{
 				from.SendLocalizedMessage( 1010424 );//You cannot secure this
 			}
@@ -3649,8 +3649,8 @@ namespace Server.Multis
 			if ( targeted is Mobile )
 			{
 				m_House.Kick( from, (Mobile)targeted );
-			} 
-			else 
+			}
+			else
 			{
 				from.SendLocalizedMessage( 501347 );//You cannot eject that from the house!
 			}
@@ -3681,8 +3681,8 @@ namespace Server.Multis
 					m_House.Ban( from, (Mobile)targeted );
 				else
 					m_House.RemoveBan( from, (Mobile)targeted );
-			} 
-			else 
+			}
+			else
 			{
 				from.SendLocalizedMessage( 501347 );//You cannot eject that from the house!
 			}
@@ -3736,8 +3736,8 @@ namespace Server.Multis
 					m_House.AddCoOwner( from, (Mobile)targeted );
 				else
 					m_House.RemoveCoOwner( from, (Mobile)targeted );
-			} 
-			else 
+			}
+			else
 			{
 				from.SendLocalizedMessage( 501362 );//That can't be a coowner
 			}
@@ -3768,8 +3768,8 @@ namespace Server.Multis
 					m_House.AddFriend( from, (Mobile)targeted );
 				else
 					m_House.RemoveFriend( from, (Mobile)targeted );
-			} 
-			else 
+			}
+			else
 			{
 				from.SendLocalizedMessage( 501371 ); // That can't be a friend
 			}

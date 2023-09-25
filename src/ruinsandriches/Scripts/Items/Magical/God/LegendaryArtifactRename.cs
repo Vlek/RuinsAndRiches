@@ -41,7 +41,7 @@ namespace Server.Items
             base.AddNameProperties( list );
 			list.Add( 1070722, "Rename Legendary Artefacts");
 			if ( owner != null ){ list.Add( 1049644, "Belongs to " + owner.Name + "" ); }
-        } 
+        }
 
 		public override void OnDoubleClick( Mobile from )
 		{

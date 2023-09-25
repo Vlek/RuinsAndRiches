@@ -1,27 +1,27 @@
-using System; 
-using System.Collections; 
-using Server; 
-using Server.Items; 
-using Server.Misc; 
-using Server.Network; 
-using Server.Spells; 
-using Server.Spells.Mystic; 
-using Server.Prompts; 
+using System;
+using System.Collections;
+using Server;
+using Server.Items;
+using Server.Misc;
+using Server.Network;
+using Server.Spells;
+using Server.Spells.Mystic;
+using Server.Prompts;
 
-namespace Server.Gumps 
-{ 
-	public class MysticSpellbookGump : Gump 
+namespace Server.Gumps
+{
+	public class MysticSpellbookGump : Gump
 	{
-		private MysticSpellbook m_Book; 
+		private MysticSpellbook m_Book;
 
 		public bool HasSpell( int spellID )
 		{
 			return (m_Book.HasSpell(spellID));
 		}
 
-		public MysticSpellbookGump( Mobile from, MysticSpellbook book, int page ) : base( 100, 100 ) 
+		public MysticSpellbookGump( Mobile from, MysticSpellbook book, int page ) : base( 100, 100 )
 		{
-			m_Book = book; 
+			m_Book = book;
 			string color = "#d6c382";
 
 			bool showScrollBar = true;
@@ -54,52 +54,52 @@ namespace Server.Gumps
 			string abil_tith = "";
 			int abil_spid = (page+248);
 
-			if ( page == 2 ){ 		abil_name = "Astral Projection";	abil_icon = 0x500E;	abil_skil = "80"; abil_mana = "50"; abil_tith = "300"; 
+			if ( page == 2 ){ 		abil_name = "Astral Projection";	abil_icon = 0x500E;	abil_skil = "80"; abil_mana = "50"; abil_tith = "300";
 				abil_info += "Place: " + book.WritPlace01 + "<br><br>";
 				abil_info += "World: " + book.WritWorld01 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord01 + "<br>";
 				abil_text = "Enter the astral plane where your soul is immune to harm. While you are in this state, you can freely travel but your interraction with the world is minimal. The better your skill, the longer it lasts. Monks use this ability to safely travel through dangerous areas."; }
-			else if ( page == 3 ){ 	abil_name = "Astral Travel";		abil_icon = 0x410;	abil_skil = "50"; abil_mana = "40"; abil_tith = "35"; 
+			else if ( page == 3 ){ 	abil_name = "Astral Travel";		abil_icon = 0x410;	abil_skil = "50"; abil_mana = "40"; abil_tith = "35";
 				abil_info += "Place: " + book.WritPlace02 + "<br><br>";
 				abil_info += "World: " + book.WritWorld02 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord02 + "<br>";
 				abil_text = "Travel through the astral plane to another location with the use of a magical recall rune. The rune must be marked by other magical means before you can travel to that location. If you wish to travel using a rune book, then set your rune book's default location and then you can target the book while using this ability."; }
-			else if ( page == 4 ){ 	abil_name = "Create Robe";			abil_icon = 0x15;	abil_skil = "25"; abil_mana = "20"; abil_tith = "150"; 
+			else if ( page == 4 ){ 	abil_name = "Create Robe";			abil_icon = 0x15;	abil_skil = "25"; abil_mana = "20"; abil_tith = "150";
 				abil_info += "Place: " + book.WritPlace03 + "<br><br>";
 				abil_info += "World: " + book.WritWorld03 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord03 + "<br>";
 				abil_text = "Creates a robe that you will need in order to use the other abilities in this tome. The robe will have power based on your overall skill as a monk, and no one else may wear the robe. You can only have one such robe at a time, so creating a new robe will cause any others you own to go back to the astral plane. After creation, single click the robe and select the 'Status' option to spend the points on attributes you want the robe to have."; }
-			else if ( page == 5 ){ 	abil_name = "Gentle Touch";			abil_icon = 0x971;	abil_skil = "30"; abil_mana = "25"; abil_tith = "15"; 
+			else if ( page == 5 ){ 	abil_name = "Gentle Touch";			abil_icon = 0x971;	abil_skil = "30"; abil_mana = "25"; abil_tith = "15";
 				abil_info += "Place: " + book.WritPlace04 + "<br><br>";
 				abil_info += "World: " + book.WritWorld04 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord04 + "<br>";
 				abil_text = "Perform a soothing touch, healing damage sustained. The higher your skill, the more damage you will heal with your touch."; }
-			else if ( page == 6 ){ 	abil_name = "Leap";					abil_icon = 0x4B2;	abil_skil = "35"; abil_mana = "20"; abil_tith = "10"; 
+			else if ( page == 6 ){ 	abil_name = "Leap";					abil_icon = 0x4B2;	abil_skil = "35"; abil_mana = "20"; abil_tith = "10";
 				abil_info += "Place: " + book.WritPlace05 + "<br><br>";
 				abil_info += "World: " + book.WritWorld05 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord05 + "<br>";
 				abil_text = "Allows you to leap over a long distance. This is a quick action and can allow a monk to leap toward an opponent, leap away to safety, or leap over some obstacles like rivers and streams."; }
-			else if ( page == 7 ){ 	abil_name = "Psionic Blast";		abil_icon = 0x5DC2;	abil_skil = "30"; abil_mana = "35"; abil_tith = "15"; 
+			else if ( page == 7 ){ 	abil_name = "Psionic Blast";		abil_icon = 0x5DC2;	abil_skil = "30"; abil_mana = "35"; abil_tith = "15";
 				abil_info += "Place: " + book.WritPlace06 + "<br><br>";
 				abil_info += "World: " + book.WritWorld06 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord06 + "<br>";
 				abil_text = "Summon your Ki to perform a mental attack that deals an amount of energy damage based upon your fist fighting and intelligence values. Elemental Resistances may reduce damage done by this attack."; }
-			else if ( page == 8 ){ 	abil_name = "Psychic Wall";			abil_icon = 0x1A;	abil_skil = "60"; abil_mana = "45"; abil_tith = "500"; 
+			else if ( page == 8 ){ 	abil_name = "Psychic Wall";			abil_icon = 0x1A;	abil_skil = "60"; abil_mana = "45"; abil_tith = "500";
 				abil_info += "Place: " + book.WritPlace07 + "<br><br>";
 				abil_info += "World: " + book.WritWorld07 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord07 + "<br>";
 				abil_text = "You sheer force of will creates a barrier around you, deflecting magical attacks. This does not work against odd magics like necromancy. Affected spells will often bounce back onto the caster."; }
-			else if ( page == 9 ){ 	abil_name = "Purity of Body";		abil_icon = 0x96D;	abil_skil = "40"; abil_mana = "35"; abil_tith = "25"; 
+			else if ( page == 9 ){ 	abil_name = "Purity of Body";		abil_icon = 0x96D;	abil_skil = "40"; abil_mana = "35"; abil_tith = "25";
 				abil_info += "Place: " + book.WritPlace08 + "<br><br>";
 				abil_info += "World: " + book.WritWorld08 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord08 + "<br>";
 				abil_text = "You can cleanse your body of poisons with this ability due to your physical discipline, and as such, it cannot be used to aid anyone else."; }
-			else if ( page == 10 ){	abil_name = "Quivering Palm";		abil_icon = 0x5001;	abil_skil = "20"; abil_mana = "20"; abil_tith = "20"; 
+			else if ( page == 10 ){	abil_name = "Quivering Palm";		abil_icon = 0x5001;	abil_skil = "20"; abil_mana = "20"; abil_tith = "20";
 				abil_info += "Place: " + book.WritPlace09 + "<br><br>";
 				abil_info += "World: " + book.WritWorld09 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord09 + "<br>";
 				abil_text = "You must be wearing some sort of pugilist gloves for this ability to work. It temporarily enhances the kind of damage the gloves do. The type of damage inflicted when hitting a target will be converted to the target's worst resistance type. The duration of the effect is affected by your fist fighting skill."; }
-			else if ( page == 11 ){	abil_name = "Wind Runner";			abil_icon = 0x19;	abil_skil = "70"; abil_mana = "50"; abil_tith = "250"; 
+			else if ( page == 11 ){	abil_name = "Wind Runner";			abil_icon = 0x19;	abil_skil = "70"; abil_mana = "50"; abil_tith = "250";
 				abil_info += "Place: " + book.WritPlace10 + "<br><br>";
 				abil_info += "World: " + book.WritWorld10 + "<br><br>";
 				abil_info += "Location: " + book.WritCoord10 + "<br>";
@@ -204,9 +204,9 @@ namespace Server.Gumps
 			}
 		}
 
-		public override void OnResponse( NetState state, RelayInfo info ) 
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			Mobile from = state.Mobile; 
+			Mobile from = state.Mobile;
 
 			if ( info.ButtonID < 200 && info.ButtonID > 0 )
 			{

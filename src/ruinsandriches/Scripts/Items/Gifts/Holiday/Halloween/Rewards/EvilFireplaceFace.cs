@@ -7,9 +7,9 @@ namespace Server.Items
 	public class EvilFireplaceSouthFaceAddon : BaseAddon
 	{
         private static int[,] m_AddOnSimpleComponents = new int[,] {
-			{7134, 0, 0, 0}, {6660, 2, 0, 0}// 9	13	
+			{7134, 0, 0, 0}, {6660, 2, 0, 0}// 9	13
 		};
- 
+
 		public override BaseAddonDeed Deed
 		{
 			get
@@ -113,7 +113,7 @@ namespace Server.Items
 	public class EvilFireplaceEastFaceAddon : BaseAddon
 	{
         private static int[,] m_AddOnSimpleComponents = new int[,] {
-			{7137, 0, 0, 0}, {6659, 0, 2, 0}// 9	11	
+			{7137, 0, 0, 0}, {6659, 0, 2, 0}// 9	11
 		};
 
 		public override BaseAddonDeed Deed

@@ -10,7 +10,7 @@ using Server.Multis;
 using Server.Misc;
 using System.Collections;
 
-namespace Server.Items 
+namespace Server.Items
 {
 	public class TenFootPole : Item
 	{
@@ -25,8 +25,8 @@ namespace Server.Items
 
 		[Constructable]
 		public TenFootPole( ) : base( 0xE8A )
-		{		
-			Weight = 40.0; 
+		{
+			Weight = 40.0;
 			Name = "ten foot pole";
 			Charges = 20;
 			Hue = 0x972;
@@ -100,19 +100,19 @@ namespace Server.Items
 		}
 
 		public TenFootPole( Serial serial ) : base( serial )
-		{ 
-		} 
-		
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+			writer.Write( (int) 0 );
 			writer.Write( (int) m_Charges );
-		} 
-		
-		public override void Deserialize(GenericReader reader) 
-		{ 
-			base.Deserialize( reader ); 
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
 			int version = reader.ReadInt();
 			switch ( version )
 			{

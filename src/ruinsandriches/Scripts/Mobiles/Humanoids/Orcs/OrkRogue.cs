@@ -7,7 +7,7 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "an orcish corpse" )] 
+	[CorpseName( "an orcish corpse" )]
 	public class OrkRogue : BaseCreature
 	{
 		public override int BreathPhysicalDamage{ get{ if ( YellHue == 2 ){ return 50; } else { return 100; } } }
@@ -24,7 +24,7 @@ namespace Server.Mobiles
 		public override double BreathDamageScalar{ get{ return 0.4; } }
 
 		[Constructable]
-		public OrkRogue() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		public OrkRogue() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 

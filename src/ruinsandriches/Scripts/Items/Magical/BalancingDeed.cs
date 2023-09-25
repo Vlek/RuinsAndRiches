@@ -28,7 +28,7 @@ namespace Server.Items
 							((BaseRanged)item).Balanced = true;
 							from.SendMessage( "You successfully make your weapon balanced." );
 							m_Deed.Delete();
-					
+
 					}
 			}
 			else from.SendMessage( "You can only balance archery weapons!" );

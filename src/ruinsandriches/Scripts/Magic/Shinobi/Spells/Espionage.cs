@@ -88,7 +88,7 @@ namespace Server.Spells.Shinobi
 					else {
 						LockableContainer cont = (LockableContainer)o;
 
-						if ( Multis.BaseHouse.CheckSecured( cont ) ) 
+						if ( Multis.BaseHouse.CheckSecured( cont ) )
 							from.SendMessage( "You cannot use this ability on a secure item!" );
 						else if ( !cont.Locked )
 							from.LocalOverheadMessage( MessageType.Regular, 0x3B2, 503101 ); // That did not need to be unlocked.
@@ -119,7 +119,7 @@ namespace Server.Spells.Shinobi
 							}
 							else
 								from.SendMessage( "Your ability does not seem to have an effect on that lock!" );
-						}		
+						}
 					}
 				}
 

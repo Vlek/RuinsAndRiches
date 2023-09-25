@@ -32,7 +32,7 @@ namespace Server.Items
 		#endregion
 
 		/* Armor internals work differently now (Jun 19 2003)
-		 * 
+		 *
 		 * The attributes defined below default to -1.
 		 * If the value is -1, the corresponding virtual 'Aos/Old' property is used.
 		 * If not, the attribute value itself is used. Here's the list:
@@ -121,27 +121,27 @@ namespace Server.Items
 
 		public static void CheckMetalColor( BaseArmor armor )
 		{
-			if ( 	armor is LeatherCloak || 
-					armor is LeatherNinjaPants || 
-					armor is LeatherNinjaJacket || 
-					armor is LeatherNinjaHood || 
-					armor is LeatherNinjaPants || 
-					armor is LevelLeatherNinjaPants || 
-					armor is LevelLeatherNinjaJacket || 
-					armor is LevelLeatherNinjaHood || 
-					armor is GiftLeatherNinjaPants || 
-					armor is GiftLeatherNinjaJacket || 
-					armor is GiftLeatherNinjaHood || 
-					armor is ShinobiRobe || 
-					armor is ShinobiHood || 
-					armor is ShinobiMask || 
-					armor is ShinobiCowl || 
-					armor is LeatherSandals || 
-					armor is LeatherShoes || 
-					armor is LeatherBoots || 
-					armor is HikingBoots || 
-					armor is LeatherThighBoots || 
-					armor is LeatherSoftBoots || 
+			if ( 	armor is LeatherCloak ||
+					armor is LeatherNinjaPants ||
+					armor is LeatherNinjaJacket ||
+					armor is LeatherNinjaHood ||
+					armor is LeatherNinjaPants ||
+					armor is LevelLeatherNinjaPants ||
+					armor is LevelLeatherNinjaJacket ||
+					armor is LevelLeatherNinjaHood ||
+					armor is GiftLeatherNinjaPants ||
+					armor is GiftLeatherNinjaJacket ||
+					armor is GiftLeatherNinjaHood ||
+					armor is ShinobiRobe ||
+					armor is ShinobiHood ||
+					armor is ShinobiMask ||
+					armor is ShinobiCowl ||
+					armor is LeatherSandals ||
+					armor is LeatherShoes ||
+					armor is LeatherBoots ||
+					armor is HikingBoots ||
+					armor is LeatherThighBoots ||
+					armor is LeatherSoftBoots ||
 					armor is LeatherRobe )
 			{
 				if ( armor.Resource == CraftResource.None && armor.Hue == 0 )
@@ -154,11 +154,11 @@ namespace Server.Items
 				}
 			}
 			else if (
-						armor is BronzeShield || 
-						armor is GiftBronzeShield || 
-						armor is LevelBronzeShield || 
-						armor is PlateSkirt || 
-						armor is RingmailSkirt || 
+						armor is BronzeShield ||
+						armor is GiftBronzeShield ||
+						armor is LevelBronzeShield ||
+						armor is PlateSkirt ||
+						armor is RingmailSkirt ||
 						armor is ChainSkirt )
 			{
 				if ( armor.Resource == CraftResource.None && armor.Hue == 0 )
@@ -206,8 +206,8 @@ namespace Server.Items
 					return m_ArmorBase;
 			}
 			set
-			{ 
-				m_ArmorBase = value; Invalidate(); 
+			{
+				m_ArmorBase = value; Invalidate();
 			}
 		}
 
@@ -401,11 +401,11 @@ namespace Server.Items
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int HitPoints
 		{
-			get 
+			get
 			{
 				return m_HitPoints;
 			}
-			set 
+			set
 			{
 				if ( value != m_HitPoints && MaxHitPoints > 0 )
 				{
@@ -428,7 +428,7 @@ namespace Server.Items
 			set{ m_Crafter = value; InvalidateProperties(); }
 		}
 
-		
+
 		[CommandProperty( AccessLevel.GameMaster )]
 		public ArmorQuality Quality
 		{
@@ -1398,14 +1398,14 @@ namespace Server.Items
 
 			if ( this.Layer == Layer.Gloves )
 			{
-				if (	( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGloves ) || 
-						( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGlove )  || 
-						( from.FindItemOnLayer( Layer.OneHanded ) is ThrowingGloves )  || 
-						( from.FindItemOnLayer( Layer.OneHanded ) is LevelPugilistGloves )  || 
-						( from.FindItemOnLayer( Layer.OneHanded ) is LevelThrowingGloves )  || 
-						( from.FindItemOnLayer( Layer.OneHanded ) is GiftPugilistGloves )  || 
-						( from.FindItemOnLayer( Layer.OneHanded ) is GiftThrowingGloves )  || 
-						( from.FindItemOnLayer( Layer.OneHanded ) is Artifact_GlovesOfThePugilist )  || 
+				if (	( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGloves ) ||
+						( from.FindItemOnLayer( Layer.OneHanded ) is PugilistGlove )  ||
+						( from.FindItemOnLayer( Layer.OneHanded ) is ThrowingGloves )  ||
+						( from.FindItemOnLayer( Layer.OneHanded ) is LevelPugilistGloves )  ||
+						( from.FindItemOnLayer( Layer.OneHanded ) is LevelThrowingGloves )  ||
+						( from.FindItemOnLayer( Layer.OneHanded ) is GiftPugilistGloves )  ||
+						( from.FindItemOnLayer( Layer.OneHanded ) is GiftThrowingGloves )  ||
+						( from.FindItemOnLayer( Layer.OneHanded ) is Artifact_GlovesOfThePugilist )  ||
 						( from.FindItemOnLayer( Layer.OneHanded ) is GlovesOfThePugilist ) )
 					{ Item oneHand = from.FindItemOnLayer( Layer.OneHanded ); from.Backpack.DropItem( oneHand ); }
 				else if ( ( from.FindItemOnLayer( Layer.FirstValid ) is PugilistGloves ) || ( from.FindItemOnLayer( Layer.FirstValid ) is PugilistGlove ) || ( from.FindItemOnLayer( Layer.FirstValid ) is Artifact_GlovesOfThePugilist ) || ( from.FindItemOnLayer( Layer.FirstValid ) is GlovesOfThePugilist ) )
@@ -1522,7 +1522,7 @@ namespace Server.Items
 			int Absorbed = (int)(HalfAr + HalfAr*Utility.RandomDouble());
 
 			damageTaken -= Absorbed;
-			if ( damageTaken < 0 ) 
+			if ( damageTaken < 0 )
 				damageTaken = 0;
 
 			if ( Absorbed < 2 )

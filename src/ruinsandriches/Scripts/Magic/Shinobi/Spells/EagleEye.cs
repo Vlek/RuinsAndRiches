@@ -70,29 +70,29 @@ namespace Server.Spells.Shinobi
 						Caster.Say( "*ah ha!*" );
 						foundAnyone = true;
 					}
-					else if ( item is BaseDoor && (	item.ItemID == 0x35E || 
-													item.ItemID == 0xF0 || 
-													item.ItemID == 0xF2 || 
-													item.ItemID == 0x326 || 
-													item.ItemID == 0x324 || 
-													item.ItemID == 0x32E || 
-													item.ItemID == 0x32C || 
-													item.ItemID == 0x314 || 
-													item.ItemID == 0x316 || 
-													item.ItemID == 0x31C || 
-													item.ItemID == 0x31E || 
-													item.ItemID == 0xE8 || 
-													item.ItemID == 0xEA || 
-													item.ItemID == 0x34C || 
-													item.ItemID == 0x356 || 
-													item.ItemID == 0x35C || 
-													item.ItemID == 0x354 || 
-													item.ItemID == 0x344 || 
-													item.ItemID == 0x346 || 
-													item.ItemID == 0x34E || 
-													item.ItemID == 0x334 || 
-													item.ItemID == 0x336 || 
-													item.ItemID == 0x33C || 
+					else if ( item is BaseDoor && (	item.ItemID == 0x35E ||
+													item.ItemID == 0xF0 ||
+													item.ItemID == 0xF2 ||
+													item.ItemID == 0x326 ||
+													item.ItemID == 0x324 ||
+													item.ItemID == 0x32E ||
+													item.ItemID == 0x32C ||
+													item.ItemID == 0x314 ||
+													item.ItemID == 0x316 ||
+													item.ItemID == 0x31C ||
+													item.ItemID == 0x31E ||
+													item.ItemID == 0xE8 ||
+													item.ItemID == 0xEA ||
+													item.ItemID == 0x34C ||
+													item.ItemID == 0x356 ||
+													item.ItemID == 0x35C ||
+													item.ItemID == 0x354 ||
+													item.ItemID == 0x344 ||
+													item.ItemID == 0x346 ||
+													item.ItemID == 0x34E ||
+													item.ItemID == 0x334 ||
+													item.ItemID == 0x336 ||
+													item.ItemID == 0x33C ||
 													item.ItemID == 0x33E ) )
 					{
 						Effects.SendLocationParticles( EffectItem.Create( item.Location, item.Map, EffectItem.DefaultDuration ), 0x376A, 9, 32, 0, 0, 5024, 0 );
@@ -216,7 +216,7 @@ namespace Server.Spells.Shinobi
 			FinishSequence();
 		}
 
-		// Eagle Eye uses ninjitsu and searching vs. hide and stealth 
+		// Eagle Eye uses ninjitsu and searching vs. hide and stealth
 		private static bool CheckDifficulty( Mobile from, Mobile m )
 		{
 			if ( InvisibilitySpell.HasTimer( m ) )

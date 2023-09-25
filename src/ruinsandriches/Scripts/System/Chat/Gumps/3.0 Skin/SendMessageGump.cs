@@ -116,7 +116,7 @@ namespace Knives.Chat3
 
             if (c_Subject.Trim() == "")
                 c_Subject = "No Subject";
- 
+
             Data.GetData(Owner).Recording = this;
             Owner.SendMessage(Data.GetData(Owner).SystemC, General.Local(65));
 
@@ -185,7 +185,7 @@ namespace Knives.Chat3
 
             if (Data.LogPms)
                 Logging.LogPm(String.Format(DateTime.Now + " <Mail> {0} to {1}: {2}", Owner.RawName, (c_To == null ? "All" : c_To.RawName), c_Text));
- 
+
             foreach( Data data in Data.Datas.Values)
                 if (data.Mobile.AccessLevel >= c_From.AccessLevel && ((data.GlobalM && !data.GIgnores.Contains(c_From)) || data.GListens.Contains(c_From)))
                     data.Mobile.SendMessage(data.GlobalMC, String.Format("(Global) <Mail> {0} to {1}: {2}", Owner.RawName, (c_To == null ? "All" : c_To.RawName), c_Text ));

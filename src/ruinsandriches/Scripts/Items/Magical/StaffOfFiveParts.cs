@@ -43,7 +43,7 @@ namespace Server.Items
 
 			Name = "Staff of Ultimate Power";
 			Hue = 0x491;
-				if ( StaffMagic > 0 ){ this.Hue = 0x96C; } 
+				if ( StaffMagic > 0 ){ this.Hue = 0x96C; }
 
 			AosElementDamages.Physical = 100;
 			Attributes.SpellChanneling = 1;
@@ -81,7 +81,7 @@ namespace Server.Items
 			this.AosElementDamages.Poison = 0;
 			this.AosElementDamages.Energy = 0;
 
-			switch ( Utility.RandomMinMax( 0, 4 ) ) 
+			switch ( Utility.RandomMinMax( 0, 4 ) )
 			{
 				case 0: this.Hue = 0x48F; if ( StaffMagic > 0 ){ this.Hue = 0x558; } this.AosElementDamages.Poison = 100; break;
 				case 1: this.Hue = 0x48D; if ( StaffMagic > 0 ){ this.Hue = 0x554; } this.AosElementDamages.Cold = 100; break;
@@ -126,7 +126,7 @@ namespace Server.Items
             writer.Write( StaffName );
             writer.Write( StaffMagic );
 		}
-		
+
 		public override void Deserialize(GenericReader reader)
 		{
 			base.Deserialize( reader );

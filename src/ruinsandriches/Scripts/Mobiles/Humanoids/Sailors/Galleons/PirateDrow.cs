@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateDrow : BasePirate 
+	public class PirateDrow : BasePirate
 	{
-		[Constructable] 
+		[Constructable]
 		public PirateDrow()
 		{
 			Title = "the drow pirate";
@@ -34,7 +34,7 @@ namespace Server.Mobiles
 			AddItem( new Scimitar() );
             AddItem( new ElvenBoots( 0x6F8 ) );
             Item armor = new LeatherChest(); armor.Hue = 0x6F8; AddItem( armor );
-			AddItem( new FancyShirt( 0 ) );	
+			AddItem( new FancyShirt( 0 ) );
 			AddItem( new TricorneHat ( 0 ) );
 
             switch ( Utility.Random( 2 ))

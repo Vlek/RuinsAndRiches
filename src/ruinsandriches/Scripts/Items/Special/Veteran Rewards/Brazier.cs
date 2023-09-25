@@ -6,7 +6,7 @@ using Server.Network;
 using Server.Engines.VeteranRewards;
 
 namespace Server.Items
-{	
+{
 	public class RewardBrazier : Item, IRewardItem
 	{
 		public override bool ForceShowProperties{ get{ return ObjectPropertyList.Enabled; } }
@@ -33,10 +33,10 @@ namespace Server.Items
 		{
 			0x19AA, 0x19BB
 		};
-		
+
 		[Constructable]
 		public RewardBrazier() : this( Utility.RandomList( m_Art ) )
-		{	
+		{
 		}
 
 		[Constructable]
@@ -63,7 +63,7 @@ namespace Server.Items
 		{
 			if ( m_Fire == null )
 				m_Fire = new Item();
- 
+
 			m_Fire.ItemID = 0x19AB;
 			m_Fire.Movable = false;
 			m_Fire.MoveToWorld( new Point3D( X, Y, Z + ItemData.Height + 2 ), Map );
@@ -102,7 +102,7 @@ namespace Server.Items
 		public override void GetProperties( ObjectPropertyList list )
 		{
 			base.GetProperties( list );
-			
+
 			if ( m_IsRewardItem )
 				list.Add( 1076222 ); // 6th Year Veteran Reward
 		}
@@ -112,7 +112,7 @@ namespace Server.Items
 			base.Serialize( writer );
 
 			writer.WriteEncodedInt( 0 ); // version
-			
+
 			writer.Write( (bool) m_IsRewardItem );
 			writer.Write( (Item) m_Fire );
 		}
@@ -122,12 +122,12 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadEncodedInt();
-			
+
 			m_IsRewardItem = reader.ReadBool();
 			m_Fire = reader.ReadItem();
 		}
-	}	
-	
+	}
+
 	public class RewardBrazierDeed : Item, IRewardItem
 	{
 		public override int LabelNumber{ get{ return 1080527; } } // Brazier Deed
@@ -150,7 +150,7 @@ namespace Server.Items
 		public RewardBrazierDeed( Serial serial ) : base( serial )
 		{
 		}
-		
+
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( m_IsRewardItem && !RewardSystem.CheckIsUsableBy( from, this, null ) )
@@ -187,7 +187,7 @@ namespace Server.Items
 			base.Deserialize( reader );
 
 			int version = reader.ReadEncodedInt();
-			
+
 			m_IsRewardItem = reader.ReadBool();
 		}
 

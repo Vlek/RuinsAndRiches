@@ -59,7 +59,7 @@ namespace Server.Spells.Fourth
 
 					foreach ( Mobile m in eable )
 					{
-						// Archcure area effect won't cure aggressors or victims, nor murderers, criminals or monsters 
+						// Archcure area effect won't cure aggressors or victims, nor murderers, criminals or monsters
 						// plus Arch Cure Area will NEVER work on summons/pets if you are in Lodor facet
 						// red players can cure only themselves and guildies with arch cure area.
 
@@ -137,7 +137,7 @@ namespace Server.Spells.Fourth
 		{
 			return ( Notoriety.Compute( from, (Mobile)to ) == Notoriety.Innocent );
 		}
-		
+
 		private static bool IsAllyTo( Mobile from, Mobile to )
 		{
 			return ( Notoriety.Compute( from, (Mobile)to ) == Notoriety.Ally );

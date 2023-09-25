@@ -158,7 +158,7 @@ namespace Server.Items
 	{
 		public int TentColor;
 		public int TentFound;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Tent_Color { get { return TentColor; } set { TentColor = value; InvalidateProperties(); } }
 
@@ -208,7 +208,7 @@ namespace Server.Items
 			list.Add( 1070722, "Can Be Dyed Different Colors");
 			if ( Server.Misc.MyServerSettings.AllowCustomHomes() ){ list.Add( 1049644, "Requires a Minimum 9x9 Plot of Land"); }
 			else { list.Add( 1049644, "Requires a 9x9 Floor Space In Your Home"); }
-        } 
+        }
 
 		public override void Serialize( GenericWriter writer )
 		{

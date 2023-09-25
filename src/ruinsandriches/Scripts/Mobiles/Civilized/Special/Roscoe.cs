@@ -23,7 +23,7 @@ namespace Server.Mobiles
 		{
 			Name = "Roscoe";
 			SpeechHue = Utility.RandomTalkHue();
-			Body = 400; 
+			Body = 400;
 			Female = false;
 			Hue = 0x83EA;
 
@@ -43,9 +43,9 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			m_SBInfos.Add( new SBRoscoe() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
-			m_SBInfos.Add( new SBRoscoe() ); 
+			m_SBInfos.Add( new SBRoscoe() );
+			m_SBInfos.Add( new SBBuyArtifacts() );
+			m_SBInfos.Add( new SBRoscoe() );
 		}
 
 		public override void InitOutfit()
@@ -61,17 +61,17 @@ namespace Server.Mobiles
 		}
 
 		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+		{
+			base.GetContextMenuEntries( from, list );
+			list.Add( new SpeechGumpEntry( from, this ) );
+		}
 
 		public class SpeechGumpEntry : ContextMenuEntry
 		{
 			private Mobile m_Mobile;
 			private Mobile m_Giver;
-			
+
 			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
 			{
 				m_Mobile = from;
@@ -82,7 +82,7 @@ namespace Server.Mobiles
 			{
 			    if( !( m_Mobile is PlayerMobile ) )
 				return;
-				
+
 				PlayerMobile mobile = (PlayerMobile) m_Mobile;
 				{
 					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )

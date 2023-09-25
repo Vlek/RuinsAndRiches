@@ -12,9 +12,9 @@ namespace Server.Gumps
 	public class SpecialAttackGump : Gump
 	{
 		private BaseWeapon m_weapon;
-		
+
 		public int Abilities;
-		
+
 		private int Primary;
 		private int Secondary;
 		private int Third;
@@ -32,7 +32,7 @@ namespace Server.Gumps
 		private int ThirdState = 9781;
 		private int FourthState = 9781;
 		private int FifthState = 9781;
-		
+
 		public SpecialAttackGump(BaseWeapon weapon, Mobile from,int abilities): base( 0, 0 )
 		{
 			m_weapon = weapon;
@@ -336,7 +336,7 @@ namespace Server.Gumps
 					}
 					sender.Mobile.CloseGump(typeof(SpecialAttackGump));
 					sender.Mobile.SendGump(new SpecialAttackGump(m_weapon, sender.Mobile, Abilities, PrimaryState, SecondaryState, ThirdState, FourthState, FifthState));
-					
+
 				}
 				else
 				{

@@ -26,7 +26,7 @@ namespace Server.Spells.Research
 				236,
 				9011
 			);
-		
+
 		public ResearchMassMight( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
@@ -36,7 +36,7 @@ namespace Server.Spells.Research
 			if( CheckSequence() )
 			{
 				bool success = false;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 10 ) )
@@ -48,16 +48,16 @@ namespace Server.Spells.Research
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
+
                     int amount = (int)(DamagingSkill( Caster ) / 16);
 					string str = "str";
-						
+
 					double duration = (double)(DamagingSkill( Caster ) * 2);
-						
+
 					StatMod mod = new StatMod( StatType.Str, str, + amount, TimeSpan.FromSeconds( duration ) );
-						
+
 					m.AddStatMod( mod );
-						
+
 					m.FixedParticles( 0x375A, 10, 15, 5017, 0x224, 3, EffectLayer.Waist );
 					success = true;
 				}

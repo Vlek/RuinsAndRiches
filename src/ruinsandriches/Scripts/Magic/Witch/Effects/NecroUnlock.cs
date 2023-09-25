@@ -67,7 +67,7 @@ namespace Server.Spells.Undead
 					else {
 						LockableContainer cont = (LockableContainer)o;
 
-						if ( Multis.BaseHouse.CheckSecured( cont ) ) 
+						if ( Multis.BaseHouse.CheckSecured( cont ) )
 							from.SendMessage("You cannot use this on a secure item.");
 						else if ( !cont.Locked )
 							from.LocalOverheadMessage( MessageType.Regular, 0x3B2, 503101 ); // That did not need to be unlocked.
@@ -86,7 +86,7 @@ namespace Server.Spells.Undead
 							}
 							else
 								from.PrivateOverheadMessage(MessageType.Regular, 0x3B2, false, "This does not seem to work on that lock.", from.NetState);
-						}		
+						}
 					}
 				}
 

@@ -25,7 +25,7 @@ namespace Server.Items
 			owner = gifted;
 
 			string sGood = "Holy";
-			switch ( Utility.RandomMinMax( 0, 7 ) ) 
+			switch ( Utility.RandomMinMax( 0, 7 ) )
 			{
 				case 0: sGood = "Holy";			break;
 				case 1: sGood = "Divine";		break;
@@ -37,7 +37,7 @@ namespace Server.Items
 				case 7: sGood = "Devout";		break;
 			}
 
-			switch ( Utility.RandomMinMax( 1, 2 ) ) 
+			switch ( Utility.RandomMinMax( 1, 2 ) )
 			{
 				case 1: this.Name = "Book of " + sGood + " Prayers";	break;
 				case 2: this.Name = "Tome of " + sGood + " Prayers";	break;

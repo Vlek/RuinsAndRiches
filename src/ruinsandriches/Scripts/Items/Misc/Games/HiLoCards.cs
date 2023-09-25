@@ -135,7 +135,7 @@ namespace Server.Items
 			SecurityCamera(0, text);
 			m_ErrorCode = error;
 			Active = false;
-		
+
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -365,7 +365,7 @@ namespace Server.Items
 		public override void Serialize(GenericWriter writer)
 		{
 			base.Serialize(writer);
-			writer.Write((int)0); // version 
+			writer.Write((int)0); // version
 			writer.Write(m_Active);
 			writer.Write(m_TotalPlays);
 			writer.Write(m_TotalCollected);
@@ -589,7 +589,7 @@ namespace Server.Items
 			m_Hand[0] = carddeck.GetOneCard();
 			m_Count = 1;
 			m_TotalPlays++;
-			
+
 #if !PROFILE
 			from.CloseGump(typeof(HiloCardGump));
 			from.SendGump(new HiloCardGump(from, this, carddeck.BackDesign, Focus3(m_Hand, m_Count - 1, m_GuessCount), 0, true, null));
@@ -783,7 +783,7 @@ namespace Server.Items
 					OnCredit(from, m_Won);
 					m_TotalWon += (ulong)m_Won;
 #if !PROFILE
-					UpdateLastWonBy(from, m_Won);				
+					UpdateLastWonBy(from, m_Won);
 					DoWinSound(this, from, m_Won);
 					from.SendGump(new HiloCardGump(from, this, carddeck.BackDesign, Focus3(m_Hand, m_Count - 2, m_GuessCount), m_Progress, false, null));
 #endif

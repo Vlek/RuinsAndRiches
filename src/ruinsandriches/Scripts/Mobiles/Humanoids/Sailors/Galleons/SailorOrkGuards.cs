@@ -7,24 +7,24 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class SailorOrkGuards : BasePirate 
+	public class SailorOrkGuards : BasePirate
 	{
-		[Constructable] 
+		[Constructable]
 		public SailorOrkGuards()
 		{
 			Hue = Utility.RandomList( 0x1C4, 0x1C5, 0x1C6, 0x1C7, 0x1C9, 0x1CA, 0x1CB, 0x1CC, 0x1CE, 0x1CF, 0x1D0, 0x1D1 );
 			if ( this.Female = Utility.RandomBool() )
 			{
-				Body = 0x191; 
+				Body = 0x191;
 				Name = NameList.RandomName( "ork_female" );
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				Body = 0x190; 
+			}
+			else
+			{
+				Body = 0x190;
 				Name = NameList.RandomName( "ork_male" );
 				Utility.AssignRandomHair( this );
 				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );

@@ -31,7 +31,7 @@ namespace Server.Multis
 		{
 		}
 
-		public override HouseDeed GetDeed() 
+		public override HouseDeed GetDeed()
 		{
 			switch ( ItemID )
 			{
@@ -39,8 +39,8 @@ namespace Server.Multis
 				case 0x66: return new FieldStoneHouseDeed();
 				case 0x68: return new SmallBrickHouseDeed();
 				case 0x6A: return new WoodHouseDeed();
-				case 0x6C: return new WoodPlasterHouseDeed(); 
-				case 0x6E: 
+				case 0x6C: return new WoodPlasterHouseDeed();
+				case 0x6E:
 				default: return new ThatchedRoofCottageDeed();
 			}
 		}
@@ -129,8 +129,8 @@ namespace Server.Multis
 		{
 		}
 
-		public override HouseDeed GetDeed() 
-		{ 
+		public override HouseDeed GetDeed()
+		{
 			switch( ItemID )
 			{
 				case 0x76: return new TwoStoryWoodPlasterHouseDeed();
@@ -213,7 +213,7 @@ namespace Server.Multis
 			uint keyValue = CreateKeys( owner );
 
 			AddSouthDoors( false, 0, 10, 6, keyValue );
-			
+
 			SetSign( 5, 12, 16 );
 		}
 
@@ -297,7 +297,7 @@ namespace Server.Multis
 			uint keyValue = CreateKeys( owner );
 
 			AddSouthDoors( -4, 6, 7, keyValue );
-			
+
 			SetSign( 1, 8, 16 );
 
 			AddEastDoor( 1, 4, 7 );
@@ -421,7 +421,7 @@ namespace Server.Multis
 			uint keyValue = CreateKeys( owner );
 
 			AddSouthDoor( 1, 4, 8, keyValue );
-			
+
 			SetSign( 5, 8, 20 );
 
 			AddSouthDoor( 1, 0, 29 );
@@ -463,7 +463,7 @@ namespace Server.Multis
 			uint keyValue = CreateKeys( owner );
 
 			AddSouthDoor( -1, 3, 6, keyValue );
-			
+
 			SetSign( 4, 6, 24 );
 		}
 
@@ -503,7 +503,7 @@ namespace Server.Multis
 			uint keyValue = CreateKeys( owner );
 
 			AddSouthDoors( 3, 1, 5, keyValue );
-			
+
 			SetSign( 3, 8, 24 );
 
 			AddEastDoor( 1, 0, 25 );
@@ -558,7 +558,7 @@ namespace Server.Multis
 			AddDoor( door, -2, 0, id == 0xA2 ? 24 : 27 );
 
 			//AddSouthDoor( false, -2, 0, 27 - (id == 0xA2 ? 3 : 0), keyValue );
-			
+
 			SetSign( 3, 4, 7 - (id == 0xA2 ? 2 : 0) );
 		}
 
@@ -566,11 +566,11 @@ namespace Server.Multis
 		{
 		}
 
-		public override HouseDeed GetDeed() 
-		{ 
+		public override HouseDeed GetDeed()
+		{
 			switch ( ItemID )
 			{
-				case 0xA0: return new StoneWorkshopDeed(); 
+				case 0xA0: return new StoneWorkshopDeed();
 				case 0xA2:
 				default: return new MarbleWorkshopDeed();
 			}

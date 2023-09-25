@@ -52,7 +52,7 @@ namespace Server.Items
 					else if ( ItemID == 0x107A ){ ItemID = 0x107B; }
 					else if ( ItemID == 0x107B ){ ItemID = 0x107A; }
 					Name = "stretched hide";
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 
 					if ( PlayRepetitive )
 						from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
@@ -154,7 +154,7 @@ namespace Server.Items
 				{
 					EquipVendor( from, "pole" );
 					Name = "water";
-					from.Animate( 12, 5, 1, true, false, 0 );   
+					from.Animate( 12, 5, 1, true, false, 0 );
 					Effects.SendLocationEffect( this.Location, this.Map, 0x352D, 16, 4 );
 					Effects.PlaySound( this.Location, this.Map, 0x364 );
 					((BaseVendor)from).m_NextAction = (DateTime.Now + TimeSpan.FromSeconds( Utility.RandomMinMax( 10, 20 ) ) );
@@ -271,21 +271,21 @@ namespace Server.Items
 				if ( m_Acts == 0 )
 				{
 					ItemID = 0x6529;
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					m_Acts++;
 					if ( PlayRegular )
 						from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
 				}
 				else if ( m_Acts == 1 )
 				{
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					m_Acts++;
 					from.PlaySound( 0x025 );
 					ItemID = 0x653A;
 				}
 				else if ( m_Acts == 2 )
 				{
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					m_Acts++;
 					ItemID = 0x653B;
 					if ( PlayRepetitive )
@@ -293,7 +293,7 @@ namespace Server.Items
 				}
 				else if ( m_Acts == 3 )
 				{
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					m_Acts++;
 					ItemID = 0x653C;
 					if ( PlayRepetitive )
@@ -301,7 +301,7 @@ namespace Server.Items
 				}
 				else if ( m_Acts == 4 )
 				{
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					m_Acts++;
 					ItemID = 0x653D;
 					if ( PlayRepetitive )
@@ -322,7 +322,7 @@ namespace Server.Items
 				{
 					ItemID = Utility.RandomMinMax( 0x175D, 0x1768 );
 					Hue = Utility.RandomColor(0);
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					m_Acts = 1;
 					if ( PlayRegular )
 						from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
@@ -332,7 +332,7 @@ namespace Server.Items
 					Name = "clothing";
 					ItemID = Utility.RandomList( 0x1517, 0x1518, 0x1EFD, 0x1EFE, 0x1F9F, 0x1FA0, 0x1537, 0x1538, 0x152F, 0x1531, 0x1516, 0x152E, 0x1713, 0x1715, 0x1718, 0x171A, 0x171C );
 					from.PlaySound( 0x248 );
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					m_Acts = 0;
 				}
 			}
@@ -343,7 +343,7 @@ namespace Server.Items
 				if ( ItemID == 0x104B || ItemID == 0x104C )
 				{
 					ItemID = Utility.RandomList( 0xC1F, 0x104D, 0x104E, 0x104F, 0x1050 );
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					if ( PlayRegular )
 						from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
 				}
@@ -351,7 +351,7 @@ namespace Server.Items
 				{
 					ItemID = Utility.RandomList( 0x104B, 0x104C );
 					from.PlaySound( 0x241 );
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 				}
 			}
 			else if ( from is Lumberjack || from is Carpenter )
@@ -363,7 +363,7 @@ namespace Server.Items
 					{
 						m_Acts = 1;
 						Name = "log";
-						from.Animate( 230, 5, 1, true, false, 0 ); 
+						from.Animate( 230, 5, 1, true, false, 0 );
 						ItemID = 0x653E;
 						if ( PlayRegular )
 							from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
@@ -377,7 +377,7 @@ namespace Server.Items
 						from.PlaySound( 0x13E );
 						ItemID = Utility.RandomList( 0x1BDE, 0x1BE1 );
 					}
-					else 
+					else
 					{
 						m_Acts = 0;
 						Name = "boards";
@@ -395,7 +395,7 @@ namespace Server.Items
 					{
 						Name = "wood";
 						m_Acts = 1;
-						from.Animate( 230, 5, 1, true, false, 0 ); 
+						from.Animate( 230, 5, 1, true, false, 0 );
 						ItemID = Utility.RandomList( 0x1BD8, 0x1BD9, 0x1BDB, 0x1BDC );
 						if ( PlayRegular )
 							from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
@@ -439,7 +439,7 @@ namespace Server.Items
 				{
 					Name = "flour";
 					m_Acts = 1;
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 
 					ItemID = Utility.RandomList( 0x1039, 0x1045 );
 
@@ -450,7 +450,7 @@ namespace Server.Items
 				{
 					Name = "flour";
 					m_Acts = 2;
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 
 					ItemID = Utility.RandomList( 0x103A, 0x1046 );
 
@@ -461,7 +461,7 @@ namespace Server.Items
 				{
 					Name = "dough";
 					m_Acts = 3;
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 					ItemID = 0xA1E;
 					from.PlaySound( 0x242 );
 				}
@@ -478,7 +478,7 @@ namespace Server.Items
 						ItemID = 0x103F;
 					}
 					m_Acts = 4;
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 
 					if ( PlayRepetitive )
 						from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
@@ -488,7 +488,7 @@ namespace Server.Items
 					m_Acts = 0;
 					if ( ItemID == 0x103D ){ Name = "bread"; ItemID = Utility.RandomList( 0x103C, 0x98C ); }
 					else { Name = "cookies"; ItemID = Utility.RandomList( 0x160B, 0x160C ); }
-					from.Animate( 230, 5, 1, true, false, 0 ); 
+					from.Animate( 230, 5, 1, true, false, 0 );
 
 					if ( PlayRepetitive )
 						from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
@@ -521,14 +521,14 @@ namespace Server.Items
 							ItemID = Utility.RandomMinMax( 0x1BEF, 0x1BF1 );
 
 						Name = "ingots";
-						from.Animate( 230, 5, 1, true, false, 0 );   
+						from.Animate( 230, 5, 1, true, false, 0 );
 						from.PlaySound( Utility.RandomList( 0x02B, 0x047, 0x208 ) );
 					}
 					else
 					{
 						ItemID = 0x19B8;
 						Name = "ore";
-						from.Animate( 230, 5, 1, true, false, 0 ); 
+						from.Animate( 230, 5, 1, true, false, 0 );
 						if ( PlayRegular )
 							from.PlaySound( Utility.RandomList( 0x059, 0x057 ) );
 					}
@@ -543,7 +543,7 @@ namespace Server.Items
 							if ( Utility.RandomBool() )
 								m_Acts = 2;
 
-						from.Animate( 230, 5, 1, true, false, 0 ); 
+						from.Animate( 230, 5, 1, true, false, 0 );
 
 						if ( facingNS( from ) )
 							ItemID = 0x64F7;

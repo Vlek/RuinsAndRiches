@@ -65,7 +65,7 @@ namespace Server.Items
 
 		public override bool DisplayLootType { get { return false; } }
 
-		private RepairSkillType m_Skill; 
+		private RepairSkillType m_Skill;
 		private double m_SkillLevel;
 
 		private Mobile m_Crafter;

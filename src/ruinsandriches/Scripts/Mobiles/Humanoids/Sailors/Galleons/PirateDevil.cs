@@ -7,15 +7,15 @@ using System.Collections.Generic;
 using Server.Targeting;
 using Server.Multis;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class PirateDevil : BasePirate 
+	public class PirateDevil : BasePirate
 	{
 		public override bool ReacquireOnMovement{ get{ return true; } }
 		public override bool HasBreath{ get{ return true; } } // fire breath enabled
 		public override Poison PoisonImmune{ get{ return Poison.Deadly; } }
 
-		[Constructable] 
+		[Constructable]
 		public PirateDevil()
 		{
 			Name = NameList.RandomName( "devil" );

@@ -13,7 +13,7 @@ namespace Server.Spells.Song
 {
 	public class KnightsMinneSong : Song
 	{
-		
+
 		private static SpellInfo m_Info = new SpellInfo(
 				"Knight's Minne", "*plays a knight's minne*",
 				//SpellCircle.First,
@@ -26,7 +26,7 @@ namespace Server.Spells.Song
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
 		public override double RequiredSkill{ get{ return 50.0; } }
 		public override int RequiredMana{ get{ return 12; } }
-		
+
 		public KnightsMinneSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
 		{
 		}
@@ -47,11 +47,11 @@ namespace Server.Spells.Song
             }
 
 			bool sings = false;
- 
+
 			if( CheckSequence() )
 			{
 				sings = true;
- 
+
 				ArrayList targets = new ArrayList();
 
 				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
@@ -59,24 +59,24 @@ namespace Server.Spells.Song
 					if ( Caster.CanBeBeneficial( m, false, true ) && !(m is Golem) )
 						targets.Add( m );
 				}
-				
-				
+
+
 				for ( int i = 0; i < targets.Count; ++i )
 				{
 					Mobile m = (Mobile)targets[i];
-					
+
 					TimeSpan duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster ) * 2) );
                     int amount = Server.Misc.MyServerSettings.PlayerLevelMod( (int)(MusicSkill( Caster ) / 16), Caster );
-	
+
 					m.SendMessage( "Your resistance to physical attacks has increased." );
 					ResistanceMod mod1 = new ResistanceMod( ResistanceType.Physical, + amount );
-						
+
 					m.AddResistanceMod( mod1 );
-						
+
 					m.FixedParticles( 0x373A, 10, 15, 5012, 0x450, 3, EffectLayer.Waist );
-						
+
 					new ExpireTimer( m, mod1, duration ).Start();
-					
+
 				}
 			}
 
@@ -98,7 +98,7 @@ namespace Server.Spells.Song
 			public void DoExpire()
 			{
 				m_Mobile.RemoveResistanceMod( m_Mods );
-				
+
 				Stop();
 			}
 

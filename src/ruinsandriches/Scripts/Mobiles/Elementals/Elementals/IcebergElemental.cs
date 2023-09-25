@@ -63,7 +63,7 @@ namespace Server.Mobiles
 
 		public override void OnDeath( Container c )
 		{
-			base.OnDeath( c );		
+			base.OnDeath( c );
 			RareMetals stones = new RareMetals( Utility.RandomMinMax( 10, 25 ), "mystical ice stones" );
    			c.DropItem(stones);
 		}

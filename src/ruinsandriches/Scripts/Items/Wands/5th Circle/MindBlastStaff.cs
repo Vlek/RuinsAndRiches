@@ -10,14 +10,16 @@ namespace Server.Items
 		[Constructable]
 		public MindBlastMagicStaff() : base( MagicStaffEffect.Charges, 1, 9 )
 		{
-			IntRequirement = 30;			Name = "wand of mind blasting";
+			IntRequirement = 30;
+			Name = "wand of mind blasting";
 			SkillBonuses.SetValues( 1, SkillName.Magery, 50 );
 		}
 
 		public override void AddNameProperties( ObjectPropertyList list )
 		{
 			base.AddNameProperties( list );
-			list.Add( 1070722, "5th Circle of Power" );			list.Add( 1049644, "Requires 30 Intelligence" );
+			list.Add( 1070722, "5th Circle of Power" );
+			list.Add( 1049644, "Requires 30 Intelligence" );
 		}
 
 		public MindBlastMagicStaff( Serial serial ) : base( serial )

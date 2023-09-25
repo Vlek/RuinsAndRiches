@@ -11,7 +11,7 @@ namespace Server.Spells.Magical
 	public class SummonSkeletonSpell : MagicalSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
-				"", "", 
+				"", "",
 				266,
 				9040,
 				false
@@ -21,7 +21,7 @@ namespace Server.Spells.Magical
 		public override double RequiredSkill{ get{ return 0.0; } }
 		public override int RequiredMana{ get{ return 1; } }
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
-		
+
 		public SummonSkeletonSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}

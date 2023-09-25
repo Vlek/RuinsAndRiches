@@ -31,7 +31,7 @@ namespace Server.Engines.Craft
 
 		private string m_NameString;
 		private int m_NameNumber;
-		
+
 		private int m_Mana;
 		private int m_Hits;
 		private int m_Stam;
@@ -51,7 +51,7 @@ namespace Server.Engines.Craft
 			get { return m_ForceNonExceptional; }
 			set { m_ForceNonExceptional = value; }
 		}
-	
+
 
 		private Expansion m_RequiredExpansion;
 
@@ -80,7 +80,7 @@ namespace Server.Engines.Craft
 		}
 
 		private static Dictionary<Type, int> _itemIds = new Dictionary<Type, int>();
-		
+
 		public static int ItemIDOf( Type type ) {
 			int itemId;
 
@@ -199,7 +199,7 @@ namespace Server.Engines.Craft
 			get { return m_NeedMill; }
 			set { m_NeedMill = value; }
 		}
-		
+
 		public Type ItemType
 		{
 			get { return m_Type; }
@@ -294,7 +294,7 @@ namespace Server.Engines.Craft
 				0x184A, 0x184C, // Heating stand (left)
 				0x184E, 0x1850, // Heating stand (right)
 				0x19AA, 0x19BB,	// Veteran Reward Brazier
-				0x197A, 0x19A9, // Large Forge 
+				0x197A, 0x19A9, // Large Forge
 				0x2DD8, // Elven Forge
 				0x2DDB, 0x2DDC,	// Elven stove
 				0x398C, 0x399F, // Fire field
@@ -995,163 +995,163 @@ namespace Server.Engines.Craft
 
 		public static bool IsGodCrafted( Item item )
 		{
-			if ( 
-				item is AmethystPlateArms || 
-				item is AmethystPlateGloves || 
-				item is AmethystPlateGorget || 
-				item is AmethystPlateLegs || 
-				item is AmethystPlateChest || 
-				item is AmethystFemalePlateChest || 
-				item is AmethystPlateHelm || 
-				item is AmethystShield || 
-				item is EmeraldPlateArms || 
-				item is EmeraldPlateGloves || 
-				item is EmeraldPlateGorget || 
-				item is EmeraldPlateLegs || 
-				item is EmeraldPlateChest || 
-				item is EmeraldFemalePlateChest || 
-				item is EmeraldPlateHelm || 
-				item is EmeraldShield || 
-				item is GarnetPlateArms || 
-				item is GarnetPlateGloves || 
-				item is GarnetPlateGorget || 
-				item is GarnetPlateLegs || 
-				item is GarnetPlateChest || 
-				item is GarnetFemalePlateChest || 
-				item is GarnetPlateHelm || 
-				item is GarnetShield || 
-				item is IcePlateArms || 
-				item is IcePlateGloves || 
-				item is IcePlateGorget || 
-				item is IcePlateLegs || 
-				item is IcePlateChest || 
-				item is IceFemalePlateChest || 
-				item is IcePlateHelm || 
-				item is IceShield || 
-				item is JadePlateArms || 
-				item is JadePlateGloves || 
-				item is JadePlateGorget || 
-				item is JadePlateLegs || 
-				item is JadePlateChest || 
-				item is JadeFemalePlateChest || 
-				item is JadePlateHelm || 
-				item is JadeShield || 
-				item is MarblePlateArms || 
-				item is MarblePlateGloves || 
-				item is MarblePlateGorget || 
-				item is MarblePlateLegs || 
-				item is MarblePlateChest || 
-				item is MarbleFemalePlateChest || 
-				item is MarblePlateHelm || 
-				item is MarbleShields || 
-				item is OnyxPlateArms || 
-				item is OnyxPlateGloves || 
-				item is OnyxPlateGorget || 
-				item is OnyxPlateLegs || 
-				item is OnyxPlateChest || 
-				item is OnyxFemalePlateChest || 
-				item is OnyxPlateHelm || 
-				item is OnyxShield || 
-				item is QuartzPlateArms || 
-				item is QuartzPlateGloves || 
-				item is QuartzPlateGorget || 
-				item is QuartzPlateLegs || 
-				item is QuartzPlateChest || 
-				item is QuartzFemalePlateChest || 
-				item is QuartzPlateHelm || 
-				item is QuartzShield || 
-				item is RubyPlateArms || 
-				item is RubyPlateGloves || 
-				item is RubyPlateGorget || 
-				item is RubyPlateLegs || 
-				item is RubyPlateChest || 
-				item is RubyFemalePlateChest || 
-				item is RubyPlateHelm || 
-				item is RubyShield || 
-				item is SapphirePlateArms || 
-				item is SapphirePlateGloves || 
-				item is SapphirePlateGorget || 
-				item is SapphirePlateLegs || 
-				item is SapphirePlateChest || 
-				item is SapphireFemalePlateChest || 
-				item is SapphirePlateHelm || 
-				item is SapphireShield || 
-				item is SilverPlateArms || 
-				item is SilverPlateGloves || 
-				item is SilverPlateGorget || 
-				item is SilverPlateLegs || 
-				item is SilverPlateChest || 
-				item is SilverFemalePlateChest || 
-				item is SilverPlateHelm || 
-				item is SilverShield || 
-				item is SpinelPlateArms || 
-				item is SpinelPlateGloves || 
-				item is SpinelPlateGorget || 
-				item is SpinelPlateLegs || 
-				item is SpinelPlateChest || 
-				item is SpinelFemalePlateChest || 
-				item is SpinelPlateHelm || 
-				item is SpinelShield || 
-				item is StarRubyPlateArms || 
-				item is StarRubyPlateGloves || 
-				item is StarRubyPlateGorget || 
-				item is StarRubyPlateLegs || 
-				item is StarRubyPlateChest || 
-				item is StarRubyFemalePlateChest || 
-				item is StarRubyPlateHelm || 
-				item is StarRubyShield || 
-				item is TopazPlateArms || 
-				item is TopazPlateGloves || 
-				item is TopazPlateGorget || 
-				item is TopazPlateLegs || 
-				item is TopazPlateChest || 
-				item is TopazFemalePlateChest || 
-				item is TopazPlateHelm || 
-				item is TopazShield || 
-				item is CaddellitePlateArms || 
-				item is CaddellitePlateGloves || 
-				item is CaddellitePlateGorget || 
-				item is CaddellitePlateLegs || 
-				item is CaddellitePlateChest || 
-				item is CaddelliteFemalePlateChest || 
-				item is CaddellitePlateHelm || 
-				item is CaddelliteShield || 
-				item is SkinDemonArms || 
-				item is SkinDemonHelm || 
-				item is SkinDemonGloves || 
-				item is SkinDemonGorget || 
-				item is SkinDemonLegs || 
-				item is SkinDemonChest || 
-				item is SkinDragonArms || 
-				item is SkinDragonHelm || 
-				item is SkinDragonGloves || 
-				item is SkinDragonGorget || 
-				item is SkinDragonLegs || 
-				item is SkinDragonChest || 
-				item is SkinNightmareArms || 
-				item is SkinNightmareHelm || 
-				item is SkinNightmareGloves || 
-				item is SkinNightmareGorget || 
-				item is SkinNightmareLegs || 
-				item is SkinNightmareChest || 
-				item is SkinSerpentArms || 
-				item is SkinSerpentHelm || 
-				item is SkinSerpentGloves || 
-				item is SkinSerpentGorget || 
-				item is SkinSerpentLegs || 
-				item is SkinSerpentChest || 
-				item is SkinTrollArms || 
-				item is SkinTrollHelm || 
-				item is SkinTrollGloves || 
-				item is SkinTrollGorget || 
-				item is SkinTrollLegs || 
-				item is SkinTrollChest || 
-				item is SkinUnicornArms || 
-				item is SkinUnicornHelm || 
-				item is SkinUnicornGloves || 
-				item is SkinUnicornGorget || 
-				item is SkinUnicornLegs || 
-				item is SkinUnicornChest 
+			if (
+				item is AmethystPlateArms ||
+				item is AmethystPlateGloves ||
+				item is AmethystPlateGorget ||
+				item is AmethystPlateLegs ||
+				item is AmethystPlateChest ||
+				item is AmethystFemalePlateChest ||
+				item is AmethystPlateHelm ||
+				item is AmethystShield ||
+				item is EmeraldPlateArms ||
+				item is EmeraldPlateGloves ||
+				item is EmeraldPlateGorget ||
+				item is EmeraldPlateLegs ||
+				item is EmeraldPlateChest ||
+				item is EmeraldFemalePlateChest ||
+				item is EmeraldPlateHelm ||
+				item is EmeraldShield ||
+				item is GarnetPlateArms ||
+				item is GarnetPlateGloves ||
+				item is GarnetPlateGorget ||
+				item is GarnetPlateLegs ||
+				item is GarnetPlateChest ||
+				item is GarnetFemalePlateChest ||
+				item is GarnetPlateHelm ||
+				item is GarnetShield ||
+				item is IcePlateArms ||
+				item is IcePlateGloves ||
+				item is IcePlateGorget ||
+				item is IcePlateLegs ||
+				item is IcePlateChest ||
+				item is IceFemalePlateChest ||
+				item is IcePlateHelm ||
+				item is IceShield ||
+				item is JadePlateArms ||
+				item is JadePlateGloves ||
+				item is JadePlateGorget ||
+				item is JadePlateLegs ||
+				item is JadePlateChest ||
+				item is JadeFemalePlateChest ||
+				item is JadePlateHelm ||
+				item is JadeShield ||
+				item is MarblePlateArms ||
+				item is MarblePlateGloves ||
+				item is MarblePlateGorget ||
+				item is MarblePlateLegs ||
+				item is MarblePlateChest ||
+				item is MarbleFemalePlateChest ||
+				item is MarblePlateHelm ||
+				item is MarbleShields ||
+				item is OnyxPlateArms ||
+				item is OnyxPlateGloves ||
+				item is OnyxPlateGorget ||
+				item is OnyxPlateLegs ||
+				item is OnyxPlateChest ||
+				item is OnyxFemalePlateChest ||
+				item is OnyxPlateHelm ||
+				item is OnyxShield ||
+				item is QuartzPlateArms ||
+				item is QuartzPlateGloves ||
+				item is QuartzPlateGorget ||
+				item is QuartzPlateLegs ||
+				item is QuartzPlateChest ||
+				item is QuartzFemalePlateChest ||
+				item is QuartzPlateHelm ||
+				item is QuartzShield ||
+				item is RubyPlateArms ||
+				item is RubyPlateGloves ||
+				item is RubyPlateGorget ||
+				item is RubyPlateLegs ||
+				item is RubyPlateChest ||
+				item is RubyFemalePlateChest ||
+				item is RubyPlateHelm ||
+				item is RubyShield ||
+				item is SapphirePlateArms ||
+				item is SapphirePlateGloves ||
+				item is SapphirePlateGorget ||
+				item is SapphirePlateLegs ||
+				item is SapphirePlateChest ||
+				item is SapphireFemalePlateChest ||
+				item is SapphirePlateHelm ||
+				item is SapphireShield ||
+				item is SilverPlateArms ||
+				item is SilverPlateGloves ||
+				item is SilverPlateGorget ||
+				item is SilverPlateLegs ||
+				item is SilverPlateChest ||
+				item is SilverFemalePlateChest ||
+				item is SilverPlateHelm ||
+				item is SilverShield ||
+				item is SpinelPlateArms ||
+				item is SpinelPlateGloves ||
+				item is SpinelPlateGorget ||
+				item is SpinelPlateLegs ||
+				item is SpinelPlateChest ||
+				item is SpinelFemalePlateChest ||
+				item is SpinelPlateHelm ||
+				item is SpinelShield ||
+				item is StarRubyPlateArms ||
+				item is StarRubyPlateGloves ||
+				item is StarRubyPlateGorget ||
+				item is StarRubyPlateLegs ||
+				item is StarRubyPlateChest ||
+				item is StarRubyFemalePlateChest ||
+				item is StarRubyPlateHelm ||
+				item is StarRubyShield ||
+				item is TopazPlateArms ||
+				item is TopazPlateGloves ||
+				item is TopazPlateGorget ||
+				item is TopazPlateLegs ||
+				item is TopazPlateChest ||
+				item is TopazFemalePlateChest ||
+				item is TopazPlateHelm ||
+				item is TopazShield ||
+				item is CaddellitePlateArms ||
+				item is CaddellitePlateGloves ||
+				item is CaddellitePlateGorget ||
+				item is CaddellitePlateLegs ||
+				item is CaddellitePlateChest ||
+				item is CaddelliteFemalePlateChest ||
+				item is CaddellitePlateHelm ||
+				item is CaddelliteShield ||
+				item is SkinDemonArms ||
+				item is SkinDemonHelm ||
+				item is SkinDemonGloves ||
+				item is SkinDemonGorget ||
+				item is SkinDemonLegs ||
+				item is SkinDemonChest ||
+				item is SkinDragonArms ||
+				item is SkinDragonHelm ||
+				item is SkinDragonGloves ||
+				item is SkinDragonGorget ||
+				item is SkinDragonLegs ||
+				item is SkinDragonChest ||
+				item is SkinNightmareArms ||
+				item is SkinNightmareHelm ||
+				item is SkinNightmareGloves ||
+				item is SkinNightmareGorget ||
+				item is SkinNightmareLegs ||
+				item is SkinNightmareChest ||
+				item is SkinSerpentArms ||
+				item is SkinSerpentHelm ||
+				item is SkinSerpentGloves ||
+				item is SkinSerpentGorget ||
+				item is SkinSerpentLegs ||
+				item is SkinSerpentChest ||
+				item is SkinTrollArms ||
+				item is SkinTrollHelm ||
+				item is SkinTrollGloves ||
+				item is SkinTrollGorget ||
+				item is SkinTrollLegs ||
+				item is SkinTrollChest ||
+				item is SkinUnicornArms ||
+				item is SkinUnicornHelm ||
+				item is SkinUnicornGloves ||
+				item is SkinUnicornGorget ||
+				item is SkinUnicornLegs ||
+				item is SkinUnicornChest
 			){ return true; }
 
 			return false;
@@ -1378,171 +1378,171 @@ namespace Server.Engines.Craft
 							item.Amount = maxAmount;
 					}
 
-					if ( item is SkinUnicornLegs || 
-							item is SkinUnicornGloves || 
-							item is SkinUnicornGorget || 
-							item is SkinUnicornArms || 
-							item is SkinUnicornChest || 
+					if ( item is SkinUnicornLegs ||
+							item is SkinUnicornGloves ||
+							item is SkinUnicornGorget ||
+							item is SkinUnicornArms ||
+							item is SkinUnicornChest ||
 							item is SkinUnicornHelm ){ if ( item is BaseArmor ){ BaseArmor woody = (BaseArmor)item; woody.Resource = CraftResource.RegularLeather; } item.Hue = MaterialInfo.GetMaterialColor( "unicorn skin", "", 0 ); }
-					else if ( item is SkinDemonLegs || 
-							item is SkinDemonGloves || 
-							item is SkinDemonGorget || 
-							item is SkinDemonArms || 
-							item is SkinDemonChest || 
+					else if ( item is SkinDemonLegs ||
+							item is SkinDemonGloves ||
+							item is SkinDemonGorget ||
+							item is SkinDemonArms ||
+							item is SkinDemonChest ||
 							item is SkinDemonHelm ){ if ( item is BaseArmor ){ BaseArmor woody = (BaseArmor)item; woody.Resource = CraftResource.RegularLeather; } item.Hue = MaterialInfo.GetMaterialColor( "demon skin", "", 0 ); }
-					else if ( item is SkinDragonLegs || 
-							item is SkinDragonGloves || 
-							item is SkinDragonGorget || 
-							item is SkinDragonArms || 
-							item is SkinDragonChest || 
+					else if ( item is SkinDragonLegs ||
+							item is SkinDragonGloves ||
+							item is SkinDragonGorget ||
+							item is SkinDragonArms ||
+							item is SkinDragonChest ||
 							item is SkinDragonHelm ){ if ( item is BaseArmor ){ BaseArmor woody = (BaseArmor)item; woody.Resource = CraftResource.RegularLeather; } item.Hue = MaterialInfo.GetMaterialColor( "dragon skin", "", 0 ); }
-					else if ( item is SkinNightmareLegs || 
-							item is SkinNightmareGloves || 
-							item is SkinNightmareGorget || 
-							item is SkinNightmareArms || 
-							item is SkinNightmareChest || 
+					else if ( item is SkinNightmareLegs ||
+							item is SkinNightmareGloves ||
+							item is SkinNightmareGorget ||
+							item is SkinNightmareArms ||
+							item is SkinNightmareChest ||
 							item is SkinNightmareHelm ){ if ( item is BaseArmor ){ BaseArmor woody = (BaseArmor)item; woody.Resource = CraftResource.RegularLeather; } item.Hue = MaterialInfo.GetMaterialColor( "nightmare skin", "", 0 ); }
-					else if ( item is SkinSerpentLegs || 
-							item is SkinSerpentGloves || 
-							item is SkinSerpentGorget || 
-							item is SkinSerpentArms || 
-							item is SkinSerpentChest || 
+					else if ( item is SkinSerpentLegs ||
+							item is SkinSerpentGloves ||
+							item is SkinSerpentGorget ||
+							item is SkinSerpentArms ||
+							item is SkinSerpentChest ||
 							item is SkinSerpentHelm ){ if ( item is BaseArmor ){ BaseArmor woody = (BaseArmor)item; woody.Resource = CraftResource.RegularLeather; } item.Hue = MaterialInfo.GetMaterialColor( "serpent skin", "", 0 ); }
-					else if ( item is SkinTrollLegs || 
-							item is SkinTrollGloves || 
-							item is SkinTrollGorget || 
-							item is SkinTrollArms || 
-							item is SkinTrollChest || 
+					else if ( item is SkinTrollLegs ||
+							item is SkinTrollGloves ||
+							item is SkinTrollGorget ||
+							item is SkinTrollArms ||
+							item is SkinTrollChest ||
 							item is SkinTrollHelm ){ if ( item is BaseArmor ){ BaseArmor woody = (BaseArmor)item; woody.Resource = CraftResource.RegularLeather; } item.Hue = MaterialInfo.GetMaterialColor( "troll skin", "", 0 ); }
-					else if ( item is AmethystPlateLegs || 
-							item is AmethystPlateGloves || 
-							item is AmethystPlateGorget || 
-							item is AmethystPlateArms || 
-							item is AmethystPlateChest || 
-							item is AmethystFemalePlateChest || 
-							item is AmethystShield || 
+					else if ( item is AmethystPlateLegs ||
+							item is AmethystPlateGloves ||
+							item is AmethystPlateGorget ||
+							item is AmethystPlateArms ||
+							item is AmethystPlateChest ||
+							item is AmethystFemalePlateChest ||
+							item is AmethystShield ||
 							item is AmethystPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "amethyst", "", 0 ); }
-					else if ( item is CaddellitePlateLegs || 
-							item is CaddellitePlateGloves || 
-							item is CaddellitePlateGorget || 
-							item is CaddellitePlateArms || 
-							item is CaddellitePlateChest || 
-							item is CaddelliteFemalePlateChest || 
-							item is CaddelliteShield || 
+					else if ( item is CaddellitePlateLegs ||
+							item is CaddellitePlateGloves ||
+							item is CaddellitePlateGorget ||
+							item is CaddellitePlateArms ||
+							item is CaddellitePlateChest ||
+							item is CaddelliteFemalePlateChest ||
+							item is CaddelliteShield ||
 							item is CaddellitePlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "caddellite", "", 0 ); }
-					else if ( item is EmeraldPlateLegs || 
-							item is EmeraldPlateGloves || 
-							item is EmeraldPlateGorget || 
-							item is EmeraldPlateArms || 
-							item is EmeraldPlateChest || 
-							item is EmeraldFemalePlateChest || 
-							item is EmeraldShield || 
+					else if ( item is EmeraldPlateLegs ||
+							item is EmeraldPlateGloves ||
+							item is EmeraldPlateGorget ||
+							item is EmeraldPlateArms ||
+							item is EmeraldPlateChest ||
+							item is EmeraldFemalePlateChest ||
+							item is EmeraldShield ||
 							item is EmeraldPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "emerald", "", 0 ); }
-					else if ( item is GarnetPlateLegs || 
-							item is GarnetPlateGloves || 
-							item is GarnetPlateGorget || 
-							item is GarnetPlateArms || 
-							item is GarnetPlateChest || 
-							item is GarnetFemalePlateChest || 
-							item is GarnetShield || 
+					else if ( item is GarnetPlateLegs ||
+							item is GarnetPlateGloves ||
+							item is GarnetPlateGorget ||
+							item is GarnetPlateArms ||
+							item is GarnetPlateChest ||
+							item is GarnetFemalePlateChest ||
+							item is GarnetShield ||
 							item is GarnetPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "garnet", "", 0 ); }
-					else if ( item is IcePlateLegs || 
-							item is IcePlateGloves || 
-							item is IcePlateGorget || 
-							item is IcePlateArms || 
-							item is IcePlateChest || 
-							item is IceFemalePlateChest || 
-							item is IceShield || 
+					else if ( item is IcePlateLegs ||
+							item is IcePlateGloves ||
+							item is IcePlateGorget ||
+							item is IcePlateArms ||
+							item is IcePlateChest ||
+							item is IceFemalePlateChest ||
+							item is IceShield ||
 							item is IcePlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "ice", "", 0 ); }
-					else if ( item is JadePlateLegs || 
-							item is JadePlateGloves || 
-							item is JadePlateGorget || 
-							item is JadePlateArms || 
-							item is JadePlateChest || 
-							item is JadeFemalePlateChest || 
-							item is JadeShield || 
+					else if ( item is JadePlateLegs ||
+							item is JadePlateGloves ||
+							item is JadePlateGorget ||
+							item is JadePlateArms ||
+							item is JadePlateChest ||
+							item is JadeFemalePlateChest ||
+							item is JadeShield ||
 							item is JadePlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "jade", "", 0 ); }
-					else if ( item is MarblePlateLegs || 
-							item is MarblePlateGloves || 
-							item is MarblePlateGorget || 
-							item is MarblePlateArms || 
-							item is MarblePlateChest || 
-							item is MarbleFemalePlateChest || 
-							item is MarbleShields || 
+					else if ( item is MarblePlateLegs ||
+							item is MarblePlateGloves ||
+							item is MarblePlateGorget ||
+							item is MarblePlateArms ||
+							item is MarblePlateChest ||
+							item is MarbleFemalePlateChest ||
+							item is MarbleShields ||
 							item is MarblePlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "marble", "", 0 ); }
-					else if ( item is OnyxPlateLegs || 
-							item is OnyxPlateGloves || 
-							item is OnyxPlateGorget || 
-							item is OnyxPlateArms || 
-							item is OnyxPlateChest || 
-							item is OnyxFemalePlateChest || 
-							item is OnyxShield || 
+					else if ( item is OnyxPlateLegs ||
+							item is OnyxPlateGloves ||
+							item is OnyxPlateGorget ||
+							item is OnyxPlateArms ||
+							item is OnyxPlateChest ||
+							item is OnyxFemalePlateChest ||
+							item is OnyxShield ||
 							item is OnyxPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "onyx", "", 0 ); }
-					else if ( item is QuartzPlateLegs || 
-							item is QuartzPlateGloves || 
-							item is QuartzPlateGorget || 
-							item is QuartzPlateArms || 
-							item is QuartzPlateChest || 
-							item is QuartzFemalePlateChest || 
-							item is QuartzShield || 
+					else if ( item is QuartzPlateLegs ||
+							item is QuartzPlateGloves ||
+							item is QuartzPlateGorget ||
+							item is QuartzPlateArms ||
+							item is QuartzPlateChest ||
+							item is QuartzFemalePlateChest ||
+							item is QuartzShield ||
 							item is QuartzPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "quartz", "", 0 ); }
-					else if ( item is RubyPlateLegs || 
-							item is RubyPlateGloves || 
-							item is RubyPlateGorget || 
-							item is RubyPlateArms || 
-							item is RubyPlateChest || 
-							item is RubyFemalePlateChest || 
-							item is RubyShield || 
+					else if ( item is RubyPlateLegs ||
+							item is RubyPlateGloves ||
+							item is RubyPlateGorget ||
+							item is RubyPlateArms ||
+							item is RubyPlateChest ||
+							item is RubyFemalePlateChest ||
+							item is RubyShield ||
 							item is RubyPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "ruby", "", 0 ); }
-					else if ( item is SapphirePlateLegs || 
-							item is SapphirePlateGloves || 
-							item is SapphirePlateGorget || 
-							item is SapphirePlateArms || 
-							item is SapphirePlateChest || 
-							item is SapphireFemalePlateChest || 
-							item is SapphireShield || 
+					else if ( item is SapphirePlateLegs ||
+							item is SapphirePlateGloves ||
+							item is SapphirePlateGorget ||
+							item is SapphirePlateArms ||
+							item is SapphirePlateChest ||
+							item is SapphireFemalePlateChest ||
+							item is SapphireShield ||
 							item is SapphirePlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "sapphire", "", 0 ); }
-					else if ( item is SilverPlateLegs || 
-							item is SilverPlateGloves || 
-							item is SilverPlateGorget || 
-							item is SilverPlateArms || 
-							item is SilverPlateChest || 
-							item is SilverFemalePlateChest || 
-							item is SilverShield || 
+					else if ( item is SilverPlateLegs ||
+							item is SilverPlateGloves ||
+							item is SilverPlateGorget ||
+							item is SilverPlateArms ||
+							item is SilverPlateChest ||
+							item is SilverFemalePlateChest ||
+							item is SilverShield ||
 							item is SilverPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "silver", "", 0 ); }
-					else if ( item is SpinelPlateLegs || 
-							item is SpinelPlateGloves || 
-							item is SpinelPlateGorget || 
-							item is SpinelPlateArms || 
-							item is SpinelPlateChest || 
-							item is SpinelFemalePlateChest || 
-							item is SpinelShield || 
+					else if ( item is SpinelPlateLegs ||
+							item is SpinelPlateGloves ||
+							item is SpinelPlateGorget ||
+							item is SpinelPlateArms ||
+							item is SpinelPlateChest ||
+							item is SpinelFemalePlateChest ||
+							item is SpinelShield ||
 							item is SpinelPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "spinel", "", 0 ); }
-					else if ( item is StarRubyPlateLegs || 
-							item is StarRubyPlateGloves || 
-							item is StarRubyPlateGorget || 
-							item is StarRubyPlateArms || 
-							item is StarRubyPlateChest || 
-							item is StarRubyFemalePlateChest || 
-							item is StarRubyShield || 
+					else if ( item is StarRubyPlateLegs ||
+							item is StarRubyPlateGloves ||
+							item is StarRubyPlateGorget ||
+							item is StarRubyPlateArms ||
+							item is StarRubyPlateChest ||
+							item is StarRubyFemalePlateChest ||
+							item is StarRubyShield ||
 							item is StarRubyPlateHelm ){ item.Hue = MaterialInfo.GetMaterialColor( "star ruby", "", 0 ); }
-					else if ( item is TopazPlateLegs || 
-							item is TopazPlateGloves || 
-							item is TopazPlateGorget || 
-							item is TopazPlateArms || 
-							item is TopazPlateChest || 
-							item is TopazFemalePlateChest || 
-							item is TopazPlateHelm || 
+					else if ( item is TopazPlateLegs ||
+							item is TopazPlateGloves ||
+							item is TopazPlateGorget ||
+							item is TopazPlateArms ||
+							item is TopazPlateChest ||
+							item is TopazFemalePlateChest ||
+							item is TopazPlateHelm ||
 							item is TopazShield ){ item.Hue = MaterialInfo.GetMaterialColor( "topaz", "", 0 ); }
-					else if ( item is WhiteFurRobe || 
-							item is WhiteFurCape || 
-							item is WhiteFurCap || 
-							item is WhiteFurBoots || 
+					else if ( item is WhiteFurRobe ||
+							item is WhiteFurCape ||
+							item is WhiteFurCap ||
+							item is WhiteFurBoots ||
 							item is WhiteFurSarong ){ item.Hue = 0x481; }
-					else if ( item is FurRobe || 
-							item is FurCape || 
-							item is FurCap || 
-							item is FurBoots || 
+					else if ( item is FurRobe ||
+							item is FurCape ||
+							item is FurCap ||
+							item is FurBoots ||
 							item is FurSarong ){ item.Hue = 0x907; }
 					else if ( item is DragonArms || item is DragonChest || item is DragonGloves || item is DragonHelm || item is DragonLegs )
 					{
@@ -1557,7 +1557,7 @@ namespace Server.Engines.Craft
 								else if ( item is DragonGloves ){ item.Name = "dinosaur gloves"; }
 								else if ( item is DragonHelm ){ item.Name = "dinosaur helm"; }
 								else if ( item is DragonLegs ){ item.Name = "dinosaur leggings"; }
-							}	
+							}
 						}
 					}
 
@@ -1565,11 +1565,11 @@ namespace Server.Engines.Craft
 					{
 						item.Amount = item.Amount * 2;
 					}
-					else if ( item is WoodenPlateLegs || 
-							item is WoodenPlateGloves || 
-							item is WoodenPlateGorget || 
-							item is WoodenPlateArms || 
-							item is WoodenPlateChest || 
+					else if ( item is WoodenPlateLegs ||
+							item is WoodenPlateGloves ||
+							item is WoodenPlateGorget ||
+							item is WoodenPlateArms ||
+							item is WoodenPlateChest ||
 							item is WoodenPlateHelm )
 					{
 						if ( item is BaseArmor )
@@ -1940,154 +1940,154 @@ namespace Server.Engines.Craft
 							case CraftResource.Dwarven: 	item.Hue = MaterialInfo.GetMaterialColor( "dwarven", "classic", 0 ); ((TrapKit)item).m_Metal = "Dwarven"; 			break;
 						}
 					}
-					else if ( item is ShortMusicStand || 
-						item is Backpack || 
-						item is Pouch || 
-						item is Bag || 
-						item is LargeBag || 
-						item is BigBag || 
-						item is GiantBag || 
-						item is LargeSack || 
-						item is Scales || 
-						item is Key || 
-						item is Globe || 
-						item is WindChimes || 
-						item is FancyWindChimes || 
-						item is TallMusicStand || 
-						item is Easle || 
-						item is ShojiScreen || 
-						item is BambooScreen || 
-						item is FootStool || 
-						item is Stool || 
-						item is BambooChair || 
-						item is WoodenChair || 
-						item is WoodenCoffin || 
-						item is WoodenCasket || 
-						item is StoneCoffin || 
-						item is StoneCasket || 
-						item is RockUrn || 
-						item is RockVase || 
-						item is FancyWoodenChairCushion || 
-						item is WoodenChairCushion || 
-						item is WoodenBench || 
-						item is WoodenThrone || 
-						item is Throne || 
-						item is Nightstand || 
-						item is WritingTable || 
-						item is YewWoodTable || 
-						item is CounterWood || 
-						item is CounterWooden || 
-						item is CounterRustic || 
-						item is LargeTable || 
-						item is ElegantLowTable || 
-						item is PlainLowTable || 
-						item is CandleLarge || 
-						item is Candelabra || 
-						item is CandelabraStand || 
-						item is WoodenBox || 
-						item is WoodenChest || 
-						item is SmallCrate || 
-						item is MediumCrate || 
-						item is LargeCrate || 
-						item is AdventurerCrate || 
-						item is AlchemyCrate || 
-						item is ArmsCrate || 
-						item is BakerCrate || 
-						item is BeekeeperCrate || 
-						item is BlacksmithCrate || 
-						item is BowyerCrate || 
-						item is ButcherCrate || 
-						item is CarpenterCrate || 
-						item is FletcherCrate || 
-						item is HealerCrate || 
-						item is HugeCrate || 
-						item is JewelerCrate || 
-						item is LibrarianCrate || 
-						item is MusicianCrate || 
-						item is NecromancerCrate || 
-						item is ProvisionerCrate || 
-						item is SailorCrate || 
-						item is StableCrate || 
-						item is SupplyCrate || 
-						item is TailorCrate || 
-						item is TavernCrate || 
-						item is TinkerCrate || 
-						item is TreasureCrate || 
-						item is WizardryCrate || 
-						item is SailorShelf || 
-						item is ColoredArmoireA || 
-						item is ColoredArmoireB || 
-						item is ColoredCabinetA || 
-						item is ColoredCabinetB || 
-						item is ColoredCabinetC || 
-						item is ColoredCabinetD || 
-						item is ColoredCabinetE || 
-						item is ColoredCabinetF || 
-						item is ColoredCabinetG || 
-						item is ColoredCabinetH || 
-						item is ColoredCabinetI || 
-						item is ColoredCabinetJ || 
-						item is ColoredCabinetK || 
-						item is ColoredCabinetL || 
-						item is ColoredCabinetM || 
-						item is ColoredCabinetN || 
-						item is ColoredDresserA || 
-						item is ColoredDresserB || 
-						item is ColoredDresserC || 
-						item is ColoredDresserD || 
-						item is ColoredDresserE || 
-						item is ColoredDresserF || 
-						item is ColoredDresserG || 
-						item is ColoredDresserH || 
-						item is ColoredDresserI || 
-						item is ColoredDresserJ || 
-						item is ColoredShelf1 || 
-						item is ColoredShelf2 || 
-						item is ColoredShelf3 || 
-						item is ColoredShelf4 || 
-						item is ColoredShelf5 || 
-						item is ColoredShelf6 || 
-						item is ColoredShelf7 || 
-						item is ColoredShelf8 || 
-						item is ColoredShelfA || 
-						item is ColoredShelfB || 
-						item is ColoredShelfC || 
-						item is ColoredShelfD || 
-						item is ColoredShelfE || 
-						item is ColoredShelfF || 
-						item is ColoredShelfG || 
-						item is ColoredShelfH || 
-						item is ColoredShelfI || 
-						item is ColoredShelfJ || 
-						item is ColoredShelfK || 
-						item is ColoredShelfL || 
-						item is ColoredShelfM || 
-						item is ColoredShelfN || 
-						item is ColoredShelfO || 
-						item is ColoredShelfP || 
-						item is ColoredShelfQ || 
-						item is ColoredShelfR || 
-						item is ColoredShelfS || 
-						item is ColoredShelfT || 
-						item is ColoredShelfU || 
-						item is ColoredShelfV || 
-						item is ColoredShelfW || 
-						item is ColoredShelfX || 
-						item is ColoredShelfY || 
-						item is ColoredShelfZ || 
-						item is EmptyBookcase || 
-						item is FancyArmoire || 
-						item is Armoire || 
-						item is PlainWoodenChest || 
-						item is OrnateWoodenChest || 
-						item is GildedWoodenChest || 
-						item is WoodenFootLocker || 
-						item is FinishedWoodenChest || 
-						item is TallCabinet || 
-						item is ShortCabinet || 
-						item is RedArmoire || 
-						item is ElegantArmoire || 
-						item is MapleArmoire || 
+					else if ( item is ShortMusicStand ||
+						item is Backpack ||
+						item is Pouch ||
+						item is Bag ||
+						item is LargeBag ||
+						item is BigBag ||
+						item is GiantBag ||
+						item is LargeSack ||
+						item is Scales ||
+						item is Key ||
+						item is Globe ||
+						item is WindChimes ||
+						item is FancyWindChimes ||
+						item is TallMusicStand ||
+						item is Easle ||
+						item is ShojiScreen ||
+						item is BambooScreen ||
+						item is FootStool ||
+						item is Stool ||
+						item is BambooChair ||
+						item is WoodenChair ||
+						item is WoodenCoffin ||
+						item is WoodenCasket ||
+						item is StoneCoffin ||
+						item is StoneCasket ||
+						item is RockUrn ||
+						item is RockVase ||
+						item is FancyWoodenChairCushion ||
+						item is WoodenChairCushion ||
+						item is WoodenBench ||
+						item is WoodenThrone ||
+						item is Throne ||
+						item is Nightstand ||
+						item is WritingTable ||
+						item is YewWoodTable ||
+						item is CounterWood ||
+						item is CounterWooden ||
+						item is CounterRustic ||
+						item is LargeTable ||
+						item is ElegantLowTable ||
+						item is PlainLowTable ||
+						item is CandleLarge ||
+						item is Candelabra ||
+						item is CandelabraStand ||
+						item is WoodenBox ||
+						item is WoodenChest ||
+						item is SmallCrate ||
+						item is MediumCrate ||
+						item is LargeCrate ||
+						item is AdventurerCrate ||
+						item is AlchemyCrate ||
+						item is ArmsCrate ||
+						item is BakerCrate ||
+						item is BeekeeperCrate ||
+						item is BlacksmithCrate ||
+						item is BowyerCrate ||
+						item is ButcherCrate ||
+						item is CarpenterCrate ||
+						item is FletcherCrate ||
+						item is HealerCrate ||
+						item is HugeCrate ||
+						item is JewelerCrate ||
+						item is LibrarianCrate ||
+						item is MusicianCrate ||
+						item is NecromancerCrate ||
+						item is ProvisionerCrate ||
+						item is SailorCrate ||
+						item is StableCrate ||
+						item is SupplyCrate ||
+						item is TailorCrate ||
+						item is TavernCrate ||
+						item is TinkerCrate ||
+						item is TreasureCrate ||
+						item is WizardryCrate ||
+						item is SailorShelf ||
+						item is ColoredArmoireA ||
+						item is ColoredArmoireB ||
+						item is ColoredCabinetA ||
+						item is ColoredCabinetB ||
+						item is ColoredCabinetC ||
+						item is ColoredCabinetD ||
+						item is ColoredCabinetE ||
+						item is ColoredCabinetF ||
+						item is ColoredCabinetG ||
+						item is ColoredCabinetH ||
+						item is ColoredCabinetI ||
+						item is ColoredCabinetJ ||
+						item is ColoredCabinetK ||
+						item is ColoredCabinetL ||
+						item is ColoredCabinetM ||
+						item is ColoredCabinetN ||
+						item is ColoredDresserA ||
+						item is ColoredDresserB ||
+						item is ColoredDresserC ||
+						item is ColoredDresserD ||
+						item is ColoredDresserE ||
+						item is ColoredDresserF ||
+						item is ColoredDresserG ||
+						item is ColoredDresserH ||
+						item is ColoredDresserI ||
+						item is ColoredDresserJ ||
+						item is ColoredShelf1 ||
+						item is ColoredShelf2 ||
+						item is ColoredShelf3 ||
+						item is ColoredShelf4 ||
+						item is ColoredShelf5 ||
+						item is ColoredShelf6 ||
+						item is ColoredShelf7 ||
+						item is ColoredShelf8 ||
+						item is ColoredShelfA ||
+						item is ColoredShelfB ||
+						item is ColoredShelfC ||
+						item is ColoredShelfD ||
+						item is ColoredShelfE ||
+						item is ColoredShelfF ||
+						item is ColoredShelfG ||
+						item is ColoredShelfH ||
+						item is ColoredShelfI ||
+						item is ColoredShelfJ ||
+						item is ColoredShelfK ||
+						item is ColoredShelfL ||
+						item is ColoredShelfM ||
+						item is ColoredShelfN ||
+						item is ColoredShelfO ||
+						item is ColoredShelfP ||
+						item is ColoredShelfQ ||
+						item is ColoredShelfR ||
+						item is ColoredShelfS ||
+						item is ColoredShelfT ||
+						item is ColoredShelfU ||
+						item is ColoredShelfV ||
+						item is ColoredShelfW ||
+						item is ColoredShelfX ||
+						item is ColoredShelfY ||
+						item is ColoredShelfZ ||
+						item is EmptyBookcase ||
+						item is FancyArmoire ||
+						item is Armoire ||
+						item is PlainWoodenChest ||
+						item is OrnateWoodenChest ||
+						item is GildedWoodenChest ||
+						item is WoodenFootLocker ||
+						item is FinishedWoodenChest ||
+						item is TallCabinet ||
+						item is ShortCabinet ||
+						item is RedArmoire ||
+						item is ElegantArmoire ||
+						item is MapleArmoire ||
 						item is CherryArmoire )
 						{
 							int cHue = 0;

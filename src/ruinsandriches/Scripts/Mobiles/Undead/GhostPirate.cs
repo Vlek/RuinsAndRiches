@@ -48,18 +48,18 @@ namespace Server.Mobiles
 			{
 				case 0: AddItem( new LongPants ( Utility.RandomRedHue() ) ); break;
 				case 1: AddItem( new ShortPants( Utility.RandomRedHue() ) ); break;
-			}				
+			}
 			switch ( Utility.Random( 3 ))
 			{
 				case 0: AddItem( new FancyShirt( Utility.RandomRedHue() ) ); break;
 				case 1: AddItem( new Shirt( Utility.RandomRedHue() ) ); break;
 				case 2: AddItem( new Doublet( Utility.RandomRedHue() ) ); break;
-			}					
+			}
 			switch ( Utility.Random( 3 ))
 			{
 				case 0: AddItem( new Bandana( Utility.RandomRedHue() ) ); break;
 				case 1: AddItem( new SkullCap( Utility.RandomRedHue() ) ); break;
-			}	
+			}
 
 			switch ( Utility.Random( 3 ))
 			{

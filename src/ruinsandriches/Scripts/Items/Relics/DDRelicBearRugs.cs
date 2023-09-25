@@ -12,7 +12,7 @@ namespace Server.Items
 		public int RelicFound;
 		public int RelicColor;
 		public string RelicQuality;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -187,7 +187,7 @@ namespace Server.Items
 		public int RelicFound;
 		public int RelicColor;
 		public string RelicQuality;
-		
+
 		[CommandProperty(AccessLevel.Owner)]
 		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
 
@@ -274,7 +274,7 @@ namespace Server.Items
 			else if ( RelID > 0 ){ RelicMainID = RelID; ItemID = RelID; RelicColor = RelHue; Hue = RelHue; RelicRugID = RelRugID; }
 			else
 			{
-				switch ( Utility.RandomMinMax( 0, 5 ) ) 
+				switch ( Utility.RandomMinMax( 0, 5 ) )
 				{
 					case 0: ItemID = 0x1546; Hue = 1899; RelicRugID = 1; break;
 					case 1: ItemID = 0x1545; Hue = 1899; RelicRugID = 2; break;

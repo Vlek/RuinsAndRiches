@@ -1,7 +1,7 @@
 ﻿/*  Author:         Rilian aka Taryen
  *  Date:           1/2/2011
  *  File Name:      KeywordDoor.cs
- *  Description:    A door that is opened once a keyword or phrase is said. The word or phrase can be 
+ *  Description:    A door that is opened once a keyword or phrase is said. The word or phrase can be
  *              modified as well as many other aspects of the door's behavior.
 */
 

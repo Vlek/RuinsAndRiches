@@ -89,7 +89,7 @@ namespace Server.SkillHandlers
 		{
 			string color = "#99b9eb";
 			string subct = "#cec195";
-			from.SendSound( 0x4A ); 
+			from.SendSound( 0x4A );
 
 			m_From = from;
 			m_Success = from.CheckSkill( SkillName.Tracking, 0.0, 21.1 );
@@ -210,7 +210,7 @@ namespace Server.SkillHandlers
 
 		public override void OnResponse( NetState state, RelayInfo info )
 		{
-			m_From.SendSound( 0x4A ); 
+			m_From.SendSound( 0x4A );
 			if ( info.ButtonID >= 1 && info.ButtonID <= 32 )
 				TrackWhoGump.DisplayTo( m_Success, m_From, info.ButtonID - 1 );
 		}
@@ -338,17 +338,17 @@ namespace Server.SkillHandlers
 			}
 		}
 
-		// Tracking players uses tracking and searching vs. hiding and stealth 
+		// Tracking players uses tracking and searching vs. hiding and stealth
 		private static bool CheckDifficulty( Mobile from, Mobile m )
 		{
-			int tracking = from.Skills[SkillName.Tracking].Fixed;	
+			int tracking = from.Skills[SkillName.Tracking].Fixed;
 			int searching = from.Skills[SkillName.Searching].Fixed;
 
 			int hiding = m.Skills[SkillName.Hiding].Fixed;
 			int stealth = m.Skills[SkillName.Stealth].Fixed;
 			int divisor = hiding + stealth;
 
-			// Necromancy forms affect tracking difficulty 
+			// Necromancy forms affect tracking difficulty
 			if ( TransformationSpellHelper.UnderTransformation( m, typeof( HorrificBeastSpell ) ) )
 				divisor -= 200;
 			else if ( TransformationSpellHelper.UnderTransformation( m, typeof( VampiricEmbraceSpell ) ) && divisor < 500 )
@@ -417,33 +417,33 @@ namespace Server.SkillHandlers
 				return false;
 
 			if (
-				!(SlayerGroup.GetEntryByName( SlayerName.Exorcism )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.DaemonDismissal )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.BalronDamnation )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.GargoylesFoe )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.AnimalHunter )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.ArachnidDoom )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.Terathan )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.ScorpionsBane )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.SpidersDeath )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.AvianHunter )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.ElementalBan )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.Fey )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.GiantKiller )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.GolemDestruction )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.Repond )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.OgreTrashing )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.OrcSlaying )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.TrollSlaughter )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.WeedRuin )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.ReptilianDeath )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.DragonSlaying )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.LizardmanSlaughter )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.Ophidian )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.SnakesBane )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.NeptunesBane )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.SlimyScourge )).Slays(m) && 
-				!(SlayerGroup.GetEntryByName( SlayerName.Silver )).Slays(m) && 
+				!(SlayerGroup.GetEntryByName( SlayerName.Exorcism )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.DaemonDismissal )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.BalronDamnation )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.GargoylesFoe )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.AnimalHunter )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.ArachnidDoom )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.Terathan )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.ScorpionsBane )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.SpidersDeath )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.AvianHunter )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.ElementalBan )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.Fey )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.GiantKiller )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.GolemDestruction )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.Repond )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.OgreTrashing )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.OrcSlaying )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.TrollSlaughter )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.WeedRuin )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.ReptilianDeath )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.DragonSlaying )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.LizardmanSlaughter )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.Ophidian )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.SnakesBane )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.NeptunesBane )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.SlimyScourge )).Slays(m) &&
+				!(SlayerGroup.GetEntryByName( SlayerName.Silver )).Slays(m) &&
 				!(SlayerGroup.GetEntryByName( SlayerName.WizardSlayer )).Slays(m) )
 				return true;
 

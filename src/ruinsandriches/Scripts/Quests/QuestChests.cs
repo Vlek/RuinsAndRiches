@@ -189,8 +189,8 @@ namespace Server.Items
 				{
 					from.PrivateOverheadMessage(MessageType.Regular, 1150, false, "This golden skull has an eerie glow.", from.NetState);
 				}
-				else if ( PlayerSettings.GetBardsTaleQuest( from, "BardsTaleSilverSquare" ) && 
-					PlayerSettings.GetBardsTaleQuest( from, "BardsTaleSilverTriangle" ) && 
+				else if ( PlayerSettings.GetBardsTaleQuest( from, "BardsTaleSilverSquare" ) &&
+					PlayerSettings.GetBardsTaleQuest( from, "BardsTaleSilverTriangle" ) &&
 					PlayerSettings.GetBardsTaleQuest( from, "BardsTaleSilverCircle" ) )
 				{
 					PlayerSettings.SetBardsTaleQuest( from, "BardsTaleMangarKey", true );
@@ -231,8 +231,8 @@ namespace Server.Items
 			Name = "jade box";
 			Movable = false;
 			Hue = 0xB95;
-			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this ); 
-			thisTimer.Start(); 
+			ItemRemovalTimer thisTimer = new ItemRemovalTimer( this );
+			thisTimer.Start();
 		}
 
 		public CrystalStatueBoxKyl( Serial serial ) : base( serial )
@@ -278,17 +278,17 @@ namespace Server.Items
 			this.Delete();
 		}
 
-		public class ItemRemovalTimer : Timer 
-		{ 
-			private Item i_item; 
-			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) ) 
-			{ 
-				Priority = TimerPriority.OneSecond; 
-				i_item = item; 
-			} 
+		public class ItemRemovalTimer : Timer
+		{
+			private Item i_item;
+			public ItemRemovalTimer( Item item ) : base( TimeSpan.FromMinutes( 10.0 ) )
+			{
+				Priority = TimerPriority.OneSecond;
+				i_item = item;
+			}
 
-			protected override void OnTick() 
-			{ 
+			protected override void OnTick()
+			{
 				if (( i_item != null ) && ( !i_item.Deleted ))
 				{
 					CrystalStatueKyl MyStatue = new CrystalStatueKyl();
@@ -296,8 +296,8 @@ namespace Server.Items
 					MyStatue.MoveToWorld( loc, i_item.Map );
 					i_item.Delete();
 				}
-			} 
-		} 
+			}
+		}
 	}
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class CrystalStatueKyl : Item

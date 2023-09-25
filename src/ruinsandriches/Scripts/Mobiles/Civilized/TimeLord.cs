@@ -85,7 +85,7 @@ namespace Server.Mobiles
 
 		public override void OnGaveMeleeAttack( Mobile defender )
 		{
-			switch ( Utility.Random( 4 ))  
+			switch ( Utility.Random( 4 ))
 			{
 				case 0: Say("Time for your life to end."); break;
 				case 1: Say("this cosmos will survive without your treachery."); break;

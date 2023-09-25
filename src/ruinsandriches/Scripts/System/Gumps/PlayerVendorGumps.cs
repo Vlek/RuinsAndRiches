@@ -67,7 +67,7 @@ namespace Server.Gumps
 
 				if ( from.Backpack != null )
 					totalGold += from.Backpack.GetAmount( typeof( Gold ) );
-				
+
 				totalGold += Banker.GetBalance( from );
 
 				if ( totalGold < m_VI.Price )
@@ -132,9 +132,9 @@ namespace Server.Gumps
 
 			double days = (m_Vendor.HoldGold + m_Vendor.BankAccount) / ((double)perDay);
 
-			AddHtmlLocalized( 40, 25, 260, 20, 1038318, false, false ); // Amount of days I can work: 
+			AddHtmlLocalized( 40, 25, 260, 20, 1038318, false, false ); // Amount of days I can work:
 			AddLabel( 300, 25, 0, ((int)days).ToString() );
-			AddHtmlLocalized( 40, 48, 260, 20, 1038319, false, false ); // Earth days: 
+			AddHtmlLocalized( 40, 48, 260, 20, 1038319, false, false ); // Earth days:
 			AddLabel( 300, 48, 0, ((int)(days / 12.0)).ToString() );
 		}
 
@@ -188,21 +188,21 @@ namespace Server.Gumps
 			{
 				int goldNeeded = perRealWorldDay - goldHeld;
 
-				AddHtmlLocalized( 40, 35, 260, 20, 1038320, 0x7FFF, false, false ); // Gold needed for 1 day of vendor salary: 
+				AddHtmlLocalized( 40, 35, 260, 20, 1038320, 0x7FFF, false, false ); // Gold needed for 1 day of vendor salary:
 				AddLabel( 300, 35, 0x1F, goldNeeded.ToString() );
 			}
 			else
 			{
 				int days = goldHeld / perRealWorldDay;
 
-				AddHtmlLocalized( 40, 35, 260, 20, 1038318, 0x7FFF, false, false ); // # of days Vendor salary is paid for: 
+				AddHtmlLocalized( 40, 35, 260, 20, 1038318, 0x7FFF, false, false ); // # of days Vendor salary is paid for:
 				AddLabel( 300, 35, 0x480, days.ToString() );
 			}
 
-			AddHtmlLocalized( 40, 58, 260, 20, 1038324, 0x7FFF, false, false ); // My charge per real world day is: 
+			AddHtmlLocalized( 40, 58, 260, 20, 1038324, 0x7FFF, false, false ); // My charge per real world day is:
 			AddLabel( 300, 58, 0x480, perRealWorldDay.ToString() );
 
-			AddHtmlLocalized( 40, 82, 260, 20, 1038322, 0x7FFF, false, false ); // Gold held in my account: 
+			AddHtmlLocalized( 40, 82, 260, 20, 1038322, 0x7FFF, false, false ); // Gold held in my account:
 			AddLabel( 300, 82, 0x480, goldHeld.ToString() );
 
 			AddHtmlLocalized( 40, 108, 260, 20, 1062509, 0x7FFF, false, false ); // Shop Name:
@@ -342,7 +342,7 @@ namespace Server.Gumps
 					return null;
 
 				Item i = null;
-				
+
 				try
 				{
 					ConstructorInfo ctor = m_Type.GetConstructor( new Type[0] );
@@ -352,7 +352,7 @@ namespace Server.Gumps
 				catch
 				{
 				}
-				
+
 				return i;
 			}
 

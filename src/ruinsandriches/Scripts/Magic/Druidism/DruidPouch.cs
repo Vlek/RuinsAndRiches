@@ -1,5 +1,5 @@
 using System;
-using Server; 
+using Server;
 using System.Collections;
 using Server.ContextMenus;
 using System.Collections.Generic;
@@ -177,9 +177,9 @@ namespace Server.Items
 				AddHtml( 365, 231, 295, 20, @"<BODY><BASEFONT Color=" + color + ">Vertical Belt Pouch</BASEFONT></BODY>", (bool)false, (bool)false);
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
-				Mobile from = state.Mobile; 
+				Mobile from = state.Mobile;
 
 				if ( m_Pouch.IsChildOf( from.Backpack ) )
 				{
@@ -328,7 +328,7 @@ namespace Server.Items
 				}
 			}
 
-			public override void OnResponse( NetState state, RelayInfo info ) 
+			public override void OnResponse( NetState state, RelayInfo info )
 			{
 				Mobile from = state.Mobile;
 				if ( m_Pouch.IsChildOf( from.Backpack ) )
@@ -452,43 +452,43 @@ namespace Server.Items
 		public static bool isDruidery( Item item )
 		{
 			if (
-				item is BookDruidBrewing || 
-				item is DruidCauldron || 
-				item is Jar || 
-				item is BlackPearl || 
-				item is Bloodmoss || 
-				item is Garlic || 
-				item is Ginseng || 
-				item is MandrakeRoot || 
-				item is Nightshade || 
-				item is SpidersSilk || 
-				item is SulfurousAsh || 
-				item is Brimstone || 
-				item is ButterflyWings || 
-				item is EyeOfToad || 
-				item is FairyEgg || 
-				item is BeetleShell || 
-				item is MoonCrystal || 
-				item is RedLotus || 
-				item is SeaSalt || 
-				item is SilverWidow || 
-				item is SwampBerries || 
-				item is LureStonePotion || 
-				item is NaturesPassagePotion || 
-				item is ShieldOfEarthPotion || 
-				item is WoodlandProtectionPotion || 
-				item is StoneCirclePotion || 
-				item is GraspingRootsPotion || 
-				item is DruidicRunePotion || 
-				item is HerbalHealingPotion || 
-				item is BlendWithForestPotion || 
-				item is FireflyPotion || 
-				item is MushroomGatewayPotion || 
-				item is SwarmOfInsectsPotion || 
-				item is ProtectiveFairyPotion || 
-				item is TreefellowPotion || 
-				item is VolcanicEruptionPotion || 
-				item is RestorativeSoilPotion 
+				item is BookDruidBrewing ||
+				item is DruidCauldron ||
+				item is Jar ||
+				item is BlackPearl ||
+				item is Bloodmoss ||
+				item is Garlic ||
+				item is Ginseng ||
+				item is MandrakeRoot ||
+				item is Nightshade ||
+				item is SpidersSilk ||
+				item is SulfurousAsh ||
+				item is Brimstone ||
+				item is ButterflyWings ||
+				item is EyeOfToad ||
+				item is FairyEgg ||
+				item is BeetleShell ||
+				item is MoonCrystal ||
+				item is RedLotus ||
+				item is SeaSalt ||
+				item is SilverWidow ||
+				item is SwampBerries ||
+				item is LureStonePotion ||
+				item is NaturesPassagePotion ||
+				item is ShieldOfEarthPotion ||
+				item is WoodlandProtectionPotion ||
+				item is StoneCirclePotion ||
+				item is GraspingRootsPotion ||
+				item is DruidicRunePotion ||
+				item is HerbalHealingPotion ||
+				item is BlendWithForestPotion ||
+				item is FireflyPotion ||
+				item is MushroomGatewayPotion ||
+				item is SwarmOfInsectsPotion ||
+				item is ProtectiveFairyPotion ||
+				item is TreefellowPotion ||
+				item is VolcanicEruptionPotion ||
+				item is RestorativeSoilPotion
 			){ return true; }
 			return false;
 		}
@@ -521,33 +521,33 @@ namespace Server.Items
 			return weight;
         }
 
-		public class BagWindow : ContextMenuEntry 
-		{ 
-			private DruidPouch druidBag; 
-			private Mobile m_From; 
+		public class BagWindow : ContextMenuEntry
+		{
+			private DruidPouch druidBag;
+			private Mobile m_From;
 
-			public BagWindow( Mobile from, DruidPouch bag ) : base( 6172, 1 ) 
-			{ 
-				m_From = from; 
-				druidBag = bag; 
-			} 
+			public BagWindow( Mobile from, DruidPouch bag ) : base( 6172, 1 )
+			{
+				m_From = from;
+				druidBag = bag;
+			}
 
-			public override void OnClick() 
-			{          
-				if( druidBag.IsChildOf( m_From.Backpack ) ) 
-				{ 
+			public override void OnClick()
+			{
+				if( druidBag.IsChildOf( m_From.Backpack ) )
+				{
 					m_From.CloseGump( typeof( DruidBag ) );
 					m_From.SendGump( new DruidBag( m_From, druidBag ) );
 					m_From.PlaySound( 0x48 );
-				} 
-				else 
+				}
+				else
 				{
 					m_From.SendMessage( "This must be in your backpack to organize." );
-				} 
-			} 
-		} 
+				}
+			}
+		}
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
+		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 

@@ -17,12 +17,12 @@ namespace Server.Mobiles
 
 		public override void InitSBInfo()
 		{
-			SBInfos.Add( new SBProvisioner() ); 
-			SBInfos.Add( new SBJewel() ); 
-			SBInfos.Add( new SBVarietyDealer() ); 
-			SBInfos.Add( new SBShipwright() ); 
+			SBInfos.Add( new SBProvisioner() );
+			SBInfos.Add( new SBJewel() );
+			SBInfos.Add( new SBVarietyDealer() );
+			SBInfos.Add( new SBShipwright() );
 			SBInfos.Add( new SBArchitect() );
-			SBInfos.Add( new SBBuyArtifacts() ); 
+			SBInfos.Add( new SBBuyArtifacts() );
 		}
 
 		public MerchantGuildmaster( Serial serial ) : base( serial )

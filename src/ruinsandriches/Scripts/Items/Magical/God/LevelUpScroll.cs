@@ -232,7 +232,7 @@ namespace Server.Items
                     {
                         from.SendMessage("This one is a skilled blacksmith.");
                         from.SendGump(new AwaitingSmithApprovalGump(m_Scroll, from));
-                        smith.SendGump(new LevelUpAcceptGump(m_Scroll, from));	
+                        smith.SendGump(new LevelUpAcceptGump(m_Scroll, from));
                     }
                 }
                 else

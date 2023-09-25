@@ -23,21 +23,21 @@ namespace Server.Mobiles
 		public override double BreathDamageScalar{ get{ return 0.4; } }
 
 		[Constructable]
-		public Rogue() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 ) 
+		public Rogue() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			SpeechHue = Utility.RandomTalkHue();
 			Hue = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() ) 
+			if ( this.Female = Utility.RandomBool() )
 			{
-				this.Body = 0x191; 
-				this.Name = NameList.RandomName( "female" ); 
+				this.Body = 0x191;
+				this.Name = NameList.RandomName( "female" );
 				Utility.AssignRandomHair( this );
 				HairHue = Utility.RandomHairHue();
-			} 
-			else 
-			{ 
-				this.Body = 0x190; 
+			}
+			else
+			{
+				this.Body = 0x190;
 				this.Name = NameList.RandomName( "male" );
 				Utility.AssignRandomHair( this );
 				int HairColor = Utility.RandomHairHue();
