@@ -713,9 +713,8 @@ public class CraftItem
 
             if (types[i] == null)
             {
-                types[i] = new Type[] { baseType }
+                types[i] = new Type[] { baseType };
             }
-            ;
 
             amounts[i] = craftRes.Amount;
 

@@ -16,8 +16,8 @@ namespace Server.Items
 public class DisguiseKit : Item
 {
     public override int LabelNumber {
-        get { return 1041078; }
-    }                                                                     // a disguise kit
+        get { return 1041078; } // a disguise kit
+    }
 
     [Constructable]
     public DisguiseKit() : base(0xE05)
@@ -33,7 +33,7 @@ public class DisguiseKit : Item
     {
         base.Serialize(writer);
 
-        writer.Write((int)0);                    // version
+        writer.Write((int)0); // version
     }
 
     public override void Deserialize(GenericReader reader)
@@ -184,11 +184,11 @@ public class DisguiseGump : Gump
         {
             if (m_Used)
             {
-                m_From.SendLocalizedMessage(501706);                           // Disguises wear off after 2 hours.
+                m_From.SendLocalizedMessage(501706); // Disguises wear off after 2 hours.
             }
             else
             {
-                m_From.SendLocalizedMessage(501707);                           // You're looking good.
+                m_From.SendLocalizedMessage(501707); // You're looking good.
             }
             return;
         }
@@ -402,13 +402,21 @@ public class DisguiseTimers
 
     public static void RemoveDisguise(Mobile from)
     {
-        if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.VampiricEmbraceSpell))) /* IGNORE */ } {
-        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.WraithFormSpell)))                        /* IGNORE */
+        if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.VampiricEmbraceSpell)))
         {
+            /* IGNORE */
         }
-        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.LichFormSpell))) /* IGNORE */ } {
-        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.HorrificBeastSpell)))                        /* IGNORE */
+        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.WraithFormSpell)))
         {
+            /* IGNORE */
+        }
+        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.LichFormSpell)))
+        {
+            /* IGNORE */
+        }
+        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.HorrificBeastSpell)))
+        {
+            /* IGNORE */
         }
         else if (IsDisguised(from) || !from.CanBeginAction(typeof(PolymorphSpell)) || !from.CanBeginAction(typeof(IncognitoSpell)) || !from.CanBeginAction(typeof(Deception)))
         {
@@ -427,6 +435,6 @@ public class DisguiseTimers
             from.EndAction(typeof(IncognitoSpell));
             from.EndAction(typeof(Deception));
         }
-}
+    }
 }
 }
