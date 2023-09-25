@@ -23,17 +23,13 @@ repos:
 
   - repo: local
     hooks:
-      - id: dotnet-format
-        name: dotnet-format
-        language: system
-        entry: dotnet format --include
-        types_or: ["c#"]
-
-  - repo: local
-    hooks:
       - id: uncrustify
         name: uncrustify
         language: system
         entry: uncrustify
-        args: []
+        args: [
+          "-c", ".uncrustify.cfg.txt",
+          "--no-backup",
+          "-f"
+        ]
         types_or: ["c#"]
