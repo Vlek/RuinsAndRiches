@@ -4,45 +4,67 @@ using Server.Items;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0x26BC, 0x26C6 )]
-	public class Scepter : BaseBashing
-	{
-		public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
-		public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.MortalStrike; } }
-		public override WeaponAbility ThirdAbility{ get{ return WeaponAbility.RidingAttack; } }
-		public override WeaponAbility FourthAbility{ get{ return WeaponAbility.SpinAttack; } }
-		public override WeaponAbility FifthAbility{ get{ return WeaponAbility.FreezeStrike; } }
+[FlipableAttribute(0x26BC, 0x26C6)]
+public class Scepter : BaseBashing
+{
+    public override WeaponAbility PrimaryAbility {
+        get { return WeaponAbility.CrushingBlow; }
+    }
+    public override WeaponAbility SecondaryAbility {
+        get { return WeaponAbility.MortalStrike; }
+    }
+    public override WeaponAbility ThirdAbility {
+        get { return WeaponAbility.RidingAttack; }
+    }
+    public override WeaponAbility FourthAbility {
+        get { return WeaponAbility.SpinAttack; }
+    }
+    public override WeaponAbility FifthAbility {
+        get { return WeaponAbility.FreezeStrike; }
+    }
 
-		public override int AosStrengthReq{ get{ return 40; } }
-		public override int AosMinDamage{ get{ return 14; } }
-		public override int AosMaxDamage{ get{ return 17; } }
-		public override float MlSpeed{ get{ return 3.50f; } }
+    public override int AosStrengthReq {
+        get { return 40; }
+    }
+    public override int AosMinDamage {
+        get { return 14; }
+    }
+    public override int AosMaxDamage {
+        get { return 17; }
+    }
+    public override float MlSpeed {
+        get { return 3.50f; }
+    }
 
-		public override int InitMinHits{ get{ return 31; } }
-		public override int InitMaxHits{ get{ return 110; } }
+    public override int InitMinHits {
+        get { return 31; }
+    }
+    public override int InitMaxHits {
+        get { return 110; }
+    }
 
-		[Constructable]
-		public Scepter() : base( 0x26BC )
-		{
-			Weight = 8.0;
-		}
+    [Constructable]
+    public Scepter() : base(0x26BC)
+    {
+        Weight = 8.0;
+    }
 
-		public Scepter( Serial serial ) : base( serial )
-		{
-		}
+    public Scepter(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 ); // version
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-		}
-	}
+        int version = reader.ReadInt();
+    }
+}
 }

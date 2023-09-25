@@ -11,112 +11,116 @@ using Server.Misc;
 
 namespace Server.Spells.Song
 {
-	public class FireCarolSong : Song
-	{
+public class FireCarolSong : Song
+{
+    private static SpellInfo m_Info = new SpellInfo(
+        "Fire Carol", "*plays a fire carol*",
+        //SpellCircle.First,
+        //212,9041
+        -1
+        );
 
-		private static SpellInfo m_Info = new SpellInfo(
-				"Fire Carol", "*plays a fire carol*",
-				//SpellCircle.First,
-				//212,9041
-				-1
-			);
+    private SongBook m_Book;
+    //public override double CastDelay{ get{ return 3; } }
+    public override TimeSpan CastDelayBase {
+        get { return TimeSpan.FromSeconds(5); }
+    }
+    public override double RequiredSkill {
+        get { return 50.0; }
+    }
+    public override int RequiredMana {
+        get { return 12; }
+    }
 
-		private SongBook m_Book;
-		//public override double CastDelay{ get{ return 3; } }
-		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
-		public override double RequiredSkill{ get{ return 50.0; } }
-		public override int RequiredMana{ get{ return 12; } }
+    public FireCarolSong(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+    {
+    }
 
-		public FireCarolSong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
-		{
+    public override void OnCast()
+    {
+        bool sings = false;
 
-		}
-
-        public override void OnCast()
+        //get songbook instrument
+        Spellbook book = Spellbook.Find(Caster, -1, SpellbookType.Song);
+        if (book == null)
         {
+            return;
+        }
+        m_Book = (SongBook)book;
+        if (m_Book.Instrument == null || !(Caster.InRange(m_Book.Instrument.GetWorldLocation(), 1)))
+        {
+            Caster.SendMessage("Your instrument is missing! You can select another from your song book.");
+            return;
+        }
 
-			bool sings = false;
+        //added this to test
+        if (m_Book.Instrument == null || !(Caster.InRange(m_Book.Instrument.GetWorldLocation(), 1)))
+        {
+            Caster.SendMessage("You need an instrument to play that song!");
+        }
+        else if (CheckSequence())
+        {
+            sings = true;
 
-            //get songbook instrument
-            Spellbook book = Spellbook.Find(Caster, -1, SpellbookType.Song);
-            if (book == null)
+            ArrayList targets = new ArrayList();
+
+            foreach (Mobile m in Caster.GetMobilesInRange(3))
             {
-                return;
-            }
-            m_Book = (SongBook)book;
-            if (m_Book.Instrument == null || !(Caster.InRange(m_Book.Instrument.GetWorldLocation(), 1)))
-            {
-                Caster.SendMessage("Your instrument is missing! You can select another from your song book.");
-                return;
-            }
-
-                //added this to test
-                if (m_Book.Instrument == null || !(Caster.InRange(m_Book.Instrument.GetWorldLocation(), 1)))
+                if (Caster.CanBeBeneficial(m, false, true) && !(m is Golem))
                 {
-                    Caster.SendMessage("You need an instrument to play that song!");
+                    targets.Add(m);
                 }
-                else if (CheckSequence())
-			{
-				sings = true;
+            }
 
-				ArrayList targets = new ArrayList();
+            for (int i = 0; i < targets.Count; ++i)
+            {
+                Mobile m = (Mobile)targets[i];
 
-				foreach ( Mobile m in Caster.GetMobilesInRange( 3 ) )
-				{
-					if ( Caster.CanBeBeneficial( m, false, true ) && !(m is Golem) )
-						targets.Add( m );
-				}
+                TimeSpan duration = TimeSpan.FromSeconds((double)(MusicSkill(Caster) * 2));
+                int      amount   = Server.Misc.MyServerSettings.PlayerLevelMod((int)(MusicSkill(Caster) / 16), Caster);
+                m.SendMessage("Your resistance to fire has increased.");
+                ResistanceMod mod1 = new ResistanceMod(ResistanceType.Fire, +amount);
 
-				for ( int i = 0; i < targets.Count; ++i )
-				{
-					Mobile m = (Mobile)targets[i];
+                m.AddResistanceMod(mod1);
 
-					TimeSpan duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster ) * 2) );
-                    int amount = Server.Misc.MyServerSettings.PlayerLevelMod( (int)(MusicSkill( Caster ) / 16), Caster );
-					m.SendMessage( "Your resistance to fire has increased." );
-					ResistanceMod mod1 = new ResistanceMod( ResistanceType.Fire, + amount );
+                m.FixedParticles(0x373A, 10, 15, 5012, 0x21, 3, EffectLayer.Waist);
 
-					m.AddResistanceMod( mod1 );
+                new ExpireTimer(m, mod1, duration).Start();
+            }
+        }
 
-					m.FixedParticles( 0x373A, 10, 15, 5012, 0x21, 3, EffectLayer.Waist );
+        BardFunctions.UseBardInstrument(m_Book.Instrument, sings, Caster);
+        FinishSequence();
+    }
 
-					new ExpireTimer( m, mod1, duration ).Start();
+    private class ExpireTimer : Timer
+    {
+        private Mobile m_Mobile;
+        private ResistanceMod m_Mods;
 
-				}
-			}
+        public ExpireTimer(Mobile m, ResistanceMod mod, TimeSpan delay) : base(delay)
+        {
+            m_Mobile = m;
+            m_Mods   = mod;
+        }
 
-			BardFunctions.UseBardInstrument( m_Book.Instrument, sings, Caster );
-			FinishSequence();
-		}
-
-		private class ExpireTimer : Timer
-		{
-			private Mobile m_Mobile;
-			private ResistanceMod m_Mods;
-
-			public ExpireTimer( Mobile m, ResistanceMod mod, TimeSpan delay ) : base( delay )
-			{
-				m_Mobile = m;
-				m_Mods = mod;
-			}
-
-			public void DoExpire()
-			{
-				PlayerMobile dpm = m_Mobile as PlayerMobile;
-				m_Mobile.RemoveResistanceMod( m_Mods );
+        public void DoExpire()
+        {
+            PlayerMobile dpm = m_Mobile as PlayerMobile;
+            m_Mobile.RemoveResistanceMod(m_Mods);
 
 
-				Stop();
-			}
+            Stop();
+        }
 
-			protected override void OnTick()
-			{
-				if ( m_Mobile != null )
-				{
-					m_Mobile.SendMessage( "The effect of the fire carol wears off." );
-					DoExpire();
-				}
-			}
-		}
-	}
+        protected override void OnTick()
+        {
+            if (m_Mobile != null)
+            {
+                m_Mobile.SendMessage("The effect of the fire carol wears off.");
+                DoExpire();
+            }
+        }
+    }
+}
 }

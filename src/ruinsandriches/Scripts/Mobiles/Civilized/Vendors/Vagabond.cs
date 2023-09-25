@@ -5,39 +5,41 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-	public class Vagabond : BaseVendor
-	{
-		private List<SBInfo> m_SBInfos = new List<SBInfo>();
-		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
+public class Vagabond : BaseVendor
+{
+    private List <SBInfo> m_SBInfos = new List <SBInfo>();
+    protected override List <SBInfo> SBInfos {
+        get { return m_SBInfos; }
+    }
 
-		[Constructable]
-		public Vagabond() : base( "the vagabond" )
-		{
-			SetSkill( SkillName.Mercantile, 60.0, 83.0 );
-		}
+    [Constructable]
+    public Vagabond() : base("the vagabond")
+    {
+        SetSkill(SkillName.Mercantile, 60.0, 83.0);
+    }
 
-		public override void InitSBInfo()
-		{
-			m_SBInfos.Add( new SBTinker() );
-			m_SBInfos.Add( new SBVagabond() );
-		}
+    public override void InitSBInfo()
+    {
+        m_SBInfos.Add(new SBTinker());
+        m_SBInfos.Add(new SBVagabond());
+    }
 
-		public Vagabond( Serial serial ) : base( serial )
-		{
-		}
+    public Vagabond(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 ); // version
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-		}
-	}
+        int version = reader.ReadInt();
+    }
+}
 }

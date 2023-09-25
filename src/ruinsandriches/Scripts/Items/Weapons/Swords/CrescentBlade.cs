@@ -4,50 +4,78 @@ using Server.Items;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0x26C1, 0x26CB )]
-	public class CrescentBlade : BaseSword
-	{
-		public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
-		public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.MortalStrike; } }
-		public override WeaponAbility ThirdAbility{ get{ return WeaponAbility.LightningStriker; } }
-		public override WeaponAbility FourthAbility{ get{ return WeaponAbility.FreezeStrike; } }
-		public override WeaponAbility FifthAbility{ get{ return WeaponAbility.MagicProtection; } }
+[FlipableAttribute(0x26C1, 0x26CB)]
+public class CrescentBlade : BaseSword
+{
+    public override WeaponAbility PrimaryAbility {
+        get { return WeaponAbility.DoubleStrike; }
+    }
+    public override WeaponAbility SecondaryAbility {
+        get { return WeaponAbility.MortalStrike; }
+    }
+    public override WeaponAbility ThirdAbility {
+        get { return WeaponAbility.LightningStriker; }
+    }
+    public override WeaponAbility FourthAbility {
+        get { return WeaponAbility.FreezeStrike; }
+    }
+    public override WeaponAbility FifthAbility {
+        get { return WeaponAbility.MagicProtection; }
+    }
 
-		public override int AosStrengthReq{ get{ return 55; } }
-		public override int AosMinDamage{ get{ return 11; } }
-		public override int AosMaxDamage{ get{ return 14; } }
-		public override float MlSpeed{ get{ return 2.50f; } }
+    public override int AosStrengthReq {
+        get { return 55; }
+    }
+    public override int AosMinDamage {
+        get { return 11; }
+    }
+    public override int AosMaxDamage {
+        get { return 14; }
+    }
+    public override float MlSpeed {
+        get { return 2.50f; }
+    }
 
-		public override int DefHitSound{ get{ return 0x23B; } }
-		public override int DefMissSound{ get{ return 0x23A; } }
+    public override int DefHitSound {
+        get { return 0x23B; }
+    }
+    public override int DefMissSound {
+        get { return 0x23A; }
+    }
 
-		public override int InitMinHits{ get{ return 51; } }
-		public override int InitMaxHits{ get{ return 80; } }
+    public override int InitMinHits {
+        get { return 51; }
+    }
+    public override int InitMaxHits {
+        get { return 80; }
+    }
 
-		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Slash2H; } }
+    public override WeaponAnimation DefAnimation {
+        get { return WeaponAnimation.Slash2H; }
+    }
 
-		[Constructable]
-		public CrescentBlade() : base( 0x26C1 )
-		{
-			Weight = 1.0;
-		}
+    [Constructable]
+    public CrescentBlade() : base(0x26C1)
+    {
+        Weight = 1.0;
+    }
 
-		public CrescentBlade( Serial serial ) : base( serial )
-		{
-		}
+    public CrescentBlade(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 ); // version
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-		}
-	}
+        int version = reader.ReadInt();
+    }
+}
 }

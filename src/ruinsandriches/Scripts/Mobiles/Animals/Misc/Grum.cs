@@ -10,141 +10,175 @@ using Server.ContextMenus;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a grum corpse" )]
-	public class Grum : BaseCreature
-	{
-		[Constructable]
-		public Grum() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
-		{
-			Name = "a grum";
-			Body = 19;
-			BaseSoundID = 0xA3;
+[CorpseName("a grum corpse")]
+public class Grum : BaseCreature
+{
+    [Constructable]
+    public Grum() : base(AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+    {
+        Name        = "a grum";
+        Body        = 19;
+        BaseSoundID = 0xA3;
 
-			SetStr( 176, 200 );
-			SetDex( 26, 45 );
-			SetInt( 23, 47 );
+        SetStr(176, 200);
+        SetDex(26, 45);
+        SetInt(23, 47);
 
-			SetHits( 146, 160 );
-			SetMana( 0 );
+        SetHits(146, 160);
+        SetMana(0);
 
-			SetDamage( 8, 16 );
+        SetDamage(8, 16);
 
-			SetDamageType( ResistanceType.Physical, 100 );
+        SetDamageType(ResistanceType.Physical, 100);
 
-			SetResistance( ResistanceType.Physical, 20, 30 );
-			SetResistance( ResistanceType.Cold, 15, 20 );
-			SetResistance( ResistanceType.Poison, 10, 15 );
+        SetResistance(ResistanceType.Physical, 20, 30);
+        SetResistance(ResistanceType.Cold, 15, 20);
+        SetResistance(ResistanceType.Poison, 10, 15);
 
-			SetSkill( SkillName.MagicResist, 25.1, 35.0 );
-			SetSkill( SkillName.Tactics, 40.1, 60.0 );
-			SetSkill( SkillName.FistFighting, 40.1, 60.0 );
+        SetSkill(SkillName.MagicResist, 25.1, 35.0);
+        SetSkill(SkillName.Tactics, 40.1, 60.0);
+        SetSkill(SkillName.FistFighting, 40.1, 60.0);
 
-			Fame = 0;
-			Karma = 0;
+        Fame  = 0;
+        Karma = 0;
 
-			VirtualArmor = 28;
+        VirtualArmor = 28;
 
-			Tamable = true;
-			ControlSlots = 1;
-			MinTameSkill = 81.1;
+        Tamable      = true;
+        ControlSlots = 1;
+        MinTameSkill = 81.1;
 
-			Container pack = Backpack;
+        Container pack = Backpack;
 
-			if ( pack != null )
-				pack.Delete();
+        if (pack != null)
+        {
+            pack.Delete();
+        }
 
-			pack = new StrongBackpack();
-			pack.Movable = false;
+        pack         = new StrongBackpack();
+        pack.Movable = false;
 
-			AddItem( pack );
-		}
+        AddItem(pack);
+    }
 
-		public override int Meat{ get{ return 18; } }
-		public override int Hides{ get{ return 24; } }
-		public override int Furs{ get{ return Utility.RandomList( 0, 0, 0, 8 ); } }
-		public override FurType FurType{ get{ return FurType.Regular; } }
-		public override FoodType FavoriteFood{ get{ return FoodType.Fish | FoodType.FruitsAndVegies | FoodType.Meat; } }
+    public override int Meat {
+        get { return 18; }
+    }
+    public override int Hides {
+        get { return 24; }
+    }
+    public override int Furs {
+        get { return Utility.RandomList(0, 0, 0, 8); }
+    }
+    public override FurType FurType {
+        get { return FurType.Regular; }
+    }
+    public override FoodType FavoriteFood {
+        get { return FoodType.Fish | FoodType.FruitsAndVegies | FoodType.Meat; }
+    }
 
-        public override int GetIdleSound(){ return 1507; }
-        public override int GetAngerSound(){ return 1504; }
-        public override int GetHurtSound(){ return 1506; }
-        public override int GetDeathSound(){ return 1505; }
+    public override int GetIdleSound()
+    {
+        return 1507;
+    }
 
-		#region Pack Animal Methods
-		public override bool OnBeforeDeath()
-		{
-			if ( !base.OnBeforeDeath() )
-				return false;
+    public override int GetAngerSound()
+    {
+        return 1504;
+    }
 
-			PackAnimal.CombineBackpacks( this );
+    public override int GetHurtSound()
+    {
+        return 1506;
+    }
 
-			return true;
-		}
+    public override int GetDeathSound()
+    {
+        return 1505;
+    }
 
-		public override DeathMoveResult GetInventoryMoveResultFor( Item item )
-		{
-			return DeathMoveResult.MoveToCorpse;
-		}
+    #region Pack Animal Methods
+    public override bool OnBeforeDeath()
+    {
+        if (!base.OnBeforeDeath())
+        {
+            return false;
+        }
 
-		public override bool IsSnoop( Mobile from )
-		{
-			if ( PackAnimal.CheckAccess( this, from ) )
-				return false;
+        PackAnimal.CombineBackpacks(this);
 
-			return base.IsSnoop( from );
-		}
+        return true;
+    }
 
-		public override bool OnDragDrop( Mobile from, Item item )
-		{
-			if ( CheckFeed( from, item ) )
-				return true;
+    public override DeathMoveResult GetInventoryMoveResultFor(Item item)
+    {
+        return DeathMoveResult.MoveToCorpse;
+    }
 
-			if ( PackAnimal.CheckAccess( this, from ) )
-			{
-				AddToBackpack( item );
-				return true;
-			}
+    public override bool IsSnoop(Mobile from)
+    {
+        if (PackAnimal.CheckAccess(this, from))
+        {
+            return false;
+        }
 
-			return base.OnDragDrop( from, item );
-		}
+        return base.IsSnoop(from);
+    }
 
-		public override bool CheckNonlocalDrop( Mobile from, Item item, Item target )
-		{
-			return PackAnimal.CheckAccess( this, from );
-		}
+    public override bool OnDragDrop(Mobile from, Item item)
+    {
+        if (CheckFeed(from, item))
+        {
+            return true;
+        }
 
-		public override bool CheckNonlocalLift( Mobile from, Item item )
-		{
-			return PackAnimal.CheckAccess( this, from );
-		}
+        if (PackAnimal.CheckAccess(this, from))
+        {
+            AddToBackpack(item);
+            return true;
+        }
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			PackAnimal.TryPackOpen( this, from );
-		}
+        return base.OnDragDrop(from, item);
+    }
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
-		{
-			base.GetContextMenuEntries( from, list );
+    public override bool CheckNonlocalDrop(Mobile from, Item item, Item target)
+    {
+        return PackAnimal.CheckAccess(this, from);
+    }
 
-			PackAnimal.GetContextMenuEntries( this, from, list );
-		}
-		#endregion
+    public override bool CheckNonlocalLift(Mobile from, Item item)
+    {
+        return PackAnimal.CheckAccess(this, from);
+    }
 
-		public Grum( Serial serial ) : base( serial )
-		{
-		}
+    public override void OnDoubleClick(Mobile from)
+    {
+        PackAnimal.TryPackOpen(this, from);
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public override void GetContextMenuEntries(Mobile from, List <ContextMenuEntry> list)
+    {
+        base.GetContextMenuEntries(from, list);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+        PackAnimal.GetContextMenuEntries(this, from, list);
+    }
+
+    #endregion
+
+    public Grum(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

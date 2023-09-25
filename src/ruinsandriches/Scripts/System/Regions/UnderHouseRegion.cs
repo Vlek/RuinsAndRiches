@@ -14,40 +14,44 @@ using Server.Misc;
 
 namespace Server.Regions
 {
-	public class UnderHouseRegion : BaseRegion
-	{
-		public UnderHouseRegion( XmlElement xml, Map map, Region parent ) : base( xml, map, parent )
-		{
-		}
+public class UnderHouseRegion : BaseRegion
+{
+    public UnderHouseRegion(XmlElement xml, Map map, Region parent) : base(xml, map, parent)
+    {
+    }
 
-		public override bool AllowHousing( Mobile from, Point3D p )
-		{
-			return true;
-		}
+    public override bool AllowHousing(Mobile from, Point3D p)
+    {
+        return true;
+    }
 
-		public override bool AllowHarmful( Mobile from, Mobile target )
-		{
-			if ( target.Region is HouseRegion )
-				return false;
-			else
-				return base.AllowHarmful( from, target );
-		}
+    public override bool AllowHarmful(Mobile from, Mobile target)
+    {
+        if (target.Region is HouseRegion)
+        {
+            return false;
+        }
+        else
+        {
+            return base.AllowHarmful(from, target);
+        }
+    }
 
-		public override void AlterLightLevel( Mobile m, ref int global, ref int personal )
-		{
-			global = LightCycle.NightLevel;
-		}
+    public override void AlterLightLevel(Mobile m, ref int global, ref int personal)
+    {
+        global = LightCycle.NightLevel;
+    }
 
-		public override void OnEnter( Mobile m )
-		{
-			base.OnEnter( m );
-			LoggingFunctions.LogRegions( m, this.Name, "enter" );
-		}
+    public override void OnEnter(Mobile m)
+    {
+        base.OnEnter(m);
+        LoggingFunctions.LogRegions(m, this.Name, "enter");
+    }
 
-		public override void OnExit( Mobile m )
-		{
-			base.OnExit( m );
-			LoggingFunctions.LogRegions( m, this.Name, "exit" );
-		}
-	}
+    public override void OnExit(Mobile m)
+    {
+        base.OnExit(m);
+        LoggingFunctions.LogRegions(m, this.Name, "exit");
+    }
+}
 }

@@ -5,87 +5,95 @@ using Server;
 
 namespace Server.Spells.Undead
 {
-	public class UndeadEyesSpell : UndeadSpell
-	{
-		private static SpellInfo m_Info = new SpellInfo( "", "", 239, 9021 );
-		public override double RequiredSkill{ get{ return 10.0; } }
-		public override int RequiredMana{ get{ return 0; } }
-		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
+public class UndeadEyesSpell : UndeadSpell
+{
+    private static SpellInfo m_Info = new SpellInfo("", "", 239, 9021);
+    public override double RequiredSkill {
+        get { return 10.0; }
+    }
+    public override int RequiredMana {
+        get { return 0; }
+    }
+    public override TimeSpan CastDelayBase {
+        get { return TimeSpan.FromSeconds(2.0); }
+    }
 
 
-		public UndeadEyesSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
-		{
-		}
+    public UndeadEyesSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+    {
+    }
 
-		public override void OnCast()
-		{
-			Caster.Target = new EyesSpellTarget( this );
-		}
+    public override void OnCast()
+    {
+        Caster.Target = new EyesSpellTarget(this);
+    }
 
-		public class DarkTimer : Timer
-		{
-			private Mobile m_Owner;
+    public class DarkTimer : Timer
+    {
+        private Mobile m_Owner;
 
-			public DarkTimer( Mobile owner, int enhance ) : base( TimeSpan.FromMinutes( Utility.Random( 15+enhance, 25+enhance ) ) )
-			{
-				m_Owner = owner;
-				Priority = TimerPriority.OneMinute;
-			}
+        public DarkTimer(Mobile owner, int enhance) : base(TimeSpan.FromMinutes(Utility.Random(15 + enhance, 25 + enhance)))
+        {
+            m_Owner  = owner;
+            Priority = TimerPriority.OneMinute;
+        }
 
-			protected override void OnTick()
-			{
-				m_Owner.EndAction( typeof( LightCycle ) );
-				m_Owner.LightLevel = 0;
-				BuffInfo.RemoveBuff( m_Owner, BuffIcon.NightSight );
-			}
-		}
+        protected override void OnTick()
+        {
+            m_Owner.EndAction(typeof(LightCycle));
+            m_Owner.LightLevel = 0;
+            BuffInfo.RemoveBuff(m_Owner, BuffIcon.NightSight);
+        }
+    }
 
-		private class EyesSpellTarget : Target
-		{
-			private Spell m_Spell;
+    private class EyesSpellTarget : Target
+    {
+        private Spell m_Spell;
 
-			public EyesSpellTarget( Spell spell ) : base( 10, false, TargetFlags.None )
-			{
-				m_Spell = spell;
-			}
+        public EyesSpellTarget(Spell spell) : base(10, false, TargetFlags.None)
+        {
+            m_Spell = spell;
+        }
 
-			protected override void OnTarget( Mobile from, object targeted )
-			{
-				if ( targeted is Mobile && m_Spell.CheckSequence() )
-				{
-					Mobile targ = (Mobile)targeted;
+        protected override void OnTarget(Mobile from, object targeted)
+        {
+            if (targeted is Mobile && m_Spell.CheckSequence())
+            {
+                Mobile targ = (Mobile)targeted;
 
-					SpellHelper.Turn( m_Spell.Caster, targ );
+                SpellHelper.Turn(m_Spell.Caster, targ);
 
-					if ( targ.BeginAction( typeof( LightCycle ) ) )
-					{
-						new DarkTimer( targ, Server.Items.BasePotion.EnhancePotions( m_Spell.Caster ) ).Start();
-						int level = (int)Math.Abs( LightCycle.DungeonLevel * ( m_Spell.Caster.Skills[SkillName.Necromancy].Base / 100 ) );
+                if (targ.BeginAction(typeof(LightCycle)))
+                {
+                    new DarkTimer(targ, Server.Items.BasePotion.EnhancePotions(m_Spell.Caster)).Start();
+                    int level = (int)Math.Abs(LightCycle.DungeonLevel * (m_Spell.Caster.Skills[SkillName.Necromancy].Base / 100));
 
-						if ( level > 25 || level < 0 )
-							level = 25;
+                    if (level > 25 || level < 0)
+                    {
+                        level = 25;
+                    }
 
-						level = 12;
+                    level = 12;
 
-						targ.LightLevel = level;
+                    targ.LightLevel = level;
 
-						targ.FixedParticles( 0x376A, 9, 32, 5007, EffectLayer.Waist );
-						targ.PlaySound( 0x37A );
-						BuffInfo.AddBuff( targ, new BuffInfo( BuffIcon.NightSight, 1075643 ) );	//Night Sight/You ignore lighting effects
-					}
-					else
-					{
-						from.SendMessage( "{0} already have undead vision.", from == targ ? "You" : "They" );
-					}
-				}
+                    targ.FixedParticles(0x376A, 9, 32, 5007, EffectLayer.Waist);
+                    targ.PlaySound(0x37A);
+                    BuffInfo.AddBuff(targ, new BuffInfo(BuffIcon.NightSight, 1075643));                                 //Night Sight/You ignore lighting effects
+                }
+                else
+                {
+                    from.SendMessage("{0} already have undead vision.", from == targ ? "You" : "They");
+                }
+            }
 
-				m_Spell.FinishSequence();
-			}
+            m_Spell.FinishSequence();
+        }
 
-			protected override void OnTargetFinish( Mobile from )
-			{
-				m_Spell.FinishSequence();
-			}
-		}
-	}
+        protected override void OnTargetFinish(Mobile from)
+        {
+            m_Spell.FinishSequence();
+        }
+    }
+}
 }

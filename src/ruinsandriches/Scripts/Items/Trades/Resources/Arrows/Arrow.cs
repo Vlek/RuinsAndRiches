@@ -3,53 +3,57 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class Arrow : Item, ICommodity
-	{
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return true; } }
+public class Arrow : Item, ICommodity
+{
+    int ICommodity.DescriptionNumber {
+        get { return LabelNumber; }
+    }
+    bool ICommodity.IsDeedable {
+        get { return true; }
+    }
 
-		public override double DefaultWeight
-		{
-			get { return 0.1; }
-		}
+    public override double DefaultWeight
+    {
+        get { return 0.1; }
+    }
 
-		[Constructable]
-		public Arrow() : this( 1 )
-		{
-		}
+    [Constructable]
+    public Arrow() : this(1)
+    {
+    }
 
-		[Constructable]
-		public Arrow( int amount ) : base( 0xF3F )
-		{
-			Stackable = true;
-			Amount = amount;
-		}
+    [Constructable]
+    public Arrow(int amount) : base(0xF3F)
+    {
+        Stackable = true;
+        Amount    = amount;
+    }
 
-		public Arrow( Serial serial ) : base( serial )
-		{
-		}
+    public Arrow(Serial serial) : base(serial)
+    {
+    }
 
-		public override bool OnMoveOver( Mobile m )
-		{
-			if ( m is PlayerMobile && m.Alive && Movable )
-			{
-				m.PlaceInBackpack( this );
-			}
-			return true;
-		}
+    public override bool OnMoveOver(Mobile m)
+    {
+        if (m is PlayerMobile && m.Alive && Movable)
+        {
+            m.PlaceInBackpack(this);
+        }
+        return true;
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 ); // version
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-		}
-	}
+        int version = reader.ReadInt();
+    }
+}
 }

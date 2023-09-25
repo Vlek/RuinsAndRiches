@@ -4,130 +4,152 @@ using Server.Network;
 
 namespace Server.Spells.Undead
 {
-	public class NecroPoisonSpell : UndeadSpell
-	{
-		private static SpellInfo m_Info = new SpellInfo( "", "", 239, 9021 );
-		public override double RequiredSkill{ get{ return 20.0; } }
-		public override int RequiredMana{ get{ return 0; } }
-		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
+public class NecroPoisonSpell : UndeadSpell
+{
+    private static SpellInfo m_Info = new SpellInfo("", "", 239, 9021);
+    public override double RequiredSkill {
+        get { return 20.0; }
+    }
+    public override int RequiredMana {
+        get { return 0; }
+    }
+    public override TimeSpan CastDelayBase {
+        get { return TimeSpan.FromSeconds(2.0); }
+    }
 
-		public NecroPoisonSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
-		{
-		}
+    public NecroPoisonSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+    {
+    }
 
-		public override void OnCast()
-		{
-			Caster.Target = new InternalTarget( this );
-		}
+    public override void OnCast()
+    {
+        Caster.Target = new InternalTarget(this);
+    }
 
-		public void Target( Mobile m )
-		{
-			if ( !Caster.CanSee( m ) )
-			{
-				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
-			}
-			else if ( CheckHSequence( m ) )
-			{
-				SpellHelper.Turn( Caster, m );
+    public void Target(Mobile m)
+    {
+        if (!Caster.CanSee(m))
+        {
+            Caster.SendLocalizedMessage(500237);                       // Target can not be seen.
+        }
+        else if (CheckHSequence(m))
+        {
+            SpellHelper.Turn(Caster, m);
 
-				SpellHelper.CheckReflect( 3, Caster, ref m );
+            SpellHelper.CheckReflect(3, Caster, ref m);
 
-				if ( m.Spell != null )
-					m.Spell.OnCasterHurt();
+            if (m.Spell != null)
+            {
+                m.Spell.OnCasterHurt();
+            }
 
-				m.Paralyzed = false;
+            m.Paralyzed = false;
 
-				if ( CheckResisted( m ) )
-				{
-					m.SendLocalizedMessage( 501783 ); // You feel yourself resisting magical energy.
-				}
-				else
-				{
-					int level;
+            if (CheckResisted(m))
+            {
+                m.SendLocalizedMessage(501783);                           // You feel yourself resisting magical energy.
+            }
+            else
+            {
+                int level;
 
-					if ( Caster.InRange( m, 2 ) && Caster.Map == m.Map )
-					{
-						int total = (Caster.Skills.Necromancy.Fixed + Caster.Skills.Poisoning.Fixed + Server.Items.BasePotion.EnhancePotions( Caster )) / 2;
+                if (Caster.InRange(m, 2) && Caster.Map == m.Map)
+                {
+                    int total = (Caster.Skills.Necromancy.Fixed + Caster.Skills.Poisoning.Fixed + Server.Items.BasePotion.EnhancePotions(Caster)) / 2;
 
-						if ( total >= 1000 )
-							level = 3;
-						else if ( total > 850 )
-							level = 2;
-						else if ( total > 650 )
-							level = 1;
-						else
-							level = 0;
-					}
-					else
-					{
-						level = 0;
-					}
+                    if (total >= 1000)
+                    {
+                        level = 3;
+                    }
+                    else if (total > 850)
+                    {
+                        level = 2;
+                    }
+                    else if (total > 650)
+                    {
+                        level = 1;
+                    }
+                    else
+                    {
+                        level = 0;
+                    }
+                }
+                else
+                {
+                    level = 0;
+                }
 
-					m.ApplyPoison( Caster, Poison.GetPoison( level ) );
-				}
+                m.ApplyPoison(Caster, Poison.GetPoison(level));
+            }
 
-				m.FixedParticles( 0x374A, 10, 15, 5021, EffectLayer.Waist );
-				m.PlaySound( 0x474 );
-			}
+            m.FixedParticles(0x374A, 10, 15, 5021, EffectLayer.Waist);
+            m.PlaySound(0x474);
+        }
 
-			FinishSequence();
-		}
+        FinishSequence();
+    }
 
-		public virtual bool CheckResisted( Mobile target )
-		{
-			double n = GetResistPercent( target );
+    public virtual bool CheckResisted(Mobile target)
+    {
+        double n = GetResistPercent(target);
 
-			n /= 100.0;
+        n /= 100.0;
 
-			if( n <= 0.0 )
-				return false;
+        if (n <= 0.0)
+        {
+            return false;
+        }
 
-			if( n >= 1.0 )
-				return true;
+        if (n >= 1.0)
+        {
+            return true;
+        }
 
-			int maxSkill = (1 + 8) * 10;
-			maxSkill += (1 + (8 / 6)) * 25;
+        int maxSkill = (1 + 8) * 10;
+        maxSkill += (1 + (8 / 6)) * 25;
 
-			if( target.Skills[SkillName.MagicResist].Value < maxSkill )
-				target.CheckSkill( SkillName.MagicResist, 0.0, 120.0 );
+        if (target.Skills[SkillName.MagicResist].Value < maxSkill)
+        {
+            target.CheckSkill(SkillName.MagicResist, 0.0, 120.0);
+        }
 
-			return (n >= Utility.RandomDouble());
-		}
+        return n >= Utility.RandomDouble();
+    }
 
-		public virtual double GetResistPercentForCircle( Mobile target )
-		{
-			double firstPercent = target.Skills[SkillName.MagicResist].Value / 5.0;
-			double secondPercent = target.Skills[SkillName.MagicResist].Value - (((Caster.Skills[DamageSkill].Value - 20.0) / 5.0) + (1 + 8) * 5.0);
+    public virtual double GetResistPercentForCircle(Mobile target)
+    {
+        double firstPercent  = target.Skills[SkillName.MagicResist].Value / 5.0;
+        double secondPercent = target.Skills[SkillName.MagicResist].Value - (((Caster.Skills[DamageSkill].Value - 20.0) / 5.0) + (1 + 8) * 5.0);
 
-			return (firstPercent > secondPercent ? firstPercent : secondPercent) / 2.0; // Seems should be about half of what stratics says.
-		}
+        return (firstPercent > secondPercent ? firstPercent : secondPercent) / 2.0;                 // Seems should be about half of what stratics says.
+    }
 
-		public virtual double GetResistPercent( Mobile target )
-		{
-			return GetResistPercentForCircle( target );
-		}
+    public virtual double GetResistPercent(Mobile target)
+    {
+        return GetResistPercentForCircle(target);
+    }
 
-		private class InternalTarget : Target
-		{
-			private NecroPoisonSpell m_Owner;
+    private class InternalTarget : Target
+    {
+        private NecroPoisonSpell m_Owner;
 
-			public InternalTarget( NecroPoisonSpell owner ) : base( 12, false, TargetFlags.Harmful )
-			{
-				m_Owner = owner;
-			}
+        public InternalTarget(NecroPoisonSpell owner) : base(12, false, TargetFlags.Harmful)
+        {
+            m_Owner = owner;
+        }
 
-			protected override void OnTarget( Mobile from, object o )
-			{
-				if ( o is Mobile )
-				{
-					m_Owner.Target( (Mobile)o );
-				}
-			}
+        protected override void OnTarget(Mobile from, object o)
+        {
+            if (o is Mobile)
+            {
+                m_Owner.Target((Mobile)o);
+            }
+        }
 
-			protected override void OnTargetFinish( Mobile from )
-			{
-				m_Owner.FinishSequence();
-			}
-		}
-	}
+        protected override void OnTargetFinish(Mobile from)
+        {
+            m_Owner.FinishSequence();
+        }
+    }
+}
 }

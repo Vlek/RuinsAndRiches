@@ -13,99 +13,113 @@ using Server.Items;
 
 namespace Server.Regions
 {
-	public class ProtectedRegion : BaseRegion
-	{
-		public ProtectedRegion( XmlElement xml, Map map, Region parent ) : base( xml, map, parent )
-		{
-		}
+public class ProtectedRegion : BaseRegion
+{
+    public ProtectedRegion(XmlElement xml, Map map, Region parent) : base(xml, map, parent)
+    {
+    }
 
-		public override bool AllowHousing( Mobile from, Point3D p )
-		{
-			return false;
-		}
+    public override bool AllowHousing(Mobile from, Point3D p)
+    {
+        return false;
+    }
 
-		public override void AlterLightLevel( Mobile m, ref int global, ref int personal )
-		{
-			if ( this.Name == "the Cabin" ){ global = LightCycle.CaveLevel; }
-			else if ( this.Name == "the Chamber of the Codex" ){ global = LightCycle.DungeonLevel; }
-			else if ( this.Name == "the Chamber of Virtue" ){ global = LightCycle.DungeonLevel; }
-			else if ( this.Name == "the Chamber of Corruption" ){ global = LightCycle.DungeonLevel; }
-		}
+    public override void AlterLightLevel(Mobile m, ref int global, ref int personal)
+    {
+        if (this.Name == "the Cabin")
+        {
+            global = LightCycle.CaveLevel;
+        }
+        else if (this.Name == "the Chamber of the Codex")
+        {
+            global = LightCycle.DungeonLevel;
+        }
+        else if (this.Name == "the Chamber of Virtue")
+        {
+            global = LightCycle.DungeonLevel;
+        }
+        else if (this.Name == "the Chamber of Corruption")
+        {
+            global = LightCycle.DungeonLevel;
+        }
+    }
 
-		public override bool AllowHarmful( Mobile from, Mobile target )
-		{
-			return false;
-		}
+    public override bool AllowHarmful(Mobile from, Mobile target)
+    {
+        return false;
+    }
 
-		public override bool OnBeginSpellCast( Mobile m, ISpell s )
-		{
-			if ( this.Name == "the Chamber of the Codex" )
-			{
-				m.SendMessage( "This does not work within the Chamber of the Codex." );
-				return false;
-			}
-			else
-			{
-				m.SendMessage( "That does not seem to work here." );
-				return false;
-			}
-		}
+    public override bool OnBeginSpellCast(Mobile m, ISpell s)
+    {
+        if (this.Name == "the Chamber of the Codex")
+        {
+            m.SendMessage("This does not work within the Chamber of the Codex.");
+            return false;
+        }
+        else
+        {
+            m.SendMessage("That does not seem to work here.");
+            return false;
+        }
+    }
 
-		public override void OnEnter( Mobile m )
-		{
-			base.OnEnter( m );
-			if ( m is PlayerMobile )
-			{
-				LoggingFunctions.LogRegions( m, this.Name, "enter" );
-			}
+    public override void OnEnter(Mobile m)
+    {
+        base.OnEnter(m);
+        if (m is PlayerMobile)
+        {
+            LoggingFunctions.LogRegions(m, this.Name, "enter");
+        }
 
-			Server.Misc.RegionMusic.MusicRegion( m, this );
-		}
+        Server.Misc.RegionMusic.MusicRegion(m, this);
+    }
 
-		public override void OnExit( Mobile m )
-		{
-			base.OnExit( m );
-			if ( m is PlayerMobile )
-			{
-				LoggingFunctions.LogRegions( m, this.Name, "exit" );
-			}
+    public override void OnExit(Mobile m)
+    {
+        base.OnExit(m);
+        if (m is PlayerMobile)
+        {
+            LoggingFunctions.LogRegions(m, this.Name, "exit");
+        }
 
-			if ( this.Name == "the Chamber of the Codex" )
-			{
-				ArrayList targets = new ArrayList();
-				foreach ( Item item in World.Items.Values )
-				{
-					if ( item is CodexWisdom )
-					{
-						if ( ((CodexWisdom)item).CodexOwner == m )
-						{
-							targets.Add( item );
-						}
-					}
-				}
-				for ( int i = 0; i < targets.Count; ++i )
-				{
-					Item item = ( Item )targets[ i ];
+        if (this.Name == "the Chamber of the Codex")
+        {
+            ArrayList targets = new ArrayList();
+            foreach (Item item in World.Items.Values)
+            {
+                if (item is CodexWisdom)
+                {
+                    if (((CodexWisdom)item).CodexOwner == m)
+                    {
+                        targets.Add(item);
+                    }
+                }
+            }
+            for (int i = 0; i < targets.Count; ++i)
+            {
+                Item item = ( Item )targets[i];
 
-					if ( item is CodexWisdom )
-					{
-						CodexWisdom codex = (CodexWisdom)item;
+                if (item is CodexWisdom)
+                {
+                    CodexWisdom codex = (CodexWisdom)item;
 
-						bool DestroyLense = true;
+                    bool DestroyLense = true;
 
-						if ( ( codex.SkillFirst == codex.PreviousFirst || codex.SkillFirst == codex.PreviousSecond ) && ( codex.SkillSecond == codex.PreviousFirst || codex.SkillSecond == codex.PreviousSecond ) )
-							DestroyLense = false;
+                    if ((codex.SkillFirst == codex.PreviousFirst || codex.SkillFirst == codex.PreviousSecond) && (codex.SkillSecond == codex.PreviousFirst || codex.SkillSecond == codex.PreviousSecond))
+                    {
+                        DestroyLense = false;
+                    }
 
-						if ( DestroyLense )
-						{
-							codex.PreviousFirst = codex.SkillFirst;
-							codex.PreviousSecond = codex.SkillSecond;
-							codex.HasConvexLense = 0;
-							codex.HasConcaveLense = 0;
-						}
-					}
-				}
-			}
-		}
-	}
+                    if (DestroyLense)
+                    {
+                        codex.PreviousFirst   = codex.SkillFirst;
+                        codex.PreviousSecond  = codex.SkillSecond;
+                        codex.HasConvexLense  = 0;
+                        codex.HasConcaveLense = 0;
+                    }
+                }
+            }
+        }
+    }
+}
 }
