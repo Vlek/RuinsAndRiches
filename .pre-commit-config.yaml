@@ -13,6 +13,7 @@ repos:
 
       # Need to have this only for config and cs files
       - id: mixed-line-ending
+        args: ["--fix=lf"]
         types_or: ["c#", "yaml", "xml", "json"]
       - id: trailing-whitespace
         types_or: ["c#", "yaml", "xml", "json"]
