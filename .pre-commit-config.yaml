@@ -30,6 +30,5 @@ repos:
         args: [
           "-c", ".uncrustify.cfg.txt",
           "--no-backup",
-          "-f"
         ]
         types_or: ["c#"]
