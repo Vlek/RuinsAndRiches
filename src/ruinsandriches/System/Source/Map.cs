@@ -1897,25 +1897,25 @@ public sealed class Map : IComparable, IComparable <Map>
                 return m_CurrentList[m_CurrentIndex];
 
                 /*try
-                 * {
-                 *      return m_CurrentList[m_CurrentIndex];
-                 * }
-                 * catch
-                 * {
-                 *      Console.WriteLine( "Warning: Object removed during enumeration. May not be recoverable" );
-                 *
-                 *      m_CurrentIndex = -1;
-                 *      m_CurrentList = GetListForSector( m_Map.InternalGetSector( m_xSector, m_ySector ) );
-                 *
-                 *      if ( MoveNext() )
-                 *      {
-                 *              return Current;
-                 *      }
-                 *      else
-                 *      {
-                 *              throw new Exception( "Object disposed during enumeration. Was not recoverable." );
-                 *      }
-                 * }*/
+                * {
+                *      return m_CurrentList[m_CurrentIndex];
+                * }
+                * catch
+                * {
+                *      Console.WriteLine( "Warning: Object removed during enumeration. May not be recoverable" );
+                *
+                *      m_CurrentIndex = -1;
+                *      m_CurrentList = GetListForSector( m_Map.InternalGetSector( m_xSector, m_ySector ) );
+                *
+                *      if ( MoveNext() )
+                *      {
+                *              return Current;
+                *      }
+                *      else
+                *      {
+                *              throw new Exception( "Object disposed during enumeration. Was not recoverable." );
+                *      }
+                * }*/
             }
         }
 

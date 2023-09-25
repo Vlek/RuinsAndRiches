@@ -28,7 +28,7 @@ namespace Server
 public abstract class Poison
 {
     /*public abstract TimeSpan Interval{ get; }
-    *  public abstract TimeSpan Duration{ get; }*/
+     *  public abstract TimeSpan Duration{ get; }*/
     public abstract string Name {
         get;
     }
