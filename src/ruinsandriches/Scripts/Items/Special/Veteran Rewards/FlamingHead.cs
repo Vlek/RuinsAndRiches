@@ -38,7 +38,7 @@ public class FlamingHead : StoneFaceTrapNoDamage, IAddon, IRewardItem
     }
 
     [Constructable]
-    public FlamingHead() : this( StoneFaceTrapType.NorthWall )
+    public FlamingHead() : this(StoneFaceTrapType.NorthWall)
     {
     }
 
@@ -130,7 +130,8 @@ public class FlamingHead : StoneFaceTrapNoDamage, IAddon, IRewardItem
 public class FlamingHeadDeed : Item, IRewardItem
 {
     public override int LabelNumber {
-        get { return 1041050; }
+        get { return 1041050;
+        }
     }                                                                     // a flaming head deed
 
     private bool m_IsRewardItem;

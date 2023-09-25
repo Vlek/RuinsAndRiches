@@ -9,11 +9,11 @@ using Server.Spells;
 
 namespace Server.Regions
 {
-	public class GuardedRegion : BaseRegion
-	{
-		public GuardedRegion( XmlElement xml, Map map, Region parent ) : base( xml, map, parent )
-		{
-			// NOT USED
-		}
-	}
+public class GuardedRegion : BaseRegion
+{
+    public GuardedRegion(XmlElement xml, Map map, Region parent) : base(xml, map, parent)
+    {
+        // NOT USED
+    }
+}
 }

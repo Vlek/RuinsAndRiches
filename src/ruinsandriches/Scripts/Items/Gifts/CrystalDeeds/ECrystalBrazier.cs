@@ -50,7 +50,8 @@ public class ECrystalBrazierComponent : AddonComponent
 public class ECrystalBrazierAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new ECrystalBrazierDeed(); }
+        get { return new ECrystalBrazierDeed();
+        }
     }
 
     [Constructable]
@@ -82,7 +83,8 @@ public class ECrystalBrazierAddon : BaseAddon
 public class ECrystalBrazierDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ECrystalBrazierAddon(); }
+        get { return new ECrystalBrazierAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076667; }

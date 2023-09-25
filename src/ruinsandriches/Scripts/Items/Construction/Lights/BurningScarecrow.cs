@@ -45,10 +45,12 @@ public class BurningScarecrowA : BaseLight
         int version = reader.ReadInt();
     }
 }
+
 public class BurningScarecrowB : BaseLight
 {
     public override int LitItemID {
-        get { return 0x2401; }
+        get { return 0x2401;
+        }
     }
     public override int UnlitItemID {
         get { return 0x2400; }

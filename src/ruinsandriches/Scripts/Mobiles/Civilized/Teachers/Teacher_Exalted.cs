@@ -98,6 +98,7 @@ public class ExaltedDealer : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
     public class BuyGumpEntry : ContextMenuEntry
     {

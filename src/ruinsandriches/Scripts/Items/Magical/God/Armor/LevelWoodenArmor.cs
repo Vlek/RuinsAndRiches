@@ -76,10 +76,12 @@ public class LevelWoodenPlateLegs : BaseLevelArmor         /////////////////////
         ItemID = 0x1965;
     }
 }
+
 public class LevelWoodenPlateGloves : BaseLevelArmor         ///////////////////////////////////////////////////
 {
     public override int Hue {
-        get { return 0x840; }
+        get { return 0x840;
+        }
     }
 
     public override int BasePhysicalResistance {
@@ -155,7 +157,8 @@ public class LevelWoodenPlateGloves : BaseLevelArmor         ///////////////////
 public class LevelWoodenPlateGorget : BaseLevelArmor         ///////////////////////////////////////////////////
 {
     public override int Hue {
-        get { return 0x840; }
+        get { return 0x840;
+        }
     }
 
     public override int BasePhysicalResistance {
@@ -231,7 +234,8 @@ public class LevelWoodenPlateGorget : BaseLevelArmor         ///////////////////
 public class LevelWoodenPlateArms : BaseLevelArmor         ///////////////////////////////////////////////////////
 {
     public override int Hue {
-        get { return 0x840; }
+        get { return 0x840;
+        }
     }
 
     public override int BasePhysicalResistance {
@@ -307,7 +311,8 @@ public class LevelWoodenPlateArms : BaseLevelArmor         /////////////////////
 public class LevelWoodenPlateChest : BaseLevelArmor         /////////////////////////////////////////////////////
 {
     public override int Hue {
-        get { return 0x840; }
+        get { return 0x840;
+        }
     }
 
     public override int BasePhysicalResistance {
@@ -383,7 +388,8 @@ public class LevelWoodenPlateChest : BaseLevelArmor         ////////////////////
 public class LevelWoodenPlateHelm : BaseLevelArmor         ///////////////////////////////////////////////////////
 {
     public override int Hue {
-        get { return 0x840; }
+        get { return 0x840;
+        }
     }
 
     public override int BasePhysicalResistance {

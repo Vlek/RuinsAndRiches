@@ -49,7 +49,8 @@ public class EObsidianRockComponent : AddonComponent
 public class EObsidianRockAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new EObsidianRockDeed(); }
+        get { return new EObsidianRockDeed();
+        }
     }
 
     [Constructable]
@@ -81,7 +82,8 @@ public class EObsidianRockAddon : BaseAddon
 public class EObsidianRockDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new EObsidianRockAddon(); }
+        get { return new EObsidianRockAddon();
+        }
     }
 
     [Constructable]

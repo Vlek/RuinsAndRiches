@@ -193,7 +193,8 @@ public class DaemonDartBoard : AddonComponent
 public class DaemonDartBoardEastAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new DaemonDartBoardEastDeed(); }
+        get { return new DaemonDartBoardEastDeed();
+        }
     }
 
     public DaemonDartBoardEastAddon()
@@ -221,7 +222,8 @@ public class DaemonDartBoardEastAddon : BaseAddon
 public class DaemonDartBoardEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new DaemonDartBoardEastAddon(); }
+        get { return new DaemonDartBoardEastAddon();
+        }
     }
 
     [Constructable]
@@ -251,7 +253,8 @@ public class DaemonDartBoardEastDeed : BaseAddonDeed
 public class DaemonDartBoardSouthAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new DaemonDartBoardSouthDeed(); }
+        get { return new DaemonDartBoardSouthDeed();
+        }
     }
 
     public DaemonDartBoardSouthAddon()
@@ -279,7 +282,8 @@ public class DaemonDartBoardSouthAddon : BaseAddon
 public class DaemonDartBoardSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new DaemonDartBoardSouthAddon(); }
+        get { return new DaemonDartBoardSouthAddon();
+        }
     }
 
     [Constructable]

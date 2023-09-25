@@ -173,7 +173,8 @@ public class PickpocketDip : AddonComponent
 public class PickpocketDipEastAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new PickpocketDipEastDeed(); }
+        get { return new PickpocketDipEastDeed();
+        }
     }
 
     [Constructable]
@@ -204,7 +205,8 @@ public class PickpocketDipEastAddon : BaseAddon
 public class PickpocketDipEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new PickpocketDipEastAddon(); }
+        get { return new PickpocketDipEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044337; }
@@ -237,7 +239,8 @@ public class PickpocketDipEastDeed : BaseAddonDeed
 public class PickpocketDipSouthAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new PickpocketDipSouthDeed(); }
+        get { return new PickpocketDipSouthDeed();
+        }
     }
 
     [Constructable]
@@ -268,7 +271,8 @@ public class PickpocketDipSouthAddon : BaseAddon
 public class PickpocketDipSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new PickpocketDipSouthAddon(); }
+        get { return new PickpocketDipSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044338; }

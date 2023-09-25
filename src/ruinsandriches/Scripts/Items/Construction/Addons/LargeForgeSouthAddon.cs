@@ -40,7 +40,8 @@ public class LargeForgeSouthAddon : BaseAddon
 public class LargeForgeSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new LargeForgeSouthAddon(); }
+        get { return new LargeForgeSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044332; }

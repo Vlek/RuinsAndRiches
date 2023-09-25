@@ -35,7 +35,8 @@ public class SuitOfSilverArmorComponent : AddonComponent
 public class SuitOfSilverArmorAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new SuitOfSilverArmorDeed(); }
+        get { return new SuitOfSilverArmorDeed();
+        }
     }
 
     [Constructable]
@@ -66,7 +67,8 @@ public class SuitOfSilverArmorAddon : BaseAddon
 public class SuitOfSilverArmorDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new SuitOfSilverArmorAddon(); }
+        get { return new SuitOfSilverArmorAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076266; }

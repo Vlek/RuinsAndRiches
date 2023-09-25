@@ -706,6 +706,7 @@ public class Timer
             return String.Format("DelayStateCall[{0}]", FormatDelegate(m_Callback));
         }
     }
+
     #endregion
 
     public void Start()

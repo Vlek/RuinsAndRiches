@@ -231,7 +231,8 @@ public class TrainingDaemon : AddonComponent
 public class TrainingDaemonEastAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new TrainingDaemonEastDeed(); }
+        get { return new TrainingDaemonEastDeed();
+        }
     }
 
     [Constructable]
@@ -260,7 +261,8 @@ public class TrainingDaemonEastAddon : BaseAddon
 public class TrainingDaemonEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new TrainingDaemonEastAddon(); }
+        get { return new TrainingDaemonEastAddon();
+        }
     }
 
     [Constructable]
@@ -289,7 +291,8 @@ public class TrainingDaemonEastDeed : BaseAddonDeed
 public class TrainingDaemonSouthAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new TrainingDaemonSouthDeed(); }
+        get { return new TrainingDaemonSouthDeed();
+        }
     }
 
     [Constructable]
@@ -318,7 +321,8 @@ public class TrainingDaemonSouthAddon : BaseAddon
 public class TrainingDaemonSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new TrainingDaemonSouthAddon(); }
+        get { return new TrainingDaemonSouthAddon();
+        }
     }
 
     [Constructable]

@@ -65,6 +65,7 @@ public class Pyramid : BaseHouse
         int version = reader.ReadInt();
     }
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////////
 public class LargeTent : BaseHouse
 {

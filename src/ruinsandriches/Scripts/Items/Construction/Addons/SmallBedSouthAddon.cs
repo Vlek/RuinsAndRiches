@@ -38,7 +38,8 @@ public class SmallBedSouthAddon : BaseAddon
 public class SmallBedSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new SmallBedSouthAddon(); }
+        get { return new SmallBedSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044321; }

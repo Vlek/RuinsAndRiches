@@ -68,7 +68,8 @@ public class MediumBoat : BaseBoat
 public class MediumBoatDeed : BaseBoatDeed
 {
     public override BaseBoat Boat {
-        get { return new MediumBoat(); }
+        get { return new MediumBoat();
+        }
     }
 
     [Constructable]
@@ -99,7 +100,8 @@ public class MediumBoatDeed : BaseBoatDeed
 public class MediumDockedBoat : BaseDockedBoat
 {
     public override BaseBoat Boat {
-        get { return new MediumBoat(); }
+        get { return new MediumBoat();
+        }
     }
 
     public MediumDockedBoat(BaseBoat boat) : base(0x8, Point3D.Zero, boat)

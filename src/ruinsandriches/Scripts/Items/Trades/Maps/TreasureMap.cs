@@ -830,7 +830,8 @@ public class TreasureMap : MapItem
     {
         if (!from.InRange(GetWorldLocation(), 2))
         {
-            from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045);                       // I can't reach that.
+            from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045);
+            // I can't reach that.
             return;
         }
 

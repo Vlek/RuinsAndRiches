@@ -40,7 +40,8 @@ public class DeadBodyNSAddon : BaseAddon
 public class DeadBodyNSDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new DeadBodyNSAddon(); }
+        get { return new DeadBodyNSAddon();
+        }
     }
 
     [Constructable]

@@ -35,7 +35,8 @@ public class PieceBlackKing : BasePiece
 {
     public override string DefaultName
     {
-        get { return "black king"; }
+        get { return "black king";
+        }
     }
 
     public PieceBlackKing(BaseBoard board) : base(0x358E, board)
@@ -63,7 +64,8 @@ public class PieceWhiteQueen : BasePiece
 {
     public override string DefaultName
     {
-        get { return "white queen"; }
+        get { return "white queen";
+        }
     }
 
     public PieceWhiteQueen(BaseBoard board) : base(0x358A, board)
@@ -91,7 +93,8 @@ public class PieceBlackQueen : BasePiece
 {
     public override string DefaultName
     {
-        get { return "black queen"; }
+        get { return "black queen";
+        }
     }
 
     public PieceBlackQueen(BaseBoard board) : base(0x3591, board)
@@ -119,7 +122,8 @@ public class PieceWhiteRook : BasePiece
 {
     public override string DefaultName
     {
-        get { return "white rook"; }
+        get { return "white rook";
+        }
     }
 
     public PieceWhiteRook(BaseBoard board) : base(0x3586, board)
@@ -147,7 +151,8 @@ public class PieceBlackRook : BasePiece
 {
     public override string DefaultName
     {
-        get { return "black rook"; }
+        get { return "black rook";
+        }
     }
 
     public PieceBlackRook(BaseBoard board) : base(0x358D, board)
@@ -175,7 +180,8 @@ public class PieceWhiteBishop : BasePiece
 {
     public override string DefaultName
     {
-        get { return "white bishop"; }
+        get { return "white bishop";
+        }
     }
 
     public PieceWhiteBishop(BaseBoard board) : base(0x3585, board)
@@ -203,7 +209,8 @@ public class PieceBlackBishop : BasePiece
 {
     public override string DefaultName
     {
-        get { return "black bishop"; }
+        get { return "black bishop";
+        }
     }
 
     public PieceBlackBishop(BaseBoard board) : base(0x358C, board)
@@ -231,7 +238,8 @@ public class PieceWhiteKnight : BasePiece
 {
     public override string DefaultName
     {
-        get { return "white knight"; }
+        get { return "white knight";
+        }
     }
 
     public PieceWhiteKnight(BaseBoard board) : base(0x3588, board)
@@ -259,7 +267,8 @@ public class PieceBlackKnight : BasePiece
 {
     public override string DefaultName
     {
-        get { return "black knight"; }
+        get { return "black knight";
+        }
     }
 
     public PieceBlackKnight(BaseBoard board) : base(0x358F, board)
@@ -287,7 +296,8 @@ public class PieceWhitePawn : BasePiece
 {
     public override string DefaultName
     {
-        get { return "white pawn"; }
+        get { return "white pawn";
+        }
     }
 
     public PieceWhitePawn(BaseBoard board) : base(0x3589, board)
@@ -315,7 +325,8 @@ public class PieceBlackPawn : BasePiece
 {
     public override string DefaultName
     {
-        get { return "black pawn"; }
+        get { return "black pawn";
+        }
     }
 
     public PieceBlackPawn(BaseBoard board) : base(0x3590, board)

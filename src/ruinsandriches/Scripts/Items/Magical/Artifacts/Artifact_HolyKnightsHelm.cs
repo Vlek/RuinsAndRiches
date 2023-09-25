@@ -3,37 +3,43 @@ using Server;
 
 namespace Server.Items
 {
-	public class Artifact_HolyKnightsPlateHelm : GiftRoyalHelm
-	{
-		public override int InitMinHits{ get{ return 80; } }
-		public override int InitMaxHits{ get{ return 160; } }
+public class Artifact_HolyKnightsPlateHelm : GiftRoyalHelm
+{
+    public override int InitMinHits {
+        get { return 80; }
+    }
+    public override int InitMaxHits {
+        get { return 160; }
+    }
 
-		public override int BasePhysicalResistance{ get{ return 12; } }
+    public override int BasePhysicalResistance {
+        get { return 12; }
+    }
 
-		[Constructable]
-		public Artifact_HolyKnightsPlateHelm()
-		{
-			Name = "Holy Knight's Plate Helm";
-			Hue = 0x47E;
-			Attributes.BonusHits = 10;
-			Attributes.ReflectPhysical = 15;
-			Server.Misc.Arty.ArtySetup( this, 5, "" );
-		}
+    [Constructable]
+    public Artifact_HolyKnightsPlateHelm()
+    {
+        Name = "Holy Knight's Plate Helm";
+        Hue  = 0x47E;
+        Attributes.BonusHits       = 10;
+        Attributes.ReflectPhysical = 15;
+        Server.Misc.Arty.ArtySetup(this, 5, "");
+    }
 
-		public Artifact_HolyKnightsPlateHelm( Serial serial ) : base( serial )
-		{
-		}
+    public Artifact_HolyKnightsPlateHelm(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 1 );
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)1);
+    }
 
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

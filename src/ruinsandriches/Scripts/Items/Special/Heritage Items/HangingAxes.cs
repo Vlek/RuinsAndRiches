@@ -48,7 +48,8 @@ public class HangingAxesAddon : BaseAddon
 public class HangingAxesDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new HangingAxesAddon(m_East); }
+        get { return new HangingAxesAddon(m_East);
+        }
     }
     public override int LabelNumber {
         get { return 1076271; }

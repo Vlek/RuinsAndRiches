@@ -40,7 +40,8 @@ public class DeadBodyEWAddon : BaseAddon
 public class DeadBodyEWDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new DeadBodyEWAddon(); }
+        get { return new DeadBodyEWAddon();
+        }
     }
 
     [Constructable]

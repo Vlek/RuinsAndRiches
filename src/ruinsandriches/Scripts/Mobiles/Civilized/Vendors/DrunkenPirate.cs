@@ -82,6 +82,7 @@ public class DrunkenPirate : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public DrunkenPirate(Serial serial) : base(serial)

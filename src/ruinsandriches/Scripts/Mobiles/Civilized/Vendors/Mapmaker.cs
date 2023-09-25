@@ -70,6 +70,7 @@ public class Mapmaker : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

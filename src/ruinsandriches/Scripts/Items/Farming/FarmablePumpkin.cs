@@ -44,6 +44,7 @@ public class FarmablePumpkin : FarmableCrop
         int version = reader.ReadEncodedInt();
     }
 }
+
 public class FarmablePumpkinLarge : FarmableCrop
 {
     public static int GetCropID()

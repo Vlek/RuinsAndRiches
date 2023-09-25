@@ -228,7 +228,8 @@ public class FlourMillEastAddon : BaseAddon, IFlourMill
 public class FlourMillEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new FlourMillEastAddon(); }
+        get { return new FlourMillEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044347; }

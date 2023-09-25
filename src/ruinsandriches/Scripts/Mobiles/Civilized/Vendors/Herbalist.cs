@@ -72,6 +72,7 @@ public class Herbalist : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

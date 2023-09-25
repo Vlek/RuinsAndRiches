@@ -95,7 +95,8 @@ public class CurtainsComponent : AddonComponent, IDyable
 public class CurtainsAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new CurtainsDeed(); }
+        get { return new CurtainsDeed();
+        }
     }
     public override bool RetainDeedHue {
         get { return true; }
@@ -142,7 +143,8 @@ public class CurtainsAddon : BaseAddon
 public class CurtainsDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new CurtainsAddon(m_East); }
+        get { return new CurtainsAddon(m_East);
+        }
     }
     public override int LabelNumber {
         get { return 1076280; }

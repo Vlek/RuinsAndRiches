@@ -27,7 +27,7 @@ public class IceBladeSpirits : BaseCreature
         SetDex(150);
         SetInt(100);
 
-        SetHits(( Core.SE ) ? 160 : 80);
+        SetHits((Core.SE) ? 160 : 80);
         SetStam(250);
         SetMana(0);
 

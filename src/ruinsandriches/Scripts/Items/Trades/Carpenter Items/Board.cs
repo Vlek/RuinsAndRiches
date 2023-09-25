@@ -104,6 +104,7 @@ public class BaseWoodBoard : Item, ICommodity
         ItemID     = 0x1BD7;
     }
 }
+
 public class Board : BaseWoodBoard
 {
     [Constructable]

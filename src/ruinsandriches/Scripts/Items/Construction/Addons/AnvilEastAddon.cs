@@ -37,7 +37,8 @@ public class AnvilEastAddon : BaseAddon
 public class AnvilEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new AnvilEastAddon(); }
+        get { return new AnvilEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044333; }

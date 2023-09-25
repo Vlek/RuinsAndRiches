@@ -41,6 +41,7 @@ public class JediDatacron01 : SpellScroll
         int version = reader.ReadInt();
     }
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 public class JediDatacron02 : SpellScroll
 {

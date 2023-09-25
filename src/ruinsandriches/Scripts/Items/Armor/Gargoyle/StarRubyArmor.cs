@@ -30,6 +30,7 @@ public class StarRubyPlateLegs : PlateLegs         /////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class StarRubyPlateGloves : PlateGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

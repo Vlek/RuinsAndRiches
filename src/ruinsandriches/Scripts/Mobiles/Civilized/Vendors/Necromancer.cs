@@ -91,6 +91,7 @@ public class Necromancer : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public Necromancer(Serial serial) : base(serial)

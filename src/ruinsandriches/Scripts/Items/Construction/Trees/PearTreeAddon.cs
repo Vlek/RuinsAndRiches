@@ -41,7 +41,8 @@ public class PearTreeAddon : BaseFruitTreeAddon
 public class PearTreeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new PearTreeAddon(); }
+        get { return new PearTreeAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1023492; }

@@ -3,42 +3,44 @@ using Server;
 
 namespace Server.Items
 {
-	public class RingOfHealth : GoldRing
-	{
-		public override int LabelNumber{ get{ return 1061103; } } // Ring of Health
+public class RingOfHealth : GoldRing
+{
+    public override int LabelNumber {
+        get { return 1061103; }
+    }                                                                     // Ring of Health
 
-		[Constructable]
-		public RingOfHealth()
-		{
-			Name = "Ring of Health";
-			Hue = 0x21;
-			ItemID = 0x4CF8;
-			Attributes.BonusHits = 4;
-			Attributes.RegenHits = 7;
-		}
+    [Constructable]
+    public RingOfHealth()
+    {
+        Name   = "Ring of Health";
+        Hue    = 0x21;
+        ItemID = 0x4CF8;
+        Attributes.BonusHits = 4;
+        Attributes.RegenHits = 7;
+    }
 
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			list.Add( 1070722, "Artefact");
-        }
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "Artefact");
+    }
 
-		public RingOfHealth( Serial serial ) : base( serial )
-		{
-		}
+    public RingOfHealth(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 );
-		}
+        writer.Write((int)0);
+    }
 
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-		}
-	}
+        int version = reader.ReadInt();
+    }
+}
 }

@@ -114,7 +114,8 @@ public class BoatPirateBard : BaseSailor
 public class BoatPirateMage : BaseSailor
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { if (YellHue < 2)
@@ -357,7 +358,8 @@ public class ElfBoatPirateBard : BaseSailor
 public class ElfBoatPirateMage : BaseSailor
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { if (YellHue < 2)

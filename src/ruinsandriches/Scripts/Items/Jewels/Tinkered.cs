@@ -17,7 +17,8 @@ class Tinkering
 public class AgapiteAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -50,7 +51,8 @@ public class AgapiteAmulet : GoldNecklace
 public class AgapiteBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -83,7 +85,8 @@ public class AgapiteBracelet : GoldBracelet
 public class AgapiteRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -116,7 +119,8 @@ public class AgapiteRing : GoldRing
 public class AgapiteEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("agapite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -149,7 +153,8 @@ public class AgapiteEarrings : GoldEarrings
 public class AmberAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return 1359; }
+        get { return 1359;
+        }
     }
 
     [Constructable]
@@ -182,7 +187,8 @@ public class AmberAmulet : GoldNecklace
 public class AmberBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return 1359; }
+        get { return 1359;
+        }
     }
 
     [Constructable]
@@ -215,7 +221,8 @@ public class AmberBracelet : GoldBracelet
 public class AmberRing : GoldRing
 {
     public override int Hue {
-        get { return 1359; }
+        get { return 1359;
+        }
     }
 
     [Constructable]
@@ -248,7 +255,8 @@ public class AmberRing : GoldRing
 public class AmberEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return 1359; }
+        get { return 1359;
+        }
     }
 
     [Constructable]
@@ -281,7 +289,8 @@ public class AmberEarrings : GoldEarrings
 public class AmethystAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -314,7 +323,8 @@ public class AmethystAmulet : GoldNecklace
 public class AmethystBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -347,7 +357,8 @@ public class AmethystBracelet : GoldBracelet
 public class AmethystRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -380,7 +391,8 @@ public class AmethystRing : GoldRing
 public class AmethystEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("amethyst", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -413,7 +425,8 @@ public class AmethystEarrings : GoldEarrings
 public class BrassAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -446,7 +459,8 @@ public class BrassAmulet : GoldNecklace
 public class BrassBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -479,7 +493,8 @@ public class BrassBracelet : GoldBracelet
 public class BrassRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -512,7 +527,8 @@ public class BrassRing : GoldRing
 public class BrassEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("brass", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -545,7 +561,8 @@ public class BrassEarrings : GoldEarrings
 public class BronzeAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -578,7 +595,8 @@ public class BronzeAmulet : GoldNecklace
 public class BronzeBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -611,7 +629,8 @@ public class BronzeBracelet : GoldBracelet
 public class BronzeRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -644,7 +663,8 @@ public class BronzeRing : GoldRing
 public class BronzeEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("bronze", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -677,7 +697,8 @@ public class BronzeEarrings : GoldEarrings
 public class CaddelliteAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -710,7 +731,8 @@ public class CaddelliteAmulet : GoldNecklace
 public class CaddelliteBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -743,7 +765,8 @@ public class CaddelliteBracelet : GoldBracelet
 public class CaddelliteRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -776,7 +799,8 @@ public class CaddelliteRing : GoldRing
 public class CaddelliteEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("caddellite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -809,7 +833,8 @@ public class CaddelliteEarrings : GoldEarrings
 public class CopperAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -842,7 +867,8 @@ public class CopperAmulet : GoldNecklace
 public class CopperBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -875,7 +901,8 @@ public class CopperBracelet : GoldBracelet
 public class CopperRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -908,7 +935,8 @@ public class CopperRing : GoldRing
 public class CopperEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -941,7 +969,8 @@ public class CopperEarrings : GoldEarrings
 public class DiamondAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return 2657; }
+        get { return 2657;
+        }
     }
 
     [Constructable]
@@ -974,7 +1003,8 @@ public class DiamondAmulet : GoldNecklace
 public class DiamondBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return 2657; }
+        get { return 2657;
+        }
     }
 
     [Constructable]
@@ -1007,7 +1037,8 @@ public class DiamondBracelet : GoldBracelet
 public class DiamondRing : GoldRing
 {
     public override int Hue {
-        get { return 2657; }
+        get { return 2657;
+        }
     }
 
     [Constructable]
@@ -1040,7 +1071,8 @@ public class DiamondRing : GoldRing
 public class DiamondEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return 2657; }
+        get { return 2657;
+        }
     }
 
     [Constructable]
@@ -1073,7 +1105,8 @@ public class DiamondEarrings : GoldEarrings
 public class DullCopperAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1106,7 +1139,8 @@ public class DullCopperAmulet : GoldNecklace
 public class DullCopperBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1139,7 +1173,8 @@ public class DullCopperBracelet : GoldBracelet
 public class DullCopperRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1172,7 +1207,8 @@ public class DullCopperRing : GoldRing
 public class DullCopperEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dull copper", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1205,7 +1241,8 @@ public class DullCopperEarrings : GoldEarrings
 public class EmeraldAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1238,7 +1275,8 @@ public class EmeraldAmulet : GoldNecklace
 public class EmeraldBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1271,7 +1309,8 @@ public class EmeraldBracelet : GoldBracelet
 public class EmeraldRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1304,7 +1343,8 @@ public class EmeraldRing : GoldRing
 public class EmeraldEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("emerald", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1337,7 +1377,8 @@ public class EmeraldEarrings : GoldEarrings
 public class GarnetAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1370,7 +1411,8 @@ public class GarnetAmulet : GoldNecklace
 public class GarnetBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1403,7 +1445,8 @@ public class GarnetBracelet : GoldBracelet
 public class GarnetRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1436,7 +1479,8 @@ public class GarnetRing : GoldRing
 public class GarnetEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("garnet", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1469,7 +1513,8 @@ public class GarnetEarrings : GoldEarrings
 public class GoldenAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("gold", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("gold", "", 0);
+        }
     }
 
     [Constructable]
@@ -1502,7 +1547,8 @@ public class GoldenAmulet : GoldNecklace
 public class GoldenBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("gold", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("gold", "", 0);
+        }
     }
 
     [Constructable]
@@ -1535,7 +1581,8 @@ public class GoldenBracelet : GoldBracelet
 public class GoldenRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("gold", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("gold", "", 0);
+        }
     }
 
     [Constructable]
@@ -1568,7 +1615,8 @@ public class GoldenRing : GoldRing
 public class GoldenEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("gold", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("gold", "", 0);
+        }
     }
 
     [Constructable]
@@ -1601,7 +1649,8 @@ public class GoldenEarrings : GoldEarrings
 public class JadeAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1634,7 +1683,8 @@ public class JadeAmulet : GoldNecklace
 public class JadeBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1667,7 +1717,8 @@ public class JadeBracelet : GoldBracelet
 public class JadeRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1700,7 +1751,8 @@ public class JadeRing : GoldRing
 public class JadeEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("jade", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1733,7 +1785,8 @@ public class JadeEarrings : GoldEarrings
 public class MithrilAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("mithril", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("mithril", "", 0);
+        }
     }
 
     [Constructable]
@@ -1766,7 +1819,8 @@ public class MithrilAmulet : GoldNecklace
 public class MithrilBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("mithril", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("mithril", "", 0);
+        }
     }
 
     [Constructable]
@@ -1799,7 +1853,8 @@ public class MithrilBracelet : GoldBracelet
 public class MithrilRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("mithril", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("mithril", "", 0);
+        }
     }
 
     [Constructable]
@@ -1832,7 +1887,8 @@ public class MithrilRing : GoldRing
 public class MithrilEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("mithril", "", 0); }
+        get { return MaterialInfo.GetMaterialColor("mithril", "", 0);
+        }
     }
 
     [Constructable]
@@ -1865,7 +1921,8 @@ public class MithrilEarrings : GoldEarrings
 public class DwarvenAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1898,7 +1955,8 @@ public class DwarvenAmulet : GoldNecklace
 public class DwarvenBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1931,7 +1989,8 @@ public class DwarvenBracelet : GoldBracelet
 public class DwarvenRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1964,7 +2023,8 @@ public class DwarvenRing : GoldRing
 public class DwarvenEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("dwarven", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -1997,7 +2057,8 @@ public class DwarvenEarrings : GoldEarrings
 public class NepturiteAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2030,7 +2091,8 @@ public class NepturiteAmulet : GoldNecklace
 public class NepturiteBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2063,7 +2125,8 @@ public class NepturiteBracelet : GoldBracelet
 public class NepturiteRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2096,7 +2159,8 @@ public class NepturiteRing : GoldRing
 public class NepturiteEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("nepturite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2129,7 +2193,8 @@ public class NepturiteEarrings : GoldEarrings
 public class ObsidianAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2162,7 +2227,8 @@ public class ObsidianAmulet : GoldNecklace
 public class ObsidianBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2195,7 +2261,8 @@ public class ObsidianBracelet : GoldBracelet
 public class ObsidianRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2228,7 +2295,8 @@ public class ObsidianRing : GoldRing
 public class ObsidianEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("obsidian", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2261,7 +2329,8 @@ public class ObsidianEarrings : GoldEarrings
 public class OnyxAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2294,7 +2363,8 @@ public class OnyxAmulet : GoldNecklace
 public class OnyxBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2327,7 +2397,8 @@ public class OnyxBracelet : GoldBracelet
 public class OnyxRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2360,7 +2431,8 @@ public class OnyxRing : GoldRing
 public class OnyxEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("onyx", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2393,7 +2465,8 @@ public class OnyxEarrings : GoldEarrings
 public class PearlAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return 1150; }
+        get { return 1150;
+        }
     }
 
     [Constructable]
@@ -2426,7 +2499,8 @@ public class PearlAmulet : GoldNecklace
 public class PearlBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return 1150; }
+        get { return 1150;
+        }
     }
 
     [Constructable]
@@ -2459,7 +2533,8 @@ public class PearlBracelet : GoldBracelet
 public class PearlRing : GoldRing
 {
     public override int Hue {
-        get { return 1150; }
+        get { return 1150;
+        }
     }
 
     [Constructable]
@@ -2492,7 +2567,8 @@ public class PearlRing : GoldRing
 public class PearlEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return 1150; }
+        get { return 1150;
+        }
     }
 
     [Constructable]
@@ -2525,7 +2601,8 @@ public class PearlEarrings : GoldEarrings
 public class QuartzAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2558,7 +2635,8 @@ public class QuartzAmulet : GoldNecklace
 public class QuartzBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2591,7 +2669,8 @@ public class QuartzBracelet : GoldBracelet
 public class QuartzRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2624,7 +2703,8 @@ public class QuartzRing : GoldRing
 public class QuartzEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("quartz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2657,7 +2737,8 @@ public class QuartzEarrings : GoldEarrings
 public class RubyAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2690,7 +2771,8 @@ public class RubyAmulet : GoldNecklace
 public class RubyBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2723,7 +2805,8 @@ public class RubyBracelet : GoldBracelet
 public class RubyRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2756,7 +2839,8 @@ public class RubyRing : GoldRing
 public class RubyEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2789,7 +2873,8 @@ public class RubyEarrings : GoldEarrings
 public class SapphireAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2822,7 +2907,8 @@ public class SapphireAmulet : GoldNecklace
 public class SapphireBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2855,7 +2941,8 @@ public class SapphireBracelet : GoldBracelet
 public class SapphireRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2888,7 +2975,8 @@ public class SapphireRing : GoldRing
 public class SapphireEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("sapphire", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2921,7 +3009,8 @@ public class SapphireEarrings : GoldEarrings
 public class ShadowIronAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2954,7 +3043,8 @@ public class ShadowIronAmulet : GoldNecklace
 public class ShadowIronBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -2987,7 +3077,8 @@ public class ShadowIronBracelet : GoldBracelet
 public class ShadowIronRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3020,7 +3111,8 @@ public class ShadowIronRing : GoldRing
 public class ShadowIronEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("shadow iron", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3053,7 +3145,8 @@ public class ShadowIronEarrings : GoldEarrings
 public class SilveryAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3086,7 +3179,8 @@ public class SilveryAmulet : GoldNecklace
 public class SilveryBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3119,7 +3213,8 @@ public class SilveryBracelet : GoldBracelet
 public class SilveryRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3152,7 +3247,8 @@ public class SilveryRing : GoldRing
 public class SilveryEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("silver", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3185,7 +3281,8 @@ public class SilveryEarrings : GoldEarrings
 public class SpinelAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3218,7 +3315,8 @@ public class SpinelAmulet : GoldNecklace
 public class SpinelBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3251,7 +3349,8 @@ public class SpinelBracelet : GoldBracelet
 public class SpinelRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3284,7 +3383,8 @@ public class SpinelRing : GoldRing
 public class SpinelEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("spinel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3317,7 +3417,8 @@ public class SpinelEarrings : GoldEarrings
 public class StarRubyAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3350,7 +3451,8 @@ public class StarRubyAmulet : GoldNecklace
 public class StarRubyBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3383,7 +3485,8 @@ public class StarRubyBracelet : GoldBracelet
 public class StarRubyRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3416,7 +3519,8 @@ public class StarRubyRing : GoldRing
 public class StarRubyEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("star ruby", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3449,7 +3553,8 @@ public class StarRubyEarrings : GoldEarrings
 public class StarSapphireAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return 1266; }
+        get { return 1266;
+        }
     }
 
     [Constructable]
@@ -3482,7 +3587,8 @@ public class StarSapphireAmulet : GoldNecklace
 public class StarSapphireBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return 1266; }
+        get { return 1266;
+        }
     }
 
     [Constructable]
@@ -3515,7 +3621,8 @@ public class StarSapphireBracelet : GoldBracelet
 public class StarSapphireRing : GoldRing
 {
     public override int Hue {
-        get { return 1266; }
+        get { return 1266;
+        }
     }
 
     [Constructable]
@@ -3548,7 +3655,8 @@ public class StarSapphireRing : GoldRing
 public class StarSapphireEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return 1266; }
+        get { return 1266;
+        }
     }
 
     [Constructable]
@@ -3581,7 +3689,8 @@ public class StarSapphireEarrings : GoldEarrings
 public class SteelAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3614,7 +3723,8 @@ public class SteelAmulet : GoldNecklace
 public class SteelBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3647,7 +3757,8 @@ public class SteelBracelet : GoldBracelet
 public class SteelRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3680,7 +3791,8 @@ public class SteelRing : GoldRing
 public class SteelEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("steel", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3713,7 +3825,8 @@ public class SteelEarrings : GoldEarrings
 public class TopazAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3746,7 +3859,8 @@ public class TopazAmulet : GoldNecklace
 public class TopazBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3779,7 +3893,8 @@ public class TopazBracelet : GoldBracelet
 public class TopazRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3812,7 +3927,8 @@ public class TopazRing : GoldRing
 public class TopazEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("topaz", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -3845,7 +3961,8 @@ public class TopazEarrings : GoldEarrings
 public class TourmalineAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return 1360; }
+        get { return 1360;
+        }
     }
 
     [Constructable]
@@ -3878,7 +3995,8 @@ public class TourmalineAmulet : GoldNecklace
 public class TourmalineBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return 1360; }
+        get { return 1360;
+        }
     }
 
     [Constructable]
@@ -3911,7 +4029,8 @@ public class TourmalineBracelet : GoldBracelet
 public class TourmalineRing : GoldRing
 {
     public override int Hue {
-        get { return 1360; }
+        get { return 1360;
+        }
     }
 
     [Constructable]
@@ -3944,7 +4063,8 @@ public class TourmalineRing : GoldRing
 public class TourmalineEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return 1360; }
+        get { return 1360;
+        }
     }
 
     [Constructable]
@@ -3977,7 +4097,8 @@ public class TourmalineEarrings : GoldEarrings
 public class ValoriteAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -4010,7 +4131,8 @@ public class ValoriteAmulet : GoldNecklace
 public class ValoriteBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -4043,7 +4165,8 @@ public class ValoriteBracelet : GoldBracelet
 public class ValoriteRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -4076,7 +4199,8 @@ public class ValoriteRing : GoldRing
 public class ValoriteEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("valorite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -4109,7 +4233,8 @@ public class ValoriteEarrings : GoldEarrings
 public class VeriteAmulet : GoldNecklace
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -4142,7 +4267,8 @@ public class VeriteAmulet : GoldNecklace
 public class VeriteBracelet : GoldBracelet
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -4175,7 +4301,8 @@ public class VeriteBracelet : GoldBracelet
 public class VeriteRing : GoldRing
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0);
+        }
     }
 
     [Constructable]
@@ -4208,7 +4335,8 @@ public class VeriteRing : GoldRing
 public class VeriteEarrings : GoldEarrings
 {
     public override int Hue {
-        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0); }
+        get { return MaterialInfo.GetMaterialColor("verite", "classic", 0);
+        }
     }
 
     [Constructable]

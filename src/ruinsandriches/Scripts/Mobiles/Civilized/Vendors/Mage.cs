@@ -98,6 +98,7 @@ public class Mage : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

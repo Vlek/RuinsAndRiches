@@ -66,7 +66,8 @@ public class MagicCarpetG : BaseBoat
 public class MagicCarpetGDeed : BaseBoatDeed
 {
     public override BaseBoat Boat {
-        get { return new MagicCarpetG(); }
+        get { return new MagicCarpetG();
+        }
     }
 
     [Constructable]
@@ -95,7 +96,8 @@ public class MagicCarpetGDeed : BaseBoatDeed
 public class MagicDockedCarpetG : BaseDockedBoat
 {
     public override BaseBoat Boat {
-        get { return new MagicCarpetG(); }
+        get { return new MagicCarpetG();
+        }
     }
 
     public MagicDockedCarpetG(BaseBoat boat) : base(0xC7, Point3D.Zero, boat)

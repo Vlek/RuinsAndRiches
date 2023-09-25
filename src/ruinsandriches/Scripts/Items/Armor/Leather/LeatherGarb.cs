@@ -81,7 +81,8 @@ public class LeatherCloak : BaseArmor
 public class LeatherRobe : BaseArmor
 {
     public override int BasePhysicalResistance {
-        get { return 3; }
+        get { return 3;
+        }
     }
     public override int BaseFireResistance {
         get { return 4; }

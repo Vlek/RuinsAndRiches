@@ -30,6 +30,7 @@ public class JadePlateLegs : PlateLegs         /////////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class JadePlateGloves : PlateGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

@@ -72,6 +72,7 @@ public class TribalPaint : Item
         this.Delete();
     }
 }
+
 public class TribalBerry : Item
 {
     [Constructable]
@@ -825,7 +826,8 @@ namespace Server.Mobiles
 public class AmethystWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -1057,7 +1059,8 @@ namespace Server.Mobiles
 public class AncientNightmare : BaseCreature
 {
     public override bool HasBreath {
-        get { return true; }
+        get { return true;
+        }
     }
     public override bool ReacquireOnMovement {
         get { return !Controlled; }
@@ -2869,7 +2872,8 @@ namespace Server.Items
 public abstract class BasePigmentsOfIslesDread : Item, IUsesRemaining
 {
     public override int LabelNumber {
-        get { return 1070933; }
+        get { return 1070933;
+        }
     }                                                                       // Pigments of IslesDread
 
     private int m_UsesRemaining;
@@ -3328,7 +3332,8 @@ namespace Server.Mobiles
 public class BlackDragon : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -3650,7 +3655,8 @@ namespace Server.Mobiles
 public class BlueDragon : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -6002,7 +6008,8 @@ public class ChampionSpawn : Item
 public class ChampionSpawnRegion : BaseRegion
 {
     public override bool YoungProtected {
-        get { return false; }
+        get { return false;
+        }
     }
 
     private ChampionSpawn m_Spawn;
@@ -7770,7 +7777,8 @@ namespace Server.Items
 public class CharacterStatueMaker : Item, IRewardItem
 {
     public override int LabelNumber {
-        get { return 1076173; }
+        get { return 1076173;
+        }
     }                                                                     // Character Statue Maker
 
     private bool m_IsRewardItem;
@@ -7946,7 +7954,8 @@ namespace Server.Items
 public class CharacterStatuePlinth : Static, IAddon
 {
     public Item Deed {
-        get { return new CharacterStatueDeed(m_Statue); }
+        get { return new CharacterStatueDeed(m_Statue);
+        }
     }
     public override int LabelNumber {
         get { return 1076201; }
@@ -9443,7 +9452,7 @@ public class DatabaseCommandQueue
 
     public void Enqueue(object obj)
     {
-        lock ( m_Queue.SyncRoot )
+        lock (m_Queue.SyncRoot)
         {
             m_Queue.Enqueue(obj);
             try{ m_Sync.Set(); }
@@ -9626,7 +9635,7 @@ public class DatabaseCommandQueue
                 }
             }
 
-            lock ( m_Queue.SyncRoot )
+            lock (m_Queue.SyncRoot)
             {
                 if (m_Queue.Count == 0)
                 {
@@ -9645,7 +9654,8 @@ namespace Server.Mobiles
 public class DeepSeaDragon : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -9820,7 +9830,8 @@ namespace Server.Mobiles
 public class DesertWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 50; }
+        get { return 50;
+        }
     }
     public override int BreathFireDamage {
         get { return 50; }
@@ -9970,7 +9981,8 @@ namespace Server.Mobiles
 public class Dragon : BaseCreature
 {
     public override bool ReacquireOnMovement {
-        get { return !Controlled; }
+        get { return !Controlled;
+        }
     }
     public override bool HasBreath {
         get { return true; }
@@ -10096,7 +10108,8 @@ namespace Server.Engines.Quests
 public abstract class DynamicTeleporter : Item
 {
     public override int LabelNumber {
-        get { return 1049382; }
+        get { return 1049382;
+        }
     }                                                                     // a magical teleporter
 
     public DynamicTeleporter() : this(0x1822, 0x482)
@@ -11412,7 +11425,8 @@ namespace Server.Mobiles
 public class EmeraldWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -13784,7 +13798,8 @@ namespace Server.Factions
 public class FactionBerserker : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Melee | GuardAI.Curse | GuardAI.Bless; }
+        get { return GuardAI.Melee | GuardAI.Curse | GuardAI.Bless;
+        }
     }
 
     [Constructable]
@@ -14019,7 +14034,8 @@ namespace Server.Factions
 public class FactionDeathKnight : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Melee | GuardAI.Curse | GuardAI.Bless; }
+        get { return GuardAI.Melee | GuardAI.Curse | GuardAI.Bless;
+        }
     }
 
     [Constructable]
@@ -14239,7 +14255,8 @@ namespace Server.Factions
 public class FactionDragoon : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Magic | GuardAI.Melee | GuardAI.Smart | GuardAI.Bless | GuardAI.Curse; }
+        get { return GuardAI.Magic | GuardAI.Melee | GuardAI.Smart | GuardAI.Bless | GuardAI.Curse;
+        }
     }
 
     [Constructable]
@@ -14313,7 +14330,8 @@ namespace Server.Factions
 public class FactionExplosionTrap : BaseFactionTrap
 {
     public override int LabelNumber {
-        get { return 1044599; }
+        get { return 1044599;
+        }
     }                                                                     // faction explosion trap
 
     public override int AttackMessage {
@@ -14378,7 +14396,8 @@ public class FactionExplosionTrap : BaseFactionTrap
 public class FactionExplosionTrapDeed : BaseFactionTrapDeed
 {
     public override Type TrapType {
-        get { return typeof(FactionExplosionTrap); }
+        get { return typeof(FactionExplosionTrap);
+        }
     }
     public override int LabelNumber {
         get { return 1044603; }
@@ -14413,7 +14432,8 @@ namespace Server.Factions
 public class FactionGasTrap : BaseFactionTrap
 {
     public override int LabelNumber {
-        get { return 1044598; }
+        get { return 1044598;
+        }
     }                                                                     // faction gas trap
 
     public override int AttackMessage {
@@ -14478,7 +14498,8 @@ public class FactionGasTrap : BaseFactionTrap
 public class FactionGasTrapDeed : BaseFactionTrapDeed
 {
     public override Type TrapType {
-        get { return typeof(FactionGasTrap); }
+        get { return typeof(FactionGasTrap);
+        }
     }
     public override int LabelNumber {
         get { return 1044602; }
@@ -14513,7 +14534,8 @@ namespace Server.Factions
 public abstract class FactionGump : Gump
 {
     public virtual int ButtonTypes {
-        get { return 10; }
+        get { return 10;
+        }
     }
 
     public int ToButtonID(int type, int index)
@@ -14567,7 +14589,8 @@ namespace Server.Factions
 public class FactionHenchman : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Melee; }
+        get { return GuardAI.Melee;
+        }
     }
 
     [Constructable]
@@ -14824,7 +14847,8 @@ namespace Server.Factions
 public interface IFactionItem
 {
     FactionItem FactionItemState {
-        get; set;
+        get;
+        set;
     }
 }
 
@@ -15062,7 +15086,8 @@ namespace Server.Factions
 public class FactionKnight : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Magic | GuardAI.Melee | GuardAI.Smart | GuardAI.Curse | GuardAI.Bless; }
+        get { return GuardAI.Magic | GuardAI.Melee | GuardAI.Smart | GuardAI.Curse | GuardAI.Bless;
+        }
     }
 
     [Constructable]
@@ -15137,7 +15162,8 @@ namespace Server.Factions
 public class FactionMercenary : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Melee | GuardAI.Smart; }
+        get { return GuardAI.Melee | GuardAI.Smart;
+        }
     }
 
     [Constructable]
@@ -15202,7 +15228,8 @@ namespace Server.Factions
 public class FactionNecromancer : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Magic | GuardAI.Smart | GuardAI.Bless | GuardAI.Curse; }
+        get { return GuardAI.Magic | GuardAI.Smart | GuardAI.Bless | GuardAI.Curse;
+        }
     }
 
     [Constructable]
@@ -15349,7 +15376,8 @@ namespace Server.Factions
 public class FactionPaladin : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Magic | GuardAI.Melee | GuardAI.Smart | GuardAI.Curse | GuardAI.Bless; }
+        get { return GuardAI.Magic | GuardAI.Melee | GuardAI.Smart | GuardAI.Curse | GuardAI.Bless;
+        }
     }
 
     [Constructable]
@@ -15519,7 +15547,8 @@ namespace Server.Factions
 public class FactionSawTrap : BaseFactionTrap
 {
     public override int LabelNumber {
-        get { return 1041047; }
+        get { return 1041047;
+        }
     }                                                                     // faction saw trap
 
     public override int AttackMessage {
@@ -15584,7 +15613,8 @@ public class FactionSawTrap : BaseFactionTrap
 public class FactionSawTrapDeed : BaseFactionTrapDeed
 {
     public override Type TrapType {
-        get { return typeof(FactionSawTrap); }
+        get { return typeof(FactionSawTrap);
+        }
     }
     public override int LabelNumber {
         get { return 1044604; }
@@ -15619,7 +15649,8 @@ namespace Server.Factions
 public class FactionSorceress : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Magic | GuardAI.Bless | GuardAI.Curse; }
+        get { return GuardAI.Magic | GuardAI.Bless | GuardAI.Curse;
+        }
     }
 
     [Constructable]
@@ -15691,7 +15722,8 @@ namespace Server.Factions
 public class FactionSpikeTrap : BaseFactionTrap
 {
     public override int LabelNumber {
-        get { return 1044601; }
+        get { return 1044601;
+        }
     }                                                                     // faction spike trap
 
     public override int AttackMessage {
@@ -15756,7 +15788,8 @@ public class FactionSpikeTrap : BaseFactionTrap
 public class FactionSpikeTrapDeed : BaseFactionTrapDeed
 {
     public override Type TrapType {
-        get { return typeof(FactionSpikeTrap); }
+        get { return typeof(FactionSpikeTrap);
+        }
     }
     public override int LabelNumber {
         get { return 1044605; }
@@ -16836,7 +16869,8 @@ namespace Server.Factions
 public class FactionWizard : BaseFactionGuard
 {
     public override GuardAI GuardAI {
-        get { return GuardAI.Magic | GuardAI.Smart | GuardAI.Bless | GuardAI.Curse; }
+        get { return GuardAI.Magic | GuardAI.Smart | GuardAI.Bless | GuardAI.Curse;
+        }
     }
 
     [Constructable]
@@ -17204,7 +17238,8 @@ namespace Server.Mobiles
 public class GarnetWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -17777,7 +17812,8 @@ namespace Server.Items
 public class DarkenedSky : Kama
 {
     public override int InitMinHits {
-        get { return 255; }
+        get { return 255;
+        }
     }
     public override int InitMaxHits {
         get { return 255; }
@@ -17823,7 +17859,8 @@ public class DarkenedSky : Kama
 public class KasaOfTheRajin : Kasa
 {
     public override int LabelNumber {
-        get { return 1070969; }
+        get { return 1070969;
+        }
     }                                                                       // Kasa of the Raj-in
 
     public override int BasePhysicalResistance {
@@ -17888,7 +17925,8 @@ public class KasaOfTheRajin : Kasa
 public class RuneBeetleCarapace : PlateDo
 {
     public override int InitMinHits {
-        get { return 255; }
+        get { return 255;
+        }
     }
     public override int InitMaxHits {
         get { return 255; }
@@ -17937,7 +17975,8 @@ public class RuneBeetleCarapace : PlateDo
 public class Stormgrip : LeatherNinjaMitts
 {
     public override int InitMinHits {
-        get { return 255; }
+        get { return 255;
+        }
     }
     public override int InitMaxHits {
         get { return 255; }
@@ -17987,7 +18026,8 @@ public class Stormgrip : LeatherNinjaMitts
 public class SwordOfTheStampede : NoDachi
 {
     public override int InitMinHits {
-        get { return 255; }
+        get { return 255;
+        }
     }
     public override int InitMaxHits {
         get { return 255; }
@@ -18033,7 +18073,8 @@ public class SwordOfTheStampede : NoDachi
 public class SwordsOfProsperity : Daisho
 {
     public override int InitMinHits {
-        get { return 255; }
+        get { return 255;
+        }
     }
     public override int InitMaxHits {
         get { return 255; }
@@ -18080,7 +18121,8 @@ public class SwordsOfProsperity : Daisho
 public class TheHorselord : Yumi
 {
     public override int InitMinHits {
-        get { return 255; }
+        get { return 255;
+        }
     }
     public override int InitMaxHits {
         get { return 255; }
@@ -18124,7 +18166,8 @@ public class TheHorselord : Yumi
 public class TomeOfLostKnowledge : Spellbook
 {
     public override int LabelNumber {
-        get { return 1070971; }
+        get { return 1070971;
+        }
     }                                                                       // Tome of Lost Knowledge
 
     [Constructable]
@@ -18161,7 +18204,8 @@ public class TomeOfLostKnowledge : Spellbook
 public class WindsEdge : Tessen
 {
     public override int LabelNumber {
-        get { return 1070965; }
+        get { return 1070965;
+        }
     }                                                                       // Wind's Edge
 
     [Constructable]
@@ -18350,7 +18394,8 @@ namespace Server.Mobiles
 public class GreenDragon : BaseCreature
 {
     public override bool ReacquireOnMovement {
-        get { return !Controlled; }
+        get { return !Controlled;
+        }
     }
     public override bool HasBreath {
         get { return true; }
@@ -18696,20 +18741,20 @@ public class SpellCombo
     }
 
     public static readonly SpellCombo Simple = new SpellCombo(50,
-                                                              new ComboEntry( typeof(ParalyzeSpell), 20 ),
-                                                              new ComboEntry( typeof(ExplosionSpell), 100, TimeSpan.FromSeconds(2.8)),
-                                                              new ComboEntry( typeof(PoisonSpell), 30 ),
-                                                              new ComboEntry( typeof(EnergyBoltSpell))
+                                                              new ComboEntry(typeof(ParalyzeSpell), 20),
+                                                              new ComboEntry(typeof(ExplosionSpell), 100, TimeSpan.FromSeconds(2.8)),
+                                                              new ComboEntry(typeof(PoisonSpell), 30),
+                                                              new ComboEntry(typeof(EnergyBoltSpell))
                                                               );
 
     public static readonly SpellCombo Strong = new SpellCombo(90,
-                                                              new ComboEntry( typeof(ParalyzeSpell), 20 ),
-                                                              new ComboEntry( typeof(ExplosionSpell), 50, TimeSpan.FromSeconds(2.8)),
-                                                              new ComboEntry( typeof(PoisonSpell), 30 ),
-                                                              new ComboEntry( typeof(ExplosionSpell), 100, TimeSpan.FromSeconds(2.8)),
-                                                              new ComboEntry( typeof(EnergyBoltSpell)),
-                                                              new ComboEntry( typeof(PoisonSpell), 30 ),
-                                                              new ComboEntry( typeof(EnergyBoltSpell))
+                                                              new ComboEntry(typeof(ParalyzeSpell), 20),
+                                                              new ComboEntry(typeof(ExplosionSpell), 50, TimeSpan.FromSeconds(2.8)),
+                                                              new ComboEntry(typeof(PoisonSpell), 30),
+                                                              new ComboEntry(typeof(ExplosionSpell), 100, TimeSpan.FromSeconds(2.8)),
+                                                              new ComboEntry(typeof(EnergyBoltSpell)),
+                                                              new ComboEntry(typeof(PoisonSpell), 30),
+                                                              new ComboEntry(typeof(EnergyBoltSpell))
                                                               );
 
     public static Spell Process(Mobile mob, Mobile targ, ref SpellCombo combo, ref int index, ref DateTime releaseTime)
@@ -19792,7 +19837,8 @@ namespace Server.Mobiles
 public class HolyFamiliar : BaseCreature
 {
     public override bool IsDispellable {
-        get { return false; }
+        get { return false;
+        }
     }
     public override bool IsBondable {
         get { return false; }
@@ -20089,7 +20135,8 @@ namespace Server.Mobiles
 public class HolySteed : BaseMount
 {
     public override bool IsDispellable {
-        get { return false; }
+        get { return false;
+        }
     }
     public override bool IsBondable {
         get { return false; }
@@ -20447,7 +20494,8 @@ public class HonorVirtue
 public interface IHonorTarget
 {
     HonorContext ReceivedHonorContext {
-        get; set;
+        get;
+        set;
     }
 }
 
@@ -20824,7 +20872,8 @@ namespace Server.Mobiles
 public class IceDragon : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -21134,7 +21183,8 @@ namespace Server.Mobiles
 public class JungleWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -21763,7 +21813,8 @@ namespace Server.Mobiles
 public class LavaDragon : BaseCreature
 {
     public override bool ReacquireOnMovement {
-        get { return !Controlled; }
+        get { return !Controlled;
+        }
     }
     public override bool HasBreath {
         get { return true; }
@@ -22106,7 +22157,8 @@ namespace Server.Items
 public class AncientFarmersKasa : Kasa
 {
     public override int LabelNumber {
-        get { return 1070922; }
+        get { return 1070922;
+        }
     }                                                                     // Ancient Farmer's Kasa
     public override int BaseColdResistance {
         get { return 19; }
@@ -22162,7 +22214,8 @@ public class AncientFarmersKasa : Kasa
 public class AncientSamuraiDo : PlateDo
 {
     public override int LabelNumber {
-        get { return 1070926; }
+        get { return 1070926;
+        }
     }                                                                       // Ancient Samurai Do
 
     public override int BasePhysicalResistance {
@@ -22218,7 +22271,8 @@ public class AncientSamuraiDo : PlateDo
 public class ArmsOfTacticalExcellence : LeatherHiroSode
 {
     public override int LabelNumber {
-        get { return 1070921; }
+        get { return 1070921;
+        }
     }                                                                       // Arms of Tactical Excellence
 
     public override int BaseFireResistance {
@@ -22267,7 +22321,8 @@ public class ArmsOfTacticalExcellence : LeatherHiroSode
 public class BlackLotusHood : ClothNinjaHood
 {
     public override int LabelNumber {
-        get { return 1070919; }
+        get { return 1070919;
+        }
     }                                                                       // Black Lotus Hood
 
     public override int BasePhysicalResistance {
@@ -22329,7 +22384,8 @@ public class BlackLotusHood : ClothNinjaHood
 public class DaimyosHelm : PlateBattleKabuto
 {
     public override int LabelNumber {
-        get { return 1070920; }
+        get { return 1070920;
+        }
     }                                                                       // Daimyo's Helm
 
     public override int BaseColdResistance {
@@ -22374,7 +22430,8 @@ public class DaimyosHelm : PlateBattleKabuto
 public class DemonForks : Sai
 {
     public override int LabelNumber {
-        get { return 1070917; }
+        get { return 1070917;
+        }
     }                                                                     // Demon Forks
 
     [Constructable]
@@ -22417,7 +22474,8 @@ public class DemonForks : Sai
 public class DragonNunchaku : Nunchaku
 {
     public override int LabelNumber {
-        get { return 1070914; }
+        get { return 1070914;
+        }
     }                                                                     // Dragon Nunchaku
 
     [Constructable]
@@ -22460,7 +22518,8 @@ public class DragonNunchaku : Nunchaku
 public class Exiler : Tetsubo
 {
     public override int LabelNumber {
-        get { return 1070913; }
+        get { return 1070913;
+        }
     }                                                                     // Exiler
 
     [Constructable]
@@ -22509,7 +22568,8 @@ public class Exiler : Tetsubo
 public class GlovesOfTheSun : LeatherNinjaMitts
 {
     public override int LabelNumber {
-        get { return 1070924; }
+        get { return 1070924;
+        }
     }                                                                       // Gloves of the Sun
 
     public override int BaseFireResistance {
@@ -22554,7 +22614,8 @@ public class GlovesOfTheSun : LeatherNinjaMitts
 public class HanzosBow : Yumi
 {
     public override int LabelNumber {
-        get { return 1070918; }
+        get { return 1070918;
+        }
     }                                                                       // Hanzo's Bow
 
     [Constructable]
@@ -22597,7 +22658,8 @@ public class HanzosBow : Yumi
 public class LegsOfStability : PlateSuneate
 {
     public override int LabelNumber {
-        get { return 1070925; }
+        get { return 1070925;
+        }
     }                                                                       // Legs of Stability
 
     public override int BasePhysicalResistance {
@@ -22646,7 +22708,8 @@ public class LegsOfStability : PlateSuneate
 public class PeasantsBokuto : Bokuto
 {
     public override int LabelNumber {
-        get { return 1070912; }
+        get { return 1070912;
+        }
     }                                                                       // Peasant's Bokuto
 
     [Constructable]
@@ -22689,7 +22752,8 @@ public class PeasantsBokuto : Bokuto
 public class PilferedDancerFans : Tessen
 {
     public override int LabelNumber {
-        get { return 1070916; }
+        get { return 1070916;
+        }
     }                                                                       // Pilfered Dancer Fans
 
     [Constructable]
@@ -22731,7 +22795,8 @@ public class PilferedDancerFans : Tessen
 public class TheDestroyer : NoDachi
 {
     public override int LabelNumber {
-        get { return 1070915; }
+        get { return 1070915;
+        }
     }                                                                       // The Destroyer
 
     [Constructable]
@@ -22773,7 +22838,8 @@ public class TheDestroyer : NoDachi
 public class TomeOfEnlightenment : Spellbook
 {
     public override int LabelNumber {
-        get { return 1070934; }
+        get { return 1070934;
+        }
     }                                                                       // Tome of Enlightenment
 
     [Constructable]
@@ -22809,7 +22875,8 @@ public class TomeOfEnlightenment : Spellbook
 public class LeurociansMempoOfFortune : LeatherMempo
 {
     public override int LabelNumber {
-        get { return 1071460; }
+        get { return 1071460;
+        }
     }                                                                       // Leurocian's mempo of fortune
 
     public override int BasePhysicalResistance {
@@ -23035,7 +23102,8 @@ public class HonorableSwords : Item
 public class ChestOfHeirlooms : LockableContainer
 {
     public override int LabelNumber {
-        get { return 1070937; }
+        get { return 1070937;
+        }
     }                                                                     // Chest of heirlooms
 
     [Constructable]
@@ -23124,7 +23192,8 @@ public class ChestOfHeirlooms : LockableContainer
 public class FluteOfRenewal : BambooFlute
 {
     public override int LabelNumber {
-        get { return 1070927; }
+        get { return 1070927;
+        }
     }                                                                       // Flute of Renewal
 
     [Constructable]
@@ -23541,7 +23610,8 @@ namespace Server.Mobiles
 public class MetalDragon : BaseCreature
 {
     public override bool ReacquireOnMovement {
-        get { return !Controlled; }
+        get { return !Controlled;
+        }
     }
     public override bool HasBreath {
         get { return true; }
@@ -24015,7 +24085,8 @@ namespace Server.Mobiles
 public class MountainWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -24928,7 +24999,8 @@ namespace Server.Mobiles
 public class NightWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 20; }
+        get { return 20;
+        }
     }
     public override int BreathFireDamage {
         get { return 20; }
@@ -25081,7 +25153,8 @@ namespace Server.Mobiles
 public class OnyxWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 20; }
+        get { return 20;
+        }
     }
     public override int BreathFireDamage {
         get { return 20; }
@@ -26293,7 +26366,8 @@ namespace Server.Mobiles
 public class QuartzWyrm : BaseCreature
 {
     public override bool ReacquireOnMovement {
-        get { return !Controlled; }
+        get { return !Controlled;
+        }
     }
     public override bool HasBreath {
         get { return true; }
@@ -29859,7 +29933,8 @@ public class RewardSystem
 public interface IRewardItem
 {
     bool IsRewardItem {
-        get; set;
+        get;
+        set;
     }
 }
 }// using System;// using Server;// using Server.Items;
@@ -29870,7 +29945,8 @@ namespace Server.Mobiles
 public class RubyWyrm : BaseCreature
 {
     public override bool ReacquireOnMovement {
-        get { return !Controlled; }
+        get { return !Controlled;
+        }
     }
     public override bool HasBreath {
         get { return true; }
@@ -30325,7 +30401,8 @@ namespace Server.Mobiles
 public class SapphireWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -31265,7 +31342,8 @@ public class Silver : Item
 {
     public override double DefaultWeight
     {
-        get { return 0.02; }
+        get { return 0.02;
+        }
     }
 
     [Constructable]
@@ -31403,7 +31481,8 @@ namespace Server.Mobiles
 public class SpinelWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -31663,7 +31742,8 @@ namespace Server.Mobiles
 public class StoneDragon : BaseCreature
 {
     public override bool ReacquireOnMovement {
-        get { return !Controlled; }
+        get { return !Controlled;
+        }
     }
     public override bool HasBreath {
         get { return true; }
@@ -31814,7 +31894,8 @@ namespace Server.Factions
 public class StrongholdMonolith : BaseMonolith
 {
     public override int DefaultLabelNumber {
-        get { return 1041042; }
+        get { return 1041042;
+        }
     }                                                                            // A Faction Sigil Monolith
 
     public override void OnTownChanged()
@@ -31989,7 +32070,8 @@ namespace Server.Mobiles
 public class SwampDrake : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -32242,7 +32324,8 @@ namespace Server.Mobiles
 public class TopazWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -33106,7 +33189,8 @@ namespace Server.Factions
 public class TownMonolith : BaseMonolith
 {
     public override int DefaultLabelNumber {
-        get { return 1041403; }
+        get { return 1041403;
+        }
     }                                                                            // A Faction Town Sigil Monolith
 
     public override void OnTownChanged()
@@ -33809,7 +33893,8 @@ namespace Server.Mobiles
 public class IharaSoko : BaseVendor
 {
     public override bool IsActiveVendor {
-        get { return false; }
+        get { return false;
+        }
     }
     public override bool IsInvulnerable {
         get { return true; }
@@ -34501,7 +34586,8 @@ namespace Server.Mobiles
 public class UnholyFamiliar : BaseCreature
 {
     public override bool IsDispellable {
-        get { return false; }
+        get { return false;
+        }
     }
     public override bool IsBondable {
         get { return false; }
@@ -34798,7 +34884,8 @@ namespace Server.Mobiles
 public class UnholySteed : BaseMount
 {
     public override bool IsDispellable {
-        get { return false; }
+        get { return false;
+        }
     }
     public override bool IsBondable {
         get { return false; }
@@ -36012,7 +36099,8 @@ namespace Server.Mobiles
 public class WhiteDragon : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -36162,7 +36250,8 @@ namespace Server.Mobiles
 public class WhiteWyrm : BaseCreature
 {
     public override int BreathPhysicalDamage {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BreathFireDamage {
         get { return 0; }
@@ -36934,7 +37023,8 @@ namespace Server.Mobiles
 public class PredatorHellCat : BaseCreature
 {
     public override bool HasBreath {
-        get { return true; }
+        get { return true;
+        }
     }
     public override bool ReacquireOnMovement {
         get { return !Controlled; }

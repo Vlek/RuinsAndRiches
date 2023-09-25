@@ -12,99 +12,112 @@ using Server.Accounting;
 
 namespace Server.Items
 {
-	public class SummonItems : Item
-	{
-		public Mobile owner;
+public class SummonItems : Item
+{
+    public Mobile owner;
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public Mobile Owner { get{ return owner; } set{ owner = value; } }
+    [CommandProperty(AccessLevel.GameMaster)]
+    public Mobile Owner {
+        get { return owner; } set { owner = value; }
+    }
 
-		[Constructable]
-		public SummonItems() : base( 0xF91 )
-		{
-			Name = "item";
-			Light = LightType.Circle150;
-			Weight = 1.0;
-		}
+    [Constructable]
+    public SummonItems() : base(0xF91)
+    {
+        Name   = "item";
+        Light  = LightType.Circle150;
+        Weight = 1.0;
+    }
 
-		public SummonItems( Serial serial ) : base( serial )
-		{
-		}
+    public SummonItems(Serial serial) : base(serial)
+    {
+    }
 
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			if ( owner != null ){ list.Add( 1049644, "Belongs to " + owner.Name + "" ); }
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        if (owner != null)
+        {
+            list.Add(1049644, "Belongs to " + owner.Name + "");
+        }
+    }
+
+    public override bool OnDragLift(Mobile from)
+    {
+        if (from is PlayerMobile)
+        {
+            ArrayList targets = new ArrayList();
+            foreach (Item item in World.Items.Values)
+            {
+                if (item is SummonItems && item.Name == this.Name && item != this)
+                {
+                    if (((SummonItems)item).owner == from)
+                    {
+                        targets.Add(item);
+                    }
+                }
+            }
+            for (int i = 0; i < targets.Count; ++i)
+            {
+                Item item = ( Item )targets[i];
+                item.Delete();
+            }
+
+            if (this.owner == null)
+            {
+                LoggingFunctions.LogGenericQuest(from, "has obtained the " + this.Name);
+            }
+            this.owner = from;
         }
 
-		public override bool OnDragLift( Mobile from )
-		{
-			if ( from is PlayerMobile )
-			{
-				ArrayList targets = new ArrayList();
-				foreach ( Item item in World.Items.Values )
-				if ( item is SummonItems && item.Name == this.Name && item != this )
-				{
-					if ( ((SummonItems)item).owner == from )
-						targets.Add( item );
-				}
-				for ( int i = 0; i < targets.Count; ++i )
-				{
-					Item item = ( Item )targets[ i ];
-					item.Delete();
-				}
+        return true;
+    }
 
-				if ( this.owner == null ){ LoggingFunctions.LogGenericQuest( from, "has obtained the " + this.Name ); }
-				this.owner = from;
-			}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+        writer.Write((Mobile)owner);
+    }
 
-			return true;
-		}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        owner = reader.ReadMobile();
+    }
+}
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-			writer.Write( (Mobile)owner);
-		}
+public class SummonReward : Item
+{
+    [Constructable]
+    public SummonReward() : base(0xE2E)
+    {
+        Weight = 10.0;
+        Name   = "crystal ball";
+        Light  = LightType.Circle300;
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-			owner = reader.ReadMobile();
-		}
-	}
-	public class SummonReward : Item
-	{
-		[Constructable]
-		public SummonReward() : base( 0xE2E )
-		{
-			Weight = 10.0;
-			Name = "crystal ball";
-			Light = LightType.Circle300;
-		}
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "Decoration Relic");
+    }
 
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			list.Add( 1070722, "Decoration Relic");
-        }
+    public SummonReward(Serial serial) : base(serial)
+    {
+    }
 
-		public SummonReward( Serial serial ) : base( serial )
-		{
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)1);                   // version
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int)1 ); // version
-		}
-
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

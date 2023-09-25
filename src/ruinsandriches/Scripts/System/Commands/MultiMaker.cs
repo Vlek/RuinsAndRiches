@@ -582,6 +582,7 @@ public class MultiGenerator
             }
         }
     }
+
     #region Gump
     private class InternalGump : Gump
     {

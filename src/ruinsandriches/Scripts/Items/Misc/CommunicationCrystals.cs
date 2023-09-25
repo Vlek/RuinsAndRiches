@@ -322,7 +322,8 @@ public class BroadcastCrystal : Item
 public class ReceiverCrystal : Item
 {
     public override int LabelNumber {
-        get { return 1060740; }
+        get { return 1060740;
+        }
     }                                                                     // communication crystal
 
     private BroadcastCrystal m_Sender;

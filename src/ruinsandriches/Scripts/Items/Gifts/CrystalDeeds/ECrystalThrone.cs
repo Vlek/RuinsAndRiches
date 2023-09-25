@@ -49,7 +49,8 @@ public class ECrystalThroneComponent : AddonComponent
 public class ECrystalThroneAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new ECrystalThroneDeed(); }
+        get { return new ECrystalThroneDeed();
+        }
     }
 
     [Constructable]

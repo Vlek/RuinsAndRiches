@@ -89,6 +89,7 @@ public class DDRelicLight1 : BaseLight
         RelicGoldValue = reader.ReadInt();
     }
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 public class DDRelicLight2 : BaseLight
 {

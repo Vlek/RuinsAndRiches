@@ -58,10 +58,12 @@ public class ReaperHood : BaseHat
         int version = reader.ReadInt();
     }
 }
+
 public class ReaperCowl : BaseHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }

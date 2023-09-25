@@ -36,7 +36,7 @@ public class DevilPact : BaseCreature
         SetDex(200);
         SetInt(100);
 
-        SetHits(( Core.SE ) ? 140 : 70);
+        SetHits((Core.SE) ? 140 : 70);
         SetStam(250);
         SetMana(0);
 

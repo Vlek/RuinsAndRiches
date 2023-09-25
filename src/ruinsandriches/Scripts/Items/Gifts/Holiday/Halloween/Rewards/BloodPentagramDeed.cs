@@ -71,7 +71,8 @@ public class BloodPentagramAddon : BaseAddon
 public class BloodPentagramDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new BloodPentagramAddon(); }
+        get { return new BloodPentagramAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044328; }

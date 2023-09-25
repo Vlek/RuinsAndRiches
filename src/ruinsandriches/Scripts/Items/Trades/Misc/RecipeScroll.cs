@@ -48,7 +48,7 @@ public class RecipeScroll : Item
     }
 
     public RecipeScroll(Recipe r)
-        : this( r.ID )
+        : this(r.ID)
     {
     }
 

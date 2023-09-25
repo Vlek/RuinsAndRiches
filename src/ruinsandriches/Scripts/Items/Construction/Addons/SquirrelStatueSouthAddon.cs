@@ -37,7 +37,8 @@ public class SquirrelStatueSouthAddon : BaseAddon
 public class SquirrelStatueSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new SquirrelStatueSouthAddon(); }
+        get { return new SquirrelStatueSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072884; }

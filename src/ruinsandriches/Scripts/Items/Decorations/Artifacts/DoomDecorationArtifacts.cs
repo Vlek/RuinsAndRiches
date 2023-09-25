@@ -31,6 +31,7 @@ public class BackpackArtifact : BaseDecorationContainerArtifact
         Name = "ancient backpack";
     }
 }
+
 #endregion
 
 #region BloodyWaterArtifact

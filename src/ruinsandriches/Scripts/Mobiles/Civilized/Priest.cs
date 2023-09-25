@@ -100,6 +100,7 @@ public class Priest : BaseHealer
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public override bool OnDragDrop(Mobile from, Item dropped)

@@ -377,7 +377,8 @@ public class ArcheryButte : AddonComponent
 public class ArcheryButteAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new ArcheryButteDeed(); }
+        get { return new ArcheryButteDeed();
+        }
     }
 
     [Constructable]
@@ -408,7 +409,8 @@ public class ArcheryButteAddon : BaseAddon
 public class ArcheryButteDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ArcheryButteAddon(); }
+        get { return new ArcheryButteAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1024106; }

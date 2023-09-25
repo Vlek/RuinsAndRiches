@@ -42,6 +42,7 @@ public class ShieldOfEarthPotion : SpellScroll
         ItemID = 0x282F;
     }
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 public class WoodlandProtectionPotion : SpellScroll
 {

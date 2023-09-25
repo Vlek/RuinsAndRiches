@@ -773,6 +773,7 @@ namespace {namespace}
             }
         }
     }
+
     #region Gump
     private class InternalGump : Gump
     {

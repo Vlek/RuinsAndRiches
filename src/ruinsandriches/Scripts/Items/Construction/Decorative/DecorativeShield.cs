@@ -30,6 +30,7 @@ public class DecorativeShield1 : Item
         int version = reader.ReadInt();
     }
 }
+
 [FlipableAttribute(0x156E, 0x156F)]
 public class DecorativeShield2 : Item
 {

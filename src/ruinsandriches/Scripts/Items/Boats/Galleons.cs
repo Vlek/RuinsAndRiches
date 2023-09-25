@@ -68,7 +68,8 @@ public class GalleonBarbarian : BaseBoat
 public class GalleonRoyal : BaseBoat
 {
     public override int NorthID {
-        get { return 0x24; }
+        get { return 0x24;
+        }
     }
     public override int EastID {
         get { return 0x25; }
@@ -129,7 +130,8 @@ public class GalleonRoyal : BaseBoat
 public class GalleonExotic : BaseBoat
 {
     public override int NorthID {
-        get { return 0x30; }
+        get { return 0x30;
+        }
     }
     public override int EastID {
         get { return 0x31; }
@@ -190,7 +192,8 @@ public class GalleonExotic : BaseBoat
 public class GalleonLarge : BaseBoat
 {
     public override int NorthID {
-        get { return 0x40; }
+        get { return 0x40;
+        }
     }
     public override int EastID {
         get { return 0x41; }
@@ -251,7 +254,8 @@ public class GalleonLarge : BaseBoat
 public class GalleonWreckedBarbarian : BaseBoat
 {
     public override int NorthID {
-        get { return 0x1C; }
+        get { return 0x1C;
+        }
     }
     public override int EastID {
         get { return 0x1D; }
@@ -312,7 +316,8 @@ public class GalleonWreckedBarbarian : BaseBoat
 public class GalleonWreckedRoyal : BaseBoat
 {
     public override int NorthID {
-        get { return 0x28; }
+        get { return 0x28;
+        }
     }
     public override int EastID {
         get { return 0x29; }
@@ -373,7 +378,8 @@ public class GalleonWreckedRoyal : BaseBoat
 public class GalleonWreckedExotic : BaseBoat
 {
     public override int NorthID {
-        get { return 0x34; }
+        get { return 0x34;
+        }
     }
     public override int EastID {
         get { return 0x35; }
@@ -434,7 +440,8 @@ public class GalleonWreckedExotic : BaseBoat
 public class GalleonWreckedLarge : BaseBoat
 {
     public override int NorthID {
-        get { return 0x44; }
+        get { return 0x44;
+        }
     }
     public override int EastID {
         get { return 0x45; }
@@ -495,7 +502,8 @@ public class GalleonWreckedLarge : BaseBoat
 public class GalleonRuinedBarbarian : BaseBoat
 {
     public override int NorthID {
-        get { return 0x20; }
+        get { return 0x20;
+        }
     }
     public override int EastID {
         get { return 0x21; }
@@ -556,7 +564,8 @@ public class GalleonRuinedBarbarian : BaseBoat
 public class GalleonRuinedRoyal : BaseBoat
 {
     public override int NorthID {
-        get { return 0x2C; }
+        get { return 0x2C;
+        }
     }
     public override int EastID {
         get { return 0x2D; }
@@ -617,7 +626,8 @@ public class GalleonRuinedRoyal : BaseBoat
 public class GalleonRuinedExotic : BaseBoat
 {
     public override int NorthID {
-        get { return 0x38; }
+        get { return 0x38;
+        }
     }
     public override int EastID {
         get { return 0x39; }

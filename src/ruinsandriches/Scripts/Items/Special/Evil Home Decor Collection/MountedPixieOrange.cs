@@ -49,7 +49,8 @@ public class MountedPixieOrangeComponent : AddonComponent
 public class MountedPixieOrangeAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new MountedPixieOrangeDeed(); }
+        get { return new MountedPixieOrangeDeed();
+        }
     }
 
     public MountedPixieOrangeAddon() : base()
@@ -79,7 +80,8 @@ public class MountedPixieOrangeAddon : BaseAddon
 public class MountedPixieOrangeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new MountedPixieOrangeAddon(); }
+        get { return new MountedPixieOrangeAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1074482; }

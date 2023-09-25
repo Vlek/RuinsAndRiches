@@ -719,5 +719,6 @@ public class ItemExperienceGump : Gump
         }
     }
 }
+
 #endregion
 }

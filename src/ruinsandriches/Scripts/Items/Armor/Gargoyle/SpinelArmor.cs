@@ -30,6 +30,7 @@ public class SpinelPlateLegs : PlateLegs         ///////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class SpinelPlateGloves : PlateGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

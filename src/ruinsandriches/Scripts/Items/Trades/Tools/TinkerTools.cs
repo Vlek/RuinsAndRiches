@@ -45,7 +45,8 @@ public class TinkerTools : BaseTool
 public class TinkersTools : BaseTool
 {
     public override CraftSystem CraftSystem {
-        get { return DefTinkering.CraftSystem; }
+        get { return DefTinkering.CraftSystem;
+        }
     }
 
     [Constructable]

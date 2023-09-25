@@ -35,6 +35,7 @@ public class TavernPatronEast : Citizens
         int version = reader.ReadInt();
     }
 }
+
 public class TavernPatronWest : Citizens
 {
     [Constructable]

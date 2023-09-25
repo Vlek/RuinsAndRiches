@@ -77,6 +77,7 @@ public class ArcherGuildmaster : BaseGuildmaster
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

@@ -5,107 +5,118 @@ using Server.Network;
 
 namespace Server.Items
 {
-    public class EObsidianPillarComponent : AddonComponent
+public class EObsidianPillarComponent : AddonComponent
+{
+    [Constructable]
+    public EObsidianPillarComponent(int itemID)
+        : base(itemID)
     {
-        [Constructable]
-        public EObsidianPillarComponent(int itemID)
-            : base(itemID)
+        Weight  = 100.0;
+        Movable = false;
+    }
+
+    public override int LabelNumber {
+        get { return 1076678; }
+    }
+    public EObsidianPillarComponent(Serial serial)
+        : base(serial)
+    {
+    }
+
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!from.InRange(this.GetWorldLocation(), 2))
         {
-            Weight = 100.0;
-            Movable = false;
-        }
-
-        public override int LabelNumber { get { return 1076678; } }
-        public EObsidianPillarComponent(Serial serial)
-            : base(serial)
-        {
-        }
-
-        public override void OnDoubleClick(Mobile from)
-        {
-            if (!from.InRange(this.GetWorldLocation(), 2))
-            {
-                from.LocalOverheadMessage(MessageType.Regular, 906, 1019045); // I can't reach that.
-            }
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-
-            writer.Write((int)0); // version
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-
-            int version = reader.ReadInt();
+            from.LocalOverheadMessage(MessageType.Regular, 906, 1019045);     // I can't reach that.
         }
     }
 
-    public class EObsidianPillarAddon : BaseAddon
+    public override void Serialize(GenericWriter writer)
     {
-        public override BaseAddonDeed Deed { get { return new EObsidianPillarDeed(); } }
+        base.Serialize(writer);
 
-        [Constructable]
-        public EObsidianPillarAddon()
-        {
-            AddComponent(new EObsidianPillarComponent(0x364F), 0, 0, 0);
-        }
+        writer.Write((int)0);     // version
+    }
 
-        public EObsidianPillarAddon(Serial serial)
-            : base(serial)
-        {
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
+        int version = reader.ReadInt();
+    }
+}
 
-            writer.Write((int)0); // version
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-
-            int version = reader.ReadInt();
+public class EObsidianPillarAddon : BaseAddon
+{
+    public override BaseAddonDeed Deed {
+        get { return new EObsidianPillarDeed();
         }
     }
 
-    public class EObsidianPillarDeed : BaseAddonDeed
+    [Constructable]
+    public EObsidianPillarAddon()
     {
-        public override BaseAddon Addon { get { return new EObsidianPillarAddon(); } }
+        AddComponent(new EObsidianPillarComponent(0x364F), 0, 0, 0);
+    }
 
-        [Constructable]
-        public EObsidianPillarDeed()
-        {
-			Name = "box containing an obsidian pillar";
-            ItemID = Utility.RandomList( 0x3420, 0x3425 );
-            Hue = Utility.RandomEvilHue();
-            Weight = 5.0;
-        }
+    public EObsidianPillarAddon(Serial serial)
+        : base(serial)
+    {
+    }
 
-        public EObsidianPillarDeed(Serial serial)
-            : base(serial)
-        {
-        }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
+        writer.Write((int)0);     // version
+    }
 
-            writer.Write((int)0); // version
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 
-            int version = reader.ReadInt();
-
-			if ( ItemID != 0x3420 && ItemID != 0x3425 ){ ItemID = 0x3425; }
+public class EObsidianPillarDeed : BaseAddonDeed
+{
+    public override BaseAddon Addon {
+        get { return new EObsidianPillarAddon();
         }
     }
+
+    [Constructable]
+    public EObsidianPillarDeed()
+    {
+        Name   = "box containing an obsidian pillar";
+        ItemID = Utility.RandomList(0x3420, 0x3425);
+        Hue    = Utility.RandomEvilHue();
+        Weight = 5.0;
+    }
+
+    public EObsidianPillarDeed(Serial serial)
+        : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+
+        writer.Write((int)0);     // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadInt();
+
+        if (ItemID != 0x3420 && ItemID != 0x3425)
+        {
+            ItemID = 0x3425;
+        }
+    }
+}
 }

@@ -49,7 +49,8 @@ public class EShadowBannerComponent : AddonComponent
 public class EShadowBannerAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new EShadowBannerDeed(); }
+        get { return new EShadowBannerDeed();
+        }
     }
 
     [Constructable]

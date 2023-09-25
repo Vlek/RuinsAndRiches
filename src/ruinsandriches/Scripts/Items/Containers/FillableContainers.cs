@@ -309,7 +309,8 @@ public abstract class FillableContainer : LockableContainer
 public class LibraryBookcase : FillableContainer
 {
     public override bool IsLockable {
-        get { return false; }
+        get { return false;
+        }
     }
     public override int SpawnThreshold {
         get { return 5; }
@@ -494,7 +495,8 @@ public class FillableMetalBox : FillableContainer
 public class FillableBarrel : FillableContainer
 {
     public override bool IsLockable {
-        get { return false; }
+        get { return false;
+        }
     }
 
     [Constructable]

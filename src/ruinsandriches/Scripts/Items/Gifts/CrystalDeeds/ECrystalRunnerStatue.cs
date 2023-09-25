@@ -49,7 +49,8 @@ public class ECrystalRunnerStatueComponent : AddonComponent
 public class ECrystalRunnerStatueAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new ECrystalRunnerStatueDeed(); }
+        get { return new ECrystalRunnerStatueDeed();
+        }
     }
 
     [Constructable]

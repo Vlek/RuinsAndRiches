@@ -45,7 +45,8 @@ public class PlayerBBSouth : BasePlayerBB
 public class PlayerBBEast : BasePlayerBB
 {
     public override int LabelNumber {
-        get { return 1062420; }
+        get { return 1062420;
+        }
     }                                                                     // bulletin board (east)
 
     [Constructable]

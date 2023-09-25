@@ -219,13 +219,13 @@ public struct InfoField <T>
     private int            m_Width;
     private IComparer <T>  m_Comparer;
 
-    public TextDefinition  Name {
+    public TextDefinition Name {
         get { return m_Name; }
     }
-    public int             Width {
+    public int Width {
         get { return m_Width; }
     }
-    public IComparer <T>   Comparer {
+    public IComparer <T> Comparer {
         get { return m_Comparer; }
     }
     public InfoField(TextDefinition name, int width, IComparer <T> comparer)

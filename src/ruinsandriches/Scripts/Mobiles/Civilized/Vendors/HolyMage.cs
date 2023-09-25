@@ -92,6 +92,7 @@ public class HolyMage : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

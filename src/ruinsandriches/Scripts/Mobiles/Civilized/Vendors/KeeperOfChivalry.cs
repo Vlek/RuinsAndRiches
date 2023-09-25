@@ -90,6 +90,7 @@ public class KeeperOfChivalry : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public KeeperOfChivalry(Serial serial) : base(serial)

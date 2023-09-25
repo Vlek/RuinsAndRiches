@@ -69,6 +69,7 @@ public class AlchemistGuildmaster : BaseGuildmaster
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

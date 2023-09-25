@@ -4,50 +4,58 @@ using Server;
 
 namespace Knives.Chat3
 {
-	public class Logging
-	{
-        public static void LogChat(string msg)
+public class Logging
+{
+    public static void LogChat(string msg)
+    {
+        if (!Directory.Exists("Data/Logs"))
         {
-            if (!Directory.Exists("Data/Logs"))
-                Directory.CreateDirectory("Data/Logs");
-
-            string directory = "Data/Logs/Chat";
-
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
-
-            try
-            {
-                StreamWriter writer = new StreamWriter(Path.Combine(directory, String.Format("Chat-{0}.log", DateTime.Now.ToLongDateString())), true);
-
-                writer.AutoFlush = true;
-                writer.WriteLine(msg);
-            }
-            catch
-            {
-            }
+            Directory.CreateDirectory("Data/Logs");
         }
 
-        public static void LogPm(string msg)
+        string directory = "Data/Logs/Chat";
+
+        if (!Directory.Exists(directory))
         {
-            if (!Directory.Exists("Data/Logs"))
-                Directory.CreateDirectory("Data/Logs");
+            Directory.CreateDirectory(directory);
+        }
 
-            string directory = "Data/Logs/Chat";
+        try
+        {
+            StreamWriter writer = new StreamWriter(Path.Combine(directory, String.Format("Chat-{0}.log", DateTime.Now.ToLongDateString())), true);
 
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
-
-            try
-            {
-                StreamWriter writer = new StreamWriter(Path.Combine(directory, String.Format("Pm-{0}.log", DateTime.Now.ToLongDateString())), true);
-
-                writer.AutoFlush = true;
-                writer.WriteLine(msg);
-            }
-            catch
-            {
-            }
+            writer.AutoFlush = true;
+            writer.WriteLine(msg);
+        }
+        catch
+        {
         }
     }
+
+    public static void LogPm(string msg)
+    {
+        if (!Directory.Exists("Data/Logs"))
+        {
+            Directory.CreateDirectory("Data/Logs");
+        }
+
+        string directory = "Data/Logs/Chat";
+
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        try
+        {
+            StreamWriter writer = new StreamWriter(Path.Combine(directory, String.Format("Pm-{0}.log", DateTime.Now.ToLongDateString())), true);
+
+            writer.AutoFlush = true;
+            writer.WriteLine(msg);
+        }
+        catch
+        {
+        }
+    }
+}
 }

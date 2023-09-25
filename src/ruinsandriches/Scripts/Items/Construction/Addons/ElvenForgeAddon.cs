@@ -37,7 +37,8 @@ public class ElvenForgeAddon : BaseAddon
 public class ElvenForgeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ElvenForgeAddon(); }
+        get { return new ElvenForgeAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072875; }

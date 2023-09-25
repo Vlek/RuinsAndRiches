@@ -207,7 +207,7 @@ public class StatusGump : Gump
             }
         }
 
-        for (int i = 0, j = 0, index = ((listPage * 25) + k) ; i < 25 && index >= 0 && index < m_List.Count && j >= 0; ++i, ++j, ++index)
+        for (int i = 0, j = 0, index = ((listPage * 25) + k); i < 25 && index >= 0 && index < m_List.Count && j >= 0; ++i, ++j, ++index)
         {
             NetState ns = m_List[index] as NetState;
 

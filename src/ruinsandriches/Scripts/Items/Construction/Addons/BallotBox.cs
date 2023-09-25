@@ -360,7 +360,8 @@ public class BallotBox : AddonComponent
 public class BallotBoxAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new BallotBoxDeed(); }
+        get { return new BallotBoxDeed();
+        }
     }
 
     public BallotBoxAddon()
@@ -390,7 +391,8 @@ public class BallotBoxAddon : BaseAddon
 public class BallotBoxDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new BallotBoxAddon(); }
+        get { return new BallotBoxAddon();
+        }
     }
 
     public override int LabelNumber {

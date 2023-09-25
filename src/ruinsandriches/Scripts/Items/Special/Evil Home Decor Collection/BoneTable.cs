@@ -36,7 +36,8 @@ public class BoneTableAddon : BaseAddon
 public class BoneTableDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new BoneTableAddon(); }
+        get { return new BoneTableAddon();
+        }
     }
 
     [Constructable]

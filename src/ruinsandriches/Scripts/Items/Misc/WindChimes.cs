@@ -148,7 +148,8 @@ public abstract class BaseWindChimes : Item
 public class WindChimes : BaseWindChimes
 {
     public override int LabelNumber {
-        get { return 1030290; }
+        get { return 1030290;
+        }
     }
 
     [Constructable]
@@ -176,7 +177,8 @@ public class WindChimes : BaseWindChimes
 public class FancyWindChimes : BaseWindChimes
 {
     public override int LabelNumber {
-        get { return 1030291; }
+        get { return 1030291;
+        }
     }
 
     [Constructable]

@@ -37,7 +37,8 @@ public class GreyTreeAddon : BaseAddon
 public class GreyTreeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new GreyTreeAddon(); }
+        get { return new GreyTreeAddon();
+        }
     }
 
     [Constructable]

@@ -688,7 +688,7 @@ public static class World {
                         {
                             if (failedMobiles)
                             {
-                                for (int i = 0; i < mobiles.Count; )
+                                for (int i = 0; i < mobiles.Count;)
                                 {
                                     if (mobiles[i].TypeID == failedTypeID)
                                     {
@@ -702,7 +702,7 @@ public static class World {
                             }
                             else if (failedItems)
                             {
-                                for (int i = 0; i < items.Count; )
+                                for (int i = 0; i < items.Count;)
                                 {
                                     if (items[i].TypeID == failedTypeID)
                                     {

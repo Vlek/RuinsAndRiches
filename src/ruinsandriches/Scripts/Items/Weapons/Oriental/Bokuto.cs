@@ -4,49 +4,75 @@ using Server.Items;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0x27A8, 0x27F3 )]
-	public class Bokuto : BaseSword
-	{
-		public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.Feint; } }
-		public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.NerveStrike; } }
-		public override WeaponAbility ThirdAbility{ get{ return WeaponAbility.Bladeweave; } }
-		public override WeaponAbility FourthAbility{ get{ return WeaponAbility.DefenseMastery; } }
-		public override WeaponAbility FifthAbility{ get{ return WeaponAbility.FreezeStrike; } }
+[FlipableAttribute(0x27A8, 0x27F3)]
+public class Bokuto : BaseSword
+{
+    public override WeaponAbility PrimaryAbility {
+        get { return WeaponAbility.Feint; }
+    }
+    public override WeaponAbility SecondaryAbility {
+        get { return WeaponAbility.NerveStrike; }
+    }
+    public override WeaponAbility ThirdAbility {
+        get { return WeaponAbility.Bladeweave; }
+    }
+    public override WeaponAbility FourthAbility {
+        get { return WeaponAbility.DefenseMastery; }
+    }
+    public override WeaponAbility FifthAbility {
+        get { return WeaponAbility.FreezeStrike; }
+    }
 
-		public override int AosStrengthReq{ get{ return 20; } }
-		public override int AosMinDamage{ get{ return 9; } }
-		public override int AosMaxDamage{ get{ return 11; } }
-		public override float MlSpeed{ get{ return 2.00f; } }
+    public override int AosStrengthReq {
+        get { return 20; }
+    }
+    public override int AosMinDamage {
+        get { return 9; }
+    }
+    public override int AosMaxDamage {
+        get { return 11; }
+    }
+    public override float MlSpeed {
+        get { return 2.00f; }
+    }
 
-		public override int DefHitSound{ get{ return 0x536; } }
-		public override int DefMissSound{ get{ return 0x23A; } }
+    public override int DefHitSound {
+        get { return 0x536; }
+    }
+    public override int DefMissSound {
+        get { return 0x23A; }
+    }
 
-		public override int InitMinHits{ get{ return 25; } }
-		public override int InitMaxHits{ get{ return 50; } }
+    public override int InitMinHits {
+        get { return 25; }
+    }
+    public override int InitMaxHits {
+        get { return 50; }
+    }
 
-		[Constructable]
-		public Bokuto() : base( 0x27A8 )
-		{
-			Weight = 7.0;
-			Resource = CraftResource.RegularWood;
-		}
+    [Constructable]
+    public Bokuto() : base(0x27A8)
+    {
+        Weight   = 7.0;
+        Resource = CraftResource.RegularWood;
+    }
 
-		public Bokuto( Serial serial ) : base( serial )
-		{
-		}
+    public Bokuto(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 ); // version
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-		}
-	}
+        int version = reader.ReadInt();
+    }
+}
 }

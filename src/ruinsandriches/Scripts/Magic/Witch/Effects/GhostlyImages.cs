@@ -159,7 +159,7 @@ public class dj_nc_decoy : BaseCreature
         Karma = 0;
 
         VirtualArmor = 0;
-        ControlSlots = ( Core.SE ) ? 2 : 1;
+        ControlSlots = (Core.SE) ? 2 : 1;
     }
 
     private Item dj_nc_decoyItem(Item item)

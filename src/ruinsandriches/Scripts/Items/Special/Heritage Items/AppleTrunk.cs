@@ -36,7 +36,8 @@ public class AppleTrunkAddon : BaseAddon
 public class AppleTrunkDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new AppleTrunkAddon(); }
+        get { return new AppleTrunkAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076785; }

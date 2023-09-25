@@ -35,6 +35,7 @@ public class MagicJewelryRing : GoldRing
         int version = reader.ReadInt();
     }
 }
+
 public class MagicJewelryNecklace : GoldNecklace
 {
     [Constructable]

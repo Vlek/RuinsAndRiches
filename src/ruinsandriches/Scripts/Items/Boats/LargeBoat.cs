@@ -69,7 +69,8 @@ public class LargeBoat : BaseBoat
 public class LargeBoatDeed : BaseBoatDeed
 {
     public override BaseBoat Boat {
-        get { return new LargeBoat(); }
+        get { return new LargeBoat();
+        }
     }
 
     [Constructable]
@@ -100,7 +101,8 @@ public class LargeBoatDeed : BaseBoatDeed
 public class LargeDockedBoat : BaseDockedBoat
 {
     public override BaseBoat Boat {
-        get { return new LargeBoat(); }
+        get { return new LargeBoat();
+        }
     }
 
     public LargeDockedBoat(BaseBoat boat) : base(0x10, new Point3D(0, -1, 0), boat)

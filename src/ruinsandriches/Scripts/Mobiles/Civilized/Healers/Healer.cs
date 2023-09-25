@@ -95,6 +95,7 @@ public class Healer : BaseHealer
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public Healer(Serial serial) : base(serial)

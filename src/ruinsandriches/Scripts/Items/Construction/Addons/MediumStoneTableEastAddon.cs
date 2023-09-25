@@ -48,7 +48,8 @@ public class MediumStoneTableEastAddon : BaseAddon
 public class MediumStoneTableEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new MediumStoneTableEastAddon(this.Hue); }
+        get { return new MediumStoneTableEastAddon(this.Hue);
+        }
     }
     public override int LabelNumber {
         get { return 1044508; }

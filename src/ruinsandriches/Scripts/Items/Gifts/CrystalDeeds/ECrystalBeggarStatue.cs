@@ -49,7 +49,8 @@ public class ECrystalBeggarStatueComponent : AddonComponent
 public class ECrystalBeggarStatueAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new ECrystalBeggarStatueDeed(); }
+        get { return new ECrystalBeggarStatueDeed();
+        }
     }
 
     [Constructable]

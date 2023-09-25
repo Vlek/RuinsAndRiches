@@ -3624,7 +3624,8 @@ public class BottleOfParts : Item
 {
     public override double DefaultWeight
     {
-        get { return 1.0; }
+        get { return 1.0;
+        }
     }
 
     [Constructable]

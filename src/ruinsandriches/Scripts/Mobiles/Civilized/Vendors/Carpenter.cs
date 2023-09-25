@@ -310,6 +310,7 @@ public class Carpenter : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public Carpenter(Serial serial) : base(serial)

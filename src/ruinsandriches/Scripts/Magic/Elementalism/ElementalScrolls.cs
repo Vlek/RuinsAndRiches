@@ -35,6 +35,7 @@ public class Elemental_Armor_Scroll : SpellScroll
         int version = reader.ReadInt();
     }
 }
+
 public class Elemental_Bolt_Scroll : SpellScroll
 {
     [Constructable]

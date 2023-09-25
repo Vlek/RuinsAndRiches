@@ -33,6 +33,7 @@ public class GiftBelt : GiftGoldRing
         int version = reader.ReadInt();
     }
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////
 public class GiftLoinCloth : GiftGoldRing
 {

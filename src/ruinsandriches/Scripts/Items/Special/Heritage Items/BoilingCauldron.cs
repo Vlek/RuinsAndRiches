@@ -47,7 +47,8 @@ public class BoilingCauldronAddon : BaseAddonContainer
 public class BoilingCauldronDeed : BaseAddonContainerDeed
 {
     public override BaseAddonContainer Addon {
-        get { return new BoilingCauldronAddon(); }
+        get { return new BoilingCauldronAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076267; }

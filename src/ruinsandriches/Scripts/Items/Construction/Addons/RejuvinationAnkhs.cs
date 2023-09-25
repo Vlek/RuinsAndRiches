@@ -84,7 +84,8 @@ public abstract class BaseRejuvinationAnkh : BaseAddon
     }
 
     public override bool HandlesOnMovement {
-        get { return true; }
+        get { return true;
+        }
     }
 
     private DateTime m_NextMessage;

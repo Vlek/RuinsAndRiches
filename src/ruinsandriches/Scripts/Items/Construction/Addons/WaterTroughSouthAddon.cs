@@ -44,7 +44,8 @@ public class WaterTroughSouthAddon : BaseAddon, IWaterSource
 public class WaterTroughSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new WaterTroughSouthAddon(); }
+        get { return new WaterTroughSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044350; }

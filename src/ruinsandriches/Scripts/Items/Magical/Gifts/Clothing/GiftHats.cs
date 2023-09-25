@@ -46,7 +46,8 @@ public abstract class BaseGiftHat : BaseGiftClothing
 public class GiftKasa : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -103,7 +104,8 @@ public class GiftKasa : BaseGiftHat
 public class GiftClothNinjaHood : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 3; }
+        get { return 3;
+        }
     }
     public override int BaseFireResistance {
         get { return 3; }
@@ -160,7 +162,8 @@ public class GiftClothNinjaHood : BaseGiftHat
 public class GiftFlowerGarland : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 3; }
+        get { return 3;
+        }
     }
     public override int BaseFireResistance {
         get { return 3; }
@@ -216,7 +219,8 @@ public class GiftFlowerGarland : BaseGiftHat
 public class GiftFloppyHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -272,7 +276,8 @@ public class GiftFloppyHat : BaseGiftHat
 public class GiftWideBrimHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -328,7 +333,8 @@ public class GiftWideBrimHat : BaseGiftHat
 public class GiftCap : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -384,7 +390,8 @@ public class GiftCap : BaseGiftHat
 public class GiftSkullCap : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 3; }
@@ -440,7 +447,8 @@ public class GiftSkullCap : BaseGiftHat
 public class GiftBandana : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 3; }
@@ -496,7 +504,8 @@ public class GiftBandana : BaseGiftHat
 public class GiftBearMask : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 5; }
+        get { return 5;
+        }
     }
     public override int BaseFireResistance {
         get { return 3; }
@@ -553,7 +562,8 @@ public class GiftBearMask : BaseGiftHat
 public class GiftWolfMask : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 5; }
+        get { return 5;
+        }
     }
     public override int BaseFireResistance {
         get { return 3; }
@@ -610,7 +620,8 @@ public class GiftWolfMask : BaseGiftHat
 public class GiftDeerMask : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 2; }
+        get { return 2;
+        }
     }
     public override int BaseFireResistance {
         get { return 6; }
@@ -667,7 +678,8 @@ public class GiftDeerMask : BaseGiftHat
 public class GiftHornedTribalMask : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 6; }
+        get { return 6;
+        }
     }
     public override int BaseFireResistance {
         get { return 9; }
@@ -729,7 +741,8 @@ public class GiftHornedTribalMask : BaseGiftHat
 public class GiftTribalMask : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 3; }
+        get { return 3;
+        }
     }
     public override int BaseFireResistance {
         get { return 0; }
@@ -791,7 +804,8 @@ public class GiftTribalMask : BaseGiftHat
 public class GiftTallStrawHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -847,7 +861,8 @@ public class GiftTallStrawHat : BaseGiftHat
 public class GiftStrawHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -903,7 +918,8 @@ public class GiftStrawHat : BaseGiftHat
 public class GiftWizardsHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -959,7 +975,8 @@ public class GiftWizardsHat : BaseGiftHat
 public class GiftWitchHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -1016,7 +1033,8 @@ public class GiftWitchHat : BaseGiftHat
 public class GiftBonnet : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -1072,7 +1090,8 @@ public class GiftBonnet : BaseGiftHat
 public class GiftFeatheredHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -1128,7 +1147,8 @@ public class GiftFeatheredHat : BaseGiftHat
 public class GiftTricorneHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -1184,7 +1204,8 @@ public class GiftTricorneHat : BaseGiftHat
 public class GiftPirateHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -1241,7 +1262,8 @@ public class GiftPirateHat : BaseGiftHat
 public class GiftJesterHat : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -1297,7 +1319,8 @@ public class GiftJesterHat : BaseGiftHat
 public class GiftCowl : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }
@@ -1354,7 +1377,8 @@ public class GiftCowl : BaseGiftHat
 public class GiftHood : BaseGiftHat
 {
     public override int BasePhysicalResistance {
-        get { return 0; }
+        get { return 0;
+        }
     }
     public override int BaseFireResistance {
         get { return 5; }

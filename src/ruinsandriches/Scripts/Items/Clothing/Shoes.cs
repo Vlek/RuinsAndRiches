@@ -89,7 +89,8 @@ public class FurBoots : Boots
 public class BarbarianBoots : BaseShoes
 {
     public override CraftResource DefaultResource {
-        get { return CraftResource.RegularLeather; }
+        get { return CraftResource.RegularLeather;
+        }
     }
 
     [Constructable]
@@ -129,7 +130,8 @@ public class BarbarianBoots : BaseShoes
 public class Boots : BaseShoes
 {
     public override CraftResource DefaultResource {
-        get { return CraftResource.RegularLeather; }
+        get { return CraftResource.RegularLeather;
+        }
     }
 
     [Constructable]
@@ -309,7 +311,8 @@ public class ThighBoots : BaseShoes, IArcaneEquip
 public class Shoes : BaseShoes
 {
     public override CraftResource DefaultResource {
-        get { return CraftResource.RegularLeather; }
+        get { return CraftResource.RegularLeather;
+        }
     }
 
     [Constructable]
@@ -346,7 +349,8 @@ public class Shoes : BaseShoes
 public class Sandals : BaseShoes
 {
     public override CraftResource DefaultResource {
-        get { return CraftResource.RegularLeather; }
+        get { return CraftResource.RegularLeather;
+        }
     }
 
     [Constructable]
@@ -487,7 +491,8 @@ public class Waraji : BaseShoes
 public class ElvenBoots : BaseShoes
 {
     public override CraftResource DefaultResource {
-        get { return CraftResource.RegularLeather; }
+        get { return CraftResource.RegularLeather;
+        }
     }
 
     //public override Race RequiredRace { get { return Race.Elf; } }
@@ -531,7 +536,8 @@ public class ElvenBoots : BaseShoes
 public class JesterShoes : BaseShoes
 {
     public override CraftResource DefaultResource {
-        get { return CraftResource.RegularLeather; }
+        get { return CraftResource.RegularLeather;
+        }
     }
 
     [Constructable]

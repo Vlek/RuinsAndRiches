@@ -30,6 +30,7 @@ public class OnyxPlateLegs : PlateLegs         /////////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class OnyxPlateGloves : PlateGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

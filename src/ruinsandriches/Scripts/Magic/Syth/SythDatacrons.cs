@@ -41,6 +41,7 @@ public class SythDatacron01 : SpellScroll
         int version = reader.ReadInt();
     }
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 public class SythDatacron02 : SpellScroll
 {

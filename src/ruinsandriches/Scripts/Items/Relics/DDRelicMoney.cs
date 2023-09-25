@@ -109,7 +109,8 @@ public class DDSilver : Item
 {
     public override double DefaultWeight
     {
-        get { return Core.ML ? (0.02 / 3) : 0.02; }
+        get { return Core.ML ? (0.02 / 3) : 0.02;
+        }
     }
 
     [Constructable]
@@ -212,7 +213,8 @@ public class DDJewels : Item
 {
     public override double DefaultWeight
     {
-        get { return Core.ML ? (0.02 / 3) : 0.02; }
+        get { return Core.ML ? (0.02 / 3) : 0.02;
+        }
     }
 
     [Constructable]
@@ -289,7 +291,8 @@ public class DDXormite : Item
 {
     public override double DefaultWeight
     {
-        get { return Core.ML ? (0.02 / 3) : 0.02; }
+        get { return Core.ML ? (0.02 / 3) : 0.02;
+        }
     }
 
     [Constructable]
@@ -367,7 +370,8 @@ public class DDGemstones : Item
 {
     public override double DefaultWeight
     {
-        get { return Core.ML ? (0.02 / 3) : 0.02; }
+        get { return Core.ML ? (0.02 / 3) : 0.02;
+        }
     }
 
     [Constructable]
@@ -444,7 +448,8 @@ public class DDGoldNuggets : Item
 {
     public override double DefaultWeight
     {
-        get { return Core.ML ? (0.02 / 3) : 0.02; }
+        get { return Core.ML ? (0.02 / 3) : 0.02;
+        }
     }
 
     [Constructable]

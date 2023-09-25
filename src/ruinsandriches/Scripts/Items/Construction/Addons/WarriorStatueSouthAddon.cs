@@ -37,7 +37,8 @@ public class WarriorStatueSouthAddon : BaseAddon
 public class WarriorStatueSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new WarriorStatueSouthAddon(); }
+        get { return new WarriorStatueSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072887; }

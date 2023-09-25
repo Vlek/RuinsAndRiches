@@ -154,6 +154,7 @@ public class Shipwright : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public Shipwright(Serial serial) : base(serial)

@@ -37,7 +37,8 @@ public class SmallStretchedHideEastAddon : BaseAddon
 public class SmallStretchedHideEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new SmallStretchedHideEastAddon(); }
+        get { return new SmallStretchedHideEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1049401; }
@@ -70,7 +71,8 @@ public class SmallStretchedHideEastDeed : BaseAddonDeed
 public class SmallStretchedHideSouthAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new SmallStretchedHideSouthDeed(); }
+        get { return new SmallStretchedHideSouthDeed();
+        }
     }
 
     [Constructable]
@@ -101,7 +103,8 @@ public class SmallStretchedHideSouthAddon : BaseAddon
 public class SmallStretchedHideSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new SmallStretchedHideSouthAddon(); }
+        get { return new SmallStretchedHideSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1049402; }
@@ -134,7 +137,8 @@ public class SmallStretchedHideSouthDeed : BaseAddonDeed
 public class MediumStretchedHideEastAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new MediumStretchedHideEastDeed(); }
+        get { return new MediumStretchedHideEastDeed();
+        }
     }
 
     [Constructable]
@@ -165,7 +169,8 @@ public class MediumStretchedHideEastAddon : BaseAddon
 public class MediumStretchedHideEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new MediumStretchedHideEastAddon(); }
+        get { return new MediumStretchedHideEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1049403; }
@@ -198,7 +203,8 @@ public class MediumStretchedHideEastDeed : BaseAddonDeed
 public class MediumStretchedHideSouthAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new MediumStretchedHideSouthDeed(); }
+        get { return new MediumStretchedHideSouthDeed();
+        }
     }
 
     [Constructable]
@@ -229,7 +235,8 @@ public class MediumStretchedHideSouthAddon : BaseAddon
 public class MediumStretchedHideSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new MediumStretchedHideSouthAddon(); }
+        get { return new MediumStretchedHideSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1049404; }

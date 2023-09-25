@@ -72,6 +72,7 @@ public class TavernKeeper : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public TavernKeeper(Serial serial) : base(serial)

@@ -2131,7 +2131,8 @@ public static class PacketHandlers
 
     public static void PlayCharacter(NetState state, PacketReader pvSrc)
     {
-        pvSrc.ReadInt32();                 // 0xEDEDEDED
+        pvSrc.ReadInt32();
+        // 0xEDEDEDED
 
         string name = pvSrc.ReadString(30);
 

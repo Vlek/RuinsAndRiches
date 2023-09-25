@@ -38,7 +38,8 @@ public class ArcaneBookshelfEastAddon : BaseAddon
 public class ArcaneBookshelfEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ArcaneBookshelfEastAddon(); }
+        get { return new ArcaneBookshelfEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1073371; }

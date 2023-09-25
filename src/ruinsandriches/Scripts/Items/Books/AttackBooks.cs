@@ -61,6 +61,7 @@ public class MyNinjaBook : BookOfNinjitsu
         int version = reader.ReadInt();
     }
 }
+
 public class MyBushidoBook : BookOfBushido
 {
     [Constructable]

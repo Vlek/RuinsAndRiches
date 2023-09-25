@@ -12,95 +12,116 @@ using Server.Mobiles;
 
 namespace Server.Mobiles
 {
-	[TypeAlias( "Server.Mobiles.GargoyleStonecrafter" )]
-	public class StoneCrafter : BaseVendor
-	{
-		private List<SBInfo> m_SBInfos = new List<SBInfo>();
-		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
+[TypeAlias("Server.Mobiles.GargoyleStonecrafter")]
+public class StoneCrafter : BaseVendor
+{
+    private List <SBInfo> m_SBInfos = new List <SBInfo>();
+    protected override List <SBInfo> SBInfos {
+        get { return m_SBInfos; }
+    }
 
-		public override NpcGuild NpcGuild{ get{ return NpcGuild.MinersGuild; } }
+    public override NpcGuild NpcGuild {
+        get { return NpcGuild.MinersGuild; }
+    }
 
-		[Constructable]
-		public StoneCrafter() : base( "the stone crafter" )
-		{
-			SetSkill( SkillName.Carpentry, 85.0, 100.0 );
-		}
+    [Constructable]
+    public StoneCrafter() : base("the stone crafter")
+    {
+        SetSkill(SkillName.Carpentry, 85.0, 100.0);
+    }
 
-		public override void InitSBInfo()
-		{
-			m_SBInfos.Add( new SBStoneCrafter() );
+    public override void InitSBInfo()
+    {
+        m_SBInfos.Add(new SBStoneCrafter());
 
-			m_SBInfos.Add( new RSBoardsMain() );
-			if ( Worlds.IsCrypt( this.Location, this.Map ) )
-				m_SBInfos.Add( new RSBoardsGhost() );
-			if ( Worlds.GetMyWorld( this.Map, this.Location, this.X, this.Y ) == "the Underworld" )
-				m_SBInfos.Add( new RSBoardsUnderworld() );
-			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
-				m_SBInfos.Add( new RSBoardsSea() );
+        m_SBInfos.Add(new RSBoardsMain());
+        if (Worlds.IsCrypt(this.Location, this.Map))
+        {
+            m_SBInfos.Add(new RSBoardsGhost());
+        }
+        if (Worlds.GetMyWorld(this.Map, this.Location, this.X, this.Y) == "the Underworld")
+        {
+            m_SBInfos.Add(new RSBoardsUnderworld());
+        }
+        if (Server.Misc.Worlds.IsSeaTown(this.Location, this.Map))
+        {
+            m_SBInfos.Add(new RSBoardsSea());
+        }
 
-			m_SBInfos.Add( new RSLogsMain() );
-			if ( Worlds.IsCrypt( this.Location, this.Map ) )
-				m_SBInfos.Add( new RSLogsGhost() );
-			if ( Worlds.GetMyWorld( this.Map, this.Location, this.X, this.Y ) == "the Underworld" )
-				m_SBInfos.Add( new RSLogsUnderworld() );
-			if ( Server.Misc.Worlds.IsSeaTown( this.Location, this.Map ) )
-				m_SBInfos.Add( new RSLogsSea() );
-		}
+        m_SBInfos.Add(new RSLogsMain());
+        if (Worlds.IsCrypt(this.Location, this.Map))
+        {
+            m_SBInfos.Add(new RSLogsGhost());
+        }
+        if (Worlds.GetMyWorld(this.Map, this.Location, this.X, this.Y) == "the Underworld")
+        {
+            m_SBInfos.Add(new RSLogsUnderworld());
+        }
+        if (Server.Misc.Worlds.IsSeaTown(this.Location, this.Map))
+        {
+            m_SBInfos.Add(new RSLogsSea());
+        }
+    }
 
-		///////////////////////////////////////////////////////////////////////////
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
-		{
-			base.GetContextMenuEntries( from, list );
-			list.Add( new SpeechGumpEntry( from, this ) );
-		}
+    ///////////////////////////////////////////////////////////////////////////
+    public override void GetContextMenuEntries(Mobile from, List <ContextMenuEntry> list)
+    {
+        base.GetContextMenuEntries(from, list);
+        list.Add(new SpeechGumpEntry(from, this));
+    }
 
-		public class SpeechGumpEntry : ContextMenuEntry
-		{
-			private Mobile m_Mobile;
-			private Mobile m_Giver;
+    public class SpeechGumpEntry : ContextMenuEntry
+    {
+        private Mobile m_Mobile;
+        private Mobile m_Giver;
 
-			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
-			{
-				m_Mobile = from;
-				m_Giver = giver;
-			}
+        public SpeechGumpEntry(Mobile from, Mobile giver) : base(6146, 3)
+        {
+            m_Mobile = from;
+            m_Giver  = giver;
+        }
 
-			public override void OnClick()
-			{
-			    if( !( m_Mobile is PlayerMobile ) )
-				return;
+        public override void OnClick()
+        {
+            if (!(m_Mobile is PlayerMobile))
+            {
+                return;
+            }
 
-				PlayerMobile mobile = (PlayerMobile) m_Mobile;
-				{
-					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
-					{
-						Server.Misc.IntelligentAction.SayHey( m_Giver );
-						mobile.SendGump(new SpeechGump( mobile, "The Shaping of Stone", SpeechFunctions.SpeechText( m_Giver, m_Mobile, "Stonecrafter" ) ));
-					}
-				}
+            PlayerMobile mobile = (PlayerMobile)m_Mobile;
+            {
+                if (!mobile.HasGump(typeof(SpeechGump)))
+                {
+                    Server.Misc.IntelligentAction.SayHey(m_Giver);
+                    mobile.SendGump(new SpeechGump(mobile, "The Shaping of Stone", SpeechFunctions.SpeechText(m_Giver, m_Mobile, "Stonecrafter")));
+                }
             }
         }
-		///////////////////////////////////////////////////////////////////////////
+    }
 
-		public StoneCrafter( Serial serial ) : base( serial )
-		{
-		}
+    ///////////////////////////////////////////////////////////////////////////
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public StoneCrafter(Serial serial) : base(serial)
+    {
+    }
 
-			writer.Write( (int) 0 ); // version
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+        writer.Write((int)0);                    // version
+    }
 
-			int version = reader.ReadInt();
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			if ( Title == "the stonecrafter" )
-				Title = "the stone crafter";
-		}
-	}
+        int version = reader.ReadInt();
+
+        if (Title == "the stonecrafter")
+        {
+            Title = "the stone crafter";
+        }
+    }
+}
 }

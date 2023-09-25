@@ -35,7 +35,8 @@ public class StandingBrokenChairComponent : AddonComponent
 public class StandingBrokenChairAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new StandingBrokenChairDeed(); }
+        get { return new StandingBrokenChairDeed();
+        }
     }
 
     [Constructable]
@@ -66,7 +67,8 @@ public class StandingBrokenChairAddon : BaseAddon
 public class StandingBrokenChairDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new StandingBrokenChairAddon(); }
+        get { return new StandingBrokenChairAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076259; }

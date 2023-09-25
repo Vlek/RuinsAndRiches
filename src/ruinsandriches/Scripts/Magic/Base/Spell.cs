@@ -115,7 +115,8 @@ public abstract class Spell : ISpell
     {
         if (DelayedDamageStacking)
         {
-            return;                     //Sanity
+            return;
+            //Sanity
         }
         DelayedDamageContextWrapper contexts;
 

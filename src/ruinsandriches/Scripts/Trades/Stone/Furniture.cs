@@ -28,6 +28,7 @@ public class StoneChairs : BaseStatue
         int version = reader.ReadInt();
     }
 }
+
 [Flipable(0x3EF, 0x3F0, 0x3F1, 0x3F2)]
 public class StoneSteps : BaseStatue
 {

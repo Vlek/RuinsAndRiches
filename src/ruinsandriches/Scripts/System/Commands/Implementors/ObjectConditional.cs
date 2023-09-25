@@ -193,7 +193,7 @@ public sealed class ObjectConditional
 
             switch (oper)
             {
-            #region Equality
+                #region Equality
                 case "=":
                 case "==":
                 case "is":

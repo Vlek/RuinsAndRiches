@@ -133,7 +133,8 @@ public class DecorativeShield : Item, IAddon, IRewardItem
 public class DecorativeShieldDeed : Item, IRewardItem
 {
     public override int LabelNumber {
-        get { return 1049771; }
+        get { return 1049771;
+        }
     }                                                                     // deed for a decorative shield wall hanging
 
     private bool m_IsRewardItem;

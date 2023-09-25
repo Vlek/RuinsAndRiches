@@ -36,7 +36,8 @@ public class TableWithOrangeClothAddon : BaseAddon
 public class TableWithOrangeClothDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new TableWithOrangeClothAddon(); }
+        get { return new TableWithOrangeClothAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076278; }

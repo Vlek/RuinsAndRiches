@@ -127,7 +127,8 @@ public abstract class BaseFruitTreeAddon : BaseAddon
 public class AppleTreeAddon : BaseFruitTreeAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new AppleTreeDeed(); }
+        get { return new AppleTreeDeed();
+        }
     }
     public override Item Fruit {
         get { return new Apple(); }
@@ -162,7 +163,8 @@ public class AppleTreeAddon : BaseFruitTreeAddon
 public class AppleTreeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new AppleTreeAddon(); }
+        get { return new AppleTreeAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076269; }
@@ -201,7 +203,8 @@ public class AppleTreeDeed : BaseAddonDeed
 public class PeachTreeAddon : BaseFruitTreeAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new PeachTreeDeed(); }
+        get { return new PeachTreeDeed();
+        }
     }
     public override Item Fruit {
         get { return new Peach(); }
@@ -236,7 +239,8 @@ public class PeachTreeAddon : BaseFruitTreeAddon
 public class PeachTreeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new PeachTreeAddon(); }
+        get { return new PeachTreeAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076270; }

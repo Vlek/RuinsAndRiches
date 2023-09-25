@@ -96,11 +96,13 @@ public class DrakkhenRed : BaseMount
         int version = reader.ReadInt();
     }
 }
+
 [CorpseName("a drakkhen corpse")]
 public class DrakkhenBlack : BaseMount
 {
     public override bool HasBreath {
-        get { return true; }
+        get { return true;
+        }
     }
     public override double BreathEffectDelay {
         get { return 0.1; }

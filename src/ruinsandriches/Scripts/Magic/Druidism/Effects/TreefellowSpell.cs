@@ -125,7 +125,8 @@ namespace Server.Mobiles
 public class SummonedTreefellow : BaseCreature
 {
     public override bool DeleteCorpseOnDeath {
-        get { return Summoned; }
+        get { return Summoned;
+        }
     }
     public override bool AlwaysAttackable {
         get { return true; }
@@ -154,7 +155,7 @@ public class SummonedTreefellow : BaseCreature
         SetDex(200);
         SetInt(100);
 
-        SetHits(( Core.SE ) ? 140 : 70);
+        SetHits((Core.SE) ? 140 : 70);
         SetStam(250);
         SetMana(0);
 
@@ -177,7 +178,7 @@ public class SummonedTreefellow : BaseCreature
         Karma = 0;
 
         VirtualArmor = 40;
-        ControlSlots = ( Core.SE ) ? 2 : 1;
+        ControlSlots = (Core.SE) ? 2 : 1;
     }
 
     public override bool BleedImmune {

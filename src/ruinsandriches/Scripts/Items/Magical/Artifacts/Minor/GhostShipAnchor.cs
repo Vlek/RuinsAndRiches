@@ -3,31 +3,33 @@ using Server;
 
 namespace Server.Items
 {
-	public class GhostShipAnchor : Item
-	{
-		public override int LabelNumber{ get{ return 1070816; } } // Ghost Ship Anchor
+public class GhostShipAnchor : Item
+{
+    public override int LabelNumber {
+        get { return 1070816; }
+    }                                                                     // Ghost Ship Anchor
 
-		[Constructable]
-		public GhostShipAnchor() : base( 0x14F7 )
-		{
-			Hue = 0x47E;
-		}
+    [Constructable]
+    public GhostShipAnchor() : base(0x14F7)
+    {
+        Hue = 0x47E;
+    }
 
-		public GhostShipAnchor( Serial serial ) : base( serial )
-		{
-		}
+    public GhostShipAnchor(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
 
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-			ItemID = 0x14F7;
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        ItemID = 0x14F7;
+    }
+}
 }

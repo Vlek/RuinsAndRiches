@@ -118,7 +118,8 @@ namespace Server.Mobiles
 public class SummonDragon : BaseCreature
 {
     public override bool DeleteCorpseOnDeath {
-        get { return Summoned; }
+        get { return Summoned;
+        }
     }
     public override double DispelDifficulty {
         get { return 900.0; }

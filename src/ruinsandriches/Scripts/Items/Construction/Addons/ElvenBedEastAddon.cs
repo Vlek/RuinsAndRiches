@@ -38,7 +38,8 @@ public class ElvenBedEastAddon : BaseAddon
 public class ElvenBedEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ElvenBedEastAddon(); }
+        get { return new ElvenBedEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072861; }

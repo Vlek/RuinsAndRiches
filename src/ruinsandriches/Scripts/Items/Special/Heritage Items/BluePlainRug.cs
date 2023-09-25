@@ -44,7 +44,8 @@ public class BluePlainRugAddon : BaseAddon
 public class BluePlainRugDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new BluePlainRugAddon(); }
+        get { return new BluePlainRugAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076585; }

@@ -378,7 +378,8 @@ public class FishSteak : Food
 {
     public override double DefaultWeight
     {
-        get { return 0.1; }
+        get { return 0.1;
+        }
     }
 
     [Constructable]
@@ -415,7 +416,8 @@ public class CheeseWheel : Food
 {
     public override double DefaultWeight
     {
-        get { return 0.1; }
+        get { return 0.1;
+        }
     }
 
     [Constructable]
@@ -452,7 +454,8 @@ public class CheeseWedge : Food
 {
     public override double DefaultWeight
     {
-        get { return 0.1; }
+        get { return 0.1;
+        }
     }
 
     [Constructable]
@@ -489,7 +492,8 @@ public class CheeseSlice : Food
 {
     public override double DefaultWeight
     {
-        get { return 0.1; }
+        get { return 0.1;
+        }
     }
 
     [Constructable]
@@ -844,7 +848,8 @@ public class Muffins : Food
 public class CheesePizza : Food
 {
     public override int LabelNumber {
-        get { return 1044516; }
+        get { return 1044516;
+        }
     }                                                                     // cheese pizza
 
     [Constructable]
@@ -877,7 +882,8 @@ public class CheesePizza : Food
 public class SausagePizza : Food
 {
     public override int LabelNumber {
-        get { return 1044517; }
+        get { return 1044517;
+        }
     }                                                                     // sausage pizza
 
     [Constructable]
@@ -941,7 +947,8 @@ public class Pizza : Food
 public class FruitPie : Food
 {
     public override int LabelNumber {
-        get { return 1041346; }
+        get { return 1041346;
+        }
     }                                                                     // baked fruit pie
 
     [Constructable]
@@ -974,7 +981,8 @@ public class FruitPie : Food
 public class MeatPie : Food
 {
     public override int LabelNumber {
-        get { return 1041347; }
+        get { return 1041347;
+        }
     }                                                                     // baked meat pie
 
     [Constructable]
@@ -1007,7 +1015,8 @@ public class MeatPie : Food
 public class PumpkinPie : Food
 {
     public override int LabelNumber {
-        get { return 1041348; }
+        get { return 1041348;
+        }
     }                                                                     // baked pumpkin pie
 
     [Constructable]
@@ -1040,7 +1049,8 @@ public class PumpkinPie : Food
 public class ApplePie : Food
 {
     public override int LabelNumber {
-        get { return 1041343; }
+        get { return 1041343;
+        }
     }                                                                     // baked apple pie
 
     [Constructable]
@@ -1073,7 +1083,8 @@ public class ApplePie : Food
 public class PeachCobbler : Food
 {
     public override int LabelNumber {
-        get { return 1041344; }
+        get { return 1041344;
+        }
     }                                                                     // baked peach cobbler
 
     [Constructable]
@@ -1106,7 +1117,8 @@ public class PeachCobbler : Food
 public class Quiche : Food
 {
     public override int LabelNumber {
-        get { return 1041345; }
+        get { return 1041345;
+        }
     }                                                                     // baked quiche
 
     [Constructable]

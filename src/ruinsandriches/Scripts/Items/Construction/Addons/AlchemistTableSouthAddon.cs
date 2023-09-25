@@ -37,7 +37,8 @@ public class AlchemistTableSouthAddon : BaseAddon
 public class AlchemistTableSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new AlchemistTableSouthAddon(); }
+        get { return new AlchemistTableSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1073396; }

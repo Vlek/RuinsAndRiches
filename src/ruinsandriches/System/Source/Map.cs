@@ -48,7 +48,8 @@ public interface IPooledEnumerable : IEnumerable
 public interface IPooledEnumerator : IEnumerator
 {
     IPooledEnumerable Enumerable {
-        get; set;
+        get;
+        set;
     }
     void Free();
 }

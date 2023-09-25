@@ -77,6 +77,7 @@ public class AppleBobbingBarrel : Item
             }
         }
     }
+
     public override void Serialize(GenericWriter writer)
     {
         base.Serialize(writer);

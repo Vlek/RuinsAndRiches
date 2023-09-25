@@ -92,6 +92,7 @@ public class Thief : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

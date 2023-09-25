@@ -4,46 +4,68 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class Spear : BaseSpear
-	{
-		public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
-		public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
-		public override WeaponAbility ThirdAbility{ get{ return WeaponAbility.AchillesStrike; } }
-		public override WeaponAbility FourthAbility{ get{ return WeaponAbility.ShadowInfectiousStrike; } }
-		public override WeaponAbility FifthAbility{ get{ return WeaponAbility.DoubleWhirlwindAttack; } }
+public class Spear : BaseSpear
+{
+    public override WeaponAbility PrimaryAbility {
+        get { return WeaponAbility.ArmorIgnore; }
+    }
+    public override WeaponAbility SecondaryAbility {
+        get { return WeaponAbility.ParalyzingBlow; }
+    }
+    public override WeaponAbility ThirdAbility {
+        get { return WeaponAbility.AchillesStrike; }
+    }
+    public override WeaponAbility FourthAbility {
+        get { return WeaponAbility.ShadowInfectiousStrike; }
+    }
+    public override WeaponAbility FifthAbility {
+        get { return WeaponAbility.DoubleWhirlwindAttack; }
+    }
 
-		public override int AosStrengthReq{ get{ return 50; } }
-		public override int AosMinDamage{ get{ return 13; } }
-		public override int AosMaxDamage{ get{ return 15; } }
-		public override float MlSpeed{ get{ return 2.75f; } }
+    public override int AosStrengthReq {
+        get { return 50; }
+    }
+    public override int AosMinDamage {
+        get { return 13; }
+    }
+    public override int AosMaxDamage {
+        get { return 15; }
+    }
+    public override float MlSpeed {
+        get { return 2.75f; }
+    }
 
-		public override int InitMinHits{ get{ return 31; } }
-		public override int InitMaxHits{ get{ return 80; } }
+    public override int InitMinHits {
+        get { return 31; }
+    }
+    public override int InitMaxHits {
+        get { return 80; }
+    }
 
-		[Constructable]
-		public Spear() : base( 0xF62 )
-		{
-			Weight = 7.0;
-			Name = "spear";
-			ItemID = Utility.RandomList( 0xF62, 0xF63, 0xF62, 0x2691, 0x2692, 0x2AAB );
-		}
+    [Constructable]
+    public Spear() : base(0xF62)
+    {
+        Weight = 7.0;
+        Name   = "spear";
+        ItemID = Utility.RandomList(0xF62, 0xF63, 0xF62, 0x2691, 0x2692, 0x2AAB);
+    }
 
-		public Spear( Serial serial ) : base( serial )
-		{
-		}
+    public Spear(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 ); // version
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-		}
-	}
+        int version = reader.ReadInt();
+    }
+}
 }

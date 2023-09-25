@@ -37,7 +37,8 @@ public class ParrotPerchAddon : BaseAddon
 public class ParrotPerchDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ParrotPerchAddon(); }
+        get { return new ParrotPerchAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072617; }

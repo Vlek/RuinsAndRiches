@@ -163,6 +163,7 @@ public class LibrarianGuildmaster : BaseGuildmaster
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     private class FixEntry : ContextMenuEntry

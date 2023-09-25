@@ -34,6 +34,7 @@ public class LoinCloth : BaseWaist
         int version = reader.ReadInt();
     }
 }
+
 public class RoyalLoinCloth : BaseWaist
 {
     [Constructable]

@@ -66,7 +66,8 @@ public class MagicCarpetA : BaseBoat
 public class MagicCarpetADeed : BaseBoatDeed
 {
     public override BaseBoat Boat {
-        get { return new MagicCarpetA(); }
+        get { return new MagicCarpetA();
+        }
     }
 
     [Constructable]
@@ -95,7 +96,8 @@ public class MagicCarpetADeed : BaseBoatDeed
 public class MagicDockedCarpetA : BaseDockedBoat
 {
     public override BaseBoat Boat {
-        get { return new MagicCarpetA(); }
+        get { return new MagicCarpetA();
+        }
     }
 
     public MagicDockedCarpetA(BaseBoat boat) : base(0xBB, Point3D.Zero, boat)

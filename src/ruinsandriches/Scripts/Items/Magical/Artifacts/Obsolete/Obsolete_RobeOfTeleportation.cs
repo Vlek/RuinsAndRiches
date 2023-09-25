@@ -8,100 +8,104 @@ using Server.Misc;
 
 namespace Server.Items
 {
-	public enum TeleportRobeEffect
-	{
-		Charges
-	}
+public enum TeleportRobeEffect
+{
+    Charges
+}
 
-	public class RobeOfTeleportation : Robe
-	{
-		private TeleportRobeEffect m_TeleportRobeEffect;
-		private int m_Charges;
+public class RobeOfTeleportation : Robe
+{
+    private TeleportRobeEffect m_TeleportRobeEffect;
+    private int m_Charges;
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public TeleportRobeEffect Effect { get{ return m_TeleportRobeEffect; } set{ m_TeleportRobeEffect = value; InvalidateProperties(); } }
+    [CommandProperty(AccessLevel.GameMaster)]
+    public TeleportRobeEffect Effect {
+        get { return m_TeleportRobeEffect; } set { m_TeleportRobeEffect = value; InvalidateProperties(); }
+    }
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public int Charges { get{ return m_Charges; } set{ m_Charges = value; InvalidateProperties(); } }
+    [CommandProperty(AccessLevel.GameMaster)]
+    public int Charges {
+        get { return m_Charges; } set { m_Charges = value; InvalidateProperties(); }
+    }
 
-		[Constructable]
-		public RobeOfTeleportation()
-		{
-			Name = "Robe Of Teleportation";
-			Hue = Utility.RandomColor( 0 );
-			Charges = 50;
-		}
+    [Constructable]
+    public RobeOfTeleportation()
+    {
+        Name    = "Robe Of Teleportation";
+        Hue     = Utility.RandomColor(0);
+        Charges = 50;
+    }
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			if ( Parent != from )
-			{
-				from.SendMessage( "You must be wearing the robe to teleport." );
-			}
-			else if ( Charges < 1 )
-			{
-				from.SendMessage( "All of the magic has been drained from the robe." );
-				from.AddToBackpack( new Robe(this.Hue) );
-				this.Delete();
-			}
-			else
-			{
-				ConsumeCharge( from );
-				new TeleportSpell( from, this ).Cast();
-			}
-			return;
-		}
-
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			list.Add( 1070722, "Artefact");
-			list.Add( 1049644, "Use While Worn To Teleport" );
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (Parent != from)
+        {
+            from.SendMessage("You must be wearing the robe to teleport.");
         }
+        else if (Charges < 1)
+        {
+            from.SendMessage("All of the magic has been drained from the robe.");
+            from.AddToBackpack(new Robe(this.Hue));
+            this.Delete();
+        }
+        else
+        {
+            ConsumeCharge(from);
+            new TeleportSpell(from, this).Cast();
+        }
+        return;
+    }
 
-		public void ConsumeCharge( Mobile from )
-		{
-			--Charges;
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "Artefact");
+        list.Add(1049644, "Use While Worn To Teleport");
+    }
 
-			if ( Charges == 0 )
-			{
-				from.SendMessage( "All of the magic has been drained from the robe." );
-				from.AddToBackpack( new Robe(this.Hue) );
-				this.Delete();
-			}
-		}
+    public void ConsumeCharge(Mobile from)
+    {
+        --Charges;
 
-		public override void GetProperties( ObjectPropertyList list )
-		{
-			base.GetProperties( list );
-			list.Add( 1060584, m_Charges.ToString() );
-		}
+        if (Charges == 0)
+        {
+            from.SendMessage("All of the magic has been drained from the robe.");
+            from.AddToBackpack(new Robe(this.Hue));
+            this.Delete();
+        }
+    }
 
-		public RobeOfTeleportation( Serial serial ) : base( serial )
-		{
-		}
+    public override void GetProperties(ObjectPropertyList list)
+    {
+        base.GetProperties(list);
+        list.Add(1060584, m_Charges.ToString());
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-			writer.Write( (int) m_TeleportRobeEffect );
-			writer.Write( (int) m_Charges );
-		}
+    public RobeOfTeleportation(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-			switch ( version )
-			{
-				case 0:
-				{
-					m_TeleportRobeEffect = (TeleportRobeEffect)reader.ReadInt();
-					m_Charges = (int)reader.ReadInt();
-					break;
-				}
-			}
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+        writer.Write((int)m_TeleportRobeEffect);
+        writer.Write((int)m_Charges);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        switch (version)
+        {
+            case 0:
+            {
+                m_TeleportRobeEffect = (TeleportRobeEffect)reader.ReadInt();
+                m_Charges            = (int)reader.ReadInt();
+                break;
+            }
+        }
+    }
+}
 }

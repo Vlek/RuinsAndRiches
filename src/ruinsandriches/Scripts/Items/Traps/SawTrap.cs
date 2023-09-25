@@ -11,114 +11,136 @@ using System.IO;
 
 namespace Server.Items
 {
-	public enum SawTrapType
-	{
-		WestWall,
-		NorthWall,
-		WestFloor,
-		NorthFloor
-	}
+public enum SawTrapType
+{
+    WestWall,
+    NorthWall,
+    WestFloor,
+    NorthFloor
+}
 
-	public class SawTrap : BaseTrap
-	{
-		[CommandProperty( AccessLevel.GameMaster )]
-		public SawTrapType Type
-		{
-			get
-			{
-				switch ( ItemID )
-				{
-					case 0x1103: return SawTrapType.NorthWall;
-					case 0x1116: return SawTrapType.WestWall;
-					case 0x11AC: return SawTrapType.NorthFloor;
-					case 0x11B1: return SawTrapType.WestFloor;
-				}
+public class SawTrap : BaseTrap
+{
+    [CommandProperty(AccessLevel.GameMaster)]
+    public SawTrapType Type
+    {
+        get
+        {
+            switch (ItemID)
+            {
+                case 0x1103: return SawTrapType.NorthWall;
 
-				return SawTrapType.NorthWall;
-			}
-			set
-			{
-				ItemID = GetBaseID( value );
-			}
-		}
+                case 0x1116: return SawTrapType.WestWall;
 
-		public static int GetBaseID( SawTrapType type )
-		{
-			switch ( type )
-			{
-				case SawTrapType.NorthWall: return 0x1103;
-				case SawTrapType.WestWall: return 0x1116;
-				case SawTrapType.NorthFloor: return 0x11AC;
-				case SawTrapType.WestFloor: return 0x11B1;
-			}
+                case 0x11AC: return SawTrapType.NorthFloor;
 
-			return 0;
-		}
+                case 0x11B1: return SawTrapType.WestFloor;
+            }
 
-		[Constructable]
-		public SawTrap() : this( SawTrapType.NorthFloor )
-		{
-		}
+            return SawTrapType.NorthWall;
+        }
+        set
+        {
+            ItemID = GetBaseID(value);
+        }
+    }
 
-		[Constructable]
-		public SawTrap( SawTrapType type ) : base( GetBaseID( type ) )
-		{
-		}
+    public static int GetBaseID(SawTrapType type)
+    {
+        switch (type)
+        {
+            case SawTrapType.NorthWall: return 0x1103;
 
-		public override bool PassivelyTriggered{ get{ return false; } }
-		public override TimeSpan PassiveTriggerDelay{ get{ return TimeSpan.Zero; } }
-		public override int PassiveTriggerRange{ get{ return 0; } }
-		public override TimeSpan ResetDelay{ get{ return TimeSpan.FromSeconds( 0.0 ); } }
+            case SawTrapType.WestWall: return 0x1116;
 
-		public override void OnTrigger( Mobile from )
-		{
-			if ( !from.Alive || !from.Player || from.AccessLevel > AccessLevel.Player )
-				return;
+            case SawTrapType.NorthFloor: return 0x11AC;
 
-			if ( Server.Misc.SeeIfGemInBag.GemInPocket( from ) == true || Server.Misc.SeeIfJewelInBag.JewelInPocket( from ) == true )
-				return;
+            case SawTrapType.WestFloor: return 0x11B1;
+        }
 
-			if ( HiddenTrap.CheckTrapAvoidance( from, this ) == 0 )
-				return;
+        return 0;
+    }
 
-			if ( !from.Player )
-				return;
+    [Constructable]
+    public SawTrap() : this(SawTrapType.NorthFloor)
+    {
+    }
 
-			if ( from is PlayerMobile && Spells.Research.ResearchAirWalk.UnderEffect( from ) )
-			{
-				Point3D air = new Point3D( ( from.X+1 ), ( from.Y+1 ), ( from.Z+5 ) );
-				Effects.SendLocationParticles(EffectItem.Create(air, from.Map, EffectItem.DefaultDuration), 0x2007, 9, 32, Server.Misc.PlayerSettings.GetMySpellHue( true, from, 0 ), 0, 5022, 0);
-				from.PlaySound( 0x014 );
-				return;
-			}
+    [Constructable]
+    public SawTrap(SawTrapType type) : base(GetBaseID(type))
+    {
+    }
 
-			Effects.SendLocationEffect( Location, Map, GetBaseID( this.Type ) + 1, 6, 3, GetEffectHue(), 0 );
-			Effects.PlaySound( Location, Map, 0x21C );
+    public override bool PassivelyTriggered {
+        get { return false; }
+    }
+    public override TimeSpan PassiveTriggerDelay {
+        get { return TimeSpan.Zero; }
+    }
+    public override int PassiveTriggerRange {
+        get { return 0; }
+    }
+    public override TimeSpan ResetDelay {
+        get { return TimeSpan.FromSeconds(0.0); }
+    }
 
-			int itHurts = (int)( (Utility.RandomMinMax(50,200) * ( 100 - from.PhysicalResistance ) ) / 100 );
-			Spells.SpellHelper.Damage( TimeSpan.FromTicks( 1 ), from, from, itHurts );
+    public override void OnTrigger(Mobile from)
+    {
+        if (!from.Alive || !from.Player || from.AccessLevel > AccessLevel.Player)
+        {
+            return;
+        }
 
-			from.LocalOverheadMessage( MessageType.Regular, 0x22, 500853 ); // You stepped onto a blade trap!
+        if (Server.Misc.SeeIfGemInBag.GemInPocket(from) == true || Server.Misc.SeeIfJewelInBag.JewelInPocket(from) == true)
+        {
+            return;
+        }
 
-			LoggingFunctions.LogTraps( from, "a sawing blade trap" );
-		}
+        if (HiddenTrap.CheckTrapAvoidance(from, this) == 0)
+        {
+            return;
+        }
 
-		public SawTrap( Serial serial ) : base( serial )
-		{
-		}
+        if (!from.Player)
+        {
+            return;
+        }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+        if (from is PlayerMobile && Spells.Research.ResearchAirWalk.UnderEffect(from))
+        {
+            Point3D air = new Point3D((from.X + 1), (from.Y + 1), (from.Z + 5));
+            Effects.SendLocationParticles(EffectItem.Create(air, from.Map, EffectItem.DefaultDuration), 0x2007, 9, 32, Server.Misc.PlayerSettings.GetMySpellHue(true, from, 0), 0, 5022, 0);
+            from.PlaySound(0x014);
+            return;
+        }
 
-			writer.Write( (int) 0 ); // version
-		}
+        Effects.SendLocationEffect(Location, Map, GetBaseID(this.Type) + 1, 6, 3, GetEffectHue(), 0);
+        Effects.PlaySound(Location, Map, 0x21C);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+        int itHurts = (int)((Utility.RandomMinMax(50, 200) * (100 - from.PhysicalResistance)) / 100);
+        Spells.SpellHelper.Damage(TimeSpan.FromTicks(1), from, from, itHurts);
 
-			int version = reader.ReadInt();
-		}
-	}
+        from.LocalOverheadMessage(MessageType.Regular, 0x22, 500853);                   // You stepped onto a blade trap!
+
+        LoggingFunctions.LogTraps(from, "a sawing blade trap");
+    }
+
+    public SawTrap(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+
+        writer.Write((int)0);                    // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadInt();
+    }
+}
 }

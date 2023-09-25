@@ -461,11 +461,11 @@ public class ListGump10 : GumpPlus
         {
             return HTML.AshRed;
         }
-        if (Data.GetData(Current).Global && Data.GetData(Current).GIgnores.Contains(m))
+        if (Data.GetData(Current).Global&& Data.GetData(Current).GIgnores.Contains(m))
         {
             return HTML.AshRed;
         }
-        if (!Data.GetData(Current).Global && Data.GetData(Current).GListens.Contains(m))
+        if (!Data.GetData(Current).Global&& Data.GetData(Current).GListens.Contains(m))
         {
             return HTML.Blue;
         }
@@ -575,7 +575,7 @@ public class ListGump10 : GumpPlus
 
         NewGump();
 
-        if (m.Read && Data.GetData(m.From).ReadReceipt && m.From.AccessLevel >= Owner.AccessLevel)
+        if (m.Read && Data.GetData(m.From).ReadReceipt&& m.From.AccessLevel >= Owner.AccessLevel)
         {
             m.From.SendMessage(Data.GetData(m.From).SystemC, Owner.RawName + " " + General.Local(197) + " " + m.Subject);
         }

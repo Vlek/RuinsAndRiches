@@ -1416,7 +1416,7 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
 
     public virtual void ValidateSkillMods()
     {
-        for (int i = 0; i < m_SkillMods.Count; )
+        for (int i = 0; i < m_SkillMods.Count;)
         {
             SkillMod mod = m_SkillMods[i];
 
@@ -3154,6 +3154,7 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
             }
         }
     }
+
     public Prompt BeginPrompt(PromptCallback callback, PromptCallback cancelCallback)
     {
         Prompt p = new SimplePrompt(callback, cancelCallback);
@@ -3223,6 +3224,7 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
             }
         }
     }
+
     public Prompt BeginPrompt(PromptStateCallback callback, PromptStateCallback cancelCallback, object state)
     {
         Prompt p = new SimpleStatePrompt(callback, cancelCallback, state);

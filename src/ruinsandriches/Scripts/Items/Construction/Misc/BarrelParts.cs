@@ -60,7 +60,8 @@ public class BarrelStaves : Item
 public class BarrelHoops : Item
 {
     public override int LabelNumber {
-        get { return 1011228; }
+        get { return 1011228;
+        }
     }                                                                       // Barrel hoops
 
     [Constructable]

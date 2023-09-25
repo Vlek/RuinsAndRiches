@@ -33,6 +33,7 @@ public class GiftTalismanLeather : GiftGoldRing
         int version = reader.ReadInt();
     }
 }
+
 //////////////////////////////////////////////////////////////////////
 public class GiftTalismanSnake : GiftGoldRing
 {

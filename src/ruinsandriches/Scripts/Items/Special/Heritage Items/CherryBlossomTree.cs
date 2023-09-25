@@ -37,7 +37,8 @@ public class CherryBlossomTreeAddon : BaseAddon
 public class CherryBlossomTreeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new CherryBlossomTreeAddon(); }
+        get { return new CherryBlossomTreeAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076268; }

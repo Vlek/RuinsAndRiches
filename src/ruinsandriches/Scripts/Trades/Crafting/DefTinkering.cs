@@ -676,7 +676,8 @@ public abstract class TrapCraft : CustomCraft
 public class DartTrapCraft : TrapCraft
 {
     public override TrapType TrapType {
-        get { return TrapType.DartTrap; }
+        get { return TrapType.DartTrap;
+        }
     }
 
     public DartTrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality) : base(from, craftItem, craftSystem, typeRes, tool, quality)
@@ -688,7 +689,8 @@ public class DartTrapCraft : TrapCraft
 public class PoisonTrapCraft : TrapCraft
 {
     public override TrapType TrapType {
-        get { return TrapType.PoisonTrap; }
+        get { return TrapType.PoisonTrap;
+        }
     }
 
     public PoisonTrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality) : base(from, craftItem, craftSystem, typeRes, tool, quality)
@@ -700,7 +702,8 @@ public class PoisonTrapCraft : TrapCraft
 public class ExplosionTrapCraft : TrapCraft
 {
     public override TrapType TrapType {
-        get { return TrapType.ExplosionTrap; }
+        get { return TrapType.ExplosionTrap;
+        }
     }
 
     public ExplosionTrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality) : base(from, craftItem, craftSystem, typeRes, tool, quality)

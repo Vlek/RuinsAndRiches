@@ -6,96 +6,180 @@ using Server.Misc;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a kobold corpse" )]
-	public class KoboldMage : BaseCreature
-	{
-		public override int BreathPhysicalDamage{ get{ return 0; } }
-		public override int BreathFireDamage{ get{ if ( YellHue < 2 ){ return 100; } else { return 0; } } }
-		public override int BreathColdDamage{ get{ if ( YellHue == 3 ){ return 100; } else { return 0; } } }
-		public override int BreathPoisonDamage{ get{ if ( YellHue == 2 ){ return 100; } else { return 0; } } }
-		public override int BreathEnergyDamage{ get{ return 0; } }
-		public override int BreathEffectHue{ get{ if ( YellHue == 1 ){ return 0x488; } else if ( YellHue == 2 ){ return 0xB92; } else if ( YellHue == 3 ){ return 0x5B5; } else { return 0x4FD; } } }
-		public override int BreathEffectSound{ get{ return 0x238; } }
-		public override int BreathEffectItemID{ get{ return 0x1005; } } // EXPLOSION POTION
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 2 ); }
-		public override double BreathDamageScalar{ get{ return 0.4; } }
+[CorpseName("a kobold corpse")]
+public class KoboldMage : BaseCreature
+{
+    public override int BreathPhysicalDamage {
+        get { return 0; }
+    }
+    public override int BreathFireDamage {
+        get { if (YellHue < 2)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathColdDamage {
+        get { if (YellHue == 3)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathPoisonDamage {
+        get { if (YellHue == 2)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathEnergyDamage {
+        get { return 0; }
+    }
+    public override int BreathEffectHue {
+        get { if (YellHue == 1)
+              {
+                  return 0x488;
+              }
+              else if (YellHue == 2)
+              {
+                  return 0xB92;
+              }
+              else if (YellHue == 3)
+              {
+                  return 0x5B5;
+              }
+              else
+              {
+                  return 0x4FD;
+              } }
+    }
+    public override int BreathEffectSound {
+        get { return 0x238; }
+    }
+    public override int BreathEffectItemID {
+        get { return 0x1005; }
+    }                                                                           // EXPLOSION POTION
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 2);
+    }
 
-		public override InhumanSpeech SpeechType{ get{ return InhumanSpeech.Ratman; } }
+    public override double BreathDamageScalar {
+        get { return 0.4; }
+    }
 
-		[Constructable]
-		public KoboldMage() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
-			Name = "a kobold shaman";
-			Body = 253;
-			BaseSoundID = 0x543;
+    public override InhumanSpeech SpeechType {
+        get { return InhumanSpeech.Ratman; }
+    }
 
-			SetStr( 61, 75 );
-			SetDex( 41, 50 );
-			SetInt( 36, 55 );
+    [Constructable]
+    public KoboldMage() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        Name        = "a kobold shaman";
+        Body        = 253;
+        BaseSoundID = 0x543;
 
-			SetHits( 36, 48 );
+        SetStr(61, 75);
+        SetDex(41, 50);
+        SetInt(36, 55);
 
-			SetDamage( 3, 8 );
+        SetHits(36, 48);
 
-			SetDamageType( ResistanceType.Physical, 0 );
-			SetDamageType( ResistanceType.Fire, 50 );
-			SetDamageType( ResistanceType.Poison, 50 );
+        SetDamage(3, 8);
 
-			SetResistance( ResistanceType.Physical, 25, 35 );
-			SetResistance( ResistanceType.Fire, 40, 50 );
-			SetResistance( ResistanceType.Cold, 20, 30 );
-			SetResistance( ResistanceType.Poison, 30, 40 );
-			SetResistance( ResistanceType.Energy, 30, 40 );
+        SetDamageType(ResistanceType.Physical, 0);
+        SetDamageType(ResistanceType.Fire, 50);
+        SetDamageType(ResistanceType.Poison, 50);
 
-			SetSkill( SkillName.Psychology, 20.1, 30.0 );
-			SetSkill( SkillName.Magery, 60.1, 100.0 );
-			SetSkill( SkillName.MagicResist, 30.1, 50.0 );
-			SetSkill( SkillName.Tactics, 42.1, 50.0 );
-			SetSkill( SkillName.FistFighting, 40.1, 44.0 );
+        SetResistance(ResistanceType.Physical, 25, 35);
+        SetResistance(ResistanceType.Fire, 40, 50);
+        SetResistance(ResistanceType.Cold, 20, 30);
+        SetResistance(ResistanceType.Poison, 30, 40);
+        SetResistance(ResistanceType.Energy, 30, 40);
 
-			Fame = 35;
-			Karma = -35;
+        SetSkill(SkillName.Psychology, 20.1, 30.0);
+        SetSkill(SkillName.Magery, 60.1, 100.0);
+        SetSkill(SkillName.MagicResist, 30.1, 50.0);
+        SetSkill(SkillName.Tactics, 42.1, 50.0);
+        SetSkill(SkillName.FistFighting, 40.1, 44.0);
 
-			VirtualArmor = 10;
-		}
+        Fame  = 35;
+        Karma = -35;
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Meager );
-			AddLoot( LootPack.LowScrolls );
-			AddLoot( LootPack.Potions );
-		}
+        VirtualArmor = 10;
+    }
 
-		public override bool OnBeforeDeath()
-		{
-			if ( Server.Misc.IntelligentAction.HealThySelf( this ) ){ return false; }
-			return base.OnBeforeDeath();
-		}
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Meager);
+        AddLoot(LootPack.LowScrolls);
+        AddLoot(LootPack.Potions);
+    }
 
-		public override int Meat{ get{ return 1; } }
-		public override int Hides{ get{ return 1; } }
-		public override HideType HideType{ get{ return HideType.Horned; } }
+    public override bool OnBeforeDeath()
+    {
+        if (Server.Misc.IntelligentAction.HealThySelf(this))
+        {
+            return false;
+        }
+        return base.OnBeforeDeath();
+    }
 
-		public override int GetAttackSound(){ return 0x5FD; }	// A
-		public override int GetDeathSound(){ return 0x5FE; }	// D
-		public override int GetHurtSound(){ return 0x5FF; }		// H
+    public override int Meat {
+        get { return 1; }
+    }
+    public override int Hides {
+        get { return 1; }
+    }
+    public override HideType HideType {
+        get { return HideType.Horned; }
+    }
 
-		public KoboldMage( Serial serial ) : base( serial )
-		{
-		}
+    public override int GetAttackSound()
+    {
+        return 0x5FD;
+    }                                                                   // A
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public override int GetDeathSound()
+    {
+        return 0x5FE;
+    }                                                                   // D
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override int GetHurtSound()
+    {
+        return 0x5FF;
+    }                                                                           // H
+
+    public KoboldMage(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

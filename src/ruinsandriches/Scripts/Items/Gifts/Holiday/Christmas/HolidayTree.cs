@@ -36,7 +36,8 @@ public class HolidayTreeAddon : BaseAddon
 public class HolidayTreeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new HolidayTreeAddon(); }
+        get { return new HolidayTreeAddon();
+        }
     }
 
     [Constructable]

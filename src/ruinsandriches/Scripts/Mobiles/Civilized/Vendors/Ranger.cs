@@ -85,6 +85,7 @@ public class Ranger : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public Ranger(Serial serial) : base(serial)

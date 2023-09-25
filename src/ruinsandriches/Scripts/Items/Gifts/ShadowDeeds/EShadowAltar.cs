@@ -49,7 +49,8 @@ public class EShadowAltarComponent : AddonComponent
 public class EShadowAltarAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new EShadowAltarDeed(); }
+        get { return new EShadowAltarDeed();
+        }
     }
 
     [Constructable]

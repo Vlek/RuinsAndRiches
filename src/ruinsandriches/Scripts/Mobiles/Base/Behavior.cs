@@ -1078,7 +1078,8 @@ namespace Server.Items
 public class HeldLight : BaseEquipableLight
 {
     public override int LitItemID {
-        get { return 0xA22; }
+        get { return 0xA22;
+        }
     }
     public override int UnlitItemID {
         get { return 0xA22; }
@@ -6967,7 +6968,8 @@ public abstract class BaseAI
         {
             if ((m_Mobile.Blessed || m_Mobile is AerialServant || m_Mobile is HenchmanFamiliar || m_Mobile is FrankenPorter || m_Mobile is PackBeast || m_Mobile is GolemPorter) && (from == m_Mobile.ControlMaster))
             {
-                list.Add(new InternalEntry(from, 6108, 14, m_Mobile, this, OrderType.Follow));                             // Command: Follow
+                list.Add(new InternalEntry(from, 6108, 14, m_Mobile, this, OrderType.Follow));
+                // Command: Follow
                 list.Add(new InternalEntry(from, 6112, 14, m_Mobile, this, OrderType.Stop));                               // Command: Stop
                 list.Add(new InternalEntry(from, 6114, 14, m_Mobile, this, OrderType.Stay));                               // Command: Stay
                 list.Add(new InternalEntry(from, 6118, 14, m_Mobile, this, OrderType.Release));                            // Release

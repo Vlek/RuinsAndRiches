@@ -37,7 +37,8 @@ public class LightBrownTreeAddon : BaseAddon
 public class LightBrownTreeDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new LightBrownTreeAddon(); }
+        get { return new LightBrownTreeAddon();
+        }
     }
 
     [Constructable]

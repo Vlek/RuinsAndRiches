@@ -39,7 +39,8 @@ public class OrnateElvenTableEastAddon : BaseAddon
 public class OrnateElvenTableEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new OrnateElvenTableEastAddon(); }
+        get { return new OrnateElvenTableEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1073384; }

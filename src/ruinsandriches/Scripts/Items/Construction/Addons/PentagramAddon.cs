@@ -45,7 +45,8 @@ public class PentagramAddon : BaseAddon
 public class PentagramDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new PentagramAddon(); }
+        get { return new PentagramAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044328; }

@@ -36,7 +36,8 @@ public class PeachTrunkAddon : BaseAddon
 public class PeachTrunkDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new PeachTrunkAddon(); }
+        get { return new PeachTrunkAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076786; }

@@ -7,110 +7,121 @@ using Server.Misc;
 
 namespace Server.Items
 {
-	public abstract class FarmableCrop : Item
-	{
-		private bool m_Picked;
+public abstract class FarmableCrop : Item
+{
+    private bool m_Picked;
 
-		public abstract Item GetCropObject();
-		public abstract int GetPickedID();
+    public abstract Item GetCropObject();
+    public abstract int GetPickedID();
 
-		public FarmableCrop( int itemID ) : base( itemID )
-		{
-			Movable = false;
-		}
+    public FarmableCrop(int itemID) : base(itemID)
+    {
+        Movable = false;
+    }
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			Map map = this.Map;
-			Point3D loc = this.Location;
+    public override void OnDoubleClick(Mobile from)
+    {
+        Map     map = this.Map;
+        Point3D loc = this.Location;
 
-			if ( Parent != null || Movable || IsLockedDown || IsSecure || map == null || map == Map.Internal )
-				return;
+        if (Parent != null || Movable || IsLockedDown || IsSecure || map == null || map == Map.Internal)
+        {
+            return;
+        }
 
-			if ( !from.InRange( loc, 2 ) || !from.InLOS( this ) )
-				from.LocalOverheadMessage( MessageType.Regular, 0x3B2, 1019045 ); // I can't reach that.
-			else if ( !m_Picked )
-				OnPicked( from, loc, map );
-		}
+        if (!from.InRange(loc, 2) || !from.InLOS(this))
+        {
+            from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045);                       // I can't reach that.
+        }
+        else if (!m_Picked)
+        {
+            OnPicked(from, loc, map);
+        }
+    }
 
-		public override bool OnMoveOver( Mobile m )
-		{
-			if ( m is PlayerMobile && m.Alive )
-			{
-				this.OnDoubleClick( m );
-			}
-			return true;
-		}
+    public override bool OnMoveOver(Mobile m)
+    {
+        if (m is PlayerMobile && m.Alive)
+        {
+            this.OnDoubleClick(m);
+        }
+        return true;
+    }
 
-		public virtual void OnPicked( Mobile from, Point3D loc, Map map )
-		{
-			ItemID = GetPickedID();
+    public virtual void OnPicked(Mobile from, Point3D loc, Map map)
+    {
+        ItemID = GetPickedID();
 
-			Item spawn = GetCropObject();
+        Item spawn = GetCropObject();
 
-			if ( spawn.Stackable )
-			{
-				int pile = Server.Misc.MyServerSettings.Resources();
-				if ( Worlds.GetMyWorld( from.Map, from.Location, from.X, from.Y ) == "the Isles of Dread" ){ pile = pile * 2; }
-				spawn.Amount = pile;
+        if (spawn.Stackable)
+        {
+            int pile = Server.Misc.MyServerSettings.Resources();
+            if (Worlds.GetMyWorld(from.Map, from.Location, from.X, from.Y) == "the Isles of Dread")
+            {
+                pile = pile * 2;
+            }
+            spawn.Amount = pile;
 
-				if ( !(this is FarmableWheat) ){ spawn.Amount = 1; }
-			}
+            if (!(this is FarmableWheat))
+            {
+                spawn.Amount = 1;
+            }
+        }
 
-			if ( spawn != null )
-			{
-				if ( from.PlaceInBackpack( spawn ) )
-				{
-					from.SendMessage( "You put it in your backpack." );
-				}
-				else
-				{
-					from.SendMessage( "You can't fit it in your backpack!" );
-					spawn.MoveToWorld( loc, map );
-				}
-			}
+        if (spawn != null)
+        {
+            if (from.PlaceInBackpack(spawn))
+            {
+                from.SendMessage("You put it in your backpack.");
+            }
+            else
+            {
+                from.SendMessage("You can't fit it in your backpack!");
+                spawn.MoveToWorld(loc, map);
+            }
+        }
 
-			m_Picked = true;
-		}
+        m_Picked = true;
+    }
 
-		public void Unlink()
-		{
-			ISpawner se = this.Spawner;
+    public void Unlink()
+    {
+        ISpawner se = this.Spawner;
 
-			if ( se != null )
-			{
-				this.Spawner.Remove( this );
-				this.Spawner = null;
-			}
+        if (se != null)
+        {
+            this.Spawner.Remove(this);
+            this.Spawner = null;
+        }
+    }
 
-		}
+    public FarmableCrop(Serial serial) : base(serial)
+    {
+    }
 
-		public FarmableCrop( Serial serial ) : base( serial )
-		{
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.WriteEncodedInt(0);                   // version
+        writer.Write(m_Picked);
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.WriteEncodedInt( 0 ); // version
-			writer.Write( m_Picked );
-		}
-
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadEncodedInt();
-			switch ( version )
-			{
-				case 0:
-					m_Picked = reader.ReadBool();
-					break;
-			}
-			if ( m_Picked )
-			{
-				//Unlink();
-				//Delete();
-			}
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadEncodedInt();
+        switch (version)
+        {
+            case 0:
+                m_Picked = reader.ReadBool();
+                break;
+        }
+        if (m_Picked)
+        {
+            //Unlink();
+            //Delete();
+        }
+    }
+}
 }

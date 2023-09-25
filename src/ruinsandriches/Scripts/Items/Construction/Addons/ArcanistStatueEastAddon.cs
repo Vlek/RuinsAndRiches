@@ -37,7 +37,8 @@ public class ArcanistStatueEastAddon : BaseAddon
 public class ArcanistStatueEastDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ArcanistStatueEastAddon(); }
+        get { return new ArcanistStatueEastAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072886; }

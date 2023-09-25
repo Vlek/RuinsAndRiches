@@ -38,7 +38,8 @@ public class ElvenWashBasinSouthAddon : BaseAddon
 public class ElvenWashBasinSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ElvenWashBasinSouthAddon(); }
+        get { return new ElvenWashBasinSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072865; }

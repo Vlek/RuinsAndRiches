@@ -58,7 +58,8 @@ public class WallTorchComponent : AddonComponent
 public class WallTorchAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new WallTorchDeed(); }
+        get { return new WallTorchDeed();
+        }
     }
 
     public WallTorchAddon() : base()
@@ -88,7 +89,8 @@ public class WallTorchAddon : BaseAddon
 public class WallTorchDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new WallTorchAddon(); }
+        get { return new WallTorchAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076282; }

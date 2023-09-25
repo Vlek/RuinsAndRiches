@@ -37,7 +37,7 @@ public class BladeSpirits : BaseCreature
         SetDex(150);
         SetInt(100);
 
-        SetHits(( Core.SE ) ? 160 : 80);
+        SetHits((Core.SE) ? 160 : 80);
         SetStam(250);
         SetMana(0);
 
@@ -61,7 +61,7 @@ public class BladeSpirits : BaseCreature
         Karma = 0;
 
         VirtualArmor = 40;
-        ControlSlots = ( Core.SE ) ? 2 : 1;
+        ControlSlots = (Core.SE) ? 2 : 1;
     }
 
     public override bool BleedImmune {

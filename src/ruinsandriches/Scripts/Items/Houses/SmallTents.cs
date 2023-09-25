@@ -119,7 +119,8 @@ namespace Server.Multis.Deeds
 public class GreenTentDeed : HouseDeed
 {
     public override int LabelNumber {
-        get { return 1041218; }
+        get { return 1041218;
+        }
     }                                                                     // deed to a green tent
     [Constructable]
     public GreenTentDeed() : base(0x72, new Point3D(0, 0, 0))

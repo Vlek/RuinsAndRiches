@@ -669,5 +669,6 @@ public class GiftGump : Gump
         }
     }
 }
+
 #endregion
 }

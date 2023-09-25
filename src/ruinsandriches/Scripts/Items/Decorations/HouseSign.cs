@@ -32,6 +32,7 @@ public class house_sign_sign_post_a : Item
         int version = reader.ReadInt();
     }
 }
+
 [Furniture]
 [Flipable(2970, 2969)]
 public class house_sign_sign_post_b : Item

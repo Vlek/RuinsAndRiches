@@ -179,7 +179,8 @@ public class SacrificialAltarAddon : BaseAddonContainer
 public class SacrificialAltarDeed : BaseAddonContainerDeed
 {
     public override BaseAddonContainer Addon {
-        get { return new SacrificialAltarAddon(); }
+        get { return new SacrificialAltarAddon();
+        }
     }
 
     [Constructable]

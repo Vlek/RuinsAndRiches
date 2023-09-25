@@ -38,7 +38,8 @@ public class SandstoneFireplaceSouthAddon : BaseAddon
 public class SandstoneFireplaceSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new SandstoneFireplaceSouthAddon(); }
+        get { return new SandstoneFireplaceSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1061845; }

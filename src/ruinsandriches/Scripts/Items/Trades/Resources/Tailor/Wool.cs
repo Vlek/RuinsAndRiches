@@ -129,6 +129,7 @@ public class Wool : Item, IDyable
         }
     }
 }
+
 public class TaintedWool : Wool
 {
     [Constructable]

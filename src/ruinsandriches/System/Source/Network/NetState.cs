@@ -912,7 +912,7 @@ public class NetState {
         {
             NetState ns = m_Instances[i];
 
-            lock ( ns.m_AsyncLock ) {
+            lock (ns.m_AsyncLock) {
                 ns.m_AsyncState |= AsyncState.Paused;
             }
         }
@@ -931,7 +931,7 @@ public class NetState {
                 continue;
             }
 
-            lock ( ns.m_AsyncLock ) {
+            lock (ns.m_AsyncLock) {
                 ns.m_AsyncState &= ~AsyncState.Paused;
 
                 if ((ns.m_AsyncState & AsyncState.Pending) == 0)
@@ -1090,7 +1090,7 @@ public class NetState {
         {
             NetState ns = m_Instances[i];
 
-            lock ( ns.m_AsyncLock ) {
+            lock (ns.m_AsyncLock) {
                 ns.m_AsyncState |= AsyncState.Paused;
             }
         }
@@ -1109,7 +1109,7 @@ public class NetState {
                 continue;
             }
 
-            lock ( ns.m_AsyncLock ) {
+            lock (ns.m_AsyncLock) {
                 ns.m_AsyncState &= ~AsyncState.Paused;
 
                 try {

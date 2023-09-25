@@ -53,6 +53,7 @@ public class IcySkinLegs : LeatherLegs         /////////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class IcySkinGloves : LeatherGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

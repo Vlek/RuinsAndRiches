@@ -38,7 +38,8 @@ public class GrayBrickFireplaceSouthAddon : BaseAddon
 public class GrayBrickFireplaceSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new GrayBrickFireplaceSouthAddon(); }
+        get { return new GrayBrickFireplaceSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1061847; }

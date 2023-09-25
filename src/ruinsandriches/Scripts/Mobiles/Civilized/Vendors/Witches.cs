@@ -94,6 +94,7 @@ public class Witches : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public Witches(Serial serial) : base(serial)

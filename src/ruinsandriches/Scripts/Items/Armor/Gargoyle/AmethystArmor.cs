@@ -30,6 +30,7 @@ public class AmethystPlateLegs : PlateLegs         /////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class AmethystPlateGloves : PlateGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

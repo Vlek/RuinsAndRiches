@@ -49,7 +49,8 @@ public class ECrystalSupplicantStatueComponent : AddonComponent
 public class ECrystalSupplicantStatueAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new ECrystalSupplicantStatueDeed(); }
+        get { return new ECrystalSupplicantStatueDeed();
+        }
     }
 
     [Constructable]

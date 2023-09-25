@@ -47,7 +47,8 @@ public class BoneCouchComponent : AddonComponent
 public class BoneCouchAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new BoneCouchDeed(); }
+        get { return new BoneCouchDeed();
+        }
     }
 
     [Constructable]
@@ -96,7 +97,8 @@ public class BoneCouchAddon : BaseAddon
 public class BoneCouchDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new BoneCouchAddon(); }
+        get { return new BoneCouchAddon();
+        }
     }
 
     [Constructable]

@@ -98,6 +98,7 @@ public class PowerDealer : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
     public class BuyGumpEntry : ContextMenuEntry
     {

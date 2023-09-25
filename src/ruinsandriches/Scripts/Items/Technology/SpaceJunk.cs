@@ -155,7 +155,8 @@ public class SpaceJunkA : SpaceJunk { [Constructable] public SpaceJunkA()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -173,7 +174,8 @@ public class SpaceJunkB : SpaceJunk { [Constructable] public SpaceJunkB()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -191,7 +193,8 @@ public class SpaceJunkC : SpaceJunk { [Constructable] public SpaceJunkC()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -209,7 +212,8 @@ public class SpaceJunkD : SpaceJunk { [Constructable] public SpaceJunkD()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -227,7 +231,8 @@ public class SpaceJunkE : SpaceJunk { [Constructable] public SpaceJunkE()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -245,7 +250,8 @@ public class SpaceJunkF : SpaceJunk { [Constructable] public SpaceJunkF()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -263,7 +269,8 @@ public class SpaceJunkG : SpaceJunk { [Constructable] public SpaceJunkG()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -281,7 +288,8 @@ public class SpaceJunkH : SpaceJunk { [Constructable] public SpaceJunkH()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -299,7 +307,8 @@ public class SpaceJunkI : SpaceJunk { [Constructable] public SpaceJunkI()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -317,7 +326,8 @@ public class SpaceJunkJ : SpaceJunk { [Constructable] public SpaceJunkJ()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -335,7 +345,8 @@ public class SpaceJunkK : SpaceJunk { [Constructable] public SpaceJunkK()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -353,7 +364,8 @@ public class SpaceJunkL : SpaceJunk { [Constructable] public SpaceJunkL()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -371,7 +383,8 @@ public class SpaceJunkM : SpaceJunk { [Constructable] public SpaceJunkM()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -389,7 +402,8 @@ public class SpaceJunkN : SpaceJunk { [Constructable] public SpaceJunkN()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -407,7 +421,8 @@ public class SpaceJunkO : SpaceJunk { [Constructable] public SpaceJunkO()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -425,7 +440,8 @@ public class SpaceJunkP : SpaceJunk { [Constructable] public SpaceJunkP()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -443,7 +459,8 @@ public class SpaceJunkQ : SpaceJunk { [Constructable] public SpaceJunkQ()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -461,7 +478,8 @@ public class SpaceJunkR : SpaceJunk { [Constructable] public SpaceJunkR()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -479,7 +497,8 @@ public class SpaceJunkS : SpaceJunk { [Constructable] public SpaceJunkS()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -497,7 +516,8 @@ public class SpaceJunkT : SpaceJunk { [Constructable] public SpaceJunkT()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -515,7 +535,8 @@ public class SpaceJunkU : SpaceJunk { [Constructable] public SpaceJunkU()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -533,7 +554,8 @@ public class SpaceJunkV : SpaceJunk { [Constructable] public SpaceJunkV()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -551,7 +573,8 @@ public class SpaceJunkW : SpaceJunk { [Constructable] public SpaceJunkW()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -569,7 +592,8 @@ public class SpaceJunkX : SpaceJunk { [Constructable] public SpaceJunkX()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -587,7 +611,8 @@ public class SpaceJunkY : SpaceJunk { [Constructable] public SpaceJunkY()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)
@@ -605,7 +630,8 @@ public class SpaceJunkZ : SpaceJunk { [Constructable] public SpaceJunkZ()
 
                                       public override void Serialize(GenericWriter writer)
                                       {
-                                          base.Serialize(writer); writer.Write((int)0);
+                                          base.Serialize(writer);
+                                          writer.Write((int)0);
                                       }
 
                                       public override void Deserialize(GenericReader reader)

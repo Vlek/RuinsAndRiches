@@ -162,6 +162,7 @@ public class DrakkhenEggRed : Item
         get { return HaveGold; } set { HaveGold = value; }
     }
 }
+
 public class DrakkhenEggBlack : Item
 {
     [Constructable]

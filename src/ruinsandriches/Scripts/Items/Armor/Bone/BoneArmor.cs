@@ -29,6 +29,7 @@ public class MagicBoneLegs : BoneLegs         //////////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class MagicBoneGloves : BoneGloves         /////////////////////////////////////////////////////
 {
     [Constructable]

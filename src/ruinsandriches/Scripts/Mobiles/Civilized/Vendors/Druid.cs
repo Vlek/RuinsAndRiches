@@ -92,6 +92,7 @@ public class Druid : BaseVendor
             }
         }
     }
+
     ///////////////////////////////////////////////////////////////////////////
 
     public virtual bool CheckResurrect(Mobile m)

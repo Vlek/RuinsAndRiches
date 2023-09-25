@@ -35,7 +35,8 @@ public class FountainAddon : StoneFountainAddon
 public class FountainDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new FountainAddon(); }
+        get { return new FountainAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076283; }

@@ -46,6 +46,7 @@ public class PickBoxEasy : LockableContainer
         int version = reader.ReadInt();
     }
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////
 [Flipable(0x1C0E, 0x1C0F)]
 public class PickBoxNormal : LockableContainer

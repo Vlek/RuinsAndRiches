@@ -268,12 +268,14 @@ public class DefGodSmithing : CraftSystem
         #endregion
     }
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public class DefGodSewing : CraftSystem
 {
     public override SkillName MainSkill
     {
-        get     { return SkillName.Tailoring; }
+        get     { return SkillName.Tailoring;
+        }
     }
 
     public override int GumpTitleNumber
@@ -414,7 +416,8 @@ public class DefGodBrewing : CraftSystem
 {
     public override SkillName MainSkill
     {
-        get     { return SkillName.Alchemy; }
+        get     { return SkillName.Alchemy;
+        }
     }
 
     public override int GumpTitleNumber

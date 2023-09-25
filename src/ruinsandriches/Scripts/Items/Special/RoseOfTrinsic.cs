@@ -131,7 +131,8 @@ public class RoseOfMoon : Item, ISecurable
     {
         if (!from.InRange(GetWorldLocation(), 2))
         {
-            from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045);                       // I can't reach that.
+            from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045);
+            // I can't reach that.
         }
         else if (Petals > 0)
         {
@@ -175,7 +176,8 @@ public class RoseOfMoon : Item, ISecurable
 public class RoseOfMoonPetal : Item
 {
     public override int LabelNumber {
-        get { return 1062926; }
+        get { return 1062926;
+        }
     }                                                                     // Petal of the Rose of Moon
 
     [Constructable]

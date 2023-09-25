@@ -55,7 +55,8 @@ public class LoomSouthAddon : BaseAddon, ILoom
 public class LoomSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new LoomSouthAddon(); }
+        get { return new LoomSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1044344; }

@@ -30,6 +30,7 @@ public class EmeraldPlateLegs : PlateLegs         //////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class EmeraldPlateGloves : PlateGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

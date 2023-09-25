@@ -5,200 +5,244 @@ using System.Collections;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a cave fisher corpse" )]
-	public class CaveFisher : BaseCreature
-	{
-		private Timer m_Timer;
+[CorpseName("a cave fisher corpse")]
+public class CaveFisher : BaseCreature
+{
+    private Timer m_Timer;
 
-		public override int BreathPhysicalDamage{ get{ return 50; } }
-		public override int BreathFireDamage{ get{ return 0; } }
-		public override int BreathColdDamage{ get{ return 0; } }
-		public override int BreathPoisonDamage{ get{ return 50; } }
-		public override int BreathEnergyDamage{ get{ return 0; } }
-		public override int BreathEffectHue{ get{ return 0; } }
-		public override int BreathEffectSound{ get{ return 0x62A; } }
-		public override int BreathEffectItemID{ get{ return 0x10D4; } }
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 6 ); }
+    public override int BreathPhysicalDamage {
+        get { return 50; }
+    }
+    public override int BreathFireDamage {
+        get { return 0; }
+    }
+    public override int BreathColdDamage {
+        get { return 0; }
+    }
+    public override int BreathPoisonDamage {
+        get { return 50; }
+    }
+    public override int BreathEnergyDamage {
+        get { return 0; }
+    }
+    public override int BreathEffectHue {
+        get { return 0; }
+    }
+    public override int BreathEffectSound {
+        get { return 0x62A; }
+    }
+    public override int BreathEffectItemID {
+        get { return 0x10D4; }
+    }
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 6);
+    }
 
-		[Constructable]
-		public CaveFisher() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
-			Name = "a cave fisher";
-			Body = 348;
-			BaseSoundID = 0x388;
+    [Constructable]
+    public CaveFisher() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        Name        = "a cave fisher";
+        Body        = 348;
+        BaseSoundID = 0x388;
 
-			SetStr( 376, 400 );
-			SetDex( 376, 395 );
-			SetInt( 336, 360 );
+        SetStr(376, 400);
+        SetDex(376, 395);
+        SetInt(336, 360);
 
-			SetHits( 346, 360 );
-			SetMana( 0 );
+        SetHits(346, 360);
+        SetMana(0);
 
-			SetDamage( 22, 28 );
+        SetDamage(22, 28);
 
-			SetDamageType( ResistanceType.Physical, 100 );
+        SetDamageType(ResistanceType.Physical, 100);
 
-			SetResistance( ResistanceType.Physical, 80 );
-			SetResistance( ResistanceType.Poison, 100 );
+        SetResistance(ResistanceType.Physical, 80);
+        SetResistance(ResistanceType.Poison, 100);
 
-			SetSkill( SkillName.Poisoning, 120.0 );
-			SetSkill( SkillName.MagicResist, 60.0 );
-			SetSkill( SkillName.Tactics, 80.0 );
-			SetSkill( SkillName.FistFighting, 80.0 );
+        SetSkill(SkillName.Poisoning, 120.0);
+        SetSkill(SkillName.MagicResist, 60.0);
+        SetSkill(SkillName.Tactics, 80.0);
+        SetSkill(SkillName.FistFighting, 80.0);
 
-			Fame = 7000;
-			Karma = -7000;
+        Fame  = 7000;
+        Karma = -7000;
 
-			VirtualArmor = 50;
+        VirtualArmor = 50;
 
-			PackItem( new SpidersSilk( 100 ) );
+        PackItem(new SpidersSilk(100));
 
-			Item Venom = new VenomSack();
-				Venom.Name = "lethal venom sack";
-				AddItem( Venom );
+        Item Venom = new VenomSack();
+        Venom.Name = "lethal venom sack";
+        AddItem(Venom);
 
-			m_Timer = new TeleportTimer( this );
-			m_Timer.Start();
-		}
+        m_Timer = new TeleportTimer(this);
+        m_Timer.Start();
+    }
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Rich );
-		}
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Rich);
+    }
 
-		public override PackInstinct PackInstinct{ get{ return PackInstinct.Arachnid; } }
-		public override Poison PoisonImmune{ get{ return Poison.Deadly; } }
-		public override Poison HitPoison{ get{ return Poison.Lethal; } }
+    public override PackInstinct PackInstinct {
+        get { return PackInstinct.Arachnid; }
+    }
+    public override Poison PoisonImmune {
+        get { return Poison.Deadly; }
+    }
+    public override Poison HitPoison {
+        get { return Poison.Lethal; }
+    }
 
-		public override int GetAttackSound(){ return 0x601; }	// A
-		public override int GetDeathSound(){ return 0x602; }	// D
-		public override int GetHurtSound(){ return 0x603; }		// H
+    public override int GetAttackSound()
+    {
+        return 0x601;
+    }                                                                   // A
 
-		public CaveFisher( Serial serial ) : base( serial )
-		{
-		}
+    public override int GetDeathSound()
+    {
+        return 0x602;
+    }                                                                   // D
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public override int GetHurtSound()
+    {
+        return 0x603;
+    }                                                                           // H
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-			switch ( version )
-			{
-				case 0:
-				{
-					m_Timer = new TeleportTimer( this );
-					m_Timer.Start();
+    public CaveFisher(Serial serial) : base(serial)
+    {
+    }
 
-					break;
-				}
-			}
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
 
-		private class TeleportTimer : Timer
-		{
-			private Mobile m_Owner;
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        switch (version)
+        {
+            case 0:
+            {
+                m_Timer = new TeleportTimer(this);
+                m_Timer.Start();
 
-			private static int[] m_Offsets = new int[]
-			{
-				-1, -1,
-				-1,  0,
-				-1,  1,
-				0, -1,
-				0,  1,
-				1, -1,
-				1,  0,
-				1,  1
-			};
+                break;
+            }
+        }
+    }
 
-			public TeleportTimer( Mobile owner ) : base( TimeSpan.FromSeconds( 5.0 ), TimeSpan.FromSeconds( 5.0 ) )
-			{
-				Priority = TimerPriority.TwoFiftyMS;
+    private class TeleportTimer : Timer
+    {
+        private Mobile m_Owner;
 
-				m_Owner = owner;
-			}
+        private static int[] m_Offsets = new int[]
+        {
+            -1, -1,
+            -1, 0,
+            -1, 1,
+            0, -1,
+            0, 1,
+            1, -1,
+            1, 0,
+            1, 1
+        };
 
-			protected override void OnTick()
-			{
-				if ( m_Owner.Deleted )
-				{
-					Stop();
-					return;
-				}
+        public TeleportTimer(Mobile owner) : base(TimeSpan.FromSeconds(5.0), TimeSpan.FromSeconds(5.0))
+        {
+            Priority = TimerPriority.TwoFiftyMS;
 
-				Map map = m_Owner.Map;
+            m_Owner = owner;
+        }
 
-				if ( map == null )
-					return;
+        protected override void OnTick()
+        {
+            if (m_Owner.Deleted)
+            {
+                Stop();
+                return;
+            }
 
-				if ( 0.25 < Utility.RandomDouble() )
-					return;
+            Map map = m_Owner.Map;
 
-				Mobile toTeleport = null;
+            if (map == null)
+            {
+                return;
+            }
 
-				foreach ( Mobile m in m_Owner.GetMobilesInRange( 16 ) )
-				{
-					if ( m != m_Owner && m.Player && m_Owner.CanBeHarmful( m ) && m_Owner.CanSee( m ) && m.AccessLevel == AccessLevel.Player )
-					{
-						toTeleport = m;
-						break;
-					}
-				}
+            if (0.25 < Utility.RandomDouble())
+            {
+                return;
+            }
 
-				if ( toTeleport != null )
-				{
-					int offset = Utility.Random( 8 ) * 2;
+            Mobile toTeleport = null;
 
-					Point3D to = m_Owner.Location;
+            foreach (Mobile m in m_Owner.GetMobilesInRange(16))
+            {
+                if (m != m_Owner && m.Player && m_Owner.CanBeHarmful(m) && m_Owner.CanSee(m) && m.AccessLevel == AccessLevel.Player)
+                {
+                    toTeleport = m;
+                    break;
+                }
+            }
 
-					for ( int i = 0; i < m_Offsets.Length; i += 2 )
-					{
-						int x = m_Owner.X + m_Offsets[(offset + i) % m_Offsets.Length];
-						int y = m_Owner.Y + m_Offsets[(offset + i + 1) % m_Offsets.Length];
+            if (toTeleport != null)
+            {
+                int offset = Utility.Random(8) * 2;
 
-						if ( map.CanSpawnMobile( x, y, m_Owner.Z ) )
-						{
-							to = new Point3D( x, y, m_Owner.Z );
-							break;
-						}
-						else
-						{
-							int z = map.GetAverageZ( x, y );
+                Point3D to = m_Owner.Location;
 
-							if ( map.CanSpawnMobile( x, y, z ) )
-							{
-								to = new Point3D( x, y, z );
-								break;
-							}
-						}
-					}
+                for (int i = 0; i < m_Offsets.Length; i += 2)
+                {
+                    int x = m_Owner.X + m_Offsets[(offset + i) % m_Offsets.Length];
+                    int y = m_Owner.Y + m_Offsets[(offset + i + 1) % m_Offsets.Length];
 
-					Mobile m = toTeleport;
+                    if (map.CanSpawnMobile(x, y, m_Owner.Z))
+                    {
+                        to = new Point3D(x, y, m_Owner.Z);
+                        break;
+                    }
+                    else
+                    {
+                        int z = map.GetAverageZ(x, y);
 
-					Point3D from = m.Location;
+                        if (map.CanSpawnMobile(x, y, z))
+                        {
+                            to = new Point3D(x, y, z);
+                            break;
+                        }
+                    }
+                }
 
-					m.Location = to;
+                Mobile m = toTeleport;
 
-					Server.Spells.SpellHelper.Turn( m_Owner, toTeleport );
-					Server.Spells.SpellHelper.Turn( toTeleport, m_Owner );
+                Point3D from = m.Location;
 
-					m.ProcessDelta();
+                m.Location = to;
 
-					Effects.SendLocationParticles( EffectItem.Create( from, m.Map, EffectItem.DefaultDuration ), 0x3728, 10, 10, 2023 );
-					Effects.SendLocationParticles( EffectItem.Create(   to, m.Map, EffectItem.DefaultDuration ), 0x3728, 10, 10, 5023 );
+                Server.Spells.SpellHelper.Turn(m_Owner, toTeleport);
+                Server.Spells.SpellHelper.Turn(toTeleport, m_Owner);
 
-					m.PlaySound( 0x1FE );
+                m.ProcessDelta();
 
-					m_Owner.Combatant = toTeleport;
-				}
-			}
-		}
-	}
+                Effects.SendLocationParticles(EffectItem.Create(from, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
+                Effects.SendLocationParticles(EffectItem.Create(to, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
+
+                m.PlaySound(0x1FE);
+
+                m_Owner.Combatant = toTeleport;
+            }
+        }
+    }
+}
 }

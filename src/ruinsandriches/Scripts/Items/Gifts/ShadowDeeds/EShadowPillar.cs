@@ -49,7 +49,8 @@ public class EShadowPillarComponent : AddonComponent
 public class EShadowPillarAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new EShadowPillarDeed(); }
+        get { return new EShadowPillarDeed();
+        }
     }
 
     [Constructable]
@@ -81,7 +82,8 @@ public class EShadowPillarAddon : BaseAddon
 public class EShadowPillarDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new EShadowPillarAddon(); }
+        get { return new EShadowPillarAddon();
+        }
     }
 
     [Constructable]

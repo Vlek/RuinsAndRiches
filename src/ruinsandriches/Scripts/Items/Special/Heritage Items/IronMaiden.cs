@@ -123,7 +123,8 @@ public class IronMaidenAddon : BaseAddon
 public class IronMaidenDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new IronMaidenAddon(); }
+        get { return new IronMaidenAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076288; }

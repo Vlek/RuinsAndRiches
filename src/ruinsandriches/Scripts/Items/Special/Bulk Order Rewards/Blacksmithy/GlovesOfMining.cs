@@ -81,7 +81,8 @@ public class LeatherGlovesOfMining : BaseGlovesOfMining
 public class StuddedGlovesOfMining : BaseGlovesOfMining
 {
     public override int BasePhysicalResistance {
-        get { return 2; }
+        get { return 2;
+        }
     }
     public override int BaseFireResistance {
         get { return 4; }
@@ -152,7 +153,8 @@ public class StuddedGlovesOfMining : BaseGlovesOfMining
 public class RingmailGlovesOfMining : BaseGlovesOfMining
 {
     public override int BasePhysicalResistance {
-        get { return 3; }
+        get { return 3;
+        }
     }
     public override int BaseFireResistance {
         get { return 3; }

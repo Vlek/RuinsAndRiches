@@ -35,7 +35,8 @@ public class PortcullisNS : BaseDoor
 public class PortcullisEW : BaseDoor
 {
     public override bool UseChainedFunctionality {
-        get { return true; }
+        get { return true;
+        }
     }
 
     [Constructable]

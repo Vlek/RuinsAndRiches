@@ -26,7 +26,8 @@ class Statistics
     }
 
     public static TimeSpan ShardAge {
-        get { return m_ShardAge; }
+        get { return m_ShardAge;
+        }
     }
     public static TimeSpan Uptime {
         get { return m_Uptime; }

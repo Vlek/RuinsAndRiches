@@ -40,7 +40,8 @@ public class TallElvenBedSouthAddon : BaseAddon
 public class TallElvenBedSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new TallElvenBedSouthAddon(); }
+        get { return new TallElvenBedSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1072858; }

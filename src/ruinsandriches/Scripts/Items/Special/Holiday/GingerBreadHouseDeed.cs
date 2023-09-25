@@ -39,7 +39,8 @@ public class GingerBreadHouseAddon : BaseAddon
 public class GingerBreadHouseDeed : BaseAddonDeed
 {
     public override int LabelNumber {
-        get { return 1077394; }
+        get { return 1077394;
+        }
     }                                                                     //a Gingerbread House Deed
     public override BaseAddon Addon {
         get { return new GingerBreadHouseAddon(); }

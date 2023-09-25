@@ -33,6 +33,7 @@ public class LevelBelt : LevelGoldRing
         int version = reader.ReadInt();
     }
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////
 public class LevelLoinCloth : LevelGoldRing
 {

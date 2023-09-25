@@ -126,7 +126,8 @@ public class Dough : Item
 public class SweetDough : Item
 {
     public override int LabelNumber {
-        get { return 1041340; }
+        get { return 1041340;
+        }
     }                                                                     // sweet dough
 
     [Constructable]
@@ -245,7 +246,7 @@ public class JarHoney : Item
     [Constructable]
     public JarHoney() : base(0x9ec)
     {
-        Weight    = 1.0;
+        Weight = 1.0;
         Stackable = true;
     }
 
@@ -534,7 +535,8 @@ public class SackFlour : Item, IHasQuantity
 public class SackFlourOpen : Item
 {
     public override int LabelNumber {
-        get { return 1024166; }
+        get { return 1024166;
+        }
     }                                                                     // open sack of flour
 
     [Constructable]

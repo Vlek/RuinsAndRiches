@@ -49,7 +49,8 @@ public class ESpikePostSouthComponent : AddonComponent
 public class ESpikePostSouthAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new ESpikePostSouthDeed(); }
+        get { return new ESpikePostSouthDeed();
+        }
     }
 
     [Constructable]
@@ -81,7 +82,8 @@ public class ESpikePostSouthAddon : BaseAddon
 public class ESpikePostSouthDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new ESpikePostSouthAddon(); }
+        get { return new ESpikePostSouthAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076676; }

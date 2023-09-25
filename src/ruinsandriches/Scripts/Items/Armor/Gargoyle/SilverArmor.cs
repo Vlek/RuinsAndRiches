@@ -30,6 +30,7 @@ public class SilverPlateLegs : PlateLegs         ///////////////////////////////
         int version = reader.ReadInt();
     }
 }
+
 public class SilverPlateGloves : PlateGloves         ///////////////////////////////////////////////////
 {
     [Constructable]

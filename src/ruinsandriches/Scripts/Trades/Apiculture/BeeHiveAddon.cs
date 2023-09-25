@@ -1056,7 +1056,8 @@ public class apiBeeHiveComponent : AddonComponent
 public class apiBeeHiveDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new apiBeeHive(); }
+        get { return new apiBeeHive();
+        }
     }
 
     [Constructable]

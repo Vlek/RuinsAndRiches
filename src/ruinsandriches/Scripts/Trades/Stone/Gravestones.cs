@@ -29,6 +29,7 @@ public class StoneTombStoneA : BaseStatue
         int version = reader.ReadInt();
     }
 }
+
 [Furniture]
 [Flipable(0xED7, 0xED8)]
 public class StoneTombStoneB : BaseStatue

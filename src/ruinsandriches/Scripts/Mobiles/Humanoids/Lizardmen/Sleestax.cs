@@ -7,153 +7,211 @@ using Server.Misc;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a sleestax corpse" )]
-	public class Sleestax : BaseCreature
-	{
-		public override InhumanSpeech SpeechType
-		{
-			get
-			{
-				if ( ControlSlots == 5 )
-					return null;
-
-				return InhumanSpeech.Lizardman;
-			}
-		}
-
-        public override int GetAngerSound()
+[CorpseName("a sleestax corpse")]
+public class Sleestax : BaseCreature
+{
+    public override InhumanSpeech SpeechType
+    {
+        get
         {
-			if ( ControlSlots == 5 )
-				return 0x5E1;
+            if (ControlSlots == 5)
+            {
+                return null;
+            }
 
-            return 0x1A1;
+            return InhumanSpeech.Lizardman;
+        }
+    }
+
+    public override int GetAngerSound()
+    {
+        if (ControlSlots == 5)
+        {
+            return 0x5E1;
         }
 
-        public override int GetIdleSound()
-        {
-			if ( ControlSlots == 5 )
-				return 0x5E1;
+        return 0x1A1;
+    }
 
-            return 0x1A2;
+    public override int GetIdleSound()
+    {
+        if (ControlSlots == 5)
+        {
+            return 0x5E1;
         }
 
-		public override int BreathPhysicalDamage{ get{ return 0; } }
-		public override int BreathFireDamage{ get{ return 0; } }
-		public override int BreathColdDamage{ get{ return 0; } }
-		public override int BreathPoisonDamage{ get{ return 100; } }
-		public override int BreathEnergyDamage{ get{ return 0; } }
-		public override int BreathEffectHue{ get{ return 0x3F; } }
-		public override int BreathEffectSound{ get{ return 0x658; } }
-		public override bool ReacquireOnMovement{ get{ return !Controlled; } }
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 18 ); }
+        return 0x1A2;
+    }
 
-		[Constructable]
-		public Sleestax() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
-			Name = NameList.RandomName( "lizardman" );
-			Title = "the sleestax";
-			Body = 541;
-			BaseSoundID = 417;
-			CanSwim = true;
+    public override int BreathPhysicalDamage {
+        get { return 0; }
+    }
+    public override int BreathFireDamage {
+        get { return 0; }
+    }
+    public override int BreathColdDamage {
+        get { return 0; }
+    }
+    public override int BreathPoisonDamage {
+        get { return 100; }
+    }
+    public override int BreathEnergyDamage {
+        get { return 0; }
+    }
+    public override int BreathEffectHue {
+        get { return 0x3F; }
+    }
+    public override int BreathEffectSound {
+        get { return 0x658; }
+    }
+    public override bool ReacquireOnMovement {
+        get { return !Controlled; }
+    }
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 18);
+    }
 
-			SetStr( 336, 385 );
-			SetDex( 96, 115 );
-			SetInt( 31, 55 );
+    [Constructable]
+    public Sleestax() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        Name        = NameList.RandomName("lizardman");
+        Title       = "the sleestax";
+        Body        = 541;
+        BaseSoundID = 417;
+        CanSwim     = true;
 
-			SetHits( 202, 231 );
-			SetMana( 0 );
+        SetStr(336, 385);
+        SetDex(96, 115);
+        SetInt(31, 55);
 
-			SetDamage( 7, 23 );
+        SetHits(202, 231);
+        SetMana(0);
 
-			SetDamageType( ResistanceType.Physical, 75 );
-			SetDamageType( ResistanceType.Poison, 25 );
+        SetDamage(7, 23);
 
-			SetResistance( ResistanceType.Physical, 35, 40 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
-			SetResistance( ResistanceType.Cold, 15, 25 );
-			SetResistance( ResistanceType.Poison, 40, 50 );
-			SetResistance( ResistanceType.Energy, 15, 25 );
+        SetDamageType(ResistanceType.Physical, 75);
+        SetDamageType(ResistanceType.Poison, 25);
 
-			SetSkill( SkillName.MagicResist, 60.3, 105.0 );
-			SetSkill( SkillName.Tactics, 80.1, 100.0 );
-			SetSkill( SkillName.FistFighting, 80.1, 90.0 );
+        SetResistance(ResistanceType.Physical, 35, 40);
+        SetResistance(ResistanceType.Fire, 15, 25);
+        SetResistance(ResistanceType.Cold, 15, 25);
+        SetResistance(ResistanceType.Poison, 40, 50);
+        SetResistance(ResistanceType.Energy, 15, 25);
 
-			Fame = 4500;
-			Karma = -4500;
+        SetSkill(SkillName.MagicResist, 60.3, 105.0);
+        SetSkill(SkillName.Tactics, 80.1, 100.0);
+        SetSkill(SkillName.FistFighting, 80.1, 90.0);
 
-			VirtualArmor = 48;
-		}
+        Fame  = 4500;
+        Karma = -4500;
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Average );
-			AddLoot( LootPack.Average );
-		}
+        VirtualArmor = 48;
+    }
 
-		public override void OnDeath( Container c )
-		{
-			base.OnDeath( c );
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Average);
+        AddLoot(LootPack.Average);
+    }
 
-			Mobile killer = this.LastKiller;
-			if ( killer != null )
-			{
-				if ( killer is BaseCreature )
-					killer = ((BaseCreature)killer).GetMaster();
+    public override void OnDeath(Container c)
+    {
+        base.OnDeath(c);
 
-				if ( killer is PlayerMobile )
-				{
-					if ( GetPlayerInfo.LuckyKiller( killer.Luck ) && Utility.RandomMinMax( 1, 4 ) == 1 )
-					{
-						int mod = 0; if ( this.Name == "Scarthis" ){ mod = Utility.RandomMinMax( 5, 10 ); }
-						BaseWeapon axe = new Pitchfork();
-						axe.AccuracyLevel = WeaponAccuracyLevel.Supremely;
-						axe.MinDamage = axe.MinDamage + 5 + mod;
-						axe.MaxDamage = axe.MaxDamage + 10 + mod;
-            			axe.DurabilityLevel = WeaponDurabilityLevel.Indestructible;
-						axe.AosElementDamages.Poison = 25;
-						axe.Hue = 0x491;
-						axe.Name = "sleestax trident";
-							if ( this.Title == "the silisk" ){ axe.Name = "silisk trident"; }
-							if ( this.Name == "Scarthis" ){ axe.Name = "Trident of Scarthis"; }
-						c.DropItem( axe );
-					}
-				}
-			}
-		}
+        Mobile killer = this.LastKiller;
+        if (killer != null)
+        {
+            if (killer is BaseCreature)
+            {
+                killer = ((BaseCreature)killer).GetMaster();
+            }
 
-		public override bool CanRummageCorpses{ get{ return true; } }
-		public override int Meat{ get{ return 1; } }
-		public override int Hides{ get{ return 12; } }
-		public override HideType HideType{ get{ return HideType.Horned; } }
-		public override int Scales{ get{ return 1; } }
-		public override ScaleType ScaleType{ get{ return ( ScaleType.Green ); } }
-		public override Poison PoisonImmune{ get{ return Poison.Regular; } }
-		public override Poison HitPoison{ get{ return Poison.Lesser; } }
+            if (killer is PlayerMobile)
+            {
+                if (GetPlayerInfo.LuckyKiller(killer.Luck) && Utility.RandomMinMax(1, 4) == 1)
+                {
+                    int mod = 0; if (this.Name == "Scarthis")
+                    {
+                        mod = Utility.RandomMinMax(5, 10);
+                    }
+                    BaseWeapon axe = new Pitchfork();
+                    axe.AccuracyLevel            = WeaponAccuracyLevel.Supremely;
+                    axe.MinDamage                = axe.MinDamage + 5 + mod;
+                    axe.MaxDamage                = axe.MaxDamage + 10 + mod;
+                    axe.DurabilityLevel          = WeaponDurabilityLevel.Indestructible;
+                    axe.AosElementDamages.Poison = 25;
+                    axe.Hue  = 0x491;
+                    axe.Name = "sleestax trident";
+                    if (this.Title == "the silisk")
+                    {
+                        axe.Name = "silisk trident";
+                    }
+                    if (this.Name == "Scarthis")
+                    {
+                        axe.Name = "Trident of Scarthis";
+                    }
+                    c.DropItem(axe);
+                }
+            }
+        }
+    }
 
-		public override void OnAfterSpawn()
-		{
-			base.OnAfterSpawn();
+    public override bool CanRummageCorpses {
+        get { return true; }
+    }
+    public override int Meat {
+        get { return 1; }
+    }
+    public override int Hides {
+        get { return 12; }
+    }
+    public override HideType HideType {
+        get { return HideType.Horned; }
+    }
+    public override int Scales {
+        get { return 1; }
+    }
+    public override ScaleType ScaleType {
+        get { return ScaleType.Green; }
+    }
+    public override Poison PoisonImmune {
+        get { return Poison.Regular; }
+    }
+    public override Poison HitPoison {
+        get { return Poison.Lesser; }
+    }
 
-			if ( (Region.Find( this.Location, this.Map )).IsPartOf( "the Sanctum of Saltmarsh" ) && Utility.RandomMinMax( 1, 4 ) > 1 )
-				ControlSlots = 5;
-		}
+    public override void OnAfterSpawn()
+    {
+        base.OnAfterSpawn();
 
-		public Sleestax( Serial serial ) : base( serial )
-		{
-		}
+        if ((Region.Find(this.Location, this.Map)).IsPartOf("the Sanctum of Saltmarsh") && Utility.RandomMinMax(1, 4) > 1)
+        {
+            ControlSlots = 5;
+        }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public Sleestax(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

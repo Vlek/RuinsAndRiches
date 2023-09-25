@@ -35,7 +35,8 @@ public class BrokenBookcaseComponent : AddonComponent
 public class BrokenBookcaseAddon : BaseAddon
 {
     public override BaseAddonDeed Deed {
-        get { return new BrokenBookcaseDeed(); }
+        get { return new BrokenBookcaseDeed();
+        }
     }
 
     [Constructable]
@@ -66,7 +67,8 @@ public class BrokenBookcaseAddon : BaseAddon
 public class BrokenBookcaseDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new BrokenBookcaseAddon(); }
+        get { return new BrokenBookcaseAddon();
+        }
     }
     public override int LabelNumber {
         get { return 1076258; }

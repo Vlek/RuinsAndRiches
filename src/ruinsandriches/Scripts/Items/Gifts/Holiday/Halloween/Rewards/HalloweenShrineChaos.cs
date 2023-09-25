@@ -41,7 +41,8 @@ public class HalloweenShrineChaosAddon : BaseAddon
 public class HalloweenShrineChaosDeed : BaseAddonDeed
 {
     public override BaseAddon Addon {
-        get { return new HalloweenShrineChaosAddon(); }
+        get { return new HalloweenShrineChaosAddon();
+        }
     }
 
     [Constructable]
