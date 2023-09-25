@@ -32,24 +32,8 @@ public class GiftNoDachi : BaseGiftSword
     public override int AosMaxDamage {
         get { return 18; }
     }
-    public override int AosSpeed {
-        get { return 35; }
-    }
     public override float MlSpeed {
         get { return 3.50f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 40; }
-    }
-    public override int OldMinDamage {
-        get { return 16; }
-    }
-    public override int OldMaxDamage {
-        get { return 18; }
-    }
-    public override int OldSpeed {
-        get { return 35; }
     }
 
     public override int DefHitSound {

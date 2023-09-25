@@ -42,24 +42,8 @@ public class LevelRepeatingCrossbow : BaseLevelRanged
     public override int AosMaxDamage {
         get { return 12; }
     }
-    public override int AosSpeed {
-        get { return 41; }
-    }
     public override float MlSpeed {
         get { return 2.75f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 30; }
-    }
-    public override int OldMinDamage {
-        get { return 10; }
-    }
-    public override int OldMaxDamage {
-        get { return 12; }
-    }
-    public override int OldSpeed {
-        get { return 41; }
     }
 
     public override int DefMaxRange {

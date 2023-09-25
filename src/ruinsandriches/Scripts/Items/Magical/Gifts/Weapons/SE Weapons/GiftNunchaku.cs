@@ -1,68 +1,65 @@
 using System;
-using Server.Network;
 using Server.Items;
+using Server.Network;
 
 namespace Server.Items
 {
 [FlipableAttribute(0x27AE, 0x27F9)]
 public class GiftNunchaku : BaseGiftBashing
 {
-    public override WeaponAbility PrimaryAbility {
+    public override WeaponAbility PrimaryAbility
+    {
         get { return WeaponAbility.CrushingBlow; }
     }
-    public override WeaponAbility SecondaryAbility {
+    public override WeaponAbility SecondaryAbility
+    {
         get { return WeaponAbility.RidingSwipe; }
     }
-    public override WeaponAbility ThirdAbility {
+    public override WeaponAbility ThirdAbility
+    {
         get { return WeaponAbility.FireStrike; }
     }
-    public override WeaponAbility FourthAbility {
+    public override WeaponAbility FourthAbility
+    {
         get { return WeaponAbility.Bladeweave; }
     }
-    public override WeaponAbility FifthAbility {
+    public override WeaponAbility FifthAbility
+    {
         get { return WeaponAbility.ConsecratedStrike; }
     }
 
-    public override int AosStrengthReq {
+    public override int AosStrengthReq
+    {
         get { return 15; }
     }
-    public override int AosMinDamage {
+    public override int AosMinDamage
+    {
         get { return 11; }
     }
-    public override int AosMaxDamage {
+    public override int AosMaxDamage
+    {
         get { return 13; }
     }
-    public override int AosSpeed {
-        get { return 47; }
-    }
-    public override float MlSpeed {
+    public override float MlSpeed
+    {
         get { return 2.50f; }
     }
 
-    public override int OldStrengthReq {
-        get { return 15; }
-    }
-    public override int OldMinDamage {
-        get { return 11; }
-    }
-    public override int OldMaxDamage {
-        get { return 13; }
-    }
-    public override int OldSpeed {
-        get { return 47; }
-    }
-
-    public override int DefHitSound {
+    public override int DefHitSound
+    {
         get { return 0x535; }
     }
-    public override int DefMissSound {
+    public override int DefMissSound
+    {
         get { return 0x239; }
     }
 
-    public override int InitMinHits {
+    public override int InitMinHits
+    {
         get { return 40; }
     }
-    public override int InitMaxHits {
+    public override int InitMaxHits
+    {
         get { return 55; }
     }
 
@@ -81,7 +78,7 @@ public class GiftNunchaku : BaseGiftBashing
     {
         base.Serialize(writer);
 
-        writer.Write((int)0);                    // version
+        writer.Write((int)0);                        // version
     }
 
     public override void Deserialize(GenericReader reader)

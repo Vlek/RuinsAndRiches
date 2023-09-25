@@ -32,9 +32,6 @@ public class LevelPugilistGloves : BaseLevelBashing
     public override int AosMaxDamage {
         get { return 10; }
     }
-    public override int AosSpeed {
-        get { return 2; }
-    }
     public override float MlSpeed {
         get { return 2.00f; }
     }

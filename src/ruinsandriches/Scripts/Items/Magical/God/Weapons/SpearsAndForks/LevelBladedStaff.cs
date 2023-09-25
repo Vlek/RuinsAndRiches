@@ -32,24 +32,8 @@ public class LevelBladedStaff : BaseLevelSpear
     public override int AosMaxDamage {
         get { return 16; }
     }
-    public override int AosSpeed {
-        get { return 37; }
-    }
     public override float MlSpeed {
         get { return 3.00f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 40; }
-    }
-    public override int OldMinDamage {
-        get { return 14; }
-    }
-    public override int OldMaxDamage {
-        get { return 16; }
-    }
-    public override int OldSpeed {
-        get { return 37; }
     }
 
     public override int InitMinHits {

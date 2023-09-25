@@ -32,24 +32,8 @@ public class LevelNunchaku : BaseLevelBashing
     public override int AosMaxDamage {
         get { return 13; }
     }
-    public override int AosSpeed {
-        get { return 47; }
-    }
     public override float MlSpeed {
         get { return 2.50f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 15; }
-    }
-    public override int OldMinDamage {
-        get { return 11; }
-    }
-    public override int OldMaxDamage {
-        get { return 13; }
-    }
-    public override int OldSpeed {
-        get { return 47; }
     }
 
     public override int DefHitSound {

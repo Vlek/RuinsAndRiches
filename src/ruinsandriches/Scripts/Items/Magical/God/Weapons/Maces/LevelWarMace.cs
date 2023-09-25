@@ -31,24 +31,8 @@ public class LevelWarMace : BaseLevelBashing
     public override int AosMaxDamage {
         get { return 17; }
     }
-    public override int AosSpeed {
-        get { return 26; }
-    }
     public override float MlSpeed {
         get { return 4.00f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 30; }
-    }
-    public override int OldMinDamage {
-        get { return 10; }
-    }
-    public override int OldMaxDamage {
-        get { return 30; }
-    }
-    public override int OldSpeed {
-        get { return 32; }
     }
 
     public override int InitMinHits {

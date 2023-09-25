@@ -31,24 +31,8 @@ public class GiftLargeBattleAxe : BaseGiftAxe
     public override int AosMaxDamage {
         get { return 17; }
     }
-    public override int AosSpeed {
-        get { return 29; }
-    }
     public override float MlSpeed {
         get { return 3.75f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 40; }
-    }
-    public override int OldMinDamage {
-        get { return 6; }
-    }
-    public override int OldMaxDamage {
-        get { return 38; }
-    }
-    public override int OldSpeed {
-        get { return 30; }
     }
 
     public override int InitMinHits {

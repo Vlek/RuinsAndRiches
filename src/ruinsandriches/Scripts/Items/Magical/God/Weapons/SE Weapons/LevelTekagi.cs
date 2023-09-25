@@ -32,24 +32,8 @@ public class LevelTekagi : BaseLevelKnife
     public override int AosMaxDamage {
         get { return 12; }
     }
-    public override int AosSpeed {
-        get { return 53; }
-    }
     public override float MlSpeed {
         get { return 2.00f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 10; }
-    }
-    public override int OldMinDamage {
-        get { return 10; }
-    }
-    public override int OldMaxDamage {
-        get { return 12; }
-    }
-    public override int OldSpeed {
-        get { return 53; }
     }
 
     public override int DefHitSound {
