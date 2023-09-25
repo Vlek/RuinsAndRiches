@@ -963,9 +963,8 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         {
             m_Resistances = new int[5] {
                 int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
-            }
+            };
         }
-        ;
 
         bool delta = false;
 
@@ -990,9 +989,8 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         {
             m_Resistances = new int[5] {
                 int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
-            }
+            };
         }
-        ;
 
         int v = (int)type;
 
@@ -1056,9 +1054,8 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         {
             m_Resistances = new int[5] {
                 int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
-            }
+            };
         }
-        ;
 
         for (int i = 0; i < m_Resistances.Length; ++i)
         {
