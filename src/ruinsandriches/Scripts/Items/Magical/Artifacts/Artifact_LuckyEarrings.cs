@@ -1,5 +1,5 @@
-using system;
-using server;
+using System;
+using Server;
 
 namespace Server.Items
 {
