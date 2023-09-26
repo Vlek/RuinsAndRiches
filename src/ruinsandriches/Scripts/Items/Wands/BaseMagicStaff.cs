@@ -24,9 +24,6 @@ public abstract class BaseMagicStaff : BaseBashing
     public override int AosMaxDamage {
         get { return 9; }
     }
-    public override int AosSpeed {
-        get { return 40; }
-    }
 
     public override int InitMinHits {
         get { return 50; }

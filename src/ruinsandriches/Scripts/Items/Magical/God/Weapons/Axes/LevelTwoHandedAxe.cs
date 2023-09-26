@@ -31,24 +31,8 @@ public class LevelTwoHandedAxe : BaseLevelAxe
     public override int AosMaxDamage {
         get { return 17; }
     }
-    public override int AosSpeed {
-        get { return 31; }
-    }
     public override float MlSpeed {
         get { return 3.50f; }
-    }
-
-    public override int OldStrengthReq {
-        get { return 35; }
-    }
-    public override int OldMinDamage {
-        get { return 5; }
-    }
-    public override int OldMaxDamage {
-        get { return 39; }
-    }
-    public override int OldSpeed {
-        get { return 30; }
     }
 
     public override int InitMinHits {

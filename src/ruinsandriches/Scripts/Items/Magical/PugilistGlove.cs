@@ -32,9 +32,6 @@ public class PugilistGlove : BaseWeapon
     public override int AosMaxDamage {
         get { return 10; }
     }
-    public override int AosSpeed {
-        get { return 2; }
-    }
     public override float MlSpeed {
         get { return 2.00f; }
     }
@@ -101,8 +98,7 @@ public class PugilistGlove : BaseWeapon
 public class PugilistGloves : BaseWeapon
 {
     public override WeaponAbility PrimaryAbility {
-        get { return WeaponAbility.Disarm;
-        }
+        get { return WeaponAbility.Disarm; }
     }
     public override WeaponAbility SecondaryAbility {
         get { return WeaponAbility.ParalyzingBlow; }
@@ -125,9 +121,6 @@ public class PugilistGloves : BaseWeapon
     }
     public override int AosMaxDamage {
         get { return 10; }
-    }
-    public override int AosSpeed {
-        get { return 2; }
     }
     public override float MlSpeed {
         get { return 2.00f; }

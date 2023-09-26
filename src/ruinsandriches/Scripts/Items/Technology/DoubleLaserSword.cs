@@ -31,9 +31,6 @@ public class DoubleLaserSword : BaseSword
     public override int AosMaxDamage {
         get { return 28; }
     }
-    public override int AosSpeed {
-        get { return 33; }
-    }
     public override float MlSpeed {
         get { return 3.25f; }
     }
