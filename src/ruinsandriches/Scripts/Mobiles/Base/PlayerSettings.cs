@@ -37,16 +37,7 @@ class PlayerSettings
 
     public static bool GetWanted(Mobile m)               // -------------------------------------------------------------------------------------------------
     {
-        string wanted = ((PlayerMobile)m).CharacterWanted;
-
-        bool isWanted = true;
-
-        if (wanted == null)
-        {
-            isWanted = false;
-        }
-
-        return isWanted;
+        return !String.IsNullOrEmpty(((PlayerMobile)m).CharacterWanted);
     }
 
     public static void SetSavage(Mobile m)               // -------------------------------------------------------------------------------------------------
