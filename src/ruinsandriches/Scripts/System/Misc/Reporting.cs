@@ -1645,8 +1645,7 @@ public class ChartItemsCollection : CollectionBase
 {
     public DataItem this[int index]
     {
-        get { return (DataItem)(List[index]);
-        }
+        get { return (DataItem)(List[index]); }
         set { List[index] = value; }
     }
 
@@ -1862,11 +1861,9 @@ public class HtmlRenderer
         }
 
         html.RenderBeginTag(HtmlTag.Center);
-        TimeZone tz         = TimeZone.CurrentTimeZone;
-        bool     isDaylight = tz.IsDaylightSavingTime(m_TimeStamp);
-        TimeSpan utcOffset  = tz.GetUtcOffset(m_TimeStamp);
+        string TimeZoneName = TimeZoneInfo.Local.ToString();
 
-        html.Write("Snapshot taken at {0:d} {0:t}. All times are {1}.", m_TimeStamp, tz.StandardName);
+        html.Write("Snapshot taken at {0:d} {0:t}. All times are {1}.", m_TimeStamp, TimeZoneName);
         html.RenderEndTag();
 
         html.RenderEndTag();
@@ -1930,11 +1927,9 @@ public class HtmlRenderer
 
         html.Write("<br>");
 
-        TimeZone tz         = TimeZone.CurrentTimeZone;
-        bool     isDaylight = tz.IsDaylightSavingTime(m_TimeStamp);
-        TimeSpan utcOffset  = tz.GetUtcOffset(m_TimeStamp);
+        string TimeZoneName = TimeZoneInfo.Local.ToString();
 
-        html.Write("Snapshot taken at {0:d} {0:t}. All times are {1}.", m_TimeStamp, tz.StandardName);
+        html.Write("Snapshot taken at {0:d} {0:t}. All times are {1}.", m_TimeStamp, TimeZoneName);
         html.RenderEndTag();
 
         html.RenderEndTag();
@@ -2326,11 +2321,11 @@ public class PieChartRenderer : ChartRenderer
     public override Bitmap Draw()
     {
         int          perimeter = _perimeter;
-        Rectangle    pieRect = new Rectangle(0, 0, perimeter, perimeter - 1);
-        Bitmap       bmp = new Bitmap(perimeter + _legendWidth, perimeter);
-        Font         fnt = null;
-        Pen          pen = null;
-        Graphics     grp = null;
+        Rectangle    pieRect   = new Rectangle(0, 0, perimeter, perimeter - 1);
+        Bitmap       bmp       = new Bitmap(perimeter + _legendWidth, perimeter);
+        Font         fnt       = null;
+        Pen          pen       = null;
+        Graphics     grp       = null;
         StringFormat sf = null, sfp = null;
 
         try
