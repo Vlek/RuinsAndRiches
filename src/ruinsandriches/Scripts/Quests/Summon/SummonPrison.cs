@@ -261,7 +261,7 @@ public class SummonPrison : Item
     {
         if (TestMyPack(from, Dungeon, KeyA, KeyB, KeyC, ReagentQtyA, ReagentNameA, ReagentQtyB, ReagentNameB, false))                     //|| from.AccessLevel > AccessLevel.Player )
         {
-            Type         mobType = ScriptCompiler.FindTypeByName(PrisonerBase);
+            Type         mobType = PrisonerBase.GetType();
             Mobile       mob     = (Mobile)Activator.CreateInstance(mobType);
             BaseCreature monster = (BaseCreature)mob;
 

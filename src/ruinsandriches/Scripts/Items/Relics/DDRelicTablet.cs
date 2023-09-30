@@ -73,11 +73,7 @@ public class DDRelicTablet : Item
         Weight         = 20;
         RelicGoldValue = Server.Misc.RelicItems.RelicValue();
 
-        if (SearchReal > 0)
-        {
-            // DO NOTHING
-        }
-        else
+        if (!(SearchReal > 0))
         {
             SearchReal = Utility.RandomMinMax(1, 100);
             int relic = Utility.RandomMinMax(1, 308);
