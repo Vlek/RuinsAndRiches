@@ -1,4 +1,4 @@
-![4.0](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
+![Dynamic XML Badge](https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Fraw.githubusercontent.com%2FVlek%2FRuinsAndRiches%2Flast_mile%2Fsrc%2Fruinsandriches%2Fruinsandriches.csproj&query=%2F%2FTargetFramework%5B1%5D&label=target&color=%23512bd4)
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![https://www.github.com/vlek/ruinsandriches](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
