@@ -5,7 +5,16 @@
     <TargetFramework>net4.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyTitle>Ruins And Riches</AssemblyTitle>
+    <Version>1.0.0</Version>
+    <Authors>Djeryv, Derek Vlek McCammond</Authors>
+    <Description>Custom Ultima Online Single-Player Focused Shard</Description>
+    <RepositoryUrl>https://www.github.com/vlek/ruinsandriches</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
 </Project>
