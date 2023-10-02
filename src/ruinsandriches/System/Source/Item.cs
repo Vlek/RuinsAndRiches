@@ -22,6 +22,7 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using Server.Mobiles;
 using Server.Network;
 using Server.Items;
 using Server.ContextMenus;
@@ -1226,6 +1227,15 @@ public class Item : IEntity, IHued, IComparable <Item>, ISerializable, ISpawnabl
     public virtual void GetProperties(ObjectPropertyList list)
     {
         AddNameProperties(list);
+
+        GenericSalesInfo gsi = new GenericSalesInfo();
+        int itemPrice        = gsi.GetSellPriceFor((Item)this, 0);
+
+        if (itemPrice != 0)
+        {
+            // faction item (for now, need to get real cliloc msg)
+            list.Add(1041350, itemPrice.ToString());
+        }
     }
 
     /// <summary>
