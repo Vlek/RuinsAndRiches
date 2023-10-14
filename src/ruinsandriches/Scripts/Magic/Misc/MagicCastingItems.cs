@@ -6,20 +6,26 @@ using Server.Mobiles;
 
 namespace Server.Misc
 {
-    class MagicCastingItem
+class MagicCastingItem
+{
+    public static bool CastNoSkill(Item item)
     {
-		public static bool CastNoSkill( Item item )
-		{
-			if ( item is BaseMagicStaff )
-				return true;
+        if (item is BaseMagicStaff)
+        {
+            return true;
+        }
 
-			if ( item is RobeOfTeleportation || item is Artifact_RobeOfTeleportation )
-				return true;
+        if (item is RobeOfTeleportation || item is Artifact_RobeOfTeleportation)
+        {
+            return true;
+        }
 
-			if ( item is BaseMagicObject )
-				return true;
+        if (item is BaseMagicObject)
+        {
+            return true;
+        }
 
-			return false;
-		}
-	}
+        return false;
+    }
+}
 }

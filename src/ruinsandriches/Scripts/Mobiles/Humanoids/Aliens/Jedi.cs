@@ -9,302 +9,391 @@ using Server.Gumps;
 using Server.Misc;
 using Server.Mobiles;
 
-namespace Server.Mobiles 
-{ 
-	public class Jedi : BaseCreature 
-	{
-		public int actionCount;
-		[CommandProperty(AccessLevel.Owner)]
-		public int action_Count { get { return actionCount; } set { actionCount = value; InvalidateProperties(); } }
+namespace Server.Mobiles
+{
+public class Jedi : BaseCreature
+{
+    public int actionCount;
+    [CommandProperty(AccessLevel.Owner)]
+    public int action_Count {
+        get { return actionCount; } set { actionCount = value; InvalidateProperties(); }
+    }
 
-		public override int BreathPhysicalDamage{ get{ return 0; } }
-		public override int BreathFireDamage{ get{ return 0; } }
-		public override int BreathColdDamage{ get{ return 0; } }
-		public override int BreathPoisonDamage{ get{ return 0; } }
-		public override int BreathEnergyDamage{ get{ return 100; } }
-		public override int BreathEffectHue{ get{ return 0x9C2; } }
-		public override int BreathEffectSound{ get{ return 0x665; } }
-		public override int BreathEffectItemID{ get{ return 0x3818; } }
-		public override bool ReacquireOnMovement{ get{ return !Controlled; } }
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 21 ); }
+    public override int BreathPhysicalDamage {
+        get { return 0; }
+    }
+    public override int BreathFireDamage {
+        get { return 0; }
+    }
+    public override int BreathColdDamage {
+        get { return 0; }
+    }
+    public override int BreathPoisonDamage {
+        get { return 0; }
+    }
+    public override int BreathEnergyDamage {
+        get { return 100; }
+    }
+    public override int BreathEffectHue {
+        get { return 0x9C2; }
+    }
+    public override int BreathEffectSound {
+        get { return 0x665; }
+    }
+    public override int BreathEffectItemID {
+        get { return 0x3818; }
+    }
+    public override bool ReacquireOnMovement {
+        get { return !Controlled; }
+    }
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 21);
+    }
 
-		[Constructable] 
-		public Jedi() : base( AIType.AI_Mage, FightMode.Evil, 10, 1, 0.2, 0.4 ) 
-		{
-			SpeechHue = Utility.RandomTalkHue();
-			Title = "the Jedi";
-			Hue = Utility.RandomSkinColor();
+    [Constructable]
+    public Jedi() : base(AIType.AI_Mage, FightMode.Evil, 10, 1, 0.2, 0.4)
+    {
+        SpeechHue = Utility.RandomTalkHue();
+        Title     = "the Jedi";
+        Hue       = Utility.RandomSkinColor();
 
-			if ( this.Female = Utility.RandomBool() )
-			{
-				Body = 0x191;
-				Name = NameList.RandomName( "female" );
-				Utility.AssignRandomHair( this );
-				HairHue = Utility.RandomHairHue();
-			}
-			else
-			{
-				Body = 0x190;
-				Name = NameList.RandomName( "male" ); 
-				Utility.AssignRandomHair( this );
-				int HairColor = Utility.RandomHairHue();
-				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
-				HairHue = HairColor;
-				FacialHairHue = HairColor;
-			}
+        if (this.Female = Utility.RandomBool())
+        {
+            Body = 0x191;
+            Name = NameList.RandomName("female");
+            Utility.AssignRandomHair(this);
+            HairHue = Utility.RandomHairHue();
+        }
+        else
+        {
+            Body = 0x190;
+            Name = NameList.RandomName("male");
+            Utility.AssignRandomHair(this);
+            int HairColor = Utility.RandomHairHue();
+            FacialHairItemID = Utility.RandomList(0, 8254, 8255, 8256, 8257, 8267, 8268, 8269);
+            HairHue          = HairColor;
+            FacialHairHue    = HairColor;
+        }
 
-			SetStr( 350, 400 );
-			SetDex( 177, 255 );
-			SetInt( 350, 400 );
+        SetStr(350, 400);
+        SetDex(177, 255);
+        SetInt(350, 400);
 
-			SetHits( 502, 531 );
+        SetHits(502, 531);
 
-			SetDamage( 22, 29 );
+        SetDamage(22, 29);
 
-			SetDamageType( ResistanceType.Physical, 50 );
-			SetDamageType( ResistanceType.Energy, 50 );
+        SetDamageType(ResistanceType.Physical, 50);
+        SetDamageType(ResistanceType.Energy, 50);
 
-			SetResistance( ResistanceType.Physical, 45, 55 );
-			SetResistance( ResistanceType.Fire, 30, 40 );
-			SetResistance( ResistanceType.Cold, 30, 40 );
-			SetResistance( ResistanceType.Poison, 40, 50 );
-			SetResistance( ResistanceType.Energy, 60, 70 );
+        SetResistance(ResistanceType.Physical, 45, 55);
+        SetResistance(ResistanceType.Fire, 30, 40);
+        SetResistance(ResistanceType.Cold, 30, 40);
+        SetResistance(ResistanceType.Poison, 40, 50);
+        SetResistance(ResistanceType.Energy, 60, 70);
 
-			SetSkill( SkillName.Psychology, 100.5, 150.0 );
-			SetSkill( SkillName.Magery, 100.5, 150.0 );
-			SetSkill( SkillName.Meditation, 100.5, 150.0 );
-			SetSkill( SkillName.MagicResist, 100.5, 150.0 );
+        SetSkill(SkillName.Psychology, 100.5, 150.0);
+        SetSkill(SkillName.Magery, 100.5, 150.0);
+        SetSkill(SkillName.Meditation, 100.5, 150.0);
+        SetSkill(SkillName.MagicResist, 100.5, 150.0);
 
-			SetSkill( SkillName.Anatomy, 100.5, 150.0 );
-			SetSkill( SkillName.MagicResist, 100.5, 150.0 );
-			SetSkill( SkillName.FistFighting, 100.5, 150.0 );
-			SetSkill( SkillName.Swords, 100.5, 150.0 );
-			SetSkill( SkillName.Tactics, 100.5, 150.0 );
+        SetSkill(SkillName.Anatomy, 100.5, 150.0);
+        SetSkill(SkillName.MagicResist, 100.5, 150.0);
+        SetSkill(SkillName.FistFighting, 100.5, 150.0);
+        SetSkill(SkillName.Swords, 100.5, 150.0);
+        SetSkill(SkillName.Tactics, 100.5, 150.0);
 
-			Fame = 14000;
-			Karma = 14000;
+        Fame  = 14000;
+        Karma = 14000;
 
-			int color = Utility.RandomNeutralHue();
+        int color = Utility.RandomNeutralHue();
 
-			VirtualArmor = 90;
+        VirtualArmor = 90;
 
-			Item robe = new Robe( color );
-				robe.Name = "Jedi robe";
-				AddItem( robe );
-				if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( robe, this ); }
+        Item robe = new Robe(color);
+        robe.Name = "Jedi robe";
+        AddItem(robe);
+        if (Utility.RandomMinMax(1, 10) == 1)
+        {
+            SpecialItem(robe, this);
+        }
 
-			Item boots = new ElvenBoots();
-				boots.Name = "Jedi boots";
-				AddItem( boots );
-				if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( boots, this ); }
+        Item boots = new ElvenBoots();
+        boots.Name = "Jedi boots";
+        AddItem(boots);
+        if (Utility.RandomMinMax(1, 10) == 1)
+        {
+            SpecialItem(boots, this);
+        }
 
-			if ( Utility.RandomBool() )
-			{
-				Item cloak = new Cloak( Utility.RandomNeutralHue() );
-					cloak.Name = "Jedi cloak";
-					AddItem( cloak );
-				if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( cloak, this ); }
-			}
-
-			if ( Utility.RandomBool() )
-			{
-				Item gloves = new LeatherGloves();
-					gloves.Name = "Jedi gloves";
-					AddItem( gloves );
-				if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( gloves, this ); }
-			}
-
-			Item hood = new ClothHood( color );
-				hood.Name = "Jedi hood";
-				AddItem( hood );
-			if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( hood, this ); }
-
-			if ( Utility.RandomMinMax( 1, 5 ) == 1 )
-			{
-				if ( Utility.RandomMinMax( 1, 5 ) == 1 )
-				{
-					Item sword = new DoubleLaserSword();
-						sword.Name = "Jedi double laser sword";
-						((BaseWeapon)sword).Attributes.SpellChanneling = 1;
-						AddItem( sword );
-						if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( sword, this ); }
-				}
-				else
-				{
-					Item sword = new LightSword();
-						sword.Name = "Jedi laser sword";
-						((BaseWeapon)sword).Attributes.SpellChanneling = 1;
-						AddItem( sword );
-						if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( sword, this ); }
-				}
-			}
-			else
-			{
-				Item sword = new Longsword();
-					sword.Name = "Jedi sword";
-					((BaseWeapon)sword).Attributes.SpellChanneling = 1;
-					AddItem( sword );
-					if ( Utility.RandomMinMax( 1, 10 ) == 1 ){ SpecialItem( sword, this ); }
-					if ( Server.Misc.MaterialInfo.IsMetalItem( sword ) && Utility.RandomMinMax( 1, 20 ) == 1 ){ ((BaseWeapon)sword).Resource = CraftResource.Xormite; }
-					else if ( Server.Misc.MaterialInfo.IsMetalItem( sword ) ){ Server.Misc.MorphingTime.MakeSpaceAceMetalArmorWeapon( sword, null ); }
-			}
-		}
-
-		public static void SpecialItem( Item item, Mobile m )
-		{
-			int min = (int)(m.Fame/200);
-			int max = (int)(m.Fame/100);
-			int props = (int)(m.Fame/1500) + Utility.RandomMinMax( 0, (int)(m.Fame/2000) );
-
-			if ( item is BaseHat ){ BaseHat hat = (BaseHat)item; BaseRunicTool.ApplyAttributesTo( hat, false, 0, props, min, max ); }
-			else if ( item is BaseClothing ){ BaseClothing cloth = (BaseClothing)item; BaseRunicTool.ApplyAttributesTo( cloth, false, 0, props, min, max ); }
-			else if ( item is BaseArmor ){ BaseArmor armor = (BaseArmor)item; BaseRunicTool.ApplyAttributesTo( armor, false, 0, props, min, max ); }
-			else if ( item is BaseWeapon ){ BaseWeapon weapon = (BaseWeapon)item; BaseRunicTool.ApplyAttributesTo( weapon, false, 0, props, min, max ); }
-		}
-
-		public override void OnDeath( Container c )
-		{
-			base.OnDeath( c );
-
-			if ( Utility.RandomBool() )
-			{
-				LoreBook book = new LoreBook();
-				book.BookTitle = "The Jedi Order";
-				book.Name = book.BookTitle;
-				book.BookAuthor = "Zoda the Jedi Master";
-				LoreBook.SetBookCover( 16, book );
-				book.ItemID = 0x543C;
-				book.Light = LightType.Circle225;
-				LoreBook.GetText( book );
-				c.DropItem( book );
-			}
-		}
-
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
-
-		public class SpeechGumpEntry : ContextMenuEntry
-		{
-			private Mobile m_Mobile;
-			private Mobile m_Giver;
-			
-			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
-			{
-				m_Mobile = from;
-				m_Giver = giver;
-			}
-
-			public override void OnClick()
-			{
-			    if( !( m_Mobile is PlayerMobile ) )
-				return;
-				
-				PlayerMobile mobile = (PlayerMobile) m_Mobile;
-				{
-					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
-					{
-						Server.Misc.IntelligentAction.SayHey( m_Giver );
-						mobile.SendGump(new SpeechGump( mobile, "The Way of the Jedi", SpeechFunctions.SpeechText( m_Giver, m_Mobile, "Jedi" ) ));
-					}
-				}
+        if (Utility.RandomBool())
+        {
+            Item cloak = new Cloak(Utility.RandomNeutralHue());
+            cloak.Name = "Jedi cloak";
+            AddItem(cloak);
+            if (Utility.RandomMinMax(1, 10) == 1)
+            {
+                SpecialItem(cloak, this);
             }
         }
 
-		public override bool OnDragDrop( Mobile from, Item dropped )
-		{
-			if ( dropped is Gold && dropped.Amount >= 5000 && from.Karma >= 0 && from.Skills[SkillName.Psychology].Base >= 25 )
-			{
-				this.Say( "Take this, and be enlightened." );
+        if (Utility.RandomBool())
+        {
+            Item gloves = new LeatherGloves();
+            gloves.Name = "Jedi gloves";
+            AddItem(gloves);
+            if (Utility.RandomMinMax(1, 10) == 1)
+            {
+                SpecialItem(gloves, this);
+            }
+        }
 
-				LoreBook book = new LoreBook();
-				book.BookTitle = "The Jedi Order";
-				book.Name = book.BookTitle;
-				book.BookAuthor = "Zoda the Jedi Master";
-				LoreBook.SetBookCover( 16, book );
-				book.ItemID = 0x543C;
-				book.Light = LightType.Circle225;
-				LoreBook.GetText( book );
-				from.AddToBackpack ( book );
+        Item hood = new ClothHood(color);
+        hood.Name = "Jedi hood";
+        AddItem(hood);
+        if (Utility.RandomMinMax(1, 10) == 1)
+        {
+            SpecialItem(hood, this);
+        }
 
-				dropped.Delete();
-			}
-			else
-			{
-				from.AddToBackpack ( dropped );
-			}
+        if (Utility.RandomMinMax(1, 5) == 1)
+        {
+            if (Utility.RandomMinMax(1, 5) == 1)
+            {
+                Item sword = new DoubleLaserSword();
+                sword.Name = "Jedi double laser sword";
+                ((BaseWeapon)sword).Attributes.SpellChanneling = 1;
+                AddItem(sword);
+                if (Utility.RandomMinMax(1, 10) == 1)
+                {
+                    SpecialItem(sword, this);
+                }
+            }
+            else
+            {
+                Item sword = new LightSword();
+                sword.Name = "Jedi laser sword";
+                ((BaseWeapon)sword).Attributes.SpellChanneling = 1;
+                AddItem(sword);
+                if (Utility.RandomMinMax(1, 10) == 1)
+                {
+                    SpecialItem(sword, this);
+                }
+            }
+        }
+        else
+        {
+            Item sword = new Longsword();
+            sword.Name = "Jedi sword";
+            ((BaseWeapon)sword).Attributes.SpellChanneling = 1;
+            AddItem(sword);
+            if (Utility.RandomMinMax(1, 10) == 1)
+            {
+                SpecialItem(sword, this);
+            }
+            if (Server.Misc.MaterialInfo.IsMetalItem(sword) && Utility.RandomMinMax(1, 20) == 1)
+            {
+                ((BaseWeapon)sword).Resource = CraftResource.Xormite;
+            }
+            else if (Server.Misc.MaterialInfo.IsMetalItem(sword))
+            {
+                Server.Misc.MorphingTime.MakeSpaceAceMetalArmorWeapon(sword, null);
+            }
+        }
+    }
 
-			return base.OnDragDrop( from, dropped );
-		}
+    public static void SpecialItem(Item item, Mobile m)
+    {
+        int min   = (int)(m.Fame / 200);
+        int max   = (int)(m.Fame / 100);
+        int props = (int)(m.Fame / 1500) + Utility.RandomMinMax(0, (int)(m.Fame / 2000));
 
-		public override void OnGaveMeleeAttack( Mobile defender )
-		{
-			SwitchTactics();
-			base.OnGaveMeleeAttack( defender );
-		}
+        if (item is BaseHat)
+        {
+            BaseHat hat = (BaseHat)item; BaseRunicTool.ApplyAttributesTo(hat, false, 0, props, min, max);
+        }
+        else if (item is BaseClothing)
+        {
+            BaseClothing cloth = (BaseClothing)item; BaseRunicTool.ApplyAttributesTo(cloth, false, 0, props, min, max);
+        }
+        else if (item is BaseArmor)
+        {
+            BaseArmor armor = (BaseArmor)item; BaseRunicTool.ApplyAttributesTo(armor, false, 0, props, min, max);
+        }
+        else if (item is BaseWeapon)
+        {
+            BaseWeapon weapon = (BaseWeapon)item; BaseRunicTool.ApplyAttributesTo(weapon, false, 0, props, min, max);
+        }
+    }
 
-		public override void OnGotMeleeAttack( Mobile attacker )
-		{
-			SwitchTactics();
-			base.OnGotMeleeAttack( attacker );
-		}
+    public override void OnDeath(Container c)
+    {
+        base.OnDeath(c);
 
-		public override void OnDamage( int amount, Mobile from, bool willKill )
-		{
-			SwitchTactics();
-			base.OnDamage( amount, from, willKill );
-		}
+        if (Utility.RandomBool())
+        {
+            LoreBook book = new LoreBook();
+            book.BookTitle  = "The Jedi Order";
+            book.Name       = book.BookTitle;
+            book.BookAuthor = "Zoda the Jedi Master";
+            LoreBook.SetBookCover(16, book);
+            book.ItemID = 0x543C;
+            book.Light  = LightType.Circle225;
+            LoreBook.GetText(book);
+            c.DropItem(book);
+        }
+    }
 
-		public override void OnDamagedBySpell( Mobile from )
-		{
-			SwitchTactics();
-			base.OnDamagedBySpell( from );
-		}
+    public override void GetContextMenuEntries(Mobile from, List <ContextMenuEntry> list)
+    {
+        base.GetContextMenuEntries(from, list);
+        list.Add(new SpeechGumpEntry(from, this));
+    }
 
-		public void SwitchTactics()
-		{
-			actionCount++;
+    public class SpeechGumpEntry : ContextMenuEntry
+    {
+        private Mobile m_Mobile;
+        private Mobile m_Giver;
 
-			if ( actionCount > 20 )
-			{
-				actionCount = 0;
-				if ( AI == AIType.AI_Melee ){ AI = AIType.AI_Mage; }
-				else { AI = AIType.AI_Melee; }
-			}
-		}
+        public SpeechGumpEntry(Mobile from, Mobile giver) : base(6146, 3)
+        {
+            m_Mobile = from;
+            m_Giver  = giver;
+        }
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Meager );
-		}
+        public override void OnClick()
+        {
+            if (!(m_Mobile is PlayerMobile))
+            {
+                return;
+            }
 
-		public override bool ClickTitle{ get{ return false; } }
-		public override bool ShowFameTitle{ get{ return false; } }
-		public override bool CanRummageCorpses{ get{ return true; } }
-		public override bool AlwaysAttackable{ get{ return true; } }
-		public override int Meat{ get{ return 1; } }
-		public override Poison PoisonImmune{ get{ return Poison.Greater; } }
+            PlayerMobile mobile = (PlayerMobile)m_Mobile;
+            {
+                if (!mobile.HasGump(typeof(SpeechGump)))
+                {
+                    Server.Misc.IntelligentAction.SayHey(m_Giver);
+                    mobile.SendGump(new SpeechGump(mobile, "The Way of the Jedi", SpeechFunctions.SpeechText(m_Giver, m_Mobile, "Jedi")));
+                }
+            }
+        }
+    }
 
-		public Jedi( Serial serial ) : base( serial ) 
-		{ 
-		} 
+    public override bool OnDragDrop(Mobile from, Item dropped)
+    {
+        if (dropped is Gold && dropped.Amount >= 5000 && from.Karma >= 0 && from.Skills[SkillName.Psychology].Base >= 25)
+        {
+            this.Say("Take this, and be enlightened.");
 
-		public override void Serialize( GenericWriter writer ) 
-		{ 
-			base.Serialize( writer ); 
-			writer.Write( (int) 0 ); 
-			writer.Write( actionCount );
-		} 
+            LoreBook book = new LoreBook();
+            book.BookTitle  = "The Jedi Order";
+            book.Name       = book.BookTitle;
+            book.BookAuthor = "Zoda the Jedi Master";
+            LoreBook.SetBookCover(16, book);
+            book.ItemID = 0x543C;
+            book.Light  = LightType.Circle225;
+            LoreBook.GetText(book);
+            from.AddToBackpack(book);
 
-		public override void Deserialize( GenericReader reader ) 
-		{ 
-			base.Deserialize( reader ); 
-			int version = reader.ReadInt(); 
-			actionCount = reader.ReadInt();
-		} 
-	} 
+            dropped.Delete();
+        }
+        else
+        {
+            from.AddToBackpack(dropped);
+        }
+
+        return base.OnDragDrop(from, dropped);
+    }
+
+    public override void OnGaveMeleeAttack(Mobile defender)
+    {
+        SwitchTactics();
+        base.OnGaveMeleeAttack(defender);
+    }
+
+    public override void OnGotMeleeAttack(Mobile attacker)
+    {
+        SwitchTactics();
+        base.OnGotMeleeAttack(attacker);
+    }
+
+    public override void OnDamage(int amount, Mobile from, bool willKill)
+    {
+        SwitchTactics();
+        base.OnDamage(amount, from, willKill);
+    }
+
+    public override void OnDamagedBySpell(Mobile from)
+    {
+        SwitchTactics();
+        base.OnDamagedBySpell(from);
+    }
+
+    public void SwitchTactics()
+    {
+        actionCount++;
+
+        if (actionCount > 20)
+        {
+            actionCount = 0;
+            if (AI == AIType.AI_Melee)
+            {
+                AI = AIType.AI_Mage;
+            }
+            else
+            {
+                AI = AIType.AI_Melee;
+            }
+        }
+    }
+
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Meager);
+    }
+
+    public override bool ClickTitle {
+        get { return false; }
+    }
+    public override bool ShowFameTitle {
+        get { return false; }
+    }
+    public override bool CanRummageCorpses {
+        get { return true; }
+    }
+    public override bool AlwaysAttackable {
+        get { return true; }
+    }
+    public override int Meat {
+        get { return 1; }
+    }
+    public override Poison PoisonImmune {
+        get { return Poison.Greater; }
+    }
+
+    public Jedi(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+        writer.Write(actionCount);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        actionCount = reader.ReadInt();
+    }
+}
 }

@@ -11,176 +11,202 @@ using System.IO;
 
 namespace Server.Items
 {
-	public enum StoneFaceTrapType
-	{
-		NorthWestWall,
-		NorthWall,
-		WestWall
-	}
+public enum StoneFaceTrapType
+{
+    NorthWestWall,
+    NorthWall,
+    WestWall
+}
 
-	public class StoneFaceTrap : BaseTrap
-	{
-		[CommandProperty( AccessLevel.GameMaster )]
-		public StoneFaceTrapType Type
-		{
-			get
-			{
-				switch ( ItemID )
-				{
-					case 0x10F5: case 0x10F6: case 0x10F7: return StoneFaceTrapType.NorthWestWall;
-					case 0x10FC: case 0x10FD: case 0x10FE: return StoneFaceTrapType.NorthWall;
-					case 0x110F: case 0x1110: case 0x1111: return StoneFaceTrapType.WestWall;
-				}
+public class StoneFaceTrap : BaseTrap
+{
+    [CommandProperty(AccessLevel.GameMaster)]
+    public StoneFaceTrapType Type
+    {
+        get
+        {
+            switch (ItemID)
+            {
+                case 0x10F5: case 0x10F6: case 0x10F7: return StoneFaceTrapType.NorthWestWall;
 
-				return StoneFaceTrapType.NorthWestWall;
-			}
-			set
-			{
-				bool breathing = this.Breathing;
+                case 0x10FC: case 0x10FD: case 0x10FE: return StoneFaceTrapType.NorthWall;
 
-				ItemID = ( breathing ? GetFireID( value ) : GetBaseID( value ) );
-			}
-		}
+                case 0x110F: case 0x1110: case 0x1111: return StoneFaceTrapType.WestWall;
+            }
 
-		public bool Breathing
-		{
-			get{ return ( ItemID == GetFireID( this.Type ) ); }
-			set
-			{
-				if ( value )
-					ItemID = GetFireID( this.Type );
-				else
-					ItemID = GetBaseID( this.Type );
-			}
-		}
+            return StoneFaceTrapType.NorthWestWall;
+        }
+        set
+        {
+            bool breathing = this.Breathing;
 
-		public static int GetBaseID( StoneFaceTrapType type )
-		{
-			switch ( type )
-			{
-				case StoneFaceTrapType.NorthWestWall: return 0x10F5;
-				case StoneFaceTrapType.NorthWall: return 0x10FC;
-				case StoneFaceTrapType.WestWall: return 0x110F;
-			}
+            ItemID = (breathing ? GetFireID(value) : GetBaseID(value));
+        }
+    }
 
-			return 0;
-		}
+    public bool Breathing
+    {
+        get { return ItemID == GetFireID(this.Type); }
+        set
+        {
+            if (value)
+            {
+                ItemID = GetFireID(this.Type);
+            }
+            else
+            {
+                ItemID = GetBaseID(this.Type);
+            }
+        }
+    }
 
-		public static int GetFireID( StoneFaceTrapType type )
-		{
-			switch ( type )
-			{
-				case StoneFaceTrapType.NorthWestWall: return 0x10F7;
-				case StoneFaceTrapType.NorthWall: return 0x10FE;
-				case StoneFaceTrapType.WestWall: return 0x1111;
-			}
+    public static int GetBaseID(StoneFaceTrapType type)
+    {
+        switch (type)
+        {
+            case StoneFaceTrapType.NorthWestWall: return 0x10F5;
 
-			return 0;
-		}
+            case StoneFaceTrapType.NorthWall: return 0x10FC;
 
-		[Constructable]
-		public StoneFaceTrap() : base( 0x10FC )
-		{
-			Light = LightType.Circle225;
-		}
+            case StoneFaceTrapType.WestWall: return 0x110F;
+        }
 
-		public override bool PassivelyTriggered{ get{ return true; } }
-		public override TimeSpan PassiveTriggerDelay{ get{ return TimeSpan.Zero; } }
-		public override int PassiveTriggerRange{ get{ return 2; } }
-		public override TimeSpan ResetDelay{ get{ return TimeSpan.Zero; } }
+        return 0;
+    }
 
-		public override void OnTrigger( Mobile from )
-		{
-			if ( !from.Alive || !from.Player || from.AccessLevel > AccessLevel.Player )
-				return;
+    public static int GetFireID(StoneFaceTrapType type)
+    {
+        switch (type)
+        {
+            case StoneFaceTrapType.NorthWestWall: return 0x10F7;
 
-			if ( Server.Misc.SeeIfGemInBag.GemInPocket( from ) == true || Server.Misc.SeeIfJewelInBag.JewelInPocket( from ) == true )
-				return;
+            case StoneFaceTrapType.NorthWall: return 0x10FE;
 
-			if ( HiddenTrap.CheckTrapAvoidance( from, this ) == 0 )
-				return;
+            case StoneFaceTrapType.WestWall: return 0x1111;
+        }
 
-			if ( !from.Player )
-				return;
+        return 0;
+    }
 
-			Effects.PlaySound( Location, Map, 0x359 );
+    [Constructable]
+    public StoneFaceTrap() : base(0x10FC)
+    {
+        Light = LightType.Circle225;
+    }
 
-			Breathing = true;
+    public override bool PassivelyTriggered {
+        get { return true; }
+    }
+    public override TimeSpan PassiveTriggerDelay {
+        get { return TimeSpan.Zero; }
+    }
+    public override int PassiveTriggerRange {
+        get { return 2; }
+    }
+    public override TimeSpan ResetDelay {
+        get { return TimeSpan.Zero; }
+    }
 
-			Timer.DelayCall( TimeSpan.FromSeconds( 2.0 ), new TimerCallback( FinishBreath ) );
-			Timer.DelayCall( TimeSpan.FromSeconds( 1.0 ), new TimerCallback( TriggerDamage ) );
+    public override void OnTrigger(Mobile from)
+    {
+        if (!from.Alive || !from.Player || from.AccessLevel > AccessLevel.Player)
+        {
+            return;
+        }
 
-			LoggingFunctions.LogTraps( from, "a trapped stone face" );
-		}
+        if (Server.Misc.SeeIfGemInBag.GemInPocket(from) == true || Server.Misc.SeeIfJewelInBag.JewelInPocket(from) == true)
+        {
+            return;
+        }
 
-		public virtual void FinishBreath()
-		{
-			Breathing = false;
-		}
+        if (HiddenTrap.CheckTrapAvoidance(from, this) == 0)
+        {
+            return;
+        }
 
-		public virtual void TriggerDamage()
-		{
-			int itHurts = 0;
+        if (!from.Player)
+        {
+            return;
+        }
 
-			foreach ( Mobile mob in GetMobilesInRange( 1 ) )
-			{
-				if ( mob.Alive && !mob.IsDeadBondedPet && mob.AccessLevel == AccessLevel.Player && mob.Player )
-				{
-					itHurts = (int)( (Utility.RandomMinMax(50,200) * ( 100 - mob.FireResistance ) ) / 100 );
-					Spells.SpellHelper.Damage( TimeSpan.FromTicks( 1 ), mob, mob, itHurts );
-				}
-			}
-		}
+        Effects.PlaySound(Location, Map, 0x359);
 
-		public StoneFaceTrap( Serial serial ) : base( serial )
-		{
-		}
+        Breathing = true;
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+        Timer.DelayCall(TimeSpan.FromSeconds(2.0), new TimerCallback(FinishBreath));
+        Timer.DelayCall(TimeSpan.FromSeconds(1.0), new TimerCallback(TriggerDamage));
 
-			writer.Write( (int) 0 ); // version
-		}
+        LoggingFunctions.LogTraps(from, "a trapped stone face");
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public virtual void FinishBreath()
+    {
+        Breathing = false;
+    }
 
-			int version = reader.ReadInt();
+    public virtual void TriggerDamage()
+    {
+        int itHurts = 0;
 
-			Breathing = false;
-		}
-	}
+        foreach (Mobile mob in GetMobilesInRange(1))
+        {
+            if (mob.Alive && !mob.IsDeadBondedPet && mob.AccessLevel == AccessLevel.Player && mob.Player)
+            {
+                itHurts = (int)((Utility.RandomMinMax(50, 200) * (100 - mob.FireResistance)) / 100);
+                Spells.SpellHelper.Damage(TimeSpan.FromTicks(1), mob, mob, itHurts);
+            }
+        }
+    }
 
-	public class StoneFaceTrapNoDamage : StoneFaceTrap
-	{
-		[Constructable]
-		public StoneFaceTrapNoDamage()
-		{
-		}
+    public StoneFaceTrap(Serial serial) : base(serial)
+    {
+    }
 
-		public StoneFaceTrapNoDamage( Serial serial ) : base( serial )
-		{
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-		public override void TriggerDamage()
-		{
-			// nothing..
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			writer.Write( (int) 0 ); // version
-		}
+        int version = reader.ReadInt();
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+        Breathing = false;
+    }
+}
 
-			int version = reader.ReadInt();
-		}
-	}
+public class StoneFaceTrapNoDamage : StoneFaceTrap
+{
+    [Constructable]
+    public StoneFaceTrapNoDamage()
+    {
+    }
+
+    public StoneFaceTrapNoDamage(Serial serial) : base(serial)
+    {
+    }
+
+    public override void TriggerDamage()
+    {
+        // nothing..
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+
+        writer.Write((int)0);                    // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadInt();
+    }
+}
 }

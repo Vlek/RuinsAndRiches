@@ -7,79 +7,104 @@ using Server.Misc;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a reptalar corpse" )]
-	public class ReptalarChieftain : BaseCreature
-	{
-		public override InhumanSpeech SpeechType { get { return InhumanSpeech.Lizardman; } }
-        public override int GetAngerSound(){ return 0x1A1; }
-        public override int GetIdleSound(){ return 0x1A2; }
+[CorpseName("a reptalar corpse")]
+public class ReptalarChieftain : BaseCreature
+{
+    public override InhumanSpeech SpeechType {
+        get { return InhumanSpeech.Lizardman; }
+    }
+    public override int GetAngerSound()
+    {
+        return 0x1A1;
+    }
 
-		[Constructable]
-		public ReptalarChieftain() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
-			Name = NameList.RandomName( "lizardman" );
-			Title = "the reptalar chieftain";
-			Body = 541;
-			BaseSoundID = 417;
-			CanSwim = true;
+    public override int GetIdleSound()
+    {
+        return 0x1A2;
+    }
 
-			SetStr( 336, 385 );
-			SetDex( 96, 115 );
-			SetInt( 31, 55 );
+    [Constructable]
+    public ReptalarChieftain() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        Name        = NameList.RandomName("lizardman");
+        Title       = "the reptalar chieftain";
+        Body        = 541;
+        BaseSoundID = 417;
+        CanSwim     = true;
 
-			SetHits( 202, 231 );
-			SetMana( 0 );
+        SetStr(336, 385);
+        SetDex(96, 115);
+        SetInt(31, 55);
 
-			SetDamage( 7, 23 );
+        SetHits(202, 231);
+        SetMana(0);
 
-			SetDamageType( ResistanceType.Physical, 75 );
-			SetDamageType( ResistanceType.Poison, 25 );
+        SetDamage(7, 23);
 
-			SetResistance( ResistanceType.Physical, 35, 40 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
-			SetResistance( ResistanceType.Cold, 15, 25 );
-			SetResistance( ResistanceType.Poison, 40, 50 );
-			SetResistance( ResistanceType.Energy, 15, 25 );
+        SetDamageType(ResistanceType.Physical, 75);
+        SetDamageType(ResistanceType.Poison, 25);
 
-			SetSkill( SkillName.MagicResist, 60.3, 105.0 );
-			SetSkill( SkillName.Tactics, 80.1, 100.0 );
-			SetSkill( SkillName.FistFighting, 80.1, 90.0 );
+        SetResistance(ResistanceType.Physical, 35, 40);
+        SetResistance(ResistanceType.Fire, 15, 25);
+        SetResistance(ResistanceType.Cold, 15, 25);
+        SetResistance(ResistanceType.Poison, 40, 50);
+        SetResistance(ResistanceType.Energy, 15, 25);
 
-			Fame = 4500;
-			Karma = -4500;
+        SetSkill(SkillName.MagicResist, 60.3, 105.0);
+        SetSkill(SkillName.Tactics, 80.1, 100.0);
+        SetSkill(SkillName.FistFighting, 80.1, 90.0);
 
-			VirtualArmor = 48;
-		}
+        Fame  = 4500;
+        Karma = -4500;
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Average );
-			AddLoot( LootPack.Average );
-		}
+        VirtualArmor = 48;
+    }
 
-		public override bool CanRummageCorpses{ get{ return true; } }
-		public override int Meat{ get{ return 1; } }
-		public override int Hides{ get{ return 12; } }
-		public override HideType HideType{ get{ return HideType.Horned; } }
-		public override int Scales{ get{ return 1; } }
-		public override ScaleType ScaleType{ get{ return ( ScaleType.Red ); } }
-		public override Poison PoisonImmune{ get{ return Poison.Regular; } }
-		public override Poison HitPoison{ get{ return Poison.Lesser; } }
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Average);
+        AddLoot(LootPack.Average);
+    }
 
-		public ReptalarChieftain( Serial serial ) : base( serial )
-		{
-		}
+    public override bool CanRummageCorpses {
+        get { return true; }
+    }
+    public override int Meat {
+        get { return 1; }
+    }
+    public override int Hides {
+        get { return 12; }
+    }
+    public override HideType HideType {
+        get { return HideType.Horned; }
+    }
+    public override int Scales {
+        get { return 1; }
+    }
+    public override ScaleType ScaleType {
+        get { return ScaleType.Red; }
+    }
+    public override Poison PoisonImmune {
+        get { return Poison.Regular; }
+    }
+    public override Poison HitPoison {
+        get { return Poison.Lesser; }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public ReptalarChieftain(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

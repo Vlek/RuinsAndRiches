@@ -5,178 +5,190 @@ using Server.Network;
 
 namespace Server.Items
 {
-    public class EShadowBannerComponent : AddonComponent
+public class EShadowBannerComponent : AddonComponent
+{
+    [Constructable]
+    public EShadowBannerComponent(int itemID)
+        : base(itemID)
     {
-        [Constructable]
-        public EShadowBannerComponent(int itemID)
-            : base(itemID)
+        Weight  = 100.0;
+        Movable = false;
+    }
+
+    public override int LabelNumber {
+        get { return 1076683; }
+    }
+    public EShadowBannerComponent(Serial serial)
+        : base(serial)
+    {
+    }
+
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!from.InRange(this.GetWorldLocation(), 2))
         {
-            Weight = 100.0;
-            Movable = false;
-        }
-
-        public override int LabelNumber { get { return 1076683; } }
-        public EShadowBannerComponent(Serial serial)
-            : base(serial)
-        {
-        }
-
-        public override void OnDoubleClick(Mobile from)
-        {
-            if (!from.InRange(this.GetWorldLocation(), 2))
-            {
-                from.LocalOverheadMessage(MessageType.Regular, 906, 1019045); // I can't reach that.
-            }
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-
-            writer.Write((int)0); // version
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-
-            int version = reader.ReadInt();
+            from.LocalOverheadMessage(MessageType.Regular, 906, 1019045);     // I can't reach that.
         }
     }
 
-    public class EShadowBannerAddon : BaseAddon
-	{
-        public override BaseAddonDeed Deed { get { return new EShadowBannerDeed(); } }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-		[Constructable]
-		public EShadowBannerAddon( bool east )
-		{
-			if ( east )
-			{
-                AddComponent(new EShadowBannerComponent(0x365F), 0, 0, 0);
-                AddComponent(new EShadowBannerComponent(0x365E), 0, -1, 0);
-			}
-			else
-			{
-                AddComponent(new EShadowBannerComponent(0x365D), 0, 0, 0);
-                AddComponent(new EShadowBannerComponent(0x365C), 1, 0, 0);
-			}
-		}
+        writer.Write((int)0);     // version
+    }
 
-		public EShadowBannerAddon( Serial serial ) : base( serial )
-		{
-		}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+        int version = reader.ReadInt();
+    }
+}
 
-			writer.WriteEncodedInt( (int) 0 ); // version
-		}
+public class EShadowBannerAddon : BaseAddon
+{
+    public override BaseAddonDeed Deed {
+        get { return new EShadowBannerDeed();
+        }
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    [Constructable]
+    public EShadowBannerAddon(bool east)
+    {
+        if (east)
+        {
+            AddComponent(new EShadowBannerComponent(0x365F), 0, 0, 0);
+            AddComponent(new EShadowBannerComponent(0x365E), 0, -1, 0);
+        }
+        else
+        {
+            AddComponent(new EShadowBannerComponent(0x365D), 0, 0, 0);
+            AddComponent(new EShadowBannerComponent(0x365C), 1, 0, 0);
+        }
+    }
 
-			int version = reader.ReadEncodedInt();
-		}
-	}
+    public EShadowBannerAddon(Serial serial) : base(serial)
+    {
+    }
 
-	public class EShadowBannerDeed : BaseAddonDeed
-	{
-		private bool m_East;
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-        public override BaseAddon Addon { get { return new EShadowBannerAddon(m_East); } }
+        writer.WriteEncodedInt((int)0);                    // version
+    }
 
-		[Constructable]
-		public EShadowBannerDeed()
-		{
-			Name = "box containing a shadow banner";
-            ItemID = Utility.RandomList( 0x3420, 0x3425 );
-            Hue = Utility.RandomEvilHue();
-            Weight = 5.0;
-		}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			if ( IsChildOf( from.Backpack ) )
-			{
-				from.CloseGump( typeof( InternalGump ) );
-				from.SendGump( new InternalGump( this ) );
-			}
-			else
-			{
-				from.SendLocalizedMessage( 1042001 ); // That must be in your pack for you to use it.
-			}
-		}
+        int version = reader.ReadEncodedInt();
+    }
+}
 
-		private void SendTarget( Mobile m )
-		{
-			base.OnDoubleClick( m );
-		}
+public class EShadowBannerDeed : BaseAddonDeed
+{
+    private bool m_East;
 
-		private class InternalGump : Gump
-		{
-			private EShadowBannerDeed m_Deed;
+    public override BaseAddon Addon {
+        get { return new EShadowBannerAddon(m_East); }
+    }
 
-			public InternalGump( EShadowBannerDeed deed ) : base( 60, 35 )
-			{
-				m_Deed = deed;
+    [Constructable]
+    public EShadowBannerDeed()
+    {
+        Name   = "box containing a shadow banner";
+        ItemID = Utility.RandomList(0x3420, 0x3425);
+        Hue    = Utility.RandomEvilHue();
+        Weight = 5.0;
+    }
 
-                AddBackground(0, 0, 270, 330, 0x13BE);
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (IsChildOf(from.Backpack))
+        {
+            from.CloseGump(typeof(InternalGump));
+            from.SendGump(new InternalGump(this));
+        }
+        else
+        {
+            from.SendLocalizedMessage(1042001);                       // That must be in your pack for you to use it.
+        }
+    }
 
-                AddImageTiled(10, 10, 250, 20, 0xA40);
-                AddImageTiled(10, 40, 250, 250, 0xA40);
-                AddImageTiled(10, 300, 250, 20, 0xA40);
+    private void SendTarget(Mobile m)
+    {
+        base.OnDoubleClick(m);
+    }
 
-                AddAlphaRegion(10, 10, 250, 310);
+    private class InternalGump : Gump
+    {
+        private EShadowBannerDeed m_Deed;
 
-                AddHtmlLocalized(13, 12, 250, 20, 1076728, 0x7FFF, false, false); //Position
-               
-				AddButton(15, 48, 0x4B9, 0x4BA, 1, GumpButtonType.Reply, 0); // South
-                AddHtmlLocalized(38, 46, 340, 20, 1075386, 0x7FFF, false, false); // South
+        public InternalGump(EShadowBannerDeed deed) : base(60, 35)
+        {
+            m_Deed = deed;
 
-                AddButton(15, 70, 0x4B9, 0x4BA, 2, GumpButtonType.Reply, 0); // East
-                AddHtmlLocalized(38, 67, 340, 20, 1075387, 0x7FFF, false, false); // East
+            AddBackground(0, 0, 270, 330, 0x13BE);
 
-                AddButton(10, 300, 0xFB1, 0xFB2, 0, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(45, 302, 340, 20, 1060051, 0x7FFF, false, false); // CANCEL
-			}
+            AddImageTiled(10, 10, 250, 20, 0xA40);
+            AddImageTiled(10, 40, 250, 250, 0xA40);
+            AddImageTiled(10, 300, 250, 20, 0xA40);
 
-            public void AddBlackAlpha(int x, int y, int width, int height)
+            AddAlphaRegion(10, 10, 250, 310);
+
+            AddHtmlLocalized(13, 12, 250, 20, 1076728, 0x7FFF, false, false); //Position
+
+            AddButton(15, 48, 0x4B9, 0x4BA, 1, GumpButtonType.Reply, 0);      // South
+            AddHtmlLocalized(38, 46, 340, 20, 1075386, 0x7FFF, false, false); // South
+
+            AddButton(15, 70, 0x4B9, 0x4BA, 2, GumpButtonType.Reply, 0);      // East
+            AddHtmlLocalized(38, 67, 340, 20, 1075387, 0x7FFF, false, false); // East
+
+            AddButton(10, 300, 0xFB1, 0xFB2, 0, GumpButtonType.Reply, 0);
+            AddHtmlLocalized(45, 302, 340, 20, 1060051, 0x7FFF, false, false);     // CANCEL
+        }
+
+        public void AddBlackAlpha(int x, int y, int width, int height)
+        {
+            AddImageTiled(x, y, width, height, 2624);
+            AddAlphaRegion(x, y, width, height);
+        }
+
+        public override void OnResponse(NetState sender, RelayInfo info)
+        {
+            if (m_Deed.Deleted || info.ButtonID == 0)
             {
-                AddImageTiled(x, y, width, height, 2624);
-                AddAlphaRegion(x, y, width, height);
+                return;
             }
 
-			public override void OnResponse( NetState sender, RelayInfo info )
-			{
-				if ( m_Deed.Deleted || info.ButtonID == 0 )
-					return;
+            m_Deed.m_East = (info.ButtonID != 1);
+            m_Deed.SendTarget(sender.Mobile);
+        }
+    }
 
-				m_Deed.m_East = (info.ButtonID != 1);
-				m_Deed.SendTarget( sender.Mobile );
-			}
-		}
+    public EShadowBannerDeed(Serial serial) : base(serial)
+    {
+    }
 
-		public EShadowBannerDeed( Serial serial ) : base( serial )
-		{
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+        writer.WriteEncodedInt((int)0);                    // version
+    }
 
-			writer.WriteEncodedInt( (int) 0 ); // version
-		}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+        int version = reader.ReadEncodedInt();
 
-			int version = reader.ReadEncodedInt();
-
-			if ( ItemID != 0x3420 && ItemID != 0x3425 ){ ItemID = 0x3425; }
-		}
-	}
+        if (ItemID != 0x3420 && ItemID != 0x3425)
+        {
+            ItemID = 0x3425;
+        }
+    }
+}
 }

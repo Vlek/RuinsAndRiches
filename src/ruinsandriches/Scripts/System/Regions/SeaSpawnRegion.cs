@@ -6,10 +6,10 @@ using Server.Misc;
 
 namespace Server.Regions
 {
-	public class SeaSpawnRegion : BaseRegion
-	{
-		public SeaSpawnRegion( XmlElement xml, Map map, Region parent ) : base( xml, map, parent )
-		{
-		}
-	}
+public class SeaSpawnRegion : BaseRegion
+{
+    public SeaSpawnRegion(XmlElement xml, Map map, Region parent) : base(xml, map, parent)
+    {
+    }
+}
 }

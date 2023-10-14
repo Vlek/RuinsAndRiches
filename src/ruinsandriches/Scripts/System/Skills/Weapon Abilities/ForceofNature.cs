@@ -6,139 +6,158 @@ using System.Collections;
 
 namespace Server.Items
 {
-	public class ForceOfNature : WeaponAbility
-	{
-		public ForceOfNature()
-		{
-		}
+public class ForceOfNature : WeaponAbility
+{
+    public ForceOfNature()
+    {
+    }
 
-		public override int BaseMana { get { return 40; } }
+    public override int BaseMana {
+        get { return 40; }
+    }
 
-		public override void OnHit(Mobile attacker, Mobile defender, int damage)
-		{
-			if (!Validate(attacker) || !CheckMana(attacker, true))
-				return;
+    public override void OnHit(Mobile attacker, Mobile defender, int damage)
+    {
+        if (!Validate(attacker) || !CheckMana(attacker, true))
+        {
+            return;
+        }
 
-			ClearCurrentAbility(attacker);
+        ClearCurrentAbility(attacker);
 
-			attacker.SendLocalizedMessage(1074374); // You attack your enemy with the force of nature!
-			defender.SendLocalizedMessage(1074375); // You are assaulted with great force!
+        attacker.SendLocalizedMessage(1074374);                 // You attack your enemy with the force of nature!
+        defender.SendLocalizedMessage(1074375);                 // You are assaulted with great force!
 
-			defender.PlaySound(0x22F);
-			defender.FixedParticles(0x36CB, 1, 9, 9911, 67, 5, EffectLayer.Head);
-			defender.FixedParticles(0x374A, 1, 17, 9502, 1108, 4, (EffectLayer)255);
+        defender.PlaySound(0x22F);
+        defender.FixedParticles(0x36CB, 1, 9, 9911, 67, 5, EffectLayer.Head);
+        defender.FixedParticles(0x374A, 1, 17, 9502, 1108, 4, (EffectLayer)255);
 
-			if (!m_Table.Contains(defender))
-			{
-				Timer t = new InternalTimer(defender, attacker);
-				t.Start();
+        if (!m_Table.Contains(defender))
+        {
+            Timer t = new InternalTimer(defender, attacker);
+            t.Start();
 
-				m_Table[defender] = t;
-			}
-		}
-		private static Hashtable m_Table = new Hashtable();
+            m_Table[defender] = t;
+        }
+    }
 
-		public static bool RemoveCurse(Mobile m)
-		{
-			Timer t = (Timer)m_Table[m];
+    private static Hashtable m_Table = new Hashtable();
 
-			if (t == null)
-				return false;
+    public static bool RemoveCurse(Mobile m)
+    {
+        Timer t = (Timer)m_Table[m];
 
-			t.Stop();
-			m.SendLocalizedMessage(1061687); // You can breath normally again.
+        if (t == null)
+        {
+            return false;
+        }
 
-			m_Table.Remove(m);
-			return true;
-		}
+        t.Stop();
+        m.SendLocalizedMessage(1061687);                 // You can breath normally again.
 
-		private class InternalTimer : Timer
-		{
-			private Mobile m_Target, m_From;
-			private double m_MinBaseDamage, m_MaxBaseDamage;
+        m_Table.Remove(m);
+        return true;
+    }
 
-			private DateTime m_NextHit;
-			private int m_HitDelay;
+    private class InternalTimer : Timer
+    {
+        private Mobile m_Target, m_From;
+        private double m_MinBaseDamage, m_MaxBaseDamage;
 
-			private int m_Count, m_MaxCount;
+        private DateTime m_NextHit;
+        private int m_HitDelay;
 
-			public InternalTimer(Mobile target, Mobile from)
-				: base(TimeSpan.FromSeconds(0.1), TimeSpan.FromSeconds(0.1))
-			{
-				Priority = TimerPriority.FiftyMS;
+        private int m_Count, m_MaxCount;
 
-				m_Target = target;
-				m_From = from;
+        public InternalTimer(Mobile target, Mobile from)
+            : base(TimeSpan.FromSeconds(0.1), TimeSpan.FromSeconds(0.1))
+        {
+            Priority = TimerPriority.FiftyMS;
 
-				double spiritLevel = from.Skills[SkillName.Spiritualism].Value / 15;
+            m_Target = target;
+            m_From   = from;
 
-				m_MinBaseDamage = spiritLevel - 2;
-				m_MaxBaseDamage = spiritLevel + 1;
+            double spiritLevel = from.Skills[SkillName.Spiritualism].Value / 15;
 
-				m_HitDelay = 5;
-				m_NextHit = DateTime.Now + TimeSpan.FromSeconds(m_HitDelay);
+            m_MinBaseDamage = spiritLevel - 2;
+            m_MaxBaseDamage = spiritLevel + 1;
 
-				m_Count = (int)spiritLevel;
+            m_HitDelay = 5;
+            m_NextHit  = DateTime.Now + TimeSpan.FromSeconds(m_HitDelay);
 
-				if (m_Count < 4)
-					m_Count = 4;
+            m_Count = (int)spiritLevel;
 
-				m_MaxCount = m_Count;
-			}
+            if (m_Count < 4)
+            {
+                m_Count = 4;
+            }
 
-			protected override void OnTick()
-			{
-				if (!m_Target.Alive)
-				{
-					m_Table.Remove(m_Target);
-					Stop();
-				}
+            m_MaxCount = m_Count;
+        }
 
-				if (!m_Target.Alive || DateTime.Now < m_NextHit)
-					return;
+        protected override void OnTick()
+        {
+            if (!m_Target.Alive)
+            {
+                m_Table.Remove(m_Target);
+                Stop();
+            }
 
-				--m_Count;
+            if (!m_Target.Alive || DateTime.Now < m_NextHit)
+            {
+                return;
+            }
 
-				if (m_HitDelay > 1)
-				{
-					if (m_MaxCount < 5)
-					{
-						--m_HitDelay;
-					}
-					else
-					{
-						int delay = (int)(Math.Ceiling((1.0 + (5 * m_Count)) / m_MaxCount));
+            --m_Count;
 
-						if (delay <= 5)
-							m_HitDelay = delay;
-						else
-							m_HitDelay = 5;
-					}
-				}
+            if (m_HitDelay > 1)
+            {
+                if (m_MaxCount < 5)
+                {
+                    --m_HitDelay;
+                }
+                else
+                {
+                    int delay = (int)(Math.Ceiling((1.0 + (5 * m_Count)) / m_MaxCount));
 
-				if (m_Count == 0)
-				{
-					m_Target.SendLocalizedMessage(1061687); // You can breath normally again.
-					m_Table.Remove(m_Target);
-					Stop();
-				}
-				else
-				{
-					m_NextHit = DateTime.Now + TimeSpan.FromSeconds(m_HitDelay);
+                    if (delay <= 5)
+                    {
+                        m_HitDelay = delay;
+                    }
+                    else
+                    {
+                        m_HitDelay = 5;
+                    }
+                }
+            }
 
-					double damage = m_MinBaseDamage + (Utility.RandomDouble() * (m_MaxBaseDamage - m_MinBaseDamage));
+            if (m_Count == 0)
+            {
+                m_Target.SendLocalizedMessage(1061687);                         // You can breath normally again.
+                m_Table.Remove(m_Target);
+                Stop();
+            }
+            else
+            {
+                m_NextHit = DateTime.Now + TimeSpan.FromSeconds(m_HitDelay);
 
-					damage *= (3 - (((double)m_Target.Stam / m_Target.StamMax) * 2));
+                double damage = m_MinBaseDamage + (Utility.RandomDouble() * (m_MaxBaseDamage - m_MinBaseDamage));
 
-					if (damage < 1)
-						damage = 1;
+                damage *= (3 - (((double)m_Target.Stam / m_Target.StamMax) * 2));
 
-					if (!m_Target.Player)
-						damage *= 1.75;
+                if (damage < 1)
+                {
+                    damage = 1;
+                }
 
-					AOS.Damage(m_Target, m_From, (int)damage, 0, 0, 0, 100, 0);
-				}
-			}
-		}
-	}
+                if (!m_Target.Player)
+                {
+                    damage *= 1.75;
+                }
+
+                AOS.Damage(m_Target, m_From, (int)damage, 0, 0, 0, 100, 0);
+            }
+        }
+    }
+}
 }

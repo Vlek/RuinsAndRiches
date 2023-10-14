@@ -1,22 +1,22 @@
 ﻿/***************************************************************************
- *                          DynamicSaveStrategy.cs
- *                            -------------------
- *   begin                : December 16, 2010
- *   copyright            : (C) The RunUO Software Team
- *   email                : info@runuo.com
- *
- *   $Id$
- *
- ***************************************************************************/
+*                          DynamicSaveStrategy.cs
+*                            -------------------
+*   begin                : December 16, 2010
+*   copyright            : (C) The RunUO Software Team
+*   email                : info@runuo.com
+*
+*   $Id$
+*
+***************************************************************************/
 
 /***************************************************************************
- *
- *   This program is free software; you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License as published by
- *   the Free Software Foundation; either version 2 of the License, or
- *   (at your option) any later version.
- *
- ***************************************************************************/
+*
+*   This program is free software; you can redistribute it and/or modify
+*   it under the terms of the GNU General Public License as published by
+*   the Free Software Foundation; either version 2 of the License, or
+*   (at your option) any later version.
+*
+***************************************************************************/
 
 #if Framework_4_0
 
@@ -35,280 +35,279 @@ using Server.Guilds;
 
 namespace Server
 {
-	public sealed class DynamicSaveStrategy : SaveStrategy
-	{
-		public override string Name { get { return "Dynamic"; } }
-
-		private SaveMetrics _metrics;
-
-		private SequentialFileWriter _itemData, _itemIndex;
-		private SequentialFileWriter _mobileData, _mobileIndex;
-		private SequentialFileWriter _guildData, _guildIndex;
-
-		private ConcurrentBag<Item> _decayBag;
-
-		private BlockingCollection<QueuedMemoryWriter> _itemThreadWriters;
-		private BlockingCollection<QueuedMemoryWriter> _mobileThreadWriters;
-		private BlockingCollection<QueuedMemoryWriter> _guildThreadWriters;
-
-		public DynamicSaveStrategy()
-		{
-			_decayBag = new ConcurrentBag<Item>();
-			_itemThreadWriters = new BlockingCollection<QueuedMemoryWriter>();
-			_mobileThreadWriters = new BlockingCollection<QueuedMemoryWriter>();
-			_guildThreadWriters = new BlockingCollection<QueuedMemoryWriter>();
-		}
-
-		public override void Save(SaveMetrics metrics, bool permitBackgroundWrite)
-		{
-			this._metrics = metrics;
-
-			OpenFiles();
-
-			Task[] saveTasks = new Task[3];
-
-			saveTasks[0] = SaveItems();
-			saveTasks[1] = SaveMobiles();
-			saveTasks[2] = SaveGuilds();
-
-			SaveTypeDatabases();
-
-			if (permitBackgroundWrite)
-			{
-				//This option makes it finish the writing to disk in the background, continuing even after Save() returns.
-				Task.Factory.ContinueWhenAll(saveTasks, _ =>
-					{
-						CloseFiles();
+public sealed class DynamicSaveStrategy : SaveStrategy
+{
+    public override string Name {
+        get { return "Dynamic"; }
+    }
+
+    private SaveMetrics _metrics;
+
+    private SequentialFileWriter _itemData, _itemIndex;
+    private SequentialFileWriter _mobileData, _mobileIndex;
+    private SequentialFileWriter _guildData, _guildIndex;
+
+    private ConcurrentBag <Item> _decayBag;
+
+    private BlockingCollection <QueuedMemoryWriter> _itemThreadWriters;
+    private BlockingCollection <QueuedMemoryWriter> _mobileThreadWriters;
+    private BlockingCollection <QueuedMemoryWriter> _guildThreadWriters;
+
+    public DynamicSaveStrategy()
+    {
+        _decayBag            = new ConcurrentBag <Item>();
+        _itemThreadWriters   = new BlockingCollection <QueuedMemoryWriter>();
+        _mobileThreadWriters = new BlockingCollection <QueuedMemoryWriter>();
+        _guildThreadWriters  = new BlockingCollection <QueuedMemoryWriter>();
+    }
+
+    public override void Save(SaveMetrics metrics, bool permitBackgroundWrite)
+    {
+        this._metrics = metrics;
+
+        OpenFiles();
+
+        Task[] saveTasks = new Task[3];
+
+        saveTasks[0] = SaveItems();
+        saveTasks[1] = SaveMobiles();
+        saveTasks[2] = SaveGuilds();
+
+        SaveTypeDatabases();
+
+        if (permitBackgroundWrite)
+        {
+            //This option makes it finish the writing to disk in the background, continuing even after Save() returns.
+            Task.Factory.ContinueWhenAll(saveTasks, _ =>
+                {
+                    CloseFiles();
+
+                    World.NotifyDiskWriteComplete();
+                });
+        }
+        else
+        {
+            Task.WaitAll(saveTasks);                            //Waits for the completion of all of the tasks(committing to disk)
+            CloseFiles();
+        }
+    }
+
+    private Task StartCommitTask(BlockingCollection <QueuedMemoryWriter> threadWriter, SequentialFileWriter data, SequentialFileWriter index)
+    {
+        Task commitTask = Task.Factory.StartNew(() =>
+            {
+                while (!(threadWriter.IsCompleted))
+                {
+                    QueuedMemoryWriter writer;
+
+                    try
+                    {
+                        writer = threadWriter.Take();
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        //Per MSDN, it's fine if we're here, successful completion of adding can rarely put us into this state.
+                        break;
+                    }
+
+                    writer.CommitTo(data, index);
+                }
+            });
+
+        return commitTask;
+    }
+
+    private Task SaveItems()
+    {
+        //Start the blocking consumer; this runs in background.
+        Task commitTask = StartCommitTask(_itemThreadWriters, _itemData, _itemIndex);
+
+        IEnumerable <Item> items = World.Items.Values;
 
-						World.NotifyDiskWriteComplete();
-					});
-			}
-			else
-			{
-				Task.WaitAll(saveTasks);	//Waits for the completion of all of the tasks(committing to disk)
-				CloseFiles();
-			}
-		}
-
-		private Task StartCommitTask(BlockingCollection<QueuedMemoryWriter> threadWriter, SequentialFileWriter data, SequentialFileWriter index)
-		{
-			Task commitTask = Task.Factory.StartNew(() =>
-			{
-				while (!(threadWriter.IsCompleted))
-				{
-					QueuedMemoryWriter writer;
+        //Start the producer.
+        Parallel.ForEach(items, () => new QueuedMemoryWriter(),
+                         (Item item, ParallelLoopState state, QueuedMemoryWriter writer) =>
+            {
+                long startPosition = writer.Position;
+
+                item.Serialize(writer);
 
-					try
-					{
-						writer = threadWriter.Take();
-					}
-					catch (InvalidOperationException)
-					{
-						//Per MSDN, it's fine if we're here, successful completion of adding can rarely put us into this state.
-						break;
-					}
+                int size = (int)(writer.Position - startPosition);
 
-					writer.CommitTo(data, index);
-				}
-			});
+                writer.QueueForIndex(item, size);
 
-			return commitTask;
-		}
+                if (item.Decays && item.Parent == null && item.Map != Map.Internal && DateTime.Now > (item.LastMoved + item.DecayTime))
+                {
+                    _decayBag.Add(item);
+                }
 
-		private Task SaveItems()
-		{
-			//Start the blocking consumer; this runs in background.
-			Task commitTask = StartCommitTask(_itemThreadWriters, _itemData, _itemIndex);
+                if (_metrics != null)
+                {
+                    _metrics.OnItemSaved(size);
+                }
 
-			IEnumerable<Item> items = World.Items.Values;
+                return writer;
+            },
+                         (writer) =>
+            {
+                writer.Flush();
 
-			//Start the producer.
-			Parallel.ForEach(items, () => new QueuedMemoryWriter(), 
-				(Item item, ParallelLoopState state, QueuedMemoryWriter writer) =>
-				{
-					long startPosition = writer.Position;
+                _itemThreadWriters.Add(writer);
+            });
 
-					item.Serialize(writer);
+        _itemThreadWriters.CompleteAdding();                    //We only get here after the Parallel.ForEach completes.  Lets our task
 
-					int size = (int)(writer.Position - startPosition);
+        return commitTask;
+    }
 
-					writer.QueueForIndex(item, size);
+    private Task SaveMobiles()
+    {
+        //Start the blocking consumer; this runs in background.
+        Task commitTask = StartCommitTask(_mobileThreadWriters, _mobileData, _mobileIndex);
 
-					if (item.Decays && item.Parent == null && item.Map != Map.Internal && DateTime.Now > (item.LastMoved + item.DecayTime))
-					{
-						_decayBag.Add(item);
-					}
+        IEnumerable <Mobile> mobiles = World.Mobiles.Values;
 
-					if (_metrics != null)
-					{
-						_metrics.OnItemSaved(size);
-					}
+        //Start the producer.
+        Parallel.ForEach(mobiles, () => new QueuedMemoryWriter(),
+                         (Mobile mobile, ParallelLoopState state, QueuedMemoryWriter writer) =>
+            {
+                long startPosition = writer.Position;
 
-					return writer;
-				},
-				(writer) =>
-				{
-					writer.Flush();
+                mobile.Serialize(writer);
 
-					_itemThreadWriters.Add(writer);
-				});
+                int size = (int)(writer.Position - startPosition);
 
-			_itemThreadWriters.CompleteAdding();	//We only get here after the Parallel.ForEach completes.  Lets our task 
+                writer.QueueForIndex(mobile, size);
 
-			return commitTask;
-		}
+                if (_metrics != null)
+                {
+                    _metrics.OnMobileSaved(size);
+                }
 
+                return writer;
+            },
+                         (writer) =>
+            {
+                writer.Flush();
 
+                _mobileThreadWriters.Add(writer);
+            });
 
-		private Task SaveMobiles()
-		{
-			//Start the blocking consumer; this runs in background.
-			Task commitTask = StartCommitTask( _mobileThreadWriters, _mobileData, _mobileIndex );
+        _mobileThreadWriters.CompleteAdding();                  //We only get here after the Parallel.ForEach completes.  Lets our task tell the consumer that we're done
 
-			IEnumerable<Mobile> mobiles = World.Mobiles.Values;
+        return commitTask;
+    }
 
-			//Start the producer.
-			Parallel.ForEach(mobiles, () => new QueuedMemoryWriter(),
-				(Mobile mobile, ParallelLoopState state, QueuedMemoryWriter writer) =>
-				{
-					long startPosition = writer.Position;
+    private Task SaveGuilds()
+    {
+        //Start the blocking consumer; this runs in background.
+        Task commitTask = StartCommitTask(_guildThreadWriters, _guildData, _guildIndex);
 
-					mobile.Serialize(writer);
+        IEnumerable <BaseGuild> guilds = BaseGuild.List.Values;
 
-					int size = (int)(writer.Position - startPosition);
+        //Start the producer.
+        Parallel.ForEach(guilds, () => new QueuedMemoryWriter(),
+                         (BaseGuild guild, ParallelLoopState state, QueuedMemoryWriter writer) =>
+            {
+                long startPosition = writer.Position;
 
-					writer.QueueForIndex(mobile, size);
+                guild.Serialize(writer);
 
-					if (_metrics != null)
-					{
-						_metrics.OnMobileSaved(size);
-					}
+                int size = (int)(writer.Position - startPosition);
 
-					return writer;
-				},
-				(writer) =>
-				{
-					writer.Flush();
+                writer.QueueForIndex(guild, size);
 
-					_mobileThreadWriters.Add(writer);
-				});
+                if (_metrics != null)
+                {
+                    _metrics.OnGuildSaved(size);
+                }
 
-			_mobileThreadWriters.CompleteAdding();	//We only get here after the Parallel.ForEach completes.  Lets our task tell the consumer that we're done
+                return writer;
+            },
+                         (writer) =>
+            {
+                writer.Flush();
 
-			return commitTask;
-		}
+                _guildThreadWriters.Add(writer);
+            });
 
-		private Task SaveGuilds()
-		{
-			//Start the blocking consumer; this runs in background.
-			Task commitTask = StartCommitTask(_guildThreadWriters, _guildData, _guildIndex);
+        _guildThreadWriters.CompleteAdding();                   //We only get here after the Parallel.ForEach completes.  Lets our task
 
-			IEnumerable<BaseGuild> guilds = BaseGuild.List.Values;
+        return commitTask;
+    }
 
-			//Start the producer.
-			Parallel.ForEach(guilds, () => new QueuedMemoryWriter(),
-				(BaseGuild guild, ParallelLoopState state, QueuedMemoryWriter writer) =>
-				{
-					long startPosition = writer.Position;
+    public override void ProcessDecay()
+    {
+        Item item;
 
-					guild.Serialize(writer);
+        while (_decayBag.TryTake(out item))
+        {
+            item.Delete();
+        }
+    }
 
-					int size = (int)(writer.Position - startPosition );
+    private void OpenFiles()
+    {
+        _itemData  = new SequentialFileWriter(World.ItemDataPath, _metrics);
+        _itemIndex = new SequentialFileWriter(World.ItemIndexPath, _metrics);
 
-					writer.QueueForIndex(guild, size);
+        _mobileData  = new SequentialFileWriter(World.MobileDataPath, _metrics);
+        _mobileIndex = new SequentialFileWriter(World.MobileIndexPath, _metrics);
 
-					if (_metrics != null)
-					{
-						_metrics.OnGuildSaved(size);
-					}
+        _guildData  = new SequentialFileWriter(World.GuildDataPath, _metrics);
+        _guildIndex = new SequentialFileWriter(World.GuildIndexPath, _metrics);
 
-					return writer;
-				},
-				(writer) =>
-				{
-					writer.Flush();
+        WriteCount(_itemIndex, World.Items.Count);
+        WriteCount(_mobileIndex, World.Mobiles.Count);
+        WriteCount(_guildIndex, BaseGuild.List.Count);
+    }
 
-					_guildThreadWriters.Add(writer);
-				});
+    private void CloseFiles()
+    {
+        _itemData.Close();
+        _itemIndex.Close();
 
-			_guildThreadWriters.CompleteAdding();	//We only get here after the Parallel.ForEach completes.  Lets our task 
+        _mobileData.Close();
+        _mobileIndex.Close();
 
-			return commitTask;
-		}
+        _guildData.Close();
+        _guildIndex.Close();
+    }
 
-		public override void ProcessDecay()
-		{
-			Item item;
+    private void WriteCount(SequentialFileWriter indexFile, int count)
+    {
+        //Equiv to GenericWriter.Write( (int)count );
+        byte[] buffer = new byte[4];
 
-			while( _decayBag.TryTake( out item ) )
-			{
-				item.Delete();
-			}
-		}
+        buffer[0] = (byte)(count);
+        buffer[1] = (byte)(count >> 8);
+        buffer[2] = (byte)(count >> 16);
+        buffer[3] = (byte)(count >> 24);
 
-		private void OpenFiles()
-		{
-			_itemData = new SequentialFileWriter(World.ItemDataPath, _metrics);
-			_itemIndex = new SequentialFileWriter(World.ItemIndexPath, _metrics);
+        indexFile.Write(buffer, 0, buffer.Length);
+    }
 
-			_mobileData = new SequentialFileWriter(World.MobileDataPath, _metrics);
-			_mobileIndex = new SequentialFileWriter(World.MobileIndexPath, _metrics);
+    private void SaveTypeDatabases()
+    {
+        SaveTypeDatabase(World.ItemTypesPath, World.m_ItemTypes);
+        SaveTypeDatabase(World.MobileTypesPath, World.m_MobileTypes);
+    }
 
-			_guildData = new SequentialFileWriter(World.GuildDataPath, _metrics);
-			_guildIndex = new SequentialFileWriter(World.GuildIndexPath, _metrics);
+    private void SaveTypeDatabase(string path, List <Type> types)
+    {
+        BinaryFileWriter bfw = new BinaryFileWriter(path, false);
 
-			WriteCount(_itemIndex, World.Items.Count);
-			WriteCount(_mobileIndex, World.Mobiles.Count);
-			WriteCount(_guildIndex, BaseGuild.List.Count);
-		}
+        bfw.Write(types.Count);
 
-		private void CloseFiles()
-		{
-			_itemData.Close();
-			_itemIndex.Close();
+        foreach (Type type in types)
+        {
+            bfw.Write(type.FullName);
+        }
 
-			_mobileData.Close();
-			_mobileIndex.Close();
+        bfw.Flush();
 
-			_guildData.Close();
-			_guildIndex.Close();
-		}
-
-		private void WriteCount(SequentialFileWriter indexFile, int count)
-		{
-			//Equiv to GenericWriter.Write( (int)count );
-			byte[] buffer = new byte[4];
-
-			buffer[0] = (byte)(count);
-			buffer[1] = (byte)(count >> 8);
-			buffer[2] = (byte)(count >> 16);
-			buffer[3] = (byte)(count >> 24);
-
-			indexFile.Write(buffer, 0, buffer.Length);
-		}
-
-		private void SaveTypeDatabases()
-		{
-			SaveTypeDatabase(World.ItemTypesPath, World.m_ItemTypes);
-			SaveTypeDatabase(World.MobileTypesPath, World.m_MobileTypes);
-		}
-
-		private void SaveTypeDatabase(string path, List<Type> types)
-		{
-			BinaryFileWriter bfw = new BinaryFileWriter(path, false);
-
-			bfw.Write(types.Count);
-
-			foreach (Type type in types)
-			{
-				bfw.Write(type.FullName);
-			}
-
-			bfw.Flush();
-
-			bfw.Close();
-		}
-	}
-
+        bfw.Close();
+    }
+}
 }
 #endif

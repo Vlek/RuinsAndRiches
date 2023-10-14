@@ -20,62 +20,76 @@ using Server.Items;
 
 namespace Server.Regions
 {
-	public class DungeonRegion : BaseRegion
-	{
-		public override bool YoungProtected { get { return false; } }
+public class DungeonRegion : BaseRegion
+{
+    public override bool YoungProtected {
+        get { return false; }
+    }
 
-		private Point3D m_EntranceLocation;
-		private Map m_EntranceMap;
+    private Point3D m_EntranceLocation;
+    private Map m_EntranceMap;
 
-		public Point3D EntranceLocation{ get{ return m_EntranceLocation; } set{ m_EntranceLocation = value; } }
-		public Map EntranceMap{ get{ return m_EntranceMap; } set{ m_EntranceMap = value; } }
+    public Point3D EntranceLocation {
+        get { return m_EntranceLocation; } set { m_EntranceLocation = value; }
+    }
+    public Map EntranceMap {
+        get { return m_EntranceMap; } set { m_EntranceMap = value; }
+    }
 
-		public DungeonRegion( XmlElement xml, Map map, Region parent ) : base( xml, map, parent )
-		{
-			XmlElement entrEl = xml["entrance"];
+    public DungeonRegion(XmlElement xml, Map map, Region parent) : base(xml, map, parent)
+    {
+        XmlElement entrEl = xml["entrance"];
 
-			Map entrMap = map;
-			ReadMap( entrEl, "map", ref entrMap, false );
+        Map entrMap = map;
+        ReadMap(entrEl, "map", ref entrMap, false);
 
-			if ( ReadPoint3D( entrEl, entrMap, ref m_EntranceLocation, false ) )
-				m_EntranceMap = entrMap;
-		}
+        if (ReadPoint3D(entrEl, entrMap, ref m_EntranceLocation, false))
+        {
+            m_EntranceMap = entrMap;
+        }
+    }
 
-		public override bool AllowHousing( Mobile from, Point3D p )
-		{
-			return false;
-		}
+    public override bool AllowHousing(Mobile from, Point3D p)
+    {
+        return false;
+    }
 
-		public override void AlterLightLevel( Mobile m, ref int global, ref int personal )
-		{
-			if ( this.Name == "the Valley of Dark Druids" ||
-					this.Name == "The Castle of Vordo" ||
-					this.Name == "Vordo's Castle Grounds" ||
-					this.Name == "the Corrupt Pass" ||
-					this.Name == "the Great Pyramid" ||
-					this.Name == "the Altar of the Dragon King" ||
-					this.Name == "the Hidden Valley" 
-				){} else { global = LightCycle.DungeonLevel; }
-		}
+    public override void AlterLightLevel(Mobile m, ref int global, ref int personal)
+    {
+        if (this.Name == "the Valley of Dark Druids"
+            || this.Name == "The Castle of Vordo"
+            || this.Name == "Vordo's Castle Grounds"
+            || this.Name == "the Corrupt Pass"
+            || this.Name == "the Great Pyramid"
+            || this.Name == "the Altar of the Dragon King"
+            || this.Name == "the Hidden Valley"
+            )
+        {
+        }
+        else
+        {
+            global = LightCycle.DungeonLevel;
+        }
+    }
 
-		public override void OnEnter( Mobile m )
-		{
-			base.OnEnter( m );
-			if ( m is PlayerMobile )
-			{
-				LoggingFunctions.LogRegions( m, this.Name, "enter" );
-			}
+    public override void OnEnter(Mobile m)
+    {
+        base.OnEnter(m);
+        if (m is PlayerMobile)
+        {
+            LoggingFunctions.LogRegions(m, this.Name, "enter");
+        }
 
-			Server.Misc.RegionMusic.MusicRegion( m, this );
-		}
+        Server.Misc.RegionMusic.MusicRegion(m, this);
+    }
 
-		public override void OnExit( Mobile m )
-		{
-			base.OnExit( m );
-			if ( m is PlayerMobile )
-			{
-				LoggingFunctions.LogRegions( m, this.Name, "exit" );
-			}
-		}
-	}
+    public override void OnExit(Mobile m)
+    {
+        base.OnExit(m);
+        if (m is PlayerMobile)
+        {
+            LoggingFunctions.LogRegions(m, this.Name, "exit");
+        }
+    }
+}
 }

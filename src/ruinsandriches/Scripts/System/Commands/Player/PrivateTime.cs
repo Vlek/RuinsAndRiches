@@ -6,30 +6,30 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-    class PrivateTime
+class PrivateTime
+{
+    public static void Initialize()
     {
-        public static void Initialize()
+        CommandSystem.Register("private", AccessLevel.Player, new CommandEventHandler(OnTogglePrivateTime));
+    }
+
+    [Usage("private")]
+    [Description("Enables or disables the privacy for the town crier.")]
+    private static void OnTogglePrivateTime(CommandEventArgs e)
+    {
+        Mobile       m  = e.Mobile;
+        PlayerMobile pm = (PlayerMobile)m;
+
+        if (pm.PublicMyRunUO == false)
         {
-            CommandSystem.Register("private", AccessLevel.Player, new CommandEventHandler(OnTogglePrivateTime));
+            pm.PublicMyRunUO = true;
+            m.SendMessage(68, "You set your town crier news to public.");
         }
-
-        [Usage("private")]
-        [Description("Enables or disables the privacy for the town crier.")]
-        private static void OnTogglePrivateTime(CommandEventArgs e)
+        else
         {
-            Mobile m = e.Mobile;
-			PlayerMobile pm = (PlayerMobile)m;
-
-            if ( pm.PublicMyRunUO == false )
-            {
-				pm.PublicMyRunUO = true;
-                m.SendMessage(68, "You set your town crier news to public.");
-            }
-            else
-            {
-				pm.PublicMyRunUO = false;
-                m.SendMessage(38, "You set your town crier news to private.");
-            }
+            pm.PublicMyRunUO = false;
+            m.SendMessage(38, "You set your town crier news to private.");
         }
     }
+}
 }

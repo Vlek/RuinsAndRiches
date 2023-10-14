@@ -6,52 +6,52 @@ using Server;
 
 namespace Server.Gumps
 {
-	public class LocationTree
-	{
-		private ParentNode m_Root;
-		private Dictionary<Mobile, ParentNode> m_LastBranch;
+public class LocationTree
+{
+    private ParentNode m_Root;
+    private Dictionary <Mobile, ParentNode> m_LastBranch;
 
-		public LocationTree( string fileName )
-		{
-			m_LastBranch = new Dictionary<Mobile, ParentNode>();
+    public LocationTree(string fileName)
+    {
+        m_LastBranch = new Dictionary <Mobile, ParentNode>();
 
-			string path = Path.Combine( "Data/", fileName );
+        string path = Path.Combine("Data/", fileName);
 
-			if ( File.Exists( path ) )
-			{
-				XmlTextReader xml = new XmlTextReader( new StreamReader( path ) );
+        if (File.Exists(path))
+        {
+            XmlTextReader xml = new XmlTextReader(new StreamReader(path));
 
-				xml.WhitespaceHandling = WhitespaceHandling.None;
+            xml.WhitespaceHandling = WhitespaceHandling.None;
 
-				m_Root = Parse( xml );
+            m_Root = Parse(xml);
 
-				xml.Close();
-			}
-		}
+            xml.Close();
+        }
+    }
 
-		public Dictionary<Mobile, ParentNode> LastBranch
-		{
-			get
-			{
-				return m_LastBranch;
-			}
-		}
+    public Dictionary <Mobile, ParentNode> LastBranch
+    {
+        get
+        {
+            return m_LastBranch;
+        }
+    }
 
-		public ParentNode Root
-		{
-			get
-			{
-				return m_Root;
-			}
-		}
+    public ParentNode Root
+    {
+        get
+        {
+            return m_Root;
+        }
+    }
 
-		private ParentNode Parse( XmlTextReader xml )
-		{
-			xml.Read();
-			xml.Read();
-			xml.Read();
+    private ParentNode Parse(XmlTextReader xml)
+    {
+        xml.Read();
+        xml.Read();
+        xml.Read();
 
-			return new ParentNode( xml, null );
-		}
-	}
+        return new ParentNode(xml, null);
+    }
+}
 }

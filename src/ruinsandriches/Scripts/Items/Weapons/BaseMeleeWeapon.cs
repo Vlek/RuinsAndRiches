@@ -3,61 +3,65 @@ using Server;
 
 namespace Server.Items
 {
-	public abstract class BaseMeleeWeapon : BaseWeapon
-	{
-		public BaseMeleeWeapon( int itemID ) : base( itemID )
-		{
-		}
+public abstract class BaseMeleeWeapon : BaseWeapon
+{
+    public BaseMeleeWeapon(int itemID) : base(itemID)
+    {
+    }
 
-		public BaseMeleeWeapon( Serial serial ) : base( serial )
-		{
-		}
+    public BaseMeleeWeapon(Serial serial) : base(serial)
+    {
+    }
 
-		public override int AbsorbDamage( Mobile attacker, Mobile defender, int damage )
-		{
-			damage = base.AbsorbDamage( attacker, defender, damage );
+    public override int AbsorbDamage(Mobile attacker, Mobile defender, int damage)
+    {
+        damage = base.AbsorbDamage(attacker, defender, damage);
 
-			if ( Core.AOS )
-				return damage;
-			
-			int absorb = defender.MeleeDamageAbsorb;
+        if (Core.AOS)
+        {
+            return damage;
+        }
 
-			if ( absorb > 0 )
-			{
-				if ( absorb > damage )
-				{
-					int react = damage / 5;
+        int absorb = defender.MeleeDamageAbsorb;
 
-					if ( react <= 0 )
-						react = 1;
+        if (absorb > 0)
+        {
+            if (absorb > damage)
+            {
+                int react = damage / 5;
 
-					defender.MeleeDamageAbsorb -= damage;
-					damage = 0;
+                if (react <= 0)
+                {
+                    react = 1;
+                }
 
-					attacker.Damage( react, defender );
+                defender.MeleeDamageAbsorb -= damage;
+                damage = 0;
 
-					attacker.PlaySound( 0x1F1 );
-					attacker.FixedEffect( 0x374A, 10, 16 );
-				}
-				else
-				{
-					defender.MeleeDamageAbsorb = 0;
-					defender.SendLocalizedMessage( 1005556 ); // Your reactive armor spell has been nullified.
-					DefensiveSpell.Nullify( defender );
-				}
-			}
+                attacker.Damage(react, defender);
 
-			return damage;
-		}
+                attacker.PlaySound(0x1F1);
+                attacker.FixedEffect(0x374A, 10, 16);
+            }
+            else
+            {
+                defender.MeleeDamageAbsorb = 0;
+                defender.SendLocalizedMessage(1005556);                           // Your reactive armor spell has been nullified.
+                DefensiveSpell.Nullify(defender);
+            }
+        }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-		}
+        return damage;
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+    }
+}
 }

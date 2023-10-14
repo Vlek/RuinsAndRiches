@@ -29,156 +29,171 @@ using System.Collections.Generic;
 
 namespace Server.Items
 {
-	public class ScrollofAlacrity : SpecialScroll
-	{
-		public override int LabelNumber { get { return 1078604; } } // Scroll of Alacrity
-		
-		public override int Message { get { return 1078602; } } /*using a Scroll of Transcendence for a given skill will permanently increase your current 
-																*level in that skill by the amount of points displayed on the scroll.
-																*As you may not gain skills beyond your maximum skill cap, any excess points will be lost.*/
-		
-		public override string DefaultTitle { get { return String.Format( "Scroll of Alacrity:" ); } }
+public class ScrollofAlacrity : SpecialScroll
+{
+    public override int LabelNumber {
+        get { return 1078604; }
+    }                                                                       // Scroll of Alacrity
 
-		public override string GetNameLocalized()
-		{
-			return Name;
-		}
+    public override int Message {
+        get { return 1078602; }
+    }                                                                   /*using a Scroll of Transcendence for a given skill will permanently increase your current
+                                                                         * level in that skill by the amount of points displayed on the scroll.
+                                                                         * As you may not gain skills beyond your maximum skill cap, any excess points will be lost.*/
 
-		public override string GetName()
-		{			
-			return Name;
-		}
+    public override string DefaultTitle {
+        get { return String.Format("Scroll of Alacrity:"); }
+    }
 
-		public ScrollofAlacrity() : this( SkillName.Alchemy )
-		{
-		}
-		
-		[Constructable]
-		public ScrollofAlacrity( SkillName skill ) : base( skill, 0.0 )
-		{
-			Name = "Scroll of Alacrity";
-			ItemID = 0x14EF;
-			Hue = 0x4AB;
-		}
+    public override string GetNameLocalized()
+    {
+        return Name;
+    }
 
-		public ScrollofAlacrity(Serial serial) : base(serial)
-		{
-		}
+    public override string GetName()
+    {
+        return Name;
+    }
 
-		public override void GetProperties(ObjectPropertyList list)
-		{
-			base.GetProperties(list);
+    public ScrollofAlacrity() : this(SkillName.Alchemy)
+    {
+    }
 
-			list.Add(1071345, "{0} 15 Minutes", SkillInfo.Table[(int)Skill].Name ); // Skill: ~1_val~
-		}
-		
-		public override bool CanUse( Mobile from )
-		{
-			if ( !base.CanUse( from ) )
-				return false;
-			
-			PlayerMobile pm = from as PlayerMobile;
-			
-			if ( pm == null )
-				return false;
-			
-			#region Mondain's Legacy
-			/* to add when skillgain quests will be implemented
-			
-			for (int i = pm.Quests.Count - 1; i >= 0; i--)
-			{
-				BaseQuest quest = pm.Quests[i];
+    [Constructable]
+    public ScrollofAlacrity(SkillName skill) : base(skill, 0.0)
+    {
+        Name   = "Scroll of Alacrity";
+        ItemID = 0x14EF;
+        Hue    = 0x4AB;
+    }
 
-				for (int j = quest.Objectives.Count - 1; j >= 0; j--)
-				{
-					BaseObjective objective = quest.Objectives[j];
+    public ScrollofAlacrity(Serial serial) : base(serial)
+    {
+    }
 
-					if (objective is ApprenticeObjective)
-					{
-						from.SendMessage("You are already under the effect of an enhanced skillgain quest.");
-						return false;
-					}
-				}
-			}
-			
-			*/
-			#endregion
-			
-			#region Scroll of Alacrity
-			if (pm.AcceleratedStart > DateTime.Now)
-			{
-				from.SendLocalizedMessage(1077951); // You are already under the effect of an accelerated skillgain scroll.
-				return false;
-			}
-			#endregion
-			
-			return true;
-		}
+    public override void GetProperties(ObjectPropertyList list)
+    {
+        base.GetProperties(list);
 
-		public override void Use( Mobile from )
-		{
-			if ( !CanUse( from ) )
-				return;
-			
-			PlayerMobile pm = from as PlayerMobile;
-			
-			if ( pm == null )
-				return;
-			
-			double tskill = from.Skills[Skill].Base;
-			double tcap = from.Skills[Skill].Cap;
+        list.Add(1071345, "{0} 15 Minutes", SkillInfo.Table[(int)Skill].Name);                  // Skill: ~1_val~
+    }
 
-			if ( tskill >= tcap || from.Skills[Skill].Lock != SkillLock.Up )
-			{
-				from.SendLocalizedMessage( 1094935 );	/*You cannot increase this skill at this time. The skill may be locked or set to lower in your skill menu.
-														*If you are at your total skill cap, you must use a Powerscroll to increase your current skill cap.*/
-				return;
-			}
-			
-			from.SendLocalizedMessage( 1077956 ); // You are infused with intense energy. You are under the effects of an accelerated skillgain scroll.
-			
-			Effects.PlaySound( from.Location, from.Map, 0x1E9 );
-			Effects.SendTargetParticles( from, 0x373A, 35, 45, 0x00, 0x00, 9502, (EffectLayer)255, 0x100 );
+    public override bool CanUse(Mobile from)
+    {
+        if (!base.CanUse(from))
+        {
+            return false;
+        }
 
-			pm.AcceleratedStart = DateTime.Now + TimeSpan.FromMinutes(15);
+        PlayerMobile pm = from as PlayerMobile;
 
-			Timer t = (Timer)m_Table[from];
+        if (pm == null)
+        {
+            return false;
+        }
 
-			m_Table[from] = Timer.DelayCall( TimeSpan.FromMinutes( 15 ), new TimerStateCallback( Expire_Callback ), from );
+        #region Mondain's Legacy
 
-			pm.AcceleratedSkill = Skill;
+        /* to add when skillgain quests will be implemented
+         *
+         * for (int i = pm.Quests.Count - 1; i >= 0; i--)
+         * {
+         *      BaseQuest quest = pm.Quests[i];
+         *
+         *      for (int j = quest.Objectives.Count - 1; j >= 0; j--)
+         *      {
+         *              BaseObjective objective = quest.Objectives[j];
+         *
+         *              if (objective is ApprenticeObjective)
+         *              {
+         *                      from.SendMessage("You are already under the effect of an enhanced skillgain quest.");
+         *                      return false;
+         *              }
+         *      }
+         * }
+         *
+         */
+        #endregion
 
-			Delete();
-		}
+        #region Scroll of Alacrity
+        if (pm.AcceleratedStart > DateTime.Now)
+        {
+            from.SendLocalizedMessage(1077951);                     // You are already under the effect of an accelerated skillgain scroll.
+            return false;
+        }
+        #endregion
 
-		private static Hashtable m_Table = new Hashtable();
+        return true;
+    }
 
-		private static void Expire_Callback(object state)
-		{
-			Mobile m = (Mobile)state;
+    public override void Use(Mobile from)
+    {
+        if (!CanUse(from))
+        {
+            return;
+        }
 
-			m_Table.Remove(m);
+        PlayerMobile pm = from as PlayerMobile;
 
-			m.PlaySound(0x1F8);
+        if (pm == null)
+        {
+            return;
+        }
 
-			m.SendLocalizedMessage(1077957);// The intense energy dissipates. You are no longer under the effects of an accelerated skillgain scroll.
-		}
+        double tskill = from.Skills[Skill].Base;
+        double tcap   = from.Skills[Skill].Cap;
 
-		public override void Serialize(GenericWriter writer)
-		{
-			base.Serialize(writer);
+        if (tskill >= tcap || from.Skills[Skill].Lock != SkillLock.Up)
+        {
+            from.SendLocalizedMessage(1094935);                         /*You cannot increase this skill at this time. The skill may be locked or set to lower in your skill menu.
+                                                                         * If you are at your total skill cap, you must use a Powerscroll to increase your current skill cap.*/
+            return;
+        }
 
-			writer.Write((int)0); // version
-		}
+        from.SendLocalizedMessage(1077956);                   // You are infused with intense energy. You are under the effects of an accelerated skillgain scroll.
 
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize(reader);
+        Effects.PlaySound(from.Location, from.Map, 0x1E9);
+        Effects.SendTargetParticles(from, 0x373A, 35, 45, 0x00, 0x00, 9502, (EffectLayer)255, 0x100);
 
-			int version = ( InheritsItem ? 0 : reader.ReadInt() ); //Required for SpecialScroll insertion
+        pm.AcceleratedStart = DateTime.Now + TimeSpan.FromMinutes(15);
 
-			LootType = LootType.Cursed;
-			Insured = false;
-		}
-	}
+        Timer t = (Timer)m_Table[from];
+
+        m_Table[from] = Timer.DelayCall(TimeSpan.FromMinutes(15), new TimerStateCallback(Expire_Callback), from);
+
+        pm.AcceleratedSkill = Skill;
+
+        Delete();
+    }
+
+    private static Hashtable m_Table = new Hashtable();
+
+    private static void Expire_Callback(object state)
+    {
+        Mobile m = (Mobile)state;
+
+        m_Table.Remove(m);
+
+        m.PlaySound(0x1F8);
+
+        m.SendLocalizedMessage(1077957);                // The intense energy dissipates. You are no longer under the effects of an accelerated skillgain scroll.
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+
+        writer.Write((int)0);                 // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = (InheritsItem ? 0 : reader.ReadInt());                   //Required for SpecialScroll insertion
+
+        LootType = LootType.Cursed;
+        Insured  = false;
+    }
+}
 }

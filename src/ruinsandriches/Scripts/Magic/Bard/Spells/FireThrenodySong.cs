@@ -7,60 +7,69 @@ using Server.Misc;
 
 namespace Server.Spells.Song
 {
-	public class FireThrenodySong : Song
-	{
-		
-		private static SpellInfo m_Info = new SpellInfo(
-				"Fire Threnody", "*plays a fire threnody*",
-				//SpellCircle.First,
-				//212,9041
-				-1
-			);
-		
-		public FireThrenodySong( Mobile caster, Item scroll) : base( caster, scroll, m_Info )
-		{
-		}
+public class FireThrenodySong : Song
+{
+    private static SpellInfo m_Info = new SpellInfo(
+        "Fire Threnody", "*plays a fire threnody*",
+        //SpellCircle.First,
+        //212,9041
+        -1
+        );
 
-		private SongBook m_Book;
-		//public override double CastDelay{ get{ return 2; } }
-		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 5 ); } }
-		public override double RequiredSkill{ get{ return 70.0; } }
-		public override int RequiredMana{ get{ return 25; } }
+    public FireThrenodySong(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+    {
+    }
 
-		public override void OnCast()
-		{
-			Caster.Target = new InternalTarget( this );
-		}
+    private SongBook m_Book;
+    //public override double CastDelay{ get{ return 2; } }
+    public override TimeSpan CastDelayBase {
+        get { return TimeSpan.FromSeconds(5); }
+    }
+    public override double RequiredSkill {
+        get { return 70.0; }
+    }
+    public override int RequiredMana {
+        get { return 25; }
+    }
 
-		public virtual bool CheckSlayer( BaseInstrument instrument, Mobile defender )
-		{
-			SlayerEntry atkSlayer = SlayerGroup.GetEntryByName( instrument.Slayer );
-			SlayerEntry atkSlayer2 = SlayerGroup.GetEntryByName( instrument.Slayer2 );
+    public override void OnCast()
+    {
+        Caster.Target = new InternalTarget(this);
+    }
 
-			if ( atkSlayer != null && atkSlayer.Slays( defender )  || atkSlayer2 != null && atkSlayer2.Slays( defender ) )
-				return true;
+    public virtual bool CheckSlayer(BaseInstrument instrument, Mobile defender)
+    {
+        SlayerEntry atkSlayer  = SlayerGroup.GetEntryByName(instrument.Slayer);
+        SlayerEntry atkSlayer2 = SlayerGroup.GetEntryByName(instrument.Slayer2);
 
-			return false;
-		}
+        if (atkSlayer != null && atkSlayer.Slays(defender) || atkSlayer2 != null && atkSlayer2.Slays(defender))
+        {
+            return true;
+        }
 
-		public void Target( Mobile m )
-		{
-            Spellbook book = Spellbook.Find(Caster, -1, SpellbookType.Song);
-            if (book == null)
-                return;
+        return false;
+    }
 
-            m_Book = (SongBook)book;
+    public void Target(Mobile m)
+    {
+        Spellbook book = Spellbook.Find(Caster, -1, SpellbookType.Song);
+        if (book == null)
+        {
+            return;
+        }
 
-			PlayerMobile p = m as PlayerMobile;
-			bool sings = false;
+        m_Book = (SongBook)book;
 
-			if ( !Caster.CanSee( m ) )
-			{
-				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
-			}
-             else if ( CheckHSequence( m ) )
-			{
-				sings = true;
+        PlayerMobile p     = m as PlayerMobile;
+        bool         sings = false;
+
+        if (!Caster.CanSee(m))
+        {
+            Caster.SendLocalizedMessage(500237);                       // Target can not be seen.
+        }
+        else if (CheckHSequence(m))
+        {
+            sings = true;
 
             if (m_Book.Instrument == null || !(Caster.InRange(m_Book.Instrument.GetWorldLocation(), 1)))
             {
@@ -68,84 +77,89 @@ namespace Server.Spells.Song
                 return;
             }
 
-				Mobile source = Caster;
-				SpellHelper.Turn( source, m );
+            Mobile source = Caster;
+            SpellHelper.Turn(source, m);
 
-				bool IsSlayer = false;
-				if ( m is BaseCreature ){ IsSlayer = CheckSlayer( m_Book.Instrument, m ); }
+            bool IsSlayer = false;
+            if (m is BaseCreature)
+            {
+                IsSlayer = CheckSlayer(m_Book.Instrument, m);
+            }
 
-                int amount = (int)(MusicSkill( Caster ) / 16);
-				TimeSpan duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster )) );
+            int      amount   = (int)(MusicSkill(Caster) / 16);
+            TimeSpan duration = TimeSpan.FromSeconds((double)(MusicSkill(Caster)));
 
-				if ( IsSlayer == true )
-				{
-					amount = amount * 2;
-					duration = TimeSpan.FromSeconds( (double)(MusicSkill( Caster ) * 2) );
-				}
+            if (IsSlayer == true)
+            {
+                amount   = amount * 2;
+                duration = TimeSpan.FromSeconds((double)(MusicSkill(Caster) * 2));
+            }
 
-				m.SendMessage( "Your resistance to fire has decreased." );
-				ResistanceMod mod1 = new ResistanceMod( ResistanceType.Fire, - amount );
-				
-				m.FixedParticles( 0x374A, 10, 30, 5013, 0x489, 2, EffectLayer.Waist );
-				
-				m.AddResistanceMod( mod1 );
+            m.SendMessage("Your resistance to fire has decreased.");
+            ResistanceMod mod1 = new ResistanceMod(ResistanceType.Fire, -amount);
 
-				ExpireTimer timer1 = new ExpireTimer( m, mod1, duration );
-				timer1.Start();
-			}
+            m.FixedParticles(0x374A, 10, 30, 5013, 0x489, 2, EffectLayer.Waist);
 
-			BardFunctions.UseBardInstrument( m_Book.Instrument, sings, Caster );
-			FinishSequence();
-		}
+            m.AddResistanceMod(mod1);
 
-		private class ExpireTimer : Timer
-		{
-			private Mobile m_Mobile;
-			private ResistanceMod m_Mods;
+            ExpireTimer timer1 = new ExpireTimer(m, mod1, duration);
+            timer1.Start();
+        }
 
-			public ExpireTimer( Mobile m, ResistanceMod mod, TimeSpan delay ) : base( delay )
-			{
-				m_Mobile = m;
-				m_Mods = mod;
-			}
+        BardFunctions.UseBardInstrument(m_Book.Instrument, sings, Caster);
+        FinishSequence();
+    }
 
-			public void DoExpire()
-			{
-				PlayerMobile p = m_Mobile as PlayerMobile;
-				m_Mobile.RemoveResistanceMod( m_Mods );
-				
-				Stop();
-			}
+    private class ExpireTimer : Timer
+    {
+        private Mobile m_Mobile;
+        private ResistanceMod m_Mods;
 
-			protected override void OnTick()
-			{
-				if ( m_Mobile != null )
-				{
-					m_Mobile.SendMessage( "The effect of the fire threnody wears off." );
-					DoExpire();
-				}
-			}
-		}
+        public ExpireTimer(Mobile m, ResistanceMod mod, TimeSpan delay) : base(delay)
+        {
+            m_Mobile = m;
+            m_Mods   = mod;
+        }
 
-		private class InternalTarget : Target
-		{
-			private FireThrenodySong m_Owner;
+        public void DoExpire()
+        {
+            PlayerMobile p = m_Mobile as PlayerMobile;
+            m_Mobile.RemoveResistanceMod(m_Mods);
 
-			public InternalTarget( FireThrenodySong owner ) : base( 12, false, TargetFlags.Harmful )
-			{
-				m_Owner = owner;
-			}
+            Stop();
+        }
 
-			protected override void OnTarget( Mobile from, object o )
-			{
-				if ( o is Mobile )
-					m_Owner.Target( (Mobile)o );
-			}
+        protected override void OnTick()
+        {
+            if (m_Mobile != null)
+            {
+                m_Mobile.SendMessage("The effect of the fire threnody wears off.");
+                DoExpire();
+            }
+        }
+    }
 
-			protected override void OnTargetFinish( Mobile from )
-			{
-				m_Owner.FinishSequence();
-			}
-		}
-	}
+    private class InternalTarget : Target
+    {
+        private FireThrenodySong m_Owner;
+
+        public InternalTarget(FireThrenodySong owner) : base(12, false, TargetFlags.Harmful)
+        {
+            m_Owner = owner;
+        }
+
+        protected override void OnTarget(Mobile from, object o)
+        {
+            if (o is Mobile)
+            {
+                m_Owner.Target((Mobile)o);
+            }
+        }
+
+        protected override void OnTargetFinish(Mobile from)
+        {
+            m_Owner.FinishSequence();
+        }
+    }
+}
 }

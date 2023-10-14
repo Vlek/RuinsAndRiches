@@ -5,44 +5,49 @@ using Server.Targeting;
 
 namespace Server.Items
 {
-	public class MeteorSwarmMagicStaff : BaseMagicStaff
-	{
-		[Constructable]
-		public MeteorSwarmMagicStaff() : base( MagicStaffEffect.Charges, 1, 5 )
-		{
-			IntRequirement = 45;
-			Name = "wand of meteor swarms";
-			SkillBonuses.SetValues( 1, SkillName.Magery, 70 );
-		}
+public class MeteorSwarmMagicStaff : BaseMagicStaff
+{
+    [Constructable]
+    public MeteorSwarmMagicStaff() : base(MagicStaffEffect.Charges, 1, 5)
+    {
+        IntRequirement = 45;
+        Name           = "wand of meteor swarms";
+        SkillBonuses.SetValues(1, SkillName.Magery, 70);
+    }
 
-		public override void AddNameProperties( ObjectPropertyList list )
-		{
-			base.AddNameProperties( list );
-			list.Add( 1070722, "7th Circle of Power" );			list.Add( 1049644, "Requires 40 Intelligence" );
-		}
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "7th Circle of Power");
+        list.Add(1049644, "Requires 40 Intelligence");
+    }
 
-		public MeteorSwarmMagicStaff( Serial serial ) : base( serial )
-		{
-		}
+    public MeteorSwarmMagicStaff(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (int) 0 ); // version
-		}
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadInt();
-			if ( IntRequirement != 40 ) { IntRequirement = 40; }
-		}
+        int version = reader.ReadInt();
 
-		public override void OnMagicStaffUse( Mobile from )
-		{
-			Cast( new MeteorSwarmSpell( from, this ) );
-		}
-	}
+        if (IntRequirement != 40)
+        {
+            IntRequirement = 40;
+        }
+    }
+
+    public override void OnMagicStaffUse(Mobile from)
+    {
+        Cast(new MeteorSwarmSpell(from, this));
+    }
+}
 }

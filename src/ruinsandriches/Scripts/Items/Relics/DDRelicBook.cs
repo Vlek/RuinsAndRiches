@@ -4,45 +4,47 @@ using Server.Misc;
 
 namespace Server.Items
 {
-	public class DDRelicBook : Item
-	{
-		public int RelicGoldValue;
-		
-		[CommandProperty(AccessLevel.Owner)]
-		public int Relic_Value { get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); } }
+public class DDRelicBook : Item
+{
+    public int RelicGoldValue;
 
-		[Constructable]
-		public DDRelicBook() : base( 0xFBD )
-		{
-			Weight = 5;
-			RelicGoldValue = Server.Misc.RelicItems.RelicValue();
-			ItemID = RandomThings.GetRandomBookItemID();
-			Hue = Utility.RandomColor(0);
-			Name = Server.Misc.RandomThings.GetBookTitle();
-		}
+    [CommandProperty(AccessLevel.Owner)]
+    public int Relic_Value {
+        get { return RelicGoldValue; } set { RelicGoldValue = value; InvalidateProperties(); }
+    }
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			from.SendMessage( "This is just another story, but it may be worth something." );
-			return;
-		}
+    [Constructable]
+    public DDRelicBook() : base(0xFBD)
+    {
+        Weight         = 5;
+        RelicGoldValue = Server.Misc.RelicItems.RelicValue();
+        ItemID         = RandomThings.GetRandomBookItemID();
+        Hue            = Utility.RandomColor(0);
+        Name           = Server.Misc.RandomThings.GetBookTitle();
+    }
 
-		public DDRelicBook(Serial serial) : base(serial)
-		{
-		}
+    public override void OnDoubleClick(Mobile from)
+    {
+        from.SendMessage("This is just another story, but it may be worth something.");
+        return;
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-            writer.Write( (int) 0 ); // version
-            writer.Write( RelicGoldValue );
-		}
+    public DDRelicBook(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-            int version = reader.ReadInt();
-            RelicGoldValue = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);        // version
+        writer.Write(RelicGoldValue);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        RelicGoldValue = reader.ReadInt();
+    }
+}
 }

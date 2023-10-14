@@ -11,324 +11,350 @@ using Server.Items;
 
 namespace Server.Engines.BulkOrders
 {
-	public class BulkOrderBook : Item, ISecurable
-	{
-		private ArrayList m_Entries;
-		private BOBFilter m_Filter;
-		private string m_BookName;
-		private SecureLevel m_Level;
-		private int m_ItemCount;
+public class BulkOrderBook : Item, ISecurable
+{
+    private ArrayList m_Entries;
+    private BOBFilter m_Filter;
+    private string m_BookName;
+    private SecureLevel m_Level;
+    private int m_ItemCount;
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public string BookName
-		{
-			get{ return m_BookName; }
-			set{ m_BookName = value; InvalidateProperties(); }
-		}
+    [CommandProperty(AccessLevel.GameMaster)]
+    public string BookName
+    {
+        get { return m_BookName; }
+        set { m_BookName = value; InvalidateProperties(); }
+    }
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public SecureLevel Level
-		{
-			get{ return m_Level; }
-			set{ m_Level = value; }
-		}
+    [CommandProperty(AccessLevel.GameMaster)]
+    public SecureLevel Level
+    {
+        get { return m_Level; }
+        set { m_Level = value; }
+    }
 
-		public ArrayList Entries
-		{
-			get{ return m_Entries; }
-		}
+    public ArrayList Entries
+    {
+        get { return m_Entries; }
+    }
 
-		public BOBFilter Filter
-		{
-			get{ return m_Filter; }
-		}
-		
-		public int ItemCount
-		{
-			get{ return m_ItemCount; }
-			set{ m_ItemCount = value; }
-		}
+    public BOBFilter Filter
+    {
+        get { return m_Filter; }
+    }
 
-		[Constructable]
-		public BulkOrderBook() : base( 0x2259 )
-		{
-			Weight = 1.0;
-			LootType = LootType.Blessed;
+    public int ItemCount
+    {
+        get { return m_ItemCount; }
+        set { m_ItemCount = value; }
+    }
 
-			m_Entries = new ArrayList();
-			m_Filter = new BOBFilter();
+    [Constructable]
+    public BulkOrderBook() : base(0x2259)
+    {
+        Weight   = 1.0;
+        LootType = LootType.Blessed;
 
-			m_Level = SecureLevel.CoOwners;
-		}
+        m_Entries = new ArrayList();
+        m_Filter  = new BOBFilter();
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			if ( !from.InRange( GetWorldLocation(), 2 ) )
-				from.LocalOverheadMessage( Network.MessageType.Regular, 0x3B2, 1019045 ); // I can't reach that.
-			else if ( m_Entries.Count == 0 )
-				from.SendLocalizedMessage( 1062381 ); // The book is empty.
-			else if ( from is PlayerMobile )
-				from.SendGump( new BOBGump( (PlayerMobile)from, this ) );
-		}
+        m_Level = SecureLevel.CoOwners;
+    }
 
-		public override void OnDoubleClickSecureTrade( Mobile from )
-		{
-			if ( !from.InRange( GetWorldLocation(), 2 ) )
-			{
-				from.SendLocalizedMessage( 500446 ); // That is too far away.
-			}
-			else if ( m_Entries.Count == 0 )
-			{
-				from.SendLocalizedMessage( 1062381 ); // The book is empty.
-			}
-			else
-			{
-				from.SendGump( new BOBGump( (PlayerMobile)from, this ) );
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!from.InRange(GetWorldLocation(), 2))
+        {
+            from.LocalOverheadMessage(Network.MessageType.Regular, 0x3B2, 1019045);                       // I can't reach that.
+        }
+        else if (m_Entries.Count == 0)
+        {
+            from.SendLocalizedMessage(1062381);                       // The book is empty.
+        }
+        else if (from is PlayerMobile)
+        {
+            from.SendGump(new BOBGump((PlayerMobile)from, this));
+        }
+    }
 
-				SecureTradeContainer cont = GetSecureTradeCont();
+    public override void OnDoubleClickSecureTrade(Mobile from)
+    {
+        if (!from.InRange(GetWorldLocation(), 2))
+        {
+            from.SendLocalizedMessage(500446);                       // That is too far away.
+        }
+        else if (m_Entries.Count == 0)
+        {
+            from.SendLocalizedMessage(1062381);                       // The book is empty.
+        }
+        else
+        {
+            from.SendGump(new BOBGump((PlayerMobile)from, this));
 
-				if ( cont != null )
-				{
-					SecureTrade trade = cont.Trade;
+            SecureTradeContainer cont = GetSecureTradeCont();
 
-					if ( trade != null && trade.From.Mobile == from )
-						trade.To.Mobile.SendGump( new BOBGump( (PlayerMobile)(trade.To.Mobile), this ) );
-					else if ( trade != null && trade.To.Mobile == from )
-						trade.From.Mobile.SendGump( new BOBGump( (PlayerMobile)(trade.From.Mobile), this ) );
-				}
-			}
-		}
+            if (cont != null)
+            {
+                SecureTrade trade = cont.Trade;
 
-		public override bool OnDragDrop( Mobile from, Item dropped )
-		{
-			if ( dropped is LargeBOD || dropped is SmallBOD )
-			{
-				if ( !IsChildOf( from.Backpack ) )
-				{
-					from.SendLocalizedMessage( 1062385 ); // You must have the book in your backpack to add deeds to it.
-					return false;
-				}
-				else if ( !from.Backpack.CheckHold( from, dropped, true, true ) )
-					return false;
-				else if ( m_Entries.Count < 500 )
-				{
-					if ( dropped is LargeBOD )
-						m_Entries.Add( new BOBLargeEntry( (LargeBOD)dropped ) );
-					else if ( dropped is SmallBOD ) // Sanity
-						m_Entries.Add( new BOBSmallEntry( (SmallBOD)dropped ) );
-					
-					InvalidateProperties();
-					
-					if ( m_Entries.Count / 5 > m_ItemCount )
-					{
-						m_ItemCount++;
-						InvalidateItems();
-					}
+                if (trade != null && trade.From.Mobile == from)
+                {
+                    trade.To.Mobile.SendGump(new BOBGump((PlayerMobile)(trade.To.Mobile), this));
+                }
+                else if (trade != null && trade.To.Mobile == from)
+                {
+                    trade.From.Mobile.SendGump(new BOBGump((PlayerMobile)(trade.From.Mobile), this));
+                }
+            }
+        }
+    }
 
-					from.SendSound(0x42, GetWorldLocation());
-					from.SendLocalizedMessage( 1062386 ); // Deed added to book.
+    public override bool OnDragDrop(Mobile from, Item dropped)
+    {
+        if (dropped is LargeBOD || dropped is SmallBOD)
+        {
+            if (!IsChildOf(from.Backpack))
+            {
+                from.SendLocalizedMessage(1062385);                           // You must have the book in your backpack to add deeds to it.
+                return false;
+            }
+            else if (!from.Backpack.CheckHold(from, dropped, true, true))
+            {
+                return false;
+            }
+            else if (m_Entries.Count < 500)
+            {
+                if (dropped is LargeBOD)
+                {
+                    m_Entries.Add(new BOBLargeEntry((LargeBOD)dropped));
+                }
+                else if (dropped is SmallBOD)                           // Sanity
+                {
+                    m_Entries.Add(new BOBSmallEntry((SmallBOD)dropped));
+                }
 
-					if ( from is PlayerMobile )
-						from.SendGump( new BOBGump( (PlayerMobile)from, this ) );
+                InvalidateProperties();
 
-					dropped.Delete();
+                if (m_Entries.Count / 5 > m_ItemCount)
+                {
+                    m_ItemCount++;
+                    InvalidateItems();
+                }
 
-					return true;
-				}
-				else
-				{
-					from.SendLocalizedMessage( 1062387 ); // The book is full of deeds.
-					return false;
-				}
-			}
+                from.SendSound(0x42, GetWorldLocation());
+                from.SendLocalizedMessage(1062386);                           // Deed added to book.
 
-			from.SendLocalizedMessage( 1062388 ); // That is not a bulk order deed.
-			return false;
-		}
-		
-		public override int GetTotal( TotalType type )
-		{
-			int total = base.GetTotal( type );
-			
-			if ( type == TotalType.Items )
-				total = m_ItemCount;
+                if (from is PlayerMobile)
+                {
+                    from.SendGump(new BOBGump((PlayerMobile)from, this));
+                }
 
-			return total;
-		}
-		
-		public void InvalidateItems()
-		{
-			if ( RootParent is Mobile )
-			{
-				Mobile m = (Mobile) RootParent;
+                dropped.Delete();
 
-				m.UpdateTotals();
-				InvalidateContainers( Parent );
-			}
-		}
-		
-		public void InvalidateContainers( object parent )
-		{
-			if ( parent != null && parent is Container )
-			{
-				Container c = (Container)parent;
-				
-				c.InvalidateProperties();
-				InvalidateContainers( c.Parent );
-			}
-		}
+                return true;
+            }
+            else
+            {
+                from.SendLocalizedMessage(1062387);                           // The book is full of deeds.
+                return false;
+            }
+        }
 
-		public BulkOrderBook( Serial serial ) : base( serial )
-		{
-		}
+        from.SendLocalizedMessage(1062388);                   // That is not a bulk order deed.
+        return false;
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override int GetTotal(TotalType type)
+    {
+        int total = base.GetTotal(type);
 
-			writer.Write( (int) 2 ); // version
-			
-			writer.Write( (int) m_ItemCount );
+        if (type == TotalType.Items)
+        {
+            total = m_ItemCount;
+        }
 
-			writer.Write( (int) m_Level );
+        return total;
+    }
 
-			writer.Write( m_BookName );
+    public void InvalidateItems()
+    {
+        if (RootParent is Mobile)
+        {
+            Mobile m = (Mobile)RootParent;
 
-			m_Filter.Serialize( writer );
+            m.UpdateTotals();
+            InvalidateContainers(Parent);
+        }
+    }
 
-			writer.WriteEncodedInt( (int) m_Entries.Count );
+    public void InvalidateContainers(object parent)
+    {
+        if (parent != null && parent is Container)
+        {
+            Container c = (Container)parent;
 
-			for ( int i = 0; i < m_Entries.Count; ++i )
-			{
-				object obj = m_Entries[i];
+            c.InvalidateProperties();
+            InvalidateContainers(c.Parent);
+        }
+    }
 
-				if ( obj is BOBLargeEntry )
-				{
-					writer.WriteEncodedInt( 0 );
-					((BOBLargeEntry)obj).Serialize( writer );
-				}
-				else if ( obj is BOBSmallEntry )
-				{
-					writer.WriteEncodedInt( 1 );
-					((BOBSmallEntry)obj).Serialize( writer );
-				}
-				else
-				{
-					writer.WriteEncodedInt( -1 );
-				}
-			}
-		}
+    public BulkOrderBook(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			int version = reader.ReadInt();
+        writer.Write((int)2);                    // version
 
-			switch ( version )
-			{
-				case 2:
-				{
-					m_ItemCount = reader.ReadInt();
-					goto case 1;
-				}
-				case 1:
-				{
-					m_Level = (SecureLevel)reader.ReadInt();
-					goto case 0;
-				}
-				case 0:
-				{
-					m_BookName = reader.ReadString();
+        writer.Write((int)m_ItemCount);
 
-					m_Filter = new BOBFilter( reader );
+        writer.Write((int)m_Level);
 
-					int count = reader.ReadEncodedInt();
+        writer.Write(m_BookName);
 
-					m_Entries = new ArrayList( count );
+        m_Filter.Serialize(writer);
 
-					for ( int i = 0; i < count; ++i )
-					{
-						int v = reader.ReadEncodedInt();
+        writer.WriteEncodedInt((int)m_Entries.Count);
 
-						switch ( v )
-						{
-							case 0: m_Entries.Add( new BOBLargeEntry( reader ) ); break;
-							case 1: m_Entries.Add( new BOBSmallEntry( reader ) ); break;
-						}
-					}
+        for (int i = 0; i < m_Entries.Count; ++i)
+        {
+            object obj = m_Entries[i];
 
-					break;
-				}
-			}
-		}
+            if (obj is BOBLargeEntry)
+            {
+                writer.WriteEncodedInt(0);
+                ((BOBLargeEntry)obj).Serialize(writer);
+            }
+            else if (obj is BOBSmallEntry)
+            {
+                writer.WriteEncodedInt(1);
+                ((BOBSmallEntry)obj).Serialize(writer);
+            }
+            else
+            {
+                writer.WriteEncodedInt(-1);
+            }
+        }
+    }
 
-		public override void GetProperties( ObjectPropertyList list )
-		{
-			base.GetProperties( list );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			list.Add( 1062344, m_Entries.Count.ToString() ); // Deeds in book: ~1_val~
+        int version = reader.ReadInt();
 
-			if ( m_BookName != null && m_BookName.Length > 0 )
-				list.Add( 1062481, m_BookName ); // Book Name: ~1_val~
-		}
+        switch (version)
+        {
+            case 2:
+            {
+                m_ItemCount = reader.ReadInt();
+                goto case 1;
+            }
+            case 1:
+            {
+                m_Level = (SecureLevel)reader.ReadInt();
+                goto case 0;
+            }
+            case 0:
+            {
+                m_BookName = reader.ReadString();
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
-		{
-			base.GetContextMenuEntries( from, list );
+                m_Filter = new BOBFilter(reader);
 
-			if ( from.CheckAlive() && IsChildOf( from.Backpack ) )
-				list.Add( new NameBookEntry( from, this ) );
+                int count = reader.ReadEncodedInt();
 
-			SetSecureLevelEntry.AddTo( from, this, list );
-		}
+                m_Entries = new ArrayList(count);
 
-		private class NameBookEntry : ContextMenuEntry
-		{
-			private Mobile m_From;
-			private BulkOrderBook m_Book;
+                for (int i = 0; i < count; ++i)
+                {
+                    int v = reader.ReadEncodedInt();
 
-			public NameBookEntry( Mobile from, BulkOrderBook book ) : base( 6216 )
-			{
-				m_From = from;
-				m_Book = book;
-			}
+                    switch (v)
+                    {
+                        case 0: m_Entries.Add(new BOBLargeEntry(reader)); break;
+                        case 1: m_Entries.Add(new BOBSmallEntry(reader)); break;
+                    }
+                }
 
-			public override void OnClick()
-			{
-				if ( m_From.CheckAlive() && m_Book.IsChildOf( m_From.Backpack ) )
-				{
-					m_From.Prompt = new NameBookPrompt( m_Book );
-					m_From.SendLocalizedMessage( 1062479 ); // Type in the new name of the book:
-				}
-			}
-		}
+                break;
+            }
+        }
+    }
 
-		private class NameBookPrompt : Prompt
-		{
-			private BulkOrderBook m_Book;
+    public override void GetProperties(ObjectPropertyList list)
+    {
+        base.GetProperties(list);
 
-			public NameBookPrompt( BulkOrderBook book )
-			{
-				m_Book = book;
-			}
+        list.Add(1062344, m_Entries.Count.ToString());                   // Deeds in book: ~1_val~
 
-			public override void OnResponse( Mobile from, string text )
-			{
-				if ( text.Length > 40 )
-					text = text.Substring( 0, 40 );
+        if (m_BookName != null && m_BookName.Length > 0)
+        {
+            list.Add(1062481, m_BookName);                       // Book Name: ~1_val~
+        }
+    }
 
-				if ( from.CheckAlive() && m_Book.IsChildOf( from.Backpack ) )
-				{
-					m_Book.BookName = Utility.FixHtml( text.Trim() );
+    public override void GetContextMenuEntries(Mobile from, List <ContextMenuEntry> list)
+    {
+        base.GetContextMenuEntries(from, list);
 
-					from.SendLocalizedMessage( 1062480 ); // The bulk order book's name has been changed.
-				}
-			}
+        if (from.CheckAlive() && IsChildOf(from.Backpack))
+        {
+            list.Add(new NameBookEntry(from, this));
+        }
 
-			public override void OnCancel( Mobile from )
-			{
-			}
-		}
-	}
+        SetSecureLevelEntry.AddTo(from, this, list);
+    }
+
+    private class NameBookEntry : ContextMenuEntry
+    {
+        private Mobile m_From;
+        private BulkOrderBook m_Book;
+
+        public NameBookEntry(Mobile from, BulkOrderBook book) : base(6216)
+        {
+            m_From = from;
+            m_Book = book;
+        }
+
+        public override void OnClick()
+        {
+            if (m_From.CheckAlive() && m_Book.IsChildOf(m_From.Backpack))
+            {
+                m_From.Prompt = new NameBookPrompt(m_Book);
+                m_From.SendLocalizedMessage(1062479);                           // Type in the new name of the book:
+            }
+        }
+    }
+
+    private class NameBookPrompt : Prompt
+    {
+        private BulkOrderBook m_Book;
+
+        public NameBookPrompt(BulkOrderBook book)
+        {
+            m_Book = book;
+        }
+
+        public override void OnResponse(Mobile from, string text)
+        {
+            if (text.Length > 40)
+            {
+                text = text.Substring(0, 40);
+            }
+
+            if (from.CheckAlive() && m_Book.IsChildOf(from.Backpack))
+            {
+                m_Book.BookName = Utility.FixHtml(text.Trim());
+
+                from.SendLocalizedMessage(1062480);                           // The bulk order book's name has been changed.
+            }
+        }
+
+        public override void OnCancel(Mobile from)
+        {
+        }
+    }
+}
 }

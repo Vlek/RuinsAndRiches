@@ -5,51 +5,65 @@ using Server.Targeting;
 
 namespace Server.Items
 {
-	public class YashimotosHatsuburi : ChainHatsuburi, IIslesDreadDyable
-	{
-		public override int InitMinHits{ get{ return 80; } }
-		public override int InitMaxHits{ get{ return 160; } }
+public class YashimotosHatsuburi : ChainHatsuburi, IIslesDreadDyable
+{
+    public override int InitMinHits {
+        get { return 80; }
+    }
+    public override int InitMaxHits {
+        get { return 160; }
+    }
 
-		public override int BaseColdResistance{ get{ return 5; } } 
-		public override int BaseEnergyResistance{ get{ return 2; } } 
-		public override int BasePhysicalResistance{ get{ return 7; } } 
-		public override int BasePoisonResistance{ get{ return 3; } } 
-		public override int BaseFireResistance{ get{ return 7; } } 
-      
-		[Constructable]
-		public YashimotosHatsuburi()
-		{
-          Name = "Yashimoto's Hatsuburi";
-          Hue = 1157;
-		  ArmorAttributes.LowerStatReq = 50;
-		  ArmorAttributes.SelfRepair = 5;
-		  Attributes.AttackChance = 15;
-		  Attributes.DefendChance = 15;
-		  Attributes.RegenHits = 10;
-		  Attributes.WeaponDamage = 15;
-		}
+    public override int BaseColdResistance {
+        get { return 5; }
+    }
+    public override int BaseEnergyResistance {
+        get { return 2; }
+    }
+    public override int BasePhysicalResistance {
+        get { return 7; }
+    }
+    public override int BasePoisonResistance {
+        get { return 3; }
+    }
+    public override int BaseFireResistance {
+        get { return 7; }
+    }
 
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			list.Add( 1070722, "Artefact");
-        }
+    [Constructable]
+    public YashimotosHatsuburi()
+    {
+        Name = "Yashimoto's Hatsuburi";
+        Hue  = 1157;
+        ArmorAttributes.LowerStatReq = 50;
+        ArmorAttributes.SelfRepair   = 5;
+        Attributes.AttackChance      = 15;
+        Attributes.DefendChance      = 15;
+        Attributes.RegenHits         = 10;
+        Attributes.WeaponDamage      = 15;
+    }
 
-		public YashimotosHatsuburi( Serial serial ) : base( serial )
-		{
-		}
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "Artefact");
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public YashimotosHatsuburi(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadInt();
+    }
+}
 }

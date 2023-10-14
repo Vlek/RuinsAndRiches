@@ -13,211 +13,223 @@ using Server.Accounting;
 
 namespace Server.Mobiles
 {
-	public class VarietyDealer : BaseVendor
-	{
-		private List<SBInfo> m_SBInfos = new List<SBInfo>();
-		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }
+public class VarietyDealer : BaseVendor
+{
+    private List <SBInfo> m_SBInfos = new List <SBInfo>();
+    protected override List <SBInfo> SBInfos {
+        get { return m_SBInfos; }
+    }
 
-		public override NpcGuild NpcGuild{ get{ return NpcGuild.MerchantsGuild; } }
+    public override NpcGuild NpcGuild {
+        get { return NpcGuild.MerchantsGuild; }
+    }
 
-		[Constructable]
-		public VarietyDealer() : base( "the art collector" )
-		{
-		}
+    [Constructable]
+    public VarietyDealer() : base("the art collector")
+    {
+    }
 
-		///////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list ) 
-		{ 
-			base.GetContextMenuEntries( from, list ); 
-			list.Add( new SpeechGumpEntry( from, this ) ); 
-		} 
+    public override void GetContextMenuEntries(Mobile from, List <ContextMenuEntry> list)
+    {
+        base.GetContextMenuEntries(from, list);
+        list.Add(new SpeechGumpEntry(from, this));
+    }
 
-		public class SpeechGumpEntry : ContextMenuEntry
-		{
-			private Mobile m_Mobile;
-			private Mobile m_Giver;
-			
-			public SpeechGumpEntry( Mobile from, Mobile giver ) : base( 6146, 3 )
-			{
-				m_Mobile = from;
-				m_Giver = giver;
-			}
+    public class SpeechGumpEntry : ContextMenuEntry
+    {
+        private Mobile m_Mobile;
+        private Mobile m_Giver;
 
-			public override void OnClick()
-			{
-			    if( !( m_Mobile is PlayerMobile ) )
-				return;
-				
-				PlayerMobile mobile = (PlayerMobile) m_Mobile;
-				{
-					if ( ! mobile.HasGump( typeof( SpeechGump ) ) )
-					{
-						Server.Misc.IntelligentAction.SayHey( m_Giver );
-						mobile.SendGump(new SpeechGump( mobile, "The Hunt For Relics", SpeechFunctions.SpeechText( m_Giver, m_Mobile, "Variety" ) ));
-					}
-				}
+        public SpeechGumpEntry(Mobile from, Mobile giver) : base(6146, 3)
+        {
+            m_Mobile = from;
+            m_Giver  = giver;
+        }
+
+        public override void OnClick()
+        {
+            if (!(m_Mobile is PlayerMobile))
+            {
+                return;
+            }
+
+            PlayerMobile mobile = (PlayerMobile)m_Mobile;
+            {
+                if (!mobile.HasGump(typeof(SpeechGump)))
+                {
+                    Server.Misc.IntelligentAction.SayHey(m_Giver);
+                    mobile.SendGump(new SpeechGump(mobile, "The Hunt For Relics", SpeechFunctions.SpeechText(m_Giver, m_Mobile, "Variety")));
+                }
             }
         }
-		
-		///////////////////////////////////////////////////////////////////////////
+    }
 
-		public override bool OnDragDrop( Mobile from, Item dropped )
-		{
-			if ( dropped is Gold )
-			{
-				string sMessage = "";
+    ///////////////////////////////////////////////////////////////////////////
 
-				if ( dropped.Amount == 500 && Server.Items.MuseumBook.IsEnabled() )
-				{
-					if (	Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Sosaria" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Lodoria" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Island of Umber Veil" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Land of Ambrosia" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Serpent Island" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Isles of Dread" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Savaged Empire" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Bottle World of Kuldar" ) && 
-							Server.Misc.PlayerSettings.GetDiscovered( from, "the Underworld" )
-					)
-					{
-						if ( AlreadyHasBook( from ) )
-						{
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Here. I see you already have a book." ) ); 
-						}
-						else if ( PlayerSettings.GetKeys( from, "Antiques" ) )
-						{
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Thank you, but you already done that for me." ) ); 
-						}
-						else
-						{
-							MuseumBook book = new MuseumBook();
-							from.PlaySound( 0x2E6 );
-							book.ArtOwner = from;
-							from.AddToBackpack( book );
-							this.PublicOverheadMessage( MessageType.Regular, 0, false, string.Format ( "Good luck with the search." ) ); 
-							PlayerSettings.SetKeys( from, "Antiques", true );
-							dropped.Delete();
-						}
-					}
-					else
-					{
-						sMessage = "You need to discover the nine lands before I share this with you.";
-						from.AddToBackpack ( dropped );
-					}
-				}
-				else
-				{
-					sMessage = "You look like you need this more than I do.";
-					from.AddToBackpack ( dropped );
-				}
+    public override bool OnDragDrop(Mobile from, Item dropped)
+    {
+        if (dropped is Gold)
+        {
+            string sMessage = "";
 
-				this.PrivateOverheadMessage(MessageType.Regular, 1153, false, sMessage, from.NetState);
-			}
-			else if ( dropped is MuseumBook )
-			{
-				MuseumBook book = (MuseumBook)dropped;
-				string sMessage = "";
-				if ( book.ArtOwner != from )
-				{
-					sMessage = "This book doesn't belong to you so I will just get rid of it.";
-					bool remove = true;
-					foreach ( Account a in Accounts.GetAccounts() )
-					{
-						if (a == null)
-							break;
+            if (dropped.Amount == 500 && Server.Items.MuseumBook.IsEnabled())
+            {
+                if (Server.Misc.PlayerSettings.GetDiscovered(from, "the Land of Sosaria")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Land of Lodoria")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Island of Umber Veil")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Land of Ambrosia")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Serpent Island")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Isles of Dread")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Savaged Empire")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Bottle World of Kuldar")
+                    && Server.Misc.PlayerSettings.GetDiscovered(from, "the Underworld")
+                    )
+                {
+                    if (AlreadyHasBook(from))
+                    {
+                        this.PublicOverheadMessage(MessageType.Regular, 0, false, string.Format("Here. I see you already have a book."));
+                    }
+                    else if (PlayerSettings.GetKeys(from, "Antiques"))
+                    {
+                        this.PublicOverheadMessage(MessageType.Regular, 0, false, string.Format("Thank you, but you already done that for me."));
+                    }
+                    else
+                    {
+                        MuseumBook book = new MuseumBook();
+                        from.PlaySound(0x2E6);
+                        book.ArtOwner = from;
+                        from.AddToBackpack(book);
+                        this.PublicOverheadMessage(MessageType.Regular, 0, false, string.Format("Good luck with the search."));
+                        PlayerSettings.SetKeys(from, "Antiques", true);
+                        dropped.Delete();
+                    }
+                }
+                else
+                {
+                    sMessage = "You need to discover the nine lands before I share this with you.";
+                    from.AddToBackpack(dropped);
+                }
+            }
+            else
+            {
+                sMessage = "You look like you need this more than I do.";
+                from.AddToBackpack(dropped);
+            }
 
-						int index = 0;
+            this.PrivateOverheadMessage(MessageType.Regular, 1153, false, sMessage, from.NetState);
+        }
+        else if (dropped is MuseumBook)
+        {
+            MuseumBook book     = (MuseumBook)dropped;
+            string     sMessage = "";
+            if (book.ArtOwner != from)
+            {
+                sMessage = "This book doesn't belong to you so I will just get rid of it.";
+                bool remove = true;
+                foreach (Account a in Accounts.GetAccounts())
+                {
+                    if (a == null)
+                    {
+                        break;
+                    }
 
-						for (int i = 0; i < a.Length; ++i)
-						{
-							Mobile m = a[i];
+                    int index = 0;
 
-							if (m == null)
-								continue;
+                    for (int i = 0; i < a.Length; ++i)
+                    {
+                        Mobile m = a[i];
 
-							if ( m == book.ArtOwner )
-							{
-								m.AddToBackpack( dropped );
-								remove = false;
-							}
+                        if (m == null)
+                        {
+                            continue;
+                        }
 
-							++index;
-						}
-					}
-					if ( remove )
-					{
-						dropped.Delete();
-					}
-				}
-				else if ( MuseumBook.GetNext( book ) > 60 )
-				{
-					PlayerSettings.SetKeys( from, "Museums", true );
-					from.SendSound( 0x3D );
-					from.AddToBackpack ( new BankCheck( MuseumBook.QuestValue() ) );
-					sMessage = "You have done the museum a great service. Here is " + MuseumBook.QuestValue() + " gold we promised.";
-					from.Fame = 15000;
-					from.SendMessage( "You have gained a really large amount of fame." );
-					dropped.Delete();
-				}
-				else
-				{
-					sMessage = "You have not finished your search yet.";
-				}
-				this.PrivateOverheadMessage(MessageType.Regular, 1153, false, sMessage, from.NetState);
-			}
+                        if (m == book.ArtOwner)
+                        {
+                            m.AddToBackpack(dropped);
+                            remove = false;
+                        }
 
-			return base.OnDragDrop( from, dropped );
-		}
+                        ++index;
+                    }
+                }
+                if (remove)
+                {
+                    dropped.Delete();
+                }
+            }
+            else if (MuseumBook.GetNext(book) > 60)
+            {
+                PlayerSettings.SetKeys(from, "Museums", true);
+                from.SendSound(0x3D);
+                from.AddToBackpack(new BankCheck(MuseumBook.QuestValue()));
+                sMessage  = "You have done the museum a great service. Here is " + MuseumBook.QuestValue() + " gold we promised.";
+                from.Fame = 15000;
+                from.SendMessage("You have gained a really large amount of fame.");
+                dropped.Delete();
+            }
+            else
+            {
+                sMessage = "You have not finished your search yet.";
+            }
+            this.PrivateOverheadMessage(MessageType.Regular, 1153, false, sMessage, from.NetState);
+        }
 
-		public static bool AlreadyHasBook( Mobile from ) /////////////////////////////////////////////////////////////////////////////////////////////
-		{
-			bool HasBook = false;
+        return base.OnDragDrop(from, dropped);
+    }
 
-			ArrayList targets = new ArrayList();
-			foreach ( Item item in World.Items.Values )
-			{
-				if ( item is MuseumBook )
-				{
-					MuseumBook book = (MuseumBook)item;
-					if ( book.ArtOwner == from )
-						targets.Add( item );
-				}
-			}
-			for ( int i = 0; i < targets.Count; ++i )
-			{
-				Item item = ( Item )targets[ i ];
-				from.AddToBackpack( item );
-				HasBook = true;
-			}
+    public static bool AlreadyHasBook(Mobile from)               /////////////////////////////////////////////////////////////////////////////////////////////
+    {
+        bool HasBook = false;
 
-			return HasBook;
-		}
+        ArrayList targets = new ArrayList();
+        foreach (Item item in World.Items.Values)
+        {
+            if (item is MuseumBook)
+            {
+                MuseumBook book = (MuseumBook)item;
+                if (book.ArtOwner == from)
+                {
+                    targets.Add(item);
+                }
+            }
+        }
+        for (int i = 0; i < targets.Count; ++i)
+        {
+            Item item = ( Item )targets[i];
+            from.AddToBackpack(item);
+            HasBook = true;
+        }
 
-		///////////////////////////////////////////////////////////////////////////
+        return HasBook;
+    }
 
-		public override void InitSBInfo()
-		{
-			m_SBInfos.Add( new SBVarietyDealer() ); 
-			m_SBInfos.Add( new SBBuyArtifacts() ); 
-		}
+    ///////////////////////////////////////////////////////////////////////////
 
-		public VarietyDealer( Serial serial ) : base( serial )
-		{
-		}
+    public override void InitSBInfo()
+    {
+        m_SBInfos.Add(new SBVarietyDealer());
+        m_SBInfos.Add(new SBBuyArtifacts());
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public VarietyDealer(Serial serial) : base(serial)
+    {
+    }
 
-			writer.Write( (int) 0 ); // version
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+        writer.Write((int)0);                    // version
+    }
 
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadInt();
+    }
+}
 }

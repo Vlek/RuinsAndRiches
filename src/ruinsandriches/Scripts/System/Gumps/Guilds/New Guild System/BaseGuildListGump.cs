@@ -8,200 +8,231 @@ using System.Collections.Generic;
 
 namespace Server.Guilds
 {
-	public abstract class BaseGuildListGump<T> : BaseGuildGump
-	{
-		List<T> m_List;
-		IComparer<T> m_Comparer;
-		InfoField<T>[] m_Fields;
-		bool m_Ascending;
-		string m_Filter;
-		int m_StartNumber;
-		
-		private const int itemsPerPage = 8;
+public abstract class BaseGuildListGump <T> : BaseGuildGump
+{
+    List <T> m_List;
+    IComparer <T> m_Comparer;
+    InfoField <T>[] m_Fields;
+    bool m_Ascending;
+    string m_Filter;
+    int m_StartNumber;
 
-		public BaseGuildListGump( PlayerMobile pm, Guild g, List<T> list, IComparer<T> currentComparer, bool ascending, string filter, int startNumber, InfoField<T>[] fields )
-			: base( pm, g )
-		{
-			m_Filter = filter.Trim();
+    private const int itemsPerPage = 8;
 
-			m_Comparer = currentComparer;
-			m_Fields = fields;
-			m_Ascending = ascending;
-			m_StartNumber = startNumber;
-			m_List = list;
-		}
+    public BaseGuildListGump(PlayerMobile pm, Guild g, List <T> list, IComparer <T> currentComparer, bool ascending, string filter, int startNumber, InfoField <T>[] fields)
+        : base(pm, g)
+    {
+        m_Filter = filter.Trim();
 
-		public virtual bool WillFilter{ get{ return (m_Filter.Length >= 0); } }
+        m_Comparer    = currentComparer;
+        m_Fields      = fields;
+        m_Ascending   = ascending;
+        m_StartNumber = startNumber;
+        m_List        = list;
+    }
 
-		public override void PopulateGump()
-		{
-			base.PopulateGump();
+    public virtual bool WillFilter {
+        get { return m_Filter.Length >= 0; }
+    }
 
-			List<T> list = m_List;
-			if( WillFilter )
-			{
-				m_List = new List<T>();
-				for( int i = 0; i < list.Count; i++ )
-				{
-					if( !IsFiltered( list[i], m_Filter ) )
-						m_List.Add( list[i] );
-				}
-			}
-			else
-			{
-				m_List = new List<T>( list );
-			}
+    public override void PopulateGump()
+    {
+        base.PopulateGump();
 
-			m_List.Sort( m_Comparer );
-			m_StartNumber = Math.Max( Math.Min( m_StartNumber, m_List.Count - 1 ), 0 );
+        List <T> list = m_List;
+        if (WillFilter)
+        {
+            m_List = new List <T>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (!IsFiltered(list[i], m_Filter))
+                {
+                    m_List.Add(list[i]);
+                }
+            }
+        }
+        else
+        {
+            m_List = new List <T>(list);
+        }
 
-			
-			
-			AddBackground( 130, 75, 385, 30, 0xBB8 );
-			AddTextEntry( 135, 80, 375, 30, 0x481, 1, m_Filter );
-			AddButton( 520, 75, 0x867, 0x868, 5, GumpButtonType.Reply, 0 );	//Filter Button
+        m_List.Sort(m_Comparer);
+        m_StartNumber = Math.Max(Math.Min(m_StartNumber, m_List.Count - 1), 0);
 
-			int width = 0;
-			for( int i = 0; i < m_Fields.Length; i++ )
-			{
-				InfoField<T> f = m_Fields[i];
 
-				AddImageTiled( 65 + width, 110, f.Width + 10, 26, 0xA40 );
-				AddImageTiled( 67 + width, 112, f.Width + 6, 22, 0xBBC );
-				AddHtmlText( 70 + width, 113, f.Width, 20, f.Name, false, false );
 
-				bool isComparer = ( m_Fields[i].Comparer.GetType() == m_Comparer.GetType() );
+        AddBackground(130, 75, 385, 30, 0xBB8);
+        AddTextEntry(135, 80, 375, 30, 0x481, 1, m_Filter);
+        AddButton(520, 75, 0x867, 0x868, 5, GumpButtonType.Reply, 0);                   //Filter Button
 
-				int ButtonID = ( isComparer ) ? ( m_Ascending ? 0x983 : 0x985 ) : 0x2716;
+        int width = 0;
+        for (int i = 0; i < m_Fields.Length; i++)
+        {
+            InfoField <T> f = m_Fields[i];
 
-				AddButton( 59 + width + f.Width, 117, ButtonID, ButtonID + (isComparer ? 1 : 0) , 100 + i, GumpButtonType.Reply, 0 );
+            AddImageTiled(65 + width, 110, f.Width + 10, 26, 0xA40);
+            AddImageTiled(67 + width, 112, f.Width + 6, 22, 0xBBC);
+            AddHtmlText(70 + width, 113, f.Width, 20, f.Name, false, false);
 
-				width += (f.Width + 12);
-			}
+            bool isComparer = (m_Fields[i].Comparer.GetType() == m_Comparer.GetType());
 
-			if( m_StartNumber <= 0 )
-				AddButton( 65, 80, 0x15E3, 0x15E7, 0, GumpButtonType.Page, 0 );
-			else
-				AddButton( 65, 80, 0x15E3, 0x15E7, 6, GumpButtonType.Reply, 0 );	// Back
+            int ButtonID = (isComparer) ? (m_Ascending ? 0x983 : 0x985) : 0x2716;
 
-			if( m_StartNumber + itemsPerPage > m_List.Count )
-				AddButton( 95, 80, 0x15E1, 0x15E5, 0, GumpButtonType.Page, 0 );	
-			else
-				AddButton( 95, 80, 0x15E1, 0x15E5, 7, GumpButtonType.Reply, 0 );	// Forward
+            AddButton(59 + width + f.Width, 117, ButtonID, ButtonID + (isComparer ? 1 : 0), 100 + i, GumpButtonType.Reply, 0);
 
-			
-			int itemNumber = 0;
+            width += (f.Width + 12);
+        }
 
-			if( m_Ascending )
-				for( int i = m_StartNumber; i < m_StartNumber + itemsPerPage && i < m_List.Count; i++ )
-					DrawEntry( m_List[i], i, itemNumber++ );
-			else //descending, go from bottom of list to the top
-				for( int i = m_List.Count - 1 - m_StartNumber; i >= 0 && i >= (m_List.Count - itemsPerPage - m_StartNumber); i-- )
-					DrawEntry( m_List[i], i, itemNumber++ );
+        if (m_StartNumber <= 0)
+        {
+            AddButton(65, 80, 0x15E3, 0x15E7, 0, GumpButtonType.Page, 0);
+        }
+        else
+        {
+            AddButton(65, 80, 0x15E3, 0x15E7, 6, GumpButtonType.Reply, 0);                              // Back
+        }
+        if (m_StartNumber + itemsPerPage > m_List.Count)
+        {
+            AddButton(95, 80, 0x15E1, 0x15E5, 0, GumpButtonType.Page, 0);
+        }
+        else
+        {
+            AddButton(95, 80, 0x15E1, 0x15E5, 7, GumpButtonType.Reply, 0);                              // Forward
+        }
+        int itemNumber = 0;
 
-			DrawEndingEntry( itemNumber );
-		}
+        if (m_Ascending)
+        {
+            for (int i = m_StartNumber; i < m_StartNumber + itemsPerPage && i < m_List.Count; i++)
+            {
+                DrawEntry(m_List[i], i, itemNumber++);
+            }
+        }
+        else                 //descending, go from bottom of list to the top
+        {
+            for (int i = m_List.Count - 1 - m_StartNumber; i >= 0 && i >= (m_List.Count - itemsPerPage - m_StartNumber); i--)
+            {
+                DrawEntry(m_List[i], i, itemNumber++);
+            }
+        }
 
-		public virtual void DrawEndingEntry( int itemNumber )
-		{
-		}
+        DrawEndingEntry(itemNumber);
+    }
 
-		public virtual bool HasRelationship( T o )
-		{
-			return false;
-		}
+    public virtual void DrawEndingEntry(int itemNumber)
+    {
+    }
 
-		public virtual void DrawEntry( T o, int index, int itemNumber )
-		{
-			int width = 0;
-			for( int j = 0; j < m_Fields.Length; j++ )
-			{
-				InfoField<T> f = m_Fields[j];
+    public virtual bool HasRelationship(T o)
+    {
+        return false;
+    }
 
-				AddImageTiled( 65 + width, 138 + itemNumber * 28, f.Width + 10, 26, 0xA40 );
-				AddImageTiled( 67 + width, 140 + itemNumber * 28, f.Width + 6, 22, 0xBBC );
-				AddHtmlText( 70 + width, 141 + itemNumber * 28, f.Width, 20, GetValuesFor( o, m_Fields.Length )[j], false, false );
+    public virtual void DrawEntry(T o, int index, int itemNumber)
+    {
+        int width = 0;
+        for (int j = 0; j < m_Fields.Length; j++)
+        {
+            InfoField <T> f = m_Fields[j];
 
-				width += (f.Width + 12);
-			}
+            AddImageTiled(65 + width, 138 + itemNumber * 28, f.Width + 10, 26, 0xA40);
+            AddImageTiled(67 + width, 140 + itemNumber * 28, f.Width + 6, 22, 0xBBC);
+            AddHtmlText(70 + width, 141 + itemNumber * 28, f.Width, 20, GetValuesFor(o, m_Fields.Length)[j], false, false);
 
-			if( HasRelationship( o ) )
-				AddButton( 40, 143 + itemNumber * 28, 0x8AF, 0x8AF, 200 + index, GumpButtonType.Reply, 0 );	//Info Button
-			else
-				AddButton( 40, 143 + itemNumber * 28, 0x4B9, 0x4BA, 200 + index, GumpButtonType.Reply, 0 );	//Info Button
-		}
+            width += (f.Width + 12);
+        }
 
-		protected abstract TextDefinition[] GetValuesFor( T o, int aryLength );
-		protected abstract bool IsFiltered( T o, string filter );
+        if (HasRelationship(o))
+        {
+            AddButton(40, 143 + itemNumber * 28, 0x8AF, 0x8AF, 200 + index, GumpButtonType.Reply, 0);                           //Info Button
+        }
+        else
+        {
+            AddButton(40, 143 + itemNumber * 28, 0x4B9, 0x4BA, 200 + index, GumpButtonType.Reply, 0);                           //Info Button
+        }
+    }
 
-		public override void OnResponse( NetState sender, RelayInfo info )
-		{
-			base.OnResponse( sender, info );
+    protected abstract TextDefinition[] GetValuesFor(T o, int aryLength);
+    protected abstract bool IsFiltered(T o, string filter);
 
-			PlayerMobile pm = sender.Mobile as PlayerMobile;
+    public override void OnResponse(NetState sender, RelayInfo info)
+    {
+        base.OnResponse(sender, info);
 
-			if( pm == null || !IsMember( pm, guild ) )
-				return;
+        PlayerMobile pm = sender.Mobile as PlayerMobile;
 
-			int id = info.ButtonID;
+        if (pm == null || !IsMember(pm, guild))
+        {
+            return;
+        }
 
-			switch( id )
-			{
-				case 5:	//Filter
-				{
-					TextRelay t = info.GetTextEntry( 1 );
-					pm.SendGump( GetResentGump( player, guild, m_Comparer, m_Ascending, ( t == null ) ? "" : t.Text, 0 ) );
-					break;
-				}
-				case 6: //Back
-				{
-					pm.SendGump( GetResentGump( player, guild, m_Comparer, m_Ascending, m_Filter, m_StartNumber - itemsPerPage ) );
-					break;
-				}
-				case 7:	//Forward
-				{
-					pm.SendGump( GetResentGump( player, guild, m_Comparer, m_Ascending, m_Filter, m_StartNumber + itemsPerPage ) );
-					break;
-				}
-			}
+        int id = info.ButtonID;
 
-			if( id >= 100 && id < (100 + m_Fields.Length) )
-			{
-				IComparer<T> comparer = m_Fields[id-100].Comparer;
+        switch (id)
+        {
+            case 5:                     //Filter
+            {
+                TextRelay t = info.GetTextEntry(1);
+                pm.SendGump(GetResentGump(player, guild, m_Comparer, m_Ascending, (t == null) ? "" : t.Text, 0));
+                break;
+            }
+            case 6:                     //Back
+            {
+                pm.SendGump(GetResentGump(player, guild, m_Comparer, m_Ascending, m_Filter, m_StartNumber - itemsPerPage));
+                break;
+            }
+            case 7:                     //Forward
+            {
+                pm.SendGump(GetResentGump(player, guild, m_Comparer, m_Ascending, m_Filter, m_StartNumber + itemsPerPage));
+                break;
+            }
+        }
 
-				if( m_Comparer.GetType() == comparer.GetType() )
-					m_Ascending = !m_Ascending;
+        if (id >= 100 && id < (100 + m_Fields.Length))
+        {
+            IComparer <T> comparer = m_Fields[id - 100].Comparer;
 
-				pm.SendGump( GetResentGump( player, guild, comparer, m_Ascending, m_Filter, 0 ) );
-			}
-			else if( id >= 200 && id < ( 200 + m_List.Count ) )
-			{
-				pm.SendGump( GetObjectInfoGump( player, guild, m_List[id - 200] ) );
-			}
-		}
+            if (m_Comparer.GetType() == comparer.GetType())
+            {
+                m_Ascending = !m_Ascending;
+            }
 
-		public abstract Gump GetResentGump( PlayerMobile pm, Guild g, IComparer<T> comparer, bool ascending, string filter, int startNumber );
-		public abstract Gump GetObjectInfoGump( PlayerMobile pm, Guild g, T o );
+            pm.SendGump(GetResentGump(player, guild, comparer, m_Ascending, m_Filter, 0));
+        }
+        else if (id >= 200 && id < (200 + m_List.Count))
+        {
+            pm.SendGump(GetObjectInfoGump(player, guild, m_List[id - 200]));
+        }
+    }
 
-		public void ResendGump()
-		{
-			player.SendGump( GetResentGump( player, guild, m_Comparer, m_Ascending, m_Filter, m_StartNumber ) );
-		}
-	}
-	public struct InfoField<T>
-	{
-		private TextDefinition m_Name;
-		private int m_Width;
-		private IComparer<T> m_Comparer;
+    public abstract Gump GetResentGump(PlayerMobile pm, Guild g, IComparer <T> comparer, bool ascending, string filter, int startNumber);
+    public abstract Gump GetObjectInfoGump(PlayerMobile pm, Guild g, T o);
 
-		public TextDefinition Name{ get{ return m_Name; } }
-		public int Width{ get{ return m_Width; } }
-		public IComparer<T> Comparer { get { return m_Comparer; } }
-		public InfoField( TextDefinition name, int width, IComparer<T> comparer )
-		{
-			m_Name = name;
-			m_Width = width;
-			m_Comparer = comparer;
-		}
-	}
+    public void ResendGump()
+    {
+        player.SendGump(GetResentGump(player, guild, m_Comparer, m_Ascending, m_Filter, m_StartNumber));
+    }
+}
+public struct InfoField <T>
+{
+    private TextDefinition m_Name;
+    private int            m_Width;
+    private IComparer <T>  m_Comparer;
+
+    public TextDefinition Name {
+        get { return m_Name; }
+    }
+    public int Width {
+        get { return m_Width; }
+    }
+    public IComparer <T> Comparer {
+        get { return m_Comparer; }
+    }
+    public InfoField(TextDefinition name, int width, IComparer <T> comparer)
+    {
+        m_Name     = name;
+        m_Width    = width;
+        m_Comparer = comparer;
+    }
+}
 }

@@ -3,36 +3,36 @@ using Server;
 
 namespace Server.Items
 {
-	public class PolarBearBoots : FurBoots
-	{
-		[Constructable]
-		public PolarBearBoots()
-		{
-			Hue = 0x47E;
-			Name = "Polar Bear Boots";
-			Resistances.Cold = 30;
-		}
+public class PolarBearBoots : FurBoots
+{
+    [Constructable]
+    public PolarBearBoots()
+    {
+        Hue              = 0x47E;
+        Name             = "Polar Bear Boots";
+        Resistances.Cold = 30;
+    }
 
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			list.Add( 1070722, "Artefact");
-        }
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "Artefact");
+    }
 
-		public PolarBearBoots( Serial serial ) : base( serial )
-		{
-		}
+    public PolarBearBoots(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

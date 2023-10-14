@@ -12,13 +12,13 @@ using Server;
 
 namespace Knives.Chat3
 {
-    public class ChatJail
+public class ChatJail
+{
+    public static void SendToJail(Mobile m)
     {
-        public static void SendToJail(Mobile m)
-        {
             #if (Use_Xanthos)
-                Xanthos.JailSystem.Jail.JailThem((Server.Mobiles.PlayerMobile)m, Xanthos.JailSystem.Jail.JailOption.None);
+        Xanthos.JailSystem.Jail.JailThem((Server.Mobiles.PlayerMobile)m, Xanthos.JailSystem.Jail.JailOption.None);
             #endif
-        }
     }
+}
 }

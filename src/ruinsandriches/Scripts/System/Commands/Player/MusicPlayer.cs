@@ -8,33 +8,33 @@ using Server.Commands;
 using Server.Commands.Generic;
 using Server.Gumps;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
-    class Musical
+class Musical
+{
+    public static void Initialize()
     {
-        public static void Initialize()
+        CommandSystem.Register("musical", AccessLevel.Player, new CommandEventHandler(OnTogglePrivateTime));
+    }
+
+    [Usage("musical")]
+    [Description("Enables or disables the type of music played in dungeons.")]
+    private static void OnTogglePrivateTime(CommandEventArgs e)
+    {
+        Mobile m = e.Mobile;
+
+        string tunes = ((PlayerMobile)m).CharMusical;
+
+        if (tunes == "Forest")
         {
-            CommandSystem.Register("musical", AccessLevel.Player, new CommandEventHandler(OnTogglePrivateTime));
+            ((PlayerMobile)m).CharMusical = "Dungeon";
+            m.SendMessage(68, "Your dungeon music preference has been set to normal.");
         }
-
-        [Usage("musical")]
-        [Description("Enables or disables the type of music played in dungeons.")]
-        private static void OnTogglePrivateTime(CommandEventArgs e)
+        else
         {
-            Mobile m = e.Mobile;
-
-			string tunes = ((PlayerMobile)m).CharMusical;
-
-            if ( tunes == "Forest" )
-            {
-				((PlayerMobile)m).CharMusical = "Dungeon";
-                m.SendMessage(68, "Your dungeon music preference has been set to normal.");
-            }
-            else
-            {
-				((PlayerMobile)m).CharMusical = "Forest";
-                m.SendMessage(68, "Your dungeon music preference has been set to casual.");
-            }
+            ((PlayerMobile)m).CharMusical = "Forest";
+            m.SendMessage(68, "Your dungeon music preference has been set to casual.");
         }
     }
+}
 }

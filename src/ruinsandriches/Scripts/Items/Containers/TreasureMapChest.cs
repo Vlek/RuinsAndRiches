@@ -10,387 +10,443 @@ using Server.Misc;
 
 namespace Server.Items
 {
-	public class TreasureMapChest : LockableContainer
-	{
-		public override int LabelNumber{ get{ return 3000541; } }
+public class TreasureMapChest : LockableContainer
+{
+    public override int LabelNumber {
+        get { return 3000541; }
+    }
 
-		private int m_Level;
-		private DateTime m_DeleteTime;
-		private Timer m_Timer;
-		private Mobile m_Owner;
-		private bool m_Temporary;
+    private int m_Level;
+    private DateTime m_DeleteTime;
+    private Timer m_Timer;
+    private Mobile m_Owner;
+    private bool m_Temporary;
 
-		private List<Mobile> m_Guardians;
+    private List <Mobile> m_Guardians;
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public int Level{ get{ return m_Level; } set{ m_Level = value; } }
+    [CommandProperty(AccessLevel.GameMaster)]
+    public int Level {
+        get { return m_Level; } set { m_Level = value; }
+    }
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public Mobile Owner{ get{ return m_Owner; } set{ m_Owner = value; } }
+    [CommandProperty(AccessLevel.GameMaster)]
+    public Mobile Owner {
+        get { return m_Owner; } set { m_Owner = value; }
+    }
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public DateTime DeleteTime{ get{ return m_DeleteTime; } }
+    [CommandProperty(AccessLevel.GameMaster)]
+    public DateTime DeleteTime {
+        get { return m_DeleteTime; }
+    }
 
-		[CommandProperty( AccessLevel.GameMaster )]
-		public bool Temporary{ get{ return m_Temporary; } set{ m_Temporary = value; } }
+    [CommandProperty(AccessLevel.GameMaster)]
+    public bool Temporary {
+        get { return m_Temporary; } set { m_Temporary = value; }
+    }
 
-		public List<Mobile> Guardians { get { return m_Guardians; } }
+    public List <Mobile> Guardians {
+        get { return m_Guardians; }
+    }
 
-		[Constructable]
-		public TreasureMapChest( int level ) : this( null, level, false )
-		{
-		}
+    [Constructable]
+    public TreasureMapChest(int level) : this(null, level, false)
+    {
+    }
 
-		public TreasureMapChest( Mobile owner, int level, bool temporary ) : base( 0xE40 )
-		{
-			level = level + 4;
-				if ( level > 10 ){ level = 10; }
+    public TreasureMapChest(Mobile owner, int level, bool temporary) : base(0xE40)
+    {
+        level = level + 4;
+        if (level > 10)
+        {
+            level = 10;
+        }
 
-			m_Owner = owner;
-			m_Level = level;
-			m_DeleteTime = DateTime.Now + TimeSpan.FromHours( 3.0 );
+        m_Owner      = owner;
+        m_Level      = level;
+        m_DeleteTime = DateTime.Now + TimeSpan.FromHours(3.0);
 
-			m_Temporary = temporary;
-			m_Guardians = new List<Mobile>();
+        m_Temporary = temporary;
+        m_Guardians = new List <Mobile>();
 
-			m_Timer = new DeleteTimer( this, m_DeleteTime );
-			m_Timer.Start();
+        m_Timer = new DeleteTimer(this, m_DeleteTime);
+        m_Timer.Start();
 
-            Movable = false;
-            Locked = true;
+        Movable = false;
+        Locked  = true;
 
-			if ( level > 0 ){ ContainerFunctions.FillTheContainer( level, this, owner ); }
-			if ( level > 3 ){ ContainerFunctions.FillTheContainer( level, this, owner ); }
-			if ( level > 7 ){ ContainerFunctions.FillTheContainer( level, this, owner ); }
-			if ( GetPlayerInfo.LuckyPlayer( owner.Luck ) ){ ContainerFunctions.FillTheContainer( level, this, owner ); }
+        if (level > 0)
+        {
+            ContainerFunctions.FillTheContainer(level, this, owner);
+        }
+        if (level > 3)
+        {
+            ContainerFunctions.FillTheContainer(level, this, owner);
+        }
+        if (level > 7)
+        {
+            ContainerFunctions.FillTheContainer(level, this, owner);
+        }
+        if (GetPlayerInfo.LuckyPlayer(owner.Luck))
+        {
+            ContainerFunctions.FillTheContainer(level, this, owner);
+        }
 
-			ContainerFunctions.LockTheContainer( level, this, 1 );
+        ContainerFunctions.LockTheContainer(level, this, 1);
 
-			int xTraCash = Utility.RandomMinMax( (level*700), (level*1000) );
-			ContainerFunctions.AddGoldToContainer( xTraCash, this, 0, owner );
+        int xTraCash = Utility.RandomMinMax((level * 700), (level * 1000));
+        ContainerFunctions.AddGoldToContainer(xTraCash, this, 0, owner);
 
-			string sChest = "grand treasure chest";
-			switch( level )
-			{
-				case 0: sChest = "meager treasure chest";		break;
-				case 1: sChest = "simple treasure chest";		break;
-				case 2: sChest = "good treasure chest";			break;
-				case 3: sChest = "great treasure chest";		break;
-				case 4: sChest = "excellent treasure chest";	break;
-				case 5: sChest = "superb treasure chest";		break;
-			}
+        string sChest = "grand treasure chest";
+        switch (level)
+        {
+            case 0: sChest = "meager treasure chest";               break;
+            case 1: sChest = "simple treasure chest";               break;
+            case 2: sChest = "good treasure chest";                 break;
+            case 3: sChest = "great treasure chest";                break;
+            case 4: sChest = "excellent treasure chest";    break;
+            case 5: sChest = "superb treasure chest";               break;
+        }
 
-			Name = ContainerFunctions.GetOwner( "Treasure Chest" );
-			Name = "the " + sChest + " of " + Name;
+        Name = ContainerFunctions.GetOwner("Treasure Chest");
+        Name = "the " + sChest + " of " + Name;
 
-            // = SCROLL OF TRANCENDENCE
-            if ( level >= 4 && Utility.RandomDouble() > 0.9 )
-                DropItem(ScrollofTranscendence.CreateRandom(level, level * 5));
+        // = SCROLL OF TRANCENDENCE
+        if (level >= 4 && Utility.RandomDouble() > 0.9)
+        {
+            DropItem(ScrollofTranscendence.CreateRandom(level, level * 5));
+        }
 
-			// = ARTIFACTS
-			int artychance = GetPlayerInfo.LuckyPlayerArtifacts( owner.Luck );
-			if ( Utility.RandomMinMax( 0, 100 ) < ( ( level * 17 ) + artychance ) )
-			{
-				Item arty = ArtifactBuilder.CreateArtifact( "random" );
-				DropItem( arty );
-			}
+        // = ARTIFACTS
+        int artychance = GetPlayerInfo.LuckyPlayerArtifacts(owner.Luck);
+        if (Utility.RandomMinMax(0, 100) < ((level * 17) + artychance))
+        {
+            Item arty = ArtifactBuilder.CreateArtifact("random");
+            DropItem(arty);
+        }
 
-            // = SCROLL OF ALACRITY or POWERSCROLL
-            if (level > 1)
+        // = SCROLL OF ALACRITY or POWERSCROLL
+        if (level > 1)
+        {
+            if (Utility.RandomDouble() < (0.02 + (level / 200)))
             {
-                if (Utility.RandomDouble() < (0.02 + (level / 200)))
+                SkillName WhatS = SpecialScroll.ScrollSkill(0);
+                DropItem(PowerScroll.CreateRandomNoCraft(5, 5));
+            }
+            else if (Utility.RandomDouble() < 0.075)
+            {
+                SkillName WhatS = SpecialScroll.ScrollSkill(0);
+                DropItem(new ScrollofAlacrity(WhatS));
+            }
+        }
+
+        int  giveRelics = level;
+        Item relic      = Loot.RandomRelic();
+        while (giveRelics > 0)
+        {
+            relic = Loot.RandomRelic();
+            ContainerFunctions.RelicValueIncrease(level, relic);
+            DropItem(relic);
+            giveRelics--;
+        }
+    }
+
+    public override bool CheckLocked(Mobile from, bool canUnlock)
+    {
+        if (!this.Locked)
+        {
+            return false;
+        }
+
+        if (this.Level == 0 && from.AccessLevel < AccessLevel.GameMaster)
+        {
+            foreach (Mobile m in this.Guardians)
+            {
+                if (m.Alive)
                 {
-                    SkillName WhatS = SpecialScroll.ScrollSkill( 0 );
-                    DropItem(PowerScroll.CreateRandomNoCraft(5, 5));
-                }
-                else if (Utility.RandomDouble() < 0.075)
-                {
-                    SkillName WhatS = SpecialScroll.ScrollSkill( 0 );
-                    DropItem(new ScrollofAlacrity(WhatS));
+                    from.SendLocalizedMessage(1046448);                               // You must first kill the guardians before you may open this chest.
+                    return true;
                 }
             }
 
-			int giveRelics = level;
-			Item relic = Loot.RandomRelic();
-			while ( giveRelics > 0 )
-			{
-				relic = Loot.RandomRelic();
-				ContainerFunctions.RelicValueIncrease( level, relic );
-				DropItem( relic );
-				giveRelics--;
-			}
-		}
+            LockPick(from);
+            return false;
+        }
+        else
+        {
+            return base.CheckLocked(from, canUnlock);
+        }
+    }
 
-		public override bool CheckLocked( Mobile from, bool canUnlock )
-		{
-			if ( !this.Locked )
-				return false;
+    private List <Item> m_Lifted = new List <Item>();
 
-			if ( this.Level == 0 && from.AccessLevel < AccessLevel.GameMaster )
-			{
-				foreach ( Mobile m in this.Guardians )
-				{
-					if ( m.Alive )
-					{
-						from.SendLocalizedMessage( 1046448 ); // You must first kill the guardians before you may open this chest.
-						return true;
-					}
-				}
+    private bool CheckLoot(Mobile m, bool criminalAction)
+    {
+        if (m_Temporary)
+        {
+            return false;
+        }
 
-				LockPick( from );
-				return false;
-			}
-			else
-			{
-				return base.CheckLocked( from, canUnlock );
-			}
-		}
+        if (m.AccessLevel >= AccessLevel.GameMaster || m_Owner == null || m == m_Owner)
+        {
+            return true;
+        }
 
-		private List<Item> m_Lifted = new List<Item>();
+        Party p = Party.Get(m_Owner);
 
-		private bool CheckLoot( Mobile m, bool criminalAction )
-		{
-			if ( m_Temporary )
-				return false;
+        if (p != null && p.Contains(m))
+        {
+            return true;
+        }
 
-			if ( m.AccessLevel >= AccessLevel.GameMaster || m_Owner == null || m == m_Owner )
-				return true;
+        Map map = this.Map;
 
-			Party p = Party.Get( m_Owner );
+        if (map != null && (map.Rules & MapRules.HarmfulRestrictions) == 0)
+        {
+            if (criminalAction)
+            {
+                m.CriminalAction(true);
+            }
+            else
+            {
+                m.SendLocalizedMessage(1010630);                           // Taking someone else's treasure is a criminal offense!
+            }
+            return true;
+        }
 
-			if ( p != null && p.Contains( m ) )
-				return true;
+        m.SendLocalizedMessage(1010631);                   // You did not discover this chest!
+        return false;
+    }
 
-			Map map = this.Map;
+    public override bool IsDecoContainer
+    {
+        get { return false; }
+    }
 
-			if ( map != null && (map.Rules & MapRules.HarmfulRestrictions) == 0 )
-			{
-				if ( criminalAction )
-					m.CriminalAction( true );
-				else
-					m.SendLocalizedMessage( 1010630 ); // Taking someone else's treasure is a criminal offense!
+    public override bool CheckItemUse(Mobile from, Item item)
+    {
+        return CheckLoot(from, item != this) && base.CheckItemUse(from, item);
+    }
 
-				return true;
-			}
+    public override bool CheckLift(Mobile from, Item item, ref LRReason reject)
+    {
+        return CheckLoot(from, true) && base.CheckLift(from, item, ref reject);
+    }
 
-			m.SendLocalizedMessage( 1010631 ); // You did not discover this chest!
-			return false;
-		}
+    public override void OnItemLifted(Mobile from, Item item)
+    {
+        bool notYetLifted = !m_Lifted.Contains(item);
 
-		public override bool IsDecoContainer
-		{
-			get{ return false; }
-		}
+        from.RevealingAction();
 
-		public override bool CheckItemUse( Mobile from, Item item )
-		{
-			return CheckLoot( from, item != this ) && base.CheckItemUse( from, item );
-		}
+        if (notYetLifted)
+        {
+            m_Lifted.Add(item);
 
-		public override bool CheckLift( Mobile from, Item item, ref LRReason reject )
-		{
-			return CheckLoot( from, true ) && base.CheckLift( from, item, ref reject );
-		}
+            if (0.1 >= Utility.RandomDouble())                       // 10% chance to spawn a new monster
+            {
+                TreasureMap.Spawn(m_Level, GetWorldLocation(), Map, from, false);
+            }
+        }
 
-		public override void OnItemLifted( Mobile from, Item item )
-		{
-			bool notYetLifted = !m_Lifted.Contains( item );
+        base.OnItemLifted(from, item);
+    }
 
-			from.RevealingAction();
+    public override bool CheckHold(Mobile m, Item item, bool message, bool checkItems, int plusItems, int plusWeight)
+    {
+        if (m.AccessLevel < AccessLevel.GameMaster)
+        {
+            m.SendLocalizedMessage(1048122, "", 0x8A5);                       // The chest refuses to be filled with treasure again.
+            return false;
+        }
 
-			if ( notYetLifted )
-			{
-				m_Lifted.Add( item );
+        return base.CheckHold(m, item, message, checkItems, plusItems, plusWeight);
+    }
 
-				if ( 0.1 >= Utility.RandomDouble() ) // 10% chance to spawn a new monster
-					TreasureMap.Spawn( m_Level, GetWorldLocation(), Map, from, false );
-			}
+    public TreasureMapChest(Serial serial) : base(serial)
+    {
+    }
 
-			base.OnItemLifted( from, item );
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-		public override bool CheckHold( Mobile m, Item item, bool message, bool checkItems, int plusItems, int plusWeight )
-		{
-			if ( m.AccessLevel < AccessLevel.GameMaster )
-			{
-				m.SendLocalizedMessage( 1048122, "", 0x8A5 ); // The chest refuses to be filled with treasure again.
-				return false;
-			}
+        writer.Write((int)2);                    // version
 
-			return base.CheckHold( m, item, message, checkItems, plusItems, plusWeight );
-		}
+        writer.Write(m_Guardians, true);
+        writer.Write((bool)m_Temporary);
 
-		public TreasureMapChest( Serial serial ) : base( serial )
-		{
-		}
+        writer.Write(m_Owner);
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+        writer.Write((int)m_Level);
+        writer.WriteDeltaTime(m_DeleteTime);
+        writer.Write(m_Lifted, true);
+    }
 
-			writer.Write( (int) 2 ); // version
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			writer.Write( m_Guardians, true );
-			writer.Write( (bool) m_Temporary );
+        int version = reader.ReadInt();
 
-			writer.Write( m_Owner );
+        switch (version)
+        {
+            case 2:
+            {
+                m_Guardians = reader.ReadStrongMobileList();
+                m_Temporary = reader.ReadBool();
 
-			writer.Write( (int) m_Level );
-			writer.WriteDeltaTime( m_DeleteTime );
-			writer.Write( m_Lifted, true );
-		}
+                goto case 1;
+            }
+            case 1:
+            {
+                m_Owner = reader.ReadMobile();
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+                goto case 0;
+            }
+            case 0:
+            {
+                m_Level      = reader.ReadInt();
+                m_DeleteTime = reader.ReadDeltaTime();
+                m_Lifted     = reader.ReadStrongItemList();
 
-			int version = reader.ReadInt();
+                if (version < 2)
+                {
+                    m_Guardians = new List <Mobile>();
+                }
 
-			switch ( version )
-			{
-				case 2:
-				{
-					m_Guardians = reader.ReadStrongMobileList();
-					m_Temporary = reader.ReadBool();
+                break;
+            }
+        }
 
-					goto case 1;
-				}
-				case 1:
-				{
-					m_Owner = reader.ReadMobile();
+        if (!m_Temporary)
+        {
+            m_Timer = new DeleteTimer(this, m_DeleteTime);
+            m_Timer.Start();
+        }
+        else
+        {
+            Delete();
+        }
+    }
 
-					goto case 0;
-				}
-				case 0:
-				{
-					m_Level = reader.ReadInt();
-					m_DeleteTime = reader.ReadDeltaTime();
-					m_Lifted = reader.ReadStrongItemList();
+    public override void OnAfterDelete()
+    {
+        if (m_Timer != null)
+        {
+            m_Timer.Stop();
+        }
 
-					if ( version < 2 )
-						m_Guardians = new List<Mobile>();
+        m_Timer = null;
 
-					break;
-				}
-			}
+        base.OnAfterDelete();
+    }
 
-			if ( !m_Temporary )
-			{
-				m_Timer = new DeleteTimer( this, m_DeleteTime );
-				m_Timer.Start();
-			}
-			else
-			{
-				Delete();
-			}
-		}
+    public override void GetContextMenuEntries(Mobile from, List <ContextMenuEntry> list)
+    {
+        base.GetContextMenuEntries(from, list);
 
-		public override void OnAfterDelete()
-		{
-			if ( m_Timer != null )
-				m_Timer.Stop();
+        if (from.Alive)
+        {
+            list.Add(new RemoveEntry(from, this));
+        }
+    }
 
-			m_Timer = null;
+    public void BeginRemove(Mobile from)
+    {
+        if (!from.Alive)
+        {
+            return;
+        }
 
-			base.OnAfterDelete();
-		}
+        from.CloseGump(typeof(RemoveGump));
+        from.SendGump(new RemoveGump(from, this));
+    }
 
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
-		{
-			base.GetContextMenuEntries( from, list );
+    public void EndRemove(Mobile from)
+    {
+        if (Deleted || from != m_Owner || !from.InRange(GetWorldLocation(), 3))
+        {
+            return;
+        }
 
-			if ( from.Alive )
-				list.Add( new RemoveEntry( from, this ) );
-		}
+        from.SendLocalizedMessage(1048124, "", 0x8A5);                   // The old, rusted chest crumbles when you hit it.
+        this.Delete();
+    }
 
-		public void BeginRemove( Mobile from )
-		{
-			if ( !from.Alive )
-				return;
+    private class RemoveGump : Gump
+    {
+        private Mobile m_From;
+        private TreasureMapChest m_Chest;
 
-			from.CloseGump( typeof( RemoveGump ) );
-			from.SendGump( new RemoveGump( from, this ) );
-		}
+        public RemoveGump(Mobile from, TreasureMapChest chest) : base(15, 15)
+        {
+            m_From  = from;
+            m_Chest = chest;
 
-		public void EndRemove( Mobile from )
-		{
-			if ( Deleted || from != m_Owner || !from.InRange( GetWorldLocation(), 3 ) )
-				return;
+            Closable   = false;
+            Disposable = false;
 
-			from.SendLocalizedMessage( 1048124, "", 0x8A5 ); // The old, rusted chest crumbles when you hit it.
-			this.Delete();
-		}
+            AddPage(0);
 
-		private class RemoveGump : Gump
-		{
-			private Mobile m_From;
-			private TreasureMapChest m_Chest;
+            AddBackground(30, 0, 240, 240, 2620);
 
-			public RemoveGump( Mobile from, TreasureMapChest chest ) : base( 15, 15 )
-			{
-				m_From = from;
-				m_Chest = chest;
+            AddHtmlLocalized(45, 15, 200, 80, 1048125, 0xFFFFFF, false, false);                       // When this treasure chest is removed, any items still inside of it will be lost.
+            AddHtmlLocalized(45, 95, 200, 60, 1048126, 0xFFFFFF, false, false);                       // Are you certain you're ready to remove this chest?
 
-				Closable = false;
-				Disposable = false;
+            AddButton(40, 153, 4005, 4007, 1, GumpButtonType.Reply, 0);
+            AddHtmlLocalized(75, 155, 180, 40, 1048127, 0xFFFFFF, false, false);                       // Remove the Treasure Chest
 
-				AddPage( 0 );
+            AddButton(40, 195, 4005, 4007, 2, GumpButtonType.Reply, 0);
+            AddHtmlLocalized(75, 197, 180, 35, 1006045, 0xFFFFFF, false, false);                       // Cancel
+        }
 
-				AddBackground( 30, 0, 240, 240, 2620 );
+        public override void OnResponse(NetState sender, RelayInfo info)
+        {
+            if (info.ButtonID == 1)
+            {
+                m_Chest.EndRemove(m_From);
+            }
+        }
+    }
 
-				AddHtmlLocalized( 45, 15, 200, 80, 1048125, 0xFFFFFF, false, false ); // When this treasure chest is removed, any items still inside of it will be lost.
-				AddHtmlLocalized( 45, 95, 200, 60, 1048126, 0xFFFFFF, false, false ); // Are you certain you're ready to remove this chest?
+    private class RemoveEntry : ContextMenuEntry
+    {
+        private Mobile m_From;
+        private TreasureMapChest m_Chest;
 
-				AddButton( 40, 153, 4005, 4007, 1, GumpButtonType.Reply, 0 );
-				AddHtmlLocalized( 75, 155, 180, 40, 1048127, 0xFFFFFF, false, false ); // Remove the Treasure Chest
+        public RemoveEntry(Mobile from, TreasureMapChest chest) : base(6149, 3)
+        {
+            m_From  = from;
+            m_Chest = chest;
 
-				AddButton( 40, 195, 4005, 4007, 2, GumpButtonType.Reply, 0 );
-				AddHtmlLocalized( 75, 197, 180, 35, 1006045, 0xFFFFFF, false, false ); // Cancel
-			}
+            Enabled = (from == chest.Owner);
+        }
 
-			public override void OnResponse( NetState sender, RelayInfo info )
-			{
-				if ( info.ButtonID == 1 )
-					m_Chest.EndRemove( m_From );
-			}
-		}
+        public override void OnClick()
+        {
+            if (m_Chest.Deleted || m_From != m_Chest.Owner || !m_From.CheckAlive())
+            {
+                return;
+            }
 
-		private class RemoveEntry : ContextMenuEntry
-		{
-			private Mobile m_From;
-			private TreasureMapChest m_Chest;
+            m_Chest.BeginRemove(m_From);
+        }
+    }
 
-			public RemoveEntry( Mobile from, TreasureMapChest chest ) : base( 6149, 3 )
-			{
-				m_From = from;
-				m_Chest = chest;
+    private class DeleteTimer : Timer
+    {
+        private Item m_Item;
 
-				Enabled = ( from == chest.Owner );
-			}
+        public DeleteTimer(Item item, DateTime time) : base(time - DateTime.Now)
+        {
+            m_Item   = item;
+            Priority = TimerPriority.OneMinute;
+        }
 
-			public override void OnClick()
-			{
-				if ( m_Chest.Deleted || m_From != m_Chest.Owner || !m_From.CheckAlive() )
-					return;
-
-				m_Chest.BeginRemove( m_From );
-			}
-		}
-
-		private class DeleteTimer : Timer
-		{
-			private Item m_Item;
-
-			public DeleteTimer( Item item, DateTime time ) : base( time - DateTime.Now )
-			{
-				m_Item = item;
-				Priority = TimerPriority.OneMinute;
-			}
-
-			protected override void OnTick()
-			{
-				m_Item.Delete();
-			}
-		}
-	}
+        protected override void OnTick()
+        {
+            m_Item.Delete();
+        }
+    }
+}
 }

@@ -10,45 +10,60 @@ using Server.Misc;
 
 namespace Server.Spells.Undead
 {
-	public abstract class UndeadSpell : Spell
-	{
-		public abstract double RequiredSkill{ get; }
-		public abstract int RequiredMana{ get; }
+public abstract class UndeadSpell : Spell
+{
+    public abstract double RequiredSkill {
+        get;
+    }
+    public abstract int RequiredMana {
+        get;
+    }
 
-		public override SkillName CastSkill{ get{ return SkillName.Necromancy; } }
-		public override SkillName DamageSkill{ get{ return SkillName.Forensics; } }
+    public override SkillName CastSkill {
+        get { return SkillName.Necromancy; }
+    }
+    public override SkillName DamageSkill {
+        get { return SkillName.Forensics; }
+    }
 
-		public override bool ClearHandsOnCast{ get{ return false; } }
+    public override bool ClearHandsOnCast {
+        get { return false; }
+    }
 
-		public override bool CheckCast()
-		{
-			if ( !base.CheckCast() )
-				return false;
+    public override bool CheckCast()
+    {
+        if (!base.CheckCast())
+        {
+            return false;
+        }
 
-			if ( Caster.Skills[CastSkill].Value < RequiredSkill )
-			{
-				Caster.SendMessage("You lack the skills to use this necromancer liquid!");
-				return false;
-			}
+        if (Caster.Skills[CastSkill].Value < RequiredSkill)
+        {
+            Caster.SendMessage("You lack the skills to use this necromancer liquid!");
+            return false;
+        }
 
-			if ( Caster.Karma > -2459 ){ Titles.AwardKarma( Caster, -50, true ); }
+        if (Caster.Karma > -2459)
+        {
+            Titles.AwardKarma(Caster, -50, true);
+        }
 
-			return true;
-		}
+        return true;
+    }
 
-		public UndeadSpell( Mobile caster, Item scroll, SpellInfo info ) : base( caster, scroll, info )
-		{
-		}
+    public UndeadSpell(Mobile caster, Item scroll, SpellInfo info) : base(caster, scroll, info)
+    {
+    }
 
-		public override void GetCastSkills( out double min, out double max )
-		{
-			min = RequiredSkill;
-			max = RequiredSkill + 20.0;
-		}
+    public override void GetCastSkills(out double min, out double max)
+    {
+        min = RequiredSkill;
+        max = RequiredSkill + 20.0;
+    }
 
-		public override int GetMana()
-		{
-			return RequiredMana;
-		}
-	}
+    public override int GetMana()
+    {
+        return RequiredMana;
+    }
+}
 }

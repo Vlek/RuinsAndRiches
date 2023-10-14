@@ -6,75 +6,100 @@ using Server.Misc;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a reptalar corpse" )]
-	public class Reptalar : BaseCreature
-	{
-		public override InhumanSpeech SpeechType { get { return InhumanSpeech.Lizardman; } }
-        public override int GetAngerSound(){ return 0x1A1; }
-        public override int GetIdleSound(){ return 0x1A2; }
+[CorpseName("a reptalar corpse")]
+public class Reptalar : BaseCreature
+{
+    public override InhumanSpeech SpeechType {
+        get { return InhumanSpeech.Lizardman; }
+    }
+    public override int GetAngerSound()
+    {
+        return 0x1A1;
+    }
 
-		[Constructable]
-		public Reptalar() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
-			Name = NameList.RandomName( "lizardman" );
-			Title = "the reptalar";
-			Body = 333;
-			BaseSoundID = 417;
+    public override int GetIdleSound()
+    {
+        return 0x1A2;
+    }
 
-			SetStr( 136, 165 );
-			SetDex( 56, 75 );
-			SetInt( 31, 55 );
+    [Constructable]
+    public Reptalar() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        Name        = NameList.RandomName("lizardman");
+        Title       = "the reptalar";
+        Body        = 333;
+        BaseSoundID = 417;
 
-			SetHits( 82, 99 );
+        SetStr(136, 165);
+        SetDex(56, 75);
+        SetInt(31, 55);
 
-			SetDamage( 7, 17 );
+        SetHits(82, 99);
 
-			SetDamageType( ResistanceType.Physical, 100 );
+        SetDamage(7, 17);
 
-			SetResistance( ResistanceType.Physical, 35, 40 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
-			SetResistance( ResistanceType.Cold, 40, 50 );
-			SetResistance( ResistanceType.Poison, 15, 25 );
-			SetResistance( ResistanceType.Energy, 15, 25 );
+        SetDamageType(ResistanceType.Physical, 100);
 
-			SetSkill( SkillName.MagicResist, 40.1, 55.0 );
-			SetSkill( SkillName.Tactics, 50.1, 70.0 );
-			SetSkill( SkillName.FistFighting, 50.1, 60.0 );
+        SetResistance(ResistanceType.Physical, 35, 40);
+        SetResistance(ResistanceType.Fire, 15, 25);
+        SetResistance(ResistanceType.Cold, 40, 50);
+        SetResistance(ResistanceType.Poison, 15, 25);
+        SetResistance(ResistanceType.Energy, 15, 25);
 
-			Fame = 3000;
-			Karma = -3000;
+        SetSkill(SkillName.MagicResist, 40.1, 55.0);
+        SetSkill(SkillName.Tactics, 50.1, 70.0);
+        SetSkill(SkillName.FistFighting, 50.1, 60.0);
 
-			VirtualArmor = 38;
-		}
+        Fame  = 3000;
+        Karma = -3000;
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Average );
-		}
+        VirtualArmor = 38;
+    }
 
-		public override bool CanRummageCorpses{ get{ return true; } }
-		public override int Meat{ get{ return 1; } }
-		public override int Hides{ get{ return 12; } }
-		public override HideType HideType{ get{ return HideType.Horned; } }
-		public override int Scales{ get{ return 1; } }
-		public override ScaleType ScaleType{ get{ return ( ScaleType.Green ); } }
-		public override Poison PoisonImmune{ get{ return Poison.Regular; } }
-		public override Poison HitPoison{ get{ return Poison.Lesser; } }
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Average);
+    }
 
-		public Reptalar( Serial serial ) : base( serial )
-		{
-		}
+    public override bool CanRummageCorpses {
+        get { return true; }
+    }
+    public override int Meat {
+        get { return 1; }
+    }
+    public override int Hides {
+        get { return 12; }
+    }
+    public override HideType HideType {
+        get { return HideType.Horned; }
+    }
+    public override int Scales {
+        get { return 1; }
+    }
+    public override ScaleType ScaleType {
+        get { return ScaleType.Green; }
+    }
+    public override Poison PoisonImmune {
+        get { return Poison.Regular; }
+    }
+    public override Poison HitPoison {
+        get { return Poison.Lesser; }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public Reptalar(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

@@ -12,61 +12,66 @@ using Server.Commands;
 
 namespace Server.Items
 {
-	public class FishBarrel : Item
-	{
-		[Constructable]
-		public FishBarrel() : base(0x4CCF)
-		{
-			Weight = 100.0;
-			Name = "Exotic Fish Tub";
-		}
+public class FishBarrel : Item
+{
+    [Constructable]
+    public FishBarrel() : base(0x4CCF)
+    {
+        Weight = 100.0;
+        Name   = "Exotic Fish Tub";
+    }
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			if( !( from is PlayerMobile ) )
-			return;
-			
-			if ( !from.HasGump( typeof( SpeechGump ) ) )
-			{
-				from.SendGump(new SpeechGump( from, "Fish In A Barrel", SpeechFunctions.SpeechText( from, from, "Aquarium" ) ));
-			}
-		}
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile))
+        {
+            return;
+        }
 
-		public override bool OnDragDrop( Mobile from, Item dropped )
-		{
-			if ( dropped is NewFish )
-			{
-				PlayerMobile pc = (PlayerMobile)from;
-				NewFish fishy = (NewFish)dropped;
-				int nPay = fishy.FishGoldValue;
-				if ( pc.NpcGuild == NpcGuild.FishermensGuild ){ nPay = nPay*2; }
-				from.AddToBackpack ( new Gold( nPay ) );
-				from.SendMessage("You are paid " + nPay.ToString() + " gold.");
-				Server.Engines.Harvest.Fishing.SailorSkill( from, (int)( nPay / 10 ) );
-				from.PlaySound( 0x026 );
-				dropped.Delete();
-			}
-			else
-			{
-				from.AddToBackpack ( dropped );
-			}
-			return true;
-		}
+        if (!from.HasGump(typeof(SpeechGump)))
+        {
+            from.SendGump(new SpeechGump(from, "Fish In A Barrel", SpeechFunctions.SpeechText(from, from, "Aquarium")));
+        }
+    }
 
-		public FishBarrel(Serial serial) : base(serial)
-		{
-		}
+    public override bool OnDragDrop(Mobile from, Item dropped)
+    {
+        if (dropped is NewFish)
+        {
+            PlayerMobile pc    = (PlayerMobile)from;
+            NewFish      fishy = (NewFish)dropped;
+            int          nPay  = fishy.FishGoldValue;
+            if (pc.NpcGuild == NpcGuild.FishermensGuild)
+            {
+                nPay = nPay * 2;
+            }
+            from.AddToBackpack(new Gold(nPay));
+            from.SendMessage("You are paid " + nPay.ToString() + " gold.");
+            Server.Engines.Harvest.Fishing.SailorSkill(from, (int)(nPay / 10));
+            from.PlaySound(0x026);
+            dropped.Delete();
+        }
+        else
+        {
+            from.AddToBackpack(dropped);
+        }
+        return true;
+    }
 
-		public override void Serialize(GenericWriter writer)
-		{
-			base.Serialize(writer);
-			writer.Write((int) 0);
-		}
+    public FishBarrel(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize(reader);
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

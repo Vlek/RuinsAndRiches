@@ -4,33 +4,33 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class SilverWidow : BaseReagent
-	{
-		[Constructable]
-		public SilverWidow() : this( 1 )
-		{
-		}
+public class SilverWidow : BaseReagent
+{
+    [Constructable]
+    public SilverWidow() : this(1)
+    {
+    }
 
-		[Constructable]
-		public SilverWidow( int amount ) : base( 0x2FF7, amount )
-		{
-			Name = "silver widow";
-		}
+    [Constructable]
+    public SilverWidow(int amount) : base(0x2FF7, amount)
+    {
+        Name = "silver widow";
+    }
 
-		public SilverWidow( Serial serial ) : base( serial )
-		{
-		}
+    public SilverWidow(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

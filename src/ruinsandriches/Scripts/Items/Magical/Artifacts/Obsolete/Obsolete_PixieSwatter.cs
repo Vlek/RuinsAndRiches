@@ -3,56 +3,62 @@ using Server;
 
 namespace Server.Items
 {
-	public class PixieSwatter : Scepter
-	{
-		public override int InitMinHits{ get{ return 80; } }
-		public override int InitMaxHits{ get{ return 160; } }
+public class PixieSwatter : Scepter
+{
+    public override int InitMinHits {
+        get { return 80; }
+    }
+    public override int InitMaxHits {
+        get { return 160; }
+    }
 
-		public override int LabelNumber{ get{ return 1070854; } } // Pixie Swatter
+    public override int LabelNumber {
+        get { return 1070854; }
+    }                                                                     // Pixie Swatter
 
-		[Constructable]
-		public PixieSwatter()
-		{
-			Hue = 0x8A;
-			WeaponAttributes.HitPoisonArea = 75;
-			Attributes.WeaponSpeed = 30;
-            
-			WeaponAttributes.UseBestSkill = 1;
-			WeaponAttributes.ResistFireBonus = 12;
-			WeaponAttributes.ResistEnergyBonus = 12;
+    [Constructable]
+    public PixieSwatter()
+    {
+        Hue = 0x8A;
+        WeaponAttributes.HitPoisonArea = 75;
+        Attributes.WeaponSpeed         = 30;
 
-			Slayer = SlayerName.Fey;
-		}
+        WeaponAttributes.UseBestSkill      = 1;
+        WeaponAttributes.ResistFireBonus   = 12;
+        WeaponAttributes.ResistEnergyBonus = 12;
 
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			list.Add( 1070722, "Artefact");
-        }
+        Slayer = SlayerName.Fey;
+    }
 
-		public override void GetDamageTypes( Mobile wielder, out int phys, out int fire, out int cold, out int pois, out int nrgy, out int chaos, out int direct )
-		{
-			fire = 100;
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "Artefact");
+    }
 
-			cold = pois = phys = nrgy = chaos = direct = 0;
-		}
+    public override void GetDamageTypes(Mobile wielder, out int phys, out int fire, out int cold, out int pois, out int nrgy, out int chaos, out int direct)
+    {
+        fire = 100;
 
-		public PixieSwatter( Serial serial ) : base( serial )
-		{
-		}
+        cold = pois = phys = nrgy = chaos = direct = 0;
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public PixieSwatter(Serial serial) : base(serial)
+    {
+    }
 
-			writer.Write( (int) 0 );
-		}
-		
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize( reader );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			int version = reader.ReadInt();
-		}
-	}
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadInt();
+    }
+}
 }

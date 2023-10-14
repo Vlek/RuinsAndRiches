@@ -2,97 +2,107 @@ using System;
 
 namespace Server.Items
 {
-	[Flipable( 0xC14, 0xC15 )]
-	public class BrokenBookcaseComponent : AddonComponent
-	{
-		public override int LabelNumber { get { return 1076258; } } // Broken Bookcase
+[Flipable(0xC14, 0xC15)]
+public class BrokenBookcaseComponent : AddonComponent
+{
+    public override int LabelNumber {
+        get { return 1076258; }
+    }                                                                       // Broken Bookcase
 
-		public BrokenBookcaseComponent() : base( 0xC14 )
-		{
-		}
+    public BrokenBookcaseComponent() : base(0xC14)
+    {
+    }
 
-		public BrokenBookcaseComponent( Serial serial ) : base( serial )
-		{
-		}
+    public BrokenBookcaseComponent(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.WriteEncodedInt( 0 ); // version
-		}
+        writer.WriteEncodedInt(0);                   // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadEncodedInt();
-		}
-	}
+        int version = reader.ReadEncodedInt();
+    }
+}
 
-	public class BrokenBookcaseAddon : BaseAddon
-	{
-		public override BaseAddonDeed Deed { get { return new BrokenBookcaseDeed(); } }
-
-		[Constructable]
-		public BrokenBookcaseAddon() : base()
-		{
-			AddComponent( new BrokenBookcaseComponent(), 0, 0, 0 );
-		}
-
-		public BrokenBookcaseAddon( Serial serial ) : base( serial )
-		{
-		}
-
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-
-			writer.WriteEncodedInt( 0 ); // version
-		}
-
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-
-			int version = reader.ReadEncodedInt();
-		}
-	}
-
-	public class BrokenBookcaseDeed : BaseAddonDeed
-	{
-		public override BaseAddon Addon { get { return new BrokenBookcaseAddon(); } }
-		public override int LabelNumber { get { return 1076258; } } // Broken Bookcase
-
-		[Constructable]
-		public BrokenBookcaseDeed() : base()
-		{
-			LootType = LootType.Blessed;
-			ItemID = 0x3F22;
-		}
-
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-            list.Add( 1049644, "Double Click To Place In Your Home");
+public class BrokenBookcaseAddon : BaseAddon
+{
+    public override BaseAddonDeed Deed {
+        get { return new BrokenBookcaseDeed();
         }
+    }
 
-		public BrokenBookcaseDeed( Serial serial ) : base( serial )
-		{
-		}
+    [Constructable]
+    public BrokenBookcaseAddon() : base()
+    {
+        AddComponent(new BrokenBookcaseComponent(), 0, 0, 0);
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public BrokenBookcaseAddon(Serial serial) : base(serial)
+    {
+    }
 
-			writer.WriteEncodedInt( 0 ); // version
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+        writer.WriteEncodedInt(0);                   // version
+    }
 
-			int version = reader.ReadEncodedInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadEncodedInt();
+    }
+}
+
+public class BrokenBookcaseDeed : BaseAddonDeed
+{
+    public override BaseAddon Addon {
+        get { return new BrokenBookcaseAddon();
+        }
+    }
+    public override int LabelNumber {
+        get { return 1076258; }
+    }                                                                       // Broken Bookcase
+
+    [Constructable]
+    public BrokenBookcaseDeed() : base()
+    {
+        LootType = LootType.Blessed;
+        ItemID   = 0x3F22;
+    }
+
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1049644, "Double Click To Place In Your Home");
+    }
+
+    public BrokenBookcaseDeed(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+
+        writer.WriteEncodedInt(0);                   // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadEncodedInt();
+    }
+}
 }

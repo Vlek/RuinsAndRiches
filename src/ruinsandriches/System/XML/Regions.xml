@@ -712,7 +712,7 @@
 		<region type="OutDoorBadRegion" priority="50" name="the Brigand Fort">
 			<rect x="2979" y="351" width="67" height="71" />
 		</region>
-		<region type="OutDoorBadRegion" priority="50" name="the Ruins of Skara Brae">		
+		<region type="OutDoorBadRegion" priority="50" name="the Ruins of Skara Brae">
 			<rect x="4751" y="2776" width="12" height="10" />
 			<rect x="4750" y="2796" width="12" height="12" />
 			<rect x="4755" y="2760" width="23" height="19" />

@@ -4,233 +4,248 @@ using Server.Engines.Plants;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a kuthulu corpse" )]
-	public class Kuthulu : BaseCreature
-	{
-		private Timer m_Timer;
+[CorpseName("a kuthulu corpse")]
+public class Kuthulu : BaseCreature
+{
+    private Timer m_Timer;
 
-		[Constructable]
-		public Kuthulu() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
+    [Constructable]
+    public Kuthulu() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        if (Utility.RandomBool())
+        {
+            Name        = "a kuthulu";
+            Body        = 352;
+            BaseSoundID = 357;
 
-			if ( Utility.RandomBool() )
-			{
-				Name = "a kuthulu";
-				Body = 352;
-				BaseSoundID = 357;
+            SetStr(601, 750);
+            SetDex(126, 175);
+            SetInt(201, 250);
 
-				SetStr( 601, 750 );
-				SetDex( 126, 175 );
-				SetInt( 201, 250 );
+            SetHits(450);
 
-				SetHits( 450 );
+            SetDamage(16, 20);
 
-				SetDamage( 16, 20 );
+            SetDamageType(ResistanceType.Physical, 60);
+            SetDamageType(ResistanceType.Cold, 20);
+            SetDamageType(ResistanceType.Energy, 20);
 
-				SetDamageType( ResistanceType.Physical, 60 );
-				SetDamageType( ResistanceType.Cold, 20 );
-				SetDamageType( ResistanceType.Energy, 20 );
+            SetResistance(ResistanceType.Physical, 25, 35);
+            SetResistance(ResistanceType.Fire, 15, 25);
+            SetResistance(ResistanceType.Cold, 15, 25);
+            SetResistance(ResistanceType.Poison, 40, 50);
+            SetResistance(ResistanceType.Energy, 20, 30);
 
-				SetResistance( ResistanceType.Physical, 25, 35 );
-				SetResistance( ResistanceType.Fire, 15, 25 );
-				SetResistance( ResistanceType.Cold, 15, 25 );
-				SetResistance( ResistanceType.Poison, 40, 50 );
-				SetResistance( ResistanceType.Energy, 20, 30 );
+            SetSkill(SkillName.Psychology, 70.1, 80.0);
+            SetSkill(SkillName.Magery, 70.1, 80.0);
+            SetSkill(SkillName.Meditation, 70.1, 80.0);
+            SetSkill(SkillName.MagicResist, 70.1, 85.0);
+            SetSkill(SkillName.Tactics, 55.1, 65.0);
+            SetSkill(SkillName.FistFighting, 60.1, 80.0);
 
-				SetSkill( SkillName.Psychology, 70.1, 80.0 );
-				SetSkill( SkillName.Magery, 70.1, 80.0 );
-				SetSkill( SkillName.Meditation, 70.1, 80.0 );
-				SetSkill( SkillName.MagicResist, 70.1, 85.0 );
-				SetSkill( SkillName.Tactics, 55.1, 65.0 );
-				SetSkill( SkillName.FistFighting, 60.1, 80.0 );
+            Fame  = 9500;
+            Karma = -9500;
 
-				Fame = 9500;
-				Karma = -9500;
+            VirtualArmor = 34;
+        }
+        else
+        {
+            Name        = "an azathoth";
+            Body        = 222;
+            BaseSoundID = 357;
 
-				VirtualArmor = 34;
-			}
-			else
-			{
-				Name = "an azathoth";
-				Body = 222;
-				BaseSoundID = 357;
+            SetStr(801, 950);
+            SetDex(126, 175);
+            SetInt(201, 250);
 
-				SetStr( 801, 950 );
-				SetDex( 126, 175 );
-				SetInt( 201, 250 );
+            SetHits(650);
 
-				SetHits( 650 );
+            SetDamage(22, 26);
 
-				SetDamage( 22, 26 );
+            SetDamageType(ResistanceType.Physical, 60);
+            SetDamageType(ResistanceType.Cold, 20);
+            SetDamageType(ResistanceType.Energy, 20);
 
-				SetDamageType( ResistanceType.Physical, 60 );
-				SetDamageType( ResistanceType.Cold, 20 );
-				SetDamageType( ResistanceType.Energy, 20 );
+            SetResistance(ResistanceType.Physical, 45, 55);
+            SetResistance(ResistanceType.Fire, 25, 35);
+            SetResistance(ResistanceType.Cold, 15, 25);
+            SetResistance(ResistanceType.Poison, 60, 70);
+            SetResistance(ResistanceType.Energy, 40, 50);
 
-				SetResistance( ResistanceType.Physical, 45, 55 );
-				SetResistance( ResistanceType.Fire, 25, 35 );
-				SetResistance( ResistanceType.Cold, 15, 25 );
-				SetResistance( ResistanceType.Poison, 60, 70 );
-				SetResistance( ResistanceType.Energy, 40, 50 );
+            SetSkill(SkillName.Psychology, 90.1, 100.0);
+            SetSkill(SkillName.Magery, 90.1, 100.0);
+            SetSkill(SkillName.Meditation, 90.1, 100.0);
+            SetSkill(SkillName.MagicResist, 90.1, 105.0);
+            SetSkill(SkillName.Tactics, 75.1, 85.0);
+            SetSkill(SkillName.FistFighting, 80.1, 100.0);
 
-				SetSkill( SkillName.Psychology, 90.1, 100.0 );
-				SetSkill( SkillName.Magery, 90.1, 100.0 );
-				SetSkill( SkillName.Meditation, 90.1, 100.0 );
-				SetSkill( SkillName.MagicResist, 90.1, 105.0 );
-				SetSkill( SkillName.Tactics, 75.1, 85.0 );
-				SetSkill( SkillName.FistFighting, 80.1, 100.0 );
+            Fame  = 9500;
+            Karma = -9500;
 
-				Fame = 9500;
-				Karma = -9500;
+            VirtualArmor = 44;
+        }
 
-				VirtualArmor = 44;
+        PackNecroReg(24, 45);
 
-			}
+        m_Timer = new TeleportTimer(this);
+        m_Timer.Start();
+    }
 
-			PackNecroReg( 24, 45 );
+    public override void GenerateLoot()
+    {
+        if (Body == 222)
+        {
+            AddLoot(LootPack.FilthyRich, 2);
+        }
+        else
+        {
+            AddLoot(LootPack.Rich, 2);
+        }
+    }
 
-			m_Timer = new TeleportTimer( this );
-			m_Timer.Start();
-		}
+    public override Poison PoisonImmune
+    {
+        get
+        {
+            if (Body == 222)
+            {
+                return Poison.Lethal;
+            }
+            return Poison.Greater;
+        }
+    }
 
-		public override void GenerateLoot()
-		{
-			if ( Body == 222 ){ AddLoot( LootPack.FilthyRich, 2 ); } else { AddLoot( LootPack.Rich, 2 ); } 
-		}
+    public override int Meat {
+        get { return 3; }
+    }
 
-		public override Poison PoisonImmune
-		{
-			get
-			{
-				if ( Body == 222 ){ return Poison.Lethal; } return Poison.Greater;
-			}
-		}
+    public Kuthulu(Serial serial) : base(serial)
+    {
+    }
 
-		public override int Meat{ get{ return 3; } }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
 
-		public Kuthulu( Serial serial ) : base( serial )
-		{
-		}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        switch (version)
+        {
+            case 0:
+            {
+                m_Timer = new TeleportTimer(this);
+                m_Timer.Start();
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+                break;
+            }
+        }
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-			switch ( version )
-			{
-				case 0:
-				{
-					m_Timer = new TeleportTimer( this );
-					m_Timer.Start();
+    private class TeleportTimer : Timer
+    {
+        private Mobile m_Owner;
 
-					break;
-				}
-			}
-		}
+        private static int[] m_Offsets = new int[]
+        {
+            -1, -1,
+            -1, 0,
+            -1, 1,
+            0, -1,
+            0, 1,
+            1, -1,
+            1, 0,
+            1, 1
+        };
 
-		private class TeleportTimer : Timer
-		{
-			private Mobile m_Owner;
+        public TeleportTimer(Mobile owner) : base(TimeSpan.FromSeconds(5.0), TimeSpan.FromSeconds(5.0))
+        {
+            Priority = TimerPriority.TwoFiftyMS;
 
-			private static int[] m_Offsets = new int[]
-			{
-				-1, -1,
-				-1,  0,
-				-1,  1,
-				0, -1,
-				0,  1,
-				1, -1,
-				1,  0,
-				1,  1
-			};
+            m_Owner = owner;
+        }
 
-			public TeleportTimer( Mobile owner ) : base( TimeSpan.FromSeconds( 5.0 ), TimeSpan.FromSeconds( 5.0 ) )
-			{
-				Priority = TimerPriority.TwoFiftyMS;
+        protected override void OnTick()
+        {
+            if (m_Owner.Deleted)
+            {
+                Stop();
+                return;
+            }
 
-				m_Owner = owner;
-			}
+            Map map = m_Owner.Map;
 
-			protected override void OnTick()
-			{
-				if ( m_Owner.Deleted )
-				{
-					Stop();
-					return;
-				}
+            if (map == null)
+            {
+                return;
+            }
 
-				Map map = m_Owner.Map;
+            if (0.25 < Utility.RandomDouble())
+            {
+                return;
+            }
 
-				if ( map == null )
-					return;
+            Mobile toTeleport = null;
 
-				if ( 0.25 < Utility.RandomDouble() )
-					return;
+            foreach (Mobile m in m_Owner.GetMobilesInRange(16))
+            {
+                if (m != m_Owner && m.Player && m_Owner.CanBeHarmful(m) && m_Owner.CanSee(m) && m.AccessLevel == AccessLevel.Player)
+                {
+                    toTeleport = m;
+                    break;
+                }
+            }
 
-				Mobile toTeleport = null;
+            if (toTeleport != null)
+            {
+                int offset = Utility.Random(8) * 2;
 
-				foreach ( Mobile m in m_Owner.GetMobilesInRange( 16 ) )
-				{
-					if ( m != m_Owner && m.Player && m_Owner.CanBeHarmful( m ) && m_Owner.CanSee( m ) && m.AccessLevel == AccessLevel.Player )
-					{
-						toTeleport = m;
-						break;
-					}
-				}
+                Point3D to = m_Owner.Location;
 
-				if ( toTeleport != null )
-				{
-					int offset = Utility.Random( 8 ) * 2;
+                for (int i = 0; i < m_Offsets.Length; i += 2)
+                {
+                    int x = m_Owner.X + m_Offsets[(offset + i) % m_Offsets.Length];
+                    int y = m_Owner.Y + m_Offsets[(offset + i + 1) % m_Offsets.Length];
 
-					Point3D to = m_Owner.Location;
+                    if (map.CanSpawnMobile(x, y, m_Owner.Z))
+                    {
+                        to = new Point3D(x, y, m_Owner.Z);
+                        break;
+                    }
+                    else
+                    {
+                        int z = map.GetAverageZ(x, y);
 
-					for ( int i = 0; i < m_Offsets.Length; i += 2 )
-					{
-						int x = m_Owner.X + m_Offsets[(offset + i) % m_Offsets.Length];
-						int y = m_Owner.Y + m_Offsets[(offset + i + 1) % m_Offsets.Length];
+                        if (map.CanSpawnMobile(x, y, z))
+                        {
+                            to = new Point3D(x, y, z);
+                            break;
+                        }
+                    }
+                }
 
-						if ( map.CanSpawnMobile( x, y, m_Owner.Z ) )
-						{
-							to = new Point3D( x, y, m_Owner.Z );
-							break;
-						}
-						else
-						{
-							int z = map.GetAverageZ( x, y );
+                Mobile m = toTeleport;
 
-							if ( map.CanSpawnMobile( x, y, z ) )
-							{
-								to = new Point3D( x, y, z );
-								break;
-							}
-						}
-					}
+                Point3D from = m.Location;
 
-					Mobile m = toTeleport;
+                m.Location = to;
 
-					Point3D from = m.Location;
+                Server.Spells.SpellHelper.Turn(m_Owner, toTeleport);
+                Server.Spells.SpellHelper.Turn(toTeleport, m_Owner);
 
-					m.Location = to;
+                m.ProcessDelta();
 
-					Server.Spells.SpellHelper.Turn( m_Owner, toTeleport );
-					Server.Spells.SpellHelper.Turn( toTeleport, m_Owner );
+                Effects.SendLocationParticles(EffectItem.Create(from, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
+                Effects.SendLocationParticles(EffectItem.Create(to, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
 
-					m.ProcessDelta();
+                m.PlaySound(0x1FE);
 
-					Effects.SendLocationParticles( EffectItem.Create( from, m.Map, EffectItem.DefaultDuration ), 0x3728, 10, 10, 2023 );
-					Effects.SendLocationParticles( EffectItem.Create(   to, m.Map, EffectItem.DefaultDuration ), 0x3728, 10, 10, 5023 );
-
-					m.PlaySound( 0x1FE );
-
-					m_Owner.Combatant = toTeleport;
-				}
-			}
-		}
-	}
+                m_Owner.Combatant = toTeleport;
+            }
+        }
+    }
+}
 }

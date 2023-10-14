@@ -7,107 +7,145 @@ using Server.Misc;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "an ogre corpse" )]
-	public class Ogre : BaseCreature
-	{
-		public override int BreathPhysicalDamage{ get{ return 100; } }
-		public override int BreathFireDamage{ get{ return 0; } }
-		public override int BreathColdDamage{ get{ return 0; } }
-		public override int BreathPoisonDamage{ get{ return 0; } }
-		public override int BreathEnergyDamage{ get{ return 0; } }
-		public override int BreathEffectHue{ get{ return 0; } }
-		public override int BreathEffectSound{ get{ return 0x65A; } }
-		public override int BreathEffectItemID{ get{ return 0x1365; } } // SMALL BOULDER
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 7 ); }
-		public override double BreathDamageScalar{ get{ return 0.35; } }
+[CorpseName("an ogre corpse")]
+public class Ogre : BaseCreature
+{
+    public override int BreathPhysicalDamage {
+        get { return 100; }
+    }
+    public override int BreathFireDamage {
+        get { return 0; }
+    }
+    public override int BreathColdDamage {
+        get { return 0; }
+    }
+    public override int BreathPoisonDamage {
+        get { return 0; }
+    }
+    public override int BreathEnergyDamage {
+        get { return 0; }
+    }
+    public override int BreathEffectHue {
+        get { return 0; }
+    }
+    public override int BreathEffectSound {
+        get { return 0x65A; }
+    }
+    public override int BreathEffectItemID {
+        get { return 0x1365; }
+    }                                                                           // SMALL BOULDER
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 7);
+    }
 
-		[Constructable]
-		public Ogre () : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
-			Name = "an ogre";
-			Body = 1;
-			BaseSoundID = 427;
+    public override double BreathDamageScalar {
+        get { return 0.35; }
+    }
 
-			SetStr( 166, 195 );
-			SetDex( 46, 65 );
-			SetInt( 46, 70 );
+    [Constructable]
+    public Ogre() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        Name        = "an ogre";
+        Body        = 1;
+        BaseSoundID = 427;
 
-			SetHits( 100, 117 );
-			SetMana( 0 );
+        SetStr(166, 195);
+        SetDex(46, 65);
+        SetInt(46, 70);
 
-			SetDamage( 9, 11 );
+        SetHits(100, 117);
+        SetMana(0);
 
-			SetDamageType( ResistanceType.Physical, 100 );
+        SetDamage(9, 11);
 
-			SetResistance( ResistanceType.Physical, 30, 35 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
-			SetResistance( ResistanceType.Cold, 15, 25 );
-			SetResistance( ResistanceType.Poison, 15, 25 );
-			SetResistance( ResistanceType.Energy, 25 );
+        SetDamageType(ResistanceType.Physical, 100);
 
-			SetSkill( SkillName.MagicResist, 55.1, 70.0 );
-			SetSkill( SkillName.Tactics, 60.1, 70.0 );
-			SetSkill( SkillName.FistFighting, 70.1, 80.0 );
+        SetResistance(ResistanceType.Physical, 30, 35);
+        SetResistance(ResistanceType.Fire, 15, 25);
+        SetResistance(ResistanceType.Cold, 15, 25);
+        SetResistance(ResistanceType.Poison, 15, 25);
+        SetResistance(ResistanceType.Energy, 25);
 
-			Fame = 3000;
-			Karma = -3000;
+        SetSkill(SkillName.MagicResist, 55.1, 70.0);
+        SetSkill(SkillName.Tactics, 60.1, 70.0);
+        SetSkill(SkillName.FistFighting, 70.1, 80.0);
 
-			VirtualArmor = 32;
-		}
+        Fame  = 3000;
+        Karma = -3000;
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Average );
-			AddLoot( LootPack.Potions );
-		}
+        VirtualArmor = 32;
+    }
 
-		public override void OnDeath( Container c )
-		{
-			base.OnDeath( c );
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Average);
+        AddLoot(LootPack.Potions);
+    }
 
-			Mobile killer = this.LastKiller;
-			if ( killer != null )
-			{
-				if ( killer is BaseCreature )
-					killer = ((BaseCreature)killer).GetMaster();
+    public override void OnDeath(Container c)
+    {
+        base.OnDeath(c);
 
-				if ( killer is PlayerMobile )
-				{
-					if ( GetPlayerInfo.LuckyKiller( killer.Luck ) && Utility.RandomMinMax( 1, 4 ) == 1 )
-					{
-						BaseWeapon weapon = new Club();
-						weapon.MinDamage = weapon.MinDamage + 4;
-						weapon.MaxDamage = weapon.MaxDamage + 8;
-            			weapon.DurabilityLevel = WeaponDurabilityLevel.Indestructible;
-						weapon.Name = "ogre club";
-						c.DropItem( weapon );
-					}
-				}
-			}
-		}
+        Mobile killer = this.LastKiller;
+        if (killer != null)
+        {
+            if (killer is BaseCreature)
+            {
+                killer = ((BaseCreature)killer).GetMaster();
+            }
 
-		public override bool CanRummageCorpses{ get{ return true; } }
-		public override int TreasureMapLevel{ get{ return 1; } }
-		public override int Meat{ get{ return 2; } }
-		public override int Hides{ get{ return 18; } }
-		public override HideType HideType{ get{ return HideType.Goliath; } }
+            if (killer is PlayerMobile)
+            {
+                if (GetPlayerInfo.LuckyKiller(killer.Luck) && Utility.RandomMinMax(1, 4) == 1)
+                {
+                    BaseWeapon weapon = new Club();
+                    weapon.MinDamage       = weapon.MinDamage + 4;
+                    weapon.MaxDamage       = weapon.MaxDamage + 8;
+                    weapon.DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+                    weapon.Name            = "ogre club";
+                    c.DropItem(weapon);
+                }
+            }
+        }
+    }
 
-		public Ogre( Serial serial ) : base( serial )
-		{
-		}
+    public override bool CanRummageCorpses {
+        get { return true; }
+    }
+    public override int TreasureMapLevel {
+        get { return 1; }
+    }
+    public override int Meat {
+        get { return 2; }
+    }
+    public override int Hides {
+        get { return 18; }
+    }
+    public override HideType HideType {
+        get { return HideType.Goliath; }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public Ogre(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

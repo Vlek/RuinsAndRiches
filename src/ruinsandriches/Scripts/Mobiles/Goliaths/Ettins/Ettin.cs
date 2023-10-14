@@ -5,82 +5,118 @@ using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "an ettin corpse" )]
-	public class Ettin : BaseCreature
-	{
-		public override int BreathPhysicalDamage{ get{ return 100; } }
-		public override int BreathFireDamage{ get{ return 0; } }
-		public override int BreathColdDamage{ get{ return 0; } }
-		public override int BreathPoisonDamage{ get{ return 0; } }
-		public override int BreathEnergyDamage{ get{ return 0; } }
-		public override int BreathEffectHue{ get{ return 0; } }
-		public override int BreathEffectSound{ get{ return 0x65A; } }
-		public override int BreathEffectItemID{ get{ return 0x1363; } } // LARGE BOULDER
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 7 ); }
-		public override double BreathDamageScalar{ get{ return 0.35; } }
+[CorpseName("an ettin corpse")]
+public class Ettin : BaseCreature
+{
+    public override int BreathPhysicalDamage {
+        get { return 100; }
+    }
+    public override int BreathFireDamage {
+        get { return 0; }
+    }
+    public override int BreathColdDamage {
+        get { return 0; }
+    }
+    public override int BreathPoisonDamage {
+        get { return 0; }
+    }
+    public override int BreathEnergyDamage {
+        get { return 0; }
+    }
+    public override int BreathEffectHue {
+        get { return 0; }
+    }
+    public override int BreathEffectSound {
+        get { return 0x65A; }
+    }
+    public override int BreathEffectItemID {
+        get { return 0x1363; }
+    }                                                                           // LARGE BOULDER
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 7);
+    }
 
-		[Constructable]
-		public Ettin() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
-		{
-			Name = "an ettin";
-			Body = Utility.RandomList( 18, 2, 729, 730 );
-			BaseSoundID = 367;
+    public override double BreathDamageScalar {
+        get { return 0.35; }
+    }
 
-			SetStr( 136, 165 );
-			SetDex( 56, 75 );
-			SetInt( 31, 55 );
+    [Constructable]
+    public Ettin() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+    {
+        Name        = "an ettin";
+        Body        = Utility.RandomList(18, 2, 729, 730);
+        BaseSoundID = 367;
 
-			SetHits( 82, 99 );
+        SetStr(136, 165);
+        SetDex(56, 75);
+        SetInt(31, 55);
 
-			SetDamage( 7, 17 );
+        SetHits(82, 99);
 
-			SetDamageType( ResistanceType.Physical, 100 );
+        SetDamage(7, 17);
 
-			SetResistance( ResistanceType.Physical, 35, 40 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
-			SetResistance( ResistanceType.Cold, 40, 50 );
-			SetResistance( ResistanceType.Poison, 15, 25 );
-			SetResistance( ResistanceType.Energy, 15, 25 );
+        SetDamageType(ResistanceType.Physical, 100);
 
-			SetSkill( SkillName.MagicResist, 40.1, 55.0 );
-			SetSkill( SkillName.Tactics, 50.1, 70.0 );
-			SetSkill( SkillName.FistFighting, 50.1, 60.0 );
+        SetResistance(ResistanceType.Physical, 35, 40);
+        SetResistance(ResistanceType.Fire, 15, 25);
+        SetResistance(ResistanceType.Cold, 40, 50);
+        SetResistance(ResistanceType.Poison, 15, 25);
+        SetResistance(ResistanceType.Energy, 15, 25);
 
-			Fame = 3000;
-			Karma = -3000;
+        SetSkill(SkillName.MagicResist, 40.1, 55.0);
+        SetSkill(SkillName.Tactics, 50.1, 70.0);
+        SetSkill(SkillName.FistFighting, 50.1, 60.0);
 
-			VirtualArmor = 38;
-		}
+        Fame  = 3000;
+        Karma = -3000;
 
-		public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Meager );
-			AddLoot( LootPack.Average );
-			AddLoot( LootPack.Potions );
-		}
+        VirtualArmor = 38;
+    }
 
-		public override bool CanRummageCorpses{ get{ return true; } }
-		public override int TreasureMapLevel{ get{ return 1; } }
-		public override int Meat{ get{ return 4; } }
-		public override int Hides{ get{ return 18; } }
-		public override HideType HideType{ get{ return HideType.Goliath; } }
+    public override void GenerateLoot()
+    {
+        AddLoot(LootPack.Meager);
+        AddLoot(LootPack.Average);
+        AddLoot(LootPack.Potions);
+    }
 
-		public Ettin( Serial serial ) : base( serial )
-		{
-		}
+    public override bool CanRummageCorpses {
+        get { return true; }
+    }
+    public override int TreasureMapLevel {
+        get { return 1; }
+    }
+    public override int Meat {
+        get { return 4; }
+    }
+    public override int Hides {
+        get { return 18; }
+    }
+    public override HideType HideType {
+        get { return HideType.Goliath; }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 );
-		}
+    public Ettin(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

@@ -4,45 +4,47 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class RuneCarvingKnife : AssassinSpike
-	{
-		public override int LabelNumber{ get{ return 1072915; } } // Rune Carving Knife
+public class RuneCarvingKnife : AssassinSpike
+{
+    public override int LabelNumber {
+        get { return 1072915; }
+    }                                                                     // Rune Carving Knife
 
-		[Constructable]
-		public RuneCarvingKnife()
-		{
-			Hue = 0x48D;
-			Name = "Rune Carving Knife";
+    [Constructable]
+    public RuneCarvingKnife()
+    {
+        Hue  = 0x48D;
+        Name = "Rune Carving Knife";
 
-			WeaponAttributes.HitLeechMana = 40;
-			Attributes.RegenStam = 2;
-			Attributes.LowerManaCost = 10;
-			Attributes.WeaponSpeed = 35;
-			Attributes.WeaponDamage = 30;
-		}
+        WeaponAttributes.HitLeechMana = 40;
+        Attributes.RegenStam          = 2;
+        Attributes.LowerManaCost      = 10;
+        Attributes.WeaponSpeed        = 35;
+        Attributes.WeaponDamage       = 30;
+    }
 
-        public override void AddNameProperties(ObjectPropertyList list)
-		{
-            base.AddNameProperties(list);
-			list.Add( 1070722, "Artefact");
-        }
+    public override void AddNameProperties(ObjectPropertyList list)
+    {
+        base.AddNameProperties(list);
+        list.Add(1070722, "Artefact");
+    }
 
-		public RuneCarvingKnife( Serial serial ) : base( serial )
-		{
-		}
+    public RuneCarvingKnife(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.WriteEncodedInt( 0 ); // version
-		}
+        writer.WriteEncodedInt(0);                   // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadEncodedInt();
-		}
-	}
+        int version = reader.ReadEncodedInt();
+    }
+}
 }

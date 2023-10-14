@@ -5,361 +5,487 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-	public class BoatSailorArcher : BaseSailor
-	{
-		[Constructable]
-		public BoatSailorArcher()
-		{
-			AI = AIType.AI_Archer;
-			FightMode = FightMode.Evil;
+public class BoatSailorArcher : BaseSailor
+{
+    [Constructable]
+    public BoatSailorArcher()
+    {
+        AI        = AIType.AI_Archer;
+        FightMode = FightMode.Evil;
 
-			switch ( Utility.RandomMinMax( 0, 3 ) )
-			{
-				case 0: Title = "the sailor"; break;
-				case 1: Title = "the fisherman"; break;
-				case 2: Title = "the mariner"; break;
-				case 3: Title = "the seafarer"; break;
-			}
+        switch (Utility.RandomMinMax(0, 3))
+        {
+            case 0: Title = "the sailor"; break;
+            case 1: Title = "the fisherman"; break;
+            case 2: Title = "the mariner"; break;
+            case 3: Title = "the seafarer"; break;
+        }
 
-			SetStr( (int)(level*0.75) );
-			SetDex( level );
-			SetInt( (int)(level*0.50) );
+        SetStr((int)(level * 0.75));
+        SetDex(level);
+        SetInt((int)(level * 0.50));
 
-			Karma = -1 * Karma;
+        Karma = -1 * Karma;
 
-			if ( Female )
-			{
-				Utility.AssignRandomHair( this );
-			}
-			else
-			{
-				Utility.AssignRandomHair( this );
-				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
-			}
-		}
+        if (Female)
+        {
+            Utility.AssignRandomHair(this);
+        }
+        else
+        {
+            Utility.AssignRandomHair(this);
+            FacialHairItemID = Utility.RandomList(0, 8254, 8255, 8256, 8257, 8267, 8268, 8269);
+        }
+    }
 
-		public BoatSailorArcher( Serial serial ) : base( serial )
-		{
-		}
+    public BoatSailorArcher(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 
-	public class BoatSailorBard : BaseSailor
-	{
-		[Constructable]
-		public BoatSailorBard()
-		{
-			AI = AIType.AI_Archer;
-			FightMode = FightMode.Evil;
+public class BoatSailorBard : BaseSailor
+{
+    [Constructable]
+    public BoatSailorBard()
+    {
+        AI        = AIType.AI_Archer;
+        FightMode = FightMode.Evil;
 
-			switch ( Utility.RandomMinMax( 0, 3 ) )
-			{
-				case 0: Title = "the sailor"; break;
-				case 1: Title = "the fisherman"; break;
-				case 2: Title = "the mariner"; break;
-				case 3: Title = "the seafarer"; break;
-			}
+        switch (Utility.RandomMinMax(0, 3))
+        {
+            case 0: Title = "the sailor"; break;
+            case 1: Title = "the fisherman"; break;
+            case 2: Title = "the mariner"; break;
+            case 3: Title = "the seafarer"; break;
+        }
 
-			SetStr( (int)(level*0.75) );
-			SetDex( level );
-			SetInt( (int)(level*0.50) );
+        SetStr((int)(level * 0.75));
+        SetDex(level);
+        SetInt((int)(level * 0.50));
 
-			Karma = -1 * Karma;
+        Karma = -1 * Karma;
 
-			if ( Female )
-			{
-				Utility.AssignRandomHair( this );
-			}
-			else
-			{
-				Utility.AssignRandomHair( this );
-				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
-			}
+        if (Female)
+        {
+            Utility.AssignRandomHair(this);
+        }
+        else
+        {
+            Utility.AssignRandomHair(this);
+            FacialHairItemID = Utility.RandomList(0, 8254, 8255, 8256, 8257, 8267, 8268, 8269);
+        }
 
-			switch ( Utility.Random( 6 ))
-			{
-				case 0: PackItem( new BambooFlute() );	SpeechHue = 0x504;	break;
-				case 1: PackItem( new Drums() );		SpeechHue = 0x38;	break;
-				case 2: PackItem( new Tambourine() );	SpeechHue = 0x52;	break;
-				case 3: PackItem( new LapHarp() );		SpeechHue = 0x45;	break;
-				case 4: PackItem( new Lute() );			SpeechHue = 0x4C;	break;
-				case 5: PackItem( new Trumpet() );		SpeechHue = 0x3CE;	break;
-			}
-		}
+        switch (Utility.Random(6))
+        {
+            case 0: PackItem(new BambooFlute());  SpeechHue         = 0x504;      break;
+            case 1: PackItem(new Drums());                SpeechHue = 0x38;       break;
+            case 2: PackItem(new Tambourine());   SpeechHue         = 0x52;       break;
+            case 3: PackItem(new LapHarp());              SpeechHue = 0x45;       break;
+            case 4: PackItem(new Lute());                 SpeechHue = 0x4C;       break;
+            case 5: PackItem(new Trumpet());              SpeechHue = 0x3CE;      break;
+        }
+    }
 
-		public BoatSailorBard( Serial serial ) : base( serial )
-		{
-		}
+    public BoatSailorBard(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 
-	public class BoatSailorMage : BaseSailor
-	{
-		public override int BreathPhysicalDamage{ get{ return 0; } }
-		public override int BreathFireDamage{ get{ if ( YellHue < 2 ){ return 100; } else { return 0; } } }
-		public override int BreathColdDamage{ get{ if ( YellHue == 3 ){ return 100; } else { return 0; } } }
-		public override int BreathPoisonDamage{ get{ if ( YellHue == 2 ){ return 100; } else { return 0; } } }
-		public override int BreathEnergyDamage{ get{ return 0; } }
-		public override int BreathEffectHue{ get{ if ( YellHue == 1 ){ return 0x488; } else if ( YellHue == 2 ){ return 0xB92; } else if ( YellHue == 3 ){ return 0x5B5; } else { return 0x4FD; } } }
-		public override int BreathEffectSound{ get{ return 0x238; } }
-		public override int BreathEffectItemID{ get{ return 0x1005; } } // EXPLOSION POTION
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 2 ); }
-		public override double BreathDamageScalar{ get{ return 0.4; } }
+public class BoatSailorMage : BaseSailor
+{
+    public override int BreathPhysicalDamage {
+        get { return 0;
+        }
+    }
+    public override int BreathFireDamage {
+        get { if (YellHue < 2)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathColdDamage {
+        get { if (YellHue == 3)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathPoisonDamage {
+        get { if (YellHue == 2)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathEnergyDamage {
+        get { return 0; }
+    }
+    public override int BreathEffectHue {
+        get { if (YellHue == 1)
+              {
+                  return 0x488;
+              }
+              else if (YellHue == 2)
+              {
+                  return 0xB92;
+              }
+              else if (YellHue == 3)
+              {
+                  return 0x5B5;
+              }
+              else
+              {
+                  return 0x4FD;
+              } }
+    }
+    public override int BreathEffectSound {
+        get { return 0x238; }
+    }
+    public override int BreathEffectItemID {
+        get { return 0x1005; }
+    }                                                                           // EXPLOSION POTION
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 2);
+    }
 
-		[Constructable]
-		public BoatSailorMage()
-		{
-			AI = AIType.AI_Mage;
-			FightMode = FightMode.Evil;
+    public override double BreathDamageScalar {
+        get { return 0.4; }
+    }
 
-			switch ( Utility.RandomMinMax( 0, 3 ) )
-			{
-				case 0: Title = "the sailor"; break;
-				case 1: Title = "the fisherman"; break;
-				case 2: Title = "the mariner"; break;
-				case 3: Title = "the seafarer"; break;
-			}
+    [Constructable]
+    public BoatSailorMage()
+    {
+        AI        = AIType.AI_Mage;
+        FightMode = FightMode.Evil;
 
-			SetDex( (int)(level*0.75) );
-			SetInt( level );
-			SetStr( (int)(level*0.50) );
+        switch (Utility.RandomMinMax(0, 3))
+        {
+            case 0: Title = "the sailor"; break;
+            case 1: Title = "the fisherman"; break;
+            case 2: Title = "the mariner"; break;
+            case 3: Title = "the seafarer"; break;
+        }
 
-			Karma = -1 * Karma;
+        SetDex((int)(level * 0.75));
+        SetInt(level);
+        SetStr((int)(level * 0.50));
 
-			if ( Female )
-			{
-				Utility.AssignRandomHair( this );
-			}
-			else
-			{
-				Utility.AssignRandomHair( this );
-				FacialHairItemID = Utility.RandomList( 0, 8254, 8255, 8256, 8257, 8267, 8268, 8269 );
-			}
-		}
+        Karma = -1 * Karma;
 
-		public BoatSailorMage( Serial serial ) : base( serial )
-		{
-		}
+        if (Female)
+        {
+            Utility.AssignRandomHair(this);
+        }
+        else
+        {
+            Utility.AssignRandomHair(this);
+            FacialHairItemID = Utility.RandomList(0, 8254, 8255, 8256, 8257, 8267, 8268, 8269);
+        }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public BoatSailorMage(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-	public class ElfBoatSailorArcher : BaseSailor
-	{
-		[Constructable]
-		public ElfBoatSailorArcher()
-		{
-			AI = AIType.AI_Archer;
-			FightMode = FightMode.Evil;
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 
-			switch ( Utility.RandomMinMax( 0, 3 ) )
-			{
-				case 0: Title = "the elf sailor"; break;
-				case 1: Title = "the elf fisherman"; break;
-				case 2: Title = "the elf mariner"; break;
-				case 3: Title = "the elf seafarer"; break;
-			}
+public class ElfBoatSailorArcher : BaseSailor
+{
+    [Constructable]
+    public ElfBoatSailorArcher()
+    {
+        AI        = AIType.AI_Archer;
+        FightMode = FightMode.Evil;
 
-			SetStr( (int)(level*0.75) );
-			SetDex( level );
-			SetInt( (int)(level*0.50) );
+        switch (Utility.RandomMinMax(0, 3))
+        {
+            case 0: Title = "the elf sailor"; break;
+            case 1: Title = "the elf fisherman"; break;
+            case 2: Title = "the elf mariner"; break;
+            case 3: Title = "the elf seafarer"; break;
+        }
 
-			Karma = -1 * Karma;
+        SetStr((int)(level * 0.75));
+        SetDex(level);
+        SetInt((int)(level * 0.50));
 
-			Race = Race.Elf;
-			if ( this.Female = Utility.RandomBool() )
-			{
-				Body = 606;
-				Name = NameList.RandomName( "elf_female" );
-				Utility.AssignRandomHair( this );
-			}
-			else
-			{
-				Body = 605;
-				Name = NameList.RandomName( "elf_male" );
-				Utility.AssignRandomHair( this );
-			}
-		}
+        Karma = -1 * Karma;
 
-		public ElfBoatSailorArcher( Serial serial ) : base( serial )
-		{
-		}
+        Race = Race.Elf;
+        if (this.Female = Utility.RandomBool())
+        {
+            Body = 606;
+            Name = NameList.RandomName("elf_female");
+            Utility.AssignRandomHair(this);
+        }
+        else
+        {
+            Body = 605;
+            Name = NameList.RandomName("elf_male");
+            Utility.AssignRandomHair(this);
+        }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public ElfBoatSailorArcher(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-	public class ElfBoatSailorBard : BaseSailor
-	{
-		[Constructable]
-		public ElfBoatSailorBard()
-		{
-			AI = AIType.AI_Archer;
-			FightMode = FightMode.Evil;
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 
-			switch ( Utility.RandomMinMax( 0, 3 ) )
-			{
-				case 0: Title = "the elf sailor"; break;
-				case 1: Title = "the elf fisherman"; break;
-				case 2: Title = "the elf mariner"; break;
-				case 3: Title = "the elf seafarer"; break;
-			}
+public class ElfBoatSailorBard : BaseSailor
+{
+    [Constructable]
+    public ElfBoatSailorBard()
+    {
+        AI        = AIType.AI_Archer;
+        FightMode = FightMode.Evil;
 
-			SetStr( (int)(level*0.75) );
-			SetDex( level );
-			SetInt( (int)(level*0.50) );
+        switch (Utility.RandomMinMax(0, 3))
+        {
+            case 0: Title = "the elf sailor"; break;
+            case 1: Title = "the elf fisherman"; break;
+            case 2: Title = "the elf mariner"; break;
+            case 3: Title = "the elf seafarer"; break;
+        }
 
-			Karma = -1 * Karma;
+        SetStr((int)(level * 0.75));
+        SetDex(level);
+        SetInt((int)(level * 0.50));
 
-			Race = Race.Elf;
-			if ( Female )
-			{
-				Body = 606;
-				Name = NameList.RandomName( "elf_female" );
-				Utility.AssignRandomHair( this );
-			}
-			else
-			{
-				Body = 605;
-				Name = NameList.RandomName( "elf_male" );
-				Utility.AssignRandomHair( this );
-			}
+        Karma = -1 * Karma;
 
-			switch ( Utility.Random( 6 ))
-			{
-				case 0: PackItem( new BambooFlute() );	SpeechHue = 0x504;	break;
-				case 1: PackItem( new Drums() );		SpeechHue = 0x38;	break;
-				case 2: PackItem( new Tambourine() );	SpeechHue = 0x52;	break;
-				case 3: PackItem( new LapHarp() );		SpeechHue = 0x45;	break;
-				case 4: PackItem( new Lute() );			SpeechHue = 0x4C;	break;
-				case 5: PackItem( new Trumpet() );		SpeechHue = 0x3CE;	break;
-			}
-		}
+        Race = Race.Elf;
+        if (Female)
+        {
+            Body = 606;
+            Name = NameList.RandomName("elf_female");
+            Utility.AssignRandomHair(this);
+        }
+        else
+        {
+            Body = 605;
+            Name = NameList.RandomName("elf_male");
+            Utility.AssignRandomHair(this);
+        }
 
-		public ElfBoatSailorBard( Serial serial ) : base( serial )
-		{
-		}
+        switch (Utility.Random(6))
+        {
+            case 0: PackItem(new BambooFlute());  SpeechHue         = 0x504;      break;
+            case 1: PackItem(new Drums());                SpeechHue = 0x38;       break;
+            case 2: PackItem(new Tambourine());   SpeechHue         = 0x52;       break;
+            case 3: PackItem(new LapHarp());              SpeechHue = 0x45;       break;
+            case 4: PackItem(new Lute());                 SpeechHue = 0x4C;       break;
+            case 5: PackItem(new Trumpet());              SpeechHue = 0x3CE;      break;
+        }
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+    public ElfBoatSailorBard(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
 
-	public class ElfBoatSailorMage : BaseSailor
-	{
-		public override int BreathPhysicalDamage{ get{ return 0; } }
-		public override int BreathFireDamage{ get{ if ( YellHue < 2 ){ return 100; } else { return 0; } } }
-		public override int BreathColdDamage{ get{ if ( YellHue == 3 ){ return 100; } else { return 0; } } }
-		public override int BreathPoisonDamage{ get{ if ( YellHue == 2 ){ return 100; } else { return 0; } } }
-		public override int BreathEnergyDamage{ get{ return 0; } }
-		public override int BreathEffectHue{ get{ if ( YellHue == 1 ){ return 0x488; } else if ( YellHue == 2 ){ return 0xB92; } else if ( YellHue == 3 ){ return 0x5B5; } else { return 0x4FD; } } }
-		public override int BreathEffectSound{ get{ return 0x238; } }
-		public override int BreathEffectItemID{ get{ return 0x1005; } } // EXPLOSION POTION
-		public override bool HasBreath{ get{ return true; } }
-		public override double BreathEffectDelay{ get{ return 0.1; } }
-		public override void BreathDealDamage( Mobile target, int form ){ base.BreathDealDamage( target, 2 ); }
-		public override double BreathDamageScalar{ get{ return 0.4; } }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 
-		[Constructable]
-		public ElfBoatSailorMage()
-		{
-			AI = AIType.AI_Mage;
-			FightMode = FightMode.Evil;
+public class ElfBoatSailorMage : BaseSailor
+{
+    public override int BreathPhysicalDamage {
+        get { return 0;
+        }
+    }
+    public override int BreathFireDamage {
+        get { if (YellHue < 2)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathColdDamage {
+        get { if (YellHue == 3)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathPoisonDamage {
+        get { if (YellHue == 2)
+              {
+                  return 100;
+              }
+              else
+              {
+                  return 0;
+              } }
+    }
+    public override int BreathEnergyDamage {
+        get { return 0; }
+    }
+    public override int BreathEffectHue {
+        get { if (YellHue == 1)
+              {
+                  return 0x488;
+              }
+              else if (YellHue == 2)
+              {
+                  return 0xB92;
+              }
+              else if (YellHue == 3)
+              {
+                  return 0x5B5;
+              }
+              else
+              {
+                  return 0x4FD;
+              } }
+    }
+    public override int BreathEffectSound {
+        get { return 0x238; }
+    }
+    public override int BreathEffectItemID {
+        get { return 0x1005; }
+    }                                                                           // EXPLOSION POTION
+    public override bool HasBreath {
+        get { return true; }
+    }
+    public override double BreathEffectDelay {
+        get { return 0.1; }
+    }
+    public override void BreathDealDamage(Mobile target, int form)
+    {
+        base.BreathDealDamage(target, 2);
+    }
 
-			switch ( Utility.RandomMinMax( 0, 3 ) )
-			{
-				case 0: Title = "the sailor"; break;
-				case 1: Title = "the fisherman"; break;
-				case 2: Title = "the mariner"; break;
-				case 3: Title = "the seafarer"; break;
-			}
+    public override double BreathDamageScalar {
+        get { return 0.4; }
+    }
 
-			SetDex( (int)(level*0.75) );
-			SetInt( level );
-			SetStr( (int)(level*0.50) );
+    [Constructable]
+    public ElfBoatSailorMage()
+    {
+        AI        = AIType.AI_Mage;
+        FightMode = FightMode.Evil;
 
-			Karma = -1 * Karma;
+        switch (Utility.RandomMinMax(0, 3))
+        {
+            case 0: Title = "the sailor"; break;
+            case 1: Title = "the fisherman"; break;
+            case 2: Title = "the mariner"; break;
+            case 3: Title = "the seafarer"; break;
+        }
 
-			Race = Race.Elf;
-			if ( Female )
-			{
-				Body = 606;
-				Name = NameList.RandomName( "elf_female" );
-				Utility.AssignRandomHair( this );
-			}
-			else
-			{
-				Body = 605;
-				Name = NameList.RandomName( "elf_male" );
-				Utility.AssignRandomHair( this );
-			}
-		}
+        SetDex((int)(level * 0.75));
+        SetInt(level);
+        SetStr((int)(level * 0.50));
 
-		public ElfBoatSailorMage( Serial serial ) : base( serial )
-		{
-		}
+        Karma = -1 * Karma;
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+        Race = Race.Elf;
+        if (Female)
+        {
+            Body = 606;
+            Name = NameList.RandomName("elf_female");
+            Utility.AssignRandomHair(this);
+        }
+        else
+        {
+            Body = 605;
+            Name = NameList.RandomName("elf_male");
+            Utility.AssignRandomHair(this);
+        }
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+    public ElfBoatSailorMage(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}
 }

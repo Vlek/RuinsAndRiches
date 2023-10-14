@@ -2,66 +2,74 @@ using System;
 
 namespace Server.Items
 {
-	public class BoneTableAddon : BaseAddon
-	{
-		public override BaseAddonDeed Deed { get { return new BoneTableDeed(); } }
+public class BoneTableAddon : BaseAddon
+{
+    public override BaseAddonDeed Deed {
+        get { return new BoneTableDeed(); }
+    }
 
-		[Constructable]
-		public BoneTableAddon() : base()
-		{
-			AddComponent( new LocalizedAddonComponent( 0x2A5C, 1074478 ), 0, 0, 0 );
-		}
+    [Constructable]
+    public BoneTableAddon() : base()
+    {
+        AddComponent(new LocalizedAddonComponent(0x2A5C, 1074478), 0, 0, 0);
+    }
 
-		public BoneTableAddon( Serial serial ) : base( serial )
-		{
-		}
+    public BoneTableAddon(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.WriteEncodedInt( 0 ); // version
-		}
+        writer.WriteEncodedInt(0);                   // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadEncodedInt();
-		}
-	}
+        int version = reader.ReadEncodedInt();
+    }
+}
 
-	public class BoneTableDeed : BaseAddonDeed
-	{
-		public override BaseAddon Addon { get { return new BoneTableAddon(); } }
+public class BoneTableDeed : BaseAddonDeed
+{
+    public override BaseAddon Addon {
+        get { return new BoneTableAddon();
+        }
+    }
 
-		[Constructable]
-		public BoneTableDeed() : base()
-		{
-			Name = "box containing a table of bones";
-            ItemID = Utility.RandomList( 0x3420, 0x3425 );
-            Hue = Utility.RandomEvilHue();
-            Weight = 5.0;
-		}
+    [Constructable]
+    public BoneTableDeed() : base()
+    {
+        Name   = "box containing a table of bones";
+        ItemID = Utility.RandomList(0x3420, 0x3425);
+        Hue    = Utility.RandomEvilHue();
+        Weight = 5.0;
+    }
 
-		public BoneTableDeed( Serial serial ) : base( serial )
-		{
-		}
+    public BoneTableDeed(Serial serial) : base(serial)
+    {
+    }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.WriteEncodedInt( 0 ); // version
-		}
+        writer.WriteEncodedInt(0);                   // version
+    }
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			int version = reader.ReadEncodedInt();
+        int version = reader.ReadEncodedInt();
 
-			if ( ItemID != 0x3420 && ItemID != 0x3425 ){ ItemID = 0x3425; }
-		}
-	}
+        if (ItemID != 0x3420 && ItemID != 0x3425)
+        {
+            ItemID = 0x3425;
+        }
+    }
+}
 }

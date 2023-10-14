@@ -6,298 +6,434 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public abstract class BaseRanged : BaseMeleeWeapon
-	{
-		public abstract int EffectID{ get; }
-		public abstract Type AmmoType{ get; }
-		public abstract Item Ammo{ get; }
+public abstract class BaseRanged : BaseMeleeWeapon
+{
+    public abstract int EffectID {
+        get;
+    }
+    public abstract Type AmmoType {
+        get;
+    }
+    public abstract Item Ammo {
+        get;
+    }
 
-		public override int DefHitSound{ get{ return 0x234; } }
-		public override int DefMissSound{ get{ return 0x238; } }
+    public override int DefHitSound {
+        get { return 0x234; }
+    }
+    public override int DefMissSound {
+        get { return 0x238; }
+    }
 
-		public override SkillName DefSkill{ get{ return SkillName.Marksmanship; } }
-		public override WeaponType DefType{ get{ return WeaponType.Ranged; } }
-		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootXBow; } }
+    public override SkillName DefSkill {
+        get { return SkillName.Marksmanship; }
+    }
+    public override WeaponType DefType {
+        get { return WeaponType.Ranged; }
+    }
+    public override WeaponAnimation DefAnimation {
+        get { return WeaponAnimation.ShootXBow; }
+    }
 
-		public override SkillName AccuracySkill{ get{ return SkillName.Marksmanship; } }
+    public override SkillName AccuracySkill {
+        get { return SkillName.Marksmanship; }
+    }
 
-		private Timer m_RecoveryTimer; // so we don't start too many timers
-		private bool m_Balanced;
-		private int m_Velocity;
-		
-		[CommandProperty( AccessLevel.GameMaster )]
-		public bool Balanced
-		{
-			get{ return m_Balanced; }
-			set{ m_Balanced = value; InvalidateProperties(); }
-		}
-		
-		[CommandProperty( AccessLevel.GameMaster )]
-		public int Velocity
-		{
-			get{ return m_Velocity; }
-			set{ m_Velocity = value; InvalidateProperties(); }
-		}
+    private Timer m_RecoveryTimer;             // so we don't start too many timers
+    private bool m_Balanced;
+    private int m_Velocity;
 
-		public BaseRanged( int itemID ) : base( itemID )
-		{
-			Layer = Layer.TwoHanded;
-		}
+    [CommandProperty(AccessLevel.GameMaster)]
+    public bool Balanced
+    {
+        get { return m_Balanced; }
+        set { m_Balanced = value; InvalidateProperties(); }
+    }
 
-		public BaseRanged( Serial serial ) : base( serial )
-		{
-		}
+    [CommandProperty(AccessLevel.GameMaster)]
+    public int Velocity
+    {
+        get { return m_Velocity; }
+        set { m_Velocity = value; InvalidateProperties(); }
+    }
 
-		public override TimeSpan OnSwing( Mobile attacker, Mobile defender )
-		{
-			WeaponAbility a = WeaponAbility.GetCurrentAbility( attacker );
+    public BaseRanged(int itemID) : base(itemID)
+    {
+        Layer = Layer.TwoHanded;
+    }
 
-			// Make sure we've been standing still for .25/.5/1 second depending on Era
-			if ( DateTime.Now > (attacker.LastMoveTime + TimeSpan.FromSeconds( Core.SE ? 0.25 : (Core.AOS ? 0.5 : 1.0) )) || (Core.AOS && WeaponAbility.GetCurrentAbility( attacker ) is MovingShot) )
-			{
-				bool canSwing = true;
+    public BaseRanged(Serial serial) : base(serial)
+    {
+    }
 
-				if ( Core.AOS )
-				{
-					canSwing = ( !attacker.Paralyzed && !attacker.Frozen );
+    public override TimeSpan OnSwing(Mobile attacker, Mobile defender)
+    {
+        WeaponAbility a = WeaponAbility.GetCurrentAbility(attacker);
 
-					if ( canSwing )
-					{
-						Spell sp = attacker.Spell as Spell;
+        // Make sure we've been standing still for .25/.5/1 second depending on Era
+        if (DateTime.Now > (attacker.LastMoveTime + TimeSpan.FromSeconds(Core.SE ? 0.25 : (Core.AOS ? 0.5 : 1.0))) || (Core.AOS && WeaponAbility.GetCurrentAbility(attacker) is MovingShot))
+        {
+            bool canSwing = true;
 
-						canSwing = ( sp == null || !sp.IsCasting || !sp.BlocksMovement );
-					}
-				}
+            if (Core.AOS)
+            {
+                canSwing = (!attacker.Paralyzed && !attacker.Frozen);
 
-				if ( canSwing && attacker.HarmfulCheck( defender ) )
-				{
-					attacker.DisruptiveAction();
-					attacker.Send( new Swing( 0, attacker, defender ) );
+                if (canSwing)
+                {
+                    Spell sp = attacker.Spell as Spell;
 
-					if ( OnFired( attacker, defender ) )
-					{
-						if ( CheckHit( attacker, defender ) )
-							OnHit( attacker, defender );
-						else
-							OnMiss( attacker, defender );
-					}
-				}
+                    canSwing = (sp == null || !sp.IsCasting || !sp.BlocksMovement);
+                }
+            }
 
-				if ( !( a is ShadowStrike || a is ShadowInfectiousStrike ) )
-					attacker.RevealingAction();
+            if (canSwing && attacker.HarmfulCheck(defender))
+            {
+                attacker.DisruptiveAction();
+                attacker.Send(new Swing(0, attacker, defender));
 
-				return GetDelay( attacker );
-			}
-			else
-			{
-				if ( !( a is ShadowStrike || a is ShadowInfectiousStrike ) )
-					attacker.RevealingAction();
+                if (OnFired(attacker, defender))
+                {
+                    if (CheckHit(attacker, defender))
+                    {
+                        OnHit(attacker, defender);
+                    }
+                    else
+                    {
+                        OnMiss(attacker, defender);
+                    }
+                }
+            }
 
-				return TimeSpan.FromSeconds( 0.25 );
-			}
-		}
+            if (!(a is ShadowStrike || a is ShadowInfectiousStrike))
+            {
+                attacker.RevealingAction();
+            }
 
-		public override void OnHit( Mobile attacker, Mobile defender, double damageBonus )
-		{
-			if ( !( Ammo is Krystal ) && !( Ammo is HarpoonRope ) && !( Ammo is MageEye ) && !( Ammo is ThrowingWeapon ) && attacker.Player && !defender.Player && (defender.Body.IsAnimal || defender.Body.IsMonster) && 0.4 >= Utility.RandomDouble() )
-				defender.AddToBackpack( Ammo );
+            return GetDelay(attacker);
+        }
+        else
+        {
+            if (!(a is ShadowStrike || a is ShadowInfectiousStrike))
+            {
+                attacker.RevealingAction();
+            }
 
-			if ( defender is BaseCreature && Ammo is ThrowingWeapon && attacker.Player )
-			{
-				BaseCreature bc = (BaseCreature)defender;
+            return TimeSpan.FromSeconds(0.25);
+        }
+    }
 
-				if ( attacker.FindItemOnLayer( Layer.OneHanded ) != null )
-				{
-					if ( attacker.FindItemOnLayer( Layer.OneHanded ) is ThrowingGloves )
-					{
-						ThrowingGloves glove = (ThrowingGloves)( attacker.FindItemOnLayer( Layer.OneHanded ) );
-						ThrowingWeapon knife = new ThrowingWeapon();
+    public override void OnHit(Mobile attacker, Mobile defender, double damageBonus)
+    {
+        if (!(Ammo is Krystal) && !(Ammo is HarpoonRope) && !(Ammo is MageEye) && !(Ammo is ThrowingWeapon) && attacker.Player && !defender.Player && (defender.Body.IsAnimal || defender.Body.IsMonster) && 0.4 >= Utility.RandomDouble())
+        {
+            defender.AddToBackpack(Ammo);
+        }
 
-						if ( glove.GloveType == "Stones" ){ knife.ammo = "Throwing Stones"; knife.ItemID = 0x10B6; knife.Name = "throwing stone"; }
-						else if ( glove.GloveType == "Axes" ){ knife.ammo = "Throwing Axes"; knife.ItemID = 0x10B3; knife.Name = "throwing axe"; }
-						else if ( glove.GloveType == "Daggers" ){ knife.ammo = "Throwing Daggers"; knife.ItemID = 0x10B7; knife.Name = "throwing dagger"; }
-						else if ( glove.GloveType == "Darts" ){ knife.ammo = "Throwing Darts"; knife.ItemID = 0x10B5; knife.Name = "throwing dart"; }
-						else if ( glove.GloveType == "Cards" && Server.Misc.GetPlayerInfo.isJester( attacker ) ){ knife.ammo = "Throwing Cards"; knife.ItemID = 0x4C29; knife.Name = "throwing card"; }
-						else if ( glove.GloveType == "Tomatoes" && Server.Misc.GetPlayerInfo.isJester( attacker ) ){ knife.ammo = "Throwing Tomatoes"; knife.ItemID = 0x4C28; knife.Name = "throwing tomato"; }
-						else { knife.ammo = "Throwing Stars"; knife.ItemID = 0x10B2; knife.Name = "throwing star"; }
+        if (defender is BaseCreature && Ammo is ThrowingWeapon && attacker.Player)
+        {
+            BaseCreature bc = (BaseCreature)defender;
 
-						bc.PackItem( knife );
-					}
-				}
-			}
+            if (attacker.FindItemOnLayer(Layer.OneHanded) != null)
+            {
+                if (attacker.FindItemOnLayer(Layer.OneHanded) is ThrowingGloves)
+                {
+                    ThrowingGloves glove = (ThrowingGloves)(attacker.FindItemOnLayer(Layer.OneHanded));
+                    ThrowingWeapon knife = new ThrowingWeapon();
 
-			if ( Core.ML && m_Velocity > 0 )
-			{
-				int bonus = (int) attacker.GetDistanceToSqrt( defender );
+                    if (glove.GloveType == "Stones")
+                    {
+                        knife.ammo = "Throwing Stones"; knife.ItemID = 0x10B6; knife.Name = "throwing stone";
+                    }
+                    else if (glove.GloveType == "Axes")
+                    {
+                        knife.ammo = "Throwing Axes"; knife.ItemID = 0x10B3; knife.Name = "throwing axe";
+                    }
+                    else if (glove.GloveType == "Daggers")
+                    {
+                        knife.ammo = "Throwing Daggers"; knife.ItemID = 0x10B7; knife.Name = "throwing dagger";
+                    }
+                    else if (glove.GloveType == "Darts")
+                    {
+                        knife.ammo = "Throwing Darts"; knife.ItemID = 0x10B5; knife.Name = "throwing dart";
+                    }
+                    else if (glove.GloveType == "Cards" && Server.Misc.GetPlayerInfo.isJester(attacker))
+                    {
+                        knife.ammo = "Throwing Cards"; knife.ItemID = 0x4C29; knife.Name = "throwing card";
+                    }
+                    else if (glove.GloveType == "Tomatoes" && Server.Misc.GetPlayerInfo.isJester(attacker))
+                    {
+                        knife.ammo = "Throwing Tomatoes"; knife.ItemID = 0x4C28; knife.Name = "throwing tomato";
+                    }
+                    else
+                    {
+                        knife.ammo = "Throwing Stars"; knife.ItemID = 0x10B2; knife.Name = "throwing star";
+                    }
 
-				if ( bonus > 0 && m_Velocity > Utility.Random( 100 ) )
-				{
-					AOS.Damage( defender, attacker, bonus * 3, 100, 0, 0, 0, 0 );
+                    bc.PackItem(knife);
+                }
+            }
+        }
 
-					if ( attacker.Player )
-						attacker.SendLocalizedMessage( 1072794 ); // Your arrow hits its mark with velocity!
+        if (Core.ML && m_Velocity > 0)
+        {
+            int bonus = (int)attacker.GetDistanceToSqrt(defender);
 
-					if ( defender.Player )
-						defender.SendLocalizedMessage( 1072795 ); // You have been hit by an arrow with velocity!
-				}
-			}
+            if (bonus > 0 && m_Velocity > Utility.Random(100))
+            {
+                AOS.Damage(defender, attacker, bonus * 3, 100, 0, 0, 0, 0);
 
-			base.OnHit( attacker, defender, damageBonus );
-		}
+                if (attacker.Player)
+                {
+                    attacker.SendLocalizedMessage(1072794);                               // Your arrow hits its mark with velocity!
+                }
+                if (defender.Player)
+                {
+                    defender.SendLocalizedMessage(1072795);                               // You have been hit by an arrow with velocity!
+                }
+            }
+        }
 
-		public override void OnMiss( Mobile attacker, Mobile defender )
-		{
-			if ( attacker.Player && 0.4 >= Utility.RandomDouble() )
-			{
-				if ( !( Ammo is ThrowingWeapon ) && !( Ammo is MageEye ) && !( Ammo is HarpoonRope ) && !( Ammo is Krystal ) )
-				{
-					PlayerMobile p = attacker as PlayerMobile;
+        base.OnHit(attacker, defender, damageBonus);
+    }
 
-					if ( p != null )
-					{
-						Type ammo = AmmoType;
+    public override void OnMiss(Mobile attacker, Mobile defender)
+    {
+        if (attacker.Player && 0.4 >= Utility.RandomDouble())
+        {
+            if (!(Ammo is ThrowingWeapon) && !(Ammo is MageEye) && !(Ammo is HarpoonRope) && !(Ammo is Krystal))
+            {
+                PlayerMobile p = attacker as PlayerMobile;
 
-						if ( p.RecoverableAmmo.ContainsKey( ammo ) )
-							p.RecoverableAmmo[ ammo ]++;
-						else
-							p.RecoverableAmmo.Add( ammo, 1 );
+                if (p != null)
+                {
+                    Type ammo = AmmoType;
 
-						if ( !p.Warmode )
-						{
-							if ( m_RecoveryTimer == null )
-								m_RecoveryTimer = Timer.DelayCall( TimeSpan.FromSeconds( 10 ), new TimerCallback( p.RecoverAmmo ) );
+                    if (p.RecoverableAmmo.ContainsKey(ammo))
+                    {
+                        p.RecoverableAmmo[ammo]++;
+                    }
+                    else
+                    {
+                        p.RecoverableAmmo.Add(ammo, 1);
+                    }
 
-							if ( !m_RecoveryTimer.Running )
-								m_RecoveryTimer.Start();
-						}
-					}
-				}
-			}
+                    if (!p.Warmode)
+                    {
+                        if (m_RecoveryTimer == null)
+                        {
+                            m_RecoveryTimer = Timer.DelayCall(TimeSpan.FromSeconds(10), new TimerCallback(p.RecoverAmmo));
+                        }
 
-			base.OnMiss( attacker, defender );
-		}
+                        if (!m_RecoveryTimer.Running)
+                        {
+                            m_RecoveryTimer.Start();
+                        }
+                    }
+                }
+            }
+        }
 
-		public virtual bool OnFired( Mobile attacker, Mobile defender )
-		{
-			if ( this is ThrowingGloves && attacker.Player )
-			{
-				string ammoType = "Throwing Stones";
+        base.OnMiss(attacker, defender);
+    }
 
-				ThrowingGloves glove = (ThrowingGloves)this;
-				if ( glove.GloveType == "Stones" ){ ammoType = "Throwing Stones"; }
-				else if ( glove.GloveType == "Axes" ){ ammoType = "Throwing Axes"; }
-				else if ( glove.GloveType == "Daggers" ){ ammoType = "Throwing Daggers"; }
-				else if ( glove.GloveType == "Darts" ){ ammoType = "Throwing Darts"; }
-				else if ( glove.GloveType == "Cards" && Server.Misc.GetPlayerInfo.isJester( attacker ) ){ ammoType = "Throwing Cards"; }
-				else if ( glove.GloveType == "Tomatoes" && Server.Misc.GetPlayerInfo.isJester( attacker ) ){ ammoType = "Throwing Tomatoes"; }
-				else { ammoType = "Throwing Stars"; glove.GloveType = "Stars"; }
+    public virtual bool OnFired(Mobile attacker, Mobile defender)
+    {
+        if (this is ThrowingGloves && attacker.Player)
+        {
+            string ammoType = "Throwing Stones";
 
-				foreach( Item i in attacker.Backpack.FindItemsByType( typeof( ThrowingWeapon ), true ) )
-				{
-					if ( ammoType == "Throwing Stones" ){ ((ThrowingWeapon)i).ammo = "Throwing Stones"; i.ItemID = 0x10B6; i.Name = "throwing stone"; }
-					else if ( ammoType == "Throwing Axes" ){ ((ThrowingWeapon)i).ammo = "Throwing Axes"; i.ItemID = 0x10B3; i.Name = "throwing axe"; }
-					else if ( ammoType == "Throwing Daggers" ){ ((ThrowingWeapon)i).ammo = "Throwing Daggers"; i.ItemID = 0x10B7; i.Name = "throwing dagger"; }
-					else if ( ammoType == "Throwing Darts" ){ ((ThrowingWeapon)i).ammo = "Throwing Darts"; i.ItemID = 0x10B5; i.Name = "throwing dart"; }
-					else if ( ammoType == "Throwing Cards" ){ ((ThrowingWeapon)i).ammo = "Throwing Cards"; i.ItemID = 0x4C29; i.Name = "throwing card"; }
-					else if ( ammoType == "Throwing Tomatoes" ){ ((ThrowingWeapon)i).ammo = "Throwing Tomatoes"; i.ItemID = 0x4C28; i.Name = "throwing tomato"; }
-					else { ((ThrowingWeapon)i).ammo = "Throwing Stars"; i.ItemID = 0x10B2; i.Name = "throwing star"; }
-					i.InvalidateProperties();
-				}
-			}
+            ThrowingGloves glove = (ThrowingGloves)this;
+            if (glove.GloveType == "Stones")
+            {
+                ammoType = "Throwing Stones";
+            }
+            else if (glove.GloveType == "Axes")
+            {
+                ammoType = "Throwing Axes";
+            }
+            else if (glove.GloveType == "Daggers")
+            {
+                ammoType = "Throwing Daggers";
+            }
+            else if (glove.GloveType == "Darts")
+            {
+                ammoType = "Throwing Darts";
+            }
+            else if (glove.GloveType == "Cards" && Server.Misc.GetPlayerInfo.isJester(attacker))
+            {
+                ammoType = "Throwing Cards";
+            }
+            else if (glove.GloveType == "Tomatoes" && Server.Misc.GetPlayerInfo.isJester(attacker))
+            {
+                ammoType = "Throwing Tomatoes";
+            }
+            else
+            {
+                ammoType = "Throwing Stars"; glove.GloveType = "Stars";
+            }
 
-			if ( attacker.Player )
-			{
-				BaseQuiver quiver = attacker.FindItemOnLayer( Layer.Cloak ) as BaseQuiver;
-				Container pack = attacker.Backpack;
+            foreach (Item i in attacker.Backpack.FindItemsByType(typeof(ThrowingWeapon), true))
+            {
+                if (ammoType == "Throwing Stones")
+                {
+                    ((ThrowingWeapon)i).ammo = "Throwing Stones"; i.ItemID = 0x10B6; i.Name = "throwing stone";
+                }
+                else if (ammoType == "Throwing Axes")
+                {
+                    ((ThrowingWeapon)i).ammo = "Throwing Axes"; i.ItemID = 0x10B3; i.Name = "throwing axe";
+                }
+                else if (ammoType == "Throwing Daggers")
+                {
+                    ((ThrowingWeapon)i).ammo = "Throwing Daggers"; i.ItemID = 0x10B7; i.Name = "throwing dagger";
+                }
+                else if (ammoType == "Throwing Darts")
+                {
+                    ((ThrowingWeapon)i).ammo = "Throwing Darts"; i.ItemID = 0x10B5; i.Name = "throwing dart";
+                }
+                else if (ammoType == "Throwing Cards")
+                {
+                    ((ThrowingWeapon)i).ammo = "Throwing Cards"; i.ItemID = 0x4C29; i.Name = "throwing card";
+                }
+                else if (ammoType == "Throwing Tomatoes")
+                {
+                    ((ThrowingWeapon)i).ammo = "Throwing Tomatoes"; i.ItemID = 0x4C28; i.Name = "throwing tomato";
+                }
+                else
+                {
+                    ((ThrowingWeapon)i).ammo = "Throwing Stars"; i.ItemID = 0x10B2; i.Name = "throwing star";
+                }
+                i.InvalidateProperties();
+            }
+        }
 
-				if ( quiver == null || Utility.Random( 100 ) >= quiver.LowerAmmoCost )
-				{
-					// consume ammo
-					if ( quiver != null && quiver.ConsumeTotal( AmmoType, 1 ) )
-						quiver.InvalidateWeight();
-					else if ( pack == null || !pack.ConsumeTotal( AmmoType, 1 ) )
-						return false;
-				}
-				else if ( quiver.FindItemByType( AmmoType ) == null && ( pack == null || pack.FindItemByType( AmmoType ) == null ) )
-				{
-					// lower ammo cost should not work when we have no ammo at all
-					return false;
-				}
-			}
+        if (attacker.Player)
+        {
+            BaseQuiver quiver = attacker.FindItemOnLayer(Layer.Cloak) as BaseQuiver;
+            Container  pack   = attacker.Backpack;
 
-			attacker.MovingEffect( defender, EffectID, 18, 1, false, false );
+            if (quiver == null || Utility.Random(100) >= quiver.LowerAmmoCost)
+            {
+                // consume ammo
+                if (quiver != null && quiver.ConsumeTotal(AmmoType, 1))
+                {
+                    quiver.InvalidateWeight();
+                }
+                else if (pack == null || !pack.ConsumeTotal(AmmoType, 1))
+                {
+                    return false;
+                }
+            }
+            else if (quiver.FindItemByType(AmmoType) == null && (pack == null || pack.FindItemByType(AmmoType) == null))
+            {
+                // lower ammo cost should not work when we have no ammo at all
+                return false;
+            }
+        }
 
-			Server.Gumps.QuickBar.RefreshQuickBar( attacker );
+        attacker.MovingEffect(defender, EffectID, 18, 1, false, false);
 
-			return true;
-		}
+        Server.Gumps.QuickBar.RefreshQuickBar(attacker);
 
-		public int ArrowType( int category )
-		{
-			int arrow = 0xF42;
+        return true;
+    }
 
-			if ( category > 0 )
-			{
-				if ( AosElementDamages.Fire > 50 ){ arrow = 0x5BDD; }
-				else if ( AosElementDamages.Cold > 50 ){ arrow = 0x5BB5; }
-				else if ( AosElementDamages.Poison > 50 ){ arrow = 0x5BDF; }
-				else if ( AosElementDamages.Energy > 50 ){ arrow = 0x5BDB; }
-				else { arrow = 0xF42; }
-			}
-			else
-			{
-				if ( AosElementDamages.Fire > 50 ){ arrow = 0x5BDE; }
-				else if ( AosElementDamages.Cold > 50 ){ arrow = 0x5BDA; }
-				else if ( AosElementDamages.Poison > 50 ){ arrow = 0x5BE0; }
-				else if ( AosElementDamages.Energy > 50 ){ arrow = 0x5BDC; }
-				else { arrow = 0x1BFE; }
-			}
+    public int ArrowType(int category)
+    {
+        int arrow = 0xF42;
 
-			return arrow;
-		}
+        if (category > 0)
+        {
+            if (AosElementDamages.Fire > 50)
+            {
+                arrow = 0x5BDD;
+            }
+            else if (AosElementDamages.Cold > 50)
+            {
+                arrow = 0x5BB5;
+            }
+            else if (AosElementDamages.Poison > 50)
+            {
+                arrow = 0x5BDF;
+            }
+            else if (AosElementDamages.Energy > 50)
+            {
+                arrow = 0x5BDB;
+            }
+            else
+            {
+                arrow = 0xF42;
+            }
+        }
+        else
+        {
+            if (AosElementDamages.Fire > 50)
+            {
+                arrow = 0x5BDE;
+            }
+            else if (AosElementDamages.Cold > 50)
+            {
+                arrow = 0x5BDA;
+            }
+            else if (AosElementDamages.Poison > 50)
+            {
+                arrow = 0x5BE0;
+            }
+            else if (AosElementDamages.Energy > 50)
+            {
+                arrow = 0x5BDC;
+            }
+            else
+            {
+                arrow = 0x1BFE;
+            }
+        }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
+        return arrow;
+    }
 
-			writer.Write( (int) 3 ); // version
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
 
-			writer.Write( (bool) m_Balanced );
-			writer.Write( (int) m_Velocity );
-		}
+        writer.Write((int)3);                    // version
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
+        writer.Write((bool)m_Balanced);
+        writer.Write((int)m_Velocity);
+    }
 
-			int version = reader.ReadInt();
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
 
-			switch ( version )
-			{
-				case 3:
-				{
-					m_Balanced = reader.ReadBool();
-					m_Velocity = reader.ReadInt();
+        int version = reader.ReadInt();
 
-					goto case 2;
-				}
-				case 2:
-				case 1:
-				{
-					break;
-				}
-				case 0:
-				{
-					/*m_EffectID =*/ reader.ReadInt();
-					break;
-				}
-			}
+        switch (version)
+        {
+            case 3:
+            {
+                m_Balanced = reader.ReadBool();
+                m_Velocity = reader.ReadInt();
 
-			if ( version < 2 )
-			{
-				WeaponAttributes.MageWeapon = 0;
-				WeaponAttributes.UseBestSkill = 0;
-			}
-		}
-	}
+                goto case 2;
+            }
+            case 2:
+            case 1:
+            {
+                break;
+            }
+            case 0:
+            {
+                /*m_EffectID =*/ reader.ReadInt();
+                break;
+            }
+        }
+
+        if (version < 2)
+        {
+            WeaponAttributes.MageWeapon   = 0;
+            WeaponAttributes.UseBestSkill = 0;
+        }
+    }
+}
 }

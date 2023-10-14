@@ -5,162 +5,186 @@ using Server.Mobiles;
 
 namespace Server.Spells.Fifth
 {
-	public class MindBlastSpell : MagerySpell
-	{
-		private static SpellInfo m_Info = new SpellInfo(
-				"Mind Blast", "Por Corp Wis",
-				218,
-				Core.AOS ? 9002 : 9032,
-				Reagent.BlackPearl,
-				Reagent.MandrakeRoot,
-				Reagent.Nightshade,
-				Reagent.SulfurousAsh
-			);
+public class MindBlastSpell : MagerySpell
+{
+    private static SpellInfo m_Info = new SpellInfo(
+        "Mind Blast", "Por Corp Wis",
+        218,
+        Core.AOS ? 9002 : 9032,
+        Reagent.BlackPearl,
+        Reagent.MandrakeRoot,
+        Reagent.Nightshade,
+        Reagent.SulfurousAsh
+        );
 
-		public override SpellCircle Circle { get { return SpellCircle.Fifth; } }
+    public override SpellCircle Circle {
+        get { return SpellCircle.Fifth; }
+    }
 
-		public MindBlastSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
-		{
-			if ( Core.AOS )
-				m_Info.LeftHandEffect = m_Info.RightHandEffect = 9002;
-		}
+    public MindBlastSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+    {
+        if (Core.AOS)
+        {
+            m_Info.LeftHandEffect = m_Info.RightHandEffect = 9002;
+        }
+    }
 
-		public override void OnCast()
-		{
-			Caster.Target = new InternalTarget( this );
-		}
+    public override void OnCast()
+    {
+        Caster.Target = new InternalTarget(this);
+    }
 
-		private void AosDelay_Callback( object state )
-		{
-			object[] states = (object[])state;
-			Mobile caster = (Mobile)states[0];
-			Mobile target = (Mobile)states[1];
-			Mobile defender = (Mobile)states[2];
-			int damage = (int)states[3];
+    private void AosDelay_Callback(object state)
+    {
+        object[] states   = (object[])state;
+        Mobile   caster   = (Mobile)states[0];
+        Mobile   target   = (Mobile)states[1];
+        Mobile   defender = (Mobile)states[2];
+        int      damage   = (int)states[3];
 
-			if ( caster.HarmfulCheck( defender ) )
-			{
-				SpellHelper.Damage( this, target, Utility.RandomMinMax( damage, damage + 4 ), 0, 0, 100, 0, 0 );
+        if (caster.HarmfulCheck(defender))
+        {
+            SpellHelper.Damage(this, target, Utility.RandomMinMax(damage, damage + 4), 0, 0, 100, 0, 0);
 
-				target.FixedParticles( 0x374A, 10, 15, 5038, Server.Misc.PlayerSettings.GetMySpellHue( true, caster, 1181 ), 2, EffectLayer.Head );
-				target.PlaySound( 0x213 );
-			}
-		}
+            target.FixedParticles(0x374A, 10, 15, 5038, Server.Misc.PlayerSettings.GetMySpellHue(true, caster, 1181), 2, EffectLayer.Head);
+            target.PlaySound(0x213);
+        }
+    }
 
-		public override bool DelayedDamage{ get{ return !Core.AOS; } }
+    public override bool DelayedDamage {
+        get { return !Core.AOS; }
+    }
 
-		public void Target( Mobile m )
-		{
-			int nBenefit = 0;
-			if ( Caster is PlayerMobile )
-			{
-				nBenefit = (int)(Caster.Skills[SkillName.Magery].Value / 5);
-			}
+    public void Target(Mobile m)
+    {
+        int nBenefit = 0;
+        if (Caster is PlayerMobile)
+        {
+            nBenefit = (int)(Caster.Skills[SkillName.Magery].Value / 5);
+        }
 
-			if ( !Caster.CanSee( m ) )
-			{
-				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
-			}
-			else if ( Core.AOS )
-			{
-				if ( Caster.CanBeHarmful( m ) && CheckSequence() )
-				{
-					Mobile from = Caster, target = m;
+        if (!Caster.CanSee(m))
+        {
+            Caster.SendLocalizedMessage(500237);                       // Target can not be seen.
+        }
+        else if (Core.AOS)
+        {
+            if (Caster.CanBeHarmful(m) && CheckSequence())
+            {
+                Mobile from = Caster, target = m;
 
-					SpellHelper.Turn( from, target );
+                SpellHelper.Turn(from, target);
 
-					SpellHelper.CheckReflect( (int)this.Circle, ref from, ref target );
+                SpellHelper.CheckReflect((int)this.Circle, ref from, ref target);
 
-					int damage = (int)((Caster.Skills[SkillName.Magery].Value + Caster.Int) / 5);
-					
-					if ( damage > 60 )
-						damage = 60;
+                int damage = (int)((Caster.Skills[SkillName.Magery].Value + Caster.Int) / 5);
 
-					damage = damage + nBenefit;
+                if (damage > 60)
+                {
+                    damage = 60;
+                }
 
-					Timer.DelayCall( TimeSpan.FromSeconds( 1.0 ),
-						new TimerStateCallback( AosDelay_Callback ),
-						new object[]{ Caster, target, m, damage } );
-				}
-			}
-			else if ( CheckHSequence( m ) )
-			{
-				Mobile from = Caster, target = m;
+                damage = damage + nBenefit;
 
-				SpellHelper.Turn( from, target );
+                Timer.DelayCall(TimeSpan.FromSeconds(1.0),
+                                new TimerStateCallback(AosDelay_Callback),
+                                new object[] { Caster, target, m, damage });
+            }
+        }
+        else if (CheckHSequence(m))
+        {
+            Mobile from = Caster, target = m;
 
-				SpellHelper.CheckReflect( (int)this.Circle, ref from, ref target );
+            SpellHelper.Turn(from, target);
 
-				// Algorithm: (highestStat - lowestStat) / 2 [- 50% if resisted]
+            SpellHelper.CheckReflect((int)this.Circle, ref from, ref target);
 
-				int highestStat = target.Str, lowestStat = target.Str;
+            // Algorithm: (highestStat - lowestStat) / 2 [- 50% if resisted]
 
-				if ( target.Dex > highestStat )
-					highestStat = target.Dex;
+            int highestStat = target.Str, lowestStat = target.Str;
 
-				if ( target.Dex < lowestStat )
-					lowestStat = target.Dex;
+            if (target.Dex > highestStat)
+            {
+                highestStat = target.Dex;
+            }
 
-				if ( target.Int > highestStat )
-					highestStat = target.Int;
+            if (target.Dex < lowestStat)
+            {
+                lowestStat = target.Dex;
+            }
 
-				if ( target.Int < lowestStat )
-					lowestStat = target.Int;
+            if (target.Int > highestStat)
+            {
+                highestStat = target.Int;
+            }
 
-				if ( highestStat > 150 )
-					highestStat = 150;
+            if (target.Int < lowestStat)
+            {
+                lowestStat = target.Int;
+            }
 
-				if ( lowestStat > 150 ) 
-					lowestStat = 150;
+            if (highestStat > 150)
+            {
+                highestStat = 150;
+            }
 
-				double damage = GetDamageScalar(m)*(highestStat - lowestStat) / 4;//less damage
-				
-				if ( damage > 45 )
-					damage = 45;
+            if (lowestStat > 150)
+            {
+                lowestStat = 150;
+            }
 
-				damage = damage + nBenefit;
+            double damage = GetDamageScalar(m) * (highestStat - lowestStat) / 4;                  //less damage
 
-				if ( CheckResisted( target ) )
-				{
-					damage /= 2;
-					target.SendLocalizedMessage( 501783 ); // You feel yourself resisting magical energy.
-				}
+            if (damage > 45)
+            {
+                damage = 45;
+            }
 
-				from.FixedParticles( 0x374A, 10, 15, 2038, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 1181 ), 2, EffectLayer.Head );
+            damage = damage + nBenefit;
 
-				target.FixedParticles( 0x374A, 10, 15, 5038, Server.Misc.PlayerSettings.GetMySpellHue( true, Caster, 1181 ), 2, EffectLayer.Head );
-				target.PlaySound( 0x213 );
+            if (CheckResisted(target))
+            {
+                damage /= 2;
+                target.SendLocalizedMessage(501783);                           // You feel yourself resisting magical energy.
+            }
 
-				SpellHelper.Damage( this, target, damage, 0, 0, 100, 0, 0 );
-			}
+            from.FixedParticles(0x374A, 10, 15, 2038, Server.Misc.PlayerSettings.GetMySpellHue(true, Caster, 1181), 2, EffectLayer.Head);
 
-			FinishSequence();
-		}
+            target.FixedParticles(0x374A, 10, 15, 5038, Server.Misc.PlayerSettings.GetMySpellHue(true, Caster, 1181), 2, EffectLayer.Head);
+            target.PlaySound(0x213);
 
-		public override double GetSlayerDamageScalar( Mobile target )
-		{
-			return 1.0; //This spell isn't affected by slayer spellbooks
-		}
+            SpellHelper.Damage(this, target, damage, 0, 0, 100, 0, 0);
+        }
 
-		private class InternalTarget : Target
-		{
-			private MindBlastSpell m_Owner;
+        FinishSequence();
+    }
 
-			public InternalTarget( MindBlastSpell owner ) : base( Core.ML ? 10 : 12, false, TargetFlags.Harmful )
-			{
-				m_Owner = owner;
-			}
+    public override double GetSlayerDamageScalar(Mobile target)
+    {
+        return 1.0;                 //This spell isn't affected by slayer spellbooks
+    }
 
-			protected override void OnTarget( Mobile from, object o )
-			{
-				if ( o is Mobile )
-					m_Owner.Target( (Mobile)o );
-			}
+    private class InternalTarget : Target
+    {
+        private MindBlastSpell m_Owner;
 
-			protected override void OnTargetFinish( Mobile from )
-			{
-				m_Owner.FinishSequence();
-			}
-		}
-	}
+        public InternalTarget(MindBlastSpell owner) : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+        {
+            m_Owner = owner;
+        }
+
+        protected override void OnTarget(Mobile from, object o)
+        {
+            if (o is Mobile)
+            {
+                m_Owner.Target((Mobile)o);
+            }
+        }
+
+        protected override void OnTargetFinish(Mobile from)
+        {
+            m_Owner.FinishSequence();
+        }
+    }
+}
 }
