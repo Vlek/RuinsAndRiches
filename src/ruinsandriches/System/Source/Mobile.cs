@@ -956,9 +956,12 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
 
     public virtual void UpdateResistances()
     {
-        m_Resistances ??= new int[5] {
-            int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
-        };
+        if (m_Resistances == null)
+        {
+            m_Resistances = new int[5] {
+                int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
+            };
+        }
 
         bool delta = false;
 
