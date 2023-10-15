@@ -911,7 +911,10 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
     {
         ComputeBaseLightLevels(out global, out personal);
 
-        m_Region?.AlterLightLevel(this, ref global, ref personal);
+        if (m_Region != null)
+        {
+            m_Region.AlterLightLevel(this, ref global, ref personal);
+        }
     }
 
     public virtual void ComputeBaseLightLevels(out int global, out int personal)
@@ -10985,7 +10988,10 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         OnMapChange(oldMap);
         OnLocationChange(oldLocation);
 
-        m_Region?.OnLocationChanged(this, oldLocation);
+        if (m_Region != null)
+        {
+            m_Region.OnLocationChanged(this, oldLocation);
+        }
     }
 
     public virtual void SetLocation(Point3D newLocation, bool isTeleport)
@@ -11009,9 +11015,15 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
                 box.Close();
             }
 
-            m_NetState?.ValidateAllTrades();
+            if (m_NetState != null)
+            {
+                m_NetState.ValidateAllTrades();
+            }
 
-            m_Map?.OnMove(oldLocation, this);
+            if (m_Map != null)
+            {
+                m_Map.OnMove(oldLocation, this);
+            }
 
             if (isTeleport && m_NetState != null)
             {

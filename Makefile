@@ -2,12 +2,11 @@ all: build
 
 build: World
 
-# .ONESHELL:
 World:
 	rm -rf ./bin/
 	mkdir -p ./bin/Data
 	mcs \
-		-langversion:4 \
+    -langversion:4 \
 		-optimize+ \
 		-win32icon:"src/ruinsandriches/System/Source/icon.ico" \
 		-unsafe \
