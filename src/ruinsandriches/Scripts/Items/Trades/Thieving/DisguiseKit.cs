@@ -402,11 +402,17 @@ public class DisguiseTimers
 
     public static void RemoveDisguise(Mobile from)
     {
-        if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.VampiricEmbraceSpell))) /* IGNORE */ } {
+        if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.VampiricEmbraceSpell)))
+        {
+/* IGNORE */
+        }
         else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.WraithFormSpell)))                        /* IGNORE */
         {
         }
-        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.LichFormSpell))) /* IGNORE */ } {
+        else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.LichFormSpell)))
+        {
+/* IGNORE */
+        }
         else if (TransformationSpellHelper.UnderTransformation(from, typeof(Spells.Necromancy.HorrificBeastSpell)))                        /* IGNORE */
         {
         }
@@ -427,6 +433,6 @@ public class DisguiseTimers
             from.EndAction(typeof(IncognitoSpell));
             from.EndAction(typeof(Deception));
         }
-}
+    }
 }
 }

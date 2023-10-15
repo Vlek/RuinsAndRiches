@@ -362,22 +362,20 @@ public class HousePlacementEntry
             {
                 args = new object[4] {
                     from, m_MultiID, m_Storage, m_Lockdowns
-                }
+                };
             }
-            ;
             else if (m_Type == typeof(SmallOldHouse) || m_Type == typeof(SmallShop) || m_Type == typeof(TwoStoryHouse))
             {
                 args = new object[2] {
                     from, m_MultiID
-                }
+                };
             }
-            ;
             else
             {
                 args = new object[1] {
                     from
-                }
-            };
+                };
+            }
 
             return Activator.CreateInstance(m_Type, args) as BaseHouse;
         }

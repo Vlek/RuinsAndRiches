@@ -342,9 +342,8 @@ public class Profiling
 
             if (parms == null)
             {
-                table[type] = parms = new int[] { 0, 0 }
+                table[type] = parms = new int[] { 0, 0 };
             }
-            ;
 
             parms[0]++;
             parms[1] += item.Amount;

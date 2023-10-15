@@ -1889,9 +1889,13 @@ public class Citizens : BaseCreature
         {
             mount = false; mod = 3;
         }
-        else if (Server.Mobiles.AnimalTrainer.IsNoMountRegion(m, m.Region) && Server.Misc.MyServerSettings.NoMountsInCertainRegions()) /* DO NOTHING IN NO MOUNT REGIONS */ } {
-        else if (Server.Misc.MyServerSettings.NoMountBuilding() && Server.Misc.Worlds.InBuilding(m))                      /* DO NOTHING IN NO MOUNT REGIONS */
+        else if (Server.Mobiles.AnimalTrainer.IsNoMountRegion(m, m.Region) && Server.Misc.MyServerSettings.NoMountsInCertainRegions())
         {
+            /* DO NOTHING IN NO MOUNT REGIONS */
+        }
+        else if (Server.Misc.MyServerSettings.NoMountBuilding() && Server.Misc.Worlds.InBuilding(m))
+        {
+            /* DO NOTHING IN NO MOUNT REGIONS */
         }
         else if (spot is LawnItem || spot is ShantyItem)
         {
@@ -1914,15 +1918,15 @@ public class Citizens : BaseCreature
         Point3D cit3 = new Point3D((spot.X + mod), (spot.Y), spot.Z);       Direction dir3 = Direction.West;
         Point3D cit4 = new Point3D((spot.X), (spot.Y + mod), spot.Z);       Direction dir4 = Direction.North;
 
-        Mobile citizen = null;
-        int humanoids  = 0;
-        int humanE     = 0;
-        int humanS     = 0;
-        int humanW     = 0;
-        int humanN     = 0;
+        Mobile citizen   = null;
+        int    humanoids = 0;
+        int    humanE    = 0;
+        int    humanS    = 0;
+        int    humanW    = 0;
+        int    humanN    = 0;
 
         bool canSpawn1 = true;
-        int z_1        = cit1.Z;
+        int  z_1       = cit1.Z;
         if ((spot.Map).GetAverageZ(cit1.X, cit1.Y) != z_1)
         {
             z_1 = (spot.Map).GetAverageZ(cit1.X, cit1.Y);
@@ -1945,7 +1949,7 @@ public class Citizens : BaseCreature
         }
 
         bool canSpawn2 = true;
-        int z_2        = cit2.Z;
+        int  z_2       = cit2.Z;
         if ((spot.Map).GetAverageZ(cit2.X, cit2.Y) != z_2)
         {
             z_2 = (spot.Map).GetAverageZ(cit2.X, cit2.Y);
@@ -1968,7 +1972,7 @@ public class Citizens : BaseCreature
         }
 
         bool canSpawn3 = true;
-        int z_3        = cit3.Z;
+        int  z_3       = cit3.Z;
         if ((spot.Map).GetAverageZ(cit3.X, cit3.Y) != z_3)
         {
             z_3 = (spot.Map).GetAverageZ(cit3.X, cit3.Y);
@@ -1991,7 +1995,7 @@ public class Citizens : BaseCreature
         }
 
         bool canSpawn4 = true;
-        int z_4        = cit4.Z;
+        int  z_4       = cit4.Z;
         if ((spot.Map).GetAverageZ(cit4.X, cit4.Y) != z_4)
         {
             z_4 = (spot.Map).GetAverageZ(cit4.X, cit4.Y);
@@ -2014,7 +2018,7 @@ public class Citizens : BaseCreature
         }
 
         bool process = true;
-        int w        = 0;
+        int  w       = 0;
 
         while (process)
         {
@@ -2173,786 +2177,808 @@ public class Citizens : BaseCreature
                 process = false;
             }
         }
-}
-
-public static void CreateDragonRiders()
-{
-    Point3D loc; Map map; Direction direction;
-
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(3022, 969, 70); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the City of Britain
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2985, 1042, 45); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the City of Britain
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(6728, 1797, 30); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                  // the City of Kuldara
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(6752, 1665, 80); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                  // the City of Kuldara
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(355, 1071, 65); map = Map.IslesDread; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                    // the Cimmeran Hold
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(385, 1044, 99); map = Map.IslesDread; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                    // the Cimmeran Hold
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(392, 1096, 59); map = Map.IslesDread; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                   // the Cimmeran Hold
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(734, 367, 40); map = Map.Underworld; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                   // the Fort of Tenebrae
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(1441, 3779, 30); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the Town of Renika
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(1395, 3668, 115); map = Map.Sosaria; direction = Direction.Down; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                  // the Island of Umber Veil
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(795, 1016, 90); map = Map.SerpentIsland; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                       // the City of Furnace
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(878, 1135, 125); map = Map.SerpentIsland; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                       // the City of Furnace
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(291, 1736, 60); map = Map.SavagedEmpire; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                      // the Village of Barako
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(282, 1631, 110); map = Map.SavagedEmpire; direction = Direction.North; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                        // the Savaged Empire
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(786, 875, 55); map = Map.SavagedEmpire; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                      // the Village of Kurak
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(821, 982, 80); map = Map.SavagedEmpire; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                      // the Village of Kurak
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2687, 3165, 60); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the Port of Dusk
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2956, 1248, 70); map = Map.Lodor; direction = Direction.North; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the City of Elidor
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2970, 1319, 45); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the City of Elidor
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2902, 1399, 55); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the City of Elidor
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(3737, 397, 44); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                              // the Town of Glacial Hills
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(3660, 470, 44); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the Town of Glacial Hills
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4215, 2993, 60); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // Greensky Village
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2827, 2258, 35); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the Village of Islegem
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4842, 3266, 50); map = Map.Lodor; direction = Direction.Down; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // Kraken Reef Docks
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4815, 3112, 73); map = Map.Lodor; direction = Direction.Up; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                             // Kraken Reef Docks
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4712, 3194, 84); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // Kraken Reef Docks
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(1809, 2224, 70); map = Map.Lodor; direction = Direction.Right; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the City of Lodoria
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(1942, 2185, 57); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the City of Lodoria
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2084, 2195, 32); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the City of Lodoria
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(841, 2019, 55); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                              // the Village of Portshine
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(6763, 3649, 122); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the Village of Ravendark
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(6759, 3756, 76); map = Map.Lodor; direction = Direction.Right; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the Village of Ravendark
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4232, 1454, 48); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the Village of Springvale
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4293, 1492, 45); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the Village of Springvale
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4172, 1489, 45); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the Village of Springvale
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2381, 3155, 28); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the Port of Starguide
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2302, 3154, 52); map = Map.Lodor; direction = Direction.West; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the Port of Starguide
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(876, 904, 30); map = Map.Lodor; direction = Direction.Down; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                             // the Village of Whisper
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(1101, 321, 66); map = Map.SavagedEmpire; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                       // Savage Sea Docks
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(952, 1801, 50); map = Map.SerpentIsland; direction = Direction.Down; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                      // Serpent Sail Docks
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(315, 1407, 17); map = Map.Sosaria; direction = Direction.Left; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // Anchor Rock Docks
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(415, 1292, 67); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // Anchor Rock Docks
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(5932, 2868, 45); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the Lunar City of Dawn
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(3705, 1486, 55); map = Map.Sosaria; direction = Direction.Down; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // Death Gulch
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(1608, 1507, 48); map = Map.Sosaria; direction = Direction.Down; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // The Town of Devil Guard
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2084, 258, 60); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the Village of Fawn
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(2168, 305, 60); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the Village of Fawn
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4781, 1185, 50); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                  // Glacial Coast Village
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(869, 2068, 40); map = Map.Sosaria; direction = Direction.North; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the Village of Grey
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(3070, 2615, 60); map = Map.Sosaria; direction = Direction.Up; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                               // the City of Montor
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(3180, 2613, 66); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the City of Montor
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(3322, 2638, 70); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the City of Montor
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(838, 692, 70); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                // the Town of Moon
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(4565, 1253, 82); map = Map.Sosaria; direction = Direction.Left; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                 // the Town of Mountain Crest
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(1823, 758, 70); map = Map.Sosaria; direction = Direction.Up; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                              // the Land of Sosaria
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(7089, 610, 100); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                  // the Port
-    if (Utility.RandomBool())
-    {
-        loc = new Point3D(7025, 680, 120); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
-    }                                                                                                                                                                                  // the Port
-}
-
-public static void CreateDragonRider(Point3D loc, Map map, Direction direction)
-{
-    DragonRider citizen = new DragonRider();
-    citizen.MoveToWorld(loc, map);
-    MountCitizens(citizen, true);
-    citizen.Direction = direction;
-    ((BaseCreature)citizen).ControlSlots = 2;
-    //Effects.SendLocationParticles( EffectItem.Create( citizen.Location, citizen.Map, EffectItem.DefaultDuration ), 0x3728, 10, 10, 2023 );
-    //citizen.PlaySound( 0x1FE );
-}
-
-public static void MountCitizens(Mobile m, bool includeDragyns)
-{
-    if (m is DragonRider)
-    {
-        BaseMount dragon = new RidingDragon(); dragon.Body = Utility.RandomList(59, 61); dragon.Blessed = true; dragon.Hue = Utility.RandomMonsterHue(); Server.Mobiles.BaseMount.Ride(dragon, m);
     }
-    else if (m is Humanoid) /* DO NOTHING FOR HUMANOIDS */ } {
-    else if (m.Map == Map.Sosaria && m.X >= 2954 && m.Y >= 893 && m.X <= 3026 && m.Y <= 967)                        /* DO NOTHING IN CASTLE BRITISH */
-    {
-    }
-    else if (m.Map == Map.Lodor && m.X >= 1759 && m.Y >= 2195 && m.X <= 1821 && m.Y <= 2241) /* DO NOTHING IN CASTLE OF KNOWLEDGE */ } {
-    else if (m.Map == Map.SavagedEmpire && m.X >= 309 && m.Y >= 1738 && m.X <= 323 && m.Y <= 1751)                        /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */
-    {
-    }
-    else if (m.Map == Map.SavagedEmpire && m.X >= 284 && m.Y >= 1642 && m.X <= 298 && m.Y <= 1655) /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */ } {
-    else if (m.Map == Map.SavagedEmpire && m.X >= 785 && m.Y >= 896 && m.X <= 805 && m.Y <= 879)                        /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */
-    {
-    }
-    else if (m.Map == Map.SavagedEmpire && m.X >= 706 && m.Y >= 953 && m.X <= 726 && m.Y <= 963) /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */ } {
-    else if (m.Map == Map.IslesDread && m.X >= 364 && m.Y >= 1027 && m.X <= 415 && m.Y <= 1057)                        /* DO NOTHING IN THE CIMMERIAN CASTLE */
-    {
-    }
-    else if (m.Region.IsPartOf("Kraken Reef Docks") || m.Region.IsPartOf("Anchor Rock Docks") || m.Region.IsPartOf("Serpent Sail Docks") || m.Region.IsPartOf("Savage Sea Docks") || m.Region.IsPartOf("the Forgotten Lighthouse")) /* DO NOTHING ON THE PORTS */ } {
-    else if (Server.Mobiles.AnimalTrainer.IsNoMountRegion(m, m.Region) && Server.Misc.MyServerSettings.NoMountsInCertainRegions())                          /* DO NOTHING IN NO MOUNT REGIONS */
-    {
-    }
-    else if (Server.Misc.MyServerSettings.NoMountBuilding() && Server.Misc.Worlds.InBuilding(m)) /* DO NOTHING IN NO MOUNT REGIONS */ } {
-    else if (!(m is HouseVisitor))
-    {
-        BaseMount mount = new Horse();
 
-        int roll = 0;
+    public static void CreateDragonRiders()
+    {
+        Point3D loc; Map map; Direction direction;
 
-        switch (Utility.Random(30))
+        if (Utility.RandomBool())
         {
-            case 0: roll = Utility.RandomMinMax(1, 10);
-                switch (roll)
-                {
-                    case 1: mount  = new CaveBearRiding();                           break;
-                    case 2: mount  = new DireBear();                                         break;
-                    case 3: mount  = new ElderBlackBearRiding();                     break;
-                    case 4: mount  = new ElderBrownBearRiding();                     break;
-                    case 5: mount  = new ElderPolarBearRiding();                     break;
-                    case 6: mount  = new GreatBear();                                        break;
-                    case 7: mount  = new GrizzlyBearRiding();                        break;
-                    case 8: mount  = new KodiakBear();                                       break;
-                    case 9: mount  = new SabretoothBearRiding();                     break;
-                    case 10: mount = new PandaRiding();                                     break;
-                }
-                break;
-            case 1: roll = Utility.RandomMinMax(1, 4);
-                switch (roll)
-                {
-                    case 1: mount = new BullradonRiding();                          break;
-                    case 2: mount = new GorceratopsRiding();                        break;
-                    case 3: mount = new GorgonRiding();                                     break;
-                    case 4: mount = new BasiliskRiding();                           break;
-                }
-                break;
-            case 2:
-                roll = Utility.RandomMinMax(0, 4);
-                if (Server.Misc.MorphingTime.CheckNecro(m))
-                {
-                    roll = Utility.RandomMinMax(3, 4);
-                }
-                switch (roll)
-                {
-                    case 0: mount = new WolfDire();                 break;
-                    case 1: mount = new WhiteWolf();                break;
-                    case 2: mount = new WinterWolf();               break;
-                    case 3: mount = new BlackWolf();                break;
-                    case 4: mount = new DemonDog();                 Server.Misc.MorphingTime.TurnToNecromancer(m);        break;
-                }
-                break;
-            case 3: roll = Utility.RandomMinMax(1, 6);
-                switch (roll)
-                {
-                    case 1: mount = new LionRiding();                               break;
-                    case 2: mount = new SnowLion();                                 break;
-                    case 3: mount = new TigerRiding();                              break;
-                    case 4: mount = new WhiteTigerRiding();                 break;
-                    case 5: mount = new PredatorHellCatRiding();    break;
-                    case 6: mount = new SabretoothTigerRiding();    break;
-                }
-                break;
-            case 4:
-                switch (Utility.RandomMinMax(1, 4))
-                {
-                    case 1: mount = new DesertOstard();             break;
-                    case 2: mount = new ForestOstard();             break;
-                    case 3: mount = new FrenziedOstard();   break;
-                    case 4: mount = new SnowOstard();               break;
-                }
-                break;
-            case 5: roll = Utility.RandomMinMax(1, 5);
-                switch (roll)
-                {
-                    case 1: mount = new GiantHawk();                break;
-                    case 2: mount = new GiantRaven();               break;
-                    case 3: mount = new Roc();                              break;
-                    case 4: mount = new Phoenix();                  break;
-                    case 5: mount = new AxeBeakRiding();    break;
-                }
-                break;
-            case 6:
-                switch (Utility.RandomMinMax(1, 4))
-                {
-                    case 1: mount = new SwampDrakeRiding();                                                                                                                         break;
-                    case 2: mount = new Wyverns();                                                                                                                                          break;
-                    case 3: mount = new Teradactyl();                                                                                                                                       break;
-                    case 4: mount = new GemDragon(); mount.Hue = 0; mount.ItemID = Utility.RandomMinMax(595, 596);        break;
-                }
-                break;
-            case 7:
-                switch (Utility.RandomMinMax(1, 6))
-                {
-                    case 1: mount = new Beetle();                                   break;
-                    case 2: mount = new FireBeetle();                               break;
-                    case 3: mount = new GlowBeetleRiding();                 break;
-                    case 4: mount = new PoisonBeetleRiding();               break;
-                    case 5: mount = new TigerBeetleRiding();                break;
-                    case 6: mount = new WaterBeetleRiding();                break;
-                }
-                break;
-            case 8: roll = Utility.RandomMinMax(1, 5);
-                switch (roll)
-                {
-                    case 1: mount = new RaptorRiding();                                                                                                     break;
-                    case 2: mount = new RavenousRiding();                                                                                           break;
-                    case 3: mount = new RaptorRiding();                     mount.Body = 116;       mount.ItemID = 116;     break;
-                    case 4: mount = new RaptorRiding();                     mount.Body = 117;       mount.ItemID = 117;     break;
-                    case 5: mount = new RaptorRiding();                     mount.Body = 219;       mount.ItemID = 219;     break;
-                }
-                break;
-            case 9:
-                roll = 0; if (!Server.Misc.MyServerSettings.AllowZebras())
-                {
-                    roll = 1;
-                }
-                roll = Utility.RandomMinMax(roll, 9);
-                if (Server.Misc.MorphingTime.CheckNecro(m))
-                {
-                    roll = Utility.RandomMinMax(3, 8);
-                }
-                switch (roll)
-                {
-                    case 0: mount = new ZebraRiding();                                      break;
-                    case 1: mount = new Unicorn();                                          break;
-                    case 2: mount = new IceSteed();                                         break;
-                    case 3: mount = new FireSteed();                                        break;
-                    case 4: mount = new Nightmare();                                        break;
-                    case 5: mount = new AncientNightmareRiding();           break;
-                    case 6: mount = new DarkUnicornRiding();                        Server.Misc.MorphingTime.TurnToNecromancer(m);        break;
-                    case 7: mount = new HellSteed();                                        Server.Misc.MorphingTime.TurnToNecromancer(m);        break;
-                    case 8: mount = new Dreadhorn();                                        break;
-                    case 9: mount = new PegasusRiding();                            break;
-                }
-                break;
-            case 10: roll = Utility.RandomMinMax(1, 7);
-                switch (roll)
-                {
-                    case 1: mount = new Ramadon();                          break;
-                    case 2: mount = new RidableLlama();                     break;
-                    case 3: mount = new GriffonRiding();            break;
-                    case 4: mount = new HippogriffRiding();         break;
-                    case 5: mount = new Kirin();                            break;
-                    case 6: mount = new ManticoreRiding();          break;
-                    case 7: mount = new SphinxRiding();                     break;
-                }
-                break;
+            loc = new Point3D(3022, 969, 70); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the City of Britain
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2985, 1042, 45); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the City of Britain
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(6728, 1797, 30); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                              // the City of Kuldara
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(6752, 1665, 80); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                              // the City of Kuldara
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(355, 1071, 65); map = Map.IslesDread; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                // the Cimmeran Hold
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(385, 1044, 99); map = Map.IslesDread; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                // the Cimmeran Hold
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(392, 1096, 59); map = Map.IslesDread; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                               // the Cimmeran Hold
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(734, 367, 40); map = Map.Underworld; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                               // the Fort of Tenebrae
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(1441, 3779, 30); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the Town of Renika
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(1395, 3668, 115); map = Map.Sosaria; direction = Direction.Down; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                              // the Island of Umber Veil
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(795, 1016, 90); map = Map.SerpentIsland; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                   // the City of Furnace
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(878, 1135, 125); map = Map.SerpentIsland; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                   // the City of Furnace
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(291, 1736, 60); map = Map.SavagedEmpire; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                  // the Village of Barako
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(282, 1631, 110); map = Map.SavagedEmpire; direction = Direction.North; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                    // the Savaged Empire
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(786, 875, 55); map = Map.SavagedEmpire; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                  // the Village of Kurak
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(821, 982, 80); map = Map.SavagedEmpire; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                  // the Village of Kurak
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2687, 3165, 60); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the Port of Dusk
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2956, 1248, 70); map = Map.Lodor; direction = Direction.North; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the City of Elidor
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2970, 1319, 45); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the City of Elidor
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2902, 1399, 55); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the City of Elidor
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(3737, 397, 44); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                          // the Town of Glacial Hills
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(3660, 470, 44); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the Town of Glacial Hills
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4215, 2993, 60); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // Greensky Village
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2827, 2258, 35); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the Village of Islegem
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4842, 3266, 50); map = Map.Lodor; direction = Direction.Down; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // Kraken Reef Docks
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4815, 3112, 73); map = Map.Lodor; direction = Direction.Up; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                         // Kraken Reef Docks
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4712, 3194, 84); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // Kraken Reef Docks
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(1809, 2224, 70); map = Map.Lodor; direction = Direction.Right; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the City of Lodoria
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(1942, 2185, 57); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the City of Lodoria
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2084, 2195, 32); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the City of Lodoria
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(841, 2019, 55); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                          // the Village of Portshine
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(6763, 3649, 122); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the Village of Ravendark
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(6759, 3756, 76); map = Map.Lodor; direction = Direction.Right; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the Village of Ravendark
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4232, 1454, 48); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the Village of Springvale
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4293, 1492, 45); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the Village of Springvale
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4172, 1489, 45); map = Map.Lodor; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the Village of Springvale
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2381, 3155, 28); map = Map.Lodor; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the Port of Starguide
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2302, 3154, 52); map = Map.Lodor; direction = Direction.West; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the Port of Starguide
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(876, 904, 30); map = Map.Lodor; direction = Direction.Down; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                         // the Village of Whisper
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(1101, 321, 66); map = Map.SavagedEmpire; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                   // Savage Sea Docks
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(952, 1801, 50); map = Map.SerpentIsland; direction = Direction.Down; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                                  // Serpent Sail Docks
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(315, 1407, 17); map = Map.Sosaria; direction = Direction.Left; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // Anchor Rock Docks
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(415, 1292, 67); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // Anchor Rock Docks
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(5932, 2868, 45); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the Lunar City of Dawn
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(3705, 1486, 55); map = Map.Sosaria; direction = Direction.Down; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // Death Gulch
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(1608, 1507, 48); map = Map.Sosaria; direction = Direction.Down; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // The Town of Devil Guard
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2084, 258, 60); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the Village of Fawn
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(2168, 305, 60); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the Village of Fawn
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4781, 1185, 50); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                              // Glacial Coast Village
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(869, 2068, 40); map = Map.Sosaria; direction = Direction.North; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the Village of Grey
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(3070, 2615, 60); map = Map.Sosaria; direction = Direction.Up; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                           // the City of Montor
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(3180, 2613, 66); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the City of Montor
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(3322, 2638, 70); map = Map.Sosaria; direction = Direction.East; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the City of Montor
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(838, 692, 70); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                            // the Town of Moon
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(4565, 1253, 82); map = Map.Sosaria; direction = Direction.Left; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                             // the Town of Mountain Crest
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(1823, 758, 70); map = Map.Sosaria; direction = Direction.Up; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                          // the Land of Sosaria
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(7089, 610, 100); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                              // the Port
+        if (Utility.RandomBool())
+        {
+            loc = new Point3D(7025, 680, 120); map = Map.Sosaria; direction = Direction.South; CreateDragonRider(loc, map, direction);
+        }                                                                                                                                                                              // the Port
+    }
+
+    public static void CreateDragonRider(Point3D loc, Map map, Direction direction)
+    {
+        DragonRider citizen = new DragonRider();
+        citizen.MoveToWorld(loc, map);
+        MountCitizens(citizen, true);
+        citizen.Direction = direction;
+        ((BaseCreature)citizen).ControlSlots = 2;
+        //Effects.SendLocationParticles( EffectItem.Create( citizen.Location, citizen.Map, EffectItem.DefaultDuration ), 0x3728, 10, 10, 2023 );
+        //citizen.PlaySound( 0x1FE );
+    }
+
+    public static void MountCitizens(Mobile m, bool includeDragyns)
+    {
+        if (m is DragonRider)
+        {
+            BaseMount dragon = new RidingDragon(); dragon.Body = Utility.RandomList(59, 61); dragon.Blessed = true; dragon.Hue = Utility.RandomMonsterHue(); Server.Mobiles.BaseMount.Ride(dragon, m);
         }
-
-        if (mount is Horse && Utility.RandomMinMax(1, 50) == 1)
+        else if (m is Humanoid)
         {
-            mount.Body   = 587;
-            mount.ItemID = 587;
-            switch (Utility.RandomMinMax(1, 16))
+            /* DO NOTHING FOR HUMANOIDS */
+        }
+        else if (m.Map == Map.Sosaria && m.X >= 2954 && m.Y >= 893 && m.X <= 3026 && m.Y <= 967)
+        {
+            /* DO NOTHING IN CASTLE BRITISH */
+        }
+        else if (m.Map == Map.Lodor && m.X >= 1759 && m.Y >= 2195 && m.X <= 1821 && m.Y <= 2241)
+        {
+            /* DO NOTHING IN CASTLE OF KNOWLEDGE */
+        }
+        else if (m.Map == Map.SavagedEmpire && m.X >= 309 && m.Y >= 1738 && m.X <= 323 && m.Y <= 1751)
+        {
+            /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */
+        }
+        else if (m.Map == Map.SavagedEmpire && m.X >= 284 && m.Y >= 1642 && m.X <= 298 && m.Y <= 1655)
+        {
+            /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */
+        }
+        else if (m.Map == Map.SavagedEmpire && m.X >= 785 && m.Y >= 896 && m.X <= 805 && m.Y <= 879)
+        {
+            /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */
+        }
+        else if (m.Map == Map.SavagedEmpire && m.X >= 706 && m.Y >= 953 && m.X <= 726 && m.Y <= 963)
+        {
+            /* DO NOTHING IN THIS SAVAGED EMPIRE SPOT */
+        }
+        else if (m.Map == Map.IslesDread && m.X >= 364 && m.Y >= 1027 && m.X <= 415 && m.Y <= 1057)
+        {
+            /* DO NOTHING IN THE CIMMERIAN CASTLE */
+        }
+        else if (m.Region.IsPartOf("Kraken Reef Docks") || m.Region.IsPartOf("Anchor Rock Docks") || m.Region.IsPartOf("Serpent Sail Docks") || m.Region.IsPartOf("Savage Sea Docks") || m.Region.IsPartOf("the Forgotten Lighthouse"))
+        {
+            /* DO NOTHING ON THE PORTS */
+        }
+        else if (Server.Mobiles.AnimalTrainer.IsNoMountRegion(m, m.Region) && Server.Misc.MyServerSettings.NoMountsInCertainRegions())                      /* DO NOTHING IN NO MOUNT REGIONS */
+        {
+        }
+        else if (Server.Misc.MyServerSettings.NoMountBuilding() && Server.Misc.Worlds.InBuilding(m))
+        {
+            /* DO NOTHING IN NO MOUNT REGIONS */
+        }
+        else if (!(m is HouseVisitor))
+        {
+            BaseMount mount = new Horse();
+
+            int roll = 0;
+
+            switch (Utility.Random(30))
             {
-                case 1: mount.Hue  = MaterialInfo.GetMaterialColor("dull copper", "classic", 0);       break;
-                case 2: mount.Hue  = MaterialInfo.GetMaterialColor("shadow iron", "classic", 0);       break;
-                case 3: mount.Hue  = MaterialInfo.GetMaterialColor("copper", "classic", 0);            break;
-                case 4: mount.Hue  = MaterialInfo.GetMaterialColor("bronze", "classic", 0);            break;
-                case 5: mount.Hue  = MaterialInfo.GetMaterialColor("gold", "classic", 0);                      break;
-                case 6: mount.Hue  = MaterialInfo.GetMaterialColor("agapite", "classic", 0);           break;
-                case 7: mount.Hue  = MaterialInfo.GetMaterialColor("verite", "classic", 0);            break;
-                case 8: mount.Hue  = MaterialInfo.GetMaterialColor("valorite", "classic", 0);          break;
-                case 9: mount.Hue  = MaterialInfo.GetMaterialColor("nepturite", "classic", 0);         break;
-                case 10: mount.Hue = MaterialInfo.GetMaterialColor("obsidian", "classic", 0);         break;
-                case 11: mount.Hue = MaterialInfo.GetMaterialColor("steel", "classic", 0);            break;
-                case 12: mount.Hue = MaterialInfo.GetMaterialColor("brass", "classic", 0);            break;
-                case 13: mount.Hue = MaterialInfo.GetMaterialColor("mithril", "classic", 0);          break;
-                case 14: mount.Hue = MaterialInfo.GetMaterialColor("xormite", "classic", 0);          break;
-                case 15: mount.Hue = MaterialInfo.GetMaterialColor("dwarven", "classic", 0);          break;
-                case 16: mount.Hue = MaterialInfo.GetMaterialColor("silver", "classic", 0);           break;
+                case 0: roll = Utility.RandomMinMax(1, 10);
+                    switch (roll)
+                    {
+                        case 1: mount  = new CaveBearRiding();                           break;
+                        case 2: mount  = new DireBear();                                         break;
+                        case 3: mount  = new ElderBlackBearRiding();                     break;
+                        case 4: mount  = new ElderBrownBearRiding();                     break;
+                        case 5: mount  = new ElderPolarBearRiding();                     break;
+                        case 6: mount  = new GreatBear();                                        break;
+                        case 7: mount  = new GrizzlyBearRiding();                        break;
+                        case 8: mount  = new KodiakBear();                                       break;
+                        case 9: mount  = new SabretoothBearRiding();                     break;
+                        case 10: mount = new PandaRiding();                                     break;
+                    }
+                    break;
+                case 1: roll = Utility.RandomMinMax(1, 4);
+                    switch (roll)
+                    {
+                        case 1: mount = new BullradonRiding();                          break;
+                        case 2: mount = new GorceratopsRiding();                        break;
+                        case 3: mount = new GorgonRiding();                                     break;
+                        case 4: mount = new BasiliskRiding();                           break;
+                    }
+                    break;
+                case 2:
+                    roll = Utility.RandomMinMax(0, 4);
+                    if (Server.Misc.MorphingTime.CheckNecro(m))
+                    {
+                        roll = Utility.RandomMinMax(3, 4);
+                    }
+                    switch (roll)
+                    {
+                        case 0: mount = new WolfDire();                 break;
+                        case 1: mount = new WhiteWolf();                break;
+                        case 2: mount = new WinterWolf();               break;
+                        case 3: mount = new BlackWolf();                break;
+                        case 4: mount = new DemonDog();                 Server.Misc.MorphingTime.TurnToNecromancer(m);        break;
+                    }
+                    break;
+                case 3: roll = Utility.RandomMinMax(1, 6);
+                    switch (roll)
+                    {
+                        case 1: mount = new LionRiding();                               break;
+                        case 2: mount = new SnowLion();                                 break;
+                        case 3: mount = new TigerRiding();                              break;
+                        case 4: mount = new WhiteTigerRiding();                 break;
+                        case 5: mount = new PredatorHellCatRiding();    break;
+                        case 6: mount = new SabretoothTigerRiding();    break;
+                    }
+                    break;
+                case 4:
+                    switch (Utility.RandomMinMax(1, 4))
+                    {
+                        case 1: mount = new DesertOstard();             break;
+                        case 2: mount = new ForestOstard();             break;
+                        case 3: mount = new FrenziedOstard();   break;
+                        case 4: mount = new SnowOstard();               break;
+                    }
+                    break;
+                case 5: roll = Utility.RandomMinMax(1, 5);
+                    switch (roll)
+                    {
+                        case 1: mount = new GiantHawk();                break;
+                        case 2: mount = new GiantRaven();               break;
+                        case 3: mount = new Roc();                              break;
+                        case 4: mount = new Phoenix();                  break;
+                        case 5: mount = new AxeBeakRiding();    break;
+                    }
+                    break;
+                case 6:
+                    switch (Utility.RandomMinMax(1, 4))
+                    {
+                        case 1: mount = new SwampDrakeRiding();                                                                                                                         break;
+                        case 2: mount = new Wyverns();                                                                                                                                          break;
+                        case 3: mount = new Teradactyl();                                                                                                                                       break;
+                        case 4: mount = new GemDragon(); mount.Hue = 0; mount.ItemID = Utility.RandomMinMax(595, 596);        break;
+                    }
+                    break;
+                case 7:
+                    switch (Utility.RandomMinMax(1, 6))
+                    {
+                        case 1: mount = new Beetle();                                   break;
+                        case 2: mount = new FireBeetle();                               break;
+                        case 3: mount = new GlowBeetleRiding();                 break;
+                        case 4: mount = new PoisonBeetleRiding();               break;
+                        case 5: mount = new TigerBeetleRiding();                break;
+                        case 6: mount = new WaterBeetleRiding();                break;
+                    }
+                    break;
+                case 8: roll = Utility.RandomMinMax(1, 5);
+                    switch (roll)
+                    {
+                        case 1: mount = new RaptorRiding();                                                                                                     break;
+                        case 2: mount = new RavenousRiding();                                                                                           break;
+                        case 3: mount = new RaptorRiding();                     mount.Body = 116;       mount.ItemID = 116;     break;
+                        case 4: mount = new RaptorRiding();                     mount.Body = 117;       mount.ItemID = 117;     break;
+                        case 5: mount = new RaptorRiding();                     mount.Body = 219;       mount.ItemID = 219;     break;
+                    }
+                    break;
+                case 9:
+                    roll = 0; if (!Server.Misc.MyServerSettings.AllowZebras())
+                    {
+                        roll = 1;
+                    }
+                    roll = Utility.RandomMinMax(roll, 9);
+                    if (Server.Misc.MorphingTime.CheckNecro(m))
+                    {
+                        roll = Utility.RandomMinMax(3, 8);
+                    }
+                    switch (roll)
+                    {
+                        case 0: mount = new ZebraRiding();                                      break;
+                        case 1: mount = new Unicorn();                                          break;
+                        case 2: mount = new IceSteed();                                         break;
+                        case 3: mount = new FireSteed();                                        break;
+                        case 4: mount = new Nightmare();                                        break;
+                        case 5: mount = new AncientNightmareRiding();           break;
+                        case 6: mount = new DarkUnicornRiding();                        Server.Misc.MorphingTime.TurnToNecromancer(m);        break;
+                        case 7: mount = new HellSteed();                                        Server.Misc.MorphingTime.TurnToNecromancer(m);        break;
+                        case 8: mount = new Dreadhorn();                                        break;
+                        case 9: mount = new PegasusRiding();                            break;
+                    }
+                    break;
+                case 10: roll = Utility.RandomMinMax(1, 7);
+                    switch (roll)
+                    {
+                        case 1: mount = new Ramadon();                          break;
+                        case 2: mount = new RidableLlama();                     break;
+                        case 3: mount = new GriffonRiding();            break;
+                        case 4: mount = new HippogriffRiding();         break;
+                        case 5: mount = new Kirin();                            break;
+                        case 6: mount = new ManticoreRiding();          break;
+                        case 7: mount = new SphinxRiding();                     break;
+                    }
+                    break;
             }
-        }
 
-        Server.Mobiles.BaseMount.Ride(mount, m);
-    }
-}
-
-public static bool PeopleMeetingHere(Item spot)
-{
-    if (Utility.RandomBool())
-    {
-        return true;
-    }
-
-    if ((Region.Find(spot.Location, spot.Map)).Name == "the Lyceum")
-    {
-        return true;
-    }
-
-    return false;
-}
-
-public Citizens(Serial serial) : base(serial)
-{
-}
-
-public override void Serialize(GenericWriter writer)
-{
-    base.Serialize(writer);
-    writer.Write((int)0);                        // version
-    writer.Write(CitizenService);
-    writer.Write(CitizenType);
-    writer.Write(CitizenCost);
-    writer.Write(CitizenPhrase);
-    writer.Write(CitizenRumor);
-}
-
-public override void Deserialize(GenericReader reader)
-{
-    base.Deserialize(reader);
-    int version = reader.ReadInt();
-    CitizenService = reader.ReadInt();
-    CitizenType    = reader.ReadInt();
-    CitizenCost    = reader.ReadInt();
-    CitizenPhrase  = reader.ReadString();
-    CitizenRumor   = reader.ReadString();
-}
-
-public override void OnAfterSpawn()
-{
-    base.OnAfterSpawn();
-
-    if (!(this is Humanoid))
-    {
-        Server.Items.EssenceBase.ColorCitizen(this);
-        Server.Misc.MorphingTime.CheckNecromancer(this);
-
-        if (this.Home.X > 0 && this.Home.Y > 0 && (Math.Abs(this.X - this.Home.X) > 2 || Math.Abs(this.Y - this.Home.Y) > 2 || Math.Abs(this.Z - this.Home.Z) > 2))
-        {
-            this.Location = this.Home;
-        }
-        if (Server.Misc.Worlds.isOrientalRegion(this))
-        {
-            Server.Misc.MorphingTime.RemoveMyClothes(this);
-            if (CitizenType == 1)
+            if (mount is Horse && Utility.RandomMinMax(1, 50) == 1)
             {
-                Server.Misc.IntelligentAction.DressUpWizards(this, true);
-            }
-            else if (CitizenType == 2 || this is Warriors)
-            {
-                if (Utility.RandomBool())
+                mount.Body   = 587;
+                mount.ItemID = 587;
+                switch (Utility.RandomMinMax(1, 16))
                 {
-                    Server.Misc.IntelligentAction.DressUpFighters(this, "", false, true, false);
+                    case 1: mount.Hue  = MaterialInfo.GetMaterialColor("dull copper", "classic", 0);       break;
+                    case 2: mount.Hue  = MaterialInfo.GetMaterialColor("shadow iron", "classic", 0);       break;
+                    case 3: mount.Hue  = MaterialInfo.GetMaterialColor("copper", "classic", 0);            break;
+                    case 4: mount.Hue  = MaterialInfo.GetMaterialColor("bronze", "classic", 0);            break;
+                    case 5: mount.Hue  = MaterialInfo.GetMaterialColor("gold", "classic", 0);                      break;
+                    case 6: mount.Hue  = MaterialInfo.GetMaterialColor("agapite", "classic", 0);           break;
+                    case 7: mount.Hue  = MaterialInfo.GetMaterialColor("verite", "classic", 0);            break;
+                    case 8: mount.Hue  = MaterialInfo.GetMaterialColor("valorite", "classic", 0);          break;
+                    case 9: mount.Hue  = MaterialInfo.GetMaterialColor("nepturite", "classic", 0);         break;
+                    case 10: mount.Hue = MaterialInfo.GetMaterialColor("obsidian", "classic", 0);         break;
+                    case 11: mount.Hue = MaterialInfo.GetMaterialColor("steel", "classic", 0);            break;
+                    case 12: mount.Hue = MaterialInfo.GetMaterialColor("brass", "classic", 0);            break;
+                    case 13: mount.Hue = MaterialInfo.GetMaterialColor("mithril", "classic", 0);          break;
+                    case 14: mount.Hue = MaterialInfo.GetMaterialColor("xormite", "classic", 0);          break;
+                    case 15: mount.Hue = MaterialInfo.GetMaterialColor("dwarven", "classic", 0);          break;
+                    case 16: mount.Hue = MaterialInfo.GetMaterialColor("silver", "classic", 0);           break;
                 }
-                else
+            }
+
+            Server.Mobiles.BaseMount.Ride(mount, m);
+        }
+    }
+
+    public static bool PeopleMeetingHere(Item spot)
+    {
+        if (Utility.RandomBool())
+        {
+            return true;
+        }
+
+        if ((Region.Find(spot.Location, spot.Map)).Name == "the Lyceum")
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public Citizens(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);                    // version
+        writer.Write(CitizenService);
+        writer.Write(CitizenType);
+        writer.Write(CitizenCost);
+        writer.Write(CitizenPhrase);
+        writer.Write(CitizenRumor);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        CitizenService = reader.ReadInt();
+        CitizenType    = reader.ReadInt();
+        CitizenCost    = reader.ReadInt();
+        CitizenPhrase  = reader.ReadString();
+        CitizenRumor   = reader.ReadString();
+    }
+
+    public override void OnAfterSpawn()
+    {
+        base.OnAfterSpawn();
+
+        if (!(this is Humanoid))
+        {
+            Server.Items.EssenceBase.ColorCitizen(this);
+            Server.Misc.MorphingTime.CheckNecromancer(this);
+
+            if (this.Home.X > 0 && this.Home.Y > 0 && (Math.Abs(this.X - this.Home.X) > 2 || Math.Abs(this.Y - this.Home.Y) > 2 || Math.Abs(this.Z - this.Home.Z) > 2))
+            {
+                this.Location = this.Home;
+            }
+            if (Server.Misc.Worlds.isOrientalRegion(this))
+            {
+                Server.Misc.MorphingTime.RemoveMyClothes(this);
+                if (CitizenType == 1)
+                {
+                    Server.Misc.IntelligentAction.DressUpWizards(this, true);
+                }
+                else if (CitizenType == 2 || this is Warriors)
+                {
+                    if (Utility.RandomBool())
+                    {
+                        Server.Misc.IntelligentAction.DressUpFighters(this, "", false, true, false);
+                    }
+                    else
+                    {
+                        Server.Misc.IntelligentAction.DressUpRogues(this, "", false, true, false);
+                    }
+                }
+                else if (CitizenType == 3)
                 {
                     Server.Misc.IntelligentAction.DressUpRogues(this, "", false, true, false);
                 }
-            }
-            else if (CitizenType == 3)
-            {
-                Server.Misc.IntelligentAction.DressUpRogues(this, "", false, true, false);
-            }
 
-            Title = TavernPatrons.GetTitle();
+                Title = TavernPatrons.GetTitle();
+            }
         }
     }
-}
 
-protected override void OnMapChange(Map oldMap)
-{
-    base.OnMapChange(oldMap);
-    Server.Misc.MorphingTime.CheckNecromancer(this);
-}
-
-public class CitizenGump : Gump
-{
-    private Mobile c_Citizen;
-    private Mobile c_Player;
-
-    public CitizenGump(Mobile citizen, Mobile player) : base(25, 25)
+    protected override void OnMapChange(Map oldMap)
     {
-        c_Citizen = citizen;
-        Citizens b_Citizen = (Citizens)citizen;
-        c_Player = player;
+        base.OnMapChange(oldMap);
+        Server.Misc.MorphingTime.CheckNecromancer(this);
+    }
 
-        this.Closable   = true;
-        this.Disposable = true;
-        this.Dragable   = true;
-        this.Resizable  = false;
+    public class CitizenGump : Gump
+    {
+        private Mobile c_Citizen;
+        private Mobile c_Player;
 
-        string speak = b_Citizen.CitizenPhrase;
-        if (speak.Contains("Z~Z~Z~Z~Z"))
+        public CitizenGump(Mobile citizen, Mobile player) : base(25, 25)
         {
-            speak = speak.Replace("Z~Z~Z~Z~Z", c_Player.Name);
-        }
-        if (speak.Contains("Y~Y~Y~Y~Y"))
-        {
-            speak = speak.Replace("Y~Y~Y~Y~Y", c_Player.Region.Name);
-        }
-        if (speak.Contains("G~G~G~G~G"))
-        {
-            speak = speak.Replace("G~G~G~G~G", (b_Citizen.CitizenCost).ToString());
-        }
+            c_Citizen = citizen;
+            Citizens b_Citizen = (Citizens)citizen;
+            c_Player = player;
 
-        AddPage(0);
+            this.Closable   = true;
+            this.Disposable = true;
+            this.Dragable   = true;
+            this.Resizable  = false;
 
-        string color = "#d5a496";
-
-        AddImage(0, 2, 9543, Server.Misc.PlayerSettings.GetGumpHue(player));
-        AddHtml(12, 15, 341, 20, @"<BODY><BASEFONT Color=" + color + ">" + citizen.Name + " " + citizen.Title + "</BASEFONT></BODY>", (bool)false, (bool)false);
-        AddHtml(12, 50, 380, 253, @"<BODY><BASEFONT Color=" + color + ">" + speak + "</BASEFONT></BODY>", (bool)false, (bool)true);
-        AddButton(367, 12, 4017, 4017, 0, GumpButtonType.Reply, 0);
-    }
-
-    public override void OnResponse(NetState sender, RelayInfo info)
-    {
-        Mobile from = sender.Mobile;
-        from.SendSound(0x4A);
-    }
-}
-
-public override bool OnDragDrop(Mobile from, Item dropped)
-{
-    from.CloseGump(typeof(CitizenGump));
-    int    sound   = 0;
-    string say     = "";
-    bool   isArmor = false; if (dropped is BaseArmor)
-    {
-        isArmor = true;
-    }
-    bool isWeapon = false; if (dropped is BaseWeapon)
-    {
-        isWeapon = true;
-    }
-    bool isMetal = false; if (Server.Misc.MaterialInfo.IsAnyKindOfMetalItem(dropped))
-    {
-        isMetal = true;
-    }
-    bool isWood = false; if (Server.Misc.MaterialInfo.IsAnyKindOfWoodItem(dropped))
-    {
-        isWood = true;
-    }
-    bool isLeather = false; if (Server.Misc.MaterialInfo.IsAnyKindOfClothItem(dropped))
-    {
-        isLeather = true;
-    }
-    bool fixArmor  = false;
-    bool fixWeapon = false;
-
-    if (dropped is Cargo)
-    {
-        Server.Items.Cargo.GiveCargo((Cargo)dropped, this, from);
-    }
-    else if (dropped is Gold)
-    {
-        if (CitizenCost > 0 && CitizenCost == dropped.Amount)
-        {
-            dropped.Delete();
-            sound = 0x2E6;
-            say   = "That is a fair trade.";
-            Item        give       = null;
-            List <Item> belongings = new List <Item>();
-            foreach (Item i in this.Backpack.Items)
+            string speak = b_Citizen.CitizenPhrase;
+            if (speak.Contains("Z~Z~Z~Z~Z"))
             {
-                give = i;
+                speak = speak.Replace("Z~Z~Z~Z~Z", c_Player.Name);
             }
-            give.Movable = true;
-            give.InvalidateProperties();
-            from.AddToBackpack(give);
-            CitizenService = 0;
-        }
-    }
-    else if (CitizenType == 1)
-    {
-        if (CitizenType == 1 && dropped is BaseMagicStaff)
-        {
-            BaseMagicStaff ba = (BaseMagicStaff)dropped;
-            BaseWeapon     bw = (BaseWeapon)dropped;
-
-            int myCharges = 0;
-
-            if (bw.IntRequirement == 10)
+            if (speak.Contains("Y~Y~Y~Y~Y"))
             {
-                myCharges = 30;
+                speak = speak.Replace("Y~Y~Y~Y~Y", c_Player.Region.Name);
             }
-            else if (bw.IntRequirement == 15)
+            if (speak.Contains("G~G~G~G~G"))
             {
-                myCharges = 23;
-            }
-            else if (bw.IntRequirement == 20)
-            {
-                myCharges = 18;
-            }
-            else if (bw.IntRequirement == 25)
-            {
-                myCharges = 15;
-            }
-            else if (bw.IntRequirement == 30)
-            {
-                myCharges = 12;
-            }
-            else if (bw.IntRequirement == 35)
-            {
-                myCharges = 9;
-            }
-            else if (bw.IntRequirement == 40)
-            {
-                myCharges = 6;
-            }
-            else if (bw.IntRequirement == 45)
-            {
-                myCharges = 3;
+                speak = speak.Replace("G~G~G~G~G", (b_Citizen.CitizenCost).ToString());
             }
 
-            if (dropped is IdentifyStaff)
-            {
-                say = "That wand is something even my power cannot charge.";
-            }
-            else if (bw.IntRequirement < 1)
-            {
-                say = "That does not need to be recharged.";
-            }
-            else if (ba.Charges <= myCharges)
-            {
-                say        = "Your wand is charged.";
-                sound      = 0x5C1;
-                ba.Charges = myCharges;
-            }
-            else
-            {
-                say = "That wand has too many charges already.";
-            }
+            AddPage(0);
+
+            string color = "#d5a496";
+
+            AddImage(0, 2, 9543, Server.Misc.PlayerSettings.GetGumpHue(player));
+            AddHtml(12, 15, 341, 20, @"<BODY><BASEFONT Color=" + color + ">" + citizen.Name + " " + citizen.Title + "</BASEFONT></BODY>", (bool)false, (bool)false);
+            AddHtml(12, 50, 380, 253, @"<BODY><BASEFONT Color=" + color + ">" + speak + "</BASEFONT></BODY>", (bool)false, (bool)true);
+            AddButton(367, 12, 4017, 4017, 0, GumpButtonType.Reply, 0);
         }
-    }
-    else if (CitizenService == 1)
-    {
-        if (CitizenType == 2 && isArmor && isMetal)
+
+        public override void OnResponse(NetState sender, RelayInfo info)
         {
-            fixArmor = true; sound = 0x541;
-        }
-        else if (CitizenType == 3 && dropped is LockableContainer)
-        {
-            LockableContainer box = (LockableContainer)dropped;
-            say               = "I unlocked it for you.";
-            sound             = 0x241;
-            box.Locked        = false;
-            box.TrapPower     = 0;
-            box.TrapLevel     = 0;
-            box.LockLevel     = 0;
-            box.MaxLockLevel  = 0;
-            box.RequiredSkill = 0;
-            box.TrapType      = TrapType.None;
-        }
-    }
-    else if (CitizenService == 2)
-    {
-        if (CitizenType == 2 && isWeapon && isMetal)
-        {
-            fixWeapon = true; sound = 0x541;
-        }
-        else if (CitizenType == 3 && isArmor && isLeather)
-        {
-            fixArmor = true; sound = 0x248;
-        }
-        else if (CitizenType == 3 && isWeapon && isLeather)
-        {
-            fixWeapon = true; sound = 0x248;
-        }
-    }
-    else if (CitizenService == 3)
-    {
-        if (CitizenType == 2 && isWeapon && isWood)
-        {
-            fixWeapon = true; sound = 0x23D;
-        }
-        else if (CitizenType == 3 && isWeapon && isWood)
-        {
-            fixWeapon = true; sound = 0x23D;
-        }
-    }
-    else if (CitizenService == 4)
-    {
-        if (CitizenType == 2 && isArmor && isWood)
-        {
-            fixArmor = true; sound = 0x23D;
-        }
-        else if (CitizenType == 3 && isArmor && isWood)
-        {
-            fixArmor = true; sound = 0x23D;
+            Mobile from = sender.Mobile;
+            from.SendSound(0x4A);
         }
     }
 
-    if (fixArmor && dropped is BaseArmor)
+    public override bool OnDragDrop(Mobile from, Item dropped)
     {
-        say = "This is repaired and ready for battle.";
-        BaseArmor ba = (BaseArmor)dropped;
-        ba.MaxHitPoints -= 1;
-        ba.HitPoints     = ba.MaxHitPoints;
-    }
-    else if (fixWeapon && dropped is BaseWeapon)
-    {
-        say = "This is repaired and is ready for battle.";
-        BaseWeapon bw = (BaseWeapon)dropped;
-        bw.MaxHitPoints -= 1;
-        bw.HitPoints     = bw.MaxHitPoints;
-    }
+        from.CloseGump(typeof(CitizenGump));
+        int    sound   = 0;
+        string say     = "";
+        bool   isArmor = false; if (dropped is BaseArmor)
+        {
+            isArmor = true;
+        }
+        bool isWeapon = false; if (dropped is BaseWeapon)
+        {
+            isWeapon = true;
+        }
+        bool isMetal = false; if (Server.Misc.MaterialInfo.IsAnyKindOfMetalItem(dropped))
+        {
+            isMetal = true;
+        }
+        bool isWood = false; if (Server.Misc.MaterialInfo.IsAnyKindOfWoodItem(dropped))
+        {
+            isWood = true;
+        }
+        bool isLeather = false; if (Server.Misc.MaterialInfo.IsAnyKindOfClothItem(dropped))
+        {
+            isLeather = true;
+        }
+        bool fixArmor  = false;
+        bool fixWeapon = false;
 
-    SayTo(from, say);
-    if (sound > 0)
-    {
-        from.PlaySound(sound);
-    }
+        if (dropped is Cargo)
+        {
+            Server.Items.Cargo.GiveCargo((Cargo)dropped, this, from);
+        }
+        else if (dropped is Gold)
+        {
+            if (CitizenCost > 0 && CitizenCost == dropped.Amount)
+            {
+                dropped.Delete();
+                sound = 0x2E6;
+                say   = "That is a fair trade.";
+                Item        give       = null;
+                List <Item> belongings = new List <Item>();
+                foreach (Item i in this.Backpack.Items)
+                {
+                    give = i;
+                }
+                give.Movable = true;
+                give.InvalidateProperties();
+                from.AddToBackpack(give);
+                CitizenService = 0;
+            }
+        }
+        else if (CitizenType == 1)
+        {
+            if (CitizenType == 1 && dropped is BaseMagicStaff)
+            {
+                BaseMagicStaff ba = (BaseMagicStaff)dropped;
+                BaseWeapon     bw = (BaseWeapon)dropped;
 
-    return false;
-}
+                int myCharges = 0;
+
+                if (bw.IntRequirement == 10)
+                {
+                    myCharges = 30;
+                }
+                else if (bw.IntRequirement == 15)
+                {
+                    myCharges = 23;
+                }
+                else if (bw.IntRequirement == 20)
+                {
+                    myCharges = 18;
+                }
+                else if (bw.IntRequirement == 25)
+                {
+                    myCharges = 15;
+                }
+                else if (bw.IntRequirement == 30)
+                {
+                    myCharges = 12;
+                }
+                else if (bw.IntRequirement == 35)
+                {
+                    myCharges = 9;
+                }
+                else if (bw.IntRequirement == 40)
+                {
+                    myCharges = 6;
+                }
+                else if (bw.IntRequirement == 45)
+                {
+                    myCharges = 3;
+                }
+
+                if (dropped is IdentifyStaff)
+                {
+                    say = "That wand is something even my power cannot charge.";
+                }
+                else if (bw.IntRequirement < 1)
+                {
+                    say = "That does not need to be recharged.";
+                }
+                else if (ba.Charges <= myCharges)
+                {
+                    say        = "Your wand is charged.";
+                    sound      = 0x5C1;
+                    ba.Charges = myCharges;
+                }
+                else
+                {
+                    say = "That wand has too many charges already.";
+                }
+            }
+        }
+        else if (CitizenService == 1)
+        {
+            if (CitizenType == 2 && isArmor && isMetal)
+            {
+                fixArmor = true; sound = 0x541;
+            }
+            else if (CitizenType == 3 && dropped is LockableContainer)
+            {
+                LockableContainer box = (LockableContainer)dropped;
+                say               = "I unlocked it for you.";
+                sound             = 0x241;
+                box.Locked        = false;
+                box.TrapPower     = 0;
+                box.TrapLevel     = 0;
+                box.LockLevel     = 0;
+                box.MaxLockLevel  = 0;
+                box.RequiredSkill = 0;
+                box.TrapType      = TrapType.None;
+            }
+        }
+        else if (CitizenService == 2)
+        {
+            if (CitizenType == 2 && isWeapon && isMetal)
+            {
+                fixWeapon = true; sound = 0x541;
+            }
+            else if (CitizenType == 3 && isArmor && isLeather)
+            {
+                fixArmor = true; sound = 0x248;
+            }
+            else if (CitizenType == 3 && isWeapon && isLeather)
+            {
+                fixWeapon = true; sound = 0x248;
+            }
+        }
+        else if (CitizenService == 3)
+        {
+            if (CitizenType == 2 && isWeapon && isWood)
+            {
+                fixWeapon = true; sound = 0x23D;
+            }
+            else if (CitizenType == 3 && isWeapon && isWood)
+            {
+                fixWeapon = true; sound = 0x23D;
+            }
+        }
+        else if (CitizenService == 4)
+        {
+            if (CitizenType == 2 && isArmor && isWood)
+            {
+                fixArmor = true; sound = 0x23D;
+            }
+            else if (CitizenType == 3 && isArmor && isWood)
+            {
+                fixArmor = true; sound = 0x23D;
+            }
+        }
+
+        if (fixArmor && dropped is BaseArmor)
+        {
+            say = "This is repaired and ready for battle.";
+            BaseArmor ba = (BaseArmor)dropped;
+            ba.MaxHitPoints -= 1;
+            ba.HitPoints     = ba.MaxHitPoints;
+        }
+        else if (fixWeapon && dropped is BaseWeapon)
+        {
+            say = "This is repaired and is ready for battle.";
+            BaseWeapon bw = (BaseWeapon)dropped;
+            bw.MaxHitPoints -= 1;
+            bw.HitPoints     = bw.MaxHitPoints;
+        }
+
+        SayTo(from, say);
+        if (sound > 0)
+        {
+            from.PlaySound(sound);
+        }
+
+        return false;
+    }
 }
 }

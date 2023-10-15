@@ -1831,33 +1831,28 @@ public class MerchantsBook : Item
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Serpent Island")
                         {
-                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "obsidian" }
+                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "obsidian" };
                         }
-                        ;
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Savaged Empire")
                         {
-                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "steel" }
+                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "steel" };
                         }
-                        ;
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Island of Umber Veil")
                         {
-                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "brass" }
+                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "brass" };
                         }
-                        ;
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Underworld")
                         {
-                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "mithril", "xormite" }
+                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "mithril", "xormite" };
                         }
-                        ;
 
                         if (Server.Misc.Worlds.IsSeaTown(book.Location, book.Map))
                         {
-                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "nepturite" }
+                            subType = new string[] { "dull copper", "shadow iron", "copper", "bronze", "gold", "agapite", "verite", "valorite", "nepturite" };
                         }
-                        ;
 
                         category = subType[Utility.RandomMinMax(0, (subType.Length - 1))];
                         if (Utility.RandomMinMax(1, 50) == 1)
@@ -1876,27 +1871,23 @@ public class MerchantsBook : Item
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Underworld")
                         {
-                            subType = new string[] { "frozen", "volcanic", "serpent", "lizard", "draconic", "hellish", "goliath", "alien" }
+                            subType = new string[] { "frozen", "volcanic", "serpent", "lizard", "draconic", "hellish", "goliath", "alien" };
                         }
-                        ;
 
                         if (Worlds.IsCrypt(book.Location, book.Map))
                         {
-                            subType = new string[] { "frozen", "volcanic", "serpent", "lizard", "draconic", "hellish", "goliath", "necrotic" }
+                            subType = new string[] { "frozen", "volcanic", "serpent", "lizard", "draconic", "hellish", "goliath", "necrotic" };
                         }
-                        ;
 
                         if (Server.Misc.Worlds.IsSeaTown(book.Location, book.Map))
                         {
-                            subType = new string[] { "frozen", "volcanic", "serpent", "lizard", "deep sea", "draconic", "hellish", "goliath" }
+                            subType = new string[] { "frozen", "volcanic", "serpent", "lizard", "deep sea", "draconic", "hellish", "goliath" };
                         }
-                        ;
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Savaged Empire")
                         {
-                            subType = new string[] { "frozen", "volcanic", "dinosaur", "serpent", "lizard", "draconic", "hellish", "goliath" }
+                            subType = new string[] { "frozen", "volcanic", "dinosaur", "serpent", "lizard", "draconic", "hellish", "goliath" };
                         }
-                        ;
 
                         category = subType[Utility.RandomMinMax(0, (subType.Length - 1))];
 
@@ -1911,21 +1902,18 @@ public class MerchantsBook : Item
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Underworld")
                         {
-                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "petrified" }
+                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "petrified" };
                         }
-                        ;
 
                         if (Worlds.IsCrypt(book.Location, book.Map))
                         {
-                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "ghostwood" }
+                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "ghostwood" };
                         }
-                        ;
 
                         if (Server.Misc.Worlds.IsSeaTown(book.Location, book.Map))
                         {
-                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "driftwood", "oak", "pine", "rosewood", "walnut" }
+                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "driftwood", "oak", "pine", "rosewood", "walnut" };
                         }
-                        ;
 
                         category = subType[Utility.RandomMinMax(0, (subType.Length - 1))];
                         if (Utility.RandomMinMax(1, 50) == 1)
@@ -1944,21 +1932,18 @@ public class MerchantsBook : Item
 
                         if (Worlds.GetMyWorld(book.Map, book.Location, book.X, book.Y) == "the Underworld")
                         {
-                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "petrified" }
+                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "petrified" };
                         }
-                        ;
 
                         if (Worlds.IsCrypt(book.Location, book.Map))
                         {
-                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "ghostwood" }
+                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "oak", "pine", "rosewood", "walnut", "ghostwood" };
                         }
-                        ;
 
                         if (Server.Misc.Worlds.IsSeaTown(book.Location, book.Map))
                         {
-                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "driftwood", "oak", "pine", "rosewood", "walnut" }
+                            subType = new string[] { "ash", "cherry", "ebony", "golden oak", "hickory", "mahogany", "driftwood", "oak", "pine", "rosewood", "walnut" };
                         }
-                        ;
 
                         category = subType[Utility.RandomMinMax(0, (subType.Length - 1))];
                         if (Utility.RandomMinMax(1, 50) == 1)

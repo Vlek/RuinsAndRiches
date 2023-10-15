@@ -911,10 +911,7 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
     {
         ComputeBaseLightLevels(out global, out personal);
 
-        if (m_Region != null)
-        {
-            m_Region.AlterLightLevel(this, ref global, ref personal);
-        }
+        m_Region?.AlterLightLevel(this, ref global, ref personal);
     }
 
     public virtual void ComputeBaseLightLevels(out int global, out int personal)
@@ -959,13 +956,9 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
 
     public virtual void UpdateResistances()
     {
-        if (m_Resistances == null)
-        {
-            m_Resistances = new int[5] {
-                int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
-            }
-        }
-        ;
+        m_Resistances ??= new int[5] {
+            int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
+        };
 
         bool delta = false;
 
@@ -990,9 +983,8 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         {
             m_Resistances = new int[5] {
                 int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
-            }
+            };
         }
-        ;
 
         int v = (int)type;
 
@@ -1056,9 +1048,8 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         {
             m_Resistances = new int[5] {
                 int.MinValue, int.MinValue, int.MinValue, int.MinValue, int.MinValue
-            }
+            };
         }
-        ;
 
         for (int i = 0; i < m_Resistances.Length; ++i)
         {
@@ -10633,9 +10624,7 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         }
     }
 
-    private static int[] m_InvalidBodies = new int[]
-    {
-    };
+    private static int[] m_InvalidBodies = Array.Empty <int>();
 
     [Body, CommandProperty(AccessLevel.GameMaster)]
     public Body Body
@@ -10993,10 +10982,7 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
         OnMapChange(oldMap);
         OnLocationChange(oldLocation);
 
-        if (m_Region != null)
-        {
-            m_Region.OnLocationChanged(this, oldLocation);
-        }
+        m_Region?.OnLocationChanged(this, oldLocation);
     }
 
     public virtual void SetLocation(Point3D newLocation, bool isTeleport)
@@ -11020,15 +11006,9 @@ public class Mobile : IEntity, IHued, IComparable <Mobile>, ISerializable, ISpaw
                 box.Close();
             }
 
-            if (m_NetState != null)
-            {
-                m_NetState.ValidateAllTrades();
-            }
+            m_NetState?.ValidateAllTrades();
 
-            if (m_Map != null)
-            {
-                m_Map.OnMove(oldLocation, this);
-            }
+            m_Map?.OnMove(oldLocation, this);
 
             if (isTeleport && m_NetState != null)
             {
